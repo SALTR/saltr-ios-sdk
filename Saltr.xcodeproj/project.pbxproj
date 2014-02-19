@@ -1,0 +1,640 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		CA1FC1FB18B3B8D600E92A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
+		CA1FC20018B3B8D600E92A06 /* PSSaltr.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC1FF18B3B8D600E92A06 /* PSSaltr.h */; };
+		CA1FC20218B3B8D600E92A06 /* PSSaltr.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC20118B3B8D600E92A06 /* PSSaltr.m */; };
+		CA1FC20918B3B8D600E92A06 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20818B3B8D600E92A06 /* XCTest.framework */; };
+		CA1FC20A18B3B8D600E92A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
+		CA1FC20C18B3B8D600E92A06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20B18B3B8D600E92A06 /* UIKit.framework */; };
+		CA1FC20F18B3B8D600E92A06 /* libSaltr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1F718B3B8D600E92A06 /* libSaltr.a */; };
+		CA1FC21518B3B8D600E92A06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA1FC21318B3B8D600E92A06 /* InfoPlist.strings */; };
+		CA1FC21718B3B8D600E92A06 /* SaltrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC21618B3B8D600E92A06 /* SaltrTests.m */; };
+		CA1FC22C18B3C33200E92A06 /* PSDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC22B18B3C33200E92A06 /* PSDeserializer.m */; };
+		CA1FC22F18B3C34100E92A06 /* PSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC22E18B3C34100E92A06 /* PSDevice.m */; };
+		CA1FC23218B3C35000E92A06 /* PSExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23118B3C35000E92A06 /* PSExperiment.m */; };
+		CA1FC23518B3C36100E92A06 /* PSFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23418B3C36100E92A06 /* PSFeature.m */; };
+		CA1FC23818B3C37300E92A06 /* PSLevelPackStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23718B3C37300E92A06 /* PSLevelPackStructure.m */; };
+		CA1FC23B18B3C38200E92A06 /* PSLevelStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23A18B3C38200E92A06 /* PSLevelStructure.m */; };
+		CA1FC23E18B3C39400E92A06 /* PSPartner.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23D18B3C39400E92A06 /* PSPartner.m */; };
+		CA1FC24818B3C46000E92A06 /* PSLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24718B3C46000E92A06 /* PSLevelParser.m */; };
+		CA1FC24D18B3C4A800E92A06 /* PSVector2D.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24C18B3C4A800E92A06 /* PSVector2D.m */; };
+		CA1FC25018B3C4C200E92A06 /* PSVector2DIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24F18B3C4C200E92A06 /* PSVector2DIterator.m */; };
+		CA1FC25618B3C53300E92A06 /* PSBoardAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25518B3C53300E92A06 /* PSBoardAsset.m */; };
+		CA1FC25918B3C54F00E92A06 /* PSBoardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25818B3C54F00E92A06 /* PSBoardData.m */; };
+		CA1FC25C18B3C57000E92A06 /* PSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25B18B3C57000E92A06 /* PSCell.m */; };
+		CA1FC25F18B3C59700E92A06 /* PSAssetInChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25E18B3C59700E92A06 /* PSAssetInChunk.m */; };
+		CA1FC26218B3C5AE00E92A06 /* PSChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26118B3C5AE00E92A06 /* PSChunk.m */; };
+		CA1FC26518B3C5D900E92A06 /* PSComposite.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26418B3C5D900E92A06 /* PSComposite.m */; };
+		CA1FC26818B3C5FA00E92A06 /* PSCompositeAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26718B3C5FA00E92A06 /* PSCompositeAsset.m */; };
+		CA1FC26B18B3C62500E92A06 /* PSCompositeAssetTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26A18B3C62500E92A06 /* PSCompositeAssetTemplate.m */; };
+		CA1FC26E18B3C64700E92A06 /* PSSimpleAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26D18B3C64700E92A06 /* PSSimpleAsset.m */; };
+		CA1FC27118B3C67300E92A06 /* PSSimpleAssetTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27018B3C67300E92A06 /* PSSimpleAssetTemplate.m */; };
+		CA1FC27718B3C6D100E92A06 /* PSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27618B3C6D100E92A06 /* PSRepository.m */; };
+		CA1FC28018B3C70E00E92A06 /* PSResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27F18B3C70E00E92A06 /* PSResource.m */; };
+		CA1FC28318B3C72200E92A06 /* PSResourceURLTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC28218B3C72200E92A06 /* PSResourceURLTicket.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		CA1FC20D18B3B8D600E92A06 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1FC1EF18B3B8D600E92A06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA1FC1F618B3B8D600E92A06;
+			remoteInfo = "Saltr";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		CA1FC1F518B3B8D600E92A06 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+				CA1FC20018B3B8D600E92A06 /* PSSaltr.h in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		CA1FC1F718B3B8D600E92A06 /* libSaltr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		CA1FC1FE18B3B8D600E92A06 /* Saltr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saltr-Prefix.pch"; sourceTree = "<group>"; };
+		CA1FC1FF18B3B8D600E92A06 /* PSSaltr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSaltr.h; sourceTree = "<group>"; };
+		CA1FC20118B3B8D600E92A06 /* PSSaltr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSaltr.m; sourceTree = "<group>"; };
+		CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaltrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA1FC20818B3B8D600E92A06 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		CA1FC20B18B3B8D600E92A06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		CA1FC21218B3B8D600E92A06 /* SaltrTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrTests-Info.plist"; sourceTree = "<group>"; };
+		CA1FC21418B3B8D600E92A06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CA1FC21618B3B8D600E92A06 /* SaltrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaltrTests.m; sourceTree = "<group>"; };
+		CA1FC22A18B3C33200E92A06 /* PSDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDeserializer.h; sourceTree = "<group>"; };
+		CA1FC22B18B3C33200E92A06 /* PSDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDeserializer.m; sourceTree = "<group>"; };
+		CA1FC22D18B3C34100E92A06 /* PSDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDevice.h; sourceTree = "<group>"; };
+		CA1FC22E18B3C34100E92A06 /* PSDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDevice.m; sourceTree = "<group>"; };
+		CA1FC23018B3C35000E92A06 /* PSExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSExperiment.h; sourceTree = "<group>"; };
+		CA1FC23118B3C35000E92A06 /* PSExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSExperiment.m; sourceTree = "<group>"; };
+		CA1FC23318B3C36100E92A06 /* PSFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFeature.h; sourceTree = "<group>"; };
+		CA1FC23418B3C36100E92A06 /* PSFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSFeature.m; sourceTree = "<group>"; };
+		CA1FC23618B3C37300E92A06 /* PSLevelPackStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLevelPackStructure.h; sourceTree = "<group>"; };
+		CA1FC23718B3C37300E92A06 /* PSLevelPackStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLevelPackStructure.m; sourceTree = "<group>"; };
+		CA1FC23918B3C38200E92A06 /* PSLevelStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLevelStructure.h; sourceTree = "<group>"; };
+		CA1FC23A18B3C38200E92A06 /* PSLevelStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLevelStructure.m; sourceTree = "<group>"; };
+		CA1FC23C18B3C39400E92A06 /* PSPartner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPartner.h; sourceTree = "<group>"; };
+		CA1FC23D18B3C39400E92A06 /* PSPartner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPartner.m; sourceTree = "<group>"; };
+		CA1FC24618B3C46000E92A06 /* PSLevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSLevelParser.h; path = parser/PSLevelParser.h; sourceTree = "<group>"; };
+		CA1FC24718B3C46000E92A06 /* PSLevelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSLevelParser.m; path = parser/PSLevelParser.m; sourceTree = "<group>"; };
+		CA1FC24B18B3C4A800E92A06 /* PSVector2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSVector2D.h; path = parser/data/PSVector2D.h; sourceTree = "<group>"; };
+		CA1FC24C18B3C4A800E92A06 /* PSVector2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSVector2D.m; path = parser/data/PSVector2D.m; sourceTree = "<group>"; };
+		CA1FC24E18B3C4C200E92A06 /* PSVector2DIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSVector2DIterator.h; path = parser/data/PSVector2DIterator.h; sourceTree = "<group>"; };
+		CA1FC24F18B3C4C200E92A06 /* PSVector2DIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSVector2DIterator.m; path = parser/data/PSVector2DIterator.m; sourceTree = "<group>"; };
+		CA1FC25418B3C53300E92A06 /* PSBoardAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSBoardAsset.h; path = parser/gameeditor/PSBoardAsset.h; sourceTree = "<group>"; };
+		CA1FC25518B3C53300E92A06 /* PSBoardAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSBoardAsset.m; path = parser/gameeditor/PSBoardAsset.m; sourceTree = "<group>"; };
+		CA1FC25718B3C54F00E92A06 /* PSBoardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSBoardData.h; path = parser/gameeditor/PSBoardData.h; sourceTree = "<group>"; };
+		CA1FC25818B3C54F00E92A06 /* PSBoardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSBoardData.m; path = parser/gameeditor/PSBoardData.m; sourceTree = "<group>"; };
+		CA1FC25A18B3C57000E92A06 /* PSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCell.h; path = parser/gameeditor/PSCell.h; sourceTree = "<group>"; };
+		CA1FC25B18B3C57000E92A06 /* PSCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCell.m; path = parser/gameeditor/PSCell.m; sourceTree = "<group>"; };
+		CA1FC25D18B3C59700E92A06 /* PSAssetInChunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSAssetInChunk.h; path = parser/gameeditor/chunk/PSAssetInChunk.h; sourceTree = "<group>"; };
+		CA1FC25E18B3C59700E92A06 /* PSAssetInChunk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSAssetInChunk.m; path = parser/gameeditor/chunk/PSAssetInChunk.m; sourceTree = "<group>"; };
+		CA1FC26018B3C5AE00E92A06 /* PSChunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSChunk.h; path = parser/gameeditor/chunk/PSChunk.h; sourceTree = "<group>"; };
+		CA1FC26118B3C5AE00E92A06 /* PSChunk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSChunk.m; path = parser/gameeditor/chunk/PSChunk.m; sourceTree = "<group>"; };
+		CA1FC26318B3C5D900E92A06 /* PSComposite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSComposite.h; path = parser/gameeditor/composite/PSComposite.h; sourceTree = "<group>"; };
+		CA1FC26418B3C5D900E92A06 /* PSComposite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSComposite.m; path = parser/gameeditor/composite/PSComposite.m; sourceTree = "<group>"; };
+		CA1FC26618B3C5FA00E92A06 /* PSCompositeAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCompositeAsset.h; path = parser/gameeditor/composite/PSCompositeAsset.h; sourceTree = "<group>"; };
+		CA1FC26718B3C5FA00E92A06 /* PSCompositeAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCompositeAsset.m; path = parser/gameeditor/composite/PSCompositeAsset.m; sourceTree = "<group>"; };
+		CA1FC26918B3C62500E92A06 /* PSCompositeAssetTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCompositeAssetTemplate.h; path = parser/gameeditor/composite/PSCompositeAssetTemplate.h; sourceTree = "<group>"; };
+		CA1FC26A18B3C62500E92A06 /* PSCompositeAssetTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCompositeAssetTemplate.m; path = parser/gameeditor/composite/PSCompositeAssetTemplate.m; sourceTree = "<group>"; };
+		CA1FC26C18B3C64700E92A06 /* PSSimpleAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSSimpleAsset.h; path = parser/gameeditor/simple/PSSimpleAsset.h; sourceTree = "<group>"; };
+		CA1FC26D18B3C64700E92A06 /* PSSimpleAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSSimpleAsset.m; path = parser/gameeditor/simple/PSSimpleAsset.m; sourceTree = "<group>"; };
+		CA1FC26F18B3C67300E92A06 /* PSSimpleAssetTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSSimpleAssetTemplate.h; path = parser/gameeditor/simple/PSSimpleAssetTemplate.h; sourceTree = "<group>"; };
+		CA1FC27018B3C67300E92A06 /* PSSimpleAssetTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSSimpleAssetTemplate.m; path = parser/gameeditor/simple/PSSimpleAssetTemplate.m; sourceTree = "<group>"; };
+		CA1FC27518B3C6D100E92A06 /* PSRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSRepository.h; path = repository/PSRepository.h; sourceTree = "<group>"; };
+		CA1FC27618B3C6D100E92A06 /* PSRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSRepository.m; path = repository/PSRepository.m; sourceTree = "<group>"; };
+		CA1FC27E18B3C70E00E92A06 /* PSResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSResource.h; path = resource/PSResource.h; sourceTree = "<group>"; };
+		CA1FC27F18B3C70E00E92A06 /* PSResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSResource.m; path = resource/PSResource.m; sourceTree = "<group>"; };
+		CA1FC28118B3C72200E92A06 /* PSResourceURLTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSResourceURLTicket.h; path = resource/PSResourceURLTicket.h; sourceTree = "<group>"; };
+		CA1FC28218B3C72200E92A06 /* PSResourceURLTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSResourceURLTicket.m; path = resource/PSResourceURLTicket.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CA1FC1F418B3B8D600E92A06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA1FC1FB18B3B8D600E92A06 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA1FC20418B3B8D600E92A06 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA1FC20918B3B8D600E92A06 /* XCTest.framework in Frameworks */,
+				CA1FC20F18B3B8D600E92A06 /* libSaltr.a in Frameworks */,
+				CA1FC20C18B3B8D600E92A06 /* UIKit.framework in Frameworks */,
+				CA1FC20A18B3B8D600E92A06 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		CA1FC1EE18B3B8D600E92A06 = {
+			isa = PBXGroup;
+			children = (
+				CA1FC1FC18B3B8D600E92A06 /* Saltr */,
+				CA1FC21018B3B8D600E92A06 /* SaltrTests */,
+				CA1FC1F918B3B8D600E92A06 /* Frameworks */,
+				CA1FC1F818B3B8D600E92A06 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CA1FC1F818B3B8D600E92A06 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC1F718B3B8D600E92A06 /* libSaltr.a */,
+				CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CA1FC1F918B3B8D600E92A06 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */,
+				CA1FC20818B3B8D600E92A06 /* XCTest.framework */,
+				CA1FC20B18B3B8D600E92A06 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA1FC1FC18B3B8D600E92A06 /* Saltr */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC24218B3C3C900E92A06 /* utils */,
+				CA1FC24118B3C3C300E92A06 /* resource */,
+				CA1FC24018B3C3A300E92A06 /* repository */,
+				CA1FC23F18B3C39E00E92A06 /* parser */,
+				CA1FC1FF18B3B8D600E92A06 /* PSSaltr.h */,
+				CA1FC20118B3B8D600E92A06 /* PSSaltr.m */,
+				CA1FC1FD18B3B8D600E92A06 /* Supporting Files */,
+				CA1FC22A18B3C33200E92A06 /* PSDeserializer.h */,
+				CA1FC22B18B3C33200E92A06 /* PSDeserializer.m */,
+				CA1FC22D18B3C34100E92A06 /* PSDevice.h */,
+				CA1FC22E18B3C34100E92A06 /* PSDevice.m */,
+				CA1FC23018B3C35000E92A06 /* PSExperiment.h */,
+				CA1FC23118B3C35000E92A06 /* PSExperiment.m */,
+				CA1FC23318B3C36100E92A06 /* PSFeature.h */,
+				CA1FC23418B3C36100E92A06 /* PSFeature.m */,
+				CA1FC23618B3C37300E92A06 /* PSLevelPackStructure.h */,
+				CA1FC23718B3C37300E92A06 /* PSLevelPackStructure.m */,
+				CA1FC23918B3C38200E92A06 /* PSLevelStructure.h */,
+				CA1FC23A18B3C38200E92A06 /* PSLevelStructure.m */,
+				CA1FC23C18B3C39400E92A06 /* PSPartner.h */,
+				CA1FC23D18B3C39400E92A06 /* PSPartner.m */,
+			);
+			name = Saltr;
+			path = "Saltr";
+			sourceTree = "<group>";
+		};
+		CA1FC1FD18B3B8D600E92A06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC1FE18B3B8D600E92A06 /* Saltr-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CA1FC21018B3B8D600E92A06 /* SaltrTests */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC21618B3B8D600E92A06 /* SaltrTests.m */,
+				CA1FC21118B3B8D600E92A06 /* Supporting Files */,
+			);
+			name = SaltrTests;
+			path = "SaltrTests";
+			sourceTree = "<group>";
+		};
+		CA1FC21118B3B8D600E92A06 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC21218B3B8D600E92A06 /* SaltrTests-Info.plist */,
+				CA1FC21318B3B8D600E92A06 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CA1FC23F18B3C39E00E92A06 /* parser */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC24A18B3C47700E92A06 /* gameeditor */,
+				CA1FC24918B3C46C00E92A06 /* data */,
+				CA1FC24618B3C46000E92A06 /* PSLevelParser.h */,
+				CA1FC24718B3C46000E92A06 /* PSLevelParser.m */,
+			);
+			name = parser;
+			sourceTree = "<group>";
+		};
+		CA1FC24018B3C3A300E92A06 /* repository */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC27518B3C6D100E92A06 /* PSRepository.h */,
+				CA1FC27618B3C6D100E92A06 /* PSRepository.m */,
+			);
+			name = repository;
+			sourceTree = "<group>";
+		};
+		CA1FC24118B3C3C300E92A06 /* resource */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC27E18B3C70E00E92A06 /* PSResource.h */,
+				CA1FC27F18B3C70E00E92A06 /* PSResource.m */,
+				CA1FC28118B3C72200E92A06 /* PSResourceURLTicket.h */,
+				CA1FC28218B3C72200E92A06 /* PSResourceURLTicket.m */,
+			);
+			name = resource;
+			sourceTree = "<group>";
+		};
+		CA1FC24218B3C3C900E92A06 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = utils;
+			sourceTree = "<group>";
+		};
+		CA1FC24918B3C46C00E92A06 /* data */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC24B18B3C4A800E92A06 /* PSVector2D.h */,
+				CA1FC24C18B3C4A800E92A06 /* PSVector2D.m */,
+				CA1FC24E18B3C4C200E92A06 /* PSVector2DIterator.h */,
+				CA1FC24F18B3C4C200E92A06 /* PSVector2DIterator.m */,
+			);
+			name = data;
+			sourceTree = "<group>";
+		};
+		CA1FC24A18B3C47700E92A06 /* gameeditor */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC25318B3C4FF00E92A06 /* simple */,
+				CA1FC25218B3C4F600E92A06 /* composite */,
+				CA1FC25118B3C4EC00E92A06 /* chunk */,
+				CA1FC25418B3C53300E92A06 /* PSBoardAsset.h */,
+				CA1FC25518B3C53300E92A06 /* PSBoardAsset.m */,
+				CA1FC25718B3C54F00E92A06 /* PSBoardData.h */,
+				CA1FC25818B3C54F00E92A06 /* PSBoardData.m */,
+				CA1FC25A18B3C57000E92A06 /* PSCell.h */,
+				CA1FC25B18B3C57000E92A06 /* PSCell.m */,
+			);
+			name = gameeditor;
+			sourceTree = "<group>";
+		};
+		CA1FC25118B3C4EC00E92A06 /* chunk */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC25D18B3C59700E92A06 /* PSAssetInChunk.h */,
+				CA1FC25E18B3C59700E92A06 /* PSAssetInChunk.m */,
+				CA1FC26018B3C5AE00E92A06 /* PSChunk.h */,
+				CA1FC26118B3C5AE00E92A06 /* PSChunk.m */,
+			);
+			name = chunk;
+			sourceTree = "<group>";
+		};
+		CA1FC25218B3C4F600E92A06 /* composite */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC26318B3C5D900E92A06 /* PSComposite.h */,
+				CA1FC26418B3C5D900E92A06 /* PSComposite.m */,
+				CA1FC26618B3C5FA00E92A06 /* PSCompositeAsset.h */,
+				CA1FC26718B3C5FA00E92A06 /* PSCompositeAsset.m */,
+				CA1FC26918B3C62500E92A06 /* PSCompositeAssetTemplate.h */,
+				CA1FC26A18B3C62500E92A06 /* PSCompositeAssetTemplate.m */,
+			);
+			name = composite;
+			sourceTree = "<group>";
+		};
+		CA1FC25318B3C4FF00E92A06 /* simple */ = {
+			isa = PBXGroup;
+			children = (
+				CA1FC26C18B3C64700E92A06 /* PSSimpleAsset.h */,
+				CA1FC26D18B3C64700E92A06 /* PSSimpleAsset.m */,
+				CA1FC26F18B3C67300E92A06 /* PSSimpleAssetTemplate.h */,
+				CA1FC27018B3C67300E92A06 /* PSSimpleAssetTemplate.m */,
+			);
+			name = simple;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		CA1FC1F618B3B8D600E92A06 /* Saltr */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA1FC21A18B3B8D600E92A06 /* Build configuration list for PBXNativeTarget "Saltr" */;
+			buildPhases = (
+				CA1FC1F318B3B8D600E92A06 /* Sources */,
+				CA1FC1F418B3B8D600E92A06 /* Frameworks */,
+				CA1FC1F518B3B8D600E92A06 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Saltr;
+			productName = "Saltr";
+			productReference = CA1FC1F718B3B8D600E92A06 /* libSaltr.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		CA1FC20618B3B8D600E92A06 /* SaltrTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CA1FC21D18B3B8D600E92A06 /* Build configuration list for PBXNativeTarget "SaltrTests" */;
+			buildPhases = (
+				CA1FC20318B3B8D600E92A06 /* Sources */,
+				CA1FC20418B3B8D600E92A06 /* Frameworks */,
+				CA1FC20518B3B8D600E92A06 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CA1FC20E18B3B8D600E92A06 /* PBXTargetDependency */,
+			);
+			name = SaltrTests;
+			productName = "SaltrTests";
+			productReference = CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		CA1FC1EF18B3B8D600E92A06 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0500;
+				ORGANIZATIONNAME = Plexonic;
+			};
+			buildConfigurationList = CA1FC1F218B3B8D600E92A06 /* Build configuration list for PBXProject "Saltr" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = CA1FC1EE18B3B8D600E92A06;
+			productRefGroup = CA1FC1F818B3B8D600E92A06 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				CA1FC1F618B3B8D600E92A06 /* Saltr */,
+				CA1FC20618B3B8D600E92A06 /* SaltrTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		CA1FC20518B3B8D600E92A06 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA1FC21518B3B8D600E92A06 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		CA1FC1F318B3B8D600E92A06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA1FC23218B3C35000E92A06 /* PSExperiment.m in Sources */,
+				CA1FC26218B3C5AE00E92A06 /* PSChunk.m in Sources */,
+				CA1FC24818B3C46000E92A06 /* PSLevelParser.m in Sources */,
+				CA1FC24D18B3C4A800E92A06 /* PSVector2D.m in Sources */,
+				CA1FC22C18B3C33200E92A06 /* PSDeserializer.m in Sources */,
+				CA1FC23518B3C36100E92A06 /* PSFeature.m in Sources */,
+				CA1FC27118B3C67300E92A06 /* PSSimpleAssetTemplate.m in Sources */,
+				CA1FC26818B3C5FA00E92A06 /* PSCompositeAsset.m in Sources */,
+				CA1FC23E18B3C39400E92A06 /* PSPartner.m in Sources */,
+				CA1FC20218B3B8D600E92A06 /* PSSaltr.m in Sources */,
+				CA1FC26B18B3C62500E92A06 /* PSCompositeAssetTemplate.m in Sources */,
+				CA1FC26518B3C5D900E92A06 /* PSComposite.m in Sources */,
+				CA1FC27718B3C6D100E92A06 /* PSRepository.m in Sources */,
+				CA1FC25918B3C54F00E92A06 /* PSBoardData.m in Sources */,
+				CA1FC22F18B3C34100E92A06 /* PSDevice.m in Sources */,
+				CA1FC28318B3C72200E92A06 /* PSResourceURLTicket.m in Sources */,
+				CA1FC25618B3C53300E92A06 /* PSBoardAsset.m in Sources */,
+				CA1FC28018B3C70E00E92A06 /* PSResource.m in Sources */,
+				CA1FC25C18B3C57000E92A06 /* PSCell.m in Sources */,
+				CA1FC23B18B3C38200E92A06 /* PSLevelStructure.m in Sources */,
+				CA1FC26E18B3C64700E92A06 /* PSSimpleAsset.m in Sources */,
+				CA1FC25F18B3C59700E92A06 /* PSAssetInChunk.m in Sources */,
+				CA1FC25018B3C4C200E92A06 /* PSVector2DIterator.m in Sources */,
+				CA1FC23818B3C37300E92A06 /* PSLevelPackStructure.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CA1FC20318B3B8D600E92A06 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CA1FC21718B3B8D600E92A06 /* SaltrTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		CA1FC20E18B3B8D600E92A06 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA1FC1F618B3B8D600E92A06 /* Saltr */;
+			targetProxy = CA1FC20D18B3B8D600E92A06 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		CA1FC21318B3B8D600E92A06 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CA1FC21418B3B8D600E92A06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		CA1FC21818B3B8D600E92A06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		CA1FC21918B3B8D600E92A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		CA1FC21B18B3B8D600E92A06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/saltr_ios_sdk.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = Saltr;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		CA1FC21C18B3B8D600E92A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/saltr_ios_sdk.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = Saltr;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		CA1FC21E18B3B8D600E92A06 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SaltrTests/SaltrTests-Info.plist";
+				PRODUCT_NAME = SaltrTests;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CA1FC21F18B3B8D600E92A06 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
+				INFOPLIST_FILE = "SaltrTests/SaltrTests-Info.plist";
+				PRODUCT_NAME = SaltrTests;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		CA1FC1F218B3B8D600E92A06 /* Build configuration list for PBXProject "Saltr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA1FC21818B3B8D600E92A06 /* Debug */,
+				CA1FC21918B3B8D600E92A06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA1FC21A18B3B8D600E92A06 /* Build configuration list for PBXNativeTarget "Saltr" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA1FC21B18B3B8D600E92A06 /* Debug */,
+				CA1FC21C18B3B8D600E92A06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CA1FC21D18B3B8D600E92A06 /* Build configuration list for PBXNativeTarget "SaltrTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CA1FC21E18B3B8D600E92A06 /* Debug */,
+				CA1FC21F18B3B8D600E92A06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = CA1FC1EF18B3B8D600E92A06 /* Project object */;
+}
