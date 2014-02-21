@@ -42,11 +42,9 @@
 }
 
 /// The instance key - unique to each Saltr object
-
 @property (nonatomic, strong, readonly) NSString* instanceKey;
 
 /// YES if caching should be enabled, otherwise NO
->>>>>>> f99a9e9bd60ef341d69ace170fc66e95de6dd0a4
 @property (nonatomic, assign) BOOL enableCache;
 
 /// The application version
