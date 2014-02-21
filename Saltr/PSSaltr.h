@@ -94,7 +94,7 @@
  * @param deviceId - the id  of the device to be set for current @b Saltr object
  * @param deviceType - the type of the device
  */
--(void) setupDevicerWithId:(NSString *)deviceId andDeviceType:(NSString *)deviceType;
+-(void) setupDeviceWithId:(NSString *)deviceId andDeviceType:(NSString *)deviceType;
 
 /**
  * @brief Defines feature for the token and sets the properties
@@ -121,6 +121,7 @@
 -(void) levelDataBodyWithLevelPack:(PSLevelPackStructure*)levelPackStructure
                     levelStructure:(PSLevelStructure*)levelStructure;
 
+ /// @todo clarify use-case
 -(void) addPropertyPropertyWithSaltrUserId:(NSString *)saltrUserId
                         andSaltInstanceKey:(NSString *)saltrInstanceKey
                           andPropertyNames:(NSArray *)propertyNames
