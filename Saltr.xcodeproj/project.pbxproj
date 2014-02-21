@@ -47,7 +47,7 @@
 			containerPortal = CA1FC1EF18B3B8D600E92A06 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = CA1FC1F618B3B8D600E92A06;
-			remoteInfo = "Saltr";
+			remoteInfo = Saltr;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -68,7 +68,7 @@
 		CA1FC1F718B3B8D600E92A06 /* libSaltr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA1FC1FE18B3B8D600E92A06 /* Saltr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saltr-Prefix.pch"; sourceTree = "<group>"; };
-		CA1FC1FF18B3B8D600E92A06 /* PSSaltr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSaltr.h; sourceTree = "<group>"; };
+		CA1FC1FF18B3B8D600E92A06 /* PSSaltr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSaltr.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		CA1FC20118B3B8D600E92A06 /* PSSaltr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSaltr.m; sourceTree = "<group>"; };
 		CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaltrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC20818B3B8D600E92A06 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -122,6 +122,7 @@
 		CA1FC27F18B3C70E00E92A06 /* PSResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSResource.m; path = resource/PSResource.m; sourceTree = "<group>"; };
 		CA1FC28118B3C72200E92A06 /* PSResourceURLTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSResourceURLTicket.h; path = resource/PSResourceURLTicket.h; sourceTree = "<group>"; };
 		CA1FC28218B3C72200E92A06 /* PSResourceURLTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSResourceURLTicket.m; path = resource/PSResourceURLTicket.m; sourceTree = "<group>"; };
+		CA9DAB3A18B6A330005CCCAA /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -200,9 +201,9 @@
 				CA1FC23A18B3C38200E92A06 /* PSLevelStructure.m */,
 				CA1FC23C18B3C39400E92A06 /* PSPartner.h */,
 				CA1FC23D18B3C39400E92A06 /* PSPartner.m */,
+				CA9DAB3A18B6A330005CCCAA /* Constants.h */,
 			);
-			name = Saltr;
-			path = "Saltr";
+			path = Saltr;
 			sourceTree = "<group>";
 		};
 		CA1FC1FD18B3B8D600E92A06 /* Supporting Files */ = {
@@ -219,8 +220,7 @@
 				CA1FC21618B3B8D600E92A06 /* SaltrTests.m */,
 				CA1FC21118B3B8D600E92A06 /* Supporting Files */,
 			);
-			name = SaltrTests;
-			path = "SaltrTests";
+			path = SaltrTests;
 			sourceTree = "<group>";
 		};
 		CA1FC21118B3B8D600E92A06 /* Supporting Files */ = {
@@ -348,7 +348,7 @@
 			dependencies = (
 			);
 			name = Saltr;
-			productName = "Saltr";
+			productName = Saltr;
 			productReference = CA1FC1F718B3B8D600E92A06 /* libSaltr.a */;
 			productType = "com.apple.product-type.library.static";
 		};
@@ -366,7 +366,7 @@
 				CA1FC20E18B3B8D600E92A06 /* PBXTargetDependency */,
 			);
 			name = SaltrTests;
-			productName = "SaltrTests";
+			productName = SaltrTests;
 			productReference = CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
