@@ -10,4 +10,28 @@
 
 @implementation PSFeature
 
+@synthesize token = _token;
+@synthesize properties = _properties;
+@synthesize defaultProperties;
+
+-(id) initWithToken:(NSString*)theToken defaultProperties:(NSObject*)theDefaultProperties andProperties:(NSObject*)theProperties
+{
+    self = [super init];
+    if (self) {
+        _token = theToken;
+        self.defaultProperties = theDefaultProperties;
+        _properties = theProperties;
+    }
+    return self;
+}
+
+- (NSObject*)properties
+{
+    return (_properties == NULL) ? self.defaultProperties : _properties;
+}
+
+- (NSString *)description {
+    return [NSString stringWithFormat: @"Feature { token : %@ , value : %@}", self.token, self.properties];
+}
+
 @end

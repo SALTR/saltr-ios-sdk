@@ -10,4 +10,16 @@
 
 @interface PSPartner : NSObject
 
+@property (nonatomic, strong, readonly) NSString* partnerId;
+@property (nonatomic, strong, readonly) NSString* partnerType;
+
+/**
+ * @brief Inits instance of PSPartner class with given id and type
+ *
+ * @param theId - partner id
+ * @param theType - partner type
+ * @return - The instance of PSPartner class
+ */
+-(id) initWithPartnerId:(NSString*)theId andPartnerType:(NSString*)theType;
+
 @end

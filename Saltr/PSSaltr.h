@@ -11,7 +11,7 @@
 
 @interface PSSaltr : NSObject
 
-@property (nonatomic, strong) NSString* instanceKey;
+@property (nonatomic, strong, readonly) NSString* instanceKey;
 @property (nonatomic, assign) BOOL enableCache;
 
 /**
@@ -20,7 +20,7 @@
  * @param enableCache - YES, if caching should be enabled, otherwise NO
  * @return - The only instance of Saltr class
  */
-+(id) saltrWith:(NSString *)instanceKey andCacheEnabled:(BOOL)enableCache;
++(id) saltrWithInstanceKey:(NSString *)instanceKey andCacheEnabled:(BOOL)enableCache;
 
 /// Returns the only instance of Saltr class
 + (PSSaltr *)sharedInstance;

@@ -10,4 +10,29 @@
 
 @interface PSDeserializer : NSObject
 
+/**
+ * @brief Decodes and creates an array of Expoeriment objects corresponding to data
+ * 
+ * @param data - data object corresponding to JSON
+ * @return - array of experiments
+ */
++ (NSArray*)decodeExperimentsFromData:(NSData*)data;
+
+/**
+ * @brief Decodes and creates an array of LevelPackStructure objects corresponding to data
+ *
+ * @param data - data object corresponding to JSON
+ * @return - array of experiments
+ */
++ (NSArray*)decodeLevelsFromData:(NSData*)data;
+
+/**
+ * @brief Decodes and creates an dictionary of Feature objects corresponding to data
+ *
+ * @param data - data object corresponding to JSON
+ * @return - array of Feature objects
+ */
++ (NSDictionary*)decodeFeaturesFromData:(NSData*)data;
+
+
 @end

@@ -10,4 +10,18 @@
 
 @implementation PSDevice
 
+@synthesize deviceId = _deviceId;
+@synthesize deviceType = _deviceType;
+
+-(id) initWithDeviceId:(NSString*)theId andDeviceType:(NSString*)theType
+{
+    self = [super init];
+    if (self) {
+        _deviceId = theId;
+        //TODO: remove device type after it is removed from Salt Bend
+        _deviceType = theType;
+    }
+    return self;
+}
+
 @end

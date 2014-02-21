@@ -10,4 +10,23 @@
 
 @implementation PSLevelPackStructure
 
+@synthesize token = _token;
+@synthesize levelStructureList = _levelStructureList;
+@synthesize index = _index;
+
+-(id) initWithToken:(NSString*)theToken levelStructureList:(NSArray*)theLevelStructureList andIndex:(NSString*)theIndex
+{
+    self = [super init];
+    if (self) {
+        _token = theToken;
+        _levelStructureList = theLevelStructureList;
+        _index = theIndex;
+    }
+    return self;
+}
+
+- (NSString *)description {
+    return self.token;
+}
+
 @end

@@ -10,4 +10,20 @@
 
 @implementation PSDeserializer
 
+
++ (NSArray*)decodeExperimentsFromData:(NSData*)data
+{
+    return NULL;
+}
+
++ (NSArray*)decodeLevelsFromData:(NSData*)data
+{
+    return NULL;
+}
+
++ (NSDictionary*)decodeFeaturesFromData:(NSData*)data
+{
+    return NULL;
+}
+
 @end

@@ -10,4 +10,16 @@
 
 @interface PSDevice : NSObject
 
+@property (nonatomic, strong, readonly) NSString* deviceId;
+@property (nonatomic, strong, readonly) NSString* deviceType;
+
+/**
+ * @brief Inits instance of PSDevice class with given id and type
+ *
+ * @param theId - device id
+ * @param theType - device type
+ * @return - The instance of PSDevice class
+ */
+-(id) initWithDeviceId:(NSString*)theId andDeviceType:(NSString*)theType;
+
 @end

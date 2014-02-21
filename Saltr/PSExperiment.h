@@ -10,4 +10,9 @@
 
 @interface PSExperiment : NSObject
 
+@property (nonatomic, strong) NSString* partition;
+@property (nonatomic, strong) NSString* token;
+@property (nonatomic, strong) NSString* type;
+@property (nonatomic, strong) NSArray* customEvents;
+
 @end

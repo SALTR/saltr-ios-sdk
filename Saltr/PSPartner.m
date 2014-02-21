@@ -10,4 +10,18 @@
 
 @implementation PSPartner
 
+@synthesize partnerId = _partnerId;
+@synthesize partnerType = _partnerType;
+
+-(id) initWithPartnerId:(NSString*)theId andPartnerType:(NSString*)theType
+{
+    self = [super init];
+    if (self) {
+        _partnerId = theId;
+        _partnerType = theType;
+    }
+    return self;
+}
+
+
 @end

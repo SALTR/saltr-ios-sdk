@@ -11,16 +11,18 @@
 @interface PSSaltr() {
     
     PSRepository* repository;
-    
+    NSString* _instanceKey;
 }
 
 @end
 
 @implementation PSSaltr
-@synthesize instanceKey;
+
+@synthesize instanceKey = _instanceKey;
 @synthesize enableCache;
 
--(id) init {
+-(id) init
+{
     self = [super init];
     if (self) {
         repository = [PSRepository new];
@@ -28,7 +30,13 @@
     return self;
 }
 
-+(id) saltrWith:(NSString *)instanceKey andCacheEnabled:(BOOL)enableCache {
+-(void) setInstanceKey:(NSString *)instanceKey
+{
+    _instanceKey = instanceKey;
+}
+
++(id) saltrWithInstanceKey:(NSString *)instanceKey andCacheEnabled:(BOOL)enableCache
+{
     [PSSaltr sharedInstance].instanceKey = instanceKey;
     [PSSaltr sharedInstance].enableCache = enableCache;
     return [PSSaltr sharedInstance];

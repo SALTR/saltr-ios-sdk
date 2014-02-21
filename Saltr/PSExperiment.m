@@ -10,4 +10,9 @@
 
 @implementation PSExperiment
 
+@synthesize partition;
+@synthesize token;
+@synthesize type;
+@synthesize customEvents;
+
 @end
