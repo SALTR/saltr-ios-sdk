@@ -11,17 +11,17 @@
 @implementation PSDeserializer
 
 
-+ (NSArray*)decodeExperimentsFromData:(NSData*)data
++ (NSArray*)decodeExperimentsFromData:(id)data
 {
     return NULL;
 }
 
-+ (NSArray*)decodeLevelsFromData:(NSData*)data
++ (NSArray*)decodeLevelsFromData:(id)data
 {
     return NULL;
 }
 
-+ (NSDictionary*)decodeFeaturesFromData:(NSData*)data
++ (NSDictionary*)decodeFeaturesFromData:(id)data
 {
     return NULL;
 }

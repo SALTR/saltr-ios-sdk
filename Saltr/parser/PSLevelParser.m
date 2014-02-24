@@ -7,7 +7,24 @@
 //
 
 #import "PSLevelParser.h"
+#import "PSVector2D.h"
+#import "PSBoardData.h"
 
 @implementation PSLevelParser
+
+
++ (void)parseBoard:(PSVector2D*)outputBoard withBoard:(id)board andBoardData:(PSBoardData*)boardData
+{
+    
+}
+
++ (void)regenerateChunks:(PSVector2D*)outputBoard withBoard:(id)board andBoardData:(PSBoardData*)boardData
+{
+}
+
++ (PSBoardData*)parseBoardData:(PSBoardData*)boardData withData:(id)data
+{
+    return NULL;
+}
 
 @end

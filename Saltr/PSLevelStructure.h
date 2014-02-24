@@ -14,10 +14,10 @@
 @property (nonatomic, strong, readonly) NSString* levelId;
 @property (nonatomic, strong, readonly) NSString* dataUrl;
 @property (nonatomic, assign, readonly) NSInteger index;
-@property (nonatomic, strong, readonly) NSObject* properties;
+@property (nonatomic, strong, readonly) id properties;
 //TODO review the dataFetched property, whether it is really needed
 @property (nonatomic, assign, readonly) BOOL dataFetched;
-@property (nonatomic, strong, readonly) NSObject* keyset;
+@property (nonatomic, strong, readonly) id keyset;
 @property (nonatomic, strong, readonly) NSString* version;
 
 
@@ -31,12 +31,12 @@
  * @param theVersion - levelStructure version
  * @return - The instance of PSLevelStructure class
  */
--(id) initWithLevelId:(NSString*)theId index:(NSInteger)theIndex dataUrl:(NSString*)theDataUrl properties:(NSObject*)theProperties andVersion:(NSString*)theVersion;
+-(id) initWithLevelId:(NSString*)theId index:(NSInteger)theIndex dataUrl:(NSString*)theDataUrl properties:(id)theProperties andVersion:(NSString*)theVersion;
 
 /**
  *
  */
-- (void)parseData:(NSObject*)data;
+- (void)parseData:(id)data;
 
 /**
  *
@@ -46,7 +46,7 @@
 /**
  *
  */
-- (NSObject*)innerProperties;
+- (id)innerProperties;
 
 
 
