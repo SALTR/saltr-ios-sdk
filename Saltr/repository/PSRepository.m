@@ -10,6 +10,14 @@
 
 @implementation PSRepository
 
+-(id) init {
+    self = [super init];
+    if (self) {
+        
+    }
+    return self;
+}
+
 -(id) objectFromStorage:(NSString *)fileName {
     /// @todo The line below is just for passing compilation
     return [NSArray new];

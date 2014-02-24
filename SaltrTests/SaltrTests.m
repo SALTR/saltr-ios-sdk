@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "PSSaltr.h"
 
 @interface SaltrTests : XCTestCase
 
@@ -26,8 +27,37 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
+-(void) testSaltrWithInstanceKey {
+    [PSSaltr saltrWithInstanceKey:@"instanceKey" andCacheEnabled:YES];
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+
+}
+
+-(void) testAppData {
+    [[PSSaltr sharedInstance] appData];
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+}
+
+-(void) testSetupPartnerWithId {
+    [[PSSaltr sharedInstance] setupPartnerWithId:@"id" andPartnerType:@"type"];
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+}
+
+-(void) testSetupDeviceWithId {
+    [[PSSaltr sharedInstance] setupDeviceWithId:@"id" andDeviceType:@"type"];
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+}
+
+-(void) testDefineFeatureWithToken  {
+    [[PSSaltr sharedInstance] defineFeatureWithToken:@"token" andProperties:[NSArray new]];
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+}
+
+-(void) testLevelDataBodyWithLevelPack {
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+}
+
+-(void) testAddPropertyPropertyWithSaltrUserId {
     XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
