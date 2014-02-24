@@ -11,7 +11,7 @@
 @interface PSLevelStructure() {
 
     NSDictionary* _boards;
-    NSObject* _data;
+    id _data;
 }
 
 @end
@@ -26,7 +26,7 @@
 @synthesize keyset = _keyset;
 @synthesize version = _version;
 
--(id) initWithLevelId:(NSString*)theId index:(NSInteger)theIndex dataUrl:(NSString*)theDataUrl properties:(NSObject*)theProperties andVersion:(NSString*)theVersion
+-(id) initWithLevelId:(NSString*)theId index:(NSInteger)theIndex dataUrl:(NSString*)theDataUrl properties:(id)theProperties andVersion:(NSString*)theVersion
 {
     self = [super init];
     if (self) {
@@ -44,12 +44,12 @@
     return NULL;
 }
 
-- (NSObject*)innerProperties
+- (id)innerProperties
 {
     return NULL;
 }
 
-- (void)parseData:(NSObject*)data
+- (void)parseData:(id)data
 {
 }
 

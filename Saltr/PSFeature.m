@@ -14,7 +14,7 @@
 @synthesize properties = _properties;
 @synthesize defaultProperties;
 
--(id) initWithToken:(NSString*)theToken defaultProperties:(NSObject*)theDefaultProperties andProperties:(NSObject*)theProperties
+-(id) initWithToken:(NSString*)theToken defaultProperties:(id)theDefaultProperties andProperties:(id)theProperties
 {
     self = [super init];
     if (self) {
@@ -25,7 +25,7 @@
     return self;
 }
 
-- (NSObject*)properties
+- (id)properties
 {
     return (_properties == NULL) ? self.defaultProperties : _properties;
 }

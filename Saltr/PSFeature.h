@@ -11,8 +11,8 @@
 @interface PSFeature : NSObject
 
 @property (nonatomic, strong, readonly) NSString* token;
-@property (nonatomic, strong, readonly, getter = properties) NSObject* properties;
-@property (nonatomic, strong) NSObject* defaultProperties;
+@property (nonatomic, strong, readonly, getter = properties) id properties;
+@property (nonatomic, strong) id defaultProperties;
 
 /**
  * @brief Inits instance of PSFeature class with given token, properties and default properties
@@ -22,6 +22,6 @@
  * @param theProperties - feature properties
  * @return - The instance of PSFeature class
  */
--(id) initWithToken:(NSString*)theToken defaultProperties:(NSObject*)theDefaultProperties andProperties:(NSObject*)theProperties;
+-(id) initWithToken:(NSString*)theToken defaultProperties:(id)theDefaultProperties andProperties:(id)theProperties;
 
 @end
