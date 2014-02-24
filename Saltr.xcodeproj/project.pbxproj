@@ -39,6 +39,7 @@
 		CA1FC27718B3C6D100E92A06 /* PSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27618B3C6D100E92A06 /* PSRepository.m */; };
 		CA1FC28018B3C70E00E92A06 /* PSResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27F18B3C70E00E92A06 /* PSResource.m */; };
 		CA1FC28318B3C72200E92A06 /* PSResourceURLTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC28218B3C72200E92A06 /* PSResourceURLTicket.m */; };
+		CA9DAB3D18B7846C005CCCAA /* PSLevelBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9DAB3C18B7846C005CCCAA /* PSLevelBoard.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -123,6 +124,8 @@
 		CA1FC28118B3C72200E92A06 /* PSResourceURLTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSResourceURLTicket.h; path = resource/PSResourceURLTicket.h; sourceTree = "<group>"; };
 		CA1FC28218B3C72200E92A06 /* PSResourceURLTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSResourceURLTicket.m; path = resource/PSResourceURLTicket.m; sourceTree = "<group>"; };
 		CA9DAB3A18B6A330005CCCAA /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CA9DAB3B18B7846C005CCCAA /* PSLevelBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLevelBoard.h; sourceTree = "<group>"; };
+		CA9DAB3C18B7846C005CCCAA /* PSLevelBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLevelBoard.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -202,6 +205,8 @@
 				CA1FC23C18B3C39400E92A06 /* PSPartner.h */,
 				CA1FC23D18B3C39400E92A06 /* PSPartner.m */,
 				CA9DAB3A18B6A330005CCCAA /* Constants.h */,
+				CA9DAB3B18B7846C005CCCAA /* PSLevelBoard.h */,
+				CA9DAB3C18B7846C005CCCAA /* PSLevelBoard.m */,
 			);
 			path = Saltr;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 				CA1FC23218B3C35000E92A06 /* PSExperiment.m in Sources */,
 				CA1FC26218B3C5AE00E92A06 /* PSChunk.m in Sources */,
 				CA1FC24818B3C46000E92A06 /* PSLevelParser.m in Sources */,
+				CA9DAB3D18B7846C005CCCAA /* PSLevelBoard.m in Sources */,
 				CA1FC24D18B3C4A800E92A06 /* PSVector2D.m in Sources */,
 				CA1FC22C18B3C33200E92A06 /* PSDeserializer.m in Sources */,
 				CA1FC23518B3C36100E92A06 /* PSFeature.m in Sources */,
