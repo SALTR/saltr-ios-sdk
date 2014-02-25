@@ -7,6 +7,8 @@
 //
 
 #import "PSSaltr.h"
+#import "PSFeature.h"
+#import "PSResource.h"
 
 //
 #define APP_DATA_URL_CACHE "app_data_cache.json";
@@ -19,8 +21,11 @@
 
 
 @interface PSSaltr() {
-    
+    BOOL _isLoading;
+    /// @todo the meaning of this boolean is not clear yet
+    BOOL _ready;
 }
+
 @end
 
 @implementation PSSaltr
@@ -40,6 +45,8 @@
     self = [super init];
     if (self) {
         self.repository = [PSRepository new];
+        _isLoading = false;
+        _ready = false;
     }
     return self;
 }
@@ -73,19 +80,34 @@
     return _sharedObject;
 }
 
--(void) setupPartnerWithId:(NSString *)partnerId andPartnerType:(NSString *)NSString {
+-(void) setupPartnerWithId:(NSString *)partnerId andPartnerType:(NSString *)partnerType {
     
 }
 
--(void) setupDevicerWithId:(NSString *)deviceId andDeviceType:(NSString *)NSString {
+-(void) setupDeviceWithId:(NSString *)deviceId andDeviceType:(NSString *)deviceType {
     
 }
 
--(void) defineFeatureWithToken:(NSString*)token andProperties:(NSArray *)properties {
-    
+-(void) defineFeatureWithToken:(NSString*)token andProperties:(NSArray *)properties {    
+    PSFeature* feature = [features objectForKey:token];
+    if (nil == feature) {
+        feature = [[PSFeature alloc] initWithToken:token defaultProperties:nil andProperties:properties];
+        [features setValue:feature forKey:token];
+    } else {
+        feature.defaultProperties = properties;
+    }
 }
 
 -(void) appData {
+
+    if (_isLoading) {
+        return;
+    }
+    _isLoading = true;
+    _ready = false;
+    PSResource* asset = [self createAppDataResource:appDataAssetLoadCompleteHandler errorHandler:appDataAssetLoadErrorHandler];
+//    [asset load];
+
     if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingAppDataRequest)]) {
         [saltrRequestDelegate didFinishGettingAppDataRequest];
     }
@@ -111,6 +133,21 @@
                          andPropertyValues:(NSArray *)propertyValues
                              andOperations:(NSArray *)operations {
     
+}
+
+/// private functions
+
+void (^appDataAssetLoadCompleteHandler)(PSResource*) = ^(PSResource* asset) {
+    NSLog(@"[SaltAPI] App data is loaded.");
+};
+
+void (^appDataAssetLoadErrorHandler)(PSResource*) = ^(PSResource* asset) {
+    NSLog(@"[SaltAPI] App data is failed to load.");
+};
+
+
+-(PSResource *)createAppDataResource:(void (^)(PSResource *))appDataAssetLoadCompleteHandler errorHandler:(void (^)(PSResource *))appDataAssetLoadErrorHandler {
+    return [PSResource new];
 }
 
 @end
