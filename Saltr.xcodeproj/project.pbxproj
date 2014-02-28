@@ -48,6 +48,28 @@
 		CAA0C61518BCB89A007B2B69 /* LevelPackStructureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61418BCB89A007B2B69 /* LevelPackStructureTests.m */; };
 		CAA0C61718BCB8B9007B2B69 /* LevelStructureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61618BCB8B9007B2B69 /* LevelStructureTests.m */; };
 		CAA0C61918BCB8DE007B2B69 /* PartnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61818BCB8DE007B2B69 /* PartnerTests.m */; };
+		CD55D6DD18C0879800222E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
+		CD55D6DE18C0879800222E8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD7406118BFC02800F2306D /* CoreGraphics.framework */; };
+		CD55D6DF18C0879800222E8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20B18B3B8D600E92A06 /* UIKit.framework */; };
+		CD55D6E518C0879800222E8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD55D6E318C0879800222E8C /* InfoPlist.strings */; };
+		CD55D6E718C0879800222E8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55D6E618C0879800222E8C /* main.m */; };
+		CD55D6EB18C0879800222E8C /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55D6EA18C0879800222E8C /* PSAppDelegate.m */; };
+		CD55D6EE18C0879800222E8C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD55D6EC18C0879800222E8C /* Main_iPhone.storyboard */; };
+		CD55D6F118C0879800222E8C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD55D6EF18C0879800222E8C /* Main_iPad.storyboard */; };
+		CD55D6F418C0879800222E8C /* PSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55D6F318C0879800222E8C /* PSViewController.m */; };
+		CD55D6F618C0879800222E8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD55D6F518C0879800222E8C /* Images.xcassets */; };
+		CD55D6FC18C0879800222E8C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20818B3B8D600E92A06 /* XCTest.framework */; };
+		CD55D6FD18C0879800222E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
+		CD55D6FE18C0879800222E8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20B18B3B8D600E92A06 /* UIKit.framework */; };
+		CD55D70618C0879800222E8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD55D70418C0879800222E8C /* InfoPlist.strings */; };
+		CD55D70F18C087C900222E8C /* SaltrTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55D70718C0879800222E8C /* SaltrTestAppTests.m */; };
+		CDD7408F18BFC0FA00F2306D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD095F7B18BF7E4B00E38369 /* CoreFoundation.framework */; };
+		CDD7409518BFC0FA00F2306D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDD7409318BFC0FA00F2306D /* InfoPlist.strings */; };
+		CDD7409A18BFC11600F2306D /* appdata.json in Resources */ = {isa = PBXBuildFile; fileRef = CD095F8C18BF7E9600E38369 /* appdata.json */; };
+		CDD7409B18BFC11600F2306D /* level.json in Resources */ = {isa = PBXBuildFile; fileRef = CD095F8D18BF7E9600E38369 /* level.json */; };
+		CDE80ACB18C0883A004A9C1E /* Saltr.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CDD7408E18BFC0FA00F2306D /* Saltr.bundle */; };
+		CDE80ACC18C08840004A9C1E /* libSaltr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1F718B3B8D600E92A06 /* libSaltr.a */; };
+		CDE80AD218C09CC1004A9C1E /* RepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE80AD118C09CC1004A9C1E /* RepositoryTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +79,27 @@
 			proxyType = 1;
 			remoteGlobalIDString = CA1FC1F618B3B8D600E92A06;
 			remoteInfo = Saltr;
+		};
+		CD55D6FF18C0879800222E8C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1FC1EF18B3B8D600E92A06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CD55D6DB18C0879800222E8C;
+			remoteInfo = SaltrTestApp;
+		};
+		CDE80ACD18C08849004A9C1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1FC1EF18B3B8D600E92A06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CA1FC1F618B3B8D600E92A06;
+			remoteInfo = Saltr;
+		};
+		CDE80ACF18C08849004A9C1E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = CA1FC1EF18B3B8D600E92A06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = CDD7408D18BFC0FA00F2306D;
+			remoteInfo = SaltrResource;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -142,6 +185,31 @@
 		CAA0C61418BCB89A007B2B69 /* LevelPackStructureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelPackStructureTests.m; sourceTree = "<group>"; };
 		CAA0C61618BCB8B9007B2B69 /* LevelStructureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelStructureTests.m; sourceTree = "<group>"; };
 		CAA0C61818BCB8DE007B2B69 /* PartnerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerTests.m; sourceTree = "<group>"; };
+		CD095F7B18BF7E4B00E38369 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		CD095F8C18BF7E9600E38369 /* appdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appdata.json; sourceTree = "<group>"; };
+		CD095F8D18BF7E9600E38369 /* level.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level.json; sourceTree = "<group>"; };
+		CD55D6DC18C0879800222E8C /* SaltrTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaltrTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD55D6E218C0879800222E8C /* SaltrTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrTestApp-Info.plist"; sourceTree = "<group>"; };
+		CD55D6E418C0879800222E8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CD55D6E618C0879800222E8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		CD55D6E818C0879800222E8C /* SaltrTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SaltrTestApp-Prefix.pch"; sourceTree = "<group>"; };
+		CD55D6E918C0879800222E8C /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
+		CD55D6EA18C0879800222E8C /* PSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAppDelegate.m; sourceTree = "<group>"; };
+		CD55D6ED18C0879800222E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
+		CD55D6F018C0879800222E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
+		CD55D6F218C0879800222E8C /* PSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSViewController.h; sourceTree = "<group>"; };
+		CD55D6F318C0879800222E8C /* PSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSViewController.m; sourceTree = "<group>"; };
+		CD55D6F518C0879800222E8C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		CD55D6FB18C0879800222E8C /* SaltrTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaltrTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		CD55D70318C0879800222E8C /* SaltrTestAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrTestAppTests-Info.plist"; sourceTree = "<group>"; };
+		CD55D70518C0879800222E8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CD55D70718C0879800222E8C /* SaltrTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaltrTestAppTests.m; sourceTree = "<group>"; };
+		CDD7406118BFC02800F2306D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		CDD7408E18BFC0FA00F2306D /* Saltr.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Saltr.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		CDD7409218BFC0FA00F2306D /* SaltrResource-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrResource-Info.plist"; sourceTree = "<group>"; };
+		CDD7409418BFC0FA00F2306D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		CDD7409618BFC0FA00F2306D /* SaltrResource-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SaltrResource-Prefix.pch"; sourceTree = "<group>"; };
+		CDE80AD118C09CC1004A9C1E /* RepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -164,6 +232,35 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CD55D6D918C0879800222E8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDE80ACC18C08840004A9C1E /* libSaltr.a in Frameworks */,
+				CD55D6DE18C0879800222E8C /* CoreGraphics.framework in Frameworks */,
+				CD55D6DF18C0879800222E8C /* UIKit.framework in Frameworks */,
+				CD55D6DD18C0879800222E8C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD55D6F818C0879800222E8C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD55D6FC18C0879800222E8C /* XCTest.framework in Frameworks */,
+				CD55D6FE18C0879800222E8C /* UIKit.framework in Frameworks */,
+				CD55D6FD18C0879800222E8C /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDD7408B18BFC0FA00F2306D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD7408F18BFC0FA00F2306D /* CoreFoundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -172,6 +269,9 @@
 			children = (
 				CA1FC1FC18B3B8D600E92A06 /* Saltr */,
 				CA1FC21018B3B8D600E92A06 /* SaltrTests */,
+				CDD7409018BFC0FA00F2306D /* SaltrResource */,
+				CD55D6E018C0879800222E8C /* SaltrTestApp */,
+				CD55D70118C0879800222E8C /* SaltrTestAppTests */,
 				CA1FC1F918B3B8D600E92A06 /* Frameworks */,
 				CA1FC1F818B3B8D600E92A06 /* Products */,
 			);
@@ -182,6 +282,9 @@
 			children = (
 				CA1FC1F718B3B8D600E92A06 /* libSaltr.a */,
 				CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */,
+				CDD7408E18BFC0FA00F2306D /* Saltr.bundle */,
+				CD55D6DC18C0879800222E8C /* SaltrTestApp.app */,
+				CD55D6FB18C0879800222E8C /* SaltrTestAppTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -192,6 +295,8 @@
 				CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */,
 				CA1FC20818B3B8D600E92A06 /* XCTest.framework */,
 				CA1FC20B18B3B8D600E92A06 /* UIKit.framework */,
+				CD095F7B18BF7E4B00E38369 /* CoreFoundation.framework */,
+				CDD7406118BFC02800F2306D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -199,6 +304,7 @@
 		CA1FC1FC18B3B8D600E92A06 /* Saltr */ = {
 			isa = PBXGroup;
 			children = (
+				CD095F8718BF7E6100E38369 /* testdata */,
 				CA1FC24218B3C3C900E92A06 /* utils */,
 				CA1FC24118B3C3C300E92A06 /* resource */,
 				CA1FC24018B3C3A300E92A06 /* repository */,
@@ -238,6 +344,7 @@
 		CA1FC21018B3B8D600E92A06 /* SaltrTests */ = {
 			isa = PBXGroup;
 			children = (
+				CDE80AD118C09CC1004A9C1E /* RepositoryTests.m */,
 				CAA0C61818BCB8DE007B2B69 /* PartnerTests.m */,
 				CAA0C61618BCB8B9007B2B69 /* LevelStructureTests.m */,
 				CAA0C61418BCB89A007B2B69 /* LevelPackStructureTests.m */,
@@ -361,6 +468,77 @@
 			name = simple;
 			sourceTree = "<group>";
 		};
+		CD095F8718BF7E6100E38369 /* testdata */ = {
+			isa = PBXGroup;
+			children = (
+				CD095F8C18BF7E9600E38369 /* appdata.json */,
+				CD095F8D18BF7E9600E38369 /* level.json */,
+			);
+			path = testdata;
+			sourceTree = "<group>";
+		};
+		CD55D6E018C0879800222E8C /* SaltrTestApp */ = {
+			isa = PBXGroup;
+			children = (
+				CD55D6E918C0879800222E8C /* PSAppDelegate.h */,
+				CD55D6EA18C0879800222E8C /* PSAppDelegate.m */,
+				CD55D6EC18C0879800222E8C /* Main_iPhone.storyboard */,
+				CD55D6EF18C0879800222E8C /* Main_iPad.storyboard */,
+				CD55D6F218C0879800222E8C /* PSViewController.h */,
+				CD55D6F318C0879800222E8C /* PSViewController.m */,
+				CD55D6F518C0879800222E8C /* Images.xcassets */,
+				CD55D6E118C0879800222E8C /* Supporting Files */,
+			);
+			path = SaltrTestApp;
+			sourceTree = "<group>";
+		};
+		CD55D6E118C0879800222E8C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD55D6E218C0879800222E8C /* SaltrTestApp-Info.plist */,
+				CD55D6E318C0879800222E8C /* InfoPlist.strings */,
+				CD55D6E618C0879800222E8C /* main.m */,
+				CD55D6E818C0879800222E8C /* SaltrTestApp-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CD55D70118C0879800222E8C /* SaltrTestAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				CD55D70718C0879800222E8C /* SaltrTestAppTests.m */,
+				CD55D70218C0879800222E8C /* Supporting Files */,
+			);
+			path = SaltrTestAppTests;
+			sourceTree = "<group>";
+		};
+		CD55D70218C0879800222E8C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CD55D70318C0879800222E8C /* SaltrTestAppTests-Info.plist */,
+				CD55D70418C0879800222E8C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		CDD7409018BFC0FA00F2306D /* SaltrResource */ = {
+			isa = PBXGroup;
+			children = (
+				CDD7409118BFC0FA00F2306D /* Supporting Files */,
+			);
+			path = SaltrResource;
+			sourceTree = "<group>";
+		};
+		CDD7409118BFC0FA00F2306D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				CDD7409218BFC0FA00F2306D /* SaltrResource-Info.plist */,
+				CDD7409318BFC0FA00F2306D /* InfoPlist.strings */,
+				CDD7409618BFC0FA00F2306D /* SaltrResource-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,7 +549,7 @@
 				CA1FC1F318B3B8D600E92A06 /* Sources */,
 				CA1FC1F418B3B8D600E92A06 /* Frameworks */,
 				CA1FC1F518B3B8D600E92A06 /* CopyFiles */,
-				CAA0C60918BBE059007B2B69 /* ShellScript */,
+				CAA0C60918BBE059007B2B69 /* Run Script */,
 			);
 			buildRules = (
 			);
@@ -400,6 +578,60 @@
 			productReference = CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		CD55D6DB18C0879800222E8C /* SaltrTestApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD55D70918C0879900222E8C /* Build configuration list for PBXNativeTarget "SaltrTestApp" */;
+			buildPhases = (
+				CD55D6D818C0879800222E8C /* Sources */,
+				CD55D6DA18C0879800222E8C /* Resources */,
+				CD55D6D918C0879800222E8C /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CDE80ACE18C08849004A9C1E /* PBXTargetDependency */,
+				CDE80AD018C08849004A9C1E /* PBXTargetDependency */,
+			);
+			name = SaltrTestApp;
+			productName = SaltrTestApp;
+			productReference = CD55D6DC18C0879800222E8C /* SaltrTestApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		CD55D6FA18C0879800222E8C /* SaltrTestAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CD55D70C18C0879900222E8C /* Build configuration list for PBXNativeTarget "SaltrTestAppTests" */;
+			buildPhases = (
+				CD55D6F718C0879800222E8C /* Sources */,
+				CD55D6F818C0879800222E8C /* Frameworks */,
+				CD55D6F918C0879800222E8C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				CD55D70018C0879800222E8C /* PBXTargetDependency */,
+			);
+			name = SaltrTestAppTests;
+			productName = SaltrTestAppTests;
+			productReference = CD55D6FB18C0879800222E8C /* SaltrTestAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		CDD7408D18BFC0FA00F2306D /* SaltrResource */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CDD7409718BFC0FA00F2306D /* Build configuration list for PBXNativeTarget "SaltrResource" */;
+			buildPhases = (
+				CDD7408A18BFC0FA00F2306D /* Sources */,
+				CDD7408B18BFC0FA00F2306D /* Frameworks */,
+				CDD7408C18BFC0FA00F2306D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SaltrResource;
+			productName = SaltrResource;
+			productReference = CDD7408E18BFC0FA00F2306D /* Saltr.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -408,6 +640,14 @@
 			attributes = {
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Plexonic;
+				TargetAttributes = {
+					CA1FC20618B3B8D600E92A06 = {
+						TestTargetID = CD55D6DB18C0879800222E8C;
+					};
+					CD55D6FA18C0879800222E8C = {
+						TestTargetID = CD55D6DB18C0879800222E8C;
+					};
+				};
 			};
 			buildConfigurationList = CA1FC1F218B3B8D600E92A06 /* Build configuration list for PBXProject "Saltr" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -415,6 +655,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = CA1FC1EE18B3B8D600E92A06;
 			productRefGroup = CA1FC1F818B3B8D600E92A06 /* Products */;
@@ -423,6 +664,9 @@
 			targets = (
 				CA1FC1F618B3B8D600E92A06 /* Saltr */,
 				CA1FC20618B3B8D600E92A06 /* SaltrTests */,
+				CDD7408D18BFC0FA00F2306D /* SaltrResource */,
+				CD55D6DB18C0879800222E8C /* SaltrTestApp */,
+				CD55D6FA18C0879800222E8C /* SaltrTestAppTests */,
 			);
 		};
 /* End PBXProject section */
@@ -436,16 +680,47 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		CD55D6DA18C0879800222E8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDE80ACB18C0883A004A9C1E /* Saltr.bundle in Resources */,
+				CD55D6F118C0879800222E8C /* Main_iPad.storyboard in Resources */,
+				CD55D6F618C0879800222E8C /* Images.xcassets in Resources */,
+				CD55D6EE18C0879800222E8C /* Main_iPhone.storyboard in Resources */,
+				CD55D6E518C0879800222E8C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD55D6F918C0879800222E8C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD55D70618C0879800222E8C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDD7408C18BFC0FA00F2306D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CDD7409A18BFC11600F2306D /* appdata.json in Resources */,
+				CDD7409B18BFC11600F2306D /* level.json in Resources */,
+				CDD7409518BFC0FA00F2306D /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		CAA0C60918BBE059007B2B69 /* ShellScript */ = {
+		CAA0C60918BBE059007B2B69 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 			);
+			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -494,12 +769,38 @@
 				CAA0C61918BCB8DE007B2B69 /* PartnerTests.m in Sources */,
 				CAA0C61518BCB89A007B2B69 /* LevelPackStructureTests.m in Sources */,
 				CAA0C60F18BCB836007B2B69 /* ExperimentTests.m in Sources */,
+				CDE80AD218C09CC1004A9C1E /* RepositoryTests.m in Sources */,
 				CAA0C61318BCB871007B2B69 /* LevelBoardTests.m in Sources */,
 				CAA0C60B18BCB7FE007B2B69 /* DeserializerTests.m in Sources */,
 				CAA0C61718BCB8B9007B2B69 /* LevelStructureTests.m in Sources */,
 				CA1FC21718B3B8D600E92A06 /* SaltrTests.m in Sources */,
 				CAA0C60D18BCB821007B2B69 /* DeviceTests.m in Sources */,
 				CAA0C61118BCB851007B2B69 /* FeatureTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD55D6D818C0879800222E8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD55D6E718C0879800222E8C /* main.m in Sources */,
+				CD55D6F418C0879800222E8C /* PSViewController.m in Sources */,
+				CD55D6EB18C0879800222E8C /* PSAppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CD55D6F718C0879800222E8C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CD55D70F18C087C900222E8C /* SaltrTestAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		CDD7408A18BFC0FA00F2306D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -511,6 +812,21 @@
 			target = CA1FC1F618B3B8D600E92A06 /* Saltr */;
 			targetProxy = CA1FC20D18B3B8D600E92A06 /* PBXContainerItemProxy */;
 		};
+		CD55D70018C0879800222E8C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CD55D6DB18C0879800222E8C /* SaltrTestApp */;
+			targetProxy = CD55D6FF18C0879800222E8C /* PBXContainerItemProxy */;
+		};
+		CDE80ACE18C08849004A9C1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CA1FC1F618B3B8D600E92A06 /* Saltr */;
+			targetProxy = CDE80ACD18C08849004A9C1E /* PBXContainerItemProxy */;
+		};
+		CDE80AD018C08849004A9C1E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = CDD7408D18BFC0FA00F2306D /* SaltrResource */;
+			targetProxy = CDE80ACF18C08849004A9C1E /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -518,6 +834,46 @@
 			isa = PBXVariantGroup;
 			children = (
 				CA1FC21418B3B8D600E92A06 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CD55D6E318C0879800222E8C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD55D6E418C0879800222E8C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CD55D6EC18C0879800222E8C /* Main_iPhone.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD55D6ED18C0879800222E8C /* Base */,
+			);
+			name = Main_iPhone.storyboard;
+			sourceTree = "<group>";
+		};
+		CD55D6EF18C0879800222E8C /* Main_iPad.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD55D6F018C0879800222E8C /* Base */,
+			);
+			name = Main_iPad.storyboard;
+			sourceTree = "<group>";
+		};
+		CD55D70418C0879800222E8C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CD55D70518C0879800222E8C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		CDD7409318BFC0FA00F2306D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				CDD7409418BFC0FA00F2306D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
@@ -631,6 +987,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SaltrTestApp.app/SaltrTestApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -644,6 +1001,7 @@
 				);
 				INFOPLIST_FILE = "SaltrTests/SaltrTests-Info.plist";
 				PRODUCT_NAME = SaltrTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
 			name = Debug;
@@ -652,6 +1010,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SaltrTestApp.app/SaltrTestApp";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -661,7 +1020,133 @@
 				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
 				INFOPLIST_FILE = "SaltrTests/SaltrTests-Info.plist";
 				PRODUCT_NAME = SaltrTests;
+				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		CD55D70A18C0879900222E8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SaltrTestApp/SaltrTestApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SaltrTestApp/SaltrTestApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		CD55D70B18C0879900222E8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SaltrTestApp/SaltrTestApp-Prefix.pch";
+				INFOPLIST_FILE = "SaltrTestApp/SaltrTestApp-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		CD55D70D18C0879900222E8C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SaltrTestApp.app/SaltrTestApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SaltrTestApp/SaltrTestApp-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SaltrTestAppTests/SaltrTestAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		CD55D70E18C0879900222E8C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_INCLUDING_64_BIT)";
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SaltrTestApp.app/SaltrTestApp";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SaltrTestApp/SaltrTestApp-Prefix.pch";
+				INFOPLIST_FILE = "SaltrTestAppTests/SaltrTestAppTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		CDD7409818BFC0FA00F2306D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Instigate Mobile Team (42QU8UC5Z4)";
+				COMBINE_HIDPI_IMAGES = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SaltrResource/SaltrResource-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "SaltrResource/SaltrResource-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = Saltr;
+				PROVISIONING_PROFILE = "6C2B6D9C-6636-4A6B-80A7-8AF9CF48D865";
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		CDD7409918BFC0FA00F2306D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer: Instigate Mobile Team (42QU8UC5Z4)";
+				COMBINE_HIDPI_IMAGES = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SaltrResource/SaltrResource-Prefix.pch";
+				INFOPLIST_FILE = "SaltrResource/SaltrResource-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PRODUCT_NAME = Saltr;
+				PROVISIONING_PROFILE = "6C2B6D9C-6636-4A6B-80A7-8AF9CF48D865";
+				WRAPPER_EXTENSION = bundle;
 			};
 			name = Release;
 		};
@@ -691,6 +1176,33 @@
 			buildConfigurations = (
 				CA1FC21E18B3B8D600E92A06 /* Debug */,
 				CA1FC21F18B3B8D600E92A06 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD55D70918C0879900222E8C /* Build configuration list for PBXNativeTarget "SaltrTestApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD55D70A18C0879900222E8C /* Debug */,
+				CD55D70B18C0879900222E8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CD55D70C18C0879900222E8C /* Build configuration list for PBXNativeTarget "SaltrTestAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CD55D70D18C0879900222E8C /* Debug */,
+				CD55D70E18C0879900222E8C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		CDD7409718BFC0FA00F2306D /* Build configuration list for PBXNativeTarget "SaltrResource" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CDD7409818BFC0FA00F2306D /* Debug */,
+				CDD7409918BFC0FA00F2306D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
