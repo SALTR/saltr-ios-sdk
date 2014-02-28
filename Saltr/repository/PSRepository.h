@@ -19,36 +19,42 @@
 @interface PSRepository : NSObject
 
 /**
+ * @brief Returns the path of resource bundle that library uses
+ * @return - the bundle path, where the json data files are stored
+ */
++ (NSBundle *)libraryBundle;
+
+/**
  * @brief Gets the object from the file system
- * @param filename - the name of file to be obtained
+ * @param fileName - the name of file to be obtained
  * @return - the obtained file
  */
 -(PSSaltr *) objectFromStorage:(NSString *)fileName;
 
 /**
  * @brief Gets the object from the cache
- * @param filename - the name of file to be obtained
+ * @param fileName - the name of file to be obtained
  * @return - the obtained file
  */
 -(PSSaltr *) objectFromCache:(NSString *)fileName;
 
 /**
  * @brief Gets the object from the application
- * @param filename - the name of file to be obtained
+ * @param fileName - the name of file to be obtained
  * @return - the obtained file
  */
 -(PSSaltr *) objectFromApplication:(NSString *)fileName;
 
 /**
  * @brief Gets the version of object
- * @param filename - the filename of obtaining object
+ * @param fileName - the filename of obtaining object
  * @return - object version
  */
 -(NSString *) objectVersion:(NSString *)fileName;
 
 /**
  * @brief Caches the given object 
- * @param filename - the name of caching object
+ * @param fileName - the name of caching object
  * @param version - the version of caching object
  * @param object - the object to be cached
  */
@@ -56,10 +62,9 @@
 
 /**
  * @brief Saves the given object into the file system
- * @param filename - the name of caching object
+ * @param fileName - the name of caching object
  * @param object - the object to be cached
  */
 -(void) saveObject:(NSString *)fileName objectToSave:(PSSaltr *)Object;
-
 
 @end

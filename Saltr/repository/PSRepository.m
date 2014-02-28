@@ -20,6 +20,17 @@
     return self;
 }
 
++ (NSBundle *)libraryBundle {
+    static NSBundle* libraryBundle = nil;
+    static dispatch_once_t predicate;
+    dispatch_once(&predicate, ^{
+        NSString* mainBundlePath = [[NSBundle mainBundle] resourcePath];
+        NSString* libraryBundlePath = [mainBundlePath stringByAppendingPathComponent:@"Saltr.bundle"];
+        libraryBundle = [NSBundle bundleWithPath:libraryBundlePath];
+    });
+    return libraryBundle;
+}
+
 -(id) objectFromStorage:(NSString *)fileName {
     /// @todo The line below is just for passing compilation
     return [NSArray new];
