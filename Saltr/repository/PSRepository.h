@@ -1,12 +1,16 @@
-//
-//  PSIRepository.h
-//  Saltr
-//
-//  Created by Instigate Mobile on 2/18/14.
-//  Copyright (c) 2014 Plexonic. All rights reserved.
-//
+/*
+ * @file
+ * Saltr
+ *
+ * Copyright Teoken LLC. (c) 2014. All rights reserved.
+ * Copying or usage of any piece of this source code without written notice from Teoken LLC is a major crime.
+ * Այս կոդը Թեոկեն ՍՊԸ ընկերության սեփականությունն է:
+ * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
+ */
 
 #import <Foundation/Foundation.h>
+
+@class PSSaltr;
 
 /**
  * @brief This class is used for getting/setting object from/into storage.
@@ -19,21 +23,21 @@
  * @param filename - the name of file to be obtained
  * @return - the obtained file
  */
--(id) objectFromStorage:(NSString *)fileName;
+-(PSSaltr *) objectFromStorage:(NSString *)fileName;
 
 /**
  * @brief Gets the object from the cache
  * @param filename - the name of file to be obtained
  * @return - the obtained file
  */
--(id) objectFromCache:(NSString *)fileName;
+-(PSSaltr *) objectFromCache:(NSString *)fileName;
 
 /**
  * @brief Gets the object from the application
  * @param filename - the name of file to be obtained
  * @return - the obtained file
  */
--(id) objectFromApplication:(NSString *)fileName;
+-(PSSaltr *) objectFromApplication:(NSString *)fileName;
 
 /**
  * @brief Gets the version of object
@@ -48,14 +52,14 @@
  * @param version - the version of caching object
  * @param object - the object to be cached
  */
--(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(id)Object;
+-(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(PSSaltr *)Object;
 
 /**
  * @brief Saves the given object into the file system
  * @param filename - the name of caching object
  * @param object - the object to be cached
  */
--(void) saveObject:(NSString *)fileName objectToSave:(id)Object;
+-(void) saveObject:(NSString *)fileName objectToSave:(PSSaltr *)Object;
 
 
 @end
