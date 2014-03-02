@@ -31,19 +31,22 @@
     return libraryBundle;
 }
 
--(id) objectFromStorage:(NSString *)fileName {
+-(NSDictionary *) objectFromStorage:(NSString *)fileName {
     /// @todo The line below is just for passing compilation
-    return [NSArray new];
+    NSString* filePath = [[[PSRepository libraryBundle] bundlePath] stringByAppendingPathComponent:fileName];
+    return [self getInternal:filePath];
 }
 
--(id) objectFromCache:(NSString *)fileName {
+-(NSDictionary *) objectFromCache:(NSString *)fileName {
     /// @todo The line below is just for passing compilation
-    return [NSArray new];
+    NSString* filePath = fileName;
+    return [self getInternal:filePath];
 }
 
--(id) objectFromApplication:(NSString *)fileName {
+-(NSDictionary *) objectFromApplication:(NSString *)fileName {
     /// @todo The line below is just for passing compilation
-    return [NSArray new];
+    NSString* filePath = fileName;
+    return [self getInternal:filePath];
 }
 
 -(NSString *) objectVersion:(NSString *)fileName {
@@ -51,12 +54,53 @@
     return [NSString new];
 }
 
--(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(id)Object {
-    
+-(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(NSDictionary *)object {
+    NSString* filePath = fileName;
+    [self saveInternal:filePath objectToSave:object];
 }
 
--(void) saveObject:(NSString *)fileName objectToSave:(id)Object {
-    
+-(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object {
+    NSString* filePath = [[[PSRepository libraryBundle] bundlePath] stringByAppendingPathComponent:fileName];
+    [self saveInternal:filePath objectToSave:object];
+}
+
+#pragma mark private functions
+
+/// @todo should be tested
+-(NSDictionary *) getInternal:(NSString *)filePath {
+    @try {
+        NSData *data = [NSData dataWithContentsOfFile:filePath];
+        if (data) {
+            NSError* error = nil;
+            NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+            if (error) {
+                NSLog(@"JSONObjectWithData error: %@", error);
+                return nil;
+            }
+            
+            return dictionary;
+        }
+    } @catch (NSError* error) {
+        NSLog(@"[MobileStorageEngine] : error while getting object.\nError : %@", [[error userInfo] description]);
+    }
+    @finally {
+        NSLog(@"Done");
+    }
+    return nil;
+}
+
+-(void) saveInternal:(NSString *) filePath objectToSave:(id)object {
+    @try {
+        NSError* error = nil;
+        NSString *jsonString = [[NSString alloc] initWithData:object encoding:NSUTF8StringEncoding];
+        [jsonString writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+        
+    } @catch (NSError* error) {
+        NSLog(@"[MobileStorageEngine] : error while saving object.\nError : %@", [[error userInfo] description]);
+    }
+    @finally {
+        NSLog(@"Done");
+    }
 }
 
 @end

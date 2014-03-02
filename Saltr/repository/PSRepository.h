@@ -29,21 +29,21 @@
  * @param fileName - the name of file to be obtained
  * @return - the obtained file
  */
--(PSSaltr *) objectFromStorage:(NSString *)fileName;
+-(NSDictionary *) objectFromStorage:(NSString *)fileName;
 
 /**
  * @brief Gets the object from the cache
  * @param fileName - the name of file to be obtained
  * @return - the obtained file
  */
--(PSSaltr *) objectFromCache:(NSString *)fileName;
+-(NSDictionary *) objectFromCache:(NSString *)fileName;
 
 /**
  * @brief Gets the object from the application
  * @param fileName - the name of file to be obtained
  * @return - the obtained file
  */
--(PSSaltr *) objectFromApplication:(NSString *)fileName;
+-(NSDictionary *) objectFromApplication:(NSString *)fileName;
 
 /**
  * @brief Gets the version of object
@@ -58,13 +58,13 @@
  * @param version - the version of caching object
  * @param object - the object to be cached
  */
--(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(PSSaltr *)Object;
+-(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(NSDictionary *)object;
 
 /**
  * @brief Saves the given object into the file system
  * @param fileName - the name of caching object
  * @param object - the object to be cached
  */
--(void) saveObject:(NSString *)fileName objectToSave:(PSSaltr *)Object;
+-(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object;
 
 @end

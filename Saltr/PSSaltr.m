@@ -1,29 +1,61 @@
-//
-//  PSSaltr.m
-//  Saltr
-//
-//  Created by Instigate Mobile on 2/18/14.
-//  Copyright (c) 2014 Plexonic. All rights reserved.
-//
+/*
+ * @file
+ * Saltr
+ *
+ * Copyright Teoken LLC. (c) 2014. All rights reserved.
+ * Copying or usage of any piece of this source code without written notice from Teoken LLC is a major crime.
+ * Այս կոդը Թեոկեն ՍՊԸ ընկերության սեփականությունն է:
+ * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
+ */
 
 #import "PSSaltr.h"
 #import "PSFeature.h"
 #import "PSResource.h"
+#import "PSDeserializer.h"
+#import "PSExperiment.h"
+#import "PSLevelPackStructure.h"
+#import "PSPartner.h"
+#import "PSDevice.h"
 
-//
-#define APP_DATA_URL_CACHE "app_data_cache.json";
-#define APP_DATA_URL_INTERNAL "saltr/app_data.json";
-#define LEVEL_DATA_URL_LOCAL_TEMPLATE "saltr/pack_{0}/level_{1}.json";
-#define LEVEL_DATA_URL_CACHE_TEMPLATE "pack_{0}_level_{1}.json";
+/**
+ * @def APP_DATA_URL_CACHE
+ * The filename of json file in application data cache
+ */
+#define APP_DATA_URL_CACHE @"app_data_cache.json"
 
-#define RESULT_SUCCEED "SUCCEED";
-#define RESULT_ERROR "ERROR";
+/**
+ * @def APP_DATA_URL_INTERNAL
+ * The filename of json file in application internal directory
+ */
+#define APP_DATA_URL_INTERNAL @"saltr/app_data.json"
+
+/**
+ * @def LEVEL_DATA_URL_LOCAL_TEMPLATE
+ * The filename of level data json file in application local directory
+ */
+#define LEVEL_DATA_URL_LOCAL_TEMPLATE @"saltr/pack_{0}/level_{1}.json"
+
+/**
+ * @def LEVEL_DATA_URL_CACHE_TEMPLATE
+ * The filename of level data json file in application cache directory
+ */
+#define LEVEL_DATA_URL_CACHE_TEMPLATE @"pack_{0}_level_{1}.json"
+
+#define RESULT_SUCCEED @"SUCCEED"
+#define RESULT_ERROR @"ERROR"
 
 
 @interface PSSaltr() {
     BOOL _isLoading;
     /// @todo the meaning of this boolean is not clear yet
     BOOL _ready;
+    NSString* _saltrUserId;
+    PSDeserializer* _deserializer;
+    NSArray* _experiments;
+    NSArray* _levelPackStructures;
+    NSDictionary* _features;
+    PSDevice* _device;
+    PSPartner* _partner;
 }
 
 @end
@@ -45,6 +77,8 @@
     self = [super init];
     if (self) {
         self.repository = [PSRepository new];
+        _deserializer = [PSDeserializer new];
+        
         _isLoading = false;
         _ready = false;
     }
@@ -80,12 +114,16 @@
     return _sharedObject;
 }
 
+-(PSFeature *) feature :(NSString *)token {
+    return [_features objectForKey:token];
+}
+
 -(void) setupPartnerWithId:(NSString *)partnerId andPartnerType:(NSString *)partnerType {
-    
+    _partner = [[PSPartner alloc] initWithPartnerId:partnerId andPartnerType:partnerType];
 }
 
 -(void) setupDeviceWithId:(NSString *)deviceId andDeviceType:(NSString *)deviceType {
-    
+    _device = [[PSDevice alloc] initWithDeviceId:deviceId andDeviceType:deviceType];
 }
 
 -(void) defineFeatureWithToken:(NSString*)token andProperties:(NSArray *)properties {    
@@ -98,56 +136,174 @@
     }
 }
 
+/// @todo the interface of PSResource class is not ready yet
 -(void) appData {
-
     if (_isLoading) {
         return;
     }
     _isLoading = true;
     _ready = false;
+    void (^appDataAssetLoadErrorHandler)(PSResource*) = ^(PSResource* asset) {
+        NSLog(@"[SaltAPI] App data is failed to load.");
+        
+        [self loadAppDataInternal];
+        //    asset.dispose();
+    };
+    void (^appDataAssetLoadCompleteHandler)(PSResource*) = ^(PSResource* asset) {
+        NSLog(@"[SaltAPI] App data is loaded.");
+//        id data = asset.jsonData;
+//        id jsonData = data.responseData;
+//        NSLog(@"[SaltClient] Loaded App data. json = %@",jsonData);
+//        if (!jsonData || ![[data objectForKey:@"status"] isEqualToString:RESULT_SUCCEED]) {
+//            [self loadAppDataInternal];
+//        } else {
+//            [self loadAppDataSuccessHandler:jsonData];
+//            [repository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
+//        }
+//        [asset dispose];
+    };
     PSResource* asset = [self createAppDataResource:appDataAssetLoadCompleteHandler errorHandler:appDataAssetLoadErrorHandler];
 //    [asset load];
-
-    if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingAppDataRequest)]) {
-        [saltrRequestDelegate didFinishGettingAppDataRequest];
-    }
-    if ([saltrRequestDelegate respondsToSelector:@selector(didFailGettingAppDataRequest)]) {
-        [saltrRequestDelegate didFailGettingAppDataRequest];
-    }
 }
 
 -(void) levelDataBodyWithLevelPack:(PSLevelPackStructure*)levelPackStructure
-                    levelStructure:(PSLevelStructure*)levelStructure {
+                    levelStructure:(PSLevelStructure*)levelStructure andCacheEnabled:(BOOL)cacheEnabled {
+    if (!cacheEnabled) {
+        [self loadLevelDataFromServer:levelPackStructure levelData:levelStructure forceNoCache:YES];
+        return;
+    }
     
+    //if there are no version change than load from cache
+    NSString* cachedFileName = nil; //[Utils formatString(LEVEL_DATA_URL_CACHE_TEMPLATE, levelPackData.index, levelData.index)];
+
+    if (levelStructure.version == [repository objectVersion:cachedFileName]) {
+        [self loadLevelDataCached:levelStructure cachedFileName:cachedFileName];
+    } else {
+        [self loadLevelDataFromServer:levelPackStructure levelData:levelStructure forceNoCache:NO];
+    }
+}
+
+-(void) addUserPropertyWithNames:(NSArray *)propertyNames
+                          values:(NSArray *)propertyValues
+                   andOperations:(NSArray *)operations {
+    
+}
+
+#pragma mark private functions
+
+/// @todo the implementation should be added
+-(PSResource *)createAppDataResource:(void (^)(PSResource *))appDataAssetLoadCompleteHandler errorHandler:(void (^)(PSResource *))appDataAssetLoadErrorHandler {
+    NSLog(@"[SaltAPI] App data is failed to load.");
+    return [PSResource new];
+}
+
+-(void) loadAppDataSuccessHandler:(NSDictionary *)jsonData {
+    _isLoading = false;
+    _ready = true;
+    /// @todo the assignment below should be commented out
+    // _saltrUserId = jsonData.saltId;
+    
+    _experiments = [_deserializer decodeExperimentsFromData:jsonData];
+    _levelPackStructures = [_deserializer decodeLevelsFromData:jsonData];
+    NSDictionary* saltrFeatures = [_deserializer decodeFeaturesFromData:jsonData];
+    //merging with defaults...
+
+    for (NSString* key in [saltrFeatures allKeys]) {
+        PSFeature* saltrFeature = [saltrFeatures objectForKey:key];
+        PSFeature* defaultFeature = [_features objectForKey:key];
+        saltrFeature.defaultProperties = defaultFeature.defaultProperties;
+        [_features setValue:saltrFeature forKey:key];
+    }
+    
+    NSLog(@"[SaltClient] packs = %d", [_levelPackStructures count]);
+    if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingAppDataRequest)]) {
+        [saltrRequestDelegate didFinishGettingAppDataRequest];
+    }
+    /// @todo the meaning of the boolean below is not clear.
+    // The condition will be always true as the mentioned boolean never changes its value.
+//    if (_isInDevMode) {
+        [self syncFeatures];
+//    }
+}
+
+-(void) loadAppDataFailHandler {
+    _isLoading = false;
+    _ready = false;
+    if ([saltrRequestDelegate respondsToSelector:@selector(didFailGettingAppDataRequest)]) {
+        [saltrRequestDelegate didFailGettingAppDataRequest];
+    }
+    NSLog(@"[SaltClient] ERROR: Level Packs are not loaded.");
+}
+
+/// @todo the implementation should be added
+-(void) syncFeatures {
+    
+}
+
+-(void)loadLevelDataFromServer:(PSLevelPackStructure *)levelPackData
+                     levelData:(PSLevelStructure *)levelData forceNoCache:(BOOL)forceNoCache {
+    
+}
+
+-(BOOL) loadLevelDataCached:(PSLevelStructure *)levelData
+             cachedFileName:(NSString *) cachedFileName {
+    NSLog(@"[SaltClient::loadLevelData] LOADING LEVEL DATA CACHE IMMEDIATELY.");
+    NSDictionary* data = [repository objectFromCache:cachedFileName];
+    if (data) {
+        [self levelLoadSuccessHandler:levelData data:data];
+        return YES;
+    }
+    return NO;
+
+}
+
+-(void) levelLoadSuccessHandler:(PSLevelStructure *)levelData data:(id)data {
+    [levelData parseData:data];
     if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingLevelDataBodyWithLevelPackRequest)]) {
         [saltrRequestDelegate didFinishGettingLevelDataBodyWithLevelPackRequest];
     }
+}
+
+-(void)levelLoadErrorHandler {
+    NSLog(@"[SaltClient] ERROR: Level data is not loaded.");
     if ([saltrRequestDelegate respondsToSelector:@selector(didFailGettingLevelDataBodyWithLevelPackRequest)]) {
         [saltrRequestDelegate didFailGettingLevelDataBodyWithLevelPackRequest];
     }
 }
 
--(void) addPropertyPropertyWithSaltrUserId:(NSString *)saltrUserId
-                        andSaltInstanceKey:(NSString *)saltrInstanceKey
-                          andPropertyNames:(NSArray *)propertyNames
-                         andPropertyValues:(NSArray *)propertyValues
-                             andOperations:(NSArray *)operations {
-    
+-(void)loadLevelDataLocally:(PSLevelPackStructure *)levelPackData
+                  levelData:(PSLevelStructure *)levelData cachedFileName:(NSString *)cachedFileName {
+    if ([self loadLevelDataCached:levelData cachedFileName:cachedFileName]) {
+        return;
+    }
+    [self loadLevelDataLocally:levelPackData levelData:levelData cachedFileName:cachedFileName];
 }
 
-/// private functions
+-(void) loadLevelDataInternal:(PSLevelPackStructure *)levelPackData levelData:(PSLevelStructure *)levelData {
+    NSString* url = nil;//formatString(LEVEL_DATA_URL_LOCAL_TEMPLATE, levelPackData.index, levelData.index);
+    NSDictionary* data = [repository objectFromApplication:url];
+    if (data) {
+        [self levelLoadSuccessHandler:levelData data:data];
+    } else {
+        [self levelLoadErrorHandler];
+    }
+}
 
-void (^appDataAssetLoadCompleteHandler)(PSResource*) = ^(PSResource* asset) {
-    NSLog(@"[SaltAPI] App data is loaded.");
-};
-
-void (^appDataAssetLoadErrorHandler)(PSResource*) = ^(PSResource* asset) {
-    NSLog(@"[SaltAPI] App data is failed to load.");
-};
-
-
--(PSResource *)createAppDataResource:(void (^)(PSResource *))appDataAssetLoadCompleteHandler errorHandler:(void (^)(PSResource *))appDataAssetLoadErrorHandler {
-    return [PSResource new];
+-(void) loadAppDataInternal {
+    NSLog(@"[SaltClient] NO Internet available - so loading internal app data.");
+    NSDictionary* data = [repository objectFromCache:APP_DATA_URL_CACHE];
+    if (data) {
+        NSLog(@"[SaltClient] Loading App data from Cache folder.");
+        [self loadAppDataSuccessHandler:data];
+    } else {
+        NSLog(@"[SaltClient] Loading App data from application folder.");
+        data = [repository objectFromApplication:APP_DATA_URL_INTERNAL];
+        if (data) {
+            [self loadAppDataSuccessHandler:data];
+        } else {
+            [self loadAppDataFailHandler];
+        }
+    }
 }
 
 @end

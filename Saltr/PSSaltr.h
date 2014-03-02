@@ -13,6 +13,8 @@
 #import "PSLevelPackStructure.h"
 #import "PSLevelStructure.h"
 
+@class PSFeature;
+
 /// @todo Comments will be revised as more info is available
 
 /// Protocol which defines required methods for managing success and fail responses for the requests
@@ -36,10 +38,11 @@
 
 /**
  * @brief This is public interface for @b PSSaltr ios SDK. To us the sdk user 
- * needs to include this header file, implement @SatrRequestDelegate protocol
+ * needs to include this header file, implement @b SatrRequestDelegate protocol
  * and initialize the properties listed below.
  */
 @interface PSSaltr : NSObject {
+    /// The delegate of @b SaltrRequestDelegate protocol
     __unsafe_unretained id <SaltrRequestDelegate> saltrRequestDelegate;
 }
 
@@ -52,35 +55,36 @@
 /// The application version
 @property (nonatomic, strong) NSString* appVersion;
 
-/// YES if loading is done, otherwise NO
-@property (nonatomic, assign) BOOL ready;
-
 /// @todo this may be member
 @property (nonatomic, strong) PSRepository* repository;
 
+/// YES if loading is done, otherwise NO
+@property (nonatomic, assign, readonly) BOOL ready;
+
 /// the features of current @b Saltr object
-@property (nonatomic, strong) NSDictionary* features;
+@property (nonatomic, strong, readonly) NSDictionary* features;
 
 /// the level package structures of current  @b Saltr object
-@property (nonatomic, strong) NSArray* levelPackStructures;
+@property (nonatomic, strong, readonly) NSArray* levelPackStructures;
 
 /// the experiments of current  @b Saltr object
-@property (nonatomic, strong) NSArray* experiments;
+@property (nonatomic, strong, readonly) NSArray* experiments;
 
 /// The delegate of @b SaltrRequestDelegate protocol
 @property (nonatomic, assign) id <SaltrRequestDelegate> saltrRequestDelegate;
 
+
+/// Returns the only instance of Saltr class
++ (PSSaltr *)sharedInstance;
+
 /**
  * @brief Initializes Saltr class with the given instanceKey and enableCache flag
  *
- * @param instanceKey - the initialization key to initialize the current @br Saltr object
+ * @param instanceKey - the initialization key to initialize the current @b Saltr object
  * @param enableCache - YES, if caching should be enabled, otherwise NO
  * @return - The only instance of Saltr class
  */
 +(id) saltrWithInstanceKey:(NSString *)instanceKey andCacheEnabled:(BOOL)enableCache;
-
-/// Returns the only instance of Saltr class
-+ (PSSaltr *)sharedInstance;
 
 /**
  * @brief Setup partner with the given ID and type
@@ -119,16 +123,28 @@
  * @brief Gets the body of level data
  * @param levelPackStructure - 
  * @param levelStructure - 
+ * @param enableCache - YES, if caching should be enabled, otherwise NO
  */
 -(void) levelDataBodyWithLevelPack:(PSLevelPackStructure*)levelPackStructure
-                    levelStructure:(PSLevelStructure*)levelStructure;
+                    levelStructure:(PSLevelStructure*)levelStructure
+                   andCacheEnabled:(BOOL)enableCache;
 
- /// @todo clarify use-case
--(void) addPropertyPropertyWithSaltrUserId:(NSString *)saltrUserId
-                        andSaltInstanceKey:(NSString *)saltrInstanceKey
-                          andPropertyNames:(NSArray *)propertyNames
-                          andPropertyValues:(NSArray *)propertyValues
-                             andOperations:(NSArray *)operations;
+/**
+ * @brief Adds user properties to the current @b Saltr object
+ * @param propertyNames - the list of properties
+ * @param propertyValues - the list of property values
+ * @param operations - the list of operation on that properties
+ */
+-(void) addUserPropertyWithNames:(NSArray *)propertyNames
+                          values:(NSArray *)propertyValues
+                   andOperations:(NSArray *)operations;
+
+/**
+ * @brief Gets the feature corresponding to the given token
+ * @param token - token for which feature should be obtained
+ * @return - obtaining feature
+ */
+-(PSFeature *) feature :(NSString *)token;
 
 
 @end
