@@ -9,13 +9,15 @@
  */
 
 #import <XCTest/XCTest.h>
+#import "PSRepository.h"
+#import "PSLevelParser.h"
 #import "PSLevelStructure.h"
 
-@interface LevelStructureTests : XCTestCase
+@interface LevelParserTests : XCTestCase
 
 @end
 
-@implementation LevelStructureTests
+@implementation LevelParserTests
 
 - (void)setUp
 {
@@ -29,10 +31,13 @@
     [super tearDown];
 }
 
-- (void)testLevelStructureObject
+- (void)testLevelParsing
 {
-    PSLevelStructure* level = [[PSLevelStructure alloc] initWithLevelId:@"level_1" index:0 dataUrl:@"http://example.com" properties:nil andVersion:@"v.01"];
-    XCTAssertNotNil(level, @"Object allocation/initialization fails");
+    PSRepository* repository = [[PSRepository alloc] init];
+    id data = [repository objectFromStorage:@"level.json"];
+    PSLevelStructure* level = [[PSLevelStructure alloc] init];
+    [[PSLevelParser sharedInstance] parseData:data andFillLevelStructure:level];
+    NSLog(@"BOARD DATA %@", level);
 }
 
 @end

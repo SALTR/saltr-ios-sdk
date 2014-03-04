@@ -13,7 +13,7 @@
 @interface PSBoardData : NSObject
 
 @property (nonatomic, strong) NSDictionary* assetMap;
-@property (nonatomic, strong) id keyset;
+@property (nonatomic, strong) NSDictionary* keyset;
 @property (nonatomic, strong) NSDictionary* stateMap;
 
 @end

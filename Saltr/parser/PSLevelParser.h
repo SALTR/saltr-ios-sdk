@@ -12,10 +12,27 @@
 
 @class PSVector2D;
 @class PSBoardData;
+@class PSLevelStructure;
 
 @interface PSLevelParser : NSObject
 
+//TODO review the dataFetched property, whether it is really needed
+@property (nonatomic, assign, readonly) BOOL dataFetched;
+
++(instancetype) sharedInstance;
+
+//Compile time error messages to avoid multiple allocation of @b SLTSaltr instance
++(instancetype) alloc __attribute__((unavailable("alloc not available, call sharedInstance instead")));
+
+//Compile time error messages to avoid multiple initialization of @b SLTSaltr instance
+-(instancetype) init __attribute__((unavailable("init not available, call sharedInstance instead")));
+
+//Compile time error messages to avoid multiple allocation of @b SLTSaltr instance
++(instancetype) new __attribute__((unavailable("new not available, call sharedInstance instead")));
+
 //TODO The comments will be filled during implementation of functionality.
+
+- (void)parseData:(id)data andFillLevelStructure:(PSLevelStructure*)level;
 
 /**
  * @brief 
@@ -28,7 +45,7 @@
  * TODO outputboard parameter should be reviewed, whether it is needed to be passed as a variable to chunk and composite classes.
  * This static function also needs to be reviewed, whethere Level parser needs such public API
  */
-+ (void)parseBoard:(PSVector2D*)outputBoard withBoard:(id)board andBoardData:(PSBoardData*)boardData;
+- (void)parseBoard:(PSVector2D*)outputBoard withBoard:(id)board andBoardData:(PSBoardData*)boardData;
 
 /**
  * @brief
@@ -40,7 +57,7 @@
  *
  * TODO The chunk implementation specific part should be moved to PSChunk class.
  */
-+ (void)regenerateChunks:(PSVector2D*)outputBoard withBoard:(id)board andBoardData:(PSBoardData*)boardData;
+- (void)regenerateChunks:(PSVector2D*)outputBoard withBoard:(id)board andBoardData:(PSBoardData*)boardData;
 
 /**
  * @brief
@@ -50,6 +67,6 @@
  * @return -
  *
  */
-+ (PSBoardData*)parseBoardData:(PSBoardData*)boardData withData:(id)data;
+- (PSBoardData*)parseBoardData:(id)data;
 
 @end

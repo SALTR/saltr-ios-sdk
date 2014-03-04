@@ -70,6 +70,7 @@
 		CDE80ACB18C0883A004A9C1E /* Saltr.bundle in Resources */ = {isa = PBXBuildFile; fileRef = CDD7408E18BFC0FA00F2306D /* Saltr.bundle */; };
 		CDE80ACC18C08840004A9C1E /* libSaltr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1F718B3B8D600E92A06 /* libSaltr.a */; };
 		CDE80AD218C09CC1004A9C1E /* RepositoryTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE80AD118C09CC1004A9C1E /* RepositoryTests.m */; };
+		CDE80AD618C0CB5A004A9C1E /* LevelParserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDE80AD518C0CB5A004A9C1E /* LevelParserTests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -185,6 +186,8 @@
 		CAA0C61418BCB89A007B2B69 /* LevelPackStructureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelPackStructureTests.m; sourceTree = "<group>"; };
 		CAA0C61618BCB8B9007B2B69 /* LevelStructureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelStructureTests.m; sourceTree = "<group>"; };
 		CAA0C61818BCB8DE007B2B69 /* PartnerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerTests.m; sourceTree = "<group>"; };
+		CD05F8C418C4D8A500CB782C /* PSLevelStructure_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSLevelStructure_Private.h; sourceTree = "<group>"; };
+		CD05F8C518C5B88800CB782C /* PSLevelBoard_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSLevelBoard_Private.h; sourceTree = "<group>"; };
 		CD095F7B18BF7E4B00E38369 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		CD095F8C18BF7E9600E38369 /* appdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appdata.json; sourceTree = "<group>"; };
 		CD095F8D18BF7E9600E38369 /* level.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level.json; sourceTree = "<group>"; };
@@ -210,6 +213,7 @@
 		CDD7409418BFC0FA00F2306D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CDD7409618BFC0FA00F2306D /* SaltrResource-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SaltrResource-Prefix.pch"; sourceTree = "<group>"; };
 		CDE80AD118C09CC1004A9C1E /* RepositoryTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RepositoryTests.m; sourceTree = "<group>"; };
+		CDE80AD518C0CB5A004A9C1E /* LevelParserTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelParserTests.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -311,6 +315,7 @@
 				CA1FC23F18B3C39E00E92A06 /* parser */,
 				CA1FC1FF18B3B8D600E92A06 /* PSSaltr.h */,
 				CA1FC20118B3B8D600E92A06 /* PSSaltr.m */,
+				CD05F8C318C4D7F700CB782C /* private */,
 				CA1FC1FD18B3B8D600E92A06 /* Supporting Files */,
 				CA1FC22A18B3C33200E92A06 /* PSDeserializer.h */,
 				CA1FC22B18B3C33200E92A06 /* PSDeserializer.m */,
@@ -344,6 +349,7 @@
 		CA1FC21018B3B8D600E92A06 /* SaltrTests */ = {
 			isa = PBXGroup;
 			children = (
+				CDE80AD518C0CB5A004A9C1E /* LevelParserTests.m */,
 				CDE80AD118C09CC1004A9C1E /* RepositoryTests.m */,
 				CAA0C61818BCB8DE007B2B69 /* PartnerTests.m */,
 				CAA0C61618BCB8B9007B2B69 /* LevelStructureTests.m */,
@@ -466,6 +472,15 @@
 				CA1FC27018B3C67300E92A06 /* PSSimpleAssetTemplate.m */,
 			);
 			name = simple;
+			sourceTree = "<group>";
+		};
+		CD05F8C318C4D7F700CB782C /* private */ = {
+			isa = PBXGroup;
+			children = (
+				CD05F8C418C4D8A500CB782C /* PSLevelStructure_Private.h */,
+				CD05F8C518C5B88800CB782C /* PSLevelBoard_Private.h */,
+			);
+			path = private;
 			sourceTree = "<group>";
 		};
 		CD095F8718BF7E6100E38369 /* testdata */ = {
@@ -638,6 +653,7 @@
 		CA1FC1EF18B3B8D600E92A06 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = SLT;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Plexonic;
 				TargetAttributes = {
@@ -773,6 +789,7 @@
 				CAA0C61318BCB871007B2B69 /* LevelBoardTests.m in Sources */,
 				CAA0C60B18BCB7FE007B2B69 /* DeserializerTests.m in Sources */,
 				CAA0C61718BCB8B9007B2B69 /* LevelStructureTests.m in Sources */,
+				CDE80AD618C0CB5A004A9C1E /* LevelParserTests.m in Sources */,
 				CA1FC21718B3B8D600E92A06 /* SaltrTests.m in Sources */,
 				CAA0C60D18BCB821007B2B69 /* DeviceTests.m in Sources */,
 				CAA0C61118BCB851007B2B69 /* FeatureTests.m in Sources */,

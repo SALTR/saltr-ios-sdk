@@ -35,7 +35,7 @@
 }
 
 - (NSString *)description {
-    return [NSString stringWithFormat: @"Feature { token : %@ , value : %@}", self.token, self.properties];
+    return [NSString stringWithFormat: @"Feature {[token : %@], [value : %@]}", self.token, self.properties];
 }
 
 @end

@@ -8,13 +8,12 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import <Foundation/Foundation.h>
+#import "PSLevelStructure.h"
 
-@interface PSSimpleAssetTemplate : NSObject
+@interface PSLevelStructure ()
 
-@property (nonatomic, strong, readonly) NSString* typeKey;
-@property (nonatomic, strong, readonly) NSDictionary* keys;
-
-- (id)initWithTypeKey:(NSString*)typeKey andKeys:(NSDictionary*)keys;
+@property (nonatomic, strong, readwrite) PSBoardData* boardData;
+@property (nonatomic, strong, readwrite) NSDictionary* innerProperties;
+@property (nonatomic, strong, readwrite) NSMutableDictionary* boards;
 
 @end

@@ -8,14 +8,14 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSLevelStructure.h"
+#import "PSLevelStructure_Private.h"
+#import "PSLevelParser.h"
+#import "PSBoardData.h"
 
 @interface PSLevelStructure() {
-
     NSDictionary* _boards;
     id _data;
 }
-
 @end
 
 @implementation PSLevelStructure
@@ -24,11 +24,14 @@
 @synthesize dataUrl = _dataUrl;
 @synthesize index = _index;
 @synthesize properties = _properties;
-@synthesize dataFetched = _dataFetched;
-@synthesize keyset = _keyset;
 @synthesize version = _version;
+@synthesize boardData;
+@synthesize innerProperties;
+@synthesize boards;
 
--(id) initWithLevelId:(NSString*)theId index:(NSInteger)theIndex dataUrl:(NSString*)theDataUrl properties:(id)theProperties andVersion:(NSString*)theVersion
+//TODO It should be nice to have validation for the values of parameters.
+
+- (id)initWithLevelId:(NSString*)theId index:(NSInteger)theIndex dataUrl:(NSString*)theDataUrl properties:(id)theProperties andVersion:(NSString*)theVersion
 {
     self = [super init];
     if (self) {
@@ -41,18 +44,17 @@
     return self;
 }
 
+- (NSDictionary*)keyset
+{
+    return boardData.keyset;
+}
+
 - (NSString*)boardWithId:(NSString*)boardId
 {
-    return NULL;
-}
-
-- (id)innerProperties
-{
-    return NULL;
-}
-
-- (void)parseData:(id)data
-{
+    if (nil != boardId) {
+        return [boards objectForKey:boardId];
+    }
+    return nil;
 }
 
 @end

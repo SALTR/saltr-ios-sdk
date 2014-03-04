@@ -73,9 +73,17 @@
 /// The delegate of @b SaltrRequestDelegate protocol
 @property (nonatomic, assign) id <SaltrRequestDelegate> saltrRequestDelegate;
 
-
 /// Returns the only instance of Saltr class
-+ (PSSaltr *)sharedInstance;
++ (instancetype)sharedInstance;
+
+//Compile time error messages to avoid multiple allocation of @b SLTSaltr instance
++(instancetype) alloc __attribute__((unavailable("alloc not available, call sharedInstance instead")));
+
+//Compile time error messages to avoid multiple initialization of @b SLTSaltr instance
+-(instancetype) init __attribute__((unavailable("init not available, call sharedInstance instead")));
+
+//Compile time error messages to avoid multiple allocation of @b SLTSaltr instance
++(instancetype) new __attribute__((unavailable("new not available, call sharedInstance instead")));
 
 /**
  * @brief Initializes Saltr class with the given instanceKey and enableCache flag

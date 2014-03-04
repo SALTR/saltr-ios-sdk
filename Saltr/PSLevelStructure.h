@@ -10,18 +10,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PSLevelStructure : NSObject
+@class PSBoardData;
 
+@interface PSLevelStructure : NSObject
 
 @property (nonatomic, strong, readonly) NSString* levelId;
 @property (nonatomic, strong, readonly) NSString* dataUrl;
 @property (nonatomic, assign, readonly) NSInteger index;
-@property (nonatomic, strong, readonly) id properties;
-//TODO review the dataFetched property, whether it is really needed
-@property (nonatomic, assign, readonly) BOOL dataFetched;
-@property (nonatomic, strong, readonly) id keyset;
+@property (nonatomic, strong, readonly) NSDictionary* properties;
+@property (nonatomic, strong, readonly) PSBoardData* boardData;
 @property (nonatomic, strong, readonly) NSString* version;
-
+@property (nonatomic, strong, readonly) NSDictionary* innerProperties;
+@property (nonatomic, strong, readonly) NSMutableDictionary* boards;
 
 /**
  * @brief Inits instance of PSLevelStructure class with given id, index, dataUrl, properties and version
@@ -38,18 +38,6 @@
 /**
  *
  */
-- (void)parseData:(id)data;
-
-/**
- *
- */
 - (NSString*)boardWithId:(NSString*)boardId;
-
-/**
- *
- */
-- (id)innerProperties;
-
-
 
 @end

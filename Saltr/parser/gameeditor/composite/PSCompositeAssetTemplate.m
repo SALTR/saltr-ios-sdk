@@ -12,4 +12,15 @@
 
 @implementation PSCompositeAssetTemplate
 
+@synthesize shifts = _shifts;
+
+- (id)initWithShifts:(NSArray*)shifts typeKey:(NSString*)typeKey andKeys:(NSDictionary*)keys
+{
+    self = [super initWithTypeKey:typeKey andKeys:keys];
+    if (self) {
+        _shifts = shifts;
+    }
+    return  self;
+}
+
 @end

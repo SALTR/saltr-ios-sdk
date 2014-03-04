@@ -8,13 +8,10 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import <Foundation/Foundation.h>
+#import "PSLevelBoard.h"
 
-@interface PSSimpleAssetTemplate : NSObject
+@interface PSLevelBoard ()
 
-@property (nonatomic, strong, readonly) NSString* typeKey;
-@property (nonatomic, strong, readonly) NSDictionary* keys;
-
-- (id)initWithTypeKey:(NSString*)typeKey andKeys:(NSDictionary*)keys;
+@property (nonatomic, strong, readwrite) PSVector2D* boardVector;
 
 @end

@@ -12,4 +12,22 @@
 
 @implementation PSSimpleAssetTemplate
 
+@synthesize typeKey = _typeKey;
+@synthesize keys = _keys;
+
+- (id)initWithTypeKey:(NSString*)typeKey andKeys:(NSDictionary*)keys
+{
+    self = [super init];
+    if (self) {
+        _typeKey = typeKey;
+        _keys = keys;
+    }
+    return self;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat: @"AssetTemplate : [type : %@], [keys : %@]", self.typeKey, self.keys];
+}
+
 @end
