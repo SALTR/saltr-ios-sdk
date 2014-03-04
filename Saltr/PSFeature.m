@@ -16,9 +16,9 @@
 @synthesize properties = _properties;
 @synthesize defaultProperties;
 
--(id) initWithToken:(NSString*)theToken
-  defaultProperties:(NSArray*)theDefaultProperties
-      andProperties:(NSArray*)theProperties
+-(id) initWithToken:(NSString* )theToken
+  defaultProperties:(NSDictionary* )theDefaultProperties
+      andProperties:(NSDictionary* )theProperties
 {
     self = [super init];
     if (self) {
@@ -29,7 +29,7 @@
     return self;
 }
 
-- (NSArray*)properties
+- (NSDictionary* )properties
 {
     return (_properties == NULL) ? self.defaultProperties : _properties;
 }

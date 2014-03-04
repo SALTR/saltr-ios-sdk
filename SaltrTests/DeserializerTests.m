@@ -47,11 +47,12 @@
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     if (data) {
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        NSDictionary* responseData = [dictionary objectForKey:@"responseData"];
         if (error) {
             XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:jsonPath], @"Error while parsing json file to dictionary");
         }
-        NSArray* decodedExperiments = [_deserializer decodeExperimentsFromData:dictionary];
-        XCTAssertTrue(decodedExperiments, @"Decoding of experiments failed!");
+        NSArray* decodedExperiments = [_deserializer decodeExperimentsFromData:responseData];
+        XCTAssertTrue([decodedExperiments count], @"Decoding of experiments failed!");
         
     }
 }
@@ -68,7 +69,7 @@
             XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:jsonPath], @"Error while parsing json file to dictionary");
         }
         NSArray* decodedLevelData = [_deserializer decodeLevelsFromData:responseData];
-        XCTAssertTrue(decodedLevelData, @"Decoding of level data failed!");
+        XCTAssertTrue([decodedLevelData count], @"Decoding of level data failed!");
     }
 }
 
@@ -79,11 +80,12 @@
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     if (data) {
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        NSDictionary* responseData = [dictionary objectForKey:@"responseData"];
         if (error) {
             XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:jsonPath], @"Error while parsing json file to dictionary");
         }
-        NSDictionary* decodedFeatures = [_deserializer decodeFeaturesFromData:dictionary];
-        XCTAssertTrue(decodedFeatures, @"Decoding of features failed!");
+        NSDictionary* decodedFeatures = [_deserializer decodeFeaturesFromData:responseData];
+        XCTAssertTrue([decodedFeatures count], @"Decoding of features failed!");
     }
 }
 

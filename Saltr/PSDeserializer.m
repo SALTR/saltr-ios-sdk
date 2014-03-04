@@ -23,7 +23,7 @@
     /// @todo should be checked whether dictionary has @"experimentInfo" key
     NSArray* experimentInfo = [data objectForKey:@"experimentInfo"];
     if (experimentInfo) {
-        for (id item in experimentInfo) {
+        for (NSDictionary* item in experimentInfo) {
             PSExperiment* experiment = [PSExperiment new];
             experiment.token = [item objectForKey:@"token"];
             experiment.partition = [item objectForKey:@"partitionName"];
@@ -57,8 +57,8 @@
     NSMutableDictionary* features = [NSMutableDictionary new];
     NSArray* featuresList = [data objectForKey:@"featureList"];
     if (featuresList) {
-        for (PSFeature* feature in featuresList) {
-            [features setObject:[[PSFeature alloc] initWithToken:feature.token defaultProperties:nil andProperties:feature.properties] forKey:feature.token];
+        for (NSDictionary* feature in featuresList) {
+            [features setObject:[[PSFeature alloc] initWithToken:[feature objectForKey:@"token"] defaultProperties:nil andProperties:[feature objectForKey:@"data"]] forKey:[feature objectForKey:@"token"]];
         }
     }
     return features;
