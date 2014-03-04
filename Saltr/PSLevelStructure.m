@@ -31,7 +31,7 @@
 
 //TODO It should be nice to have validation for the values of parameters.
 
-- (id)initWithLevelId:(NSString*)theId index:(NSInteger)theIndex dataUrl:(NSString*)theDataUrl properties:(id)theProperties andVersion:(NSString*)theVersion
+- (id)initWithLevelId:(NSString*)theId index:(NSInteger)theIndex dataUrl:(NSString*)theDataUrl properties:(NSDictionary *)theProperties andVersion:(NSString*)theVersion
 {
     self = [super init];
     if (self) {

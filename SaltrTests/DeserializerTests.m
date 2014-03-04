@@ -42,13 +42,13 @@
 
 - (void)testDecodeExperimentsFromData
 {
-    NSString* levelJsonPath = [[PSRepository libraryBundle] pathForResource:@"level" ofType:@"json"];
+    NSString* jsonPath = [[PSRepository libraryBundle] pathForResource:@"appdata" ofType:@"json"];
     NSError* error = nil;
-    NSData *data = [NSData dataWithContentsOfFile:levelJsonPath];
+    NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     if (data) {
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         if (error) {
-            XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:levelJsonPath], @"Error while parsing json file to dictionary");
+            XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:jsonPath], @"Error while parsing json file to dictionary");
         }
         NSArray* decodedExperiments = [_deserializer decodeExperimentsFromData:dictionary];
         XCTAssertTrue(decodedExperiments, @"Decoding of experiments failed!");
@@ -58,28 +58,29 @@
 
 - (void)testDecodeLevelsFromData
 {
-    NSString* levelJsonPath = [[PSRepository libraryBundle] pathForResource:@"level" ofType:@"json"];
+    NSString* jsonPath = [[PSRepository libraryBundle] pathForResource:@"appdata" ofType:@"json"];
     NSError* error = nil;
-    NSData *data = [NSData dataWithContentsOfFile:levelJsonPath];
+    NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     if (data) {
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
+        NSDictionary* responseData = [dictionary objectForKey:@"responseData"];
         if (error) {
-            XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:levelJsonPath], @"Error while parsing json file to dictionary");
+            XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:jsonPath], @"Error while parsing json file to dictionary");
         }
-        NSArray* decodedLevelData = [_deserializer decodeLevelsFromData:dictionary];
+        NSArray* decodedLevelData = [_deserializer decodeLevelsFromData:responseData];
         XCTAssertTrue(decodedLevelData, @"Decoding of level data failed!");
     }
 }
 
 - (void)testDecodeFeaturesFromData
 {
-    NSString* levelJsonPath = [[PSRepository libraryBundle] pathForResource:@"level" ofType:@"json"];
+    NSString* jsonPath = [[PSRepository libraryBundle] pathForResource:@"appdata" ofType:@"json"];
     NSError* error = nil;
-    NSData *data = [NSData dataWithContentsOfFile:levelJsonPath];
+    NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     if (data) {
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         if (error) {
-            XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:levelJsonPath], @"Error while parsing json file to dictionary");
+            XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:jsonPath], @"Error while parsing json file to dictionary");
         }
         NSDictionary* decodedFeatures = [_deserializer decodeFeaturesFromData:dictionary];
         XCTAssertTrue(decodedFeatures, @"Decoding of features failed!");

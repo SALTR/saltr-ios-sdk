@@ -39,15 +39,14 @@
 {
     NSMutableArray* levelPacks = [data objectForKey:@"levelPackList"];
     NSMutableArray* levelPackStructures = [NSMutableArray new];
-    for (PSLevelPackStructure* levelPack in levelPacks) {
-        NSArray* levels  = levelPack.levelStructureList;
+    for (NSDictionary* levelPack in levelPacks) {
+        NSArray* levels  = [levelPack objectForKey:@"levelList"];
         NSMutableArray* levelStructures = [NSMutableArray new];
-        for (PSLevelStructure* level in levels) {
-            /// clarify - @todo @b PSLevelStructure does not have order property
-            [levelStructures addObject:[[PSLevelStructure alloc] initWithLevelId:level.levelId index:level.index dataUrl:level.dataUrl properties:level.properties andVersion:level.version]];
+        for (NSDictionary* level in levels) {
+            [levelStructures addObject:[[PSLevelStructure alloc] initWithLevelId:[level objectForKey: @"id"] index:[[level objectForKey: @"order"] integerValue] dataUrl:[level objectForKey: @"url"] properties:[level objectForKey: @"properties"] andVersion:[level objectForKey: @"version"]]];
         }
         NSArray *sortedLevelStructures = [levelStructures sortedArrayUsingComparator:sortBlockForLevelStructure];
-        [levelPackStructures addObject:[[PSLevelPackStructure alloc] initWithToken:levelPack.token levelStructureList:sortedLevelStructures andIndex:levelPack.index]];
+        [levelPackStructures addObject:[[PSLevelPackStructure alloc] initWithToken:[levelPack objectForKey:@"token"] levelStructureList:sortedLevelStructures andIndex:[levelPack objectForKey:@"order"]]];
     }
     NSArray *sortedLevelPackStructures = [levelPackStructures sortedArrayUsingComparator:sortBlockForLevelPackStructure];
     return sortedLevelPackStructures;
