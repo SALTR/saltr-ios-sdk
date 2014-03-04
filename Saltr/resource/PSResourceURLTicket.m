@@ -45,6 +45,7 @@
         _maxAttemps = 3;
         _useSameDomain = YES;
         _dropTimeout = 0;
+        _requestHeaders = [[NSMutableDictionary alloc] init];
 
     }
     return self;
@@ -61,14 +62,12 @@
 }
 
 -(void) addHeader:(NSString *)headerName andHeaderValue:(NSString *)headerValue {
-    [_requestHeaders setValue:headerName forKey:headerValue];
+    [_requestHeaders setValue:headerValue forKey:headerName];
 }
 
 -(NSString *)headerValue:(NSString *)headerName {
-    for (NSDictionary* requestHeader in _requestHeaders) {
-        if ([[requestHeader allKeys] containsObject:headerName]) {
-            return [requestHeader valueForKey:headerName];
-        }
+    if ([[_requestHeaders allKeys] containsObject:headerName]) {
+        return [_requestHeaders valueForKey:headerName];
     }
     return nil;
 }

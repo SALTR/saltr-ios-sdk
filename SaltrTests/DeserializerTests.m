@@ -49,11 +49,10 @@
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         NSDictionary* responseData = [dictionary objectForKey:@"responseData"];
         if (error) {
-            XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:jsonPath], @"Error while parsing json file to dictionary");
+            XCTAssertTrue(NO, @"Error while parsing json file to dictionary");
         }
         NSArray* decodedExperiments = [_deserializer decodeExperimentsFromData:responseData];
         XCTAssertTrue([decodedExperiments count], @"Decoding of experiments failed!");
-        
     }
 }
 
@@ -66,7 +65,7 @@
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         NSDictionary* responseData = [dictionary objectForKey:@"responseData"];
         if (error) {
-            XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:jsonPath], @"Error while parsing json file to dictionary");
+            XCTAssertTrue(NO, @"Error while parsing json file to dictionary");
         }
         NSArray* decodedLevelData = [_deserializer decodeLevelsFromData:responseData];
         XCTAssertTrue([decodedLevelData count], @"Decoding of level data failed!");
@@ -82,7 +81,7 @@
         NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error:&error];
         NSDictionary* responseData = [dictionary objectForKey:@"responseData"];
         if (error) {
-            XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:jsonPath], @"Error while parsing json file to dictionary");
+            XCTAssertTrue(NO, @"Error while parsing json file to dictionary");
         }
         NSDictionary* decodedFeatures = [_deserializer decodeFeaturesFromData:responseData];
         XCTAssertTrue([decodedFeatures count], @"Decoding of features failed!");

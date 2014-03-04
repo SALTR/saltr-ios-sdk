@@ -7,8 +7,13 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "PSResourceURLTicket.h"
 
-@interface ResourceURLTicketTests : XCTestCase
+/// @todo the test case should be revised
+
+@interface ResourceURLTicketTests : XCTestCase {
+    PSResourceURLTicket* _ticket;
+}
 
 @end
 
@@ -18,6 +23,9 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    if (!_ticket) {
+        _ticket = [[PSResourceURLTicket alloc] initWithURL:@"http://parliament.am/legislation.php?sel=show&ID=4179&lang=arm" andVariables:nil];
+    }
 }
 
 - (void)tearDown
@@ -26,9 +34,23 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testUrlRequest
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    NSURLRequest* request = [_ticket urlRequest];
+    XCTAssertTrue(request, @"Request getting failed!");
+}
+
+- (void)testAddHeader {
+    [_ticket addHeader:@"headerName" andHeaderValue:@"headerValue"];
+    NSURLRequest* request = [_ticket urlRequest];
+    XCTAssertTrue(request, @"Adding HTTP headers to the request failed!");
+}
+
+- (void )testHeaderValue {
+    [_ticket addHeader:@"headerName" andHeaderValue:@"headerValue"];
+
+    NSString* header = [_ticket headerValue:@"headerName"];
+    XCTAssertTrue(header, @"Getting HTTP header with the given name failed!");
 }
 
 @end

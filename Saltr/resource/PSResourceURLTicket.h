@@ -40,7 +40,7 @@
 @property (nonatomic, strong) NSString* method;
 
 /// HTTP headers
-@property (nonatomic, strong) NSDictionary* requestHeaders;
+@property (nonatomic, strong) NSMutableDictionary* requestHeaders;
 
 /// the new URL
 @property (nonatomic, strong) NSString* url;
