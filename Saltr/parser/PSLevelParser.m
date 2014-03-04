@@ -15,8 +15,7 @@
 #import "PSLevelBoard_Private.h"
 #import "PSCompositeAssetTemplate.h"
 
-@implementation PSLevelParser
-{
+@implementation PSLevelParser {
 }
 
 @synthesize dataFetched = _dataFetched;

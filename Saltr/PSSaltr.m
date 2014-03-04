@@ -127,7 +127,7 @@
     _device = [[PSDevice alloc] initWithDeviceId:deviceId andDeviceType:deviceType];
 }
 
--(void) defineFeatureWithToken:(NSString*)token andProperties:(NSArray *)properties {    
+-(void) defineFeatureWithToken:(NSString*)token andProperties:(NSDictionary *)properties {
     PSFeature* feature = [features objectForKey:token];
     if (nil == feature) {
         feature = [[PSFeature alloc] initWithToken:token defaultProperties:nil andProperties:properties];
