@@ -148,23 +148,23 @@
         NSLog(@"[SaltAPI] App data is failed to load.");
         
         [self loadAppDataInternal];
-        //    asset.dispose();
+        [asset dispose];
     };
     void (^appDataAssetLoadCompleteHandler)(PSResource*) = ^(PSResource* asset) {
         NSLog(@"[SaltAPI] App data is loaded.");
-//        id data = asset.jsonData;
-//        id jsonData = data.responseData;
-//        NSLog(@"[SaltClient] Loaded App data. json = %@",jsonData);
-//        if (!jsonData || ![[data objectForKey:@"status"] isEqualToString:RESULT_SUCCEED]) {
-//            [self loadAppDataInternal];
-//        } else {
-//            [self loadAppDataSuccessHandler:jsonData];
-//            [repository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
-//        }
-//        [asset dispose];
+        NSDictionary* data = asset.jsonData;
+        NSDictionary* jsonData = [data objectForKey:@"responseData"];
+        NSLog(@"[SaltClient] Loaded App data. json = %@", jsonData);
+        if (!jsonData || ![[data objectForKey:@"status"] isEqualToString:RESULT_SUCCEED]) {
+            [self loadAppDataInternal];
+        } else {
+            [self loadAppDataSuccessHandler:jsonData];
+            [repository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
+        }
+        [asset dispose];
     };
     PSResource* asset = [self createAppDataResource:appDataAssetLoadCompleteHandler errorHandler:appDataAssetLoadErrorHandler];
-//    [asset load];
+    [asset load];
 }
 
 -(void) levelDataBodyWithLevelPack:(PSLevelPackStructure*)levelPackStructure

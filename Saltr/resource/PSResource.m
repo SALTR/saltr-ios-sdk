@@ -40,7 +40,7 @@
     return nil;
 }
 
--(id)jsonData {
+-(NSDictionary *)jsonData {
     return nil;
 }
 

@@ -47,7 +47,7 @@
 -(id)data;
 
 /// Returns the json data of the resource
--(id)jsonData;
+-(NSDictionary *)jsonData;
 
 /// Returns YES, if resource is loaded, otherwise NO.
 -(BOOL) isLoaded;
