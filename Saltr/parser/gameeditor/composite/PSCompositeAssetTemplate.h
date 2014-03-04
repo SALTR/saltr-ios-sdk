@@ -9,7 +9,12 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "PSSimpleAssetTemplate.h"
 
-@interface PSCompositeAssetTemplate : NSObject
+@interface PSCompositeAssetTemplate : PSSimpleAssetTemplate
+
+@property (nonatomic, strong, readonly) NSArray* shifts;
+
+- (id)initWithShifts:(NSArray*)shifts typeKey:(NSString*)typeKey andKeys:(NSDictionary*)keys;
 
 @end

@@ -13,6 +13,7 @@
 #import "PSBoardData.h"
 #import "PSLevelStructure_Private.h"
 #import "PSLevelBoard_Private.h"
+#import "PSCompositeAssetTemplate.h"
 
 @implementation PSLevelParser
 {
@@ -59,28 +60,56 @@
     }
 }
 
-- (void)parseData:(id)data andFillLevelStructure:(PSLevelStructure*)levelStructure
+- (PSSimpleAssetTemplate*)parseSingleAsset:(NSDictionary*)asset
 {
-    assert (nil != data);
-    levelStructure.innerProperties = [data objectForKey:@"properties"];
-    levelStructure.boardData = [self parseBoardData:data];
-    levelStructure.boards = [[NSMutableDictionary alloc] init];
-    NSDictionary* boards = [data objectForKey:@"boards"];
-    [self fillBoards:boards ofLevelStructure:levelStructure];
-    _dataFetched = true;
+    assert(nil != asset);
+    NSArray* assetCells = [asset objectForKey:@"cells"];
+    NSString* typeKey = [asset objectForKey:@"type_key"];
+    NSDictionary* keys = [asset objectForKey:@"keys"];
+    if (assetCells) {
+        return [[PSCompositeAssetTemplate alloc] initWithShifts:assetCells typeKey:typeKey andKeys:keys];
+    }
+    return [[PSSimpleAssetTemplate alloc] initWithTypeKey:typeKey andKeys:keys];
+}
+
+- (NSDictionary*)parseAssets:(NSDictionary*)assets
+{
+    assert(nil != assets);
+    NSMutableDictionary* assetsMap = [[NSMutableDictionary alloc] init];
+    for (NSString* key in assets) {
+        NSDictionary* asset = [assets objectForKey:key];
+        assert(nil != asset);
+        PSSimpleAssetTemplate* assetObject = [self parseSingleAsset:asset];
+        [assetsMap setObject:assetObject forKey:key];
+    }
+    return assetsMap;
+}
+
+- (void)fillBoardData:(NSDictionary*)data ofLevelStructure:(PSLevelStructure*)levelStructure
+{
+    levelStructure.boardData = [[PSBoardData alloc] init];
+    levelStructure.boardData.keyset = [data objectForKey:@"keySets"];
+    levelStructure.boardData.assetMap = [self parseAssets:[data objectForKey:@"assets"]];
+    levelStructure.boardData.stateMap = [data objectForKey:@"assetStates"];
 }
 
 - (void)parseBoard:(PSVector2D*)outputBoard withBoard:(id)board andBoardData:(PSBoardData*)boardData
 {
 }
 
-- (void)regenerateChunks:(PSVector2D*)outputBoard withBoard:(id)board andBoardData:(PSBoardData*)boardData
+- (void)parseData:(id)data andFillLevelStructure:(PSLevelStructure*)levelStructure
 {
+    assert (nil != data);
+    levelStructure.innerProperties = [data objectForKey:@"properties"];
+    [self fillBoardData:data ofLevelStructure:levelStructure];
+    levelStructure.boards = [[NSMutableDictionary alloc] init];
+    NSDictionary* boards = [data objectForKey:@"boards"];
+    [self fillBoards:boards ofLevelStructure:levelStructure];
+    _dataFetched = true;
 }
 
-- (PSBoardData*)parseBoardData:(id)data
+- (void)regenerateChunks:(PSVector2D*)outputBoard withBoard:(id)board andBoardData:(PSBoardData*)boardData
 {
-    return [[PSBoardData alloc] init];
 }
 
 @end
