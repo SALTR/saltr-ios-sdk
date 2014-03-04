@@ -68,6 +68,9 @@
 
 /// @todo should be tested
 -(NSDictionary *) getInternal:(NSString *)filePath {
+    if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
+        return nil;
+    }
     @try {
         NSData *data = [NSData dataWithContentsOfFile:filePath];
         if (data) {
@@ -77,7 +80,6 @@
                 NSLog(@"JSONObjectWithData error: %@", error);
                 return nil;
             }
-            
             return dictionary;
         }
     } @catch (NSError* error) {

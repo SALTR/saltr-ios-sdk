@@ -8,56 +8,61 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSLevelBoard.h"
+#import "PSLevelBoard_Private.h"
+#import "PSBoardData.h"
+#import "PSVector2D.h"
+#import "PSLevelStructure.h"
 
 @implementation PSLevelBoard
 
--(id) initWithRowBoard:(id)rowBoard andBoardData:(PSBoardData *)boardData {
+@synthesize level = _level;
+@synthesize rows = _rows;
+@synthesize cols = _cols;
+@synthesize blockedCells = _blockedCells;
+@synthesize position = _position;
+@synthesize boardVector = _boardVector;
+@synthesize rawBoard = _rawBoard;
+@synthesize boardData = _boardData;
+
+- (id)initWithRawBoard:(NSDictionary*)theRawBoard andLevelStructure:(PSLevelStructure*)theLevelStructure
+{
     self = [super init];
     if (self) {
-        
+        _level = theLevelStructure;
+        _rawBoard = theRawBoard;
+        _cols = (NSInteger)[_rawBoard objectForKey:@"cols"];
+        assert(0 <= _cols);
+        _rows = (NSInteger)[_rawBoard objectForKey:@"rows"];
+        assert(0 <= _rows);
+        _boardData = _level.boardData;
+        _blockedCells = [_rawBoard objectForKey:@"blokedCells"];
+        _position = [_rawBoard objectForKey:@"position"];
     }
     return self;
 }
 
--(void) regenerateChunks {
-    
+- (void)regenerateChunks
+{
 }
 
--(NSDictionary *)composites {
-    return [NSDictionary dictionary];
+- (NSDictionary*)composites
+{
+    return [_rawBoard objectForKey:@"composites"];
 }
 
--(NSDictionary *) chunks {
-    return [NSDictionary dictionary];
+- (NSDictionary*)chunks
+{
+    return [_rawBoard objectForKey:@"chunks"];
 }
 
--(NSInteger) countOfRows {
-    return -1;
+- (id)boardProperties
+{
+    return nil;
 }
 
--(NSInteger) countOfColumns {
-    return  -1;
-}
-
--(NSArray *) blockedCells {
-    return [NSArray array];
-}
-
--(NSArray *) position {
-    return [NSArray array];
-}
-
--(NSArray *) properties {
-    return [NSArray array];
-}
-
--(PSVector2D *) boardVector {
-    return [[PSVector2D alloc] init];
-}
-
--(PSBoardData *) boardData {
-    return [[PSBoardData alloc] init];
+- (id)cellProperties
+{
+    return nil;
 }
 
 @end

@@ -16,6 +16,7 @@
 #import "PSLevelPackStructure.h"
 #import "PSPartner.h"
 #import "PSDevice.h"
+#import "PSLevelParser.h"
 
 /**
  * @def APP_DATA_URL_CACHE
@@ -72,7 +73,7 @@
 @synthesize experiments;
 @synthesize saltrRequestDelegate;
 
--(id) init
+-(id) initUniqueInstance
 {
     self = [super init];
     if (self) {
@@ -97,7 +98,7 @@
     return [PSSaltr sharedInstance];
 }
 
-+(PSSaltr *) sharedInstance
++(instancetype) sharedInstance
 {
     // structure used to test whether the block has completed or not
     static dispatch_once_t p = 0;
@@ -107,7 +108,7 @@
     
     // executes a block object once and only once for the lifetime of an application
     dispatch_once(&p, ^{
-        _sharedObject = [[self alloc] init];
+        _sharedObject = [[super alloc] initUniqueInstance];
     });
     
     // returns the same object each time
@@ -258,7 +259,7 @@
 }
 
 -(void) levelLoadSuccessHandler:(PSLevelStructure *)levelData data:(id)data {
-    [levelData parseData:data];
+    [[PSLevelParser sharedInstance] parseData:data andFillLevelStructure:levelData];
     if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingLevelDataBodyWithLevelPackRequest)]) {
         [saltrRequestDelegate didFinishGettingLevelDataBodyWithLevelPackRequest];
     }

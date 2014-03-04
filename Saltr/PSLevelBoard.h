@@ -9,32 +9,38 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "PSBoardData.h"
-#import "PSVector2D.h"
-#import "PSBoardData.h"
+
+@class PSBoardData;
+@class PSVector2D;
+@class PSLevelStructure;
 
 @interface PSLevelBoard : NSObject
+
+@property (nonatomic, strong, readonly) PSLevelStructure* level;
+@property (nonatomic, assign, readonly) NSInteger rows;
+@property (nonatomic, assign, readonly) NSInteger cols;
+@property (nonatomic, strong, readonly) NSArray* blockedCells;
+@property (nonatomic, strong, readonly) NSArray* position;
+@property (nonatomic, strong, readonly) PSVector2D* boardVector;
+@property (nonatomic, strong, readonly) NSDictionary* rawBoard;
+@property (nonatomic, strong, readonly) PSBoardData* boardData;
+
 
 /**
  * @brief Initializes the current @b PSLevelBoard class with the given rowBoard
  * and board data.
  * 
- * @param rowBoard
- * @param boardData-
+ * @param rowBoard -
+ * @param boardData -
+ * @param levelStructure -
  * @return - initialized object of @b PSLevelBoard class
  */
--(id) initWithRowBoard:(PSLevelBoard *)rowBoard andBoardData:(PSBoardData *)boardData;
+- (id)initWithRawBoard:(id)theRawBoard andLevelStructure:(PSLevelStructure*)theLevelStructure;
 
--(void) regenerateChunks;
+- (void) regenerateChunks;
 
--(NSDictionary *)composites;
--(NSDictionary *) chunks;
--(NSInteger) countOfRows;
--(NSInteger) countOfColumns;
--(NSArray *) blockedCells;
--(NSArray *) position;
--(NSArray *) properties;
--(PSVector2D *) boardVector;
--(PSBoardData *) boardData;
-
+- (NSDictionary *)composites;
+- (NSDictionary *)chunks;
+- (id)boardProperties;
+- (id)cellProperties;
 @end
