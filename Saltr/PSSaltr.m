@@ -200,8 +200,7 @@
 -(void) loadAppDataSuccessHandler:(NSDictionary *)jsonData {
     _isLoading = false;
     _ready = true;
-    /// @todo the assignment below should be commented out
-    // _saltrUserId = jsonData.saltId;
+     _saltrUserId = [jsonData objectForKey:@"saltId"];
     
     _experiments = [_deserializer decodeExperimentsFromData:jsonData];
     _levelPackStructures = [_deserializer decodeLevelsFromData:jsonData];

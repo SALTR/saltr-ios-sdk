@@ -10,6 +10,13 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * @brief @b PSDeserializer class decodes and initializes the following objects : 
+ *   1. @b the list of PSExperiment
+ *   2. @b  the list of PSLevelPackStructure
+ *   3. @b the list of PSLevelStructure
+ *   4. @b the list of features
+ */
 @interface PSDeserializer : NSObject
 
 /**
@@ -18,7 +25,7 @@
  * @param data - data object corresponding to JSON
  * @return - array of experiments
  */
-- (NSArray*)decodeExperimentsFromData:(id)data;
+- (NSArray*)decodeExperimentsFromData:(NSDictionary *)data;
 
 /**
  * @brief Decodes and creates an array of LevelPackStructure objects corresponding to data
@@ -26,7 +33,7 @@
  * @param data - data object corresponding to JSON
  * @return - array of experiments
  */
-- (NSArray*)decodeLevelsFromData:(id)data;
+- (NSArray*)decodeLevelsFromData:(NSDictionary *)data;
 
 /**
  * @brief Decodes and creates an dictionary of Feature objects corresponding to data
@@ -34,7 +41,7 @@
  * @param data - data object corresponding to JSON
  * @return - array of Feature objects
  */
-- (NSDictionary*)decodeFeaturesFromData:(id)data;
+- (NSDictionary*)decodeFeaturesFromData:(NSDictionary *)data;
 
 
 @end
