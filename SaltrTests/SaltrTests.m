@@ -59,7 +59,7 @@
     XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
--(void) testAddPropertyPropertyWithSaltrUserId {
+-(void) testAddUserPropertyWithNames {
     XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 

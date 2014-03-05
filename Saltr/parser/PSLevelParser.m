@@ -17,8 +17,7 @@
 #import "PSComposite.h"
 #import "PSCell.h"
 
-@implementation PSLevelParser
-{
+@implementation PSLevelParser {
 }
 
 @synthesize dataFetched = _dataFetched;

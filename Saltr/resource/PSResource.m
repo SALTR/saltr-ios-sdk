@@ -11,5 +11,57 @@
 #import "PSResource.h"
 
 @implementation PSResource
+@synthesize id = _id;
+@synthesize ticket = _ticket;
+
+-(id) initWithId:(NSString *)id andTicket:(PSResourceURLTicket *)ticket {
+    self = [super init];
+    if (self) {
+        _id = id;
+        _ticket = ticket;
+    }
+    return self;
+}
+
+-(NSInteger) bytesLoaded {
+    return 0;
+    
+}
+
+-(NSInteger) bytesTotal {
+    return 0;
+}
+
+-(NSInteger) percentLoaded {
+    return 0;
+}
+
+-(id)data {
+    return nil;
+}
+
+-(NSDictionary *)jsonData {
+    return nil;
+}
+
+-(BOOL) isLoaded {
+    return NO;
+}
+
+-(NSArray *) responseHeaders {
+    return nil;
+}
+
+-(void) load {
+    
+}
+
+-(void) stop {
+    
+}
+
+-(void) dispose {
+    
+}
 
 @end

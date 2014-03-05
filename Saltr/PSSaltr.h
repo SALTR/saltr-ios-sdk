@@ -120,7 +120,7 @@
  * @pre If you want to have a feature synced with SALTR you should call define 
  * before appData call.
  */
--(void) defineFeatureWithToken:(NSString*)token andProperties:(NSArray *)properties;
+-(void) defineFeatureWithToken:(NSString*)token andProperties:(NSDictionary *)properties;
 
 /**
  * @brief Gets the application data
