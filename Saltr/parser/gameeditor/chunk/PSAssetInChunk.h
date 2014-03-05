@@ -12,4 +12,10 @@
 
 @interface PSAssetInChunk : NSObject
 
+@property (nonatomic, strong, readonly) NSString* assetId;
+@property (nonatomic, assign, readonly) NSUInteger count;
+@property (nonatomic, strong, readonly) NSString* stateId;
+
+- (id)initWithAssetId:(NSString*)theAssetId count:(NSUInteger)theCount andStateId:(NSString*)theStateId;
+
 @end

@@ -12,4 +12,20 @@
 
 @implementation PSAssetInChunk
 
+@synthesize assetId = _assetId;
+@synthesize count = _count;
+@synthesize stateId = _stateId;
+
+- (id)initWithAssetId:(NSString*)theAssetId count:(NSUInteger)theCount andStateId:(NSString*)theStateId
+{
+    self = [super init];
+    if (self) {
+        assert(nil != theAssetId);
+        _assetId = theAssetId;
+        _count = theCount;
+        _stateId = theStateId;
+    }
+    return self;
+}
+
 @end
