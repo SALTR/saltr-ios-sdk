@@ -9,7 +9,40 @@
  */
 
 #import "PSComposite.h"
+#import "PSCell.h"
+#import "PSLevelStructure.h"
+#import "PSBoardData.h"
+#import "PSCompositeAsset.h"
+#import "PSCompositeAssetTemplate.h"
 
 @implementation PSComposite
+
+@synthesize compositeId = _compositeId;
+@synthesize position = _position;
+@synthesize boardAssetMap = _boardAssetMap;
+@synthesize ownerLevel = _ownerLevel;
+
+- (id)initWithId:(NSString*)compositeId position:(PSCell*)position andOwnerLevel:(PSLevelStructure*)ownerLevel
+{
+    self = [super init];
+    if (self) {
+        _compositeId = compositeId;
+        _position = position;
+        _ownerLevel = ownerLevel;
+        _boardAssetMap = _ownerLevel.boardData.assetMap;
+    }
+    return  self;
+}
+
+- (PSCompositeAsset*)generateAsset
+{
+    assert(nil != [self.boardAssetMap objectForKey:self.compositeId]);
+    assert([[self.boardAssetMap objectForKey:self.compositeId] isKindOfClass:[PSCompositeAssetTemplate class]]);
+    PSCompositeAssetTemplate* compositeAssetTemplate = [self.boardAssetMap objectForKey:self.compositeId];
+    NSArray* shifts = [compositeAssetTemplate.shifts copy];
+    PSCell* basis = [[PSCell alloc] initWithX:self.position.x andY:self.position.y];
+    PSCompositeAsset* compositeAsset = [[PSCompositeAsset  alloc] initWithShifts:shifts basis:basis type:compositeAssetTemplate.type andKeys:compositeAssetTemplate.keys];
+    return compositeAsset;
+}
 
 @end

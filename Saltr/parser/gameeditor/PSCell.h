@@ -12,4 +12,9 @@
 
 @interface PSCell : NSObject
 
+@property (nonatomic, assign, readonly) NSInteger x;
+@property (nonatomic, assign, readonly) NSInteger y;
+
+-(id) initWithX:(NSInteger)x andY:(NSInteger)y;
+
 @end

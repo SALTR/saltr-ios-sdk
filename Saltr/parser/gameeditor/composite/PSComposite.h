@@ -10,6 +10,19 @@
 
 #import <Foundation/Foundation.h>
 
+@class PSCell;
+@class PSCompositeAsset;
+@class PSLevelStructure;
+
 @interface PSComposite : NSObject
+
+@property (nonatomic, strong, readonly) PSLevelStructure* ownerLevel;
+@property (nonatomic, strong, readonly) NSString* compositeId;
+@property (nonatomic, strong, readonly) PSCell* position;
+@property (nonatomic, strong, readonly) NSDictionary* boardAssetMap;
+
+- (id)initWithId:(NSString*)compositeId position:(PSCell*)position andOwnerLevel:(PSLevelStructure*)ownerLevel;
+
+- (PSCompositeAsset*)generateAsset;
 
 @end

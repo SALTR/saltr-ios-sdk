@@ -16,7 +16,7 @@
 
 @interface PSLevelBoard : NSObject
 
-@property (nonatomic, strong, readonly) PSLevelStructure* level;
+@property (nonatomic, strong, readonly) PSLevelStructure* ownerLevel;
 @property (nonatomic, assign, readonly) NSInteger rows;
 @property (nonatomic, assign, readonly) NSInteger cols;
 @property (nonatomic, strong, readonly) NSArray* blockedCells;
@@ -32,10 +32,10 @@
  * 
  * @param rowBoard -
  * @param boardData -
- * @param levelStructure -
+ * @param theLevelStructure -
  * @return - initialized object of @b PSLevelBoard class
  */
-- (id)initWithRawBoard:(id)theRawBoard andLevelStructure:(PSLevelStructure*)theLevelStructure;
+- (id)initWithRawBoard:(NSDictionary*)theRawBoard andOwnerLevel:(PSLevelStructure*)theLevelStructure;
 
 - (void) regenerateChunks;
 

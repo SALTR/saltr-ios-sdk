@@ -9,7 +9,15 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "PSBoardAsset.h"
 
-@interface PSCompositeAsset : NSObject
+@class PSCell;
+
+@interface PSCompositeAsset : PSBoardAsset
+
+@property (nonatomic, strong, readonly) NSArray* shifts;
+@property (nonatomic, strong, readonly) PSCell* basis;
+
+- (id)initWithShifts:(NSArray*)shifts basis:(PSCell*)basis type:(NSString*)theType andKeys:(NSDictionary*)theKeys;
 
 @end

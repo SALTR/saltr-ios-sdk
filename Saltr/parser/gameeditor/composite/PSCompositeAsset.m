@@ -12,4 +12,15 @@
 
 @implementation PSCompositeAsset
 
+@synthesize shifts;
+@synthesize basis;
+
+- (id)initWithShifts:(NSArray*)shifts basis:(PSCell*)basis type:(NSString*)theType andKeys:(NSDictionary*)theKeys
+{
+    self = [super initWithType:theType andKeys:theKeys];
+    if (self) {
+    }
+    return self;
+}
+
 @end

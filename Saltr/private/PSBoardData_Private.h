@@ -8,12 +8,12 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSBoardData_Private.h"
+#import "PSBoardData.h"
 
-@implementation PSBoardData
+@interface PSBoardData ()
 
-@synthesize assetMap;
-@synthesize keyset;
-@synthesize stateMap;
+@property (nonatomic, strong, readwrite) NSDictionary* assetMap;
+@property (nonatomic, strong, readwrite) NSDictionary* keyset;
+@property (nonatomic, strong, readwrite) NSDictionary* stateMap;
 
 @end

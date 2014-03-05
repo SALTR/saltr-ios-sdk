@@ -207,6 +207,7 @@
 		CD55D70318C0879800222E8C /* SaltrTestAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrTestAppTests-Info.plist"; sourceTree = "<group>"; };
 		CD55D70518C0879800222E8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CD55D70718C0879800222E8C /* SaltrTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaltrTestAppTests.m; sourceTree = "<group>"; };
+		CDD2BAC718C6242F00264F86 /* PSBoardData_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSBoardData_Private.h; sourceTree = "<group>"; };
 		CDD7406118BFC02800F2306D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CDD7408E18BFC0FA00F2306D /* Saltr.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Saltr.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD7409218BFC0FA00F2306D /* SaltrResource-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrResource-Info.plist"; sourceTree = "<group>"; };
@@ -479,6 +480,7 @@
 			children = (
 				CD05F8C418C4D8A500CB782C /* PSLevelStructure_Private.h */,
 				CD05F8C518C5B88800CB782C /* PSLevelBoard_Private.h */,
+				CDD2BAC718C6242F00264F86 /* PSBoardData_Private.h */,
 			);
 			path = private;
 			sourceTree = "<group>";

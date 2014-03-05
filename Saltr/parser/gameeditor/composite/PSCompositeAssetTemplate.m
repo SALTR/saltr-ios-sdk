@@ -14,9 +14,9 @@
 
 @synthesize shifts = _shifts;
 
-- (id)initWithShifts:(NSArray*)shifts typeKey:(NSString*)typeKey andKeys:(NSDictionary*)keys
+- (id)initWithShifts:(NSArray*)shifts type:(NSString*)theType andKeys:(NSDictionary*)theKeys
 {
-    self = [super initWithTypeKey:typeKey andKeys:keys];
+    self = [super initWithType:theType andKeys:theKeys];
     if (self) {
         _shifts = shifts;
     }

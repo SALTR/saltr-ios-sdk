@@ -12,4 +12,15 @@
 
 @implementation PSSimpleAsset
 
+@synthesize state = _state;
+@synthesize cell = _cell;
+
+- (id)initWithState:(NSString*)state cell:(PSCell*)cell type:(NSString*)theType andKeys:(NSDictionary*)theKeys
+{
+    self = [super initWithType:theType andKeys:theKeys];
+    if (self) {
+    }
+    return self;
+}
+
 @end

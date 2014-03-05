@@ -12,4 +12,17 @@
 
 @implementation PSBoardAsset
 
+@synthesize type = _type;
+@synthesize keys = _keys;
+
+- (id)initWithType:(NSString*)theType andKeys:(NSDictionary*)theKeys
+{
+    self = [super init];
+    if (self) {
+        _type = theType;
+        _keys = theKeys;
+    }
+    return self;
+}
+
 @end

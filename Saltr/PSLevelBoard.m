@@ -15,7 +15,7 @@
 
 @implementation PSLevelBoard
 
-@synthesize level = _level;
+@synthesize ownerLevel = _ownerLevel;
 @synthesize rows = _rows;
 @synthesize cols = _cols;
 @synthesize blockedCells = _blockedCells;
@@ -24,17 +24,17 @@
 @synthesize rawBoard = _rawBoard;
 @synthesize boardData = _boardData;
 
-- (id)initWithRawBoard:(NSDictionary*)theRawBoard andLevelStructure:(PSLevelStructure*)theLevelStructure
+- (id)initWithRawBoard:(NSDictionary*)theRawBoard andOwnerLevel:(PSLevelStructure*)theLevelStructure
 {
     self = [super init];
     if (self) {
-        _level = theLevelStructure;
+        _ownerLevel = theLevelStructure;
         _rawBoard = theRawBoard;
         _cols = (NSInteger)[_rawBoard objectForKey:@"cols"];
         assert(0 <= _cols);
         _rows = (NSInteger)[_rawBoard objectForKey:@"rows"];
         assert(0 <= _rows);
-        _boardData = _level.boardData;
+        _boardData = _ownerLevel.boardData;
         _blockedCells = [_rawBoard objectForKey:@"blokedCells"];
         _position = [_rawBoard objectForKey:@"position"];
     }

@@ -12,4 +12,9 @@
 
 @interface PSBoardAsset : NSObject
 
+@property (nonatomic, strong, readonly) NSString* type;
+@property (nonatomic, strong, readonly) NSDictionary* keys;
+
+- (id)initWithType:(NSString*)theType andKeys:(NSDictionary*)theKeys;
+
 @end

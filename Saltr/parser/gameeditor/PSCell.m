@@ -12,4 +12,17 @@
 
 @implementation PSCell
 
+@synthesize x = _x;
+@synthesize y = _y;
+
+-(id) initWithX:(NSInteger)x andY:(NSInteger)y
+{
+    self = [super init];
+    if (self) {
+        _x = x;
+        _y = y;
+    }
+    return self;
+}
+
 @end

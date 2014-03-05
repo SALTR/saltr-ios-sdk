@@ -12,9 +12,9 @@
 
 @interface PSSimpleAssetTemplate : NSObject
 
-@property (nonatomic, strong, readonly) NSString* typeKey;
+@property (nonatomic, strong, readonly) NSString* type;
 @property (nonatomic, strong, readonly) NSDictionary* keys;
 
-- (id)initWithTypeKey:(NSString*)typeKey andKeys:(NSDictionary*)keys;
+- (id)initWithType:(NSString*)theType andKeys:(NSDictionary*)theKeys;
 
 @end

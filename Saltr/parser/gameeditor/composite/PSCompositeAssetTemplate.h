@@ -15,6 +15,6 @@
 
 @property (nonatomic, strong, readonly) NSArray* shifts;
 
-- (id)initWithShifts:(NSArray*)shifts typeKey:(NSString*)typeKey andKeys:(NSDictionary*)keys;
+- (id)initWithShifts:(NSArray*)shifts type:(NSString*)theType andKeys:(NSDictionary*)theKeys;
 
 @end

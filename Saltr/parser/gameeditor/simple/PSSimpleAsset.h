@@ -9,7 +9,14 @@
  */
 
 #import <Foundation/Foundation.h>
+#import "PSBoardAsset.h"
 
-@interface PSSimpleAsset : NSObject
+@class PSCell;
 
+@interface PSSimpleAsset : PSBoardAsset
+
+@property (nonatomic, strong, readonly) NSString* state;
+@property (nonatomic, strong, readonly) PSCell* cell;
+
+- (id)initWithState:(NSString*)state cell:(PSCell*)cell type:(NSString*)type andKeys:(NSDictionary*)theKeys;
 @end
