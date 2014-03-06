@@ -19,8 +19,15 @@
 {
     self = [super initWithType:theType andKeys:theKeys];
     if (self) {
+        _state = state;
+        _cell = cell;
     }
     return self;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat: @"SimpleAsset : [state : %@], [cell : %@], [type: %@], [theKeys : %@]", self.state, self.cell, self.type, self.keys];
 }
 
 @end

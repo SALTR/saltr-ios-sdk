@@ -12,16 +12,16 @@
 
 @class PSCell;
 @class PSCompositeAsset;
-@class PSLevelStructure;
+@class PSLevelBoard;
 
 @interface PSComposite : NSObject
 
-@property (nonatomic, strong, readonly) PSLevelStructure* ownerLevel;
+@property (nonatomic, strong, readonly) PSLevelBoard* ownerLevelBoard;
 @property (nonatomic, strong, readonly) NSString* compositeId;
 @property (nonatomic, strong, readonly) PSCell* position;
 
-- (id)initWithId:(NSString*)compositeId position:(PSCell*)position andOwnerLevel:(PSLevelStructure*)ownerLevel;
+- (id)initWithId:(NSString*)compositeId position:(PSCell*)position andOwnerLevelBoard:(PSLevelBoard*)theOwnerLevelBoard;
 
-- (PSCompositeAsset*)generateAsset;
+- (void)generate;
 
 @end

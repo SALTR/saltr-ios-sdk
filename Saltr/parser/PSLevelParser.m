@@ -50,20 +50,6 @@
     return _sharedObject;
 }
 
-- (void)parseBoards:(NSDictionary*)theBoards ofLevelStructure:(PSLevelStructure*)levelStructure
-{
-    assert(nil != theBoards);
-    for (NSString* key in theBoards) {
-        NSDictionary* rawBoard = [theBoards objectForKey:key];
-        assert(nil != rawBoard);
-        PSLevelBoard* levelBoard = [[PSLevelBoard alloc] initWithRawBoard:rawBoard andOwnerLevel:levelStructure];
-        assert(nil != levelBoard);
-        //TODO how to fill the boardVector?????
-        /*levelBoard.boardVector = */[self parseBoard:rawBoard ofLevelStructure:levelStructure];
-        [levelStructure.boards setObject:levelBoard forKey:key];
-    }
-}
-
 - (PSSimpleAssetTemplate*)parseSingleAsset:(NSDictionary*)asset
 {
     assert(nil != asset);
@@ -97,9 +83,9 @@
     levelStructure.boardData.stateMap = [data objectForKey:@"assetStates"];
 }
 
-- (NSDictionary*) parseCompositesData:(NSArray*)composites ofLevelStructure:(PSLevelStructure*)levelStructure
+- (NSDictionary*) parseCompositesData:(NSArray*)composites ofLevelBoard:(PSLevelBoard*)levelBoard
 {
-    assert(nil != levelStructure);
+    assert(nil != levelBoard);
     NSMutableDictionary* compositesMap = [[NSMutableDictionary alloc] init];
     for (NSUInteger i = 0; i < [composites count]; ++i) {
         NSDictionary* compositePrototype = [composites objectAtIndex:i];
@@ -107,31 +93,29 @@
         NSString* assetId = [[compositePrototype objectForKey:@"assetId"] stringValue];
         NSArray* compositePosition = [compositePrototype objectForKey:@"position"];
         PSCell* position = [[PSCell alloc] initWithX:[[compositePosition objectAtIndex:0] integerValue] andY:[[compositePosition objectAtIndex:1] integerValue]];
-        PSComposite* composite = [[PSComposite alloc] initWithId:assetId position:position andOwnerLevel:levelStructure];
+        PSComposite* composite = [[PSComposite alloc] initWithId:assetId position:position andOwnerLevelBoard:levelBoard];
         assert(nil != composite);
         [compositesMap setObject:composite forKey:composite.compositeId];
      }
     return  compositesMap;
 }
 
-- (void)generateCompositeAssets:(NSDictionary*)composites
+- (void)generateComposites:(NSDictionary*)composites
 {
     for (NSString* compositeId in composites) {
         PSComposite* composite = [composites objectForKey:compositeId];
         assert(nil != composite);
-        PSCompositeAsset* compositeAsset = [composite generateAsset];
-        //TODO fill the data into Vector2d board or asset basis
-        //[outputBoard insertAssert:generateAsset withPosition:composite.position];
+        [composite generate];
     }
 }
 
-- (void)parseAndGenerateCompositesOfBoard:(NSDictionary*)board andLevelStructure:(PSLevelStructure*)levelStructure
+- (void)parseAndGenerateCompositesOfBoard:(NSDictionary*)board andLevelBoard:(PSLevelBoard*)levelBoard
 {
-    assert(nil != levelStructure);
+    assert(nil != levelBoard);
     NSArray* compositesData = [board objectForKey:@"composites"];
     assert(nil != compositesData);
-    NSDictionary* composites = [self parseCompositesData:compositesData ofLevelStructure:levelStructure];
-    [self generateCompositeAssets:composites];
+    NSDictionary* composites = [self parseCompositesData:compositesData ofLevelBoard:levelBoard];
+    [self generateComposites:composites];
 }
 
 - (void)fillAssetsOfChunk:(PSChunk*)chunk withAssetData:(NSArray*)assetsData
@@ -143,7 +127,13 @@
         assert([[assetsData objectAtIndex:i] isKindOfClass:[NSDictionary class]]);
         NSDictionary* assetData = [assetsData objectAtIndex:i];
         assert(assetData);
-        PSAssetInChunk* chunkAsset = [[PSAssetInChunk alloc] initWithAssetId:[[assetData objectForKey:@"assetId"] stringValue]  count:[[assetData objectForKey:@"count"] integerValue] andStateId:[[assetData objectForKey:@"stateId"] stringValue]];
+        id stateId = [assetData objectForKey:@"stateId"];
+        if (nil != stateId) {
+            assert([stateId isKindOfClass:[NSNumber class]]);
+            stateId = [[assetData objectForKey:@"stateId"] stringValue];
+        }
+        assert([[assetData objectForKey:@"assetId"] isKindOfClass:[NSString class]]);
+        PSAssetInChunk* chunkAsset = [[PSAssetInChunk alloc] initWithAssetId:[assetData objectForKey:@"assetId"]  count:[[assetData objectForKey:@"count"] integerValue] andStateId:stateId];
         assert(chunkAsset);
         [chunk addChunkAsset:chunkAsset];
     }
@@ -164,7 +154,7 @@
     }
 }
 
-- (NSDictionary*) parseChunksData:(NSArray*)chunks ofLevelStructure:(PSLevelStructure*)levelStructure
+- (NSDictionary*) parseChunksData:(NSArray*)chunks ofLevelBoard:(PSLevelBoard*)levelBoard
 {
     NSMutableDictionary* chunksMap = [[NSMutableDictionary alloc] init];
     for (NSUInteger i = 0; i < [chunks count]; ++i) {
@@ -174,7 +164,7 @@
         assert([[chunkData objectForKey:@"chunkId"] isKindOfClass:[NSNumber class]]);
         NSString* chunkId = [[chunkData objectForKey:@"chunkId"] stringValue];
         assert(nil != chunkId);
-        PSChunk* chunk = [[PSChunk alloc] initWithChunkId:chunkId andOwnerLevel:levelStructure];
+        PSChunk* chunk = [[PSChunk alloc] initWithChunkId:chunkId andOwnerLevelBoard:levelBoard];
         assert(nil != chunk);
         [self fillAssetsOfChunk:chunk withAssetData:[chunkData objectForKey:@"assets"]];
         [self fillCellsOfChunk:chunk withCellsData:[chunkData objectForKey:@"cells"]];
@@ -183,20 +173,43 @@
     return chunksMap;
 }
 
-- (void)parseAndGenerateChunksOfBoard:(NSDictionary*)board andLevelStructure:(PSLevelStructure*)levelStructure
+- (void)generateChunks:(NSDictionary*)chunks
 {
-    assert(nil != levelStructure);
-    NSArray* chunksData = [board objectForKey:@"chunks"];
-    assert(nil != chunksData);
-    NSDictionary* chunks = [self parseChunksData:chunksData ofLevelStructure:levelStructure];
-//    [self generateCompositeAssets:chunks];
+    for (NSString* chunkId in chunks) {
+        PSChunk* chunk = [chunks objectForKey:chunkId];
+        assert(nil != chunk);
+        [chunk generate];
+    }
 }
 
-- (void)parseBoard:(NSDictionary*)board ofLevelStructure:(PSLevelStructure*)levelStructure
+- (void)parseAndGenerateChunksOfBoard:(NSDictionary*)board andLevelBoard:(PSLevelBoard*)levelBoard
 {
-    assert(nil != levelStructure);
-    [self parseAndGenerateCompositesOfBoard:board andLevelStructure:levelStructure];
-    [self parseAndGenerateChunksOfBoard:board andLevelStructure:levelStructure];
+    assert(nil != levelBoard);
+    NSArray* chunksData = [board objectForKey:@"chunks"];
+    assert(nil != chunksData);
+    NSDictionary* chunks = [self parseChunksData:chunksData ofLevelBoard:levelBoard];
+    [self generateChunks:chunks];
+}
+
+- (void)parseBoard:(NSDictionary*)board ofLevelBoard:(PSLevelBoard*)levelBoard
+{
+    assert(nil != levelBoard);
+    [self parseAndGenerateCompositesOfBoard:board andLevelBoard:levelBoard];
+    [self parseAndGenerateChunksOfBoard:board andLevelBoard:levelBoard];
+}
+
+- (void)parseBoards:(NSDictionary*)theBoards ofLevelStructure:(PSLevelStructure*)levelStructure
+{
+    assert(nil != theBoards);
+    for (NSString* key in theBoards) {
+        NSDictionary* rawBoard = [theBoards objectForKey:key];
+        assert(nil != rawBoard);
+        PSLevelBoard* levelBoard = [[PSLevelBoard alloc] initWithRawBoard:rawBoard andOwnerLevel:levelStructure];
+        assert(nil != levelBoard);
+        //TODO how to fill the boardVector?????
+        [levelStructure.boards setObject:levelBoard forKey:key];
+        [self parseBoard:rawBoard ofLevelBoard:levelBoard];
+    }
 }
 
 - (void)parseData:(id)data andFillLevelStructure:(PSLevelStructure*)levelStructure

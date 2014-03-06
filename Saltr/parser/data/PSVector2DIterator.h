@@ -10,6 +10,18 @@
 
 #import <Foundation/Foundation.h>
 
+@class  PSVector2D;
+
 @interface PSVector2DIterator : NSObject
+
+@property (nonatomic, strong, readonly) PSVector2D* vector2D;
+
+- (id)initVector2DItaratorWithVector:(PSVector2D*)vector2D;
+
+- (BOOL)hasNext;
+
+- (id)nextObject;
+
+- (void)reset;
 
 @end

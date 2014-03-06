@@ -30,13 +30,14 @@
     if (self) {
         _ownerLevel = theLevelStructure;
         _rawBoard = theRawBoard;
-        _cols = (NSInteger)[_rawBoard objectForKey:@"cols"];
+        _cols = [[_rawBoard objectForKey:@"cols"] integerValue];
         assert(0 <= _cols);
-        _rows = (NSInteger)[_rawBoard objectForKey:@"rows"];
+        _rows = [[_rawBoard objectForKey:@"rows"] integerValue];
         assert(0 <= _rows);
         _boardData = _ownerLevel.boardData;
         _blockedCells = [_rawBoard objectForKey:@"blokedCells"];
         _position = [_rawBoard objectForKey:@"position"];
+        _boardVector = [[PSVector2D alloc] initWithWidth:_cols andHeight:_rows];
     }
     return self;
 }
