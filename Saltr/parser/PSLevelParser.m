@@ -277,8 +277,12 @@
     _dataFetched = true;
 }
 
-- (void)regenerateChunks:(PSVector2D*)outputBoard withBoard:(id)board andBoardData:(PSBoardData*)boardData
+- (void)regenerateChunksWithRawBoard:(NSDictionary*)rawBoard forLevelBoard:(PSLevelBoard*)levelBoard
 {
+    if (!rawBoard || !levelBoard) {
+        return;
+    }
+    [self parseAndGenerateChunksOfBoard:rawBoard andLevelBoard:levelBoard];
 }
 
 @end

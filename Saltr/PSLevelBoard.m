@@ -12,6 +12,7 @@
 #import "PSBoardData.h"
 #import "PSVector2D.h"
 #import "PSLevelStructure.h"
+#import "PSLevelParser.h"
 
 @implementation PSLevelBoard
 
@@ -42,6 +43,7 @@
 
 - (void)regenerateChunks
 {
+    [[PSLevelParser sharedInstance] regenerateChunksWithRawBoard:_rawBoard forLevelBoard:self];
 }
 
 - (NSDictionary*)composites
