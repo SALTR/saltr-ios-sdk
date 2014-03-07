@@ -8,21 +8,25 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSBoardAsset.h"
+#import "PSAssetInstance.h"
 
-@implementation PSBoardAsset
+@implementation PSAssetInstance
 
-@synthesize type = _type;
-@synthesize keys = _keys;
+@synthesize state = _state;
 
-- (id)initWithType:(NSString*)theType andKeys:(NSDictionary*)theKeys
+- (id)initWithState:(NSString*)state type:(NSString*)theType andKeys:(NSDictionary*)theKeys
 {
-    self = [super init];
+    self = [super initWithType:theType andKeys:theKeys];
     if (self) {
-        _type = theType;
-        _keys = theKeys;
+        _state = state;
     }
     return self;
+}
+
+- (NSString *)description
+{
+    NSString* superDescription = [super description];
+    return [NSString stringWithFormat: @"AssetInstance : [state : %@], %@", self.state, superDescription];
 }
 
 @end

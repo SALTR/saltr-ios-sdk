@@ -8,13 +8,26 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import <Foundation/Foundation.h>
-#import "PSSimpleAssetTemplate.h"
+#import "PSAsset.h"
 
-@interface PSCompositeAssetTemplate : PSSimpleAssetTemplate
+@implementation PSAsset
 
-@property (nonatomic, strong, readonly) NSArray* shifts;
+@synthesize type = _type;
+@synthesize keys = _keys;
 
-- (id)initWithShifts:(NSArray*)shifts type:(NSString*)theType andKeys:(NSDictionary*)theKeys;
+- (id)initWithType:(NSString*)theType andKeys:(NSDictionary*)theKeys
+{
+    self = [super init];
+    if (self) {
+        _type = theType;
+        _keys = theKeys;
+    }
+    return self;
+}
+
+- (NSString *)description
+{
+    return [NSString stringWithFormat: @"Asset : [type: %@], [theKeys : %@]", self.type, self.keys];
+}
 
 @end

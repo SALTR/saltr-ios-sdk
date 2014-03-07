@@ -13,21 +13,20 @@
 @implementation PSCompositeAsset
 
 @synthesize shifts = _shifts;
-@synthesize basis = _basis;
 
-- (id)initWithShifts:(NSArray*)shifts basis:(PSCell*)basis type:(NSString*)theType andKeys:(NSDictionary*)theKeys
+- (id)initWithShifts:(NSArray*)shifts type:(NSString*)theType andKeys:(NSDictionary*)theKeys
 {
     self = [super initWithType:theType andKeys:theKeys];
     if (self) {
         _shifts = shifts;
-        _basis = basis;
     }
-    return self;
+    return  self;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat: @"PSCompositeAsset : [shifts : %@], [basis : %@], [type: %@], [theKeys : %@]", self.shifts, self.basis, self.type, self.keys];
+    NSString* superDescription = [super description];
+    return [NSString stringWithFormat: @"PSCompositeAsset : [shifts : %@], %@ ", self.shifts, superDescription];
 }
 
 @end

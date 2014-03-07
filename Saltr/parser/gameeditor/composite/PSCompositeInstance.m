@@ -8,9 +8,9 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSCompositeAssetTemplate.h"
+#import "PSCompositeInstance.h"
 
-@implementation PSCompositeAssetTemplate
+@implementation PSCompositeInstance
 
 @synthesize shifts = _shifts;
 
@@ -20,7 +20,13 @@
     if (self) {
         _shifts = shifts;
     }
-    return  self;
+    return self;
+}
+
+- (NSString *)description
+{
+    NSString* superDescription = [super description];
+    return [NSString stringWithFormat: @"PSCompositeAssetInstance : [shifts : %@], %@ ", self.shifts, superDescription];
 }
 
 @end

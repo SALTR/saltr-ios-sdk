@@ -8,26 +8,13 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSSimpleAssetTemplate.h"
+#import <Foundation/Foundation.h>
 
-@implementation PSSimpleAssetTemplate
+@interface PSAsset : NSObject
 
-@synthesize type = _type;
-@synthesize keys = _keys;
+@property (nonatomic, strong, readonly) NSString* type;
+@property (nonatomic, strong, readonly) NSDictionary* keys;
 
-- (id)initWithType:(NSString*)theType andKeys:(NSDictionary*)theKeys
-{
-    self = [super init];
-    if (self) {
-        _type = theType;
-        _keys = theKeys;
-    }
-    return self;
-}
-
-- (NSString *)description
-{
-    return [NSString stringWithFormat: @"AssetTemplate : [type : %@], [keys : %@]", self.type, self.keys];
-}
+- (id)initWithType:(NSString*)theType andKeys:(NSDictionary*)theKeys;
 
 @end

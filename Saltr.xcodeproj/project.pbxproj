@@ -26,16 +26,14 @@
 		CA1FC24818B3C46000E92A06 /* PSLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24718B3C46000E92A06 /* PSLevelParser.m */; };
 		CA1FC24D18B3C4A800E92A06 /* PSVector2D.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24C18B3C4A800E92A06 /* PSVector2D.m */; };
 		CA1FC25018B3C4C200E92A06 /* PSVector2DIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24F18B3C4C200E92A06 /* PSVector2DIterator.m */; };
-		CA1FC25618B3C53300E92A06 /* PSBoardAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25518B3C53300E92A06 /* PSBoardAsset.m */; };
+		CA1FC25618B3C53300E92A06 /* PSAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25518B3C53300E92A06 /* PSAsset.m */; };
 		CA1FC25918B3C54F00E92A06 /* PSBoardData.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25818B3C54F00E92A06 /* PSBoardData.m */; };
 		CA1FC25C18B3C57000E92A06 /* PSCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25B18B3C57000E92A06 /* PSCell.m */; };
 		CA1FC25F18B3C59700E92A06 /* PSAssetInChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25E18B3C59700E92A06 /* PSAssetInChunk.m */; };
 		CA1FC26218B3C5AE00E92A06 /* PSChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26118B3C5AE00E92A06 /* PSChunk.m */; };
 		CA1FC26518B3C5D900E92A06 /* PSComposite.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26418B3C5D900E92A06 /* PSComposite.m */; };
-		CA1FC26818B3C5FA00E92A06 /* PSCompositeAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26718B3C5FA00E92A06 /* PSCompositeAsset.m */; };
-		CA1FC26B18B3C62500E92A06 /* PSCompositeAssetTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26A18B3C62500E92A06 /* PSCompositeAssetTemplate.m */; };
-		CA1FC26E18B3C64700E92A06 /* PSSimpleAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26D18B3C64700E92A06 /* PSSimpleAsset.m */; };
-		CA1FC27118B3C67300E92A06 /* PSSimpleAssetTemplate.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27018B3C67300E92A06 /* PSSimpleAssetTemplate.m */; };
+		CA1FC26818B3C5FA00E92A06 /* PSCompositeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26718B3C5FA00E92A06 /* PSCompositeInstance.m */; };
+		CA1FC26B18B3C62500E92A06 /* PSCompositeAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26A18B3C62500E92A06 /* PSCompositeAsset.m */; };
 		CA1FC27718B3C6D100E92A06 /* PSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27618B3C6D100E92A06 /* PSRepository.m */; };
 		CA1FC28018B3C70E00E92A06 /* PSResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27F18B3C70E00E92A06 /* PSResource.m */; };
 		CA1FC28318B3C72200E92A06 /* PSResourceURLTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC28218B3C72200E92A06 /* PSResourceURLTicket.m */; };
@@ -64,6 +62,7 @@
 		CD55D6FE18C0879800222E8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20B18B3B8D600E92A06 /* UIKit.framework */; };
 		CD55D70618C0879800222E8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD55D70418C0879800222E8C /* InfoPlist.strings */; };
 		CD55D70F18C087C900222E8C /* SaltrTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55D70718C0879800222E8C /* SaltrTestAppTests.m */; };
+		CD774F0F18C8E97F0021B4B0 /* PSAssetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = CD774F0E18C8E97F0021B4B0 /* PSAssetInstance.m */; };
 		CDD7408F18BFC0FA00F2306D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD095F7B18BF7E4B00E38369 /* CoreFoundation.framework */; };
 		CDD7409518BFC0FA00F2306D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDD7409318BFC0FA00F2306D /* InfoPlist.strings */; };
 		CDD7409A18BFC11600F2306D /* appdata.json in Resources */ = {isa = PBXBuildFile; fileRef = CD095F8C18BF7E9600E38369 /* appdata.json */; };
@@ -150,8 +149,8 @@
 		CA1FC24C18B3C4A800E92A06 /* PSVector2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSVector2D.m; path = parser/data/PSVector2D.m; sourceTree = "<group>"; };
 		CA1FC24E18B3C4C200E92A06 /* PSVector2DIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSVector2DIterator.h; path = parser/data/PSVector2DIterator.h; sourceTree = "<group>"; };
 		CA1FC24F18B3C4C200E92A06 /* PSVector2DIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSVector2DIterator.m; path = parser/data/PSVector2DIterator.m; sourceTree = "<group>"; };
-		CA1FC25418B3C53300E92A06 /* PSBoardAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSBoardAsset.h; path = parser/gameeditor/PSBoardAsset.h; sourceTree = "<group>"; };
-		CA1FC25518B3C53300E92A06 /* PSBoardAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSBoardAsset.m; path = parser/gameeditor/PSBoardAsset.m; sourceTree = "<group>"; };
+		CA1FC25418B3C53300E92A06 /* PSAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSAsset.h; path = parser/gameeditor/PSAsset.h; sourceTree = "<group>"; };
+		CA1FC25518B3C53300E92A06 /* PSAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSAsset.m; path = parser/gameeditor/PSAsset.m; sourceTree = "<group>"; };
 		CA1FC25718B3C54F00E92A06 /* PSBoardData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSBoardData.h; path = parser/gameeditor/PSBoardData.h; sourceTree = "<group>"; };
 		CA1FC25818B3C54F00E92A06 /* PSBoardData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSBoardData.m; path = parser/gameeditor/PSBoardData.m; sourceTree = "<group>"; };
 		CA1FC25A18B3C57000E92A06 /* PSCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCell.h; path = parser/gameeditor/PSCell.h; sourceTree = "<group>"; };
@@ -162,14 +161,10 @@
 		CA1FC26118B3C5AE00E92A06 /* PSChunk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSChunk.m; path = parser/gameeditor/chunk/PSChunk.m; sourceTree = "<group>"; };
 		CA1FC26318B3C5D900E92A06 /* PSComposite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSComposite.h; path = parser/gameeditor/composite/PSComposite.h; sourceTree = "<group>"; };
 		CA1FC26418B3C5D900E92A06 /* PSComposite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSComposite.m; path = parser/gameeditor/composite/PSComposite.m; sourceTree = "<group>"; };
-		CA1FC26618B3C5FA00E92A06 /* PSCompositeAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCompositeAsset.h; path = parser/gameeditor/composite/PSCompositeAsset.h; sourceTree = "<group>"; };
-		CA1FC26718B3C5FA00E92A06 /* PSCompositeAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCompositeAsset.m; path = parser/gameeditor/composite/PSCompositeAsset.m; sourceTree = "<group>"; };
-		CA1FC26918B3C62500E92A06 /* PSCompositeAssetTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCompositeAssetTemplate.h; path = parser/gameeditor/composite/PSCompositeAssetTemplate.h; sourceTree = "<group>"; };
-		CA1FC26A18B3C62500E92A06 /* PSCompositeAssetTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCompositeAssetTemplate.m; path = parser/gameeditor/composite/PSCompositeAssetTemplate.m; sourceTree = "<group>"; };
-		CA1FC26C18B3C64700E92A06 /* PSSimpleAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSSimpleAsset.h; path = parser/gameeditor/simple/PSSimpleAsset.h; sourceTree = "<group>"; };
-		CA1FC26D18B3C64700E92A06 /* PSSimpleAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSSimpleAsset.m; path = parser/gameeditor/simple/PSSimpleAsset.m; sourceTree = "<group>"; };
-		CA1FC26F18B3C67300E92A06 /* PSSimpleAssetTemplate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSSimpleAssetTemplate.h; path = parser/gameeditor/simple/PSSimpleAssetTemplate.h; sourceTree = "<group>"; };
-		CA1FC27018B3C67300E92A06 /* PSSimpleAssetTemplate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSSimpleAssetTemplate.m; path = parser/gameeditor/simple/PSSimpleAssetTemplate.m; sourceTree = "<group>"; };
+		CA1FC26618B3C5FA00E92A06 /* PSCompositeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCompositeInstance.h; path = parser/gameeditor/composite/PSCompositeInstance.h; sourceTree = "<group>"; };
+		CA1FC26718B3C5FA00E92A06 /* PSCompositeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCompositeInstance.m; path = parser/gameeditor/composite/PSCompositeInstance.m; sourceTree = "<group>"; };
+		CA1FC26918B3C62500E92A06 /* PSCompositeAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCompositeAsset.h; path = parser/gameeditor/composite/PSCompositeAsset.h; sourceTree = "<group>"; };
+		CA1FC26A18B3C62500E92A06 /* PSCompositeAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCompositeAsset.m; path = parser/gameeditor/composite/PSCompositeAsset.m; sourceTree = "<group>"; };
 		CA1FC27518B3C6D100E92A06 /* PSRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSRepository.h; path = repository/PSRepository.h; sourceTree = "<group>"; };
 		CA1FC27618B3C6D100E92A06 /* PSRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSRepository.m; path = repository/PSRepository.m; sourceTree = "<group>"; };
 		CA1FC27E18B3C70E00E92A06 /* PSResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSResource.h; path = resource/PSResource.h; sourceTree = "<group>"; };
@@ -209,6 +204,9 @@
 		CD55D70318C0879800222E8C /* SaltrTestAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrTestAppTests-Info.plist"; sourceTree = "<group>"; };
 		CD55D70518C0879800222E8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CD55D70718C0879800222E8C /* SaltrTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaltrTestAppTests.m; sourceTree = "<group>"; };
+		CD774F0D18C8E97F0021B4B0 /* PSAssetInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSAssetInstance.h; path = parser/gameeditor/PSAssetInstance.h; sourceTree = "<group>"; };
+		CD774F0E18C8E97F0021B4B0 /* PSAssetInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSAssetInstance.m; path = parser/gameeditor/PSAssetInstance.m; sourceTree = "<group>"; };
+		CD774F1018C9B8DA0021B4B0 /* PSCell_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSCell_Private.h; sourceTree = "<group>"; };
 		CDD2BAC718C6242F00264F86 /* PSBoardData_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSBoardData_Private.h; sourceTree = "<group>"; };
 		CDD7406118BFC02800F2306D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CDD7408E18BFC0FA00F2306D /* Saltr.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Saltr.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -430,11 +428,12 @@
 		CA1FC24A18B3C47700E92A06 /* gameeditor */ = {
 			isa = PBXGroup;
 			children = (
-				CA1FC25318B3C4FF00E92A06 /* simple */,
 				CA1FC25218B3C4F600E92A06 /* composite */,
 				CA1FC25118B3C4EC00E92A06 /* chunk */,
-				CA1FC25418B3C53300E92A06 /* PSBoardAsset.h */,
-				CA1FC25518B3C53300E92A06 /* PSBoardAsset.m */,
+				CA1FC25418B3C53300E92A06 /* PSAsset.h */,
+				CA1FC25518B3C53300E92A06 /* PSAsset.m */,
+				CD774F0D18C8E97F0021B4B0 /* PSAssetInstance.h */,
+				CD774F0E18C8E97F0021B4B0 /* PSAssetInstance.m */,
 				CA1FC25718B3C54F00E92A06 /* PSBoardData.h */,
 				CA1FC25818B3C54F00E92A06 /* PSBoardData.m */,
 				CA1FC25A18B3C57000E92A06 /* PSCell.h */,
@@ -459,23 +458,12 @@
 			children = (
 				CA1FC26318B3C5D900E92A06 /* PSComposite.h */,
 				CA1FC26418B3C5D900E92A06 /* PSComposite.m */,
-				CA1FC26618B3C5FA00E92A06 /* PSCompositeAsset.h */,
-				CA1FC26718B3C5FA00E92A06 /* PSCompositeAsset.m */,
-				CA1FC26918B3C62500E92A06 /* PSCompositeAssetTemplate.h */,
-				CA1FC26A18B3C62500E92A06 /* PSCompositeAssetTemplate.m */,
+				CA1FC26618B3C5FA00E92A06 /* PSCompositeInstance.h */,
+				CA1FC26718B3C5FA00E92A06 /* PSCompositeInstance.m */,
+				CA1FC26918B3C62500E92A06 /* PSCompositeAsset.h */,
+				CA1FC26A18B3C62500E92A06 /* PSCompositeAsset.m */,
 			);
 			name = composite;
-			sourceTree = "<group>";
-		};
-		CA1FC25318B3C4FF00E92A06 /* simple */ = {
-			isa = PBXGroup;
-			children = (
-				CA1FC26C18B3C64700E92A06 /* PSSimpleAsset.h */,
-				CA1FC26D18B3C64700E92A06 /* PSSimpleAsset.m */,
-				CA1FC26F18B3C67300E92A06 /* PSSimpleAssetTemplate.h */,
-				CA1FC27018B3C67300E92A06 /* PSSimpleAssetTemplate.m */,
-			);
-			name = simple;
 			sourceTree = "<group>";
 		};
 		CD05F8C318C4D7F700CB782C /* private */ = {
@@ -484,6 +472,7 @@
 				CD05F8C418C4D8A500CB782C /* PSLevelStructure_Private.h */,
 				CD05F8C518C5B88800CB782C /* PSLevelBoard_Private.h */,
 				CDD2BAC718C6242F00264F86 /* PSBoardData_Private.h */,
+				CD774F1018C9B8DA0021B4B0 /* PSCell_Private.h */,
 			);
 			path = private;
 			sourceTree = "<group>";
@@ -762,21 +751,20 @@
 				CA1FC24D18B3C4A800E92A06 /* PSVector2D.m in Sources */,
 				CA1FC22C18B3C33200E92A06 /* PSDeserializer.m in Sources */,
 				CA1FC23518B3C36100E92A06 /* PSFeature.m in Sources */,
-				CA1FC27118B3C67300E92A06 /* PSSimpleAssetTemplate.m in Sources */,
-				CA1FC26818B3C5FA00E92A06 /* PSCompositeAsset.m in Sources */,
+				CA1FC26818B3C5FA00E92A06 /* PSCompositeInstance.m in Sources */,
 				CA1FC23E18B3C39400E92A06 /* PSPartner.m in Sources */,
 				CA1FC20218B3B8D600E92A06 /* PSSaltr.m in Sources */,
-				CA1FC26B18B3C62500E92A06 /* PSCompositeAssetTemplate.m in Sources */,
+				CA1FC26B18B3C62500E92A06 /* PSCompositeAsset.m in Sources */,
 				CA1FC26518B3C5D900E92A06 /* PSComposite.m in Sources */,
+				CD774F0F18C8E97F0021B4B0 /* PSAssetInstance.m in Sources */,
 				CA1FC27718B3C6D100E92A06 /* PSRepository.m in Sources */,
 				CA1FC25918B3C54F00E92A06 /* PSBoardData.m in Sources */,
 				CA1FC22F18B3C34100E92A06 /* PSDevice.m in Sources */,
 				CA1FC28318B3C72200E92A06 /* PSResourceURLTicket.m in Sources */,
-				CA1FC25618B3C53300E92A06 /* PSBoardAsset.m in Sources */,
+				CA1FC25618B3C53300E92A06 /* PSAsset.m in Sources */,
 				CA1FC28018B3C70E00E92A06 /* PSResource.m in Sources */,
 				CA1FC25C18B3C57000E92A06 /* PSCell.m in Sources */,
 				CA1FC23B18B3C38200E92A06 /* PSLevelStructure.m in Sources */,
-				CA1FC26E18B3C64700E92A06 /* PSSimpleAsset.m in Sources */,
 				CA1FC25F18B3C59700E92A06 /* PSAssetInChunk.m in Sources */,
 				CA1FC25018B3C4C200E92A06 /* PSVector2DIterator.m in Sources */,
 				CA1FC23818B3C37300E92A06 /* PSLevelPackStructure.m in Sources */,

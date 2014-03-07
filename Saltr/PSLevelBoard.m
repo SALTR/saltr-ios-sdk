@@ -18,7 +18,6 @@
 @synthesize ownerLevel = _ownerLevel;
 @synthesize rows = _rows;
 @synthesize cols = _cols;
-@synthesize blockedCells = _blockedCells;
 @synthesize position = _position;
 @synthesize boardVector = _boardVector;
 @synthesize rawBoard = _rawBoard;
@@ -35,7 +34,6 @@
         _rows = [[_rawBoard objectForKey:@"rows"] integerValue];
         assert(0 <= _rows);
         _boardData = _ownerLevel.boardData;
-        _blockedCells = [_rawBoard objectForKey:@"blokedCells"];
         _position = [_rawBoard objectForKey:@"position"];
         _boardVector = [[PSVector2D alloc] initWithWidth:_cols andHeight:_rows];
     }
@@ -58,12 +56,12 @@
 
 - (id)boardProperties
 {
-    return nil;
-}
-
-- (id)cellProperties
-{
-    return nil;
+    NSDictionary* boardProperties = nil;
+    NSDictionary* properties = [_rawBoard objectForKey:@"properties"];
+    if (properties && [properties objectForKey:@"board"]) {
+        boardProperties = [properties objectForKey:@"board"];
+    }
+    return boardProperties;
 }
 
 @end

@@ -51,7 +51,7 @@
 }
 
 -(void) testDefineFeatureWithToken  {
-    [[PSSaltr sharedInstance] defineFeatureWithToken:@"token" andProperties:[NSArray new]];
+    [[PSSaltr sharedInstance] defineFeatureWithToken:@"token" andProperties:[NSDictionary new]];
     XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 

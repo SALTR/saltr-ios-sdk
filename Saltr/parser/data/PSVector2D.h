@@ -19,7 +19,7 @@
 
 - (id)initWithWidth:(NSUInteger)theWidth andHeight:(NSUInteger)theHeight;
 
-- (void)addObject:(id)object atRow:(NSUInteger)row andColumn:(NSUInteger)column;
+- (void)insertObject:(id)object atRow:(NSUInteger)row andColumn:(NSUInteger)column;
 
 - (id)retrieveObjectAtRow:(NSUInteger)row andColumn:(NSUInteger)column;
 

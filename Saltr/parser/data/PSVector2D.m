@@ -12,10 +12,7 @@
 #import "PSVector2DIterator.h"
 
 @interface PSVector2D () {
-    NSMutableArray* _rows;
-    NSMutableArray* _colums;
-    NSUInteger _rowsCount;
-    NSUInteger _columsCount;
+    NSMutableArray* _matrix;
     PSVector2DIterator* _iterator;
 }
 @end
@@ -32,37 +29,42 @@
         if (theWidth <= 0 || theHeight <= 0) {
             return nil;
         }
-        _rowsCount = theHeight;
-        _columsCount = theWidth;
         _width = theWidth;
         _height = theHeight;
-        _rows = [[NSMutableArray alloc] initWithCapacity:_rowsCount];
-        for (NSUInteger i = 0; i < _rowsCount; ++i) {
-            _rows[i] = [[NSMutableArray alloc] initWithCapacity:_columsCount];
-            for (int j = 0; j < _columsCount; ++j) {
-                [[_rows objectAtIndex:i] addObject:[[NSNull alloc] init]];
-            }
-        }
         _iterator = nil;
+        [self setupWithEmptyObjects];
     }
     return self;
 }
 
-- (void)addObject:(id)object atRow:(NSUInteger)row andColumn:(NSUInteger)column
+- (void)setupWithEmptyObjects
 {
-    if (object == nil || row >= _rowsCount || column >= _columsCount ) {
+    assert(_width >= 0 && _height >= 0);
+    _matrix = [[NSMutableArray alloc] initWithCapacity:_height];
+    for (NSUInteger i = 0; i < _height; ++i) {
+        _matrix[i] = [[NSMutableArray alloc] initWithCapacity:_width];
+        for (int j = 0; j < _width; ++j) {
+            [[_matrix objectAtIndex:i] addObject:[[NSNull alloc] init]];
+        }
+    }
+}
+
+- (void)insertObject:(id)object atRow:(NSUInteger)row andColumn:(NSUInteger)column
+{
+    if (object == nil || row >= _width || column >= _height ) {
         return;
     }
-    [(NSMutableArray*)([_rows objectAtIndex:row]) replaceObjectAtIndex:column withObject:object];
+    NSLog(@"INSERTED OBJECT : %@", object);
+    [(NSMutableArray*)([_matrix objectAtIndex:column]) replaceObjectAtIndex:row withObject:object];
 }
 
 - (id)retrieveObjectAtRow:(NSUInteger)row andColumn:(NSUInteger)column
 {
-    if (row >= _rowsCount || column >= _columsCount ) {
+    if (row >= _width || column >= _height ) {
         return nil;
     }
-    assert(_rows);
-    id object = [[_rows objectAtIndex:row] objectAtIndex:column];
+    assert(_matrix);
+    id object = [[_matrix objectAtIndex:column] objectAtIndex:row];
     assert(object);
     return object;
 }

@@ -9,13 +9,10 @@
  */
 
 #import "PSComposite.h"
-#import "PSCell.h"
-#import "PSLevelStructure.h"
+#import "PSCell_Private.h"
 #import "PSBoardData.h"
+#import "PSCompositeInstance.h"
 #import "PSCompositeAsset.h"
-#import "PSCompositeAssetTemplate.h"
-#import "PSLevelBoard_Private.h"
-#import "PSVector2D.h"
 
 @interface PSComposite() {
     NSDictionary* _boardAssetMap;
@@ -25,19 +22,17 @@
 @implementation PSComposite
 
 @synthesize compositeId = _compositeId;
-@synthesize position = _position;
-@synthesize ownerLevelBoard = _ownerLevelBoard;
+@synthesize cell = _cell;
 
-- (id)initWithId:(NSString*)compositeId position:(PSCell*)position andOwnerLevelBoard:(PSLevelBoard *)theOwnerLevelBoard
+- (id)initWithId:(NSString*)theCompositeId cell:(PSCell*)theCell andBoardData:(PSBoardData *)theBoardData
 {
     self = [super init];
     if (self) {
-        assert(theOwnerLevelBoard);
-        assert(compositeId);
-        _compositeId = compositeId;
-        _position = position;
-        _ownerLevelBoard = theOwnerLevelBoard;
-        _boardAssetMap = _ownerLevelBoard.ownerLevel.boardData.assetMap;
+        assert(theBoardData);
+        assert(theCompositeId);
+        _compositeId = theCompositeId;
+        _cell = theCell;
+        _boardAssetMap = theBoardData.assetMap;
     }
     return  self;
 }
@@ -45,12 +40,10 @@
 - (void)generate
 {
     assert(nil != [_boardAssetMap objectForKey:self.compositeId]);
-    assert([[_boardAssetMap objectForKey:self.compositeId] isKindOfClass:[PSCompositeAssetTemplate class]]);
-    PSCompositeAssetTemplate* compositeAssetTemplate = [_boardAssetMap objectForKey:self.compositeId];
-    NSArray* shifts = [compositeAssetTemplate.shifts copy];
-    PSCell* basis = [[PSCell alloc] initWithX:self.position.x andY:self.position.y];
-    PSCompositeAsset* compositeAsset = [[PSCompositeAsset  alloc] initWithShifts:shifts basis:basis type:compositeAssetTemplate.type andKeys:compositeAssetTemplate.keys];
-    [_ownerLevelBoard.boardVector addObject:compositeAsset atRow:basis.x andColumn:basis.y];
+    assert([[_boardAssetMap objectForKey:self.compositeId] isKindOfClass:[PSCompositeAsset class]]);
+    PSCompositeAsset* compositeAsset = [_boardAssetMap objectForKey:self.compositeId];
+    PSCompositeInstance* compositeAssetInstance = [[PSCompositeInstance  alloc] initWithShifts:compositeAsset.shifts type:compositeAsset.type andKeys:compositeAsset.keys];
+    _cell.assetInstance = (PSAssetInstance*)compositeAssetInstance;
 }
 
 @end
