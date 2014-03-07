@@ -32,7 +32,6 @@
 }
 
 -(NSDictionary *) objectFromStorage:(NSString *)fileName {
-    /// @todo The line below is just for passing compilation
     NSString* filePath = [[[PSRepository libraryBundle] bundlePath] stringByAppendingPathComponent:fileName];
     return [self getInternal:filePath];
 }
@@ -91,10 +90,15 @@
     return nil;
 }
 
--(void) saveInternal:(NSString *) filePath objectToSave:(id)object {
+-(void) saveInternal:(NSString *) filePath objectToSave:(NSDictionary *)object {
     @try {
         NSError* error = nil;
-        NSString *jsonString = [[NSString alloc] initWithData:object encoding:NSUTF8StringEncoding];
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
+                                                           options:NSJSONWritingPrettyPrinted
+                                                             error:&error];
+        
+        NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        
         [jsonString writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
         
     } @catch (NSError* error) {

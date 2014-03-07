@@ -32,7 +32,8 @@
  * @param id - the ID of the current resource
  * @param ticket - the ticket of the current resource
  */
--(id) initWithId:(NSString *)id andTicket:(PSResourceURLTicket *)ticket;
+-(id) initWithId:(NSString *)id andTicket:(PSResourceURLTicket *)ticket successHandler:(void (^)())onSuccess errorHandler:(void (^)())onFail progressHandler:(void (^)())onProgress;
+
 
 /// Returns the count of loaded bytes.
 -(NSInteger) bytesLoaded;

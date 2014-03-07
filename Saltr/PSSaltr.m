@@ -17,6 +17,7 @@
 #import "PSPartner.h"
 #import "PSDevice.h"
 #import "PSLevelParser.h"
+#import "Constants.h"
 
 /**
  * @def APP_DATA_URL_CACHE
@@ -137,7 +138,6 @@
     }
 }
 
-/// @todo the interface of PSResource class is not ready yet
 -(void) appData {
     if (_isLoading) {
         return;
@@ -188,14 +188,65 @@
                           values:(NSArray *)propertyValues
                    andOperations:(NSArray *)operations {
     
+    NSMutableDictionary* args = [[NSMutableDictionary alloc] initWithObjectsAndKeys:_saltrUserId, @"saltId", nil];
+    NSMutableArray* properties = [NSMutableArray new];
+    for (NSInteger i = 0; i < [propertyNames count]; ++i) {
+        NSString* propertyName = [propertyNames objectAtIndex:i];
+        NSString* propertyValue = [propertyValues objectAtIndex:i];
+        NSString* operation = [operations objectAtIndex:i];
+        [properties addObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSDictionary dictionaryWithObjectsAndKeys:propertyValue, operation, nil], propertyName, nil]];
+    }
+    [args setObject:properties forKey:@"properties"];
+    [args setObject:_instanceKey forKey:@"instanceKey"];
+    
+    
+    NSError* error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (!error) {
+        NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        NSDictionary* urlVars = [[NSDictionary alloc] initWithObjectsAndKeys:COMMAND_ADD_PROPERTY, @"command", jsonArguments, @"arguments", nil];
+        NSData *urlVarsData = [NSKeyedArchiver archivedDataWithRootObject:urlVars];
+        PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVarsData];
+        /// @todo the code below should be reviewed/rewritten
+        PSResource* resource = nil;
+        void (^addUserPropertySuccessHandler)() = ^() {
+            [resource dispose];
+        };
+        void (^addUserPropertyFailHandler)() = ^() {
+            [resource dispose];
+        };
+        resource = [[PSResource alloc] initWithId:@"property" andTicket:ticket successHandler:addUserPropertySuccessHandler errorHandler:addUserPropertyFailHandler progressHandler:nil];
+        [resource load];
+    }
 }
 
 #pragma mark private functions
 
-/// @todo the implementation should be added
 -(PSResource *)createAppDataResource:(void (^)(PSResource *))appDataAssetLoadCompleteHandler errorHandler:(void (^)(PSResource *))appDataAssetLoadErrorHandler {
-    NSLog(@"[SaltAPI] App data is failed to load.");
-    return [PSResource new];
+    NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
+    if (_device) {
+        [args setObject:_device forKey:@"device"];
+    }
+    if (_partner) {
+        [args setObject:_partner forKey:@"partner"];
+    }
+    [args setObject:_instanceKey forKey:@"instnaceKey"];
+    
+    NSError* error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (!error) {
+        NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        NSDictionary* urlVars = [[NSDictionary alloc] initWithObjectsAndKeys:COMMAND_APP_DATA, @"command", jsonArguments, @"arguments", nil];
+        NSData *urlVarsData = [NSKeyedArchiver archivedDataWithRootObject:urlVars];
+        PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:SALTR_URL andVariables:urlVarsData];
+        PSResource* resource = [[PSResource alloc] initWithId:@"saltAppConfig" andTicket:ticket successHandler:appDataAssetLoadCompleteHandler errorHandler:appDataAssetLoadErrorHandler progressHandler:nil];
+        return resource;
+    }
+    return nil;
 }
 
 -(void) loadAppDataSuccessHandler:(NSDictionary *)jsonData {
@@ -237,12 +288,78 @@
 
 /// @todo the implementation should be added
 -(void) syncFeatures {
+    NSMutableDictionary* urlVars = [[NSMutableDictionary alloc] initWithObjectsAndKeys:COMMAND_APP_DATA, @"command", _instanceKey, @"instanceKey", nil];
+    if (appVersion) {
+        [urlVars setObject:appVersion forKey:@"appVersion"];
+    }
+    NSMutableArray* featureList = [NSMutableArray new];
+    for (NSString* key in [_features allKeys]) {
+        PSFeature* feature = [_features objectForKey:key];
+        if (feature.defaultProperties) {
+            
+            NSError* error = nil;
+            NSData *jsonData = [NSJSONSerialization dataWithJSONObject:feature.defaultProperties
+                                                               options:NSJSONWritingPrettyPrinted
+                                                                 error:&error];
+            if (!error) {
+                NSString *jsonDefaultProperties = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+                
+                
+                [featureList addObject:[NSDictionary dictionaryWithObjectsAndKeys:jsonDefaultProperties, feature.token, nil]];
+            }
+        }
+    }
+    NSError* error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:featureList
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (!error) {
+        NSString *properties = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        
+        [urlVars setObject:properties forKey:@"data"];
+
+    }
     
+    NSData *urlVarsData = [NSKeyedArchiver archivedDataWithRootObject:urlVars];
+    PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:SALTR_URL andVariables:urlVarsData];
+    void (^syncSuccessHandler)() = ^() {
+    };
+    void (^syncFailHandler)() = ^() {
+    };
+    PSResource* resource = [[PSResource alloc] initWithId:@"saveOrUpdateFeature" andTicket:ticket successHandler:syncSuccessHandler errorHandler:syncFailHandler progressHandler:nil];
+    [resource load];
 }
+
+
 
 -(void)loadLevelDataFromServer:(PSLevelPackStructure *)levelPackData
                      levelData:(PSLevelStructure *)levelData forceNoCache:(BOOL)forceNoCache {
     
+    NSInteger timeInterval = [NSDate timeIntervalSinceReferenceDate] * 1000;
+    NSString* url = [levelData.dataUrl stringByAppendingFormat:@"_time_=%d", timeInterval];
+    NSString* dataUrl = forceNoCache ? url : levelData.dataUrl;
+    PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:dataUrl andVariables:nil];
+    /// @todo the code below should be reviewed/rewritten
+    PSResource* asset = nil;
+    
+    void (^levelDataAssetLoadedHandler)() = ^() {
+        NSDictionary* data = asset.jsonData;
+        NSString* cachedFileName = nil; //[Utils formatString(LEVEL_DATA_URL_CACHE_TEMPLATE, levelPackData.index, levelData.index)];
+        if (!asset.jsonData) {
+            [self loadLevelDataLocally:levelPackData levelData:levelData cachedFileName:cachedFileName];
+        } else {
+            [self levelLoadSuccessHandler:levelData data:data];
+            [repository cacheObject:cachedFileName version:levelData.version object:data];
+        }
+        [asset dispose];
+    };
+    void (^levelDataAssetLoadErrorHandler)() = ^() {
+        NSString* cachedFileName = nil; //[Utils formatString(LEVEL_DATA_URL_CACHE_TEMPLATE, levelPackData.index, levelData.index)];
+        [self loadLevelDataLocally:levelPackData levelData:levelData cachedFileName:cachedFileName];
+        [asset dispose];
+    };
+    asset = [[PSResource alloc] initWithId:@"saltr" andTicket:ticket successHandler:levelDataAssetLoadedHandler errorHandler:levelDataAssetLoadErrorHandler progressHandler:nil];
+    [asset load];
 }
 
 -(BOOL) loadLevelDataCached:(PSLevelStructure *)levelData

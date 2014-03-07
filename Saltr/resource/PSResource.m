@@ -10,15 +10,28 @@
 
 #import "PSResource.h"
 
-@implementation PSResource
+@implementation PSResource {
+    NSInteger _countOfFails;
+    NSInteger _dropTimeout;
+    NSInteger _maxAttempts;
+    NSInteger _httpStatus;
+    NSTimer* _timeoutTimer;
+}
+
 @synthesize id = _id;
 @synthesize ticket = _ticket;
 
--(id) initWithId:(NSString *)id andTicket:(PSResourceURLTicket *)ticket {
+
+-(id) initWithId:(NSString *)id andTicket:(PSResourceURLTicket *)ticket successHandler:(void (^)())onSuccess errorHandler:(void (^)())onFail progressHandler:(void (^)())onProgress {
     self = [super init];
     if (self) {
         _id = id;
         _ticket = ticket;
+        _maxAttempts = _ticket.maxAttemps;
+        _countOfFails = 0;
+        _dropTimeout = _ticket.dropTimeout;
+        _httpStatus = -1;
+        [self initLoader];
     }
     return self;
 }
@@ -61,6 +74,12 @@
 }
 
 -(void) dispose {
+    
+}
+
+#pragma mark private functions
+
+-(void) initLoader {
     
 }
 
