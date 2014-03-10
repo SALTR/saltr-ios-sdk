@@ -52,7 +52,8 @@
 }
 
 -(NSURLRequest *) urlRequest {
-    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:[NSURL URLWithString:_url]];
+    NSURL* url = [NSURL URLWithString:_url];
+    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url];
     request.timeoutInterval = _idleTimeout;
     [request setHTTPShouldHandleCookies:_manageCookies];
     [request setHTTPMethod:_method];

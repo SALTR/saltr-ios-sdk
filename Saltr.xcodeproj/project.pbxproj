@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA05F4B118CDEE2C0071FCCB /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA05F4B018CDEE2C0071FCCB /* Helper.m */; };
 		CA1FC1FB18B3B8D600E92A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
 		CA1FC20018B3B8D600E92A06 /* PSSaltr.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC1FF18B3B8D600E92A06 /* PSSaltr.h */; };
 		CA1FC20218B3B8D600E92A06 /* PSSaltr.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC20118B3B8D600E92A06 /* PSSaltr.m */; };
@@ -119,6 +120,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		CA05F4AF18CDEE2C0071FCCB /* Helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Helper.h; path = utils/Helper.h; sourceTree = "<group>"; };
+		CA05F4B018CDEE2C0071FCCB /* Helper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Helper.m; path = utils/Helper.m; sourceTree = "<group>"; };
 		CA1FC1F718B3B8D600E92A06 /* libSaltr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA1FC1FE18B3B8D600E92A06 /* Saltr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saltr-Prefix.pch"; sourceTree = "<group>"; };
@@ -412,6 +415,8 @@
 		CA1FC24218B3C3C900E92A06 /* utils */ = {
 			isa = PBXGroup;
 			children = (
+				CA05F4AF18CDEE2C0071FCCB /* Helper.h */,
+				CA05F4B018CDEE2C0071FCCB /* Helper.m */,
 			);
 			name = utils;
 			sourceTree = "<group>";
@@ -747,6 +752,7 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "#  Build the doxygen documentation for the project and load the docset into Xcode.\n\n#  Use the following to adjust the value of the $DOXYGEN_PATH User-Defined Setting:\n#    Binary install location: /Applications/Doxygen.app/Contents/Resources/doxygen\n#    Source build install location: /usr/local/bin/doxygen\n\n#  If the config file doesn't exist, run 'doxygen -g $SOURCE_ROOT/doxygen.config' to\n#   a get default file.\n\nif ! [ -f $SOURCE_ROOT/doxygen.config ]\nthen\necho doxygen config file does not exist\n$DOXYGEN_PATH -g $SOURCE_ROOT/doxygen.config\nfi\n\n#  Append the proper input/output directories and docset info to the config file.\n#  This works even though values are assigned higher up in the file. Easier than sed.\n\ncp $SOURCE_ROOT/doxygen.config $TEMP_DIR/doxygen.config\n\necho \"INPUT = $SOURCE_ROOT\" >> $TEMP_DIR/doxygen.config\necho \"OUTPUT_DIRECTORY = $SOURCE_ROOT/DoxygenDocs.docset\" >> $TEMP_DIR/doxygen.config\necho \"GENERATE_DOCSET        = YES\" >> $TEMP_DIR/doxygen.config\necho \"DOCSET_BUNDLE_ID       = com.mycompany.DoxygenExample\" >> $TEMP_DIR/doxygen.config\n\n#  Run doxygen on the updated config file.\n#  Note: doxygen creates a Makefile that does most of the heavy lifting.\n\n$DOXYGEN_PATH \"$TEMP_DIR/doxygen.config\"\n\n# Update \"XCODE_INSTALL\" variable\ncat DoxygenDocs.docset/html/Makefile | sed  's/XCODE_INSTALL=$(shell xcode-select -print-path)/XCODE_INSTALL=\"$(shell xcode-select -print-path)\"/g' > DoxygenDocs.docset/html/Make\nmv DoxygenDocs.docset/html/Make DoxygenDocs.docset/html/Makefile\n\n#  make will invoke docsetutil. Take a look at the Makefile to see how this is done.\n\nmake -C $SOURCE_ROOT/DoxygenDocs.docset/html install\n\n\necho $SOURCE_ROOT/DoxygenDocs.docset/html/Makefile\n\n#  Construct a temporary applescript file to tell Xcode to load a docset.\n\nrm -f \"$TEMP_DIR/loadDocSet.scpt\"\n\n#echo \"tell application \\\"Xcode 2\\\"\" >> \"$TEMP_DIR/loadDocSet.scpt\"\n#echo \"load documentation set with path \\\"/Users/$USER/Library/Developer/Shared/Documentation/DocSets/\\\"\" >> \"$TEMP_DIR/loadDocSet.scpt\"\n#echo \"end tell\" >> \"$TEMP_DIR/loadDocSet.scpt\"\n\n\n#  Run the load-docset applescript command.\n\n#osascript \"$TEMP_DIR/loadDocSet.scpt\"\n\n#osascript -e \"tell application \\\"Xcode\\\"\" -e \"load documentation set with path \\\"/Users/employee/Library/Developer/Shared/Documentation/DocSets/com.mycompany.DoxygenExample.docset/\\\"\" -e \"end tell\"\n\nexit 0\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -780,6 +786,7 @@
 				CA1FC25F18B3C59700E92A06 /* PSAssetInChunk.m in Sources */,
 				CA1FC25018B3C4C200E92A06 /* PSVector2DIterator.m in Sources */,
 				CA1FC23818B3C37300E92A06 /* PSLevelPackStructure.m in Sources */,
+				CA05F4B118CDEE2C0071FCCB /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

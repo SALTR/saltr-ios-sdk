@@ -16,7 +16,7 @@
  * gives opportunity to load/stop and dispose the current resource.
  */
 
-@interface PSResource : NSObject {
+@interface PSResource : NSObject<NSURLConnectionDelegate> {
     
 }
 
@@ -26,23 +26,25 @@
 /// the ticket for loading the resource
 @property (nonatomic, strong, readonly) PSResourceURLTicket* ticket;
 
+/// The count of loaded bytes
+@property (nonatomic, assign, readonly) long long bytesLoaded;
+
+/// The total count of bytes
+@property (nonatomic, assign, readonly) long long bytesTotal;
+
+/// The percent of loaded bytes.
+@property (nonatomic, assign, readonly) NSInteger percentLoaded;
 
 /**
  * @brief Initializes the current resource with the given parameters
  * @param id - the ID of the current resource
  * @param ticket - the ticket of the current resource
+ * @param onSuccess - the success handler 
+ * @param onFail - the fail handler 
+ * @param onProgress - the progress handler
+ * @return id - the initialized instance of the current class
  */
--(id) initWithId:(NSString *)id andTicket:(PSResourceURLTicket *)ticket successHandler:(void (^)())onSuccess errorHandler:(void (^)())onFail progressHandler:(void (^)())onProgress;
-
-
-/// Returns the count of loaded bytes.
--(NSInteger) bytesLoaded;
-
-/// Returns the total count of bytes.
--(NSInteger) bytesTotal;
-
-/// Returns the percent of loaded bytes.
--(NSInteger) percentLoaded;
+-(id) initWithId:(NSString *)id andTicket:(PSResourceURLTicket *)ticket successHandler:(void (^)(PSResource *))onSuccess errorHandler:(void (^)(PSResource *))onFail progressHandler:(void (^)(PSResource *))onProgress;
 
 /// Returns the data of the resource
 -(id)data;

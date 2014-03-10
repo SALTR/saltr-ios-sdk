@@ -25,5 +25,9 @@
     return self;
 }
 
+-(NSString *) toString {
+    return [NSString stringWithFormat:@" { partnerId :%@, partnerType :%@ }", _partnerId, _partnerType];
+}
+
 
 @end

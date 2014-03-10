@@ -26,4 +26,8 @@
     return self;
 }
 
+-(NSString *) toString {
+    return [NSString stringWithFormat:@"{ deviceId :%@, deviceType :%@ }", _deviceId, _deviceType];
+}
+
 @end

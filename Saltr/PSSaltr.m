@@ -18,6 +18,7 @@
 #import "PSDevice.h"
 #import "PSLevelParser.h"
 #import "Constants.h"
+#import "Helper.h"
 
 /**
  * @def APP_DATA_URL_CACHE
@@ -175,8 +176,9 @@
     }
     
     //if there are no version change than load from cache
-    NSString* cachedFileName = nil; //[Utils formatString(LEVEL_DATA_URL_CACHE_TEMPLATE, levelPackData.index, levelData.index)];
-
+    NSString* cachedFileName = [Helper formatString:LEVEL_DATA_URL_CACHE_TEMPLATE andString2:levelPackStructure.index andString3:levelStructure.index];
+                                
+    
     if (levelStructure.version == [repository objectVersion:cachedFileName]) {
         [self loadLevelDataCached:levelStructure cachedFileName:cachedFileName];
     } else {
@@ -227,10 +229,10 @@
 -(PSResource *)createAppDataResource:(void (^)(PSResource *))appDataAssetLoadCompleteHandler errorHandler:(void (^)(PSResource *))appDataAssetLoadErrorHandler {
     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
     if (_device) {
-        [args setObject:_device forKey:@"device"];
+        [args setObject:[_device toString] forKey:@"device"];
     }
     if (_partner) {
-        [args setObject:_partner forKey:@"partner"];
+        [args setObject:[_partner toString] forKey:@"partner"];
     }
     [args setObject:_instanceKey forKey:@"instnaceKey"];
     
@@ -286,7 +288,6 @@
     NSLog(@"[SaltClient] ERROR: Level Packs are not loaded.");
 }
 
-/// @todo the implementation should be added
 -(void) syncFeatures {
     NSMutableDictionary* urlVars = [[NSMutableDictionary alloc] initWithObjectsAndKeys:COMMAND_APP_DATA, @"command", _instanceKey, @"instanceKey", nil];
     if (appVersion) {
@@ -344,7 +345,7 @@
     
     void (^levelDataAssetLoadedHandler)() = ^() {
         NSDictionary* data = asset.jsonData;
-        NSString* cachedFileName = nil; //[Utils formatString(LEVEL_DATA_URL_CACHE_TEMPLATE, levelPackData.index, levelData.index)];
+        NSString* cachedFileName = [Helper formatString:LEVEL_DATA_URL_CACHE_TEMPLATE andString2:levelPackData.index andString3:levelData.index];
         if (!asset.jsonData) {
             [self loadLevelDataLocally:levelPackData levelData:levelData cachedFileName:cachedFileName];
         } else {
@@ -354,7 +355,8 @@
         [asset dispose];
     };
     void (^levelDataAssetLoadErrorHandler)() = ^() {
-        NSString* cachedFileName = nil; //[Utils formatString(LEVEL_DATA_URL_CACHE_TEMPLATE, levelPackData.index, levelData.index)];
+        NSString* cachedFileName = [Helper formatString:LEVEL_DATA_URL_CACHE_TEMPLATE andString2:levelPackData.index andString3:levelData.index];
+        
         [self loadLevelDataLocally:levelPackData levelData:levelData cachedFileName:cachedFileName];
         [asset dispose];
     };
@@ -397,7 +399,7 @@
 }
 
 -(void) loadLevelDataInternal:(PSLevelPackStructure *)levelPackData levelData:(PSLevelStructure *)levelData {
-    NSString* url = nil;//formatString(LEVEL_DATA_URL_LOCAL_TEMPLATE, levelPackData.index, levelData.index);
+    NSString* url = [Helper formatString:LEVEL_DATA_URL_LOCAL_TEMPLATE andString2:levelPackData.index andString3:levelData.index];
     NSDictionary* data = [repository objectFromApplication:url];
     if (data) {
         [self levelLoadSuccessHandler:levelData data:data];

@@ -12,7 +12,10 @@
 
 @interface PSDevice : NSObject
 
+/// the device Id
 @property (nonatomic, strong, readonly) NSString* deviceId;
+
+/// the device type
 @property (nonatomic, strong, readonly) NSString* deviceType;
 
 /**
@@ -23,5 +26,8 @@
  * @return - The instance of PSDevice class
  */
 -(id) initWithDeviceId:(NSString*)theId andDeviceType:(NSString*)theType;
+
+/// Returns the string value of @b PSDevice class
+-(NSString *) toString;
 
 @end

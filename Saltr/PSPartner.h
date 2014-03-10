@@ -12,7 +12,10 @@
 
 @interface PSPartner : NSObject
 
+/// the partner id
 @property (nonatomic, strong, readonly) NSString* partnerId;
+
+/// the partner type
 @property (nonatomic, strong, readonly) NSString* partnerType;
 
 /**
@@ -23,5 +26,8 @@
  * @return - The instance of PSPartner class
  */
 -(id) initWithPartnerId:(NSString*)theId andPartnerType:(NSString*)theType;
+
+/// Returns the string value of @b PSPartner class
+-(NSString *) toString;
 
 @end

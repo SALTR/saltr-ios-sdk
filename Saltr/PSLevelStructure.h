@@ -16,7 +16,7 @@
 
 @property (nonatomic, strong, readonly) NSString* levelId;
 @property (nonatomic, strong, readonly) NSString* dataUrl;
-@property (nonatomic, assign, readonly) NSInteger index;
+@property (nonatomic, strong, readonly) NSString* index;
 @property (nonatomic, strong, readonly) NSDictionary* properties;
 @property (nonatomic, strong, readonly) PSBoardData* boardData;
 @property (nonatomic, strong, readonly) NSString* version;
@@ -33,7 +33,7 @@
  * @param theVersion - levelStructure version
  * @return - The instance of PSLevelStructure class
  */
--(id) initWithLevelId:(NSString*)theId index:(NSInteger)theIndex dataUrl:(NSString*)theDataUrl properties:(id)theProperties andVersion:(NSString*)theVersion;
+-(id) initWithLevelId:(NSString*)theId index:(NSString *)theIndex dataUrl:(NSString*)theDataUrl properties:(id)theProperties andVersion:(NSString*)theVersion;
 
 /**
  *
