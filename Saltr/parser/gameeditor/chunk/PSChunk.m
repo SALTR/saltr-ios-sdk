@@ -9,14 +9,11 @@
  */
 
 #import "PSChunk.h"
-#import "PSCell.h"
+#import "PSCell_Private.h"
 #import "PSAssetInChunk.h"
-#import "PSLevelStructure.h"
 #import "PSBoardData.h"
-#import "PSLevelBoard_Private.h"
-#import "PSSimpleAssetTemplate.h"
-#import "PSSimpleAsset.h"
-#import "PSVector2D.h"
+#import "PSAsset.h"
+#import "PSAssetInstance.h"
 
 @interface PSChunk() {
     NSDictionary* _boardAssetMap;
@@ -29,21 +26,19 @@
 
 @implementation PSChunk
 
-@synthesize ownerLevelBoard = _ownerLevelBoard;
 @synthesize chunkId = _chunkId;
 
-- (id)initWithChunkId:(NSString*)theChunkId andOwnerLevelBoard:(PSLevelBoard *)theOwnerLevelBoard
+- (id)initWithChunkId:(NSString*)theChunkId andBoardData:(PSBoardData *)theBoardData
 {
     self = [super init];
     if (self) {
         assert(nil != theChunkId);
-        assert(nil != theOwnerLevelBoard);
+        assert(nil != theBoardData);
         _chunkId = theChunkId;
-        _ownerLevelBoard = theOwnerLevelBoard;
         _cells = [[NSMutableArray alloc] init];
         _chunkAssets = [[NSMutableArray alloc] init];
-        _boardAssetMap = theOwnerLevelBoard.ownerLevel.boardData.assetMap;
-        _boardStateMap = theOwnerLevelBoard.ownerLevel.boardData.stateMap;
+        _boardAssetMap = theBoardData.assetMap;
+        _boardStateMap = theBoardData.stateMap;
     }
     return self;
 }
@@ -67,14 +62,14 @@
 
 - (void)generateAssetWithCount:(NSUInteger)count assetId:(NSString*)assetId andStateId:(NSString*)stateId
 {
-    PSSimpleAssetTemplate* simpleAssetTemplate = [_boardAssetMap objectForKey:assetId];
-    assert(nil != simpleAssetTemplate);
+    PSAsset* assetTemplate = [_boardAssetMap objectForKey:assetId];
+    assert(nil != assetTemplate);
     NSString* state = [_boardStateMap objectForKey:stateId];
     for (NSUInteger i = 0; i < count; ++i) {
         NSInteger randCellIndex = (arc4random() % _cells.count);
         PSCell* randCell = _cells[randCellIndex];
-        PSSimpleAsset* asset = [[PSSimpleAsset alloc] initWithState:state cell:randCell type:simpleAssetTemplate.type andKeys:simpleAssetTemplate.keys];
-        [_ownerLevelBoard.boardVector addObject:asset atRow:randCell.x andColumn:randCell.y];
+        PSAssetInstance* asset = [[PSAssetInstance alloc] initWithState:state type:assetTemplate.type andKeys:assetTemplate.keys];
+        randCell.assetInstance = asset;
         [_cells removeObjectAtIndex:randCellIndex];
         if (0 == _cells.count) {
             return;
@@ -129,7 +124,7 @@
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat: @"Chunk : [chunkId : %@], [cells : %@], [chunkAssets: %@], [ownerLevel : %@]", self.chunkId, _cells, _chunkAssets, self.ownerLevelBoard];
+    return [NSString stringWithFormat: @"Chunk : [chunkId : %@], [cells : %@], [chunkAssets: %@]", self.chunkId, _cells, _chunkAssets];
 }
 
 @end

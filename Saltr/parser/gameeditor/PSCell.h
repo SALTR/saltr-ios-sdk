@@ -10,10 +10,15 @@
 
 #import <Foundation/Foundation.h>
 
+@class PSAssetInstance;
+
 @interface PSCell : NSObject
 
 @property (nonatomic, assign, readonly) NSInteger x;
 @property (nonatomic, assign, readonly) NSInteger y;
+@property (nonatomic, assign, readonly) BOOL isBlocked;
+@property (nonatomic, strong, readonly) NSDictionary* properties;
+@property (nonatomic, strong, readonly) PSAssetInstance* assetInstance;
 
 -(id) initWithX:(NSInteger)x andY:(NSInteger)y;
 

@@ -11,16 +11,15 @@
 #import <Foundation/Foundation.h>
 
 @class PSCell;
-@class PSCompositeAsset;
-@class PSLevelBoard;
+@class PSCompositeInstance;
+@class PSBoardData;
 
 @interface PSComposite : NSObject
 
-@property (nonatomic, strong, readonly) PSLevelBoard* ownerLevelBoard;
 @property (nonatomic, strong, readonly) NSString* compositeId;
-@property (nonatomic, strong, readonly) PSCell* position;
+@property (nonatomic, strong, readonly) PSCell* cell;
 
-- (id)initWithId:(NSString*)compositeId position:(PSCell*)position andOwnerLevelBoard:(PSLevelBoard*)theOwnerLevelBoard;
+- (id)initWithId:(NSString*)theCompositeId cell:(PSCell*)theCell andBoardData:(PSBoardData *)theBoardData;
 
 - (void)generate;
 

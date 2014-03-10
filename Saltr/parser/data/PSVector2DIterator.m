@@ -12,8 +12,8 @@
 #import "PSVector2D.h"
 
 @interface PSVector2DIterator () {
-    NSUInteger _currentRow;
-    NSUInteger _currentColumn;
+    NSUInteger _currentX;
+    NSUInteger _currentY;
 }
 @end
 
@@ -37,12 +37,12 @@
 
 - (BOOL)isLastColumn
 {
-    return (_currentColumn == (_vector2D.width - 1));
+    return (_currentY == (_vector2D.height - 1));
 }
 
 - (BOOL)isLastRow
 {
-    return (_currentRow == (_vector2D.height - 1));
+    return (_currentX == (_vector2D.width - 1));
 }
 
 - (BOOL)hasNext
@@ -56,17 +56,17 @@
         return nil;
     }
     if ([self isLastColumn] && !([self isLastRow])) {
-        _currentRow++;
-        _currentColumn = 0;
+        _currentX++;
+        _currentY = 0;
     } else {
-        _currentColumn++;
+        _currentY++;
     }
-    id nextObject = [_vector2D retrieveObjectAtRow:_currentRow andColumn:_currentColumn];
+    id nextObject = [_vector2D retrieveObjectAtRow:_currentX andColumn:_currentY];
     return nextObject;
 }
 
 - (void)reset {
-    _currentRow = 0;
-    _currentColumn = 0;
+    _currentX = 0;
+    _currentY = 0;
 }
 @end

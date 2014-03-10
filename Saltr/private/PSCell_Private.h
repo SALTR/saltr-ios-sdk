@@ -8,13 +8,12 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import <Foundation/Foundation.h>
-#import "PSSimpleAssetTemplate.h"
+#import "PSCell.h"
 
-@interface PSCompositeAssetTemplate : PSSimpleAssetTemplate
+@interface PSCell ()
 
-@property (nonatomic, strong, readonly) NSArray* shifts;
-
-- (id)initWithShifts:(NSArray*)shifts type:(NSString*)theType andKeys:(NSDictionary*)theKeys;
+@property (nonatomic, assign, readwrite) BOOL isBlocked;
+@property (nonatomic, strong, readwrite) NSDictionary* properties;
+@property (nonatomic, strong, readwrite) PSAssetInstance* assetInstance;
 
 @end

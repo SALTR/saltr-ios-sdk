@@ -10,16 +10,15 @@
 
 #import <Foundation/Foundation.h>
 
-@class PSLevelBoard;
+@class PSBoardData;
 @class PSCell;
 @class PSAssetInChunk;
 
 @interface PSChunk : NSObject
 
-@property (nonatomic, strong, readonly) PSLevelBoard* ownerLevelBoard;
 @property (nonatomic, strong, readonly) NSString* chunkId;
 
-- (id)initWithChunkId:(NSString*)theChunkId andOwnerLevelBoard:(PSLevelBoard *)theOwnerLevelBoard;
+- (id)initWithChunkId:(NSString*)theChunkId andBoardData:(PSBoardData *)theBoardData;
 
 - (void) addCell:(PSCell*)theCell;
 

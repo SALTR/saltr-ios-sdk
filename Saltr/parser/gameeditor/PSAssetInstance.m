@@ -8,26 +8,25 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSSimpleAsset.h"
+#import "PSAssetInstance.h"
 
-@implementation PSSimpleAsset
+@implementation PSAssetInstance
 
 @synthesize state = _state;
-@synthesize cell = _cell;
 
-- (id)initWithState:(NSString*)state cell:(PSCell*)cell type:(NSString*)theType andKeys:(NSDictionary*)theKeys
+- (id)initWithState:(NSString*)state type:(NSString*)theType andKeys:(NSDictionary*)theKeys
 {
     self = [super initWithType:theType andKeys:theKeys];
     if (self) {
         _state = state;
-        _cell = cell;
     }
     return self;
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat: @"SimpleAsset : [state : %@], [cell : %@], [type: %@], [theKeys : %@]", self.state, self.cell, self.type, self.keys];
+    NSString* superDescription = [super description];
+    return [NSString stringWithFormat: @"AssetInstance : [state : %@], %@", self.state, superDescription];
 }
 
 @end

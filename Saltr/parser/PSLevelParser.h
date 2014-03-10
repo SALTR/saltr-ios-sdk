@@ -10,9 +10,8 @@
 
 #import <Foundation/Foundation.h>
 
-@class PSVector2D;
-@class PSBoardData;
 @class PSLevelStructure;
+@class PSLevelBoard;
 
 @interface PSLevelParser : NSObject
 
@@ -37,13 +36,12 @@
 /**
  * @brief
  *
- * @param outputBoard -
- * @param board -
- * @param boardData -
+ * @param rawBoard -
+ * @param levelBoard -
  * @return -
  *
  * TODO The chunk implementation specific part should be moved to PSChunk class.
  */
-- (void)regenerateChunks:(PSVector2D*)outputBoard withBoard:(id)board andBoardData:(PSBoardData*)boardData;
+- (void)regenerateChunksWithRawBoard:(NSDictionary*)rawBoard forLevelBoard:(PSLevelBoard*)levelBoard;
 
 @end

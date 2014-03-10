@@ -19,7 +19,6 @@
 @property (nonatomic, strong, readonly) PSLevelStructure* ownerLevel;
 @property (nonatomic, assign, readonly) NSInteger rows;
 @property (nonatomic, assign, readonly) NSInteger cols;
-@property (nonatomic, strong, readonly) NSArray* blockedCells;
 @property (nonatomic, strong, readonly) NSArray* position;
 @property (nonatomic, strong, readonly) PSVector2D* boardVector;
 @property (nonatomic, strong, readonly) NSDictionary* rawBoard;
@@ -42,5 +41,5 @@
 - (NSDictionary *)composites;
 - (NSDictionary *)chunks;
 - (id)boardProperties;
-- (id)cellProperties;
+
 @end

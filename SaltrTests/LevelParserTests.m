@@ -15,9 +15,9 @@
 #import "PSLevelBoard.h"
 #import "PSVector2D.h"
 #import "PSVector2DIterator.h"
-#import "PSBoardAsset.h"
-#import "PSSimpleAsset.h"
-#import "PSCompositeAsset.h"
+#import "PSAsset.h"
+#import "PSAssetInstance.h"
+#import "PSCompositeInstance.h"
 
 @interface LevelParserTests : XCTestCase
 
@@ -49,19 +49,15 @@
     PSVector2D* vectorBoard = levelBoard.boardVector;
     NSLog(@"LEVEL BOARD Vector : %@", vectorBoard);
     PSVector2DIterator* iterator = [vectorBoard iterator];
-    PSBoardAsset* asset = [vectorBoard retrieveObjectAtRow:0 andColumn:0];
+    PSCell* cell = [vectorBoard retrieveObjectAtRow:0 andColumn:0];
     assert(iterator);
     while ([iterator hasNext]) {
-        if ([asset isKindOfClass:[PSSimpleAsset class]]) {
-            NSLog(@"SIMPLE ASSET IS : %@", (PSSimpleAsset*)asset);
-        } else if ([asset isKindOfClass:[PSSimpleAsset class]]) {
-            NSLog(@"COMPOSITE ASSET IS : %@", (PSCompositeAsset*)asset);
-        } else {
-            NSLog(@"BOARD ASSET IS : %@", asset);
-        }
-        asset = [iterator nextObject];
-        assert(asset);
+        cell = [iterator nextObject];
+        NSLog(@"PRINT   %@:", cell);
+        assert(cell);
     }
+    NSLog(@"LEVEL BOARD properties : %@", [levelBoard boardProperties]);
+
 }
 
 @end

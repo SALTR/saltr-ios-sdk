@@ -8,21 +8,25 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSBoardAsset.h"
+#import "PSCompositeInstance.h"
 
-@implementation PSBoardAsset
+@implementation PSCompositeInstance
 
-@synthesize type = _type;
-@synthesize keys = _keys;
+@synthesize shifts = _shifts;
 
-- (id)initWithType:(NSString*)theType andKeys:(NSDictionary*)theKeys
+- (id)initWithShifts:(NSArray*)shifts type:(NSString*)theType andKeys:(NSDictionary*)theKeys
 {
-    self = [super init];
+    self = [super initWithType:theType andKeys:theKeys];
     if (self) {
-        _type = theType;
-        _keys = theKeys;
+        _shifts = shifts;
     }
     return self;
+}
+
+- (NSString *)description
+{
+    NSString* superDescription = [super description];
+    return [NSString stringWithFormat: @"PSCompositeAssetInstance : [shifts : %@], %@ ", self.shifts, superDescription];
 }
 
 @end

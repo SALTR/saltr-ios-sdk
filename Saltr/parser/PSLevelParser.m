@@ -13,9 +13,9 @@
 #import "PSBoardData_Private.h"
 #import "PSLevelStructure_Private.h"
 #import "PSLevelBoard_Private.h"
-#import "PSCompositeAssetTemplate.h"
+#import "PSCompositeAsset.h"
 #import "PSComposite.h"
-#import "PSCell.h"
+#import "PSCell_Private.h"
 #import "PSChunk.h"
 #import "PSAssetInChunk.h"
 
@@ -50,16 +50,16 @@
     return _sharedObject;
 }
 
-- (PSSimpleAssetTemplate*)parseSingleAsset:(NSDictionary*)asset
+- (PSAsset*)parseSingleAsset:(NSDictionary*)asset
 {
     assert(nil != asset);
     NSArray* assetCells = [asset objectForKey:@"cells"];
     NSString* theType = [asset objectForKey:@"type_key"];
     NSDictionary* theKeys = [asset objectForKey:@"keys"];
     if (assetCells) {
-        return [[PSCompositeAssetTemplate alloc] initWithShifts:assetCells type:theType andKeys:theKeys];
+        return [[PSCompositeAsset alloc] initWithShifts:assetCells type:theType andKeys:theKeys];
     }
-    return [[PSSimpleAssetTemplate alloc] initWithType:theType andKeys:theKeys];
+    return [[PSAsset alloc] initWithType:theType andKeys:theKeys];
 }
 
 - (NSDictionary*)parseAssets:(NSDictionary*)assets
@@ -69,7 +69,8 @@
     for (NSString* key in assets) {
         NSDictionary* asset = [assets objectForKey:key];
         assert(nil != asset);
-        PSSimpleAssetTemplate* assetObject = [self parseSingleAsset:asset];
+        PSAsset* assetObject = [self parseSingleAsset:asset];
+        assert(nil != assetObject);
         [assetsMap setObject:assetObject forKey:key];
     }
     return assetsMap;
@@ -92,8 +93,10 @@
         assert([[compositePrototype objectForKey:@"assetId"] isKindOfClass:[NSNumber class]]);
         NSString* assetId = [[compositePrototype objectForKey:@"assetId"] stringValue];
         NSArray* compositePosition = [compositePrototype objectForKey:@"position"];
-        PSCell* position = [[PSCell alloc] initWithX:[[compositePosition objectAtIndex:0] integerValue] andY:[[compositePosition objectAtIndex:1] integerValue]];
-        PSComposite* composite = [[PSComposite alloc] initWithId:assetId position:position andOwnerLevelBoard:levelBoard];
+        NSUInteger xCoord = [[compositePosition objectAtIndex:0] integerValue];
+        NSUInteger yCoord = [[compositePosition objectAtIndex:1] integerValue];
+        PSCell* cell = [levelBoard.boardVector retrieveObjectAtRow:xCoord andColumn:yCoord];
+        PSComposite* composite = [[PSComposite alloc] initWithId:assetId cell:cell andBoardData:levelBoard.ownerLevel.boardData];
         assert(nil != composite);
         [compositesMap setObject:composite forKey:composite.compositeId];
      }
@@ -139,7 +142,7 @@
     }
 }
 
-- (void)fillCellsOfChunk:(PSChunk*)chunk withCellsData:(NSArray*)cellsData
+- (void)fillBoardVectorCells:(PSVector2D*)boardVector forChunk:(PSChunk*)chunk withCellsData:(NSArray*)cellsData
 {
     assert(chunk);
     assert(cellsData);
@@ -148,7 +151,9 @@
         assert([[cellsData objectAtIndex:i] isKindOfClass:[NSArray class]]);
         NSArray* cellData = [cellsData objectAtIndex:i];
         assert(cellsData);
-        PSCell* cell = [[PSCell alloc] initWithX:[[cellData objectAtIndex:0] integerValue] andY:[[cellData objectAtIndex:1] integerValue]];
+        NSUInteger xCoord = [[cellData objectAtIndex:0] integerValue];
+        NSUInteger yCoord = [[cellData objectAtIndex:1] integerValue];
+        PSCell* cell = [boardVector retrieveObjectAtRow:xCoord andColumn:yCoord];
         assert(cell);
         [chunk addCell:cell];
     }
@@ -164,10 +169,10 @@
         assert([[chunkData objectForKey:@"chunkId"] isKindOfClass:[NSNumber class]]);
         NSString* chunkId = [[chunkData objectForKey:@"chunkId"] stringValue];
         assert(nil != chunkId);
-        PSChunk* chunk = [[PSChunk alloc] initWithChunkId:chunkId andOwnerLevelBoard:levelBoard];
+        PSChunk* chunk = [[PSChunk alloc] initWithChunkId:chunkId andBoardData:levelBoard.ownerLevel.boardData];
         assert(nil != chunk);
         [self fillAssetsOfChunk:chunk withAssetData:[chunkData objectForKey:@"assets"]];
-        [self fillCellsOfChunk:chunk withCellsData:[chunkData objectForKey:@"cells"]];
+        [self fillBoardVectorCells:levelBoard.boardVector forChunk:chunk withCellsData:[chunkData objectForKey:@"cells"]];
         [chunksMap setObject:chunk forKey:chunk.chunkId];
     }
     return chunksMap;
@@ -191,11 +196,61 @@
     [self generateChunks:chunks];
 }
 
-- (void)parseBoard:(NSDictionary*)board ofLevelBoard:(PSLevelBoard*)levelBoard
+- (void)fillProperties:(NSArray*)cellProperties ofCell:(PSCell*)cell
+{
+    for (NSUInteger i = 0; i < cellProperties.count; ++i) {
+        NSDictionary* property = [cellProperties objectAtIndex:i];
+        assert(property);
+        NSArray* coords = [property objectForKey:@"coords"];
+        assert([coords isKindOfClass:[NSArray class]]);
+        if (([[coords objectAtIndex:0] integerValue] == cell.x) && ([[coords objectAtIndex:1] integerValue] == cell.y)) {
+            cell.properties = [property objectForKey:@"value"];
+        }
+    }
+}
+
+- (void)markCell:(PSCell*)cell fromBlockedCells:(NSArray*)blockedCells
+{
+    for (NSUInteger i = 0; i < blockedCells.count; ++i) {
+        NSArray* blockedCell = [blockedCells objectAtIndex:i];
+        assert(blockedCell);
+        assert([blockedCell isKindOfClass:[NSArray class]]);
+        if (([[blockedCell objectAtIndex:0] integerValue] == cell.x) && ([[blockedCell objectAtIndex:1] integerValue] == cell.y)) {
+            cell.isBlocked = true;
+        }
+    }
+}
+
+- (void)createEmptyCellsForBoardVector:(PSVector2D*)boardVector withRawBoard:(NSDictionary*)rawBoard
+{
+    assert(nil != boardVector);
+    NSArray* blockedCells = [rawBoard objectForKey:@"blockedCells"];
+    NSDictionary* properties = [rawBoard objectForKey:@"properties"];
+    NSArray* cellProperties = nil;
+    if (properties && [properties objectForKey:@"cell"]) {
+        cellProperties = [properties objectForKey:@"cell"];
+    }
+    for (NSUInteger i = 0; i < boardVector.height; ++i) {
+        for (NSUInteger j = 0 ; j < boardVector.width; ++j) {
+            PSCell* cell = [[PSCell alloc] initWithX:j andY:i];
+            assert(cell);
+            [boardVector insertObject:cell atRow:j andColumn:i];
+            if (cellProperties && cellProperties.count) {
+                [self fillProperties:cellProperties  ofCell:cell];
+            }
+            if (blockedCells && blockedCells.count) {
+                [self markCell:cell fromBlockedCells:blockedCells];
+            }
+        }
+    }
+}
+
+- (void)parseBoard:(NSDictionary*)rawBoard ofLevelBoard:(PSLevelBoard*)levelBoard
 {
     assert(nil != levelBoard);
-    [self parseAndGenerateCompositesOfBoard:board andLevelBoard:levelBoard];
-    [self parseAndGenerateChunksOfBoard:board andLevelBoard:levelBoard];
+    [self createEmptyCellsForBoardVector:levelBoard.boardVector withRawBoard:rawBoard];
+    [self parseAndGenerateCompositesOfBoard:rawBoard andLevelBoard:levelBoard];
+    [self parseAndGenerateChunksOfBoard:rawBoard andLevelBoard:levelBoard];
 }
 
 - (void)parseBoards:(NSDictionary*)theBoards ofLevelStructure:(PSLevelStructure*)levelStructure
@@ -206,7 +261,6 @@
         assert(nil != rawBoard);
         PSLevelBoard* levelBoard = [[PSLevelBoard alloc] initWithRawBoard:rawBoard andOwnerLevel:levelStructure];
         assert(nil != levelBoard);
-        //TODO how to fill the boardVector?????
         [levelStructure.boards setObject:levelBoard forKey:key];
         [self parseBoard:rawBoard ofLevelBoard:levelBoard];
     }
@@ -223,8 +277,12 @@
     _dataFetched = true;
 }
 
-- (void)regenerateChunks:(PSVector2D*)outputBoard withBoard:(id)board andBoardData:(PSBoardData*)boardData
+- (void)regenerateChunksWithRawBoard:(NSDictionary*)rawBoard forLevelBoard:(PSLevelBoard*)levelBoard
 {
+    if (!rawBoard || !levelBoard) {
+        return;
+    }
+    [self parseAndGenerateChunksOfBoard:rawBoard andLevelBoard:levelBoard];
 }
 
 @end
