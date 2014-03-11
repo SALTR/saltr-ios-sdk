@@ -53,10 +53,11 @@
 
 -(NSURLRequest *) urlRequest {
     NSURL* url = [NSURL URLWithString:_url];
-    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:url];
+    NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:
+                                     url];
     request.timeoutInterval = _idleTimeout;
     [request setHTTPShouldHandleCookies:_manageCookies];
-    [request setHTTPMethod:_method];
+    [request setHTTPMethod:@"POST"];
     [request setHTTPBody:_variables];
     [request setAllHTTPHeaderFields:_requestHeaders];
     return request;

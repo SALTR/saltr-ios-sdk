@@ -287,7 +287,7 @@
     if ([saltrRequestDelegate respondsToSelector:@selector(didFailGettingAppDataRequest)]) {
         [saltrRequestDelegate didFailGettingAppDataRequest];
     }
-    NSLog(@"[SaltClient] ERROR: Level Packs are not loaded.");
+    NSLog(@"[SaltClient] ERROR: App data is not loaded.");
 }
 
 -(void) syncFeatures {

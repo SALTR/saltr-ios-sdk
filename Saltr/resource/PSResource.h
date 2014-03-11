@@ -35,6 +35,9 @@
 /// The percent of loaded bytes.
 @property (nonatomic, assign, readonly) NSInteger percentLoaded;
 
+/// The response headers
+@property (nonatomic, strong, readonly) NSMutableArray* responseHeaders;
+
 /**
  * @brief Initializes the current resource with the given parameters
  * @param id - the ID of the current resource

@@ -16,7 +16,9 @@
     NSInteger _maxAttempts;
     NSInteger _httpStatus;
     NSTimer* _timeoutTimer;
+    NSMutableData* _responseData;
     NSURLConnection* _urlLoader;
+    BOOL finished;
     void (^_onSuccess)(PSResource *);
     void (^_onFail)(PSResource *);
     void (^_onProgress)(PSResource *);
@@ -27,6 +29,7 @@
 @synthesize bytesLoaded = _bytesLoaded;
 @synthesize bytesTotal = _bytesTotal;
 @synthesize percentLoaded = _percentLoaded;
+@synthesize responseHeaders = _responseHeaders;
     
     
 -(id) initWithId:(NSString *)id andTicket:(PSResourceURLTicket *)ticket successHandler:(void (^)(PSResource *))onSuccess errorHandler:(void (^)(PSResource *))onFail progressHandler:(void (^)(PSResource *))onProgress {
@@ -41,6 +44,8 @@
         _onSuccess = onSuccess;
         _onFail = onFail;
         _onProgress = onProgress;
+        _responseHeaders = [NSMutableArray new];
+        finished = NO;
         [self initLoader];
     }
     return self;
@@ -51,7 +56,13 @@
 }
 
 -(NSDictionary *)jsonData {
-    return nil;
+    NSError* error = nil;
+    NSDictionary *dictionary = [NSJSONSerialization JSONObjectWithData:_responseData options:NSJSONReadingMutableContainers error:&error];
+    if (error) {
+        NSLog(@"JSONObjectWithData error: %@", error);
+        return nil;
+    }
+    return dictionary;
 }
 
 -(BOOL) isLoaded {
@@ -64,6 +75,9 @@
 
 -(void) load {
     [_urlLoader start];
+    while(!finished) {
+        [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
+    }
 }
 
 -(void) stop {
@@ -87,7 +101,7 @@
     // so that we can append data to it in the didReceiveData method
     // Furthermore, this method is called each time there is a redirect so reinitializing it
     // also serves to clear it
-//    _responseData = [[NSMutableData alloc] init];
+    _responseData = [[NSMutableData alloc] init];
     
     _bytesTotal = response.expectedContentLength;
 }
@@ -95,8 +109,8 @@
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     // Append the new data to the instance variable you declared
     _bytesLoaded += [data length];
-    _onProgress(self);
-//    [_responseData appendData:data];
+//    _onProgress(self);
+    [_responseData appendData:data];
 }
 
 - (NSCachedURLResponse *)connection:(NSURLConnection *)connection
@@ -108,6 +122,8 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     // The request is complete and data has been received
     // You can parse the stuff in your instance variable now
+    finished = YES;
+
     _onSuccess(self);
     
 }
@@ -115,6 +131,9 @@
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
     // The request has failed for some reason!
     // Check the error var
+    NSLog(@"Connection failed! Error - %@ %@",
+          [error localizedDescription],
+          [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
     _onFail(self);
 }
 
