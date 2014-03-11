@@ -8,15 +8,26 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import <Foundation/Foundation.h>
-#import "PSAsset.h"
+#import "SLTAsset.h"
 
-@class PSCell;
+@implementation SLTAsset
 
-@interface PSAssetInstance : PSAsset
+@synthesize type = _type;
+@synthesize keys = _keys;
 
-@property (nonatomic, strong, readonly) NSString* state;
+- (id)initWithType:(NSString*)theType andKeys:(NSDictionary*)theKeys
+{
+    self = [super init];
+    if (self) {
+        _type = theType;
+        _keys = theKeys;
+    }
+    return self;
+}
 
-- (id)initWithState:(NSString*)state type:(NSString*)type andKeys:(NSDictionary*)theKeys;
+- (NSString *)description
+{
+    return [NSString stringWithFormat: @"Asset : [type: %@], [theKeys : %@]", self.type, self.keys];
+}
 
 @end

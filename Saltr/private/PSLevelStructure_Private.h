@@ -12,7 +12,7 @@
 
 @interface PSLevelStructure ()
 
-@property (nonatomic, strong, readwrite) PSBoardData* boardData;
+@property (nonatomic, strong, readwrite) SLTLevelSettings* levelSettings;
 @property (nonatomic, strong, readwrite) NSDictionary* innerProperties;
 @property (nonatomic, strong, readwrite) NSMutableDictionary* boards;
 

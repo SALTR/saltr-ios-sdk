@@ -8,25 +8,25 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSCompositeAsset.h"
+#import "SLTAssetInstance.h"
 
-@implementation PSCompositeAsset
+@implementation SLTAssetInstance
 
-@synthesize shifts = _shifts;
+@synthesize state = _state;
 
-- (id)initWithShifts:(NSArray*)shifts type:(NSString*)theType andKeys:(NSDictionary*)theKeys
+- (id)initWithState:(NSString*)theState type:(NSString*)theType andKeys:(NSDictionary*)theKeys
 {
     self = [super initWithType:theType andKeys:theKeys];
     if (self) {
-        _shifts = shifts;
+        _state = theState;
     }
-    return  self;
+    return self;
 }
 
 - (NSString *)description
 {
     NSString* superDescription = [super description];
-    return [NSString stringWithFormat: @"PSCompositeAsset : [shifts : %@], %@ ", self.shifts, superDescription];
+    return [NSString stringWithFormat: @"AssetInstance : [state : %@], %@", self.state, superDescription];
 }
 
 @end

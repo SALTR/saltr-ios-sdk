@@ -8,9 +8,9 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSCell_Private.h"
+#import "SLTCell_Private.h"
 
-@implementation PSCell
+@implementation SLTCell
 
 @synthesize x = _x;
 @synthesize y = _y;

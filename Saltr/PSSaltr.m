@@ -81,7 +81,6 @@
     if (self) {
         self.repository = [PSRepository new];
         _deserializer = [PSDeserializer new];
-        
         _isLoading = false;
         _ready = false;
     }
@@ -234,8 +233,11 @@
     if (_partner) {
         [args setObject:[_partner toString] forKey:@"partner"];
     }
-    [args setObject:_instanceKey forKey:@"instnaceKey"];
-    
+    assert(_instanceKey);
+    [args setObject:_instanceKey forKey:@"instanceKey"];
+    NSLog(@"instance key : %@", _instanceKey);
+    NSLog(@"device : %@", _device);
+    NSLog(@"partner : %@", _partner);  
     NSError* error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
                                                        options:NSJSONWritingPrettyPrinted

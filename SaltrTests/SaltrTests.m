@@ -14,7 +14,6 @@
 @interface SaltrTests : XCTestCase {
     PSSaltr* saltr;
 }
-
 @end
 
 @implementation SaltrTests
@@ -36,14 +35,8 @@
 }
 
 -(void) testSaltrWithInstanceKey {
-    
     PSSaltr* saltr2 = [PSSaltr saltrWithInstanceKey:@"08626247-f03d-0d83-b69f-4f03f80ef555_TEST" andCacheEnabled:YES];
-
-    
     XCTAssertTrue([saltr isEqual:saltr2], @"Creation of singleton PSSaltr object failed!");
-
-    
-//http://api.saltr.com/httpjson.action?command=APPDATA&insatnceKey=08626247-f03d-0d83-b69f-4f03f80ef555&arguments={%22instanceKey%22:%2208626247-f03d-0d83-b69f-4f03f80ef555%22,%22partner%22:{%22partnerId%22:%22100000024783448%22,%22partnerType%22:%22facebook%22,%22gender%22:%22male%22,%22age%22:36,%22firstName%22:%22Artem%22,%22lastName%22:%22Sukiasyan%22},%22device%22:{%22deviceId%22:%22asdas123kasd%22,%22deviceType%22:%22iphone%22}}
 }
 
 -(void) testAppData {

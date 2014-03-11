@@ -12,6 +12,7 @@
 
 @class PSLevelStructure;
 @class PSLevelBoard;
+@class SLTLevelSettings;
 
 @interface PSLevelParser : NSObject
 
@@ -32,6 +33,8 @@
 //TODO The comments will be filled during implementation of functionality.
 
 - (void)parseData:(id)data andFillLevelStructure:(PSLevelStructure*)level;
+
+- (SLTLevelSettings*)parseLevelSettings:(NSDictionary*)data;
 
 /**
  * @brief

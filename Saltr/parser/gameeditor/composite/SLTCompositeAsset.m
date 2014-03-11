@@ -8,24 +8,25 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSAssetInChunk.h"
+#import "SLTCompositeAsset.h"
 
-@implementation PSAssetInChunk
+@implementation SLTCompositeAsset
 
-@synthesize assetId = _assetId;
-@synthesize count = _count;
-@synthesize stateId = _stateId;
+@synthesize shifts = _shifts;
 
-- (id)initWithAssetId:(NSString*)theAssetId count:(NSUInteger)theCount andStateId:(NSString*)theStateId
+- (id)initWithShifts:(NSArray*)shifts type:(NSString*)theType andKeys:(NSDictionary*)theKeys
 {
-    self = [super init];
+    self = [super initWithType:theType andKeys:theKeys];
     if (self) {
-        assert(nil != theAssetId);
-        _assetId = theAssetId;
-        _count = theCount;
-        _stateId = theStateId;
+        _shifts = shifts;
     }
-    return self;
+    return  self;
+}
+
+- (NSString *)description
+{
+    NSString* superDescription = [super description];
+    return [NSString stringWithFormat: @"PSCompositeAsset : [shifts : %@], %@ ", self.shifts, superDescription];
 }
 
 @end

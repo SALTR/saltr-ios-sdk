@@ -15,9 +15,10 @@
 #import "PSLevelBoard.h"
 #import "PSVector2D.h"
 #import "PSVector2DIterator.h"
-#import "PSAsset.h"
-#import "PSAssetInstance.h"
+#import "SLTAsset.h"
+#import "SLTAssetInstance.h"
 #import "PSCompositeInstance.h"
+#import "SLTCell.h"
 
 @interface LevelParserTests : XCTestCase
 
@@ -49,7 +50,7 @@
     PSVector2D* vectorBoard = levelBoard.boardVector;
     NSLog(@"LEVEL BOARD Vector : %@", vectorBoard);
     PSVector2DIterator* iterator = [vectorBoard iterator];
-    PSCell* cell = [vectorBoard retrieveObjectAtRow:0 andColumn:0];
+    SLTCell* cell = [vectorBoard retrieveObjectAtRow:0 andColumn:0];
     assert(iterator);
     while ([iterator hasNext]) {
         cell = [iterator nextObject];
@@ -57,7 +58,6 @@
         assert(cell);
     }
     NSLog(@"LEVEL BOARD properties : %@", [levelBoard boardProperties]);
-
 }
 
 @end

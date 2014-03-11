@@ -8,14 +8,14 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSChunk.h"
-#import "PSCell_Private.h"
-#import "PSAssetInChunk.h"
-#import "PSBoardData.h"
-#import "PSAsset.h"
-#import "PSAssetInstance.h"
+#import "SLTChunk.h"
+#import "SLTCell_Private.h"
+#import "SLTChunkAssetInfo.h"
+#import "SLTLevelSettings.h"
+#import "SLTAsset.h"
+#import "SLTAssetInstance.h"
 
-@interface PSChunk() {
+@interface SLTChunk() {
     NSDictionary* _boardAssetMap;
     NSDictionary* _boardStateMap;
     NSMutableArray* _chunkAssets;
@@ -24,11 +24,11 @@
 }
 @end
 
-@implementation PSChunk
+@implementation SLTChunk
 
 @synthesize chunkId = _chunkId;
 
-- (id)initWithChunkId:(NSString*)theChunkId andBoardData:(PSBoardData *)theBoardData
+- (id)initWithChunkId:(NSString*)theChunkId andBoardData:(SLTLevelSettings *)theBoardData
 {
     self = [super init];
     if (self) {
@@ -43,7 +43,7 @@
     return self;
 }
 
-- (void) addCell:(PSCell*)theCell
+- (void) addCell:(SLTCell*)theCell
 {
     if (!theCell) {
         return;
@@ -52,7 +52,7 @@
 
 }
 
-- (void) addChunkAsset:(PSAssetInChunk*)theChunkAsset
+- (void) addChunkAsset:(SLTChunkAssetInfo*)theChunkAsset
 {
     if (!theChunkAsset) {
         return;
@@ -62,13 +62,13 @@
 
 - (void)generateAssetWithCount:(NSUInteger)count assetId:(NSString*)assetId andStateId:(NSString*)stateId
 {
-    PSAsset* assetTemplate = [_boardAssetMap objectForKey:assetId];
+    SLTAsset* assetTemplate = [_boardAssetMap objectForKey:assetId];
     assert(nil != assetTemplate);
     NSString* state = [_boardStateMap objectForKey:stateId];
     for (NSUInteger i = 0; i < count; ++i) {
         NSInteger randCellIndex = (arc4random() % _cells.count);
-        PSCell* randCell = _cells[randCellIndex];
-        PSAssetInstance* asset = [[PSAssetInstance alloc] initWithState:state type:assetTemplate.type andKeys:assetTemplate.keys];
+        SLTCell* randCell = _cells[randCellIndex];
+        SLTAssetInstance* asset = [[SLTAssetInstance alloc] initWithState:state type:assetTemplate.type andKeys:assetTemplate.keys];
         randCell.assetInstance = asset;
         [_cells removeObjectAtIndex:randCellIndex];
         if (0 == _cells.count) {
@@ -98,7 +98,7 @@
     NSUInteger maxAssetCount = (1 == assetConcentration) ? 1 : assetConcentration + 2;
     NSUInteger lastChunkAssetIndex = (weakChunkAssets.count - 1);
     for (NSUInteger i = 0; (i < weakChunkAssets.count) && (0 != _cells.count); ++i) {
-        PSAssetInChunk* chunkAsset = weakChunkAssets[i];
+        SLTChunkAssetInfo* chunkAsset = weakChunkAssets[i];
         assert(nil != chunkAsset);
         NSUInteger count = (lastChunkAssetIndex ? _cells.count : [self randomIntWithinMin:minAssetCount andMax:maxAssetCount]);
         [self generateAssetWithCount:count assetId:chunkAsset.assetId andStateId:chunkAsset.stateId];
@@ -109,7 +109,7 @@
 {
     NSMutableArray* weakChunkAssets = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < [_chunkAssets count]; ++i) {
-        PSAssetInChunk* chunkAsset = [_chunkAssets objectAtIndex:i];
+        SLTChunkAssetInfo* chunkAsset = [_chunkAssets objectAtIndex:i];
         assert(nil != chunkAsset);
         if (0 != chunkAsset.count) {
             [self generateAssetWithCount:chunkAsset.count assetId:chunkAsset.assetId andStateId:chunkAsset.stateId];

@@ -9,22 +9,23 @@
  */
 
 #import <XCTest/XCTest.h>
-#import "PSLevelStructure.h"
+#import "SLTCell.h"
 
-@interface LevelStructureTests : XCTestCase
+@interface SLTCellTests : XCTestCase
 {
-    PSLevelStructure* _level;
+    SLTCell* _cell;
 }
 @end
 
-
-@implementation LevelStructureTests
+@implementation SLTCellTests
 
 - (void)setUp
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    _level = [[PSLevelStructure alloc] initWithLevelId:@"6127" index:@"1" dataUrl:@"http://saltr.com/static_data/08626247-f03d-0d83-b69f-4f03f80ef555/levels/7401.json" properties:nil andVersion:@"4"];
+    if (!_cell) {
+        _cell = [[SLTCell alloc] initWithX:5 andY:1];
+    }
 }
 
 - (void)tearDown
@@ -33,10 +34,19 @@
     [super tearDown];
 }
 
-- (void)testLevelStructureObject
+- (void)testSLTCellObject
 {
-    PSLevelStructure* level = [[PSLevelStructure alloc] initWithLevelId:@"level_1" index:0 dataUrl:@"http://example.com" properties:nil andVersion:@"v.01"];
-    XCTAssertNotNil(level, @"Object allocation/initialization fails");
+    XCTAssertNotNil(_cell, @"SLTCell has not been initialized properly!");
+}
+
+- (void)testX
+{
+    XCTAssertEqual(_cell.x, 5, @"Wrong value is specified for type");
+}
+
+- (void)testY
+{
+    XCTAssertEqual(_cell.y, 1, @"Wrong value is specified for type");
 }
 
 @end

@@ -10,10 +10,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PSBoardData : NSObject
+@interface SLTChunkAssetInfo : NSObject
 
-@property (nonatomic, strong, readonly) NSDictionary* assetMap;
-@property (nonatomic, strong, readonly) NSDictionary* keyset;
-@property (nonatomic, strong, readonly) NSDictionary* stateMap;
+@property (nonatomic, strong, readonly) NSString* assetId;
+@property (nonatomic, assign, readonly) NSUInteger count;
+@property (nonatomic, strong, readonly) NSString* stateId;
+
+- (id)initWithAssetId:(NSString*)theAssetId count:(NSUInteger)theCount andStateId:(NSString*)theStateId;
 
 @end
