@@ -207,9 +207,12 @@
                                                          error:&error];
     if (!error) {
         NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        NSDictionary* urlVars = [[NSDictionary alloc] initWithObjectsAndKeys:COMMAND_ADD_PROPERTY, @"command", jsonArguments, @"arguments", nil];
-        NSData *urlVarsData = [NSKeyedArchiver archivedDataWithRootObject:urlVars];
-        PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVarsData];
+        
+        jsonArguments = [jsonArguments stringByRemovingPercentEncoding];
+        NSString* urlVars = [NSString stringWithFormat:@"?command=%@&arguments=%@", COMMAND_ADD_PROPERTY, jsonArguments];
+        
+        
+        PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];
         /// @todo the code below should be reviewed/rewritten
         PSResource* resource = nil;
         void (^addUserPropertySuccessHandler)() = ^() {
@@ -288,9 +291,10 @@
 }
 
 -(void) syncFeatures {
-    NSMutableDictionary* urlVars = [[NSMutableDictionary alloc] initWithObjectsAndKeys:COMMAND_APP_DATA, @"command", _instanceKey, @"instanceKey", nil];
+    NSString* urlVars = [NSString stringWithFormat:@"?command=%@&instanceKey=%@", COMMAND_SAVE_OR_UPDATE_FEATURE, _instanceKey];
+    
     if (appVersion) {
-        [urlVars setObject:appVersion forKey:@"appVersion"];
+        [urlVars stringByAppendingFormat:@",appVersion=%@", appVersion];
     }
     NSMutableArray* featureList = [NSMutableArray new];
     for (NSString* key in [_features allKeys]) {
@@ -316,13 +320,9 @@
                                                              error:&error];
         if (!error) {
             NSString *properties = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-            
-            [urlVars setObject:properties forKey:@"data"];
-            
-        }
-        
-        NSData *urlVarsData = [NSKeyedArchiver archivedDataWithRootObject:urlVars];
-        PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:SALTR_URL andVariables:urlVarsData];
+            [urlVars stringByAppendingFormat:@",data=%@", properties];
+        }        
+        PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:SALTR_URL andVariables:urlVars];
         void (^syncSuccessHandler)() = ^() {
         };
         void (^syncFailHandler)() = ^() {

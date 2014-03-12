@@ -64,6 +64,8 @@
     XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
+#pragma mark @b SaltrRequestDelegate protocol methods
+
 -(void) didFinishGettingAppDataRequest {
     XCTAssertTrue(true, @"Getting of app data succeeded!");
 }
