@@ -29,7 +29,7 @@
 @synthesize useSameDomain=_useSameDomain;
 @synthesize dropTimeout=_dropTimeout;
 
--(id) initWithURL:(NSString *)urlString andVariables:(NSData *)variables {
+-(id) initWithURL:(NSString *)urlString andVariables:(NSString *)variables {
     self = [super init];
     if (self) {
         _url = urlString;
@@ -52,13 +52,17 @@
 }
 
 -(NSURLRequest *) urlRequest {
-    NSURL* url = [NSURL URLWithString:_url];
+    
+    NSString* jsonArguments = [_url stringByAppendingString:_variables];
+    
+    
+    jsonArguments = [jsonArguments stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+    NSURL* url = [NSURL URLWithString:jsonArguments];
     NSMutableURLRequest * request = [[NSMutableURLRequest alloc] initWithURL:
                                      url];
     request.timeoutInterval = _idleTimeout;
     [request setHTTPShouldHandleCookies:_manageCookies];
-    [request setHTTPMethod:@"POST"];
-    [request setHTTPBody:_variables];
+    [request setHTTPMethod:_method];
     [request setAllHTTPHeaderFields:_requestHeaders];
     return request;
 }

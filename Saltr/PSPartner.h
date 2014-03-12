@@ -27,7 +27,7 @@
  */
 -(id) initWithPartnerId:(NSString*)theId andPartnerType:(NSString*)theType;
 
-/// Returns the string value of @b PSPartner class
--(NSString *) toString;
+/// Returns the dictionary value of @b PSPartner class
+-(NSDictionary *) toDictionary;
 
 @end

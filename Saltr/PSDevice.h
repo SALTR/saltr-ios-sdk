@@ -27,7 +27,7 @@
  */
 -(id) initWithDeviceId:(NSString*)theId andDeviceType:(NSString*)theType;
 
-/// Returns the string value of @b PSDevice class
--(NSString *) toString;
+/// Returns the dictionary value of @b PSDevice class
+-(NSDictionary *) toDictionary;
 
 @end

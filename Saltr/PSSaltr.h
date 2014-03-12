@@ -125,7 +125,7 @@
 /**
  * @brief Gets the application data
  */
--(void) appData;
+-(void) start;
 
 /**
  * @brief Gets the body of level data
