@@ -8,12 +8,23 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSBoardData.h"
+#import "SLTLevelSettings.h"
 
-@interface PSBoardData ()
+@implementation SLTLevelSettings
 
-@property (nonatomic, strong, readwrite) NSDictionary* assetMap;
-@property (nonatomic, strong, readwrite) NSDictionary* keyset;
-@property (nonatomic, strong, readwrite) NSDictionary* stateMap;
+@synthesize assetMap = _assetMap;
+@synthesize keySetMap = _keySetMap;
+@synthesize stateMap = _stateMap;
+
+- (id)initWithAssetMap:(NSDictionary*)theAssetMap keySetMap:(NSDictionary*)theKeySetMap andStateMap:(NSDictionary*)theStateMap
+{
+    self = [super init];
+    if (self) {
+        _assetMap = theAssetMap;
+        _keySetMap = theKeySetMap;
+        _stateMap = theStateMap;
+    }
+    return self;
+}
 
 @end

@@ -8,26 +8,22 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSAsset.h"
+#import <Foundation/Foundation.h>
 
-@implementation PSAsset
+@class SLTLevelSettings;
+@class SLTCell;
+@class SLTChunkAssetInfo;
 
-@synthesize type = _type;
-@synthesize keys = _keys;
+@interface SLTChunk : NSObject
 
-- (id)initWithType:(NSString*)theType andKeys:(NSDictionary*)theKeys
-{
-    self = [super init];
-    if (self) {
-        _type = theType;
-        _keys = theKeys;
-    }
-    return self;
-}
+@property (nonatomic, strong, readonly) NSString* chunkId;
 
-- (NSString *)description
-{
-    return [NSString stringWithFormat: @"Asset : [type: %@], [theKeys : %@]", self.type, self.keys];
-}
+- (id)initWithChunkId:(NSString*)theChunkId andBoardData:(SLTLevelSettings *)theBoardData;
+
+- (void) addCell:(SLTCell*)theCell;
+
+- (void) addChunkAsset:(SLTChunkAssetInfo*)theChunkAsset;
+
+- (void)generate;
 
 @end

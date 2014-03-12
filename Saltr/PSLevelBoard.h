@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class PSBoardData;
+@class SLTLevelSettings;
 @class PSVector2D;
 @class PSLevelStructure;
 
@@ -22,7 +22,7 @@
 @property (nonatomic, strong, readonly) NSArray* position;
 @property (nonatomic, strong, readonly) PSVector2D* boardVector;
 @property (nonatomic, strong, readonly) NSDictionary* rawBoard;
-@property (nonatomic, strong, readonly) PSBoardData* boardData;
+@property (nonatomic, strong, readonly) SLTLevelSettings* boardData;
 
 
 /**

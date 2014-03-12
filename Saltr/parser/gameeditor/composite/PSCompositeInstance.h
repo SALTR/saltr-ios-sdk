@@ -9,11 +9,11 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "PSAssetInstance.h"
+#import "SLTAssetInstance.h"
 
 @class PSCell;
 
-@interface PSCompositeInstance : PSAssetInstance
+@interface PSCompositeInstance : SLTAssetInstance
 
 @property (nonatomic, strong, readonly) NSArray* shifts;
 

@@ -14,7 +14,6 @@
 @interface SaltrTests : XCTestCase <SaltrRequestDelegate> {
     PSSaltr* saltr;
 }
-
 @end
 
 @implementation SaltrTests
@@ -37,10 +36,7 @@
 }
 
 -(void) testSaltrWithInstanceKey {
-    
     PSSaltr* saltr2 = [PSSaltr saltrWithInstanceKey:@"08626247-f03d-0d83-b69f-4f03f80ef555_TEST" andCacheEnabled:YES];
-
-    
     XCTAssertTrue([saltr isEqual:saltr2], @"Creation of singleton PSSaltr object failed!");
 }
 

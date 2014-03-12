@@ -10,16 +10,16 @@
 
 #import <Foundation/Foundation.h>
 
-@class PSCell;
+@class SLTCell;
 @class PSCompositeInstance;
-@class PSBoardData;
+@class SLTLevelSettings;
 
 @interface PSComposite : NSObject
 
 @property (nonatomic, strong, readonly) NSString* compositeId;
-@property (nonatomic, strong, readonly) PSCell* cell;
+@property (nonatomic, strong, readonly) SLTCell* cell;
 
-- (id)initWithId:(NSString*)theCompositeId cell:(PSCell*)theCell andBoardData:(PSBoardData *)theBoardData;
+- (id)initWithId:(NSString*)theCompositeId cell:(SLTCell*)theCell andBoardData:(SLTLevelSettings *)theBoardData;
 
 - (void)generate;
 

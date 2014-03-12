@@ -9,8 +9,14 @@
  */
 
 #import <XCTest/XCTest.h>
+#import "PSLevelBoard.h"
+#import "PSRepository.h"
+#import "PSLevelStructure.h"
 
 @interface LevelBoardTests : XCTestCase
+{
+    PSLevelBoard* _levelBoard;
+}
 
 @end
 
@@ -19,6 +25,12 @@
 - (void)setUp
 {
     [super setUp];
+    PSRepository* repository = [[PSRepository alloc] init];
+    id data = [repository objectFromStorage:@"level.json"];
+    NSDictionary* boards = [data objectForKey:@"boards"];
+    NSDictionary* properties = [data objectForKey:@"properties"];
+    PSLevelStructure* level = [[PSLevelStructure alloc] initWithLevelId:@"level_1" index:0 dataUrl:@"http://example.com" properties:properties andVersion:@"v.01"];
+    _levelBoard = [[PSLevelBoard alloc] initWithRawBoard:boards andOwnerLevel:level];
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -28,14 +40,23 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testLevelBoardInitialization
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssertNotNil(_levelBoard, @"Level board is not initializated properly.");
 }
 
 - (void)testChunksRegeneration
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    
+}
+
+- (void)testComposites
+{
+}
+
+- (void)testChunks
+{
+    
 }
 
 @end

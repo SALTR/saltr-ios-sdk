@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-@class PSBoardData;
+@class SLTLevelSettings;
 
 @interface PSLevelStructure : NSObject
 
@@ -18,7 +18,7 @@
 @property (nonatomic, strong, readonly) NSString* dataUrl;
 @property (nonatomic, strong, readonly) NSString* index;
 @property (nonatomic, strong, readonly) NSDictionary* properties;
-@property (nonatomic, strong, readonly) PSBoardData* boardData;
+@property (nonatomic, strong, readonly) SLTLevelSettings* levelSettings;
 @property (nonatomic, strong, readonly) NSString* version;
 @property (nonatomic, strong, readonly) NSDictionary* innerProperties;
 @property (nonatomic, strong, readonly) NSMutableDictionary* boards;

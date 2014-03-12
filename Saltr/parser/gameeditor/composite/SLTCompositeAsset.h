@@ -8,12 +8,13 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSCell.h"
+#import <Foundation/Foundation.h>
+#import "SLTAsset.h"
 
-@interface PSCell ()
+@interface SLTCompositeAsset : SLTAsset
 
-@property (nonatomic, assign, readwrite) BOOL isBlocked;
-@property (nonatomic, strong, readwrite) NSDictionary* properties;
-@property (nonatomic, strong, readwrite) PSAssetInstance* assetInstance;
+@property (nonatomic, strong, readonly) NSArray* shifts;
+
+- (id)initWithShifts:(NSArray*)shifts type:(NSString*)theType andKeys:(NSDictionary*)theKeys;
 
 @end

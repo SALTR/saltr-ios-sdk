@@ -8,12 +8,24 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSBoardData_Private.h"
+#import "SLTChunkAssetInfo.h"
 
-@implementation PSBoardData
+@implementation SLTChunkAssetInfo
 
-@synthesize assetMap;
-@synthesize keyset;
-@synthesize stateMap;
+@synthesize assetId = _assetId;
+@synthesize count = _count;
+@synthesize stateId = _stateId;
+
+- (id)initWithAssetId:(NSString*)theAssetId count:(NSUInteger)theCount andStateId:(NSString*)theStateId
+{
+    self = [super init];
+    if (self) {
+        assert(nil != theAssetId);
+        _assetId = theAssetId;
+        _count = theCount;
+        _stateId = theStateId;
+    }
+    return self;
+}
 
 @end

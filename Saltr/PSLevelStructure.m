@@ -10,7 +10,7 @@
 
 #import "PSLevelStructure_Private.h"
 #import "PSLevelParser.h"
-#import "PSBoardData.h"
+#import "SLTLevelSettings.h"
 
 @interface PSLevelStructure() {
     NSDictionary* _boards;
@@ -25,7 +25,7 @@
 @synthesize index = _index;
 @synthesize properties = _properties;
 @synthesize version = _version;
-@synthesize boardData;
+@synthesize levelSettings;
 @synthesize innerProperties;
 @synthesize boards;
 
@@ -46,7 +46,7 @@
 
 - (NSDictionary*)keyset
 {
-    return boardData.keyset;
+    return levelSettings.keySetMap;
 }
 
 - (NSString*)boardWithId:(NSString*)boardId

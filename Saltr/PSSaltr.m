@@ -81,7 +81,6 @@
     if (self) {
         self.repository = [PSRepository new];
         _deserializer = [PSDeserializer new];
-        
         _isLoading = false;
         _ready = false;
     }
@@ -235,7 +234,6 @@
     if (_partner) {
         [args setObject:[_partner toDictionary] forKey:@"partner"];
     }
-    
     NSError* error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
                                                        options:NSJSONWritingPrettyPrinted
