@@ -8,9 +8,9 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSDevice.h"
+#import "SLTDevice.h"
 
-@implementation PSDevice
+@implementation SLTDevice
 
 @synthesize deviceId = _deviceId;
 @synthesize deviceType = _deviceType;

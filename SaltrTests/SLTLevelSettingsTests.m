@@ -10,7 +10,7 @@
 
 #import <XCTest/XCTest.h>
 #import "SLTLevelSettings.h"
-#import "PSRepository.h"
+#import "SLTRepository.h"
 #import "PSLevelParser.h"
 #import "SLTAsset.h"
 #import "SLTCompositeAsset.h"
@@ -28,7 +28,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     if (!_levelSettings) {
-        PSRepository* repository = [[PSRepository alloc] init];
+        SLTRepository* repository = [[SLTRepository alloc] init];
         id data = [repository objectFromStorage:@"level.json"];
         assert([data isKindOfClass:[NSDictionary class]]);
         _levelSettings = [[PSLevelParser sharedInstance] parseLevelSettings:data];

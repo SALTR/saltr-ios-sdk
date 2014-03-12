@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 
 @class SLTCellMatrixIterator;
+@class SLTCell;
 
 /**
  * @brief This is a public interface of @b SLTCellMatrix class.
@@ -45,7 +46,7 @@
  * @param row - the row index
  * @param column - the column index
  */
-- (void)insertCell:(SLTCell*)cell atRow:(NSUInteger)row andColumn:(NSUInteger)column;
+- (void)insertCell:(SLTCell *)cell atRow:(NSUInteger)row andColumn:(NSUInteger)column;
 
 /**
  * @brief Retrieves @b SLTCell object from the matrix with the (row, column) position.

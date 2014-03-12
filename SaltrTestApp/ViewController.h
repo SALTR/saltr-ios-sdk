@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSViewController : UIViewController
+@interface ViewController : UIViewController
 
 @end

@@ -8,9 +8,9 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSFeature.h"
+#import "SLTFeature.h"
 
-@implementation PSFeature
+@implementation SLTFeature
 
 @synthesize token = _token;
 @synthesize properties = _properties;

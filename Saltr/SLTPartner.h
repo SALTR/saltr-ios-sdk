@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PSPartner : NSObject
+@interface SLTPartner : NSObject
 
 /// the partner id
 @property (nonatomic, strong, readonly) NSString* partnerId;

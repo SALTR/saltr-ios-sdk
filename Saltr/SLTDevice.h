@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PSDevice : NSObject
+@interface SLTDevice : NSObject
 
 /// the device Id
 @property (nonatomic, strong, readonly) NSString* deviceId;

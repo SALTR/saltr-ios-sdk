@@ -8,9 +8,9 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSPartner.h"
+#import "SLTPartner.h"
 
-@implementation PSPartner
+@implementation SLTPartner
 
 @synthesize partnerId = _partnerId;
 @synthesize partnerType = _partnerType;

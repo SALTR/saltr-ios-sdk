@@ -9,14 +9,14 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "PSResourceURLTicket.h"
+#import "SLTResourceURLTicket.h"
 
 /**
  * @brief The resource class which keeps the information about ticket, as well as
  * gives opportunity to load/stop and dispose the current resource.
  */
 
-@interface PSResource : NSObject<NSURLConnectionDelegate> {
+@interface SLTResource : NSObject<NSURLConnectionDelegate> {
     
 }
 
@@ -24,7 +24,7 @@
 @property (nonatomic, strong, readonly) NSString* id;
 
 /// the ticket for loading the resource
-@property (nonatomic, strong, readonly) PSResourceURLTicket* ticket;
+@property (nonatomic, strong, readonly) SLTResourceURLTicket* ticket;
 
 /// The count of loaded bytes
 @property (nonatomic, assign, readonly) long long bytesLoaded;
@@ -47,7 +47,7 @@
  * @param onProgress - the progress handler
  * @return id - the initialized instance of the current class
  */
--(id) initWithId:(NSString *)id andTicket:(PSResourceURLTicket *)ticket successHandler:(void (^)(PSResource *))onSuccess errorHandler:(void (^)(PSResource *))onFail progressHandler:(void (^)(PSResource *))onProgress;
+-(id) initWithId:(NSString *)id andTicket:(SLTResourceURLTicket *)ticket successHandler:(void (^)(SLTResource *))onSuccess errorHandler:(void (^)(SLTResource *))onFail progressHandler:(void (^)(SLTResource *))onProgress;
 
 /// Returns the data of the resource
 -(id)data;

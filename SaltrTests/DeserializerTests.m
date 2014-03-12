@@ -9,11 +9,11 @@
  */
 
 #import <XCTest/XCTest.h>
-#import "PSDeserializer.h"
-#import "PSRepository.h"
+#import "SLTDeserializer.h"
+#import "SLTRepository.h"
 
 @interface DeserializerTests : XCTestCase {
-    PSDeserializer* _deserializer;
+    SLTDeserializer* _deserializer;
 }
 
 @end
@@ -25,7 +25,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     if (!_deserializer) {
-        _deserializer = [PSDeserializer new];
+        _deserializer = [SLTDeserializer new];
     }
 }
 
@@ -42,7 +42,7 @@
 
 - (void)testDecodeExperimentsFromData
 {
-    NSString* jsonPath = [[PSRepository libraryBundle] pathForResource:@"appdata" ofType:@"json"];
+    NSString* jsonPath = [[SLTRepository libraryBundle] pathForResource:@"appdata" ofType:@"json"];
     NSError* error = nil;
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     if (data) {
@@ -58,7 +58,7 @@
 
 - (void)testDecodeLevelsFromData
 {
-    NSString* jsonPath = [[PSRepository libraryBundle] pathForResource:@"appdata" ofType:@"json"];
+    NSString* jsonPath = [[SLTRepository libraryBundle] pathForResource:@"appdata" ofType:@"json"];
     NSError* error = nil;
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     if (data) {
@@ -74,7 +74,7 @@
 
 - (void)testDecodeFeaturesFromData
 {
-    NSString* jsonPath = [[PSRepository libraryBundle] pathForResource:@"appdata" ofType:@"json"];
+    NSString* jsonPath = [[SLTRepository libraryBundle] pathForResource:@"appdata" ofType:@"json"];
     NSError* error = nil;
     NSData *data = [NSData dataWithContentsOfFile:jsonPath];
     if (data) {

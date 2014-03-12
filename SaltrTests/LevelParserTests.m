@@ -9,7 +9,7 @@
  */
 
 #import <XCTest/XCTest.h>
-#import "PSRepository.h"
+#import "SLTRepository.h"
 #import "PSLevelParser.h"
 #import "PSLevelStructure.h"
 #import "PSLevelBoard.h"
@@ -40,7 +40,7 @@
 
 - (void)testLevelParsing
 {
-    PSRepository* repository = [[PSRepository alloc] init];
+    SLTRepository* repository = [[SLTRepository alloc] init];
     id data = [repository objectFromStorage:@"level.json"];
     PSLevelStructure* level = [[PSLevelStructure alloc] init];
     [[PSLevelParser sharedInstance] parseData:data andFillLevelStructure:level];

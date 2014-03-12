@@ -9,21 +9,21 @@
 /* Begin PBXBuildFile section */
 		CA05F4B118CDEE2C0071FCCB /* Helper.m in Sources */ = {isa = PBXBuildFile; fileRef = CA05F4B018CDEE2C0071FCCB /* Helper.m */; };
 		CA1FC1FB18B3B8D600E92A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
-		CA1FC20018B3B8D600E92A06 /* PSSaltr.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC1FF18B3B8D600E92A06 /* PSSaltr.h */; };
-		CA1FC20218B3B8D600E92A06 /* PSSaltr.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC20118B3B8D600E92A06 /* PSSaltr.m */; };
+		CA1FC20018B3B8D600E92A06 /* SLTSaltr.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC1FF18B3B8D600E92A06 /* SLTSaltr.h */; };
+		CA1FC20218B3B8D600E92A06 /* SLTSaltr.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC20118B3B8D600E92A06 /* SLTSaltr.m */; };
 		CA1FC20918B3B8D600E92A06 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20818B3B8D600E92A06 /* XCTest.framework */; };
 		CA1FC20A18B3B8D600E92A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
 		CA1FC20C18B3B8D600E92A06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20B18B3B8D600E92A06 /* UIKit.framework */; };
 		CA1FC20F18B3B8D600E92A06 /* libSaltr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1F718B3B8D600E92A06 /* libSaltr.a */; };
 		CA1FC21518B3B8D600E92A06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA1FC21318B3B8D600E92A06 /* InfoPlist.strings */; };
 		CA1FC21718B3B8D600E92A06 /* SaltrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC21618B3B8D600E92A06 /* SaltrTests.m */; };
-		CA1FC22C18B3C33200E92A06 /* PSDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC22B18B3C33200E92A06 /* PSDeserializer.m */; };
-		CA1FC22F18B3C34100E92A06 /* PSDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC22E18B3C34100E92A06 /* PSDevice.m */; };
-		CA1FC23218B3C35000E92A06 /* PSExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23118B3C35000E92A06 /* PSExperiment.m */; };
-		CA1FC23518B3C36100E92A06 /* PSFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23418B3C36100E92A06 /* PSFeature.m */; };
+		CA1FC22C18B3C33200E92A06 /* SLTDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC22B18B3C33200E92A06 /* SLTDeserializer.m */; };
+		CA1FC22F18B3C34100E92A06 /* SLTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC22E18B3C34100E92A06 /* SLTDevice.m */; };
+		CA1FC23218B3C35000E92A06 /* SLTExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23118B3C35000E92A06 /* SLTExperiment.m */; };
+		CA1FC23518B3C36100E92A06 /* SLTFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23418B3C36100E92A06 /* SLTFeature.m */; };
 		CA1FC23818B3C37300E92A06 /* PSLevelPackStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23718B3C37300E92A06 /* PSLevelPackStructure.m */; };
 		CA1FC23B18B3C38200E92A06 /* PSLevelStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23A18B3C38200E92A06 /* PSLevelStructure.m */; };
-		CA1FC23E18B3C39400E92A06 /* PSPartner.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23D18B3C39400E92A06 /* PSPartner.m */; };
+		CA1FC23E18B3C39400E92A06 /* SLTPartner.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23D18B3C39400E92A06 /* SLTPartner.m */; };
 		CA1FC24818B3C46000E92A06 /* PSLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24718B3C46000E92A06 /* PSLevelParser.m */; };
 		CA1FC24D18B3C4A800E92A06 /* SLTCellMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24C18B3C4A800E92A06 /* SLTCellMatrix.m */; };
 		CA1FC25018B3C4C200E92A06 /* SLTCellMatrixIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24F18B3C4C200E92A06 /* SLTCellMatrixIterator.m */; };
@@ -35,9 +35,9 @@
 		CA1FC26518B3C5D900E92A06 /* PSComposite.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26418B3C5D900E92A06 /* PSComposite.m */; };
 		CA1FC26818B3C5FA00E92A06 /* PSCompositeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26718B3C5FA00E92A06 /* PSCompositeInstance.m */; };
 		CA1FC26B18B3C62500E92A06 /* SLTCompositeAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26A18B3C62500E92A06 /* SLTCompositeAsset.m */; };
-		CA1FC27718B3C6D100E92A06 /* PSRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27618B3C6D100E92A06 /* PSRepository.m */; };
-		CA1FC28018B3C70E00E92A06 /* PSResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27F18B3C70E00E92A06 /* PSResource.m */; };
-		CA1FC28318B3C72200E92A06 /* PSResourceURLTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC28218B3C72200E92A06 /* PSResourceURLTicket.m */; };
+		CA1FC27718B3C6D100E92A06 /* SLTRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27618B3C6D100E92A06 /* SLTRepository.m */; };
+		CA1FC28018B3C70E00E92A06 /* SLTResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27F18B3C70E00E92A06 /* SLTResource.m */; };
+		CA1FC28318B3C72200E92A06 /* SLTResourceURLTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC28218B3C72200E92A06 /* SLTResourceURLTicket.m */; };
 		CA9D917518C666A2002831DF /* ResourceURLTicketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9D917418C666A2002831DF /* ResourceURLTicketTests.m */; };
 		CA9DAB3D18B7846C005CCCAA /* PSLevelBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9DAB3C18B7846C005CCCAA /* PSLevelBoard.m */; };
 		CAA0C60B18BCB7FE007B2B69 /* DeserializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C60A18BCB7FE007B2B69 /* DeserializerTests.m */; };
@@ -57,10 +57,10 @@
 		CD55D6DF18C0879800222E8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20B18B3B8D600E92A06 /* UIKit.framework */; };
 		CD55D6E518C0879800222E8C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CD55D6E318C0879800222E8C /* InfoPlist.strings */; };
 		CD55D6E718C0879800222E8C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55D6E618C0879800222E8C /* main.m */; };
-		CD55D6EB18C0879800222E8C /* PSAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55D6EA18C0879800222E8C /* PSAppDelegate.m */; };
+		CD55D6EB18C0879800222E8C /* SLTAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55D6EA18C0879800222E8C /* SLTAppDelegate.m */; };
 		CD55D6EE18C0879800222E8C /* Main_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD55D6EC18C0879800222E8C /* Main_iPhone.storyboard */; };
 		CD55D6F118C0879800222E8C /* Main_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CD55D6EF18C0879800222E8C /* Main_iPad.storyboard */; };
-		CD55D6F418C0879800222E8C /* PSViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55D6F318C0879800222E8C /* PSViewController.m */; };
+		CD55D6F418C0879800222E8C /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55D6F318C0879800222E8C /* ViewController.m */; };
 		CD55D6F618C0879800222E8C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CD55D6F518C0879800222E8C /* Images.xcassets */; };
 		CD55D6FC18C0879800222E8C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20818B3B8D600E92A06 /* XCTest.framework */; };
 		CD55D6FD18C0879800222E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
@@ -126,7 +126,7 @@
 				CD3F128518D08B6800C8DAF0 /* SLTCellMatrixIterator.h in CopyFiles */,
 				CDE3272718CF073E00710120 /* SLTCell.h in CopyFiles */,
 				CDECF35618CEFC3300EEE231 /* SLTAssetInstance.h in CopyFiles */,
-				CA1FC20018B3B8D600E92A06 /* PSSaltr.h in CopyFiles */,
+				CA1FC20018B3B8D600E92A06 /* SLTSaltr.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,28 +138,28 @@
 		CA1FC1F718B3B8D600E92A06 /* libSaltr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA1FC1FE18B3B8D600E92A06 /* Saltr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saltr-Prefix.pch"; sourceTree = "<group>"; };
-		CA1FC1FF18B3B8D600E92A06 /* PSSaltr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSSaltr.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		CA1FC20118B3B8D600E92A06 /* PSSaltr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSSaltr.m; sourceTree = "<group>"; };
+		CA1FC1FF18B3B8D600E92A06 /* SLTSaltr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTSaltr.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
+		CA1FC20118B3B8D600E92A06 /* SLTSaltr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTSaltr.m; sourceTree = "<group>"; };
 		CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaltrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC20818B3B8D600E92A06 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CA1FC20B18B3B8D600E92A06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		CA1FC21218B3B8D600E92A06 /* SaltrTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrTests-Info.plist"; sourceTree = "<group>"; };
 		CA1FC21418B3B8D600E92A06 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CA1FC21618B3B8D600E92A06 /* SaltrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaltrTests.m; sourceTree = "<group>"; };
-		CA1FC22A18B3C33200E92A06 /* PSDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDeserializer.h; sourceTree = "<group>"; };
-		CA1FC22B18B3C33200E92A06 /* PSDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDeserializer.m; sourceTree = "<group>"; };
-		CA1FC22D18B3C34100E92A06 /* PSDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSDevice.h; sourceTree = "<group>"; };
-		CA1FC22E18B3C34100E92A06 /* PSDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSDevice.m; sourceTree = "<group>"; };
-		CA1FC23018B3C35000E92A06 /* PSExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSExperiment.h; sourceTree = "<group>"; };
-		CA1FC23118B3C35000E92A06 /* PSExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSExperiment.m; sourceTree = "<group>"; };
-		CA1FC23318B3C36100E92A06 /* PSFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSFeature.h; sourceTree = "<group>"; };
-		CA1FC23418B3C36100E92A06 /* PSFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSFeature.m; sourceTree = "<group>"; };
+		CA1FC22A18B3C33200E92A06 /* SLTDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTDeserializer.h; sourceTree = "<group>"; };
+		CA1FC22B18B3C33200E92A06 /* SLTDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTDeserializer.m; sourceTree = "<group>"; };
+		CA1FC22D18B3C34100E92A06 /* SLTDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTDevice.h; sourceTree = "<group>"; };
+		CA1FC22E18B3C34100E92A06 /* SLTDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTDevice.m; sourceTree = "<group>"; };
+		CA1FC23018B3C35000E92A06 /* SLTExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTExperiment.h; sourceTree = "<group>"; };
+		CA1FC23118B3C35000E92A06 /* SLTExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTExperiment.m; sourceTree = "<group>"; };
+		CA1FC23318B3C36100E92A06 /* SLTFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTFeature.h; sourceTree = "<group>"; };
+		CA1FC23418B3C36100E92A06 /* SLTFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTFeature.m; sourceTree = "<group>"; };
 		CA1FC23618B3C37300E92A06 /* PSLevelPackStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLevelPackStructure.h; sourceTree = "<group>"; };
 		CA1FC23718B3C37300E92A06 /* PSLevelPackStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLevelPackStructure.m; sourceTree = "<group>"; };
 		CA1FC23918B3C38200E92A06 /* PSLevelStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLevelStructure.h; sourceTree = "<group>"; };
 		CA1FC23A18B3C38200E92A06 /* PSLevelStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLevelStructure.m; sourceTree = "<group>"; };
-		CA1FC23C18B3C39400E92A06 /* PSPartner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSPartner.h; sourceTree = "<group>"; };
-		CA1FC23D18B3C39400E92A06 /* PSPartner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPartner.m; sourceTree = "<group>"; };
+		CA1FC23C18B3C39400E92A06 /* SLTPartner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTPartner.h; sourceTree = "<group>"; };
+		CA1FC23D18B3C39400E92A06 /* SLTPartner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTPartner.m; sourceTree = "<group>"; };
 		CA1FC24618B3C46000E92A06 /* PSLevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSLevelParser.h; path = parser/PSLevelParser.h; sourceTree = "<group>"; };
 		CA1FC24718B3C46000E92A06 /* PSLevelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSLevelParser.m; path = parser/PSLevelParser.m; sourceTree = "<group>"; };
 		CA1FC24B18B3C4A800E92A06 /* SLTCellMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTCellMatrix.h; path = parser/data/SLTCellMatrix.h; sourceTree = "<group>"; };
@@ -182,12 +182,12 @@
 		CA1FC26718B3C5FA00E92A06 /* PSCompositeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCompositeInstance.m; path = parser/gameeditor/composite/PSCompositeInstance.m; sourceTree = "<group>"; };
 		CA1FC26918B3C62500E92A06 /* SLTCompositeAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTCompositeAsset.h; path = parser/gameeditor/composite/SLTCompositeAsset.h; sourceTree = "<group>"; };
 		CA1FC26A18B3C62500E92A06 /* SLTCompositeAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTCompositeAsset.m; path = parser/gameeditor/composite/SLTCompositeAsset.m; sourceTree = "<group>"; };
-		CA1FC27518B3C6D100E92A06 /* PSRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSRepository.h; path = repository/PSRepository.h; sourceTree = "<group>"; };
-		CA1FC27618B3C6D100E92A06 /* PSRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSRepository.m; path = repository/PSRepository.m; sourceTree = "<group>"; };
-		CA1FC27E18B3C70E00E92A06 /* PSResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSResource.h; path = resource/PSResource.h; sourceTree = "<group>"; };
-		CA1FC27F18B3C70E00E92A06 /* PSResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSResource.m; path = resource/PSResource.m; sourceTree = "<group>"; };
-		CA1FC28118B3C72200E92A06 /* PSResourceURLTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSResourceURLTicket.h; path = resource/PSResourceURLTicket.h; sourceTree = "<group>"; };
-		CA1FC28218B3C72200E92A06 /* PSResourceURLTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSResourceURLTicket.m; path = resource/PSResourceURLTicket.m; sourceTree = "<group>"; };
+		CA1FC27518B3C6D100E92A06 /* SLTRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTRepository.h; path = repository/SLTRepository.h; sourceTree = "<group>"; };
+		CA1FC27618B3C6D100E92A06 /* SLTRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTRepository.m; path = repository/SLTRepository.m; sourceTree = "<group>"; };
+		CA1FC27E18B3C70E00E92A06 /* SLTResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTResource.h; path = resource/SLTResource.h; sourceTree = "<group>"; };
+		CA1FC27F18B3C70E00E92A06 /* SLTResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTResource.m; path = resource/SLTResource.m; sourceTree = "<group>"; };
+		CA1FC28118B3C72200E92A06 /* SLTResourceURLTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTResourceURLTicket.h; path = resource/SLTResourceURLTicket.h; sourceTree = "<group>"; };
+		CA1FC28218B3C72200E92A06 /* SLTResourceURLTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTResourceURLTicket.m; path = resource/SLTResourceURLTicket.m; sourceTree = "<group>"; };
 		CA9D917418C666A2002831DF /* ResourceURLTicketTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceURLTicketTests.m; sourceTree = "<group>"; };
 		CA9DAB3A18B6A330005CCCAA /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		CA9DAB3B18B7846C005CCCAA /* PSLevelBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLevelBoard.h; sourceTree = "<group>"; };
@@ -212,12 +212,12 @@
 		CD55D6E418C0879800222E8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CD55D6E618C0879800222E8C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		CD55D6E818C0879800222E8C /* SaltrTestApp-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SaltrTestApp-Prefix.pch"; sourceTree = "<group>"; };
-		CD55D6E918C0879800222E8C /* PSAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSAppDelegate.h; sourceTree = "<group>"; };
-		CD55D6EA18C0879800222E8C /* PSAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSAppDelegate.m; sourceTree = "<group>"; };
+		CD55D6E918C0879800222E8C /* SLTAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTAppDelegate.h; sourceTree = "<group>"; };
+		CD55D6EA18C0879800222E8C /* SLTAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTAppDelegate.m; sourceTree = "<group>"; };
 		CD55D6ED18C0879800222E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPhone.storyboard; sourceTree = "<group>"; };
 		CD55D6F018C0879800222E8C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main_iPad.storyboard; sourceTree = "<group>"; };
-		CD55D6F218C0879800222E8C /* PSViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSViewController.h; sourceTree = "<group>"; };
-		CD55D6F318C0879800222E8C /* PSViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PSViewController.m; sourceTree = "<group>"; };
+		CD55D6F218C0879800222E8C /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		CD55D6F318C0879800222E8C /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		CD55D6F518C0879800222E8C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		CD55D6FB18C0879800222E8C /* SaltrTestAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaltrTestAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD55D70318C0879800222E8C /* SaltrTestAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrTestAppTests-Info.plist"; sourceTree = "<group>"; };
@@ -338,18 +338,18 @@
 				CA1FC23F18B3C39E00E92A06 /* parser */,
 				CD05F8C318C4D7F700CB782C /* private */,
 				CA1FC1FD18B3B8D600E92A06 /* Supporting Files */,
-				CA1FC22A18B3C33200E92A06 /* PSDeserializer.h */,
-				CA1FC22B18B3C33200E92A06 /* PSDeserializer.m */,
-				CA1FC22D18B3C34100E92A06 /* PSDevice.h */,
-				CA1FC22E18B3C34100E92A06 /* PSDevice.m */,
-				CA1FC23018B3C35000E92A06 /* PSExperiment.h */,
-				CA1FC23118B3C35000E92A06 /* PSExperiment.m */,
-				CA1FC23318B3C36100E92A06 /* PSFeature.h */,
-				CA1FC23418B3C36100E92A06 /* PSFeature.m */,
-				CA1FC23C18B3C39400E92A06 /* PSPartner.h */,
-				CA1FC23D18B3C39400E92A06 /* PSPartner.m */,
-				CA1FC1FF18B3B8D600E92A06 /* PSSaltr.h */,
-				CA1FC20118B3B8D600E92A06 /* PSSaltr.m */,
+				CA1FC22A18B3C33200E92A06 /* SLTDeserializer.h */,
+				CA1FC22B18B3C33200E92A06 /* SLTDeserializer.m */,
+				CA1FC22D18B3C34100E92A06 /* SLTDevice.h */,
+				CA1FC22E18B3C34100E92A06 /* SLTDevice.m */,
+				CA1FC23018B3C35000E92A06 /* SLTExperiment.h */,
+				CA1FC23118B3C35000E92A06 /* SLTExperiment.m */,
+				CA1FC23318B3C36100E92A06 /* SLTFeature.h */,
+				CA1FC23418B3C36100E92A06 /* SLTFeature.m */,
+				CA1FC23C18B3C39400E92A06 /* SLTPartner.h */,
+				CA1FC23D18B3C39400E92A06 /* SLTPartner.m */,
+				CA1FC1FF18B3B8D600E92A06 /* SLTSaltr.h */,
+				CA1FC20118B3B8D600E92A06 /* SLTSaltr.m */,
 				CA9DAB3A18B6A330005CCCAA /* Constants.h */,
 			);
 			path = Saltr;
@@ -409,8 +409,8 @@
 		CA1FC24018B3C3A300E92A06 /* repository */ = {
 			isa = PBXGroup;
 			children = (
-				CA1FC27518B3C6D100E92A06 /* PSRepository.h */,
-				CA1FC27618B3C6D100E92A06 /* PSRepository.m */,
+				CA1FC27518B3C6D100E92A06 /* SLTRepository.h */,
+				CA1FC27618B3C6D100E92A06 /* SLTRepository.m */,
 			);
 			name = repository;
 			sourceTree = "<group>";
@@ -418,10 +418,10 @@
 		CA1FC24118B3C3C300E92A06 /* resource */ = {
 			isa = PBXGroup;
 			children = (
-				CA1FC27E18B3C70E00E92A06 /* PSResource.h */,
-				CA1FC27F18B3C70E00E92A06 /* PSResource.m */,
-				CA1FC28118B3C72200E92A06 /* PSResourceURLTicket.h */,
-				CA1FC28218B3C72200E92A06 /* PSResourceURLTicket.m */,
+				CA1FC27E18B3C70E00E92A06 /* SLTResource.h */,
+				CA1FC27F18B3C70E00E92A06 /* SLTResource.m */,
+				CA1FC28118B3C72200E92A06 /* SLTResourceURLTicket.h */,
+				CA1FC28218B3C72200E92A06 /* SLTResourceURLTicket.m */,
 			);
 			name = resource;
 			sourceTree = "<group>";
@@ -494,12 +494,12 @@
 		CD55D6E018C0879800222E8C /* SaltrTestApp */ = {
 			isa = PBXGroup;
 			children = (
-				CD55D6E918C0879800222E8C /* PSAppDelegate.h */,
-				CD55D6EA18C0879800222E8C /* PSAppDelegate.m */,
+				CD55D6E918C0879800222E8C /* SLTAppDelegate.h */,
+				CD55D6EA18C0879800222E8C /* SLTAppDelegate.m */,
 				CD55D6EC18C0879800222E8C /* Main_iPhone.storyboard */,
 				CD55D6EF18C0879800222E8C /* Main_iPad.storyboard */,
-				CD55D6F218C0879800222E8C /* PSViewController.h */,
-				CD55D6F318C0879800222E8C /* PSViewController.m */,
+				CD55D6F218C0879800222E8C /* ViewController.h */,
+				CD55D6F318C0879800222E8C /* ViewController.m */,
 				CD55D6F518C0879800222E8C /* Images.xcassets */,
 				CD55D6E118C0879800222E8C /* Supporting Files */,
 			);
@@ -750,25 +750,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA1FC23218B3C35000E92A06 /* PSExperiment.m in Sources */,
+				CA1FC23218B3C35000E92A06 /* SLTExperiment.m in Sources */,
 				CA1FC26218B3C5AE00E92A06 /* SLTChunk.m in Sources */,
 				CA1FC24818B3C46000E92A06 /* PSLevelParser.m in Sources */,
 				CA9DAB3D18B7846C005CCCAA /* PSLevelBoard.m in Sources */,
 				CA1FC24D18B3C4A800E92A06 /* SLTCellMatrix.m in Sources */,
-				CA1FC22C18B3C33200E92A06 /* PSDeserializer.m in Sources */,
-				CA1FC23518B3C36100E92A06 /* PSFeature.m in Sources */,
+				CA1FC22C18B3C33200E92A06 /* SLTDeserializer.m in Sources */,
+				CA1FC23518B3C36100E92A06 /* SLTFeature.m in Sources */,
 				CA1FC26818B3C5FA00E92A06 /* PSCompositeInstance.m in Sources */,
-				CA1FC23E18B3C39400E92A06 /* PSPartner.m in Sources */,
-				CA1FC20218B3B8D600E92A06 /* PSSaltr.m in Sources */,
+				CA1FC23E18B3C39400E92A06 /* SLTPartner.m in Sources */,
+				CA1FC20218B3B8D600E92A06 /* SLTSaltr.m in Sources */,
 				CA1FC26B18B3C62500E92A06 /* SLTCompositeAsset.m in Sources */,
 				CA1FC26518B3C5D900E92A06 /* PSComposite.m in Sources */,
 				CD774F0F18C8E97F0021B4B0 /* SLTAssetInstance.m in Sources */,
-				CA1FC27718B3C6D100E92A06 /* PSRepository.m in Sources */,
+				CA1FC27718B3C6D100E92A06 /* SLTRepository.m in Sources */,
 				CA1FC25918B3C54F00E92A06 /* SLTLevelSettings.m in Sources */,
-				CA1FC22F18B3C34100E92A06 /* PSDevice.m in Sources */,
-				CA1FC28318B3C72200E92A06 /* PSResourceURLTicket.m in Sources */,
+				CA1FC22F18B3C34100E92A06 /* SLTDevice.m in Sources */,
+				CA1FC28318B3C72200E92A06 /* SLTResourceURLTicket.m in Sources */,
 				CA1FC25618B3C53300E92A06 /* SLTAsset.m in Sources */,
-				CA1FC28018B3C70E00E92A06 /* PSResource.m in Sources */,
+				CA1FC28018B3C70E00E92A06 /* SLTResource.m in Sources */,
 				CA1FC25C18B3C57000E92A06 /* SLTCell.m in Sources */,
 				CA1FC23B18B3C38200E92A06 /* PSLevelStructure.m in Sources */,
 				CA1FC25F18B3C59700E92A06 /* SLTChunkAssetInfo.m in Sources */,
@@ -808,8 +808,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				CD55D6E718C0879800222E8C /* main.m in Sources */,
-				CD55D6F418C0879800222E8C /* PSViewController.m in Sources */,
-				CD55D6EB18C0879800222E8C /* PSAppDelegate.m in Sources */,
+				CD55D6F418C0879800222E8C /* ViewController.m in Sources */,
+				CD55D6EB18C0879800222E8C /* SLTAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

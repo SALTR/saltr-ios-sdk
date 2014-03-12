@@ -8,9 +8,9 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSExperiment.h"
+#import "SLTExperiment.h"
 
-@implementation PSExperiment
+@implementation SLTExperiment
 
 @synthesize partition;
 @synthesize token;

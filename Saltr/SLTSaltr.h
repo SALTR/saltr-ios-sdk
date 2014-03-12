@@ -9,11 +9,11 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "PSRepository.h"
+#import "SLTRepository.h"
 #import "PSLevelPackStructure.h"
 #import "PSLevelStructure.h"
 
-@class PSFeature;
+@class SLTFeature;
 
 /// @todo Comments will be revised as more info is available
 
@@ -41,7 +41,7 @@
  * needs to include this header file, implement @b SatrRequestDelegate protocol
  * and initialize the properties listed below.
  */
-@interface PSSaltr : NSObject {
+@interface SLTSaltr : NSObject {
     /// The delegate of @b SaltrRequestDelegate protocol
     __unsafe_unretained id <SaltrRequestDelegate> saltrRequestDelegate;
 }
@@ -56,7 +56,7 @@
 @property (nonatomic, strong) NSString* appVersion;
 
 /// @todo this may be member
-@property (nonatomic, strong) PSRepository* repository;
+@property (nonatomic, strong) SLTRepository* repository;
 
 /// YES if loading is done, otherwise NO
 @property (nonatomic, assign, readonly) BOOL ready;
@@ -152,7 +152,7 @@
  * @param token - token for which feature should be obtained
  * @return - obtaining feature
  */
--(PSFeature *) feature :(NSString *)token;
+-(SLTFeature *) feature :(NSString *)token;
 
 
 @end

@@ -10,7 +10,7 @@
 
 #import <XCTest/XCTest.h>
 #import "PSLevelBoard.h"
-#import "PSRepository.h"
+#import "SLTRepository.h"
 #import "PSLevelStructure.h"
 
 @interface LevelBoardTests : XCTestCase
@@ -25,7 +25,7 @@
 - (void)setUp
 {
     [super setUp];
-    PSRepository* repository = [[PSRepository alloc] init];
+    SLTRepository* repository = [[SLTRepository alloc] init];
     id data = [repository objectFromStorage:@"level.json"];
     NSDictionary* boards = [data objectForKey:@"boards"];
     NSDictionary* properties = [data objectForKey:@"properties"];

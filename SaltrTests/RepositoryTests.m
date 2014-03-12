@@ -9,7 +9,7 @@
  */
 
 #import <XCTest/XCTest.h>
-#import "PSRepository.h"
+#import "SLTRepository.h"
 
 @interface RepositoryTests : XCTestCase
 
@@ -31,20 +31,20 @@
 
 - (void)testBundleLoading
 {
-    NSBundle* libraryBundle = [PSRepository libraryBundle];
+    NSBundle* libraryBundle = [SLTRepository libraryBundle];
     XCTAssertNotNil(libraryBundle, "Saltr.bundle is not loaded!");
     
 }
 
 - (void)testLevelFileExists
 {
-    NSString* levelJsonPath = [[PSRepository libraryBundle] pathForResource:@"level" ofType:@"json"];
+    NSString* levelJsonPath = [[SLTRepository libraryBundle] pathForResource:@"level" ofType:@"json"];
     XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:levelJsonPath], @"level.json file does not exist");
 }
 
 - (void)testAppDataFileExists
 {
-    NSString* appDataJsonPath = [[PSRepository libraryBundle] pathForResource:@"appdata" ofType:@"json"];
+    NSString* appDataJsonPath = [[SLTRepository libraryBundle] pathForResource:@"appdata" ofType:@"json"];
     XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:appDataJsonPath], @"appdata.json file does not exist");
 }
 
