@@ -10,7 +10,7 @@
 
 #import "PSLevelBoard_Private.h"
 #import "SLTLevelSettings.h"
-#import "PSVector2D.h"
+#import "SLTCellMatrix.h"
 #import "PSLevelStructure.h"
 #import "PSLevelParser.h"
 
@@ -36,7 +36,7 @@
         assert(0 <= _rows);
         _boardData = _ownerLevel.levelSettings;
         _position = [_rawBoard objectForKey:@"position"];
-        _boardVector = [[PSVector2D alloc] initWithWidth:_cols andHeight:_rows];
+        _boardVector = [[SLTCellMatrix alloc] initWithWidth:_cols andHeight:_rows];
     }
     return self;
 }

@@ -8,26 +8,26 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSVector2DIterator.h"
-#import "PSVector2D.h"
+#import "SLTCellMatrixIterator.h"
+#import "SLTCellMatrix.h"
+#import "SLTCell.h"
 
-@interface PSVector2DIterator () {
+@interface SLTCellMatrixIterator () {
     NSUInteger _currentX;
     NSUInteger _currentY;
+    SLTCellMatrix* _cells;
 }
 @end
 
-@implementation PSVector2DIterator
+@implementation SLTCellMatrixIterator
 
-@synthesize vector2D = _vector2D;
-
-- (id)initVector2DItaratorWithVector:(PSVector2D*)vector2D
+- (id)initWithCellMatrix:(SLTCellMatrix*)matrix
 {
     self = [super init];
     if (self) {
-        _vector2D = vector2D;
-        assert(nil != _vector2D);
-        if (nil == _vector2D) {
+        _cells = matrix;
+        assert(nil != _cells);
+        if (nil == _cells) {
             return  nil;
         }
         [self reset];
@@ -37,12 +37,12 @@
 
 - (BOOL)isLastColumn
 {
-    return (_currentY == (_vector2D.height - 1));
+    return (_currentY == (_cells.height - 1));
 }
 
 - (BOOL)isLastRow
 {
-    return (_currentX == (_vector2D.width - 1));
+    return (_currentX == (_cells.width - 1));
 }
 
 - (BOOL)hasNext
@@ -50,7 +50,7 @@
     return !([self isLastColumn] && [self isLastRow]);
 }
 
-- (id)nextObject
+- (SLTCell*)next
 {
     if (![self hasNext]) {
         return nil;
@@ -61,7 +61,7 @@
     } else {
         _currentY++;
     }
-    id nextObject = [_vector2D retrieveObjectAtRow:_currentX andColumn:_currentY];
+    SLTCell* nextObject = [_cells retrieveCellAtRow:_currentX andColumn:_currentY];
     return nextObject;
 }
 
@@ -69,4 +69,5 @@
     _currentX = 0;
     _currentY = 0;
 }
+
 @end

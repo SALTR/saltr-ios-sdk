@@ -13,8 +13,8 @@
 #import "PSLevelParser.h"
 #import "PSLevelStructure.h"
 #import "PSLevelBoard.h"
-#import "PSVector2D.h"
-#import "PSVector2DIterator.h"
+#import "SLTCellMatrix.h"
+#import "SLTCellMatrixIterator.h"
 #import "SLTAsset.h"
 #import "SLTAssetInstance.h"
 #import "PSCompositeInstance.h"
@@ -47,13 +47,13 @@
     NSLog(@"BOARD DATA %@", level);
     PSLevelBoard* levelBoard = [level.boards objectForKey:@"board1"];
     NSLog(@"LEVEL BOARD : %@", levelBoard);
-    PSVector2D* vectorBoard = levelBoard.boardVector;
+    SLTCellMatrix* vectorBoard = levelBoard.boardVector;
     NSLog(@"LEVEL BOARD Vector : %@", vectorBoard);
-    PSVector2DIterator* iterator = [vectorBoard iterator];
-    SLTCell* cell = [vectorBoard retrieveObjectAtRow:0 andColumn:0];
+    SLTCellMatrixIterator* iterator = [vectorBoard iterator];
+    SLTCell* cell = [vectorBoard retrieveCellAtRow:0 andColumn:0];
     assert(iterator);
     while ([iterator hasNext]) {
-        cell = [iterator nextObject];
+        cell = [iterator next];
         NSLog(@"PRINT   %@:", cell);
         assert(cell);
     }

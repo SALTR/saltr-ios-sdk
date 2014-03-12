@@ -25,8 +25,8 @@
 		CA1FC23B18B3C38200E92A06 /* PSLevelStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23A18B3C38200E92A06 /* PSLevelStructure.m */; };
 		CA1FC23E18B3C39400E92A06 /* PSPartner.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23D18B3C39400E92A06 /* PSPartner.m */; };
 		CA1FC24818B3C46000E92A06 /* PSLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24718B3C46000E92A06 /* PSLevelParser.m */; };
-		CA1FC24D18B3C4A800E92A06 /* PSVector2D.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24C18B3C4A800E92A06 /* PSVector2D.m */; };
-		CA1FC25018B3C4C200E92A06 /* PSVector2DIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24F18B3C4C200E92A06 /* PSVector2DIterator.m */; };
+		CA1FC24D18B3C4A800E92A06 /* SLTCellMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24C18B3C4A800E92A06 /* SLTCellMatrix.m */; };
+		CA1FC25018B3C4C200E92A06 /* SLTCellMatrixIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24F18B3C4C200E92A06 /* SLTCellMatrixIterator.m */; };
 		CA1FC25618B3C53300E92A06 /* SLTAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25518B3C53300E92A06 /* SLTAsset.m */; };
 		CA1FC25918B3C54F00E92A06 /* SLTLevelSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25818B3C54F00E92A06 /* SLTLevelSettings.m */; };
 		CA1FC25C18B3C57000E92A06 /* SLTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25B18B3C57000E92A06 /* SLTCell.m */; };
@@ -48,6 +48,10 @@
 		CAA0C61518BCB89A007B2B69 /* LevelPackStructureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61418BCB89A007B2B69 /* LevelPackStructureTests.m */; };
 		CAA0C61718BCB8B9007B2B69 /* LevelStructureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61618BCB8B9007B2B69 /* LevelStructureTests.m */; };
 		CAA0C61918BCB8DE007B2B69 /* PartnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61818BCB8DE007B2B69 /* PartnerTests.m */; };
+		CD3F128318D037C300C8DAF0 /* SLTCellMatrixIteratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3F128118D037C300C8DAF0 /* SLTCellMatrixIteratorTests.m */; };
+		CD3F128418D037C300C8DAF0 /* SLTCellMatrixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3F128218D037C300C8DAF0 /* SLTCellMatrixTests.m */; };
+		CD3F128518D08B6800C8DAF0 /* SLTCellMatrixIterator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC24E18B3C4C200E92A06 /* SLTCellMatrixIterator.h */; };
+		CD3F128618D08B7000C8DAF0 /* SLTCellMatrix.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC24B18B3C4A800E92A06 /* SLTCellMatrix.h */; };
 		CD55D6DD18C0879800222E8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
 		CD55D6DE18C0879800222E8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD7406118BFC02800F2306D /* CoreGraphics.framework */; };
 		CD55D6DF18C0879800222E8C /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20B18B3B8D600E92A06 /* UIKit.framework */; };
@@ -118,6 +122,8 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				CD3F128618D08B7000C8DAF0 /* SLTCellMatrix.h in CopyFiles */,
+				CD3F128518D08B6800C8DAF0 /* SLTCellMatrixIterator.h in CopyFiles */,
 				CDE3272718CF073E00710120 /* SLTCell.h in CopyFiles */,
 				CDECF35618CEFC3300EEE231 /* SLTAssetInstance.h in CopyFiles */,
 				CA1FC20018B3B8D600E92A06 /* PSSaltr.h in CopyFiles */,
@@ -156,10 +162,10 @@
 		CA1FC23D18B3C39400E92A06 /* PSPartner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSPartner.m; sourceTree = "<group>"; };
 		CA1FC24618B3C46000E92A06 /* PSLevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSLevelParser.h; path = parser/PSLevelParser.h; sourceTree = "<group>"; };
 		CA1FC24718B3C46000E92A06 /* PSLevelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSLevelParser.m; path = parser/PSLevelParser.m; sourceTree = "<group>"; };
-		CA1FC24B18B3C4A800E92A06 /* PSVector2D.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSVector2D.h; path = parser/data/PSVector2D.h; sourceTree = "<group>"; };
-		CA1FC24C18B3C4A800E92A06 /* PSVector2D.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSVector2D.m; path = parser/data/PSVector2D.m; sourceTree = "<group>"; };
-		CA1FC24E18B3C4C200E92A06 /* PSVector2DIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSVector2DIterator.h; path = parser/data/PSVector2DIterator.h; sourceTree = "<group>"; };
-		CA1FC24F18B3C4C200E92A06 /* PSVector2DIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSVector2DIterator.m; path = parser/data/PSVector2DIterator.m; sourceTree = "<group>"; };
+		CA1FC24B18B3C4A800E92A06 /* SLTCellMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTCellMatrix.h; path = parser/data/SLTCellMatrix.h; sourceTree = "<group>"; };
+		CA1FC24C18B3C4A800E92A06 /* SLTCellMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTCellMatrix.m; path = parser/data/SLTCellMatrix.m; sourceTree = "<group>"; };
+		CA1FC24E18B3C4C200E92A06 /* SLTCellMatrixIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTCellMatrixIterator.h; path = parser/data/SLTCellMatrixIterator.h; sourceTree = "<group>"; };
+		CA1FC24F18B3C4C200E92A06 /* SLTCellMatrixIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTCellMatrixIterator.m; path = parser/data/SLTCellMatrixIterator.m; sourceTree = "<group>"; };
 		CA1FC25418B3C53300E92A06 /* SLTAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTAsset.h; path = parser/gameeditor/SLTAsset.h; sourceTree = "<group>"; };
 		CA1FC25518B3C53300E92A06 /* SLTAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTAsset.m; path = parser/gameeditor/SLTAsset.m; sourceTree = "<group>"; };
 		CA1FC25718B3C54F00E92A06 /* SLTLevelSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTLevelSettings.h; path = parser/gameeditor/SLTLevelSettings.h; sourceTree = "<group>"; };
@@ -199,6 +205,8 @@
 		CD095F7B18BF7E4B00E38369 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		CD095F8C18BF7E9600E38369 /* appdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appdata.json; sourceTree = "<group>"; };
 		CD095F8D18BF7E9600E38369 /* level.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level.json; sourceTree = "<group>"; };
+		CD3F128118D037C300C8DAF0 /* SLTCellMatrixIteratorTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCellMatrixIteratorTests.m; sourceTree = "<group>"; };
+		CD3F128218D037C300C8DAF0 /* SLTCellMatrixTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCellMatrixTests.m; sourceTree = "<group>"; };
 		CD55D6DC18C0879800222E8C /* SaltrTestApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SaltrTestApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CD55D6E218C0879800222E8C /* SaltrTestApp-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrTestApp-Info.plist"; sourceTree = "<group>"; };
 		CD55D6E418C0879800222E8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -358,8 +366,10 @@
 		CA1FC21018B3B8D600E92A06 /* SaltrTests */ = {
 			isa = PBXGroup;
 			children = (
-				CDF821B718CF35940054744C /* SLTLevelSettingsTests.m */,
+				CD3F128118D037C300C8DAF0 /* SLTCellMatrixIteratorTests.m */,
+				CD3F128218D037C300C8DAF0 /* SLTCellMatrixTests.m */,
 				CDF821B518CF2D2F0054744C /* SLTCellTests.m */,
+				CDF821B718CF35940054744C /* SLTLevelSettingsTests.m */,
 				CDE3272518CF018D00710120 /* SLTAssetInstanceTests.m */,
 				CD774F1118CE2A8D0021B4B0 /* SLTAssetTests.m */,
 				CA9D917418C666A2002831DF /* ResourceURLTicketTests.m */,
@@ -434,10 +444,10 @@
 				CD774F0E18C8E97F0021B4B0 /* SLTAssetInstance.m */,
 				CA1FC25A18B3C57000E92A06 /* SLTCell.h */,
 				CA1FC25B18B3C57000E92A06 /* SLTCell.m */,
-				CA1FC24B18B3C4A800E92A06 /* PSVector2D.h */,
-				CA1FC24C18B3C4A800E92A06 /* PSVector2D.m */,
-				CA1FC24E18B3C4C200E92A06 /* PSVector2DIterator.h */,
-				CA1FC24F18B3C4C200E92A06 /* PSVector2DIterator.m */,
+				CA1FC24B18B3C4A800E92A06 /* SLTCellMatrix.h */,
+				CA1FC24C18B3C4A800E92A06 /* SLTCellMatrix.m */,
+				CA1FC24E18B3C4C200E92A06 /* SLTCellMatrixIterator.h */,
+				CA1FC24F18B3C4C200E92A06 /* SLTCellMatrixIterator.m */,
 				CA1FC26018B3C5AE00E92A06 /* SLTChunk.h */,
 				CA1FC26118B3C5AE00E92A06 /* SLTChunk.m */,
 				CA1FC25D18B3C59700E92A06 /* SLTChunkAssetInfo.h */,
@@ -744,7 +754,7 @@
 				CA1FC26218B3C5AE00E92A06 /* SLTChunk.m in Sources */,
 				CA1FC24818B3C46000E92A06 /* PSLevelParser.m in Sources */,
 				CA9DAB3D18B7846C005CCCAA /* PSLevelBoard.m in Sources */,
-				CA1FC24D18B3C4A800E92A06 /* PSVector2D.m in Sources */,
+				CA1FC24D18B3C4A800E92A06 /* SLTCellMatrix.m in Sources */,
 				CA1FC22C18B3C33200E92A06 /* PSDeserializer.m in Sources */,
 				CA1FC23518B3C36100E92A06 /* PSFeature.m in Sources */,
 				CA1FC26818B3C5FA00E92A06 /* PSCompositeInstance.m in Sources */,
@@ -762,7 +772,7 @@
 				CA1FC25C18B3C57000E92A06 /* SLTCell.m in Sources */,
 				CA1FC23B18B3C38200E92A06 /* PSLevelStructure.m in Sources */,
 				CA1FC25F18B3C59700E92A06 /* SLTChunkAssetInfo.m in Sources */,
-				CA1FC25018B3C4C200E92A06 /* PSVector2DIterator.m in Sources */,
+				CA1FC25018B3C4C200E92A06 /* SLTCellMatrixIterator.m in Sources */,
 				CA1FC23818B3C37300E92A06 /* PSLevelPackStructure.m in Sources */,
 				CA05F4B118CDEE2C0071FCCB /* Helper.m in Sources */,
 			);
@@ -774,6 +784,7 @@
 			files = (
 				CD774F1218CE2A8D0021B4B0 /* SLTAssetTests.m in Sources */,
 				CDF821B818CF35940054744C /* SLTLevelSettingsTests.m in Sources */,
+				CD3F128318D037C300C8DAF0 /* SLTCellMatrixIteratorTests.m in Sources */,
 				CAA0C61918BCB8DE007B2B69 /* PartnerTests.m in Sources */,
 				CAA0C61518BCB89A007B2B69 /* LevelPackStructureTests.m in Sources */,
 				CAA0C60F18BCB836007B2B69 /* ExperimentTests.m in Sources */,
@@ -785,6 +796,7 @@
 				CDE80AD618C0CB5A004A9C1E /* LevelParserTests.m in Sources */,
 				CA1FC21718B3B8D600E92A06 /* SaltrTests.m in Sources */,
 				CA9D917518C666A2002831DF /* ResourceURLTicketTests.m in Sources */,
+				CD3F128418D037C300C8DAF0 /* SLTCellMatrixTests.m in Sources */,
 				CAA0C60D18BCB821007B2B69 /* DeviceTests.m in Sources */,
 				CAA0C61118BCB851007B2B69 /* FeatureTests.m in Sources */,
 				CDE3272618CF018D00710120 /* SLTAssetInstanceTests.m in Sources */,
