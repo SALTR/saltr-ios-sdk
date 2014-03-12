@@ -8,16 +8,17 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSVector2D.h"
-#import "PSVector2DIterator.h"
+#import "SLTCell.h"
+#import "SLTCellMatrix.h"
+#import "SLTCellMatrixIterator.h"
 
-@interface PSVector2D () {
-    NSMutableArray* _matrix;
-    PSVector2DIterator* _iterator;
+@interface SLTCellMatrix () {
+    SLTCellMatrixIterator* _iterator;
+    NSMutableArray* _rawData;
 }
 @end
 
-@implementation PSVector2D
+@implementation SLTCellMatrix
 
 @synthesize width = _width;
 @synthesize height = _height;
@@ -40,39 +41,38 @@
 - (void)setupWithEmptyObjects
 {
     assert(_width >= 0 && _height >= 0);
-    _matrix = [[NSMutableArray alloc] initWithCapacity:_height];
+    _rawData = [[NSMutableArray alloc] initWithCapacity:_height];
     for (NSUInteger i = 0; i < _height; ++i) {
-        _matrix[i] = [[NSMutableArray alloc] initWithCapacity:_width];
+        _rawData[i] = [[NSMutableArray alloc] initWithCapacity:_width];
         for (int j = 0; j < _width; ++j) {
-            [[_matrix objectAtIndex:i] addObject:[[NSNull alloc] init]];
+            [[_rawData objectAtIndex:i] addObject:[[NSNull alloc] init]];
         }
     }
 }
 
-- (void)insertObject:(id)object atRow:(NSUInteger)row andColumn:(NSUInteger)column
+- (void)insertCell:(SLTCell*)cell atRow:(NSUInteger)row andColumn:(NSUInteger)column
 {
-    if (object == nil || row >= _width || column >= _height ) {
+    if (cell == nil || row >= _width || column >= _height ) {
         return;
     }
-    NSLog(@"INSERTED OBJECT : %@", object);
-    [(NSMutableArray*)([_matrix objectAtIndex:column]) replaceObjectAtIndex:row withObject:object];
+    [(NSMutableArray*)([_rawData objectAtIndex:column]) replaceObjectAtIndex:row withObject:cell];
 }
 
-- (id)retrieveObjectAtRow:(NSUInteger)row andColumn:(NSUInteger)column
+- (SLTCell*)retrieveCellAtRow:(NSUInteger)row andColumn:(NSUInteger)column
 {
     if (row >= _width || column >= _height ) {
         return nil;
     }
-    assert(_matrix);
-    id object = [[_matrix objectAtIndex:column] objectAtIndex:row];
+    assert(_rawData);
+    id object = [[_rawData objectAtIndex:column] objectAtIndex:row];
     assert(object);
     return object;
 }
 
-- (PSVector2DIterator*)iterator
+- (SLTCellMatrixIterator*)iterator
 {
     if (nil == _iterator) {
-        _iterator = [[PSVector2DIterator alloc] initVector2DItaratorWithVector:self];
+        _iterator = [[SLTCellMatrixIterator alloc] initWithCellMatrix:self];
     }
     return  _iterator;
 }

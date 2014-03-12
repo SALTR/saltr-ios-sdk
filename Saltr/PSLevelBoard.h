@@ -11,7 +11,7 @@
 #import <Foundation/Foundation.h>
 
 @class SLTLevelSettings;
-@class PSVector2D;
+@class SLTCellMatrix;
 @class PSLevelStructure;
 
 @interface PSLevelBoard : NSObject
@@ -20,7 +20,7 @@
 @property (nonatomic, assign, readonly) NSInteger rows;
 @property (nonatomic, assign, readonly) NSInteger cols;
 @property (nonatomic, strong, readonly) NSArray* position;
-@property (nonatomic, strong, readonly) PSVector2D* boardVector;
+@property (nonatomic, strong, readonly) SLTCellMatrix* boardVector;
 @property (nonatomic, strong, readonly) NSDictionary* rawBoard;
 @property (nonatomic, strong, readonly) SLTLevelSettings* boardData;
 

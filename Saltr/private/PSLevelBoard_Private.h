@@ -12,6 +12,6 @@
 
 @interface PSLevelBoard ()
 
-@property (nonatomic, strong, readwrite) PSVector2D* boardVector;
+@property (nonatomic, strong, readwrite) SLTCellMatrix* boardVector;
 
 @end

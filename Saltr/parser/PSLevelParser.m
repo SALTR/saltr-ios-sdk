@@ -9,7 +9,7 @@
  */
 
 #import "PSLevelParser.h"
-#import "PSVector2D.h"
+#import "SLTCellMatrix.h"
 #import "SLTLevelSettings.h"
 #import "PSLevelStructure_Private.h"
 #import "PSLevelBoard_Private.h"
@@ -99,7 +99,7 @@
         NSArray* compositePosition = [compositePrototype objectForKey:@"position"];
         NSUInteger xCoord = [[compositePosition objectAtIndex:0] integerValue];
         NSUInteger yCoord = [[compositePosition objectAtIndex:1] integerValue];
-        SLTCell* cell = [levelBoard.boardVector retrieveObjectAtRow:xCoord andColumn:yCoord];
+        SLTCell* cell = [levelBoard.boardVector retrieveCellAtRow:xCoord andColumn:yCoord];
         PSComposite* composite = [[PSComposite alloc] initWithId:assetId cell:cell andBoardData:levelBoard.ownerLevel.levelSettings];
         assert(nil != composite);
         [compositesMap setObject:composite forKey:composite.compositeId];
@@ -146,7 +146,7 @@
     }
 }
 
-- (void)fillBoardVectorCells:(PSVector2D*)boardVector forChunk:(SLTChunk*)chunk withCellsData:(NSArray*)cellsData
+- (void)fillBoardVectorCells:(SLTCellMatrix*)boardVector forChunk:(SLTChunk*)chunk withCellsData:(NSArray*)cellsData
 {
     assert(chunk);
     assert(cellsData);
@@ -157,7 +157,7 @@
         assert(cellsData);
         NSUInteger xCoord = [[cellData objectAtIndex:0] integerValue];
         NSUInteger yCoord = [[cellData objectAtIndex:1] integerValue];
-        SLTCell* cell = [boardVector retrieveObjectAtRow:xCoord andColumn:yCoord];
+        SLTCell* cell = [boardVector retrieveCellAtRow:xCoord andColumn:yCoord];
         assert(cell);
         [chunk addCell:cell];
     }
@@ -225,7 +225,7 @@
     }
 }
 
-- (void)createEmptyCellsForBoardVector:(PSVector2D*)boardVector withRawBoard:(NSDictionary*)rawBoard
+- (void)createEmptyCellsForBoardVector:(SLTCellMatrix*)boardVector withRawBoard:(NSDictionary*)rawBoard
 {
     assert(nil != boardVector);
     NSArray* blockedCells = [rawBoard objectForKey:@"blockedCells"];
@@ -238,7 +238,7 @@
         for (NSUInteger j = 0 ; j < boardVector.width; ++j) {
             SLTCell* cell = [[SLTCell alloc] initWithX:j andY:i];
             assert(cell);
-            [boardVector insertObject:cell atRow:j andColumn:i];
+            [boardVector insertCell:cell atRow:j andColumn:i];
             if (cellProperties && cellProperties.count) {
                 [self fillProperties:cellProperties  ofCell:cell];
             }

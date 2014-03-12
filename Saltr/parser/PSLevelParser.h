@@ -13,6 +13,7 @@
 @class PSLevelStructure;
 @class PSLevelBoard;
 @class SLTLevelSettings;
+@class SLTCellMatrix;
 
 @interface PSLevelParser : NSObject
 
