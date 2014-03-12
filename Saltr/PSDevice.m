@@ -26,8 +26,8 @@
     return self;
 }
 
--(NSString *) toString {
-    return [NSString stringWithFormat:@"{ deviceId :%@, deviceType :%@ }", _deviceId, _deviceType];
+-(NSDictionary *) toDictionary {
+    return [NSDictionary dictionaryWithObjectsAndKeys:_deviceId, @"deviceId", _deviceType, @"deviceType", nil];
 }
 
 @end

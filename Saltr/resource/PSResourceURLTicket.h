@@ -22,7 +22,7 @@
 @property (nonatomic, strong) NSString* contentType;
 
 /// The body of HTTP request
-@property (nonatomic, strong) NSData* variables;
+@property (nonatomic, strong) NSString* variables;
 
 @property (nonatomic, assign) BOOL followRedirects;
 
@@ -57,7 +57,7 @@
  * @param variables - the new request body
  * @return - initialized object of the @b PSResourceURLTicket class;
  */
--(id) initWithURL:(NSString *)urlString andVariables:(NSData *)variables;
+-(id) initWithURL:(NSString *)urlString andVariables:(NSString *)variables;
 
 /// Returns current url request
  -(NSURLRequest *) urlRequest;

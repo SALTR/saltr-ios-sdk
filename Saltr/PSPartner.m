@@ -25,8 +25,8 @@
     return self;
 }
 
--(NSString *) toString {
-    return [NSString stringWithFormat:@" { partnerId :%@, partnerType :%@ }", _partnerId, _partnerType];
+-(NSDictionary *) toDictionary {
+    return [NSDictionary dictionaryWithObjectsAndKeys:_partnerId, @"partnerId", _partnerType, @"partnerType", nil];
 }
 
 

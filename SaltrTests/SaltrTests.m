@@ -45,7 +45,7 @@
 }
 
 -(void) testAppData {
-    [[PSSaltr sharedInstance] appData];
+    [[PSSaltr sharedInstance] start];
 }
 
 -(void) testSetupPartnerWithId {
