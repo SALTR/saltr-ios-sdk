@@ -6,13 +6,13 @@
 //  Copyright (c) 2014 Plexonic. All rights reserved.
 //
 
-#import "PSViewController.h"
+#import "ViewController.h"
 
-@interface PSViewController ()
+@interface ViewController ()
 
 @end
 
-@implementation PSViewController
+@implementation ViewController
 
 - (void)viewDidLoad
 {

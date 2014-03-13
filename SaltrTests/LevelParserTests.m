@@ -9,7 +9,7 @@
  */
 
 #import <XCTest/XCTest.h>
-#import "PSRepository.h"
+#import "SLTRepository.h"
 #import "SLTLevelBoardParser.h"
 #import "SLTLevel.h"
 #import "SLTLevelBoard.h"
@@ -40,27 +40,23 @@
 
 - (void)testLevelParsing
 {
-    
-    
-    
-//    PSRepository* repository = [[PSRepository alloc] init];
-//    id data = [repository objectFromStorage:@"level.json"];
-//    SLTLevel* level = [[SLTLevel alloc] init];
-//    [[SLTLevelBoardParser sharedInstance] parseData:data andFillLevelStructure:level];
-//    NSLog(@"BOARD DATA %@", level);
-//    SLTLevelBoard* levelBoard = [level.boards objectForKey:@"board1"];
-//    NSLog(@"LEVEL BOARD : %@", levelBoard);
-//    SLTCellMatrix* vectorBoard = levelBoard.cells;
-//    NSLog(@"LEVEL BOARD Vector : %@", vectorBoard);
-//    SLTCellMatrixIterator* iterator = [vectorBoard iterator];
-//    SLTCell* cell = [vectorBoard retrieveCellAtRow:0 andColumn:0];
-//    assert(iterator);
-//    while ([iterator hasNext]) {
-//        cell = [iterator next];
-//        NSLog(@"PRINT   %@:", cell);
-//        assert(cell);
-//    }
-//    NSLog(@"LEVEL BOARD properties : %@", [levelBoard boardProperties]);
+    SLTRepository* repository = [[SLTRepository alloc] init];
+    id data = [repository objectFromStorage:@"level.json"];
+    SLTLevel* level = [[SLTLevel alloc] init];
+    [level updateContent:data];
+    NSLog(@"BOARD DATA %@", level);
+    SLTLevelBoard* levelBoard =  [level boardWithId:@"board1"];
+    NSLog(@"LEVEL BOARD : %@", levelBoard);
+    SLTCellMatrix* vectorBoard = levelBoard.cells;
+    NSLog(@"LEVEL BOARD Vector : %@", vectorBoard);
+    SLTCellMatrixIterator* iterator = [vectorBoard iterator];
+    SLTCell* cell = [vectorBoard retrieveCellAtRow:0 andColumn:0];
+    assert(iterator);
+    while ([iterator hasNext]) {
+        cell = [iterator next];
+        NSLog(@"PRINT   %@:", cell);
+        assert(cell);
+    }
 }
 
 @end

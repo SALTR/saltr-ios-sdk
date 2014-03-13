@@ -8,15 +8,14 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSSaltr.h"
-#import "PSFeature.h"
-#import "PSResource.h"
-#import "PSDeserializer.h"
-#import "PSExperiment.h"
+#import "SLTSaltr.h"
+#import "SLTFeature.h"
+#import "SLTResource.h"
+#import "SLTDeserializer.h"
+#import "SLTExperiment.h"
 #import "SLTLevelPack.h"
-#import "PSPartner.h"
-#import "PSDevice.h"
-#import "SLTLevelBoardParser.h"
+#import "SLTPartner.h"
+#import "SLTDevice.h"
 #import "Constants.h"
 #import "Helper.h"
 
@@ -48,22 +47,22 @@
 #define RESULT_ERROR @"ERROR"
 
 
-@interface PSSaltr() {
+@interface SLTSaltr() {
     BOOL _isLoading;
     /// @todo the meaning of this boolean is not clear yet
     BOOL _ready;
     NSString* _saltrUserId;
-    PSDeserializer* _deserializer;
+    SLTDeserializer* _deserializer;
     NSArray* _experiments;
     NSArray* _levelPackStructures;
     NSDictionary* _features;
-    PSDevice* _device;
-    PSPartner* _partner;
+    SLTDevice* _device;
+    SLTPartner* _partner;
 }
 
 @end
 
-@implementation PSSaltr
+@implementation SLTSaltr
 
 @synthesize instanceKey = _instanceKey;
 @synthesize enableCache;
@@ -79,8 +78,8 @@
 {
     self = [super init];
     if (self) {
-        self.repository = [PSRepository new];
-        _deserializer = [PSDeserializer new];
+        self.repository = [SLTRepository new];
+        _deserializer = [SLTDeserializer new];
         _isLoading = false;
         _ready = false;
     }
@@ -94,9 +93,9 @@
 
 +(id) saltrWithInstanceKey:(NSString *)instanceKey andCacheEnabled:(BOOL)enableCache
 {
-    [PSSaltr sharedInstance].instanceKey = instanceKey;
-    [PSSaltr sharedInstance].enableCache = enableCache;
-    return [PSSaltr sharedInstance];
+    [SLTSaltr sharedInstance].instanceKey = instanceKey;
+    [SLTSaltr sharedInstance].enableCache = enableCache;
+    return [SLTSaltr sharedInstance];
 }
 
 +(instancetype) sharedInstance
@@ -116,22 +115,22 @@
     return _sharedObject;
 }
 
--(PSFeature *) feature :(NSString *)token {
+-(SLTFeature *) feature :(NSString *)token {
     return [_features objectForKey:token];
 }
 
 -(void) setupPartnerWithId:(NSString *)partnerId andPartnerType:(NSString *)partnerType {
-    _partner = [[PSPartner alloc] initWithPartnerId:partnerId andPartnerType:partnerType];
+    _partner = [[SLTPartner alloc] initWithPartnerId:partnerId andPartnerType:partnerType];
 }
 
 -(void) setupDeviceWithId:(NSString *)deviceId andDeviceType:(NSString *)deviceType {
-    _device = [[PSDevice alloc] initWithDeviceId:deviceId andDeviceType:deviceType];
+    _device = [[SLTDevice alloc] initWithDeviceId:deviceId andDeviceType:deviceType];
 }
 
 -(void) defineFeatureWithToken:(NSString*)token andProperties:(NSDictionary *)properties {
-    PSFeature* feature = [features objectForKey:token];
+    SLTFeature* feature = [features objectForKey:token];
     if (nil == feature) {
-        feature = [[PSFeature alloc] initWithToken:token defaultProperties:nil andProperties:properties];
+        feature = [[SLTFeature alloc] initWithToken:token defaultProperties:nil andProperties:properties];
         [features setValue:feature forKey:token];
     } else {
         feature.defaultProperties = properties;
@@ -144,13 +143,13 @@
     }
     _isLoading = true;
     _ready = false;
-    void (^resourceLoadFailHandler)(PSResource*) = ^(PSResource* asset) {
+    void (^resourceLoadFailHandler)(SLTResource*) = ^(SLTResource* asset) {
         NSLog(@"[SaltAPI] App data is failed to load.");
         
         [self loadAppDataInternal];
         [asset dispose];
     };
-    void (^resourceLoadSuccessHandler)(PSResource*) = ^(PSResource* asset) {
+    void (^resourceLoadSuccessHandler)(SLTResource*) = ^(SLTResource* asset) {
         NSLog(@"[SaltAPI] App data is loaded.");
         NSDictionary* data = asset.jsonData;
         NSDictionary* jsonData = [data objectForKey:@"responseData"];
@@ -163,7 +162,7 @@
         }
         [asset dispose];
     };
-    PSResource* asset = [self createDataResource:resourceLoadSuccessHandler errorHandler:resourceLoadFailHandler];
+    SLTResource* asset = [self createDataResource:resourceLoadSuccessHandler errorHandler:resourceLoadFailHandler];
     [asset load];
 }
 
@@ -207,25 +206,28 @@
                                                          error:&error];
     if (!error) {
         NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        NSDictionary* urlVars = [[NSDictionary alloc] initWithObjectsAndKeys:COMMAND_ADD_PROPERTY, @"command", jsonArguments, @"arguments", nil];
-        NSData *urlVarsData = [NSKeyedArchiver archivedDataWithRootObject:urlVars];
-        PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVarsData];
+        
+        jsonArguments = [jsonArguments stringByRemovingPercentEncoding];
+        NSString* urlVars = [NSString stringWithFormat:@"?command=%@&arguments=%@", COMMAND_ADD_PROPERTY, jsonArguments];
+        
+        
+        SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];
         /// @todo the code below should be reviewed/rewritten
-        PSResource* resource = nil;
+        SLTResource* resource = nil;
         void (^addUserPropertySuccessHandler)() = ^() {
             [resource dispose];
         };
         void (^addUserPropertyFailHandler)() = ^() {
             [resource dispose];
         };
-        resource = [[PSResource alloc] initWithId:@"property" andTicket:ticket successHandler:addUserPropertySuccessHandler errorHandler:addUserPropertyFailHandler progressHandler:nil];
+        resource = [[SLTResource alloc] initWithId:@"property" andTicket:ticket successHandler:addUserPropertySuccessHandler errorHandler:addUserPropertyFailHandler progressHandler:nil];
         [resource load];
     }
 }
 
 #pragma mark private functions
 
--(PSResource *)createDataResource:(void (^)(PSResource *))resourceLoadSuccessHandler errorHandler:(void (^)(PSResource *))resourceLoadFailHandler {
+-(SLTResource *)createDataResource:(void (^)(SLTResource *))resourceLoadSuccessHandler errorHandler:(void (^)(SLTResource *))resourceLoadFailHandler {
     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
     [args setObject:_instanceKey forKey:@"instanceKey"];
     if (_device) {
@@ -243,8 +245,8 @@
         jsonArguments = [jsonArguments stringByRemovingPercentEncoding];
         NSString* urlVars = [NSString stringWithFormat:@"?command=%@&arguments=%@", COMMAND_APP_DATA, jsonArguments];
         
-        PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];
-        PSResource* resource = [[PSResource alloc] initWithId:@"saltAppConfig" andTicket:ticket successHandler:resourceLoadSuccessHandler errorHandler:resourceLoadFailHandler progressHandler:nil];
+        SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];
+        SLTResource* resource = [[SLTResource alloc] initWithId:@"saltAppConfig" andTicket:ticket successHandler:resourceLoadSuccessHandler errorHandler:resourceLoadFailHandler progressHandler:nil];
         return resource;
     }
     return nil;
@@ -261,13 +263,13 @@
     //merging with defaults...
 
     for (NSString* key in [saltrFeatures allKeys]) {
-        PSFeature* saltrFeature = [saltrFeatures objectForKey:key];
-        PSFeature* defaultFeature = [_features objectForKey:key];
+        SLTFeature* saltrFeature = [saltrFeatures objectForKey:key];
+        SLTFeature* defaultFeature = [_features objectForKey:key];
         saltrFeature.defaultProperties = defaultFeature.defaultProperties;
         [_features setValue:saltrFeature forKey:key];
     }
     
-    NSLog(@"[SaltClient] packs = %d", [_levelPackStructures count]);
+    NSLog(@"[SaltClient] packs = %lu", [_levelPackStructures count]);
     if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingAppDataRequest)]) {
         [saltrRequestDelegate didFinishGettingAppDataRequest];
     }
@@ -288,13 +290,14 @@
 }
 
 -(void) syncFeatures {
-    NSMutableDictionary* urlVars = [[NSMutableDictionary alloc] initWithObjectsAndKeys:COMMAND_APP_DATA, @"command", _instanceKey, @"instanceKey", nil];
+    NSString* urlVars = [NSString stringWithFormat:@"?command=%@&instanceKey=%@", COMMAND_SAVE_OR_UPDATE_FEATURE, _instanceKey];
+    
     if (appVersion) {
-        [urlVars setObject:appVersion forKey:@"appVersion"];
+        [urlVars stringByAppendingFormat:@",appVersion=%@", appVersion];
     }
     NSMutableArray* featureList = [NSMutableArray new];
     for (NSString* key in [_features allKeys]) {
-        PSFeature* feature = [_features objectForKey:key];
+        SLTFeature* feature = [_features objectForKey:key];
         if (feature.defaultProperties) {
             
             NSError* error = nil;
@@ -316,18 +319,14 @@
                                                              error:&error];
         if (!error) {
             NSString *properties = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-            
-            [urlVars setObject:properties forKey:@"data"];
-            
-        }
-        
-        NSData *urlVarsData = [NSKeyedArchiver archivedDataWithRootObject:urlVars];
-        PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:SALTR_URL andVariables:urlVarsData];
+            [urlVars stringByAppendingFormat:@",data=%@", properties];
+        }        
+        SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_URL andVariables:urlVars];
         void (^syncSuccessHandler)() = ^() {
         };
         void (^syncFailHandler)() = ^() {
         };
-        PSResource* resource = [[PSResource alloc] initWithId:@"saveOrUpdateFeature" andTicket:ticket successHandler:syncSuccessHandler errorHandler:syncFailHandler progressHandler:nil];
+        SLTResource* resource = [[SLTResource alloc] initWithId:@"saveOrUpdateFeature" andTicket:ticket successHandler:syncSuccessHandler errorHandler:syncFailHandler progressHandler:nil];
         [resource load];
     }
 }
@@ -338,11 +337,11 @@
                      levelData:(SLTLevel *)levelData forceNoCache:(BOOL)forceNoCache {
     
     NSInteger timeInterval = [NSDate timeIntervalSinceReferenceDate] * 1000;
-    NSString* url = [levelData.contentDataUrl stringByAppendingFormat:@"_time_=%d", timeInterval];
+    NSString* url = [levelData.contentDataUrl stringByAppendingFormat:@"_time_=%lu", timeInterval];
     NSString* dataUrl = forceNoCache ? url : levelData.contentDataUrl;
-    PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:dataUrl andVariables:nil];
+    SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:dataUrl andVariables:nil];
     /// @todo the code below should be reviewed/rewritten
-    PSResource* asset = nil;
+    SLTResource* asset = nil;
     
     void (^levelDataAssetLoadedHandler)() = ^() {
         NSDictionary* data = asset.jsonData;
@@ -361,7 +360,7 @@
         [self loadLevelDataLocally:levelPackData levelData:levelData cachedFileName:cachedFileName];
         [asset dispose];
     };
-    asset = [[PSResource alloc] initWithId:@"saltr" andTicket:ticket successHandler:levelDataAssetLoadedHandler errorHandler:levelDataAssetLoadErrorHandler progressHandler:nil];
+    asset = [[SLTResource alloc] initWithId:@"saltr" andTicket:ticket successHandler:levelDataAssetLoadedHandler errorHandler:levelDataAssetLoadErrorHandler progressHandler:nil];
     [asset load];
 }
 

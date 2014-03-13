@@ -19,10 +19,10 @@
 @interface SLTLevelBoard : NSObject
 
 /// The rows of level board
-@property (nonatomic, assign, readonly) NSInteger rows;
+@property (nonatomic, assign, readonly) NSUInteger rows;
 
 /// The columns of level board matrix
-@property (nonatomic, assign, readonly) NSInteger cols;
+@property (nonatomic, assign, readonly) NSUInteger cols;
 
 /// The board matrix of @b SLTCellMatrix type
 @property (nonatomic, strong, readonly) SLTCellMatrix* cells;

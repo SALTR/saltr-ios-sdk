@@ -8,9 +8,9 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSResourceURLTicket.h"
+#import "SLTResourceURLTicket.h"
 
-@implementation PSResourceURLTicket
+@implementation SLTResourceURLTicket
 
 @synthesize authenticate= _authenticate;
 @synthesize cacheResponse=_cacheResponse;

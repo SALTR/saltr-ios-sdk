@@ -1,5 +1,5 @@
 //
-//  PSViewController.h
+//  PSAppDelegate.h
 //  SaltrTestApp
 //
 //  Created by employee on 2/28/14.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface PSViewController : UIViewController
+@interface SLTAppDelegate : UIResponder <UIApplicationDelegate>
+
+@property (strong, nonatomic) UIWindow *window;
 
 @end

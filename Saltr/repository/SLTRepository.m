@@ -8,9 +8,9 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSRepository.h"
+#import "SLTRepository.h"
 
-@implementation PSRepository
+@implementation SLTRepository
 
 -(id) init {
     self = [super init];
@@ -32,19 +32,20 @@
 }
 
 -(NSDictionary *) objectFromStorage:(NSString *)fileName {
-    NSString* filePath = [[[PSRepository libraryBundle] bundlePath] stringByAppendingPathComponent:fileName];
+    NSString* filePath = [[[SLTRepository libraryBundle] bundlePath] stringByAppendingPathComponent:fileName];
     return [self getInternal:filePath];
 }
 
 -(NSDictionary *) objectFromCache:(NSString *)fileName {
     /// @todo The line below is just for passing compilation
-    NSString* filePath = fileName;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
     return [self getInternal:filePath];
 }
 
 -(NSDictionary *) objectFromApplication:(NSString *)fileName {
-    /// @todo The line below is just for passing compilation
-    NSString* filePath = fileName;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, NO);
+    NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
     return [self getInternal:filePath];
 }
 
@@ -54,12 +55,13 @@
 }
 
 -(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(NSDictionary *)object {
-    NSString* filePath = fileName;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
     [self saveInternal:filePath objectToSave:object];
 }
 
 -(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object {
-    NSString* filePath = [[[PSRepository libraryBundle] bundlePath] stringByAppendingPathComponent:fileName];
+    NSString* filePath = [[[SLTRepository libraryBundle] bundlePath] stringByAppendingPathComponent:fileName];
     [self saveInternal:filePath objectToSave:object];
 }
 
@@ -99,7 +101,9 @@
         
         NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         
-        [jsonString writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error];
+        if (![jsonString writeToFile:filePath atomically:YES encoding:NSUTF8StringEncoding error:&error]) {
+            NSLog(@"ERROR!!!");
+        }
         
     } @catch (NSError* error) {
         NSLog(@"[MobileStorageEngine] : error while saving object.\nError : %@", [[error userInfo] description]);

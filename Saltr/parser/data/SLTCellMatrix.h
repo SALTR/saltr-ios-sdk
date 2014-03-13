@@ -46,7 +46,7 @@
  * @param row - the row index
  * @param column - the column index
  */
-- (void)insertCell:(SLTCell*)cell atRow:(NSUInteger)row andColumn:(NSUInteger)column;
+- (void)insertCell:(SLTCell *)cell atRow:(NSUInteger)row andColumn:(NSUInteger)column;
 
 /**
  * @brief Retrieves @b SLTCell object from the matrix with the (row, column) position.

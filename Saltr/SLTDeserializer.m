@@ -8,13 +8,13 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSDeserializer.h"
-#import "PSExperiment.h"
+#import "SLTDeserializer.h"
+#import "SLTExperiment.h"
 #import "SLTLevelPack.h"
 #import "SLTLevel.h"
-#import "PSFeature.h"
+#import "SLTFeature.h"
 
-@implementation PSDeserializer
+@implementation SLTDeserializer
 
 
 - (NSArray*)decodeExperimentsFromData:(NSDictionary *)data
@@ -24,7 +24,7 @@
     NSArray* experimentInfo = [data objectForKey:@"experimentInfo"];
     if (experimentInfo) {
         for (NSDictionary* item in experimentInfo) {
-            PSExperiment* experiment = [PSExperiment new];
+            SLTExperiment* experiment = [SLTExperiment new];
             experiment.token = [item objectForKey:@"token"];
             experiment.partition = [item objectForKey:@"partitionName"];
             experiment.type = [item objectForKey:@"type"];
@@ -58,7 +58,7 @@
     NSArray* featuresList = [data objectForKey:@"featureList"];
     if (featuresList) {
         for (NSDictionary* feature in featuresList) {
-            [features setObject:[[PSFeature alloc] initWithToken:[feature objectForKey:@"token"] defaultProperties:nil andProperties:[feature objectForKey:@"data"]] forKey:[feature objectForKey:@"token"]];
+            [features setObject:[[SLTFeature alloc] initWithToken:[feature objectForKey:@"token"] defaultProperties:nil andProperties:[feature objectForKey:@"data"]] forKey:[feature objectForKey:@"token"]];
         }
     }
     return features;

@@ -8,9 +8,9 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSResource.h"
+#import "SLTResource.h"
 
-@implementation PSResource {
+@implementation SLTResource {
     NSInteger _countOfFails;
     NSInteger _dropTimeout;
     NSInteger _maxAttempts;
@@ -19,9 +19,9 @@
     NSMutableData* _responseData;
     NSURLConnection* _urlLoader;
     BOOL finished;
-    void (^_onSuccess)(PSResource *);
-    void (^_onFail)(PSResource *);
-    void (^_onProgress)(PSResource *);
+    void (^_onSuccess)(SLTResource *);
+    void (^_onFail)(SLTResource *);
+    void (^_onProgress)(SLTResource *);
 }
 
 @synthesize id = _id;
@@ -32,7 +32,7 @@
 @synthesize responseHeaders = _responseHeaders;
     
     
--(id) initWithId:(NSString *)id andTicket:(PSResourceURLTicket *)ticket successHandler:(void (^)(PSResource *))onSuccess errorHandler:(void (^)(PSResource *))onFail progressHandler:(void (^)(PSResource *))onProgress {
+-(id) initWithId:(NSString *)id andTicket:(SLTResourceURLTicket *)ticket successHandler:(void (^)(SLTResource *))onSuccess errorHandler:(void (^)(SLTResource *))onFail progressHandler:(void (^)(SLTResource *))onProgress {
     self = [super init];
     if (self) {
         _id = id;

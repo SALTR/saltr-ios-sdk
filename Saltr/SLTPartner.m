@@ -8,13 +8,26 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSExperiment.h"
+#import "SLTPartner.h"
 
-@implementation PSExperiment
+@implementation SLTPartner
 
-@synthesize partition;
-@synthesize token;
-@synthesize type;
-@synthesize customEvents;
+@synthesize partnerId = _partnerId;
+@synthesize partnerType = _partnerType;
+
+-(id) initWithPartnerId:(NSString*)theId andPartnerType:(NSString*)theType
+{
+    self = [super init];
+    if (self) {
+        _partnerId = theId;
+        _partnerType = theType;
+    }
+    return self;
+}
+
+-(NSDictionary *) toDictionary {
+    return [NSDictionary dictionaryWithObjectsAndKeys:_partnerId, @"partnerId", _partnerType, @"partnerType", nil];
+}
+
 
 @end

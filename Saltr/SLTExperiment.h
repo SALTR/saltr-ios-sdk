@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PSExperiment : NSObject
+@interface SLTExperiment : NSObject
 
 @property (nonatomic, strong) NSString* partition;
 @property (nonatomic, strong) NSString* token;

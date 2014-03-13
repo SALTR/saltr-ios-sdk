@@ -10,7 +10,7 @@
 
 #import <XCTest/XCTest.h>
 #import "SLTLevelBoard.h"
-#import "PSRepository.h"
+#import "SLTRepository.h"
 #import "SLTCellMatrix.h"
 #import "SLTCell.h"
 
@@ -45,7 +45,7 @@
 
 - (void)setupPropertiesSample
 {
-    PSRepository* repository = [[PSRepository alloc] init];
+    SLTRepository* repository = [[SLTRepository alloc] init];
     id data = [repository objectFromStorage:@"level.json"];
     NSDictionary* boards = [data objectForKey:@"boards"];
     XCTAssertNotNil(boards, @"Data of boards is not initialized properly");
@@ -88,13 +88,13 @@
 
 - (void)testCols
 {
-    XCTAssertEqual([NSNumber numberWithInt:_levelBoard.cols], [NSNumber numberWithInt:_width], @"Wrong value is specified for width");
+    XCTAssertEqual([NSNumber numberWithUnsignedInteger:_levelBoard.cols], [NSNumber numberWithUnsignedInteger:_width], @"Wrong value is specified for width");
 
 }
 
 - (void)testRows
 {
-    XCTAssertEqual([NSNumber numberWithInt:_levelBoard.rows], [NSNumber numberWithInt:_height], @"Wrong value is specified for height");
+    XCTAssertEqual([NSNumber numberWithUnsignedInteger:_levelBoard.rows], [NSNumber numberWithUnsignedInteger:_height], @"Wrong value is specified for height");
 }
 
 @end

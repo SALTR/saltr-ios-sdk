@@ -10,24 +10,24 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PSDevice : NSObject
+@interface SLTPartner : NSObject
 
-/// the device Id
-@property (nonatomic, strong, readonly) NSString* deviceId;
+/// the partner id
+@property (nonatomic, strong, readonly) NSString* partnerId;
 
-/// the device type
-@property (nonatomic, strong, readonly) NSString* deviceType;
+/// the partner type
+@property (nonatomic, strong, readonly) NSString* partnerType;
 
 /**
- * @brief Inits instance of PSDevice class with given id and type
+ * @brief Inits instance of PSPartner class with given id and type
  *
- * @param theId - device id
- * @param theType - device type
- * @return - The instance of PSDevice class
+ * @param theId - partner id
+ * @param theType - partner type
+ * @return - The instance of PSPartner class
  */
--(id) initWithDeviceId:(NSString*)theId andDeviceType:(NSString*)theType;
+-(id) initWithPartnerId:(NSString*)theId andPartnerType:(NSString*)theType;
 
-/// Returns the dictionary value of @b PSDevice class
+/// Returns the dictionary value of @b PSPartner class
 -(NSDictionary *) toDictionary;
 
 @end

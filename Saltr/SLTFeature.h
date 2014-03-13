@@ -10,7 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface PSFeature : NSObject
+@interface SLTFeature : NSObject
 
 /// The token of current @b PSFeature
 @property (nonatomic, strong, readonly) NSString* token;

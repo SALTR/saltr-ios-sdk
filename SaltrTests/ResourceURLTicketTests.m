@@ -7,12 +7,12 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "PSResourceURLTicket.h"
+#import "SLTResourceURLTicket.h"
 
 /// @todo the test case should be revised
 
 @interface ResourceURLTicketTests : XCTestCase {
-    PSResourceURLTicket* _ticket;
+    SLTResourceURLTicket* _ticket;
 }
 
 @end
@@ -24,7 +24,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     if (!_ticket) {
-        _ticket = [[PSResourceURLTicket alloc] initWithURL:@"http://parliament.am/legislation.php?sel=show&ID=4179&lang=arm" andVariables:nil];
+        _ticket = [[SLTResourceURLTicket alloc] initWithURL:@"http://parliament.am/legislation.php?sel=show&ID=4179&lang=arm" andVariables:nil];
     }
 }
 

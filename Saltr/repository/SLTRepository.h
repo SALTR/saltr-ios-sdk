@@ -10,13 +10,13 @@
 
 #import <Foundation/Foundation.h>
 
-@class PSSaltr;
+@class SLTSaltr;
 
 /**
  * @brief This class is used for getting/setting object from/into storage.
  * Storage can be either file or cache or application.
  */
-@interface PSRepository : NSObject
+@interface SLTRepository : NSObject
 
 /**
  * @brief Returns the path of resource bundle that library uses

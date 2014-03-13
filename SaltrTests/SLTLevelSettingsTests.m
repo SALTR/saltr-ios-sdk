@@ -10,7 +10,7 @@
 
 #import <XCTest/XCTest.h>
 #import "SLTLevelSettings.h"
-#import "PSRepository.h"
+#import "SLTRepository.h"
 #import "SLTLevelBoardParser.h"
 #import "SLTAsset.h"
 #import "SLTCompositeAsset.h"
@@ -28,7 +28,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     if (!_levelSettings) {
-        PSRepository* repository = [[PSRepository alloc] init];
+        SLTRepository* repository = [[SLTRepository alloc] init];
         id data = [repository objectFromStorage:@"level.json"];
         assert([data isKindOfClass:[NSDictionary class]]);
         _levelSettings = [[SLTLevelBoardParser sharedInstance] parseLevelSettings:data];
@@ -48,7 +48,7 @@
 
 - (void)testCompositeAsset:(SLTCompositeAsset*)compositeAsset withKey:(NSString*)key
 {
-    XCTAssertNotNil(compositeAsset.shifts, @"The shift cells should be specified for composite asset");
+    XCTAssertNotNil(compositeAsset.cellInfos, @"The shift cells should be specified for composite asset");
     NSArray* cellInfos = compositeAsset.cellInfos;
     NSArray* cell0 = @[@0, @0];
     XCTAssertEqualObjects([cellInfos objectAtIndex:0], cell0, @"Wrong shift cell is specified");

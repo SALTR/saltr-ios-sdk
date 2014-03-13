@@ -6,10 +6,10 @@
 //  Copyright (c) 2014 Plexonic. All rights reserved.
 //
 
-#import "PSAppDelegate.h"
-#import "PSSaltr.h"
+#import "SLTAppDelegate.h"
+#import "SLTSaltr.h"
 
-@implementation PSAppDelegate
+@implementation SLTAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

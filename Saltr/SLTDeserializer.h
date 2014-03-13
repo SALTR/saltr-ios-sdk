@@ -17,7 +17,7 @@
  *   3. @b the list of PSLevelStructure
  *   4. @b the list of features
  */
-@interface PSDeserializer : NSObject
+@interface SLTDeserializer : NSObject
 
 /**
  * @brief Decodes and creates an array of Expoeriment objects corresponding to data
