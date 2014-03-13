@@ -41,12 +41,14 @@
 
 - (void)testX
 {
-    XCTAssertEqual(_cell.x, 5, @"Wrong value is specified for type");
+    XCTAssertEqual([NSNumber numberWithUnsignedLong:_cell.x], @5, "Wrong matrix height");
+
 }
 
 - (void)testY
 {
-    XCTAssertEqual(_cell.y, 1, @"Wrong value is specified for type");
+    XCTAssertEqual([NSNumber numberWithUnsignedLong:_cell.y], @1, "Wrong matrix height");
+
 }
 
 @end

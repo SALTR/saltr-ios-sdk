@@ -52,9 +52,9 @@
 - (void)testKeys
 {
     XCTAssertNotNil(_asset.keys, @"Keys property has not been initialized properly");
-    XCTAssertEqual([[_asset.keys objectForKey:@"CARD_VALUE"] integerValue], 13, @"Wrong value is specified for CARD_VALUE key");
-    XCTAssertEqual([[_asset.keys objectForKey:@"CARD_SUIT"] integerValue], 2, @"Wrong value is specified for CARD_SUIT key");
-    XCTAssertEqual([[_asset.keys objectForKey:@"COLOR"] integerValue], 9, @"Wrong value is specified for COLOR key");
+    XCTAssertEqual([_asset.keys objectForKey:@"CARD_VALUE"], @13, @"Wrong value is specified for CARD_VALUE key");
+    XCTAssertEqual([_asset.keys objectForKey:@"CARD_SUIT"], @2, @"Wrong value is specified for CARD_SUIT key");
+    XCTAssertEqual([_asset.keys objectForKey:@"COLOR"], @9, @"Wrong value is specified for COLOR key");
 }
 
 @end

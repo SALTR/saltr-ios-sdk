@@ -51,11 +51,11 @@
     NSLog(@"LEVEL BOARD Vector : %@", vectorBoard);
     SLTCellMatrixIterator* iterator = [vectorBoard iterator];
     SLTCell* cell = [vectorBoard retrieveCellAtRow:0 andColumn:0];
-    assert(iterator);
+    XCTAssertNil(iterator, @"");
     while ([iterator hasNext]) {
         cell = [iterator next];
         NSLog(@"PRINT   %@:", cell);
-        assert(cell);
+        XCTAssertNil(cell);
     }
 }
 

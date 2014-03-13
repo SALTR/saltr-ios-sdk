@@ -32,7 +32,7 @@
 
 -(NSString *)description
 {
-    return [NSString stringWithFormat:@"[coords: (%i , %i)], [isblocked: %i], [properties: %@], [assetInstance: %@]", self.x, self.y, self.isBlocked,self.properties, self.assetInstance];
+    return [NSString stringWithFormat:@"[coords: (%lu , %lu)], [isblocked: %i], [properties: %@], [assetInstance: %@]", self.x, self.y, self.isBlocked,self.properties, self.assetInstance];
 }
 
 @end

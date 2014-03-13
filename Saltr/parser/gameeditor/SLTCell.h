@@ -57,10 +57,10 @@
 @interface SLTCell : NSObject
 
 /// The X coordinate of the cell in board matrix
-@property (nonatomic, assign, readonly) NSInteger x;
+@property (nonatomic, assign, readonly) NSUInteger x;
 
 /// The Y coordinate of the cell in board matrix
-@property (nonatomic, assign, readonly) NSInteger y;
+@property (nonatomic, assign, readonly) NSUInteger y;
 
 /// Shows whether the cell is blocked
 @property (nonatomic, assign, readonly) BOOL isBlocked;
