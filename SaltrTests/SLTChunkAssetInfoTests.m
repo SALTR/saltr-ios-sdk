@@ -9,22 +9,18 @@
  */
 
 #import <XCTest/XCTest.h>
-#import "PSLevelStructure.h"
+#import "SLTChunkAssetInfo.h"
 
-@interface LevelStructureTests : XCTestCase
-{
-    PSLevelStructure* _level;
-}
+@interface SLTChunkAssetInfoTests : XCTestCase
+
 @end
 
-
-@implementation LevelStructureTests
+@implementation SLTChunkAssetInfoTests
 
 - (void)setUp
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    _level = [[PSLevelStructure alloc] initWithLevelId:@"6127" index:@"1" dataUrl:@"http://saltr.com/static_data/08626247-f03d-0d83-b69f-4f03f80ef555/levels/7401.json" properties:nil andVersion:@"4"];
 }
 
 - (void)tearDown
@@ -33,10 +29,19 @@
     [super tearDown];
 }
 
-- (void)testLevelStructureObject
+- (void)testAssetId
 {
-    PSLevelStructure* level = [[PSLevelStructure alloc] initWithLevelId:@"level_1" index:0 dataUrl:@"http://example.com" properties:nil andVersion:@"v.01"];
-    XCTAssertNotNil(level, @"Object allocation/initialization fails");
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+}
+
+- (void)testStateId
+{
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+}
+
+- (void)testCount
+{
+    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
 }
 
 @end

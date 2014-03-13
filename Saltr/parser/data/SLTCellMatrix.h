@@ -11,6 +11,7 @@
 #import <Foundation/Foundation.h>
 
 @class SLTCellMatrixIterator;
+@class SLTCell;
 
 /**
  * @brief This is a public interface of @b SLTCellMatrix class.

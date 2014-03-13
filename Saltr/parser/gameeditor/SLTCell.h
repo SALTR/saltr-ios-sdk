@@ -18,7 +18,7 @@
  * The instance of this class is the single cell of baord matrix.
  * In general it holds an instance of @b SLTAssetInstance class or an instance of its derived @b SLTCompositeInstance class.
  *
- * The cell data is being collected from composite and asset datas from JSON:
+ * The cell data is being collected from composite and asset data of JSON:
  *
  * {
  *  "assetStates": {

@@ -13,10 +13,10 @@
 #import "PSResource.h"
 #import "PSDeserializer.h"
 #import "PSExperiment.h"
-#import "PSLevelPackStructure.h"
+#import "SLTLevelPack.h"
 #import "PSPartner.h"
 #import "PSDevice.h"
-#import "PSLevelParser.h"
+#import "SLTLevelBoardParser.h"
 #import "Constants.h"
 #import "Helper.h"
 
@@ -167,8 +167,8 @@
     [asset load];
 }
 
--(void) levelDataBodyWithLevelPack:(PSLevelPackStructure*)levelPackStructure
-                    levelStructure:(PSLevelStructure*)levelStructure andCacheEnabled:(BOOL)cacheEnabled {
+-(void) levelDataBodyWithLevelPack:(SLTLevelPack*)levelPackStructure
+                    levelStructure:(SLTLevel*)levelStructure andCacheEnabled:(BOOL)cacheEnabled {
     if (!cacheEnabled) {
         [self loadLevelDataFromServer:levelPackStructure levelData:levelStructure forceNoCache:YES];
         return;
@@ -334,12 +334,12 @@
 
 
 
--(void)loadLevelDataFromServer:(PSLevelPackStructure *)levelPackData
-                     levelData:(PSLevelStructure *)levelData forceNoCache:(BOOL)forceNoCache {
+-(void)loadLevelDataFromServer:(SLTLevelPack *)levelPackData
+                     levelData:(SLTLevel *)levelData forceNoCache:(BOOL)forceNoCache {
     
     NSInteger timeInterval = [NSDate timeIntervalSinceReferenceDate] * 1000;
-    NSString* url = [levelData.dataUrl stringByAppendingFormat:@"_time_=%d", timeInterval];
-    NSString* dataUrl = forceNoCache ? url : levelData.dataUrl;
+    NSString* url = [levelData.contentDataUrl stringByAppendingFormat:@"_time_=%d", timeInterval];
+    NSString* dataUrl = forceNoCache ? url : levelData.contentDataUrl;
     PSResourceURLTicket* ticket = [[PSResourceURLTicket alloc] initWithURL:dataUrl andVariables:nil];
     /// @todo the code below should be reviewed/rewritten
     PSResource* asset = nil;
@@ -365,7 +365,7 @@
     [asset load];
 }
 
--(BOOL) loadLevelDataCached:(PSLevelStructure *)levelData
+-(BOOL) loadLevelDataCached:(SLTLevel *)levelData
              cachedFileName:(NSString *) cachedFileName {
     NSLog(@"[SaltClient::loadLevelData] LOADING LEVEL DATA CACHE IMMEDIATELY.");
     NSDictionary* data = [repository objectFromCache:cachedFileName];
@@ -377,8 +377,8 @@
 
 }
 
--(void) levelLoadSuccessHandler:(PSLevelStructure *)levelData data:(id)data {
-    [[PSLevelParser sharedInstance] parseData:data andFillLevelStructure:levelData];
+-(void) levelLoadSuccessHandler:(SLTLevel *)levelData data:(id)data {
+    [levelData updateContent:data];
     if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingLevelDataBodyWithLevelPackRequest)]) {
         [saltrRequestDelegate didFinishGettingLevelDataBodyWithLevelPackRequest];
     }
@@ -391,15 +391,15 @@
     }
 }
 
--(void)loadLevelDataLocally:(PSLevelPackStructure *)levelPackData
-                  levelData:(PSLevelStructure *)levelData cachedFileName:(NSString *)cachedFileName {
+-(void)loadLevelDataLocally:(SLTLevelPack *)levelPackData
+                  levelData:(SLTLevel *)levelData cachedFileName:(NSString *)cachedFileName {
     if ([self loadLevelDataCached:levelData cachedFileName:cachedFileName]) {
         return;
     }
     [self loadLevelDataLocally:levelPackData levelData:levelData cachedFileName:cachedFileName];
 }
 
--(void) loadLevelDataInternal:(PSLevelPackStructure *)levelPackData levelData:(PSLevelStructure *)levelData {
+-(void) loadLevelDataInternal:(SLTLevelPack *)levelPackData levelData:(SLTLevel *)levelData {
     NSString* url = [Helper formatString:LEVEL_DATA_URL_LOCAL_TEMPLATE andString2:levelPackData.index andString3:levelData.index];
     NSDictionary* data = [repository objectFromApplication:url];
     if (data) {

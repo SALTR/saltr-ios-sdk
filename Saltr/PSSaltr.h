@@ -10,8 +10,8 @@
 
 #import <Foundation/Foundation.h>
 #import "PSRepository.h"
-#import "PSLevelPackStructure.h"
-#import "PSLevelStructure.h"
+#import "SLTLevelPack.h"
+#import "SLTLevel.h"
 
 @class PSFeature;
 
@@ -133,8 +133,8 @@
  * @param levelStructure - 
  * @param enableCache - YES, if caching should be enabled, otherwise NO
  */
--(void) levelDataBodyWithLevelPack:(PSLevelPackStructure*)levelPackStructure
-                    levelStructure:(PSLevelStructure*)levelStructure
+-(void) levelDataBodyWithLevelPack:(SLTLevelPack*)levelPackStructure
+                    levelStructure:(SLTLevel*)levelStructure
                    andCacheEnabled:(BOOL)enableCache;
 
 /**

@@ -10,8 +10,8 @@
 
 #import "PSDeserializer.h"
 #import "PSExperiment.h"
-#import "PSLevelPackStructure.h"
-#import "PSLevelStructure.h"
+#import "SLTLevelPack.h"
+#import "SLTLevel.h"
 #import "PSFeature.h"
 
 @implementation PSDeserializer
@@ -43,10 +43,10 @@
         NSArray* levels  = [levelPack objectForKey:@"levelList"];
         NSMutableArray* levelStructures = [NSMutableArray new];
         for (NSDictionary* level in levels) {
-            [levelStructures addObject:[[PSLevelStructure alloc] initWithLevelId:[level objectForKey: @"id"] index:[level objectForKey: @"order"] dataUrl:[level objectForKey: @"url"] properties:[level objectForKey: @"properties"] andVersion:[level objectForKey: @"version"]]];
+            [levelStructures addObject:[[SLTLevel alloc] initWithLevelId:[level objectForKey: @"id"] index:[level objectForKey: @"order"] contentDataUrl:[level objectForKey: @"url"] properties:[level objectForKey: @"properties"] andVersion:[level objectForKey: @"version"]]];
         }
         NSArray *sortedLevelStructures = [levelStructures sortedArrayUsingComparator:sortBlockForLevelStructure];
-        [levelPackStructures addObject:[[PSLevelPackStructure alloc] initWithToken:[levelPack objectForKey:@"token"] levelStructureList:sortedLevelStructures andIndex:[levelPack objectForKey:@"order"]]];
+        [levelPackStructures addObject:[[SLTLevelPack alloc] initWithToken:[levelPack objectForKey:@"token"] levels:sortedLevelStructures andIndex:[levelPack objectForKey:@"order"]]];
     }
     NSArray *sortedLevelPackStructures = [levelPackStructures sortedArrayUsingComparator:sortBlockForLevelPackStructure];
     return sortedLevelPackStructures;
@@ -66,7 +66,7 @@
 
 #pragma mark private functions
 
-NSComparisonResult (^sortBlockForLevelPackStructure)(id, id) = ^(PSLevelPackStructure* obj1, PSLevelPackStructure* obj2) {
+NSComparisonResult (^sortBlockForLevelPackStructure)(id, id) = ^(SLTLevelPack* obj1, SLTLevelPack* obj2) {
     if ([obj1 index] > [obj2 index]) {
         return (NSComparisonResult)NSOrderedDescending;
     }
@@ -76,7 +76,7 @@ NSComparisonResult (^sortBlockForLevelPackStructure)(id, id) = ^(PSLevelPackStru
     return (NSComparisonResult)NSOrderedSame;
 };
 
-NSComparisonResult (^sortBlockForLevelStructure)(id, id) = ^(PSLevelStructure* obj1, PSLevelStructure* obj2) {
+NSComparisonResult (^sortBlockForLevelStructure)(id, id) = ^(SLTLevel* obj1, SLTLevel* obj2) {
     if ([obj1 index] > [obj2 index]) {
         return (NSComparisonResult)NSOrderedDescending;
     }

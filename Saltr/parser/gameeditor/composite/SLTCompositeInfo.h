@@ -9,15 +9,14 @@
  */
 
 #import <Foundation/Foundation.h>
-#import "SLTAsset.h"
+
+@class SLTCell;
+@class SLTLevelSettings;
 
 /**
- * @brief This is the interface of @b SLTCompositeAsset class.
+ * @brief This is the interface of @b SLTCompositeInfo class.
  *
- * This class holds the composite asset information of cells, type, stateId and keys, which are being extracted from asset.
- * If asset of "assets" in the JSON data has cell property, this means that it is composite asset.
- *
- * The composite asset instances will be stored in the cells (mentioned in asset) of board matrix.
+ * This class holds the information of composite asset, which is being extracted from a corresponding composite of the "composites" node of JSON:
  *
  *  "boards": {
  *      "main": {
@@ -51,21 +50,25 @@
  *  }
  */
 
-@interface SLTCompositeAsset : SLTAsset
+@interface SLTCompositeInfo : NSObject
 
-/// The list of cells of board matrix, where the composite asset instances will be stored.
-@property (nonatomic, strong, readonly) NSArray* cellInfos;
-
+/// Id of composite asset
+@property (nonatomic, strong, readonly) NSString* assetId;
 
 /**
- * @brief Inits an instance of @b SLTCompositeAsset class with given cellInfos, type and keys
+ * @brief Inits an instance of @b SLTChunkAssetInfo class with given chunkCells, chunkAssetInfos and levelSettings
  *
- * @param theCellInfos - The list of cells of board matrix, where the composite asset instances will be stored
- * @param theType - the type of @b SLTCompositeAsset
- * @param theKeys - the keys of @b SLTCompositeAsset
+ * @param theAssetId - the id of @b SLTCompositeInfo instance
+ * @param theStateId - the state of @b SLTCompositeInfo
+ * @param theCell - the cell from the list of composite assets cellsInfo, where the @b SLTCompositeInstance will be stored
+ * @param theLevelSettings - An instance of @b SLTLevelSettings class, which
+ *                           holds an information about asset mapping, state mapping and key set mapping
  *
- * @return - The instance of @b @b SLTCompositeAsset class
+ * @return - The instance of @b SLTChunkAssetInfo class
  */
-- (id)initWithCellInfos:(NSArray*)theCellInfos type:(NSString*)theType andKeys:(NSDictionary*)theKeys;
+- (id)initWithAssetId:(NSString*)theAssetId stateId:(NSString*)theStateId cell:(SLTCell*)theCell andLevelSettings:(SLTLevelSettings *)theLevelSettings;
+
+/// Generates an instance of @b SLTCompositeAssetInstance type for the specified cell of matrix board.
+- (void)generate;
 
 @end

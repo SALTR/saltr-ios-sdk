@@ -8,19 +8,27 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import <Foundation/Foundation.h>
+#import "SLTLevelPack.h"
 
-@class SLTCell;
-@class PSCompositeInstance;
-@class SLTLevelSettings;
+@implementation SLTLevelPack
 
-@interface PSComposite : NSObject
+@synthesize token = _token;
+@synthesize levels = _levels;
+@synthesize index = _index;
 
-@property (nonatomic, strong, readonly) NSString* compositeId;
-@property (nonatomic, strong, readonly) SLTCell* cell;
+-(id) initWithToken:(NSString*)theToken levels:(NSArray*)theLevels andIndex:(NSString*)theIndex
+{
+    self = [super init];
+    if (self) {
+        _token = theToken;
+        _levels = theLevels;
+        _index = theIndex;
+    }
+    return self;
+}
 
-- (id)initWithId:(NSString*)theCompositeId cell:(SLTCell*)theCell andBoardData:(SLTLevelSettings *)theBoardData;
-
-- (void)generate;
+- (NSString *)description {
+    return self.token;
+}
 
 @end

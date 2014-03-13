@@ -8,17 +8,17 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSCompositeInstance.h"
+#import "SLTCompositeInstance.h"
 
-@implementation PSCompositeInstance
+@implementation SLTCompositeInstance
 
-@synthesize shifts = _shifts;
+@synthesize cells = _cells;
 
-- (id)initWithShifts:(NSArray*)shifts type:(NSString*)theType andKeys:(NSDictionary*)theKeys
+- (id)initWithCells:(NSArray*)theCells state:(NSString*)theState type:(NSString*)theType andKeys:(NSDictionary*)theKeys
 {
-    self = [super initWithType:theType andKeys:theKeys];
+    self = [super initWithState:theState type:theType andKeys:theKeys];
     if (self) {
-        _shifts = shifts;
+        _cells = theCells;
     }
     return self;
 }
@@ -26,7 +26,7 @@
 - (NSString *)description
 {
     NSString* superDescription = [super description];
-    return [NSString stringWithFormat: @"PSCompositeAssetInstance : [shifts : %@], %@ ", self.shifts, superDescription];
+    return [NSString stringWithFormat: @"PSCompositeAssetInstance : [cells : %@], %@ ", self.cells, superDescription];
 }
 
 @end
