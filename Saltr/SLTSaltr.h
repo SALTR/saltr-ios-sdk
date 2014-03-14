@@ -9,9 +9,10 @@
  */
 
 #import <Foundation/Foundation.h>
+
 #import "SLTRepository.h"
-#import "PSLevelPackStructure.h"
-#import "PSLevelStructure.h"
+#import "SLTLevelPack.h"
+#import "SLTLevel.h"
 
 @class SLTFeature;
 
@@ -139,8 +140,8 @@
  * @param levelStructure - 
  * @param enableCache - YES, if caching should be enabled, otherwise NO
  */
--(void) loadLevelContentData:(PSLevelPackStructure*)levelPackStructure
-                    levelStructure:(PSLevelStructure*)levelStructure
+-(void) loadLevelContentData:(SLTLevelPack*)levelPackStructure
+                    levelStructure:(SLTLevel*)levelStructure
                    andCacheEnabled:(BOOL)enableCache;
 
 /**

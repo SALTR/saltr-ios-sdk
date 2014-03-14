@@ -18,7 +18,7 @@
  * The instance of this class is the single cell of baord matrix.
  * In general it holds an instance of @b SLTAssetInstance class or an instance of its derived @b SLTCompositeInstance class.
  *
- * The cell data is being collected from composite and asset datas from JSON:
+ * The cell data is being collected from composite and asset data of JSON:
  *
  * {
  *  "assetStates": {
@@ -57,10 +57,10 @@
 @interface SLTCell : NSObject
 
 /// The X coordinate of the cell in board matrix
-@property (nonatomic, assign, readonly) NSInteger x;
+@property (nonatomic, assign, readonly) NSUInteger x;
 
 /// The Y coordinate of the cell in board matrix
-@property (nonatomic, assign, readonly) NSInteger y;
+@property (nonatomic, assign, readonly) NSUInteger y;
 
 /// Shows whether the cell is blocked
 @property (nonatomic, assign, readonly) BOOL isBlocked;

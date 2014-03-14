@@ -9,23 +9,22 @@
  */
 
 #import <XCTest/XCTest.h>
-#import "SLTCell.h"
+#import "SLTLevel.h"
 
-@interface SLTCellTests : XCTestCase
+@interface SLTLevelTests : XCTestCase
 {
-    SLTCell* _cell;
+    SLTLevel* _level;
 }
 @end
 
-@implementation SLTCellTests
+
+@implementation SLTLevelTests
 
 - (void)setUp
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    if (!_cell) {
-        _cell = [[SLTCell alloc] initWithX:5 andY:1];
-    }
+    _level = [[SLTLevel alloc] initWithLevelId:@"6127" index:@"1" contentDataUrl:@"http://saltr.com/static_data/08626247-f03d-0d83-b69f-4f03f80ef555/levels/7401.json" properties:nil andVersion:@"4"];
 }
 
 - (void)tearDown
@@ -34,21 +33,10 @@
     [super tearDown];
 }
 
-- (void)testSLTCellObject
+- (void)testLevelStructureObject
 {
-    XCTAssertNotNil(_cell, @"SLTCell has not been initialized properly!");
-}
-
-- (void)testX
-{
-    XCTAssertEqual([NSNumber numberWithUnsignedLong:_cell.x], @5, "Wrong matrix height");
-
-}
-
-- (void)testY
-{
-    XCTAssertEqual([NSNumber numberWithUnsignedLong:_cell.y], @1, "Wrong matrix height");
-
+    SLTLevel* level = [[SLTLevel alloc] initWithLevelId:@"level_1" index:0 contentDataUrl:@"http://example.com" properties:nil andVersion:@"v.01"];
+    XCTAssertNotNil(level, @"Object allocation/initialization fails");
 }
 
 @end

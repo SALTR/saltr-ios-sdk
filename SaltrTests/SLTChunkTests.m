@@ -9,23 +9,22 @@
  */
 
 #import <XCTest/XCTest.h>
-#import "SLTCell.h"
+#import "SLTChunk.h"
 
-@interface SLTCellTests : XCTestCase
+@interface SLTChunkTests : XCTestCase
 {
-    SLTCell* _cell;
+    SLTChunk* _chunk;
 }
+
 @end
 
-@implementation SLTCellTests
+@implementation SLTChunkTests
 
 - (void)setUp
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    if (!_cell) {
-        _cell = [[SLTCell alloc] initWithX:5 andY:1];
-    }
+    _chunk = [[SLTChunk alloc] init];
 }
 
 - (void)tearDown
@@ -34,21 +33,9 @@
     [super tearDown];
 }
 
-- (void)testSLTCellObject
+- (void)testGenerate
 {
-    XCTAssertNotNil(_cell, @"SLTCell has not been initialized properly!");
-}
-
-- (void)testX
-{
-    XCTAssertEqual([NSNumber numberWithUnsignedLong:_cell.x], @5, "Wrong matrix height");
-
-}
-
-- (void)testY
-{
-    XCTAssertEqual([NSNumber numberWithUnsignedLong:_cell.y], @1, "Wrong matrix height");
-
+    [_chunk generate];
 }
 
 @end

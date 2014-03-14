@@ -21,10 +21,10 @@
 		CA1FC22F18B3C34100E92A06 /* SLTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC22E18B3C34100E92A06 /* SLTDevice.m */; };
 		CA1FC23218B3C35000E92A06 /* SLTExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23118B3C35000E92A06 /* SLTExperiment.m */; };
 		CA1FC23518B3C36100E92A06 /* SLTFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23418B3C36100E92A06 /* SLTFeature.m */; };
-		CA1FC23818B3C37300E92A06 /* PSLevelPackStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23718B3C37300E92A06 /* PSLevelPackStructure.m */; };
-		CA1FC23B18B3C38200E92A06 /* PSLevelStructure.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23A18B3C38200E92A06 /* PSLevelStructure.m */; };
+		CA1FC23818B3C37300E92A06 /* SLTLevelPack.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23718B3C37300E92A06 /* SLTLevelPack.m */; };
+		CA1FC23B18B3C38200E92A06 /* SLTLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23A18B3C38200E92A06 /* SLTLevel.m */; };
 		CA1FC23E18B3C39400E92A06 /* SLTPartner.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23D18B3C39400E92A06 /* SLTPartner.m */; };
-		CA1FC24818B3C46000E92A06 /* PSLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24718B3C46000E92A06 /* PSLevelParser.m */; };
+		CA1FC24818B3C46000E92A06 /* SLTLevelBoardParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24718B3C46000E92A06 /* SLTLevelBoardParser.m */; };
 		CA1FC24D18B3C4A800E92A06 /* SLTCellMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24C18B3C4A800E92A06 /* SLTCellMatrix.m */; };
 		CA1FC25018B3C4C200E92A06 /* SLTCellMatrixIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC24F18B3C4C200E92A06 /* SLTCellMatrixIterator.m */; };
 		CA1FC25618B3C53300E92A06 /* SLTAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25518B3C53300E92A06 /* SLTAsset.m */; };
@@ -32,21 +32,21 @@
 		CA1FC25C18B3C57000E92A06 /* SLTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25B18B3C57000E92A06 /* SLTCell.m */; };
 		CA1FC25F18B3C59700E92A06 /* SLTChunkAssetInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC25E18B3C59700E92A06 /* SLTChunkAssetInfo.m */; };
 		CA1FC26218B3C5AE00E92A06 /* SLTChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26118B3C5AE00E92A06 /* SLTChunk.m */; };
-		CA1FC26518B3C5D900E92A06 /* PSComposite.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26418B3C5D900E92A06 /* PSComposite.m */; };
-		CA1FC26818B3C5FA00E92A06 /* PSCompositeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26718B3C5FA00E92A06 /* PSCompositeInstance.m */; };
+		CA1FC26518B3C5D900E92A06 /* SLTCompositeInfo.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26418B3C5D900E92A06 /* SLTCompositeInfo.m */; };
+		CA1FC26818B3C5FA00E92A06 /* SLTCompositeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26718B3C5FA00E92A06 /* SLTCompositeInstance.m */; };
 		CA1FC26B18B3C62500E92A06 /* SLTCompositeAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC26A18B3C62500E92A06 /* SLTCompositeAsset.m */; };
 		CA1FC27718B3C6D100E92A06 /* SLTRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27618B3C6D100E92A06 /* SLTRepository.m */; };
 		CA1FC28018B3C70E00E92A06 /* SLTResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC27F18B3C70E00E92A06 /* SLTResource.m */; };
 		CA1FC28318B3C72200E92A06 /* SLTResourceURLTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC28218B3C72200E92A06 /* SLTResourceURLTicket.m */; };
 		CA9D917518C666A2002831DF /* ResourceURLTicketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9D917418C666A2002831DF /* ResourceURLTicketTests.m */; };
-		CA9DAB3D18B7846C005CCCAA /* PSLevelBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9DAB3C18B7846C005CCCAA /* PSLevelBoard.m */; };
+		CA9DAB3D18B7846C005CCCAA /* SLTLevelBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9DAB3C18B7846C005CCCAA /* SLTLevelBoard.m */; };
 		CAA0C60B18BCB7FE007B2B69 /* DeserializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C60A18BCB7FE007B2B69 /* DeserializerTests.m */; };
 		CAA0C60D18BCB821007B2B69 /* DeviceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C60C18BCB821007B2B69 /* DeviceTests.m */; };
 		CAA0C60F18BCB836007B2B69 /* ExperimentTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C60E18BCB836007B2B69 /* ExperimentTests.m */; };
 		CAA0C61118BCB851007B2B69 /* FeatureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61018BCB851007B2B69 /* FeatureTests.m */; };
-		CAA0C61318BCB871007B2B69 /* LevelBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61218BCB871007B2B69 /* LevelBoardTests.m */; };
+		CAA0C61318BCB871007B2B69 /* SLTLevelBoardTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61218BCB871007B2B69 /* SLTLevelBoardTests.m */; };
 		CAA0C61518BCB89A007B2B69 /* LevelPackStructureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61418BCB89A007B2B69 /* LevelPackStructureTests.m */; };
-		CAA0C61718BCB8B9007B2B69 /* LevelStructureTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61618BCB8B9007B2B69 /* LevelStructureTests.m */; };
+		CAA0C61718BCB8B9007B2B69 /* SLTLevelTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61618BCB8B9007B2B69 /* SLTLevelTests.m */; };
 		CAA0C61918BCB8DE007B2B69 /* PartnerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C61818BCB8DE007B2B69 /* PartnerTests.m */; };
 		CD3F128318D037C300C8DAF0 /* SLTCellMatrixIteratorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3F128118D037C300C8DAF0 /* SLTCellMatrixIteratorTests.m */; };
 		CD3F128418D037C300C8DAF0 /* SLTCellMatrixTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD3F128218D037C300C8DAF0 /* SLTCellMatrixTests.m */; };
@@ -69,6 +69,12 @@
 		CD55D70F18C087C900222E8C /* SaltrTestAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD55D70718C0879800222E8C /* SaltrTestAppTests.m */; };
 		CD774F0F18C8E97F0021B4B0 /* SLTAssetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = CD774F0E18C8E97F0021B4B0 /* SLTAssetInstance.m */; };
 		CD774F1218CE2A8D0021B4B0 /* SLTAssetTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CD774F1118CE2A8D0021B4B0 /* SLTAssetTests.m */; };
+		CDB6BF3418D0BE6000C0D140 /* SLTLevelBoard.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA9DAB3B18B7846C005CCCAA /* SLTLevelBoard.h */; };
+		CDB6BF3618D1934F00C0D140 /* SLTChunkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB6BF3518D1934F00C0D140 /* SLTChunkTests.m */; };
+		CDB6BF3818D1A78800C0D140 /* SLTChunkAssetInfoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB6BF3718D1A78800C0D140 /* SLTChunkAssetInfoTests.m */; };
+		CDB6BF3918D1EFE800C0D140 /* SLTCompositeInstance.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC26618B3C5FA00E92A06 /* SLTCompositeInstance.h */; };
+		CDB6BF3A18D1F1E500C0D140 /* SLTLevel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC23918B3C38200E92A06 /* SLTLevel.h */; };
+		CDB6BF3B18D1F20200C0D140 /* SLTLevelPack.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC23618B3C37300E92A06 /* SLTLevelPack.h */; };
 		CDD7408F18BFC0FA00F2306D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD095F7B18BF7E4B00E38369 /* CoreFoundation.framework */; };
 		CDD7409518BFC0FA00F2306D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDD7409318BFC0FA00F2306D /* InfoPlist.strings */; };
 		CDD7409A18BFC11600F2306D /* appdata.json in Resources */ = {isa = PBXBuildFile; fileRef = CD095F8C18BF7E9600E38369 /* appdata.json */; };
@@ -122,6 +128,10 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				CDB6BF3B18D1F20200C0D140 /* SLTLevelPack.h in CopyFiles */,
+				CDB6BF3A18D1F1E500C0D140 /* SLTLevel.h in CopyFiles */,
+				CDB6BF3918D1EFE800C0D140 /* SLTCompositeInstance.h in CopyFiles */,
+				CDB6BF3418D0BE6000C0D140 /* SLTLevelBoard.h in CopyFiles */,
 				CD3F128618D08B7000C8DAF0 /* SLTCellMatrix.h in CopyFiles */,
 				CD3F128518D08B6800C8DAF0 /* SLTCellMatrixIterator.h in CopyFiles */,
 				CDE3272718CF073E00710120 /* SLTCell.h in CopyFiles */,
@@ -154,14 +164,14 @@
 		CA1FC23118B3C35000E92A06 /* SLTExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTExperiment.m; sourceTree = "<group>"; };
 		CA1FC23318B3C36100E92A06 /* SLTFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTFeature.h; sourceTree = "<group>"; };
 		CA1FC23418B3C36100E92A06 /* SLTFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTFeature.m; sourceTree = "<group>"; };
-		CA1FC23618B3C37300E92A06 /* PSLevelPackStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLevelPackStructure.h; sourceTree = "<group>"; };
-		CA1FC23718B3C37300E92A06 /* PSLevelPackStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLevelPackStructure.m; sourceTree = "<group>"; };
-		CA1FC23918B3C38200E92A06 /* PSLevelStructure.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLevelStructure.h; sourceTree = "<group>"; };
-		CA1FC23A18B3C38200E92A06 /* PSLevelStructure.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLevelStructure.m; sourceTree = "<group>"; };
+		CA1FC23618B3C37300E92A06 /* SLTLevelPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTLevelPack.h; sourceTree = "<group>"; };
+		CA1FC23718B3C37300E92A06 /* SLTLevelPack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTLevelPack.m; sourceTree = "<group>"; };
+		CA1FC23918B3C38200E92A06 /* SLTLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTLevel.h; sourceTree = "<group>"; };
+		CA1FC23A18B3C38200E92A06 /* SLTLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTLevel.m; sourceTree = "<group>"; };
 		CA1FC23C18B3C39400E92A06 /* SLTPartner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTPartner.h; sourceTree = "<group>"; };
 		CA1FC23D18B3C39400E92A06 /* SLTPartner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTPartner.m; sourceTree = "<group>"; };
-		CA1FC24618B3C46000E92A06 /* PSLevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSLevelParser.h; path = parser/PSLevelParser.h; sourceTree = "<group>"; };
-		CA1FC24718B3C46000E92A06 /* PSLevelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSLevelParser.m; path = parser/PSLevelParser.m; sourceTree = "<group>"; };
+		CA1FC24618B3C46000E92A06 /* SLTLevelBoardParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTLevelBoardParser.h; path = parser/SLTLevelBoardParser.h; sourceTree = "<group>"; };
+		CA1FC24718B3C46000E92A06 /* SLTLevelBoardParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTLevelBoardParser.m; path = parser/SLTLevelBoardParser.m; sourceTree = "<group>"; };
 		CA1FC24B18B3C4A800E92A06 /* SLTCellMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTCellMatrix.h; path = parser/data/SLTCellMatrix.h; sourceTree = "<group>"; };
 		CA1FC24C18B3C4A800E92A06 /* SLTCellMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTCellMatrix.m; path = parser/data/SLTCellMatrix.m; sourceTree = "<group>"; };
 		CA1FC24E18B3C4C200E92A06 /* SLTCellMatrixIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTCellMatrixIterator.h; path = parser/data/SLTCellMatrixIterator.h; sourceTree = "<group>"; };
@@ -176,10 +186,10 @@
 		CA1FC25E18B3C59700E92A06 /* SLTChunkAssetInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTChunkAssetInfo.m; path = parser/gameeditor/chunk/SLTChunkAssetInfo.m; sourceTree = "<group>"; };
 		CA1FC26018B3C5AE00E92A06 /* SLTChunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTChunk.h; path = parser/gameeditor/chunk/SLTChunk.h; sourceTree = "<group>"; };
 		CA1FC26118B3C5AE00E92A06 /* SLTChunk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTChunk.m; path = parser/gameeditor/chunk/SLTChunk.m; sourceTree = "<group>"; };
-		CA1FC26318B3C5D900E92A06 /* PSComposite.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSComposite.h; path = parser/gameeditor/composite/PSComposite.h; sourceTree = "<group>"; };
-		CA1FC26418B3C5D900E92A06 /* PSComposite.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSComposite.m; path = parser/gameeditor/composite/PSComposite.m; sourceTree = "<group>"; };
-		CA1FC26618B3C5FA00E92A06 /* PSCompositeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PSCompositeInstance.h; path = parser/gameeditor/composite/PSCompositeInstance.h; sourceTree = "<group>"; };
-		CA1FC26718B3C5FA00E92A06 /* PSCompositeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PSCompositeInstance.m; path = parser/gameeditor/composite/PSCompositeInstance.m; sourceTree = "<group>"; };
+		CA1FC26318B3C5D900E92A06 /* SLTCompositeInfo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTCompositeInfo.h; path = parser/gameeditor/composite/SLTCompositeInfo.h; sourceTree = "<group>"; };
+		CA1FC26418B3C5D900E92A06 /* SLTCompositeInfo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTCompositeInfo.m; path = parser/gameeditor/composite/SLTCompositeInfo.m; sourceTree = "<group>"; };
+		CA1FC26618B3C5FA00E92A06 /* SLTCompositeInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTCompositeInstance.h; path = parser/gameeditor/composite/SLTCompositeInstance.h; sourceTree = "<group>"; };
+		CA1FC26718B3C5FA00E92A06 /* SLTCompositeInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTCompositeInstance.m; path = parser/gameeditor/composite/SLTCompositeInstance.m; sourceTree = "<group>"; };
 		CA1FC26918B3C62500E92A06 /* SLTCompositeAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTCompositeAsset.h; path = parser/gameeditor/composite/SLTCompositeAsset.h; sourceTree = "<group>"; };
 		CA1FC26A18B3C62500E92A06 /* SLTCompositeAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTCompositeAsset.m; path = parser/gameeditor/composite/SLTCompositeAsset.m; sourceTree = "<group>"; };
 		CA1FC27518B3C6D100E92A06 /* SLTRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTRepository.h; path = repository/SLTRepository.h; sourceTree = "<group>"; };
@@ -190,18 +200,16 @@
 		CA1FC28218B3C72200E92A06 /* SLTResourceURLTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTResourceURLTicket.m; path = resource/SLTResourceURLTicket.m; sourceTree = "<group>"; };
 		CA9D917418C666A2002831DF /* ResourceURLTicketTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceURLTicketTests.m; sourceTree = "<group>"; };
 		CA9DAB3A18B6A330005CCCAA /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
-		CA9DAB3B18B7846C005CCCAA /* PSLevelBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PSLevelBoard.h; sourceTree = "<group>"; };
-		CA9DAB3C18B7846C005CCCAA /* PSLevelBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PSLevelBoard.m; sourceTree = "<group>"; };
+		CA9DAB3B18B7846C005CCCAA /* SLTLevelBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTLevelBoard.h; sourceTree = "<group>"; };
+		CA9DAB3C18B7846C005CCCAA /* SLTLevelBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTLevelBoard.m; sourceTree = "<group>"; };
 		CAA0C60A18BCB7FE007B2B69 /* DeserializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeserializerTests.m; sourceTree = "<group>"; };
 		CAA0C60C18BCB821007B2B69 /* DeviceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceTests.m; sourceTree = "<group>"; };
 		CAA0C60E18BCB836007B2B69 /* ExperimentTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExperimentTests.m; sourceTree = "<group>"; };
 		CAA0C61018BCB851007B2B69 /* FeatureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeatureTests.m; sourceTree = "<group>"; };
-		CAA0C61218BCB871007B2B69 /* LevelBoardTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelBoardTests.m; sourceTree = "<group>"; };
+		CAA0C61218BCB871007B2B69 /* SLTLevelBoardTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTLevelBoardTests.m; sourceTree = "<group>"; };
 		CAA0C61418BCB89A007B2B69 /* LevelPackStructureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelPackStructureTests.m; sourceTree = "<group>"; };
-		CAA0C61618BCB8B9007B2B69 /* LevelStructureTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LevelStructureTests.m; sourceTree = "<group>"; };
+		CAA0C61618BCB8B9007B2B69 /* SLTLevelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTLevelTests.m; sourceTree = "<group>"; };
 		CAA0C61818BCB8DE007B2B69 /* PartnerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PartnerTests.m; sourceTree = "<group>"; };
-		CD05F8C418C4D8A500CB782C /* PSLevelStructure_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSLevelStructure_Private.h; sourceTree = "<group>"; };
-		CD05F8C518C5B88800CB782C /* PSLevelBoard_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PSLevelBoard_Private.h; sourceTree = "<group>"; };
 		CD095F7B18BF7E4B00E38369 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		CD095F8C18BF7E9600E38369 /* appdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appdata.json; sourceTree = "<group>"; };
 		CD095F8D18BF7E9600E38369 /* level.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level.json; sourceTree = "<group>"; };
@@ -227,6 +235,8 @@
 		CD774F0E18C8E97F0021B4B0 /* SLTAssetInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTAssetInstance.m; path = parser/gameeditor/SLTAssetInstance.m; sourceTree = "<group>"; };
 		CD774F1018C9B8DA0021B4B0 /* SLTCell_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTCell_Private.h; sourceTree = "<group>"; };
 		CD774F1118CE2A8D0021B4B0 /* SLTAssetTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTAssetTests.m; sourceTree = "<group>"; };
+		CDB6BF3518D1934F00C0D140 /* SLTChunkTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTChunkTests.m; sourceTree = "<group>"; };
+		CDB6BF3718D1A78800C0D140 /* SLTChunkAssetInfoTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTChunkAssetInfoTests.m; sourceTree = "<group>"; };
 		CDD7406118BFC02800F2306D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		CDD7408E18BFC0FA00F2306D /* Saltr.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Saltr.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		CDD7409218BFC0FA00F2306D /* SaltrResource-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrResource-Info.plist"; sourceTree = "<group>"; };
@@ -366,19 +376,21 @@
 		CA1FC21018B3B8D600E92A06 /* SaltrTests */ = {
 			isa = PBXGroup;
 			children = (
+				CDB6BF3718D1A78800C0D140 /* SLTChunkAssetInfoTests.m */,
+				CDB6BF3518D1934F00C0D140 /* SLTChunkTests.m */,
 				CD3F128118D037C300C8DAF0 /* SLTCellMatrixIteratorTests.m */,
 				CD3F128218D037C300C8DAF0 /* SLTCellMatrixTests.m */,
 				CDF821B518CF2D2F0054744C /* SLTCellTests.m */,
 				CDF821B718CF35940054744C /* SLTLevelSettingsTests.m */,
 				CDE3272518CF018D00710120 /* SLTAssetInstanceTests.m */,
 				CD774F1118CE2A8D0021B4B0 /* SLTAssetTests.m */,
+				CAA0C61218BCB871007B2B69 /* SLTLevelBoardTests.m */,
+				CAA0C61618BCB8B9007B2B69 /* SLTLevelTests.m */,
 				CA9D917418C666A2002831DF /* ResourceURLTicketTests.m */,
 				CDE80AD518C0CB5A004A9C1E /* LevelParserTests.m */,
 				CDE80AD118C09CC1004A9C1E /* RepositoryTests.m */,
 				CAA0C61818BCB8DE007B2B69 /* PartnerTests.m */,
-				CAA0C61618BCB8B9007B2B69 /* LevelStructureTests.m */,
 				CAA0C61418BCB89A007B2B69 /* LevelPackStructureTests.m */,
-				CAA0C61218BCB871007B2B69 /* LevelBoardTests.m */,
 				CAA0C61018BCB851007B2B69 /* FeatureTests.m */,
 				CAA0C60E18BCB836007B2B69 /* ExperimentTests.m */,
 				CAA0C60C18BCB821007B2B69 /* DeviceTests.m */,
@@ -454,18 +466,18 @@
 				CA1FC25E18B3C59700E92A06 /* SLTChunkAssetInfo.m */,
 				CA1FC26918B3C62500E92A06 /* SLTCompositeAsset.h */,
 				CA1FC26A18B3C62500E92A06 /* SLTCompositeAsset.m */,
-				CA1FC26318B3C5D900E92A06 /* PSComposite.h */,
-				CA1FC26418B3C5D900E92A06 /* PSComposite.m */,
-				CA1FC26618B3C5FA00E92A06 /* PSCompositeInstance.h */,
-				CA1FC26718B3C5FA00E92A06 /* PSCompositeInstance.m */,
-				CA1FC23918B3C38200E92A06 /* PSLevelStructure.h */,
-				CA1FC23A18B3C38200E92A06 /* PSLevelStructure.m */,
-				CA9DAB3B18B7846C005CCCAA /* PSLevelBoard.h */,
-				CA9DAB3C18B7846C005CCCAA /* PSLevelBoard.m */,
-				CA1FC24618B3C46000E92A06 /* PSLevelParser.h */,
-				CA1FC24718B3C46000E92A06 /* PSLevelParser.m */,
-				CA1FC23618B3C37300E92A06 /* PSLevelPackStructure.h */,
-				CA1FC23718B3C37300E92A06 /* PSLevelPackStructure.m */,
+				CA1FC26318B3C5D900E92A06 /* SLTCompositeInfo.h */,
+				CA1FC26418B3C5D900E92A06 /* SLTCompositeInfo.m */,
+				CA1FC26618B3C5FA00E92A06 /* SLTCompositeInstance.h */,
+				CA1FC26718B3C5FA00E92A06 /* SLTCompositeInstance.m */,
+				CA1FC23918B3C38200E92A06 /* SLTLevel.h */,
+				CA1FC23A18B3C38200E92A06 /* SLTLevel.m */,
+				CA9DAB3B18B7846C005CCCAA /* SLTLevelBoard.h */,
+				CA9DAB3C18B7846C005CCCAA /* SLTLevelBoard.m */,
+				CA1FC24618B3C46000E92A06 /* SLTLevelBoardParser.h */,
+				CA1FC24718B3C46000E92A06 /* SLTLevelBoardParser.m */,
+				CA1FC23618B3C37300E92A06 /* SLTLevelPack.h */,
+				CA1FC23718B3C37300E92A06 /* SLTLevelPack.m */,
 				CA1FC25718B3C54F00E92A06 /* SLTLevelSettings.h */,
 				CA1FC25818B3C54F00E92A06 /* SLTLevelSettings.m */,
 			);
@@ -475,8 +487,6 @@
 		CD05F8C318C4D7F700CB782C /* private */ = {
 			isa = PBXGroup;
 			children = (
-				CD05F8C418C4D8A500CB782C /* PSLevelStructure_Private.h */,
-				CD05F8C518C5B88800CB782C /* PSLevelBoard_Private.h */,
 				CD774F1018C9B8DA0021B4B0 /* SLTCell_Private.h */,
 			);
 			path = private;
@@ -752,16 +762,16 @@
 			files = (
 				CA1FC23218B3C35000E92A06 /* SLTExperiment.m in Sources */,
 				CA1FC26218B3C5AE00E92A06 /* SLTChunk.m in Sources */,
-				CA1FC24818B3C46000E92A06 /* PSLevelParser.m in Sources */,
-				CA9DAB3D18B7846C005CCCAA /* PSLevelBoard.m in Sources */,
+				CA1FC24818B3C46000E92A06 /* SLTLevelBoardParser.m in Sources */,
+				CA9DAB3D18B7846C005CCCAA /* SLTLevelBoard.m in Sources */,
 				CA1FC24D18B3C4A800E92A06 /* SLTCellMatrix.m in Sources */,
 				CA1FC22C18B3C33200E92A06 /* SLTDeserializer.m in Sources */,
 				CA1FC23518B3C36100E92A06 /* SLTFeature.m in Sources */,
-				CA1FC26818B3C5FA00E92A06 /* PSCompositeInstance.m in Sources */,
+				CA1FC26818B3C5FA00E92A06 /* SLTCompositeInstance.m in Sources */,
 				CA1FC23E18B3C39400E92A06 /* SLTPartner.m in Sources */,
 				CA1FC20218B3B8D600E92A06 /* SLTSaltr.m in Sources */,
 				CA1FC26B18B3C62500E92A06 /* SLTCompositeAsset.m in Sources */,
-				CA1FC26518B3C5D900E92A06 /* PSComposite.m in Sources */,
+				CA1FC26518B3C5D900E92A06 /* SLTCompositeInfo.m in Sources */,
 				CD774F0F18C8E97F0021B4B0 /* SLTAssetInstance.m in Sources */,
 				CA1FC27718B3C6D100E92A06 /* SLTRepository.m in Sources */,
 				CA1FC25918B3C54F00E92A06 /* SLTLevelSettings.m in Sources */,
@@ -770,10 +780,10 @@
 				CA1FC25618B3C53300E92A06 /* SLTAsset.m in Sources */,
 				CA1FC28018B3C70E00E92A06 /* SLTResource.m in Sources */,
 				CA1FC25C18B3C57000E92A06 /* SLTCell.m in Sources */,
-				CA1FC23B18B3C38200E92A06 /* PSLevelStructure.m in Sources */,
+				CA1FC23B18B3C38200E92A06 /* SLTLevel.m in Sources */,
 				CA1FC25F18B3C59700E92A06 /* SLTChunkAssetInfo.m in Sources */,
 				CA1FC25018B3C4C200E92A06 /* SLTCellMatrixIterator.m in Sources */,
-				CA1FC23818B3C37300E92A06 /* PSLevelPackStructure.m in Sources */,
+				CA1FC23818B3C37300E92A06 /* SLTLevelPack.m in Sources */,
 				CA05F4B118CDEE2C0071FCCB /* Helper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -789,12 +799,14 @@
 				CAA0C61518BCB89A007B2B69 /* LevelPackStructureTests.m in Sources */,
 				CAA0C60F18BCB836007B2B69 /* ExperimentTests.m in Sources */,
 				CDE80AD218C09CC1004A9C1E /* RepositoryTests.m in Sources */,
-				CAA0C61318BCB871007B2B69 /* LevelBoardTests.m in Sources */,
+				CAA0C61318BCB871007B2B69 /* SLTLevelBoardTests.m in Sources */,
 				CAA0C60B18BCB7FE007B2B69 /* DeserializerTests.m in Sources */,
 				CDF821B618CF2D2F0054744C /* SLTCellTests.m in Sources */,
-				CAA0C61718BCB8B9007B2B69 /* LevelStructureTests.m in Sources */,
+				CDB6BF3618D1934F00C0D140 /* SLTChunkTests.m in Sources */,
+				CAA0C61718BCB8B9007B2B69 /* SLTLevelTests.m in Sources */,
 				CDE80AD618C0CB5A004A9C1E /* LevelParserTests.m in Sources */,
 				CA1FC21718B3B8D600E92A06 /* SaltrTests.m in Sources */,
+				CDB6BF3818D1A78800C0D140 /* SLTChunkAssetInfoTests.m in Sources */,
 				CA9D917518C666A2002831DF /* ResourceURLTicketTests.m in Sources */,
 				CD3F128418D037C300C8DAF0 /* SLTCellMatrixTests.m in Sources */,
 				CAA0C60D18BCB821007B2B69 /* DeviceTests.m in Sources */,

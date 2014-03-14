@@ -12,13 +12,13 @@
 
 @implementation SLTCompositeAsset
 
-@synthesize shifts = _shifts;
+@synthesize cellInfos = _cellInfos;
 
-- (id)initWithShifts:(NSArray*)shifts type:(NSString*)theType andKeys:(NSDictionary*)theKeys
+- (id)initWithCellInfos:(NSArray*)theCellInfos type:(NSString*)theType andKeys:(NSDictionary*)theKeys
 {
     self = [super initWithType:theType andKeys:theKeys];
     if (self) {
-        _shifts = shifts;
+        _cellInfos = theCellInfos;
     }
     return  self;
 }
@@ -26,7 +26,7 @@
 - (NSString *)description
 {
     NSString* superDescription = [super description];
-    return [NSString stringWithFormat: @"PSCompositeAsset : [shifts : %@], %@ ", self.shifts, superDescription];
+    return [NSString stringWithFormat: @"PSCompositeAsset : [shifts : %@], %@ ", self.cellInfos, superDescription];
 }
 
 @end

@@ -70,12 +70,13 @@
 
 - (void)testWidth
 {
-    XCTAssertEqual([NSNumber numberWithInt:_cellMatrix.width ], @6, "Wrong matrix width");
+    XCTAssertEqualObjects([NSNumber numberWithUnsignedInteger:_cellMatrix.width ], @6, "Wrong matrix width");
 }
 
 - (void)testHeight
 {
-    XCTAssertEqual([NSNumber numberWithInt:_cellMatrix.height], @5, "Wrong matrix height");
+    XCTAssertEqualObjects([NSNumber numberWithUnsignedInteger:_cellMatrix.height ], @5, "Wrong matrix height");
+
 }
 
 - (void)testIterator

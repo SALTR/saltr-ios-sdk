@@ -11,7 +11,7 @@
 #import <XCTest/XCTest.h>
 #import "SLTLevelSettings.h"
 #import "SLTRepository.h"
-#import "PSLevelParser.h"
+#import "SLTLevelBoardParser.h"
 #import "SLTAsset.h"
 #import "SLTCompositeAsset.h"
 
@@ -31,7 +31,7 @@
         SLTRepository* repository = [[SLTRepository alloc] init];
         id data = [repository objectFromStorage:@"level.json"];
         assert([data isKindOfClass:[NSDictionary class]]);
-        _levelSettings = [[PSLevelParser sharedInstance] parseLevelSettings:data];
+        _levelSettings = [[SLTLevelBoardParser sharedInstance] parseLevelSettings:data];
     }
 }
 
@@ -48,16 +48,16 @@
 
 - (void)testCompositeAsset:(SLTCompositeAsset*)compositeAsset withKey:(NSString*)key
 {
-    XCTAssertNotNil(compositeAsset.shifts, @"The shift cells should be specified for composite asset");
-    NSArray* shifts = compositeAsset.shifts;
+    XCTAssertNotNil(compositeAsset.cellInfos, @"The shift cells should be specified for composite asset");
+    NSArray* cellInfos = compositeAsset.cellInfos;
     NSArray* cell0 = @[@0, @0];
-    XCTAssertEqualObjects([shifts objectAtIndex:0], cell0, @"Wrong shift cell is specified");
+    XCTAssertEqualObjects([cellInfos objectAtIndex:0], cell0, @"Wrong shift cell is specified");
     NSArray* cell6 = @[@6, @0];
-    XCTAssertEqualObjects([shifts objectAtIndex:6], cell6, @"Wrong shift cell is specified");
+    XCTAssertEqualObjects([cellInfos objectAtIndex:6], cell6, @"Wrong shift cell is specified");
     NSArray* cell13 = @[@6, @1];
-    XCTAssertEqualObjects([shifts objectAtIndex:13], cell13, @"Wrong shift cell is specified");
+    XCTAssertEqualObjects([cellInfos objectAtIndex:13], cell13, @"Wrong shift cell is specified");
     NSArray* cellLast = @[@6, @6];
-    XCTAssertEqualObjects([shifts objectAtIndex:(shifts.count - 1)], cellLast, @"Wrong shift cell is specified");
+    XCTAssertEqualObjects([cellInfos objectAtIndex:(cellInfos.count - 1)], cellLast, @"Wrong shift cell is specified");
 
 
     [self testAsset:compositeAsset withKey:key type:@"composite_asset" keys:@{@"COLOR": @3,

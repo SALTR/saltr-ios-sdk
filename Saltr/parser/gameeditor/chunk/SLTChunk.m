@@ -16,62 +16,45 @@
 #import "SLTAssetInstance.h"
 
 @interface SLTChunk() {
-    NSDictionary* _boardAssetMap;
-    NSDictionary* _boardStateMap;
-    NSMutableArray* _chunkAssets;
-    NSMutableArray* _cells;
+    NSDictionary* _assetMap;
+    NSDictionary* _stateMap;
+    NSMutableArray* _chunkAssetInfos;
+    NSMutableArray* _availableCells;
+    NSMutableArray* _chunkCells;
+    NSString* _chunkId;
 
 }
 @end
 
 @implementation SLTChunk
 
-@synthesize chunkId = _chunkId;
-
-- (id)initWithChunkId:(NSString*)theChunkId andBoardData:(SLTLevelSettings *)theBoardData
+- (id)initWithChunkCells:(NSMutableArray*)chunkCells andChunkAssetInfos:(NSMutableArray*)chunkAssetInfos andLevelSettings:(SLTLevelSettings *)theLevelSettings
 {
     self = [super init];
     if (self) {
-        assert(nil != theChunkId);
-        assert(nil != theBoardData);
-        _chunkId = theChunkId;
-        _cells = [[NSMutableArray alloc] init];
-        _chunkAssets = [[NSMutableArray alloc] init];
-        _boardAssetMap = theBoardData.assetMap;
-        _boardStateMap = theBoardData.stateMap;
+        assert(chunkCells);
+        assert(chunkAssetInfos);
+        assert(theLevelSettings);
+        _availableCells = [[NSMutableArray alloc] init];
+        _chunkAssetInfos = chunkAssetInfos;
+        _chunkCells = chunkCells;
+        _assetMap = theLevelSettings.assetMap;
+        _stateMap = theLevelSettings.stateMap;
     }
     return self;
 }
 
-- (void) addCell:(SLTCell*)theCell
+- (void)generateAssetInstancesWithCount:(NSUInteger)count assetId:(NSString*)assetId andStateId:(NSString*)stateId
 {
-    if (!theCell) {
-        return;
-    }
-    [_cells addObject:theCell];
-
-}
-
-- (void) addChunkAsset:(SLTChunkAssetInfo*)theChunkAsset
-{
-    if (!theChunkAsset) {
-        return;
-    }
-    [_chunkAssets addObject:theChunkAsset];
-}
-
-- (void)generateAssetWithCount:(NSUInteger)count assetId:(NSString*)assetId andStateId:(NSString*)stateId
-{
-    SLTAsset* assetTemplate = [_boardAssetMap objectForKey:assetId];
-    assert(nil != assetTemplate);
-    NSString* state = [_boardStateMap objectForKey:stateId];
+    SLTAsset* asset = [_assetMap objectForKey:assetId];
+    assert(nil != asset);
+    NSString* state = [_stateMap objectForKey:stateId];
     for (NSUInteger i = 0; i < count; ++i) {
-        NSInteger randCellIndex = (arc4random() % _cells.count);
-        SLTCell* randCell = _cells[randCellIndex];
-        SLTAssetInstance* asset = [[SLTAssetInstance alloc] initWithState:state type:assetTemplate.type andKeys:assetTemplate.keys];
-        randCell.assetInstance = asset;
-        [_cells removeObjectAtIndex:randCellIndex];
-        if (0 == _cells.count) {
+        NSInteger randCellIndex = (arc4random() % _availableCells.count);
+        SLTCell* randCell = _availableCells[randCellIndex];
+        randCell.assetInstance = [[SLTAssetInstance alloc] initWithState:state type:asset.type andKeys:asset.keys];
+        [_availableCells removeObjectAtIndex:randCellIndex];
+        if (0 == _availableCells.count) {
             return;
         }
     }
@@ -87,44 +70,46 @@
     return floorf(((double)arc4random() / (1 + max - min)) * 100.0f) + min;
 }
 
-- (void)generateWeakAssets:(NSMutableArray*)weakChunkAssets
+- (void)generateWeakAssetsInstanes:(NSMutableArray*)weakChunkAssetInfos
 {
-    assert(nil != weakChunkAssets);
-    if (0 == weakChunkAssets.count) {
+    assert(nil != weakChunkAssetInfos);
+    if (0 == weakChunkAssetInfos.count) {
         return;
     }
-    NSUInteger assetConcentration = (_cells.count > weakChunkAssets.count) ? _cells.count / weakChunkAssets.count : 1;
+    NSUInteger assetConcentration = (_availableCells.count > weakChunkAssetInfos.count) ? _availableCells.count / weakChunkAssetInfos.count : 1;
     NSUInteger minAssetCount = (2 >= assetConcentration) ? 1 : assetConcentration - 2;
     NSUInteger maxAssetCount = (1 == assetConcentration) ? 1 : assetConcentration + 2;
-    NSUInteger lastChunkAssetIndex = (weakChunkAssets.count - 1);
-    for (NSUInteger i = 0; (i < weakChunkAssets.count) && (0 != _cells.count); ++i) {
-        SLTChunkAssetInfo* chunkAsset = weakChunkAssets[i];
-        assert(nil != chunkAsset);
-        NSUInteger count = (lastChunkAssetIndex ? _cells.count : [self randomIntWithinMin:minAssetCount andMax:maxAssetCount]);
-        [self generateAssetWithCount:count assetId:chunkAsset.assetId andStateId:chunkAsset.stateId];
+    NSUInteger lastChunkAssetIndex = (weakChunkAssetInfos.count - 1);
+    
+    for (NSUInteger i = 0; (i < weakChunkAssetInfos.count) && (0 < _availableCells.count); ++i) {
+        SLTChunkAssetInfo* chunkAssetInfo = weakChunkAssetInfos[i];
+        assert(nil != chunkAssetInfo);
+        NSUInteger count = (lastChunkAssetIndex ? _availableCells.count : [self randomIntWithinMin:minAssetCount andMax:maxAssetCount]);
+        [self generateAssetInstancesWithCount:count assetId:chunkAssetInfo.assetId andStateId:chunkAssetInfo.stateId];
     }
 }
 
 - (void)generate
 {
+    [_availableCells addObjectsFromArray:_chunkCells];
     NSMutableArray* weakChunkAssets = [[NSMutableArray alloc] init];
-    for (NSUInteger i = 0; i < [_chunkAssets count]; ++i) {
-        SLTChunkAssetInfo* chunkAsset = [_chunkAssets objectAtIndex:i];
+    for (NSUInteger i = 0; i < _chunkAssetInfos.count; ++i) {
+        SLTChunkAssetInfo* chunkAsset = [_chunkAssetInfos objectAtIndex:i];
         assert(nil != chunkAsset);
         if (0 != chunkAsset.count) {
-            [self generateAssetWithCount:chunkAsset.count assetId:chunkAsset.assetId andStateId:chunkAsset.stateId];
+            [self generateAssetInstancesWithCount:chunkAsset.count assetId:chunkAsset.assetId andStateId:chunkAsset.stateId];
         } else {
             [weakChunkAssets addObject:chunkAsset];
         }
     }
     if (0 < [weakChunkAssets count]) {
-        [self generateWeakAssets:weakChunkAssets];
+        [self generateWeakAssetsInstanes:weakChunkAssets];
     }
 }
 
 - (NSString *)description
 {
-    return [NSString stringWithFormat: @"Chunk : [chunkId : %@], [cells : %@], [chunkAssets: %@]", self.chunkId, _cells, _chunkAssets];
+    return [NSString stringWithFormat: @"Chunk : [cells : %@], [chunkAssets: %@]", _availableCells, _chunkAssetInfos];
 }
 
 @end

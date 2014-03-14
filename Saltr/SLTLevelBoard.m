@@ -8,27 +8,26 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "PSLevelPackStructure.h"
+#import "SLTLevelBoard.h"
+#import "SLTCellMatrix.h"
 
-@implementation PSLevelPackStructure
+@implementation SLTLevelBoard
 
-@synthesize token = _token;
-@synthesize levelStructureList = _levelStructureList;
-@synthesize index = _index;
+@synthesize rows = _rows;
+@synthesize cols = _cols;
+@synthesize cells = _cells;
+@synthesize properties = _properties;
 
--(id) initWithToken:(NSString*)theToken levelStructureList:(NSArray*)theLevelStructureList andIndex:(NSString*)theIndex
+- (id) initWithCellMatrix:(SLTCellMatrix*)theCells andProperties:(NSDictionary*)theProperties
 {
     self = [super init];
     if (self) {
-        _token = theToken;
-        _levelStructureList = theLevelStructureList;
-        _index = theIndex;
+        _cells = theCells;
+        _cols = _cells.width;
+        _rows = _cells.height;
+        _properties = theProperties;
     }
     return self;
-}
-
-- (NSString *)description {
-    return self.token;
 }
 
 @end

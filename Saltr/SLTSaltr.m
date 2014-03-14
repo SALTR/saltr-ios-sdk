@@ -13,10 +13,9 @@
 #import "SLTResource.h"
 #import "SLTDeserializer.h"
 #import "SLTExperiment.h"
-#import "PSLevelPackStructure.h"
+#import "SLTLevelPack.h"
 #import "SLTPartner.h"
 #import "SLTDevice.h"
-#import "PSLevelParser.h"
 #import "Constants.h"
 #import "Helper.h"
 
@@ -176,8 +175,8 @@
     [asset load];
 }
 
--(void) loadLevelContentData:(PSLevelPackStructure*)levelPackStructure
-                    levelStructure:(PSLevelStructure*)levelStructure andCacheEnabled:(BOOL)cacheEnabled {
+-(void) loadLevelContentData:(SLTLevelPack*)levelPackStructure
+                    levelStructure:(SLTLevel*)levelStructure andCacheEnabled:(BOOL)cacheEnabled {
     if (!cacheEnabled) {
         [self loadLevelContentDataFromSaltr:levelPackStructure levelData:levelStructure forceNoCache:YES];
         return;
@@ -290,7 +289,7 @@
         [_features setValue:saltrFeature forKey:key];
     }
     
-    NSLog(@"[SaltClient] packs = %d", [_levelPackStructures count]);
+    NSLog(@"[SaltClient] packs = %lu", [_levelPackStructures count]);
     if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingAppDataRequest)]) {
         [saltrRequestDelegate didFinishGettingAppDataRequest];
     }
@@ -354,12 +353,12 @@
 
 
 
--(void)loadLevelContentDataFromSaltr:(PSLevelPackStructure *)levelPackData
-                     levelData:(PSLevelStructure *)levelData forceNoCache:(BOOL)forceNoCache {
+-(void)loadLevelContentDataFromSaltr:(SLTLevelPack *)levelPackData
+                     levelData:(SLTLevel *)levelData forceNoCache:(BOOL)forceNoCache {
     
     NSInteger timeInterval = [NSDate timeIntervalSinceReferenceDate] * 1000;
-    NSString* url = [levelData.dataUrl stringByAppendingFormat:@"_time_=%d", timeInterval];
-    NSString* dataUrl = forceNoCache ? url : levelData.dataUrl;
+    NSString* url = [levelData.contentDataUrl stringByAppendingFormat:@"_time_=%d", timeInterval];
+    NSString* dataUrl = forceNoCache ? url : levelData.contentDataUrl;
     SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:dataUrl andVariables:nil];
     /// @todo the code below should be reviewed/rewritten
     SLTResource* asset = nil;
@@ -385,7 +384,7 @@
     [asset load];
 }
 
--(BOOL) loadLevelDataCached:(PSLevelStructure *)levelData
+-(BOOL) loadLevelDataCached:(SLTLevel *)levelData
              cachedFileName:(NSString *) cachedFileName {
     NSLog(@"[SaltClient::loadLevelData] LOADING LEVEL DATA CACHE IMMEDIATELY.");
     NSDictionary* data = [_repository objectFromCache:cachedFileName];
@@ -397,8 +396,8 @@
 
 }
 
--(void) levelLoadSuccessHandler:(PSLevelStructure *)levelData data:(id)data {
-    [[PSLevelParser sharedInstance] parseData:data andFillLevelStructure:levelData];
+-(void) levelLoadSuccessHandler:(SLTLevel *)levelData data:(id)data {
+    [levelData updateContent:data];
     if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingLevelDataBodyWithLevelPackRequest)]) {
         [saltrRequestDelegate didFinishGettingLevelDataBodyWithLevelPackRequest];
     }
@@ -411,15 +410,15 @@
     }
 }
 
--(void)loadLevelDataLocally:(PSLevelPackStructure *)levelPackData
-                  levelData:(PSLevelStructure *)levelData cachedFileName:(NSString *)cachedFileName {
+-(void)loadLevelDataLocally:(SLTLevelPack *)levelPackData
+                  levelData:(SLTLevel *)levelData cachedFileName:(NSString *)cachedFileName {
     if ([self loadLevelDataCached:levelData cachedFileName:cachedFileName]) {
         return;
     }
     [self loadLevelDataLocally:levelPackData levelData:levelData cachedFileName:cachedFileName];
 }
 
--(void) loadLevelDataInternal:(PSLevelPackStructure *)levelPackData levelData:(PSLevelStructure *)levelData {
+-(void) loadLevelDataInternal:(SLTLevelPack *)levelPackData levelData:(SLTLevel *)levelData {
     NSString* url = [Helper formatString:LEVEL_DATA_URL_LOCAL_TEMPLATE andString2:levelPackData.index andString3:levelData.index];
     NSDictionary* data = [_repository objectFromApplication:url];
     if (data) {
