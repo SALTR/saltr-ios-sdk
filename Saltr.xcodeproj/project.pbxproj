@@ -199,7 +199,7 @@
 		CA1FC28118B3C72200E92A06 /* SLTResourceURLTicket.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTResourceURLTicket.h; path = resource/SLTResourceURLTicket.h; sourceTree = "<group>"; };
 		CA1FC28218B3C72200E92A06 /* SLTResourceURLTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTResourceURLTicket.m; path = resource/SLTResourceURLTicket.m; sourceTree = "<group>"; };
 		CA9D917418C666A2002831DF /* ResourceURLTicketTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResourceURLTicketTests.m; sourceTree = "<group>"; };
-		CA9DAB3A18B6A330005CCCAA /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		CA9DAB3A18B6A330005CCCAA /* Config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Config.h; sourceTree = "<group>"; };
 		CA9DAB3B18B7846C005CCCAA /* SLTLevelBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTLevelBoard.h; sourceTree = "<group>"; };
 		CA9DAB3C18B7846C005CCCAA /* SLTLevelBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTLevelBoard.m; sourceTree = "<group>"; };
 		CAA0C60A18BCB7FE007B2B69 /* DeserializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeserializerTests.m; sourceTree = "<group>"; };
@@ -360,7 +360,7 @@
 				CA1FC23D18B3C39400E92A06 /* SLTPartner.m */,
 				CA1FC1FF18B3B8D600E92A06 /* SLTSaltr.h */,
 				CA1FC20118B3B8D600E92A06 /* SLTSaltr.m */,
-				CA9DAB3A18B6A330005CCCAA /* Constants.h */,
+				CA9DAB3A18B6A330005CCCAA /* Config.h */,
 			);
 			path = Saltr;
 			sourceTree = "<group>";

@@ -16,43 +16,8 @@
 #import "SLTLevelPack.h"
 #import "SLTPartner.h"
 #import "SLTDevice.h"
-#import "Constants.h"
+#import "Config.h"
 #import "Helper.h"
-
-/**
- * @def APP_DATA_URL_CACHE
- * The filename of json file in application data cache
- */
-#define APP_DATA_URL_CACHE @"app_data_cache.json"
-
-/**
- * @def APP_DATA_URL_INTERNAL
- * The filename of json file in application internal directory
- */
-#define APP_DATA_URL_INTERNAL @"saltr/app_data.json"
-
-/**
- * @def LEVEL_DATA_URL_LOCAL_TEMPLATE
- * The filename of level data json file in application local directory
- */
-#define LEVEL_DATA_URL_LOCAL_TEMPLATE @"saltr/pack_{0}/level_{1}.json"
-
-/**
- * @def LEVEL_DATA_URL_CACHE_TEMPLATE
- * The filename of level data json file in application cache directory
- */
-#define LEVEL_DATA_URL_CACHE_TEMPLATE @"pack_{0}_level_{1}.json"
-
-/**
- * @def LEVEL_PACK_URL_PACKAGE
- * The url of level pack package
- */
-#define LEVEL_PACK_URL_PACKAGE @"saltr/level_packs.json"
-
-
-#define RESULT_SUCCEED @"SUCCEED"
-#define RESULT_ERROR @"ERROR"
-
 
 @interface SLTSaltr() {
     SLTRepository* _repository;
@@ -177,20 +142,7 @@
 
 -(void) loadLevelContentData:(SLTLevelPack*)levelPackStructure
                     levelStructure:(SLTLevel*)levelStructure andCacheEnabled:(BOOL)cacheEnabled {
-    if (!cacheEnabled) {
-        [self loadLevelContentDataFromSaltr:levelPackStructure levelData:levelStructure forceNoCache:YES];
-        return;
-    }
-    
-    //if there are no version change than load from cache
-    NSString* cachedFileName = [Helper formatString:LEVEL_DATA_URL_CACHE_TEMPLATE andString2:levelPackStructure.index andString3:levelStructure.index];
-                                
-    
-    if (levelStructure.version == [_repository objectVersion:cachedFileName]) {
-        [self loadLevelDataCached:levelStructure cachedFileName:cachedFileName];
-    } else {
-        [self loadLevelContentDataFromSaltr:levelPackStructure levelData:levelStructure forceNoCache:NO];
-    }
+    [self loadLevelContentDataFromSaltr:levelPackStructure levelData:levelStructure forceNoCache:YES];
 }
 
 -(void) addUserPropertyWithNames:(NSArray *)propertyNames
@@ -351,8 +303,6 @@
     }
 }
 
-
-
 -(void)loadLevelContentDataFromSaltr:(SLTLevelPack *)levelPackData
                      levelData:(SLTLevel *)levelData forceNoCache:(BOOL)forceNoCache {
     
@@ -361,39 +311,23 @@
     NSString* dataUrl = forceNoCache ? url : levelData.contentDataUrl;
     SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:dataUrl andVariables:nil];
     /// @todo the code below should be reviewed/rewritten
-    SLTResource* asset = nil;
+    SLTResource* resource = nil;
     
-    void (^levelDataAssetLoadedHandler)() = ^() {
-        NSDictionary* data = asset.jsonData;
-        NSString* cachedFileName = [Helper formatString:LEVEL_DATA_URL_CACHE_TEMPLATE andString2:levelPackData.index andString3:levelData.index];
-        if (!asset.jsonData) {
-            [self loadLevelDataLocally:levelPackData levelData:levelData cachedFileName:cachedFileName];
+    void (^contentDataLoadedCallback)() = ^() {
+        NSDictionary* contentData = resource.jsonData;
+        if (!contentData) {
+            [self levelLoadErrorHandler];
         } else {
-            [self levelLoadSuccessHandler:levelData data:data];
-            [_repository cacheObject:cachedFileName version:levelData.version object:data];
+            [self levelLoadSuccessHandler:levelData data:contentData];
         }
-        [asset dispose];
+        [resource dispose];
     };
-    void (^levelDataAssetLoadErrorHandler)() = ^() {
-        NSString* cachedFileName = [Helper formatString:LEVEL_DATA_URL_CACHE_TEMPLATE andString2:levelPackData.index andString3:levelData.index];
-        
-        [self loadLevelDataLocally:levelPackData levelData:levelData cachedFileName:cachedFileName];
-        [asset dispose];
+    void (^contentDataLoadFailedCallback)() = ^() {
+        [self levelLoadErrorHandler];
+        [resource dispose];
     };
-    asset = [[SLTResource alloc] initWithId:@"saltr" andTicket:ticket successHandler:levelDataAssetLoadedHandler errorHandler:levelDataAssetLoadErrorHandler progressHandler:nil];
-    [asset load];
-}
-
--(BOOL) loadLevelDataCached:(SLTLevel *)levelData
-             cachedFileName:(NSString *) cachedFileName {
-    NSLog(@"[SaltClient::loadLevelData] LOADING LEVEL DATA CACHE IMMEDIATELY.");
-    NSDictionary* data = [_repository objectFromCache:cachedFileName];
-    if (data) {
-        [self levelLoadSuccessHandler:levelData data:data];
-        return YES;
-    }
-    return NO;
-
+    resource = [[SLTResource alloc] initWithId:@"saltr" andTicket:ticket successHandler:contentDataLoadedCallback errorHandler:contentDataLoadFailedCallback progressHandler:nil];
+    [resource load];
 }
 
 -(void) levelLoadSuccessHandler:(SLTLevel *)levelData data:(id)data {
@@ -410,22 +344,5 @@
     }
 }
 
--(void)loadLevelDataLocally:(SLTLevelPack *)levelPackData
-                  levelData:(SLTLevel *)levelData cachedFileName:(NSString *)cachedFileName {
-    if ([self loadLevelDataCached:levelData cachedFileName:cachedFileName]) {
-        return;
-    }
-    [self loadLevelDataLocally:levelPackData levelData:levelData cachedFileName:cachedFileName];
-}
-
--(void) loadLevelDataInternal:(SLTLevelPack *)levelPackData levelData:(SLTLevel *)levelData {
-    NSString* url = [Helper formatString:LEVEL_DATA_URL_LOCAL_TEMPLATE andString2:levelPackData.index andString3:levelData.index];
-    NSDictionary* data = [_repository objectFromApplication:url];
-    if (data) {
-        [self levelLoadSuccessHandler:levelData data:data];
-    } else {
-        [self levelLoadErrorHandler];
-    }
-}
 
 @end
