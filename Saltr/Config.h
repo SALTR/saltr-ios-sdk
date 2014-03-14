@@ -35,22 +35,23 @@
 #define APP_DATA_URL_INTERNAL @"saltr/app_data.json"
 
 /**
- * @def LEVEL_DATA_URL_LOCAL_TEMPLATE
- * The filename of level data json file in application local directory
- */
-#define LEVEL_DATA_URL_LOCAL_TEMPLATE @"saltr/pack_{0}/level_{1}.json"
-
-/**
- * @def LEVEL_DATA_URL_CACHE_TEMPLATE
+ * @def LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE
  * The filename of level data json file in application cache directory
  */
-#define LEVEL_DATA_URL_CACHE_TEMPLATE @"pack_{0}_level_{1}.json"
+#define LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE @"pack_{0}_level_{1}.json"
 
 /**
  * @def LEVEL_PACK_URL_PACKAGE
  * The url of level pack package
  */
 #define LEVEL_PACK_URL_PACKAGE @"saltr/level_packs.json"
+
+/**
+ * @def LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE
+ * The filename of level data json file in application local directory
+ */
+#define LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE @"saltr/pack_{0}/level_{1}.json"
+
 
 
 #define RESULT_SUCCEED @"SUCCEED"

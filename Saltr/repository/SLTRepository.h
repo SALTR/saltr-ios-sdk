@@ -24,6 +24,7 @@
  */
 + (NSBundle *)libraryBundle;
 
+/// @todo unused
 /**
  * @brief Gets the object from the file system
  * @param fileName - the name of file to be obtained
@@ -60,6 +61,7 @@
  */
 -(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(NSDictionary *)object;
 
+/// @todo unused
 /**
  * @brief Saves the given object into the file system
  * @param fileName - the name of caching object
