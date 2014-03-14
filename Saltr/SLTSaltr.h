@@ -49,20 +49,20 @@
 /// The instance key - unique to each Saltr object
 @property (nonatomic, strong, readonly) NSString* instanceKey;
 
+/// YES if application data is loaded, otherwise NO.
+@property (nonatomic, assign, readonly) BOOL connected;
+
 /// YES if caching should be enabled, otherwise NO
 @property (nonatomic, assign) BOOL enableCache;
 
 /// The application version
 @property (nonatomic, strong) NSString* appVersion;
 
-/// @todo this may be member
-@property (nonatomic, strong) SLTRepository* repository;
-
 /// YES if loading is done, otherwise NO
 @property (nonatomic, assign, readonly) BOOL ready;
 
 /// the features of current @b Saltr object
-@property (nonatomic, strong, readonly) NSDictionary* features;
+@property (nonatomic, strong, readonly) NSMutableDictionary* features;
 
 /// the level package structures of current  @b Saltr object
 @property (nonatomic, strong, readonly) NSArray* levelPackStructures;
@@ -111,6 +111,12 @@
 -(void) setupDeviceWithId:(NSString *)deviceId andDeviceType:(NSString *)deviceType;
 
 /**
+ * @brief Imports level pack structures from the application data
+ * @param path - path to the application data
+ */
+-(void) importLevels:(NSString *)path;
+
+/**
  * @brief Defines feature for the token and sets the properties
  * 
  * @param token - the number of feature to be set
@@ -133,7 +139,7 @@
  * @param levelStructure - 
  * @param enableCache - YES, if caching should be enabled, otherwise NO
  */
--(void) levelDataBodyWithLevelPack:(PSLevelPackStructure*)levelPackStructure
+-(void) loadLevelContentData:(PSLevelPackStructure*)levelPackStructure
                     levelStructure:(PSLevelStructure*)levelStructure
                    andCacheEnabled:(BOOL)enableCache;
 

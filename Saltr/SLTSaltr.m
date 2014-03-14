@@ -44,21 +44,27 @@
  */
 #define LEVEL_DATA_URL_CACHE_TEMPLATE @"pack_{0}_level_{1}.json"
 
+/**
+ * @def LEVEL_PACK_URL_PACKAGE
+ * The url of level pack package
+ */
+#define LEVEL_PACK_URL_PACKAGE @"saltr/level_packs.json"
+
+
 #define RESULT_SUCCEED @"SUCCEED"
 #define RESULT_ERROR @"ERROR"
 
 
 @interface SLTSaltr() {
-    BOOL _isLoading;
-    /// @todo the meaning of this boolean is not clear yet
-    BOOL _ready;
+    SLTRepository* _repository;
     NSString* _saltrUserId;
-    SLTDeserializer* _deserializer;
-    NSArray* _experiments;
-    NSArray* _levelPackStructures;
-    NSDictionary* _features;
-    SLTDevice* _device;
+    /// @todo the meaning of this boolean is not clear yet
+    BOOL _isLoading;
+    BOOL _connected;
     SLTPartner* _partner;
+    SLTDeserializer* _deserializer;
+
+    SLTDevice* _device;
 }
 
 @end
@@ -69,20 +75,21 @@
 @synthesize enableCache;
 @synthesize appVersion;
 @synthesize ready;
-@synthesize repository;
-@synthesize features;
-@synthesize levelPackStructures;
-@synthesize experiments;
+@synthesize features=_features;
+@synthesize levelPackStructures=_levelPackStructures;
+@synthesize experiments=_experiments;
 @synthesize saltrRequestDelegate;
+@synthesize connected=_connected;
 
 -(id) initUniqueInstance
 {
     self = [super init];
     if (self) {
-        self.repository = [SLTRepository new];
+        _repository = [SLTRepository new];
         _deserializer = [SLTDeserializer new];
+        _features = [NSMutableDictionary new];
         _isLoading = false;
-        _ready = false;
+        _connected = false;
     }
     return self;
 }
@@ -128,11 +135,17 @@
     _device = [[SLTDevice alloc] initWithDeviceId:deviceId andDeviceType:deviceType];
 }
 
+-(void) importLevels:(NSString *)path {
+    path = !path ? LEVEL_PACK_URL_PACKAGE : path;
+    NSDictionary* applicationData = [_repository objectFromApplication:path];
+    _levelPackStructures = [_deserializer decodeLevelsFromData:applicationData];
+}
+
 -(void) defineFeatureWithToken:(NSString*)token andProperties:(NSDictionary *)properties {
-    SLTFeature* feature = [features objectForKey:token];
+    SLTFeature* feature = [_features objectForKey:token];
     if (nil == feature) {
-        feature = [[SLTFeature alloc] initWithToken:token defaultProperties:nil andProperties:properties];
-        [features setValue:feature forKey:token];
+        feature = [[SLTFeature alloc] initWithToken:token defaultProperties:properties andProperties:nil];
+        [_features setValue:feature forKey:token];
     } else {
         feature.defaultProperties = properties;
     }
@@ -142,35 +155,31 @@
     if (_isLoading) {
         return;
     }
-    _isLoading = true;
-    _ready = false;
-    void (^resourceLoadFailHandler)(SLTResource*) = ^(SLTResource* asset) {
-        NSLog(@"[SaltAPI] App data is failed to load.");
-        
-        [self loadAppDataInternal];
+    [self applyCachedFeatures];
+    _isLoading = YES;
+    _connected = NO;
+    void (^appDataLoadFailedCallback)(SLTResource*) = ^(SLTResource* asset) {
         [asset dispose];
+        [self loadAppDataFailHandler];
     };
-    void (^resourceLoadSuccessHandler)(SLTResource*) = ^(SLTResource* asset) {
-        NSLog(@"[SaltAPI] App data is loaded.");
+    void (^appDataLoadCompleteCallback)(SLTResource*) = ^(SLTResource* asset) {
         NSDictionary* data = asset.jsonData;
         NSDictionary* jsonData = [data objectForKey:@"responseData"];
-        NSLog(@"[SaltClient] Loaded App data. json = %@", jsonData);
-        if (!jsonData || ![[data objectForKey:@"status"] isEqualToString:RESULT_SUCCEED]) {
-            [self loadAppDataInternal];
-        } else {
-            [self loadAppDataSuccessHandler:jsonData];
-            [repository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
-        }
+        
+        [_repository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
         [asset dispose];
+        _isLoading = NO;
+        _connected = YES;
+        [self loadAppDataSuccessHandler:jsonData];
     };
-    SLTResource* asset = [self createDataResource:resourceLoadSuccessHandler errorHandler:resourceLoadFailHandler];
+    SLTResource* asset = [self createDataResource:appDataLoadCompleteCallback errorHandler:appDataLoadFailedCallback];
     [asset load];
 }
 
--(void) levelDataBodyWithLevelPack:(PSLevelPackStructure*)levelPackStructure
+-(void) loadLevelContentData:(PSLevelPackStructure*)levelPackStructure
                     levelStructure:(PSLevelStructure*)levelStructure andCacheEnabled:(BOOL)cacheEnabled {
     if (!cacheEnabled) {
-        [self loadLevelDataFromServer:levelPackStructure levelData:levelStructure forceNoCache:YES];
+        [self loadLevelContentDataFromSaltr:levelPackStructure levelData:levelStructure forceNoCache:YES];
         return;
     }
     
@@ -178,10 +187,10 @@
     NSString* cachedFileName = [Helper formatString:LEVEL_DATA_URL_CACHE_TEMPLATE andString2:levelPackStructure.index andString3:levelStructure.index];
                                 
     
-    if (levelStructure.version == [repository objectVersion:cachedFileName]) {
+    if (levelStructure.version == [_repository objectVersion:cachedFileName]) {
         [self loadLevelDataCached:levelStructure cachedFileName:cachedFileName];
     } else {
-        [self loadLevelDataFromServer:levelPackStructure levelData:levelStructure forceNoCache:NO];
+        [self loadLevelContentDataFromSaltr:levelPackStructure levelData:levelStructure forceNoCache:NO];
     }
 }
 
@@ -228,7 +237,20 @@
 
 #pragma mark private functions
 
--(SLTResource *)createDataResource:(void (^)(SLTResource *))resourceLoadSuccessHandler errorHandler:(void (^)(SLTResource *))resourceLoadFailHandler {
+-(void) applyCachedFeatures {
+    NSDictionary* cachedData = [_repository objectFromCache:APP_DATA_URL_CACHE];
+    NSDictionary* cachedFeatures = [_deserializer decodeFeaturesFromData:cachedData];
+    for (NSString* token in [cachedFeatures allKeys]) {
+        SLTFeature* saltrFeature = [cachedFeatures objectForKey:token];
+        SLTFeature* defaultFeature = [_features objectForKey:token];
+        if (defaultFeature) {
+            saltrFeature.defaultProperties = defaultFeature.defaultProperties;
+        }
+        [_features setObject:saltrFeature forKey:token];
+    }
+}
+
+-(SLTResource *)createDataResource:(void (^)(SLTResource *))appDataAssetLoadCompleteHandler errorHandler:(void (^)(SLTResource *))appDataAssetLoadErrorHandler {
     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
     [args setObject:_instanceKey forKey:@"instanceKey"];
     if (_device) {
@@ -247,15 +269,13 @@
         NSString* urlVars = [NSString stringWithFormat:@"?command=%@&arguments=%@", COMMAND_APP_DATA, jsonArguments];
         
         SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];
-        SLTResource* resource = [[SLTResource alloc] initWithId:@"saltAppConfig" andTicket:ticket successHandler:resourceLoadSuccessHandler errorHandler:resourceLoadFailHandler progressHandler:nil];
+        SLTResource* resource = [[SLTResource alloc] initWithId:@"saltAppConfig" andTicket:ticket successHandler:appDataAssetLoadCompleteHandler errorHandler:appDataAssetLoadErrorHandler progressHandler:nil];
         return resource;
     }
     return nil;
 }
 
 -(void) loadAppDataSuccessHandler:(NSDictionary *)jsonData {
-    _isLoading = false;
-    _ready = true;
      _saltrUserId = [jsonData objectForKey:@"saltId"];
     _features = [NSMutableDictionary new];
     _experiments = [_deserializer decodeExperimentsFromData:jsonData];
@@ -282,8 +302,8 @@
 }
 
 -(void) loadAppDataFailHandler {
-    _isLoading = false;
-    _ready = false;
+    _isLoading = NO;
+    _connected = NO;
     if ([saltrRequestDelegate respondsToSelector:@selector(didFailGettingAppDataRequest)]) {
         [saltrRequestDelegate didFailGettingAppDataRequest];
     }
@@ -323,18 +343,18 @@
             [urlVars stringByAppendingFormat:@",data=%@", properties];
         }        
         SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_URL andVariables:urlVars];
-        void (^syncSuccessHandler)() = ^() {
+        void (^syncSuccessCallback)() = ^() {
         };
-        void (^syncFailHandler)() = ^() {
+        void (^syncFailCallback)() = ^() {
         };
-        SLTResource* resource = [[SLTResource alloc] initWithId:@"saveOrUpdateFeature" andTicket:ticket successHandler:syncSuccessHandler errorHandler:syncFailHandler progressHandler:nil];
+        SLTResource* resource = [[SLTResource alloc] initWithId:@"saveOrUpdateFeature" andTicket:ticket successHandler:syncSuccessCallback errorHandler:syncFailCallback progressHandler:nil];
         [resource load];
     }
 }
 
 
 
--(void)loadLevelDataFromServer:(PSLevelPackStructure *)levelPackData
+-(void)loadLevelContentDataFromSaltr:(PSLevelPackStructure *)levelPackData
                      levelData:(PSLevelStructure *)levelData forceNoCache:(BOOL)forceNoCache {
     
     NSInteger timeInterval = [NSDate timeIntervalSinceReferenceDate] * 1000;
@@ -351,7 +371,7 @@
             [self loadLevelDataLocally:levelPackData levelData:levelData cachedFileName:cachedFileName];
         } else {
             [self levelLoadSuccessHandler:levelData data:data];
-            [repository cacheObject:cachedFileName version:levelData.version object:data];
+            [_repository cacheObject:cachedFileName version:levelData.version object:data];
         }
         [asset dispose];
     };
@@ -368,7 +388,7 @@
 -(BOOL) loadLevelDataCached:(PSLevelStructure *)levelData
              cachedFileName:(NSString *) cachedFileName {
     NSLog(@"[SaltClient::loadLevelData] LOADING LEVEL DATA CACHE IMMEDIATELY.");
-    NSDictionary* data = [repository objectFromCache:cachedFileName];
+    NSDictionary* data = [_repository objectFromCache:cachedFileName];
     if (data) {
         [self levelLoadSuccessHandler:levelData data:data];
         return YES;
@@ -401,28 +421,11 @@
 
 -(void) loadLevelDataInternal:(PSLevelPackStructure *)levelPackData levelData:(PSLevelStructure *)levelData {
     NSString* url = [Helper formatString:LEVEL_DATA_URL_LOCAL_TEMPLATE andString2:levelPackData.index andString3:levelData.index];
-    NSDictionary* data = [repository objectFromApplication:url];
+    NSDictionary* data = [_repository objectFromApplication:url];
     if (data) {
         [self levelLoadSuccessHandler:levelData data:data];
     } else {
         [self levelLoadErrorHandler];
-    }
-}
-
--(void) loadAppDataInternal {
-    NSLog(@"[SaltClient] NO Internet available - so loading internal app data.");
-    NSDictionary* data = [repository objectFromCache:APP_DATA_URL_CACHE];
-    if (data) {
-        NSLog(@"[SaltClient] Loading App data from Cache folder.");
-        [self loadAppDataSuccessHandler:data];
-    } else {
-        NSLog(@"[SaltClient] Loading App data from application folder.");
-        data = [repository objectFromApplication:APP_DATA_URL_INTERNAL];
-        if (data) {
-            [self loadAppDataSuccessHandler:data];
-        } else {
-            [self loadAppDataFailHandler];
-        }
     }
 }
 
