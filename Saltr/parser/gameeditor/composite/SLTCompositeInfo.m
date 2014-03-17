@@ -32,7 +32,6 @@
     if (self) {
         assert(theLevelSettings);
         assert(theAssetId);
-        assert(theStateId);
         _assetId = theAssetId;
         _cell = theCell;
         _stateId = theStateId;

@@ -27,6 +27,7 @@
 @synthesize properties = _properties;
 @synthesize version = _version;
 @synthesize levelSettings = _levelSettings;
+@synthesize contentReady = _contentReady;
 
 //TODO It should be nice to have validation for the values of parameters.
 
@@ -41,6 +42,7 @@
         _version = theVersion;
         _rootNode = nil;
         _boardsNode = nil;
+        _contentReady = false;
     }
     return self;
 }
@@ -58,12 +60,12 @@
     return nil;
 }
 
-- (void)updateContent:(NSDictionary*)rootNode
+- (void)updateContent:(NSDictionary*)theRootNode
 {
-    if (!_rootNode) {
+    if (!theRootNode) {
         return;
     }
-    _rootNode = rootNode;
+    _rootNode = theRootNode;
     _boardsNode = [_rootNode objectForKey:@"boards"];
     assert(_boardsNode);
     _properties = [_rootNode objectForKey:@"properties"];
@@ -88,8 +90,5 @@
         [_boards setObject:board forKey:boardId];
     }
 }
-
-
-
 
 @end
