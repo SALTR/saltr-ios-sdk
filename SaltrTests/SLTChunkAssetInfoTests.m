@@ -12,6 +12,9 @@
 #import "SLTChunkAssetInfo.h"
 
 @interface SLTChunkAssetInfoTests : XCTestCase
+{
+    SLTChunkAssetInfo* _chunkAssetInfo;
+}
 
 @end
 
@@ -21,6 +24,9 @@
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    if (!_chunkAssetInfo) {
+        _chunkAssetInfo = [[SLTChunkAssetInfo alloc] initWithAssetId:@"2836" count:0 andStateId:@"534"];
+    }
 }
 
 - (void)tearDown
@@ -29,19 +35,24 @@
     [super tearDown];
 }
 
+- (void)testSLTChunkAssetInfoObject
+{
+    XCTAssertNotNil(_chunkAssetInfo, @"SLTChunkAssetInfo has not been initialized properly!");
+}
+
 - (void)testAssetId
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssertEqualObjects(_chunkAssetInfo.assetId, @"2836", @"Wrong assetId is specified");
 }
 
 - (void)testStateId
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssertEqualObjects(_chunkAssetInfo.stateId, @"534", @"Wrong stateId is specified");
 }
 
 - (void)testCount
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssertEqualObjects([NSNumber numberWithUnsignedInteger:_chunkAssetInfo.count], @0, "Wrong count is specified");
 }
 
 @end
