@@ -14,6 +14,11 @@
 #import "SLTLevelSettings.h"
 #import "SLTLevelBoardParser.h"
 #import "SLTLevelBoard.h"
+#import "SLTCellMatrix.h"
+#import "SLTCell.h"
+#import "SLTCellMatrixIterator.h"
+#import "SLTAssetInstance.h"
+#import "SLTCompositeInstance.h"
 
 @interface SLTLevelTests : XCTestCase
 {
@@ -109,6 +114,7 @@
 
 - (void)testLevelSettings
 {
+    //parseLevelSettings functionality is already tested in SLTLevelBoard
     SLTLevelSettings* updatedLevelSettings = [[SLTLevelBoardParser sharedInstance] parseLevelSettings:_data];
     XCTAssertNotNil(updatedLevelSettings, @"Level Settings has not been initialized properly!");
     XCTAssertNil(_level.levelSettings, @"Level settings object should be nil before calling updateContent function!");
@@ -125,10 +131,28 @@
 {
     XCTAssertNotNil(_level, @"Level has not been set up properly!");
     XCTAssertNil([_level boardWithId:@"board1"], @"Board has not been updated properly!");
-    XCTAssertNil( [_level boardWithId:@"board2"], @"Board has not been updated properly!");
     [_level updateContent:_data];
-    XCTAssertNotNil([_level boardWithId:@"board1"], @"Board has not been updated properly!");
-    XCTAssertNotNil( [_level boardWithId:@"board2"], @"Board has not been updated properly!");
+    SLTLevelBoard* levelBoard =  [_level boardWithId:@"board1"];
+    XCTAssertNotNil(levelBoard, @"Board has not been updated properly!");
+    SLTCellMatrix* cells = levelBoard.cells;
+    SLTCellMatrixIterator* iterator = [cells iterator];
+    SLTCell* cell = [cells retrieveCellAtRow:0 andColumn:0];
+    NSUInteger compositeCount = 0;
+    NSUInteger chunkAssetCount = 0;
+    NSUInteger emptyCells = 0;
+    XCTAssertNotNil(iterator, @"");
+    while ([iterator hasNext]) {
+        cell = [iterator next];
+        XCTAssertNotNil(cell);
+        if (cell.assetInstance && [cell.assetInstance isKindOfClass:[SLTCompositeInstance class]]) {
+            compositeCount++;
+        } else if (cell.assetInstance && [cell.assetInstance isKindOfClass:[SLTAssetInstance class]]) {
+            chunkAssetCount++;
+        } else {
+            emptyCells++;
+        }
+    }
+    XCTAssertEqualObjects([NSNumber numberWithUnsignedInteger:compositeCount], @1, @"Only 1 composite asset should exist!");
 }
 
 - (void)testUpdateContent
@@ -138,14 +162,12 @@
                                         @"level_prop_1": @"level_prop_val_1",
                                         @"level_prop_2": @"level_prop_val_2"
                                         };
-    XCTAssertNotNil(updatedProperties, @"Updated properties are nil");
-    XCTAssertNotNil(_level, @"Level has not been setuped properly!");
+    XCTAssertEqualObjects( _level.properties, _properties, @"The level properties have not been initialized properly!!!");
     [_level updateContent:_data];
-    XCTAssertNotNil(_level, @"Level has not been updated properly!");
     XCTAssertEqualObjects( _level.properties, updatedProperties, @"The level properties have not been updated properly!!!");
     SLTLevelBoard* board1 = [_level boardWithId:@"board1"];
-    SLTLevelBoard* board2 = [_level boardWithId:@"board2"];
     XCTAssertNotNil(board1, @"Board has not been updated properly!");
+    SLTLevelBoard* board2 = [_level boardWithId:@"board2"];
     XCTAssertNotNil(board2, @"Board has not been updated properly!");
 }
 
