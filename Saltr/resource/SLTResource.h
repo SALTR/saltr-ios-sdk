@@ -23,6 +23,9 @@
 /// the resource id
 @property (nonatomic, strong, readonly) NSString* id;
 
+/// Returns YES, if resource is loaded, otherwise NO.
+@property (nonatomic, assign, readonly) BOOL isLoaded;
+
 /// the ticket for loading the resource
 @property (nonatomic, strong, readonly) SLTResourceURLTicket* ticket;
 
@@ -36,7 +39,7 @@
 @property (nonatomic, assign, readonly) NSInteger percentLoaded;
 
 /// The response headers
-@property (nonatomic, strong, readonly) NSMutableArray* responseHeaders;
+@property (nonatomic, strong, readonly) NSDictionary* responseHeaders;
 
 /**
  * @brief Initializes the current resource with the given parameters
@@ -47,19 +50,13 @@
  * @param onProgress - the progress handler
  * @return id - the initialized instance of the current class
  */
--(id) initWithId:(NSString *)id andTicket:(SLTResourceURLTicket *)ticket successHandler:(void (^)(SLTResource *))onSuccess errorHandler:(void (^)(SLTResource *))onFail progressHandler:(void (^)(SLTResource *))onProgress;
+-(id) initWithId:(NSString *)id andTicket:(SLTResourceURLTicket *)ticket successHandler:(void (^)(SLTResource *))onSuccess errorHandler:(void (^)(SLTResource *))onFail progressHandler:(void (^)(long long, long long, long long))onProgress;
 
 /// Returns the data of the resource
--(id)data;
+-(NSData *) data;
 
 /// Returns the json data of the resource
 -(NSDictionary *)jsonData;
-
-/// Returns YES, if resource is loaded, otherwise NO.
--(BOOL) isLoaded;
-
-/// Returns the list of response headers
--(NSArray *) responseHeaders;
 
 /// Loads the current resource
 -(void) load;

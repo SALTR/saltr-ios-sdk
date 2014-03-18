@@ -12,16 +12,20 @@
 
 @implementation SLTResource {
     NSInteger _countOfFails;
+    
+    /// @todo Not clear yet why timer is needed?
+    BOOL _isLoaded;
     NSInteger _dropTimeout;
+    NSTimer* _timeoutTimer;
+
     NSInteger _maxAttempts;
     NSInteger _httpStatus;
-    NSTimer* _timeoutTimer;
     NSMutableData* _responseData;
     NSURLConnection* _urlLoader;
-    BOOL finished;
+    BOOL _finished;
     void (^_onSuccess)(SLTResource *);
     void (^_onFail)(SLTResource *);
-    void (^_onProgress)(SLTResource *);
+    void (^_onProgress)(long long, long long, long long);
 }
 
 @synthesize id = _id;
@@ -32,7 +36,7 @@
 @synthesize responseHeaders = _responseHeaders;
     
     
--(id) initWithId:(NSString *)id andTicket:(SLTResourceURLTicket *)ticket successHandler:(void (^)(SLTResource *))onSuccess errorHandler:(void (^)(SLTResource *))onFail progressHandler:(void (^)(SLTResource *))onProgress {
+-(id) initWithId:(NSString *)id andTicket:(SLTResourceURLTicket *)ticket successHandler:(void (^)(SLTResource *))onSuccess errorHandler:(void (^)(SLTResource *))onFail progressHandler:(void (^)(long long, long long, long long))onProgress {
     self = [super init];
     if (self) {
         _id = id;
@@ -40,19 +44,22 @@
         _maxAttempts = _ticket.maxAttemps;
         _countOfFails = 0;
         _dropTimeout = _ticket.dropTimeout;
+        
+        /// @todo NO HTTP status code is needed, as if request fails, - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error delegate method will be called
         _httpStatus = -1;
         _onSuccess = onSuccess;
         _onFail = onFail;
         _onProgress = onProgress;
-        _responseHeaders = [NSMutableArray new];
-        finished = NO;
+        _responseHeaders = [NSDictionary new];
+        _finished = NO;
+        _isLoaded = NO;
         [self initLoader];
     }
     return self;
 }
 
--(id)data {
-    return nil;
+-(NSData *)data {
+    return _responseData;
 }
 
 -(NSDictionary *)jsonData {
@@ -66,26 +73,27 @@
 }
 
 -(BOOL) isLoaded {
-    return NO;
+    return _isLoaded;
 }
 
--(NSArray *) responseHeaders {
-    return nil;
+-(NSDictionary *) responseHeaders {
+    return _responseHeaders;
 }
 
 -(void) load {
+    ++_countOfFails;
     [_urlLoader start];
-    while(!finished) {
+    while(!_finished) {
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
     }
 }
 
 -(void) stop {
-    
+    [_urlLoader cancel];
 }
 
 -(void) dispose {
-    
+    _urlLoader = nil;
 }
 
 #pragma mark private functions
@@ -96,7 +104,7 @@
 
 #pragma mark NSURLConnection Delegate Methods
 
-- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
+- (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSHTTPURLResponse *)response {
     // A response has been received, this is where we initialize the instance var you created
     // so that we can append data to it in the didReceiveData method
     // Furthermore, this method is called each time there is a redirect so reinitializing it
@@ -104,12 +112,16 @@
     _responseData = [[NSMutableData alloc] init];
     
     _bytesTotal = response.expectedContentLength;
+    _responseHeaders = [response allHeaderFields];
+    _httpStatus = [response statusCode];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveData:(NSData *)data {
     // Append the new data to the instance variable you declared
     _bytesLoaded += [data length];
-//    _onProgress(self);
+    _percentLoaded = round(_bytesLoaded / _bytesTotal * 100);
+    _onProgress(_bytesLoaded, _bytesTotal, _percentLoaded);
+
     [_responseData appendData:data];
 }
 
@@ -122,8 +134,9 @@
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
     // The request is complete and data has been received
     // You can parse the stuff in your instance variable now
-    finished = YES;
+    _finished = YES;
 
+    _isLoaded = YES;
     _onSuccess(self);
     
 }
@@ -134,8 +147,12 @@
     NSLog(@"Connection failed! Error - %@ %@",
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-    _onFail(self);
+    if (_countOfFails == _maxAttempts) {
+        _onFail(self);
+        _isLoaded = NO;
+    } else {
+        [self load];
+    }
 }
-
 
 @end
