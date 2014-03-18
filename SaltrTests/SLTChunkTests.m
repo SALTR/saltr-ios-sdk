@@ -130,10 +130,10 @@
     for (NSUInteger i = 0; i < _chunkCells.count; ++i) {
         SLTCell* cell = [_chunkCells objectAtIndex:i];
         XCTAssertNotNil(cell);
-        if ([self compareCellAssetInstance:cell.assetInstance withAssetInstanceSample:_assetInstance1]){
+        if ([cell.assetInstance isEqual:_assetInstance1]){
             counterAssetInstance1++;
         }
-        if ([self compareCellAssetInstance:cell.assetInstance withAssetInstanceSample:_assetInstance2]) {
+        if ([cell.assetInstance isEqual:_assetInstance2]) {
             counterAssetInstance2++;
         }
     }
@@ -149,10 +149,10 @@
     for (NSUInteger i = 0; i < _chunkCells.count; ++i) {
         SLTCell* cell = [_chunkCells objectAtIndex:i];
         XCTAssertNotNil(cell);
-        if ([self compareCellAssetInstance:cell.assetInstance withAssetInstanceSample:_weakAssetInstance1]){
+        if ([cell.assetInstance isEqual:_weakAssetInstance1]){
             counterWeakAssetInstance1++;
         }
-        if ([self compareCellAssetInstance:cell.assetInstance withAssetInstanceSample:_weakAssetInstance2]) {
+        if ([cell.assetInstance isEqual:_weakAssetInstance2]) {
             counterWeakAssetInstance2++;
         }
     }

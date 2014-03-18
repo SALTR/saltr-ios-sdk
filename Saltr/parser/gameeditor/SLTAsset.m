@@ -30,4 +30,12 @@
     return [NSString stringWithFormat: @"Asset : [type: %@], [theKeys : %@]", self.type, self.keys];
 }
 
+- (BOOL)isEqual:(SLTAsset*)object
+{
+    if (object == self) {
+        return YES;
+    }
+    return [self.type isEqualToString:object.type] && [self.keys isEqual:object.keys];
+}
+
 @end
