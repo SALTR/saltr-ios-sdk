@@ -69,7 +69,7 @@
 /**
  * @brief Generates all boards for the @b SLTLevel
  */
-- (void) generateAllBoards;
+- (void)generateAllBoards;
 
 /**
  * @brief Generates the boards of @b SLTLevel with the given boardId.

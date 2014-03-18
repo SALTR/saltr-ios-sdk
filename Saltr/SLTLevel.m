@@ -42,6 +42,7 @@
         _version = theVersion;
         _rootNode = nil;
         _boardsNode = nil;
+        _levelSettings = nil;
         _contentReady = false;
     }
     return self;
