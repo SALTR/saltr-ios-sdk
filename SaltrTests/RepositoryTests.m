@@ -48,4 +48,21 @@
     XCTAssertTrue([[NSFileManager defaultManager] fileExistsAtPath:appDataJsonPath], @"appdata.json file does not exist");
 }
 
+-(void) testObjectVersion {
+    XCTAssertTrue(false, @"This case is tested in the test app!");
+}
+
+-(void) testObjectFromStorage {
+    NSDictionary* data = [SLTRepository objectFromStorage:@"filename"];
+    XCTAssertTrue(data, @"There is no data in the storage!");
+}
+
+-(void) testObjectFromCache {
+    XCTAssertTrue(false, @"This case is tested in the test app!");
+}
+
+-(void) cacheObject {
+    XCTAssertTrue(false, @"This case is tested in the test app!");
+}
+
 @end

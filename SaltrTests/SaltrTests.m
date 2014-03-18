@@ -40,7 +40,7 @@
     XCTAssertTrue([saltr isEqual:saltr2], @"Creation of singleton PSSaltr object failed!");
 }
 
--(void) testAppData {
+-(void) testStart {
     [[SLTSaltr sharedInstance] start];
 }
 
@@ -50,6 +50,11 @@
 
 -(void) testSetupDeviceWithId {
     XCTAssertTrue(true, @"Setup of device id succeeded!");
+}
+
+-(void) testImportLevels {
+    [[SLTSaltr sharedInstance] importLevels:@"path"];
+    XCTAssertTrue(true, @"Levels are successfully imported!");
 }
 
 -(void) testDefineFeatureWithToken  {

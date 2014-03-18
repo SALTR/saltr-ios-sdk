@@ -40,8 +40,8 @@
 
 - (void)testLevelParsing
 {
-    SLTRepository* repository = [[SLTRepository alloc] init];
-    id data = [repository objectFromStorage:@"level.json"];
+//    SLTRepository* repository = [[SLTRepository alloc] init];
+    id data = [SLTRepository objectFromStorage:@"level.json"];
     SLTLevel* level = [[SLTLevel alloc] init];
     [level updateContent:data];
     NSLog(@"BOARD DATA %@", level);

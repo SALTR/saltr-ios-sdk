@@ -10,6 +10,7 @@
 
 #import <Foundation/Foundation.h>
 
+///@todo why the methods bellow are instance instead of static ?
 @class SLTSaltr;
 
 /**
@@ -30,28 +31,28 @@
  * @param fileName - the name of file to be obtained
  * @return - the obtained file
  */
--(NSDictionary *) objectFromStorage:(NSString *)fileName;
++(NSDictionary *) objectFromStorage:(NSString *)fileName;
 
 /**
  * @brief Gets the object from the cache
  * @param fileName - the name of file to be obtained
  * @return - the obtained file
  */
--(NSDictionary *) objectFromCache:(NSString *)fileName;
++(NSDictionary *) objectFromCache:(NSString *)fileName;
 
 /**
  * @brief Gets the object from the application
  * @param fileName - the name of file to be obtained
  * @return - the obtained file
  */
--(NSDictionary *) objectFromApplication:(NSString *)fileName;
++(NSDictionary *) objectFromApplication:(NSString *)fileName;
 
 /**
  * @brief Gets the version of object
  * @param fileName - the filename of obtaining object
  * @return - object version
  */
--(NSString *) objectVersion:(NSString *)fileName;
++(NSString *) objectVersion:(NSString *)fileName;
 
 /**
  * @brief Caches the given object 
@@ -59,7 +60,7 @@
  * @param version - the version of caching object
  * @param object - the object to be cached
  */
--(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(NSDictionary *)object;
++(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(NSDictionary *)object;
 
 /// @todo unused
 /**
@@ -67,6 +68,6 @@
  * @param fileName - the name of caching object
  * @param object - the object to be cached
  */
--(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object;
+//+(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object;
 
 @end

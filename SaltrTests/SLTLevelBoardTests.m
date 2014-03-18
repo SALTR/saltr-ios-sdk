@@ -45,8 +45,8 @@
 
 - (void)setupPropertiesSample
 {
-    SLTRepository* repository = [[SLTRepository alloc] init];
-    id data = [repository objectFromStorage:@"level.json"];
+//    SLTRepository* repository = [[SLTRepository alloc] init];
+    id data = [SLTRepository objectFromStorage:@"level.json"];
     NSDictionary* boards = [data objectForKey:@"boards"];
     XCTAssertNotNil(boards, @"Data of boards is not initialized properly");
     NSDictionary* board = [boards objectForKey:@"board1"];
