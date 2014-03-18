@@ -43,10 +43,10 @@
         NSArray* levels  = [levelPack objectForKey:@"levelList"];
         NSMutableArray* levelStructures = [NSMutableArray new];
         for (NSDictionary* level in levels) {
-            [levelStructures addObject:[[SLTLevel alloc] initWithLevelId:[level objectForKey: @"id"] index:[level objectForKey: @"order"] contentDataUrl:[level objectForKey: @"url"] properties:[level objectForKey: @"properties"] andVersion:[level objectForKey: @"version"]]];
+            [levelStructures addObject:[[SLTLevel alloc] initWithLevelId:[level objectForKey: @"id"] index:[[level objectForKey: @"order"] stringValue] contentDataUrl:[level objectForKey: @"url"] properties:[level objectForKey: @"properties"] andVersion:[level objectForKey: @"version"]]];
         }
         NSArray *sortedLevelStructures = [levelStructures sortedArrayUsingComparator:sortBlockForLevelStructure];
-        [levelPackStructures addObject:[[SLTLevelPack alloc] initWithToken:[levelPack objectForKey:@"token"] levels:sortedLevelStructures andIndex:[levelPack objectForKey:@"order"]]];
+        [levelPackStructures addObject:[[SLTLevelPack alloc] initWithToken:[levelPack objectForKey:@"token"] levels:sortedLevelStructures andIndex:[[levelPack objectForKey:@"order"] stringValue]]];
     }
     NSArray *sortedLevelPackStructures = [levelPackStructures sortedArrayUsingComparator:sortBlockForLevelPackStructure];
     return sortedLevelPackStructures;

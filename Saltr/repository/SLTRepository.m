@@ -47,7 +47,6 @@
 +(NSDictionary *) objectFromApplication:(NSString *)fileName {
 
     NSString* filePath = [[[SLTRepository libraryBundle] bundlePath] stringByAppendingPathComponent:fileName];
-
     return [self getInternal:filePath];
 }
 

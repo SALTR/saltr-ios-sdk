@@ -16,9 +16,7 @@
 #import "SLTLevelPack.h"
 #import "SLTPartner.h"
 #import "SLTDevice.h"
-#import "Config.h"
-#import "Helper.h"
-
+#import "SLTConfig.h"
 
 @interface SLTSaltr() {
     // @todo No @b SLTRepository object is needed, as all the methods are static
@@ -89,7 +87,7 @@
     return _sharedObject;
 }
 
--(SLTFeature *) feature :(NSString *)token {
+-(SLTFeature *) featureForToken :(NSString *)token {
     return [_features objectForKey:token];
 }
 
@@ -150,7 +148,7 @@
     } else {
         //if there is no version change than load from cache
         NSString* cachedVersion = [self cachedLevelVersion:levelPackStructure andLevel:levelStructure];
-        if ([levelStructure.version isEqualToString:cachedVersion]) {
+        if (cachedVersion && [levelStructure.version isEqualToString:cachedVersion]) {
             NSDictionary* contentData = [self loadLevelContentDataFromCache:levelPackStructure andLevel:levelStructure];
             [self contentDataLoadSuccessCallback:levelStructure data:contentData];
         } else {
@@ -327,10 +325,8 @@
     NSString* url = [levelData.contentDataUrl stringByAppendingFormat:@"_time_=%d", timeInterval];
     NSString* dataUrl = forceNoCache ? url : levelData.contentDataUrl;
     SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:dataUrl andVariables:nil];
-    /// @todo the code below should be reviewed/rewritten
-    SLTResource* resource = nil;
     
-    void (^loadSuccessCallback)() = ^() {
+    void (^loadSuccessCallback)(SLTResource *) = ^(SLTResource * resource) {
         NSDictionary* contentData = resource.jsonData;
         if (contentData) {
             [self cacheLevelContentData:levelPackData andLevel:levelData andContentData:contentData];
@@ -346,20 +342,19 @@
         [resource dispose];
 
     };
-    void (^loadFailedCallback)() = ^() {
+    void (^loadFailedCallback)(SLTResource *) = ^(SLTResource * resource) {
         NSDictionary* contentData = [self loadLevelContentDataFromInternalStorage:levelPackData andLevel:levelData];
         [self contentDataLoadSuccessCallback:levelData data:contentData];
         [resource dispose];
 
     };
-    resource = [[SLTResource alloc] initWithId:@"saltr" andTicket:ticket successHandler:loadSuccessCallback errorHandler:loadFailedCallback progressHandler:nil];
+    SLTResource* resource = [[SLTResource alloc] initWithId:@"saltr" andTicket:ticket successHandler:loadSuccessCallback errorHandler:loadFailedCallback progressHandler:nil];
     [resource load];
 }
 
 -(NSDictionary *) loadLevelContentDataFromCache:(SLTLevelPack *)levelPack andLevel:(SLTLevel *)level
               {
-                  
-    NSString* url = [Helper formatString:LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE andString2:levelPack.index andString3:level.index];
+    NSString* url = LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE(levelPack.index, level.index);
     NSLog(@"[SaltClient::loadLevelData] LOADING LEVEL DATA CACHE IMMEDIATELY.");
     return [SLTRepository objectFromCache:url];
 }
@@ -379,13 +374,13 @@
 }
 
 -(NSString *) cachedLevelVersion:(SLTLevelPack *)levelPack andLevel:(SLTLevel *)level {
-    NSString* cachedFileName = [Helper formatString:LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE andString2:levelPack.index andString3:level.index];
+    NSString* cachedFileName = LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE(levelPack.index, level.index);
     return [SLTRepository objectVersion:cachedFileName];
 
 }
 
 -(void) cacheLevelContentData:(SLTLevelPack *)levelPack andLevel:(SLTLevel *)level andContentData:(NSDictionary *)contentData {
-    NSString* cachedFileName = [Helper formatString:LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE andString2:levelPack.index andString3:level.index];
+    NSString* cachedFileName = LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE(levelPack.index, level.index);
     [SLTRepository cacheObject:cachedFileName version:level.version object:contentData];
 }
 
@@ -399,7 +394,7 @@
 }
 
 -(NSDictionary *)loadLevelContentDataFromPackage:(SLTLevelPack *)levelPack andLevel:(SLTLevel *)level {
-    NSString* url = [Helper formatString:LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE andString2:levelPack.index andString3:level.index];
+    NSString* url = LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE(levelPack.index, level.index);
     return [SLTRepository objectFromApplication:url];
 
 }

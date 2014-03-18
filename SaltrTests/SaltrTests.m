@@ -10,6 +10,7 @@
 
 #import <XCTest/XCTest.h>
 #import "SLTSaltr.h"
+#import "SLTConfig.h"
 
 @interface SaltrTests : XCTestCase <SaltrRequestDelegate> {
     SLTSaltr* saltr;
@@ -41,7 +42,7 @@
 }
 
 -(void) testStart {
-    [[SLTSaltr sharedInstance] start];
+    [saltr start];
 }
 
 -(void) testSetupPartnerWithId {
@@ -53,7 +54,7 @@
 }
 
 -(void) testImportLevels {
-    [[SLTSaltr sharedInstance] importLevels:@"level_packs.json"];
+    [saltr importLevels:LEVEL_PACK_URL_PACKAGE];
     XCTAssertTrue(true, @"Levels are successfully imported!");
 }
 
@@ -61,12 +62,22 @@
     XCTAssertTrue(true, @"Definition of features with token succeeded!");
 }
 
--(void) testLevelDataBodyWithLevelPack {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+-(void) testloadLevelContentData {
+    [saltr importLevels:nil];
+    SLTLevelPack* pack = [saltr.levelPackStructures objectAtIndex:0];
+    SLTLevel* level = [pack.levels objectAtIndex:0];
+    [saltr loadLevelContentData:pack levelStructure:level andCacheEnabled:YES];
+    XCTAssertTrue(true, @"Level data is successfully loaded!");
 }
 
 -(void) testAddUserPropertyWithNames {
     XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+}
+
+/// @note before getting feature with token, start method should be called to initialize features list.
+-(void)testFeatureForToken {
+    [[SLTSaltr sharedInstance] featureForToken:@""];
+    XCTAssertTrue(true, @"Feature is successfully obtained!");
 }
 
 #pragma mark @b SaltrRequestDelegate protocol methods

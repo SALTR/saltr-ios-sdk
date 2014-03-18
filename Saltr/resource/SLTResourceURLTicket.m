@@ -52,9 +52,11 @@
 }
 
 -(NSURLRequest *) urlRequest {
-    
-    NSString* jsonArguments = [_url stringByAppendingString:_variables];
-    
+    NSString* jsonArguments = _url;
+
+    if (_variables) {
+        jsonArguments = [jsonArguments stringByAppendingString:_variables];
+    }
     
     jsonArguments = [jsonArguments stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
     NSURL* url = [NSURL URLWithString:jsonArguments];

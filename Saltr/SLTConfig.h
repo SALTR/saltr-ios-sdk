@@ -38,7 +38,8 @@
  * @def LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE
  * The filename of level data json file in application cache directory
  */
-#define LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE @"pack_{0}_level_{1}.json"
+#define LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE(value1, value2) ([NSString stringWithFormat:@"pack_%@_level_%@.json", value1, value2])
+
 
 /**
  * @def LEVEL_PACK_URL_PACKAGE
@@ -46,11 +47,12 @@
  */
 #define LEVEL_PACK_URL_PACKAGE @"saltr/level_packs.json"
 
+
 /**
  * @def LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE
  * The filename of level data json file in application local directory
  */
-#define LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE @"saltr/pack_{0}/level_{1}.json"
+#define LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE(value1, value2) ([NSString stringWithFormat:@"saltr/pack_%@/level_%@.json", value1, value2])
 
 #define RESULT_SUCCEED @"SUCCEED"
 #define RESULT_ERROR @"ERROR"

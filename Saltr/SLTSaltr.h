@@ -159,7 +159,7 @@
  * @param token - token for which feature should be obtained
  * @return - obtaining feature
  */
--(SLTFeature *) feature :(NSString *)token;
+-(SLTFeature *) featureForToken :(NSString *)token;
 
 
 @end
