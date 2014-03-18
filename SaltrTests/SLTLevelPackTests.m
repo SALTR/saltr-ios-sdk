@@ -24,8 +24,7 @@
 
 - (void)setupLevelPack
 {
-    SLTRepository* repository = [[SLTRepository alloc] init];
-    id data = [repository objectFromStorage:@"appdata.json"];
+    id data = [SLTRepository objectFromApplication:@"appdata.json"];
     XCTAssertNotNil(data, @"Data from JSON has not been extracted properly!");
     _levelPacks =  [[NSMutableArray alloc] initWithArray:[[data objectForKey:@"responseData"] objectForKey:@"levelPackList"]];
     XCTAssertNotNil(_levelPacks, @"Level packs have not been initialized properly!");

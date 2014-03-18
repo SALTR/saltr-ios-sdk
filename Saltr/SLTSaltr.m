@@ -21,7 +21,8 @@
 
 
 @interface SLTSaltr() {
-    SLTRepository* _repository;
+    // @todo No @b SLTRepository object is needed, as all the methods are static
+//    SLTRepository* _repository;
     NSString* _saltrUserId;
     /// @todo the meaning of this boolean is not clear yet
     BOOL _isLoading;
@@ -50,7 +51,7 @@
 {
     self = [super init];
     if (self) {
-        _repository = [SLTRepository new];
+//        _repository = [SLTRepository new];
         _deserializer = [SLTDeserializer new];
         _features = [NSMutableDictionary new];
         _isLoading = false;
@@ -102,7 +103,7 @@
 
 -(void) importLevels:(NSString *)path {
     path = !path ? LEVEL_PACK_URL_PACKAGE : path;
-    NSDictionary* applicationData = [_repository objectFromApplication:path];
+    NSDictionary* applicationData = [SLTRepository objectFromApplication:path];
     _levelPackStructures = [_deserializer decodeLevelsFromData:applicationData];
 }
 
@@ -131,7 +132,7 @@
         NSDictionary* data = asset.jsonData;
         NSDictionary* jsonData = [data objectForKey:@"responseData"];
         
-        [_repository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
+        [SLTRepository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
         [asset dispose];
         _isLoading = NO;
         _connected = YES;
@@ -203,7 +204,7 @@
 #pragma mark private functions
 
 -(void) applyCachedFeatures {
-    NSDictionary* cachedData = [_repository objectFromCache:APP_DATA_URL_CACHE];
+    NSDictionary* cachedData = [SLTRepository objectFromCache:APP_DATA_URL_CACHE];
     NSDictionary* cachedFeatures = [_deserializer decodeFeaturesFromData:cachedData];
     for (NSString* token in [cachedFeatures allKeys]) {
         SLTFeature* saltrFeature = [cachedFeatures objectForKey:token];
@@ -360,7 +361,7 @@
                   
     NSString* url = [Helper formatString:LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE andString2:levelPack.index andString3:level.index];
     NSLog(@"[SaltClient::loadLevelData] LOADING LEVEL DATA CACHE IMMEDIATELY.");
-    return [_repository objectFromCache:url];
+    return [SLTRepository objectFromCache:url];
 }
 
 -(void) contentDataLoadSuccessCallback:(SLTLevel *)levelData data:(id)data {
@@ -379,13 +380,13 @@
 
 -(NSString *) cachedLevelVersion:(SLTLevelPack *)levelPack andLevel:(SLTLevel *)level {
     NSString* cachedFileName = [Helper formatString:LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE andString2:levelPack.index andString3:level.index];
-    return [_repository objectVersion:cachedFileName];
+    return [SLTRepository objectVersion:cachedFileName];
 
 }
 
 -(void) cacheLevelContentData:(SLTLevelPack *)levelPack andLevel:(SLTLevel *)level andContentData:(NSDictionary *)contentData {
     NSString* cachedFileName = [Helper formatString:LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE andString2:levelPack.index andString3:level.index];
-    [_repository cacheObject:cachedFileName version:level.version object:contentData];
+    [SLTRepository cacheObject:cachedFileName version:level.version object:contentData];
 }
 
 -(NSDictionary *)loadLevelContentDataFromInternalStorage:(SLTLevelPack *)levelPack
@@ -399,7 +400,7 @@
 
 -(NSDictionary *)loadLevelContentDataFromPackage:(SLTLevelPack *)levelPack andLevel:(SLTLevel *)level {
     NSString* url = [Helper formatString:LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE andString2:levelPack.index andString3:level.index];
-    return [_repository objectFromApplication:url];
+    return [SLTRepository objectFromApplication:url];
 
 }
 

@@ -35,11 +35,6 @@
     [super tearDown];
 }
 
-- (void)testExample
-{
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
-}
-
 - (void)testDecodeExperimentsFromData
 {
     NSString* jsonPath = [[SLTRepository libraryBundle] pathForResource:@"appdata" ofType:@"json"];

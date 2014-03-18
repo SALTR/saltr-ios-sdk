@@ -95,8 +95,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     if (!_levelSettings) {
-        SLTRepository* repository = [[SLTRepository alloc] init];
-        id data = [repository objectFromStorage:@"level.json"];
+        id data = [SLTRepository objectFromApplication:@"level.json"];
         XCTAssert([data isKindOfClass:[NSDictionary class]]);
         _levelSettings = [[SLTLevelBoardParser sharedInstance] parseLevelSettings:data];
         XCTAssertNotNil(_levelSettings, @"Level Settings has not been initialized properly!");

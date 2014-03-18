@@ -56,9 +56,8 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
     if (!_level) {
         [self setupDefaultLevel];
-        SLTRepository* repository = [[SLTRepository alloc] init];
         if (!_data) {
-            _data = [repository objectFromStorage:@"level.json"];
+            _data = [SLTRepository objectFromApplication:@"level.json"];
             XCTAssert(_data, @"Data from JSON has not been extracted properly!");
         }
     }

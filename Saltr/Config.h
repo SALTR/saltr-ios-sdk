@@ -52,8 +52,6 @@
  */
 #define LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE @"saltr/pack_{0}/level_{1}.json"
 
-
-
 #define RESULT_SUCCEED @"SUCCEED"
 #define RESULT_ERROR @"ERROR"
 
