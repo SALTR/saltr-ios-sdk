@@ -24,7 +24,6 @@
     NSUInteger _height;
 
 }
-
 @end
 
 @implementation SLTLevelBoardTests

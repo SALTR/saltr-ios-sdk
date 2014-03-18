@@ -29,4 +29,12 @@
     return [NSString stringWithFormat: @"PSCompositeAsset : [cellInfos : %@], %@ ", self.cellInfos, superDescription];
 }
 
+- (BOOL)isEqual:(SLTCompositeAsset*)object
+{
+    if (object == self) {
+        return YES;
+    }
+    return [super isEqual:object] && [self.cellInfos isEqual:object.cellInfos];
+}
+
 @end
