@@ -29,4 +29,12 @@
     return [NSString stringWithFormat: @"AssetInstance : [state : %@], %@", self.state, superDescription];
 }
 
+- (BOOL)isEqual:(SLTAssetInstance*)object
+{
+    if (object == self) {
+        return YES;
+    }
+    return [super isEqual:object] && [self.state isEqualToString:object.state];
+}
+
 @end

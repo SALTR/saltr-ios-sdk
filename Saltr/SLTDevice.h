@@ -19,15 +19,15 @@
 @property (nonatomic, strong, readonly) NSString* deviceType;
 
 /**
- * @brief Inits instance of PSDevice class with given id and type
+ * @brief Inits instance of @b SLTDevice class with given id and type
  *
  * @param theId - device id
  * @param theType - device type
- * @return - The instance of PSDevice class
+ * @return - The instance of  @b SLTDevice class
  */
 -(id) initWithDeviceId:(NSString*)theId andDeviceType:(NSString*)theType;
 
-/// Returns the dictionary value of @b PSDevice class
+/// Returns the dictionary value of  @b SLTDevice class
 -(NSDictionary *) toDictionary;
 
 @end

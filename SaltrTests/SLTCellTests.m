@@ -41,14 +41,12 @@
 
 - (void)testX
 {
-    XCTAssertEqual([NSNumber numberWithUnsignedLong:_cell.x], @5, "Wrong matrix height");
-
+    XCTAssertEqualObjects([NSNumber numberWithUnsignedInteger:_cell.x], @5, "Wrong matrix height");
 }
 
 - (void)testY
 {
-    XCTAssertEqual([NSNumber numberWithUnsignedLong:_cell.y], @1, "Wrong matrix height");
-
+    XCTAssertEqualObjects([NSNumber numberWithUnsignedInteger:_cell.y], @1, "Wrong matrix height");
 }
 
 @end

@@ -62,14 +62,14 @@
 /**
  * @brief Parses the given data and generates the corresponding object hierarchy filling the parsed information there.
  *
- * @param rootNode - The root dictionary correspoding to level JSON data
+ * @param theRootNode - The root dictionary correspoding to level JSON data
  */
-- (void)updateContent:(NSDictionary*)rootNode;
+- (void)updateContent:(NSDictionary*)theRootNode;
 
 /**
  * @brief Generates all boards for the @b SLTLevel
  */
-- (void) generateAllBoards;
+- (void)generateAllBoards;
 
 /**
  * @brief Generates the boards of @b SLTLevel with the given boardId.

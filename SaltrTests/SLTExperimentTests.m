@@ -9,17 +9,23 @@
  */
 
 #import <XCTest/XCTest.h>
+#import "SLTExperiment.h"
 
-@interface LevelPackStructureTests : XCTestCase
-
+@interface SLTExperimentTests : XCTestCase
+{
+    SLTExperiment* _experiment;
+}
 @end
 
-@implementation LevelPackStructureTests
+@implementation SLTExperimentTests
 
 - (void)setUp
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
+    if (!_experiment) {
+        _experiment = [[SLTExperiment alloc] init];
+    }
 }
 
 - (void)tearDown
@@ -28,9 +34,24 @@
     [super tearDown];
 }
 
-- (void)testExample
+- (void)testPartition
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    XCTAssertEqualObjects(_experiment.partition, @"partition", @"Wrong partition is specified");
+}
+
+- (void)testToken
+{
+    XCTAssertEqualObjects(_experiment.token, @"token", @"Wrong token is specified");
+}
+
+- (void)testType
+{
+    XCTAssertEqualObjects(_experiment.type, @"type", @"Wrong type is specified");
+}
+
+- (void)testEvents
+{
+    XCTAssertEqualObjects(_experiment.customEvents, [NSArray new], @"Wrong type is specified");
 }
 
 @end

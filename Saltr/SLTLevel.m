@@ -27,10 +27,11 @@
 @synthesize properties = _properties;
 @synthesize version = _version;
 @synthesize levelSettings = _levelSettings;
+@synthesize contentReady = _contentReady;
 
 //TODO It should be nice to have validation for the values of parameters.
 
--(id) initWithLevelId:(NSString*)theId index:(NSString *)theIndex contentDataUrl:(NSString*)theContentDataUrl properties:(id)theProperties andVersion:(NSString*)theVersion
+- (id)initWithLevelId:(NSString*)theId index:(NSString*)theIndex contentDataUrl:(NSString*)theContentDataUrl properties:(id)theProperties andVersion:(NSString*)theVersion
 {
     self = [super init];
     if (self) {
@@ -41,6 +42,8 @@
         _version = theVersion;
         _rootNode = nil;
         _boardsNode = nil;
+        _levelSettings = nil;
+        _contentReady = false;
     }
     return self;
 }
@@ -58,12 +61,12 @@
     return nil;
 }
 
-- (void)updateContent:(NSDictionary*)rootNode
+- (void)updateContent:(NSDictionary*)theRootNode
 {
-    if (!_rootNode) {
+    if (!theRootNode) {
         return;
     }
-    _rootNode = rootNode;
+    _rootNode = theRootNode;
     _boardsNode = [_rootNode objectForKey:@"boards"];
     assert(_boardsNode);
     _properties = [_rootNode objectForKey:@"properties"];
@@ -72,7 +75,7 @@
     _contentReady = true;
 }
 
-- (void) generateAllBoards
+- (void)generateAllBoards
 {
     if (_boardsNode) {
         _boards = [[SLTLevelBoardParser sharedInstance] parseLevelBoards:_boardsNode withLevelSettings:_levelSettings];
@@ -88,8 +91,5 @@
         [_boards setObject:board forKey:boardId];
     }
 }
-
-
-
 
 @end

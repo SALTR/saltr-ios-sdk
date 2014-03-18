@@ -14,7 +14,7 @@
 /**
  * @brief This is the interface of @b SLTCompositeAsset class.
  *
- * This class holds the composite asset information of cells, type, stateId and keys, which are being extracted from asset.
+ * This class holds the composite asset information of cells, type and keys, which are being extracted from asset.
  * If asset of "assets" in the JSON data has cell property, this means that it is composite asset.
  *
  * The composite asset instances will be stored in the cells (mentioned in asset) of board matrix.
@@ -55,7 +55,6 @@
 
 /// The list of cells of board matrix, where the composite asset instances will be stored.
 @property (nonatomic, strong, readonly) NSArray* cellInfos;
-
 
 /**
  * @brief Inits an instance of @b SLTCompositeAsset class with given cellInfos, type and keys
