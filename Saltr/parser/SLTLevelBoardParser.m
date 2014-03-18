@@ -235,20 +235,20 @@
     }
 }
 
-- (void)createEmptyCellsForCellMatrix:(SLTCellMatrix*)boardVector withBoardNode:(NSDictionary*)rawBoard
+- (void)createEmptyCellsForCellMatrix:(SLTCellMatrix*)cells withBoardNode:(NSDictionary*)rawBoard
 {
-    assert(nil != boardVector);
+    assert(nil != cells);
     NSArray* blockedCells = [rawBoard objectForKey:@"blockedCells"];
     NSDictionary* properties = [rawBoard objectForKey:@"properties"];
     NSArray* cellProperties = nil;
     if (properties && [properties objectForKey:@"cell"]) {
         cellProperties = [properties objectForKey:@"cell"];
     }
-    for (NSUInteger i = 0; i < boardVector.height; ++i) {
-        for (NSUInteger j = 0 ; j < boardVector.width; ++j) {
+    for (NSUInteger i = 0; i < cells.height; ++i) {
+        for (NSUInteger j = 0 ; j < cells.width; ++j) {
             SLTCell* cell = [[SLTCell alloc] initWithX:j andY:i];
             assert(cell);
-            [boardVector insertCell:cell atRow:j andColumn:i];
+            [cells insertCell:cell atRow:j andColumn:i];
             if (cellProperties && cellProperties.count) {
                 [self fillProperties:cellProperties  ofCell:cell];
             }

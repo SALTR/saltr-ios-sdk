@@ -47,11 +47,12 @@
 - (void)generateAssetInstancesWithCount:(NSUInteger)count assetId:(NSString*)assetId andStateId:(NSString*)stateId
 {
     SLTAsset* asset = [_assetMap objectForKey:assetId];
-    assert(nil != asset);
+    NSAssert(nil != asset, @"The asset with assetID=%@ does not exist in the map of assets in level settings", assetId);
     NSString* state = [_stateMap objectForKey:stateId];
     for (NSUInteger i = 0; i < count; ++i) {
         NSInteger randCellIndex = (arc4random() % _availableCells.count);
         SLTCell* randCell = _availableCells[randCellIndex];
+        assert([randCell isKindOfClass:[SLTCell class]]);
         randCell.assetInstance = [[SLTAssetInstance alloc] initWithState:state type:asset.type andKeys:asset.keys];
         [_availableCells removeObjectAtIndex:randCellIndex];
         if (0 == _availableCells.count) {
@@ -94,6 +95,7 @@
     [_availableCells addObjectsFromArray:_chunkCells];
     NSMutableArray* weakChunkAssets = [[NSMutableArray alloc] init];
     for (NSUInteger i = 0; i < _chunkAssetInfos.count; ++i) {
+        assert([[_chunkAssetInfos objectAtIndex:i] isKindOfClass:[SLTChunkAssetInfo class]]);
         SLTChunkAssetInfo* chunkAsset = [_chunkAssetInfos objectAtIndex:i];
         assert(nil != chunkAsset);
         if (0 != chunkAsset.count) {

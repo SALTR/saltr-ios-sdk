@@ -38,7 +38,9 @@
  *                  "CARD_VALUE": 1
  *                  },
  *          "states": [
- *                       534
+ *                       534,
+ *                       535
+ *
  *                     ],
  *          "type_key": "normal"
  *
