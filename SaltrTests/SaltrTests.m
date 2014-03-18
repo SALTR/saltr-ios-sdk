@@ -53,7 +53,7 @@
 }
 
 -(void) testImportLevels {
-    [[SLTSaltr sharedInstance] importLevels:@"path"];
+    [[SLTSaltr sharedInstance] importLevels:@"level_packs.json"];
     XCTAssertTrue(true, @"Levels are successfully imported!");
 }
 
