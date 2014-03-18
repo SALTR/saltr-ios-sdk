@@ -186,15 +186,13 @@
         
         
         SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];
-        /// @todo the code below should be reviewed/rewritten
-        SLTResource* resource = nil;
-        void (^addUserPropertySuccessHandler)() = ^() {
+        void (^addUserPropertySuccessHandler)(SLTResource *) = ^(SLTResource *resource) {
             [resource dispose];
         };
-        void (^addUserPropertyFailHandler)() = ^() {
+        void (^addUserPropertyFailHandler)(SLTResource *) = ^(SLTResource *resource) {
             [resource dispose];
         };
-        resource = [[SLTResource alloc] initWithId:@"property" andTicket:ticket successHandler:addUserPropertySuccessHandler errorHandler:addUserPropertyFailHandler progressHandler:nil];
+        SLTResource* resource = [[SLTResource alloc] initWithId:@"property" andTicket:ticket successHandler:addUserPropertySuccessHandler errorHandler:addUserPropertyFailHandler progressHandler:nil];
         [resource load];
     }
 }
@@ -307,16 +305,14 @@
             [urlVars stringByAppendingFormat:@",data=%@", properties];
         }        
         SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_URL andVariables:urlVars];
-        void (^syncSuccessCallback)() = ^() {
+        void (^syncSuccessCallback)(SLTResource*) = ^(SLTResource *resource) {
         };
-        void (^syncFailCallback)() = ^() {
+        void (^syncFailCallback)(SLTResource *) = ^(SLTResource *resource) {
         };
         SLTResource* resource = [[SLTResource alloc] initWithId:@"saveOrUpdateFeature" andTicket:ticket successHandler:syncSuccessCallback errorHandler:syncFailCallback progressHandler:nil];
         [resource load];
     }
 }
-
-
 
 -(void)loadLevelContentDataFromSaltr:(SLTLevelPack *)levelPackData
                      levelData:(SLTLevel *)levelData forceNoCache:(BOOL)forceNoCache {

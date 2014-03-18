@@ -10,7 +10,6 @@
 
 #import <Foundation/Foundation.h>
 
-///@todo why the methods bellow are instance instead of static ?
 @class SLTSaltr;
 
 /**

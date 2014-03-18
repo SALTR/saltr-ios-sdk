@@ -38,7 +38,6 @@
 }
 
 +(NSDictionary *) objectFromCache:(NSString *)fileName {
-    /// @todo The line below is just for passing compilation
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
     return [self getInternal:filePath];
@@ -77,7 +76,6 @@
 
 #pragma mark private functions
 
-/// @todo should be tested
 +(NSDictionary *) getInternal:(NSString *)filePath {
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         return nil;
