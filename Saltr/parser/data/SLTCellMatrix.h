@@ -46,7 +46,7 @@
  * @param row - the row index
  * @param column - the column index
  */
-- (void)insertCell:(SLTCell *)cell atRow:(NSUInteger)row andColumn:(NSUInteger)column;
+- (void)insertCell:(SLTCell*)cell atRow:(NSUInteger)row andColumn:(NSUInteger)column;
 
 /**
  * @brief Retrieves @b SLTCell object from the matrix with the (row, column) position.
@@ -55,7 +55,7 @@
  * @param column - the column index
  * @return - The @b SLTCell object
  */
-- (id)retrieveCellAtRow:(NSUInteger)row andColumn:(NSUInteger)column;
+- (SLTCell*)retrieveCellAtRow:(NSUInteger)row andColumn:(NSUInteger)column;
 
 /**
  * @brief Initilizes once and returns the @b SLTCellMatrixIterator instance to iterate the matrix object.

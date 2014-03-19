@@ -60,16 +60,16 @@
 {
     NSMutableDictionary* assetsMap = [[NSMutableDictionary alloc] init];
     SLTAsset* compositeAsset = [[SLTCompositeAsset alloc] initWithCellInfos:@[@[@1,@2], @[@7, @5]] type:@"composite_asset" andKeys: @{ @"keys": @{
-        @"CARD_SUIT": @2,
-        @"COLOR": @3,
-        @"CARD_VALUE": @3
-        }}];
+                                                                                                                                               @"CARD_SUIT": @2,
+                                                                                                                                               @"COLOR": @3,
+                                                                                                                                               @"CARD_VALUE": @3
+                                                                                                                                               }}];
     [assetsMap setObject:compositeAsset forKey:@"2839"];
     SLTAsset* asset = [[SLTAsset alloc] initWithType:@"composite_asset" andKeys: @{ @"keys": @{
-                                                                                                                            @"CARD_SUIT": @1,
-                                                                                                                                               @"COLOR": @2,
-                                                                                                                                               @"CARD_VALUE": @2
-                                                                                                                                               }}];
+                                                                                            @"CARD_SUIT": @1,
+                                                                                            @"COLOR": @2,
+                                                                                            @"CARD_VALUE": @2
+                                                                                            }}];
     [assetsMap setObject:asset forKey:@"2840"];
     return assetsMap;
 }
