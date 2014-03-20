@@ -120,7 +120,7 @@
     // Append the new data to the instance variable you declared
     _bytesLoaded += [data length];
     _percentLoaded = round(_bytesLoaded / _bytesTotal * 100);
-    _onProgress(_bytesLoaded, _bytesTotal, _percentLoaded);
+    ///_onProgress(_bytesLoaded, _bytesTotal, _percentLoaded);
 
     [_responseData appendData:data];
 }
