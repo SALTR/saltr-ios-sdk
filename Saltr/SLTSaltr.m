@@ -27,10 +27,8 @@
     BOOL _connected;
     SLTPartner* _partner;
     SLTDeserializer* _deserializer;
-
     SLTDevice* _device;
 }
-
 @end
 
 @implementation SLTSaltr
@@ -40,7 +38,7 @@
 @synthesize appVersion;
 @synthesize ready;
 @synthesize features=_features;
-@synthesize levelPackStructures=_levelPackStructures;
+@synthesize levelPacks=_levelPacks;
 @synthesize experiments=_experiments;
 @synthesize saltrRequestDelegate;
 @synthesize connected=_connected;
@@ -49,7 +47,6 @@
 {
     self = [super init];
     if (self) {
-//        _repository = [SLTRepository new];
         _deserializer = [SLTDeserializer new];
         _features = [NSMutableDictionary new];
         _isLoading = false;
@@ -102,7 +99,7 @@
 -(void) importLevels:(NSString *)path {
     path = !path ? LEVEL_PACK_URL_PACKAGE : path;
     NSDictionary* applicationData = [SLTRepository objectFromApplication:path];
-    _levelPackStructures = [_deserializer decodeLevelsFromData:applicationData];
+    _levelPacks = [_deserializer decodeLevelsFromData:applicationData];
 }
 
 -(void) defineFeatureWithToken:(NSString*)token andProperties:(NSDictionary *)properties {
@@ -241,7 +238,7 @@
      _saltrUserId = [jsonData objectForKey:@"saltId"];
     _features = [NSMutableDictionary new];
     _experiments = [_deserializer decodeExperimentsFromData:jsonData];
-    _levelPackStructures = [_deserializer decodeLevelsFromData:jsonData];
+    _levelPacks = [_deserializer decodeLevelsFromData:jsonData];
     NSDictionary* saltrFeatures = [_deserializer decodeFeaturesFromData:jsonData];
     //merging with defaults...
 
@@ -252,7 +249,7 @@
         [_features setValue:saltrFeature forKey:key];
     }
     
-    NSLog(@"[SaltClient] packs = %d", [_levelPackStructures count]);
+    NSLog(@"[SaltClient] packs = %d", [_levelPacks count]);
     if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingAppDataRequest)]) {
         [saltrRequestDelegate didFinishGettingAppDataRequest];
     }
@@ -392,7 +389,6 @@
 -(NSDictionary *)loadLevelContentDataFromPackage:(SLTLevelPack *)levelPack andLevel:(SLTLevel *)level {
     NSString* url = LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE(levelPack.index, level.index);
     return [SLTRepository objectFromApplication:url];
-
 }
 
 @end
