@@ -120,8 +120,9 @@
     // Append the new data to the instance variable you declared
     _bytesLoaded += [data length];
     _percentLoaded = round(_bytesLoaded / _bytesTotal * 100);
-    _onProgress(_bytesLoaded, _bytesTotal, _percentLoaded);
-
+    if (_onProgress) {
+        _onProgress(_bytesLoaded, _bytesTotal, _percentLoaded);
+    }
     [_responseData appendData:data];
 }
 
@@ -135,10 +136,8 @@
     // The request is complete and data has been received
     // You can parse the stuff in your instance variable now
     _finished = YES;
-
     _isLoaded = YES;
     _onSuccess(self);
-    
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -147,12 +146,12 @@
     NSLog(@"Connection failed! Error - %@ %@",
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-    if (_countOfFails == _maxAttempts) {
+//    if (_countOfFails == _maxAttempts) {
         _onFail(self);
         _isLoaded = NO;
-    } else {
-        [self load];
-    }
+//    } else {
+//        [self load];
+//    }
 }
 
 @end
