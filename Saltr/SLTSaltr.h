@@ -66,7 +66,7 @@
 @property (nonatomic, strong, readonly) NSMutableDictionary* features;
 
 /// the level package structures of current  @b Saltr object
-@property (nonatomic, strong, readonly) NSArray* levelPackStructures;
+@property (nonatomic, strong, readonly) NSArray* levelPacks;
 
 /// the experiments of current  @b Saltr object
 @property (nonatomic, strong, readonly) NSArray* experiments;
