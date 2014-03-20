@@ -21,7 +21,7 @@
 {
     NSMutableArray* experiments = [NSMutableArray new];
     /// @todo should be checked whether dictionary has @"experimentInfo" key
-    NSArray* experimentInfo = [data objectForKey:@"experimentInfo"];
+    NSArray* experimentInfo = [data objectForKey:@"splitTestInfo"];
     if (experimentInfo) {
         for (NSDictionary* item in experimentInfo) {
             SLTExperiment* experiment = [SLTExperiment new];
