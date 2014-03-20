@@ -21,7 +21,7 @@
 {
     NSMutableArray* experiments = [NSMutableArray new];
     /// @todo should be checked whether dictionary has @"experimentInfo" key
-    NSArray* experimentInfo = [data objectForKey:@"experimentInfo"];
+    NSArray* experimentInfo = [data objectForKey:@"splitTestInfo"];
     if (experimentInfo) {
         for (NSDictionary* item in experimentInfo) {
             SLTExperiment* experiment = [SLTExperiment new];
@@ -58,7 +58,14 @@
     NSArray* featuresList = [data objectForKey:@"featureList"];
     if (featuresList) {
         for (NSDictionary* feature in featuresList) {
-            [features setObject:[[SLTFeature alloc] initWithToken:[feature objectForKey:@"token"] defaultProperties:nil andProperties:[feature objectForKey:@"data"]] forKey:[feature objectForKey:@"token"]];
+            if (feature) {
+                NSString* token = [feature objectForKey:@"token"];
+                if (token) {
+                    SLTFeature* sltFeature = [[SLTFeature alloc] initWithToken:token defaultProperties:nil andProperties:[feature objectForKey:@"data"]];
+                    assert(sltFeature);
+                    [features setObject:sltFeature forKey:token];
+                }
+            }
         }
     }
     return features;
@@ -68,20 +75,20 @@
 
 NSComparisonResult (^sortBlockForLevelPackStructure)(id, id) = ^(SLTLevelPack* obj1, SLTLevelPack* obj2) {
     if ([obj1 index] > [obj2 index]) {
-        return (NSComparisonResult)NSOrderedDescending;
+        return (NSComparisonResult)NSOrderedAscending;
     }
     if ([obj1 index] < [obj2 index]) {
-        return (NSComparisonResult)NSOrderedAscending;
+        return (NSComparisonResult)NSOrderedDescending;
     }
     return (NSComparisonResult)NSOrderedSame;
 };
 
 NSComparisonResult (^sortBlockForLevelStructure)(id, id) = ^(SLTLevel* obj1, SLTLevel* obj2) {
     if ([obj1 index] > [obj2 index]) {
-        return (NSComparisonResult)NSOrderedDescending;
+        return (NSComparisonResult)NSOrderedAscending;
     }
     if ([obj1 index] < [obj2 index]) {
-        return (NSComparisonResult)NSOrderedAscending;
+        return (NSComparisonResult)NSOrderedDescending;
     }
     return (NSComparisonResult)NSOrderedSame;
 };
