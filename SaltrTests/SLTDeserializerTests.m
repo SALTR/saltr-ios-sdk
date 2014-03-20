@@ -12,13 +12,13 @@
 #import "SLTDeserializer.h"
 #import "SLTRepository.h"
 
-@interface DeserializerTests : XCTestCase {
+@interface SLTDeserializerTests : XCTestCase {
     SLTDeserializer* _deserializer;
 }
 
 @end
 
-@implementation DeserializerTests
+@implementation SLTDeserializerTests
 
 - (void)setUp
 {
