@@ -11,10 +11,10 @@
 #import <Foundation/Foundation.h>
 
 /**
- * @brief @b PSDeserializer class decodes and initializes the following objects : 
- *   1. @b the list of PSExperiment
- *   2. @b  the list of PSLevelPackStructure
- *   3. @b the list of PSLevelStructure
+ * @brief @b SLTDeserializer class decodes and initializes the following objects : 
+ *   1. @b the list of SLTExperiment
+ *   2. @b  the list of SLTLevelPackStructure
+ *   3. @b the list of SLTLevelStructure
  *   4. @b the list of features
  */
 @interface SLTDeserializer : NSObject

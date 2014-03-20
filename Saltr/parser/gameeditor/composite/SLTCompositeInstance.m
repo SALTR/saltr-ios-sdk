@@ -26,7 +26,7 @@
 - (NSString *)description
 {
     NSString* superDescription = [super description];
-    return [NSString stringWithFormat: @"PSCompositeAssetInstance : [cells : %@], %@ ", self.cells, superDescription];
+    return [NSString stringWithFormat: @"SLTCompositeAssetInstance : [cells : %@], %@ ", self.cells, superDescription];
 }
 
 @end

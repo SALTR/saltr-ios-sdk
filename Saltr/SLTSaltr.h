@@ -38,7 +38,7 @@
 @end
 
 /**
- * @brief This is public interface for @b PSSaltr ios SDK. To us the sdk user 
+ * @brief This is public interface for @b SLTSaltr ios SDK. To us the sdk user 
  * needs to include this header file, implement @b SatrRequestDelegate protocol
  * and initialize the properties listed below.
  */

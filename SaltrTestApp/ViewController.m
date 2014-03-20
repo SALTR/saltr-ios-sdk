@@ -1,5 +1,5 @@
 //
-//  PSViewController.m
+//  SLTViewController.m
 //  SaltrTestApp
 //
 //  Created by employee on 2/28/14.

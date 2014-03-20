@@ -55,7 +55,7 @@
  * @brief Initializes the current request with the given parameters
  * @param urlString - the url string of the current request
  * @param variables - the new request body
- * @return - initialized object of the @b PSResourceURLTicket class;
+ * @return - initialized object of the @b SLTResourceURLTicket class;
  */
 -(id) initWithURL:(NSString *)urlString andVariables:(NSString *)variables;
 
