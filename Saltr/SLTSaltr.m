@@ -19,12 +19,12 @@
 #import "SLTConfig.h"
 
 @interface SLTSaltr() {
-    // @todo No @b SLTRepository object is needed, as all the methods are static
+    // @note No @b SLTRepository object is needed, as all the methods are static
 //    SLTRepository* _repository;
     NSString* _saltrUserId;
-    /// @todo the meaning of this boolean is not clear yet
     BOOL _isLoading;
     BOOL _connected;
+    BOOL _isInDevMode;
     SLTPartner* _partner;
     SLTDeserializer* _deserializer;
     SLTDevice* _device;
@@ -49,8 +49,9 @@
     if (self) {
         _deserializer = [SLTDeserializer new];
         _features = [NSMutableDictionary new];
-        _isLoading = false;
-        _connected = false;
+        _isLoading = NO;
+        _connected = NO;
+        _isInDevMode = YES;
     }
     return self;
 }
@@ -249,7 +250,6 @@
         [_features setValue:saltrFeature forKey:key];
     }
     
-    NSLog(@"[SaltClient] packs = %d", [_levelPacks count]);
     if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingAppDataRequest)]) {
         [saltrRequestDelegate didFinishGettingAppDataRequest];
     }
@@ -266,7 +266,6 @@
     if ([saltrRequestDelegate respondsToSelector:@selector(didFailGettingAppDataRequest)]) {
         [saltrRequestDelegate didFailGettingAppDataRequest];
     }
-    NSLog(@"[SaltClient] ERROR: App data is not loaded.");
 }
 
 -(void) syncFeatures {
@@ -348,7 +347,6 @@
 -(NSDictionary *) loadLevelContentDataFromCache:(SLTLevelPack *)levelPack andLevel:(SLTLevel *)level
               {
     NSString* url = LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE(levelPack.index, level.index);
-    NSLog(@"[SaltClient::loadLevelData] LOADING LEVEL DATA CACHE IMMEDIATELY.");
     return [SLTRepository objectFromCache:url];
 }
 
@@ -360,7 +358,6 @@
 }
 
 -(void)contentDataLoadFailedCallback {
-    NSLog(@"[SaltClient] ERROR: Level data is not loaded.");
     if ([saltrRequestDelegate respondsToSelector:@selector(didFailGettingLevelDataBodyWithLevelPackRequest)]) {
         [saltrRequestDelegate didFailGettingLevelDataBodyWithLevelPackRequest];
     }

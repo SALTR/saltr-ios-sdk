@@ -11,8 +11,6 @@
 #import "SLTResource.h"
 
 @implementation SLTResource {
-    NSInteger _countOfFails;
-    
     /// @todo Not clear yet why timer is needed?
     BOOL _isLoaded;
     NSInteger _dropTimeout;
@@ -42,7 +40,6 @@
         _id = id;
         _ticket = ticket;
         _maxAttempts = _ticket.maxAttemps;
-        _countOfFails = 0;
         _dropTimeout = _ticket.dropTimeout;
         
         /// @todo NO HTTP status code is needed, as if request fails, - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error delegate method will be called
@@ -81,7 +78,6 @@
 }
 
 -(void) load {
-    ++_countOfFails;
     [_urlLoader start];
     while(!_finished) {
         [[NSRunLoop currentRunLoop] runMode:NSDefaultRunLoopMode beforeDate:[NSDate distantFuture]];
@@ -146,12 +142,8 @@
     NSLog(@"Connection failed! Error - %@ %@",
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-//    if (_countOfFails == _maxAttempts) {
         _onFail(self);
         _isLoaded = NO;
-//    } else {
-//        [self load];
-//    }
 }
 
 @end

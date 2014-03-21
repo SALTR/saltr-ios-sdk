@@ -16,8 +16,6 @@
 
 @class SLTFeature;
 
-/// @todo Comments will be revised as more info is available
-
 /// Protocol which defines required methods for managing success and fail responses for the requests
 @protocol SaltrRequestDelegate <NSObject>
 
