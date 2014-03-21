@@ -11,9 +11,8 @@
 #import <Foundation/Foundation.h>
 
 /**
- * The public interface of game @b SLTPartner class.
+ * The private interface of game @b SLTPartner class.
  */
-
 @interface SLTPartner : NSObject
 
 /// the partner id

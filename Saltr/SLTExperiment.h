@@ -13,7 +13,6 @@
 /**
  * The public interface of game @b SLTExperiment class.
  */
-
 @interface SLTExperiment : NSObject
 
 /// Token of experiment

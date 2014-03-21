@@ -13,7 +13,6 @@
 /**
  * The public interface of game @b SLTFeature class.
  */
-
 @interface SLTFeature : NSObject
 
 /// The token of current @b SLTFeature

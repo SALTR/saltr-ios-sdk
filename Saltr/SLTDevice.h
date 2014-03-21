@@ -10,6 +10,9 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * The private interface of game @b SLTDevice class.
+ */
 @interface SLTDevice : NSObject
 
 /// the device Id
