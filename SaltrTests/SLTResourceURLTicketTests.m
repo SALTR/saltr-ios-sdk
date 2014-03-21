@@ -11,10 +11,10 @@
 
 /// @todo the test case should be revised
 
-@interface ResourceURLTicketTests : XCTestCase {
+@interface ResourceURLTicketTests : XCTestCase
+{
     SLTResourceURLTicket* _ticket;
 }
-
 @end
 
 @implementation ResourceURLTicketTests
