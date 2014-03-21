@@ -24,10 +24,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     if (!_experiment) {
-        _experiment = [[SLTExperiment alloc] init];
-        _experiment.token = @"EXPERIMENT1";
-        _experiment.partition = @"A";
-        _experiment.type = @"feature";
+        _experiment = [[SLTExperiment alloc] initWithToken:@"EXPERIMENT1" partition:@"A" andType:@"feature"];
     }
 }
 

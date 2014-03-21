@@ -77,7 +77,6 @@
     XCTAssertNotNil(_testData);
     [saltr importLevels:LEVEL_PACK_URL_PACKAGE];
     [self validateLevelPacks];
-    XCTAssertFalse(TRUE, @"Levels are successfully imported!");
 }
 
 -(void) testDefineFeatureWithToken

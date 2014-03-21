@@ -12,9 +12,20 @@
 
 @implementation SLTExperiment
 
-@synthesize partition;
-@synthesize token;
-@synthesize type;
-@synthesize customEvents;
+@synthesize partition = _partition;
+@synthesize token  = _token;
+@synthesize type = _type;
+@synthesize customEvents = _customEvents;
+
+- (id)initWithToken:(NSString*)theToken partition:(NSString*)thePartition andType:(NSString*)theType
+{
+    self = [super init];
+    if (self) {
+        _token = theToken;
+        _partition = thePartition;
+        _type = theType;
+    }
+    return self;
+}
 
 @end

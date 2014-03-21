@@ -61,12 +61,11 @@
  */
 +(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(NSDictionary *)object;
 
-/// @todo unused
 /**
  * @brief Saves the given object into the file system
  * @param fileName - the name of caching object
  * @param object - the object to be cached
  */
-//+(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object;
++(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object;
 
 @end
