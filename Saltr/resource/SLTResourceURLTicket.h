@@ -22,11 +22,13 @@
 /// This flag shows whether it is needed to cache response
 @property (nonatomic, assign) BOOL cacheResponse;
 
+/// The content type of resource
 @property (nonatomic, strong) NSString* contentType;
 
 /// The body of HTTP request
 @property (nonatomic, strong) NSString* variables;
 
+/// This flag shows whether the redirects are allowed
 @property (nonatomic, assign) BOOL followRedirects;
 
 
@@ -36,6 +38,7 @@
  * default timeout interval is 60 seconds.
  */
 @property (nonatomic, assign) NSInteger idleTimeout;
+
 /// YES if the receiver should use the default cookie handling for the request, NO otherwise. The default is YES
 @property (nonatomic, assign) BOOL manageCookies;
 
@@ -47,11 +50,23 @@
 
 /// the new URL
 @property (nonatomic, strong) NSString* url;
+
+/// This flag shows whether the cache should be used
 @property (nonatomic, assign) BOOL useCache;
+
+/// The user agent to specify in request
 @property (nonatomic, strong) NSString* userAgent;
+
+/// Max attemps
 @property (nonatomic, assign) NSInteger maxAttemps;
+
+/// Check Policy
 @property (nonatomic, assign) BOOL checkPolicy;
+
+/// This flag shows whether to use the same domain
 @property (nonatomic, assign) BOOL useSameDomain;
+
+/// The timeout interval
 @property (nonatomic, assign) NSInteger dropTimeout;
 
 /**

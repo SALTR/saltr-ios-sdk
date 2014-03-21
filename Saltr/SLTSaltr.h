@@ -15,6 +15,7 @@
 #import "SLTLevel.h"
 
 @class SLTFeature;
+@class SLTError;
 
 /// Protocol which defines required methods for managing success and fail responses for the requests
 @protocol SaltrRequestDelegate <NSObject>
@@ -25,7 +26,7 @@
 -(void) didFinishGettingAppDataRequest;
 
 /// Informs that getting app data request has failed
--(void) didFailGettingAppDataRequest;
+-(void) didFailGettingAppDataRequest:(SLTError*)error;
 
 /// Informs that getting level data body with level pack request has succeeded
 -(void) didFinishGettingLevelDataBodyWithLevelPackRequest;

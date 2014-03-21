@@ -10,11 +10,32 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * The public interface of game @b SLTExperiment class.
+ */
 @interface SLTExperiment : NSObject
 
-@property (nonatomic, strong) NSString* partition;
+/// Token of experiment
 @property (nonatomic, strong) NSString* token;
+
+/// Partition of experiment
+@property (nonatomic, strong) NSString* partition;
+
+/// Type of experiment
 @property (nonatomic, strong) NSString* type;
+
+/// Custom events of experiment.
+/// TODO At this moment this property is unused.
 @property (nonatomic, strong) NSArray* customEvents;
+
+/**
+ * @brief Inits the instance of @b SLTExperiment class with the token, partition and type
+ *
+ * @param theToken - token of experiment
+ * @param thePartition - partition of experiment
+ * @param theType - type of experiment
+ * @return - The instance of @b SLTExperiment class
+ */
+- (id)initWithToken:(NSString*)theToken partition:(NSString*)thePartition andType:(NSString*)theType;
 
 @end

@@ -17,6 +17,7 @@
 #import "SLTPartner.h"
 #import "SLTDevice.h"
 #import "SLTConfig.h"
+#import "SLTError.h"
 
 @interface SLTSaltr() {
     // @note No @b SLTRepository object is needed, as all the methods are static
@@ -122,17 +123,22 @@
     _connected = NO;
     void (^appDataLoadFailedCallback)(SLTResource*) = ^(SLTResource* asset) {
         [asset dispose];
-        [self loadAppDataFailHandler];
+        [self loadAppDataFailHandlerWithErrorCode:GENERAL_ERROR_CODE andMessage:@"Could not connect to SALTR"];
     };
     void (^appDataLoadCompleteCallback)(SLTResource*) = ^(SLTResource* asset) {
         NSDictionary* data = asset.jsonData;
         NSDictionary* jsonData = [data objectForKey:@"responseData"];
-        
-        [SLTRepository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
-        [asset dispose];
+        NSString* status = [data objectForKey:@"status"];
+        assert(status);
         _isLoading = NO;
-        _connected = YES;
-        [self loadAppDataSuccessHandler:jsonData];
+        if ([status isEqualToString:RESULT_SUCCEED]) {
+            [SLTRepository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
+            _connected = YES;
+            [self loadAppDataSuccessHandler:jsonData];
+        } else {
+            [self loadAppDataFailHandlerWithErrorCode:[[jsonData objectForKey:@"errorCode"] integerValue]  andMessage:[jsonData objectForKey:@"errorMessage"]];
+        }
+        [asset dispose];
     };
     SLTResource* asset = [self createDataResource:appDataLoadCompleteCallback errorHandler:appDataLoadFailedCallback];
     [asset load];
@@ -260,11 +266,12 @@
 //    }
 }
 
--(void) loadAppDataFailHandler {
+-(void) loadAppDataFailHandlerWithErrorCode:(NSInteger)code andMessage:(NSString*)message {
     _isLoading = NO;
     _connected = NO;
-    if ([saltrRequestDelegate respondsToSelector:@selector(didFailGettingAppDataRequest)]) {
-        [saltrRequestDelegate didFailGettingAppDataRequest];
+    if ([saltrRequestDelegate respondsToSelector:@selector(didFailGettingAppDataRequest:)]) {
+        SLTError* error = [[SLTError alloc] initWithCode:code andMessage:message];
+        [saltrRequestDelegate didFailGettingAppDataRequest:error];
     }
 }
 

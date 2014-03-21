@@ -13,6 +13,7 @@
 #import "SLTFeature.h"
 #import "SLTExperiment.h"
 #import "SLTConfig.h"
+#import "SLTError.h"
 
 @interface SaltrTests : XCTestCase <SaltrRequestDelegate>
 {
@@ -23,6 +24,11 @@
 
 @implementation SaltrTests
 
+/**
+ * a) To test error handling, when appdata response sending fails, you need to configure saltr shared instance accordingly:
+ *      1. Response data with FAILED status - Please put for example wrong value of instance key or partner.
+ *      2. Server unreachable - disconnect from all types of network
+ */
 - (void)setUp
 {
     [super setUp];
@@ -48,7 +54,7 @@
 
 -(void) testStart
 {
-    [[SLTSaltr sharedInstance]  start];
+    [[SLTSaltr sharedInstance] start];
 }
 
 - (void)testInstanceKey
@@ -77,7 +83,6 @@
     XCTAssertNotNil(_testData);
     [saltr importLevels:LEVEL_PACK_URL_PACKAGE];
     [self validateLevelPacks];
-    XCTAssertFalse(TRUE, @"Levels are successfully imported!");
 }
 
 -(void) testDefineFeatureWithToken
@@ -202,9 +207,10 @@
     [self validateExperiments];
 }
 
--(void) didFailGettingAppDataRequest
+-(void) didFailGettingAppDataRequest:(SLTError*)error
 {
-    XCTAssertTrue(false, @"Getting of app data failed!");
+    XCTAssertNotNil(error, @"Error should be specified");
+    NSLog(@"ERROR CODE = %i, MESSAGE = %@", error.code, error.message);
     XCTAssert((0 == [SLTSaltr sharedInstance].levelPacks.count), @"If getting of level pack data failed, there should not be loaded any level pack info!");
     [self testImportLevels];
 }

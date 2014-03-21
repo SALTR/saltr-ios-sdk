@@ -9,22 +9,22 @@
  */
 
 #import <XCTest/XCTest.h>
-#import "SLTExperiment.h"
+#import "SLTError.h"
 
-@interface SLTExperimentTests : XCTestCase
+@interface SLTErrorTests : XCTestCase
 {
-    SLTExperiment* _experiment;
+    SLTError* _error;
 }
 @end
 
-@implementation SLTExperimentTests
+@implementation SLTErrorTests
 
 - (void)setUp
 {
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
-    if (!_experiment) {
-        _experiment = [[SLTExperiment alloc] initWithToken:@"EXPERIMENT1" partition:@"A" andType:@"feature"];
+    if (!_error) {
+        _error = [[SLTError alloc] initWithCode:GENERAL_ERROR_CODE andMessage:@"Could not connect to SALTR"];
     }
 }
 
@@ -34,19 +34,14 @@
     [super tearDown];
 }
 
-- (void)testPartition
+- (void)testCode
 {
-    XCTAssertEqualObjects(_experiment.partition, @"A", @"Wrong partition is specified");
+    XCTAssertEqual(_error.code, GENERAL_ERROR_CODE, @"Wrong code is specified");
 }
 
-- (void)testToken
+- (void)testMessage
 {
-    XCTAssertEqualObjects(_experiment.token, @"EXPERIMENT1", @"Wrong token is specified");
-}
-
-- (void)testType
-{
-    XCTAssertEqualObjects(_experiment.type, @"feature", @"Wrong type is specified");
+    XCTAssertEqualObjects(_error.message, @"Could not connect to SALTR", @"Wrong message is specified");
 }
 
 @end
