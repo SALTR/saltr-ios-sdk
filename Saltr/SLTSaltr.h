@@ -15,6 +15,7 @@
 #import "SLTLevel.h"
 
 @class SLTFeature;
+@class SLTError;
 
 /// @todo Comments will be revised as more info is available
 
@@ -27,7 +28,7 @@
 -(void) didFinishGettingAppDataRequest;
 
 /// Informs that getting app data request has failed
--(void) didFailGettingAppDataRequest;
+-(void) didFailGettingAppDataRequest:(SLTError*)error;
 
 /// Informs that getting level data body with level pack request has succeeded
 -(void) didFinishGettingLevelDataBodyWithLevelPackRequest;

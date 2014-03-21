@@ -49,7 +49,7 @@
     
 }
 
--(void) didFailGettingAppDataRequest {
+-(void) didFailGettingAppDataRequest:(SLTError*)error {
     
 }
 
