@@ -19,15 +19,15 @@
 @property (nonatomic, strong, readonly) NSString* partnerType;
 
 /**
- * @brief Inits instance of PSPartner class with given id and type
+ * @brief Inits instance of SLTPartner class with given id and type
  *
  * @param theId - partner id
  * @param theType - partner type
- * @return - The instance of PSPartner class
+ * @return - The instance of SLTPartner class
  */
 -(id) initWithPartnerId:(NSString*)theId andPartnerType:(NSString*)theType;
 
-/// Returns the dictionary value of @b PSPartner class
+/// Returns the dictionary value of @b SLTPartner class
 -(NSDictionary *) toDictionary;
 
 @end

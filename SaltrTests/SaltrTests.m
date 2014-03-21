@@ -14,7 +14,8 @@
 #import "SLTExperiment.h"
 #import "SLTConfig.h"
 
-@interface SaltrTests : XCTestCase <SaltrRequestDelegate> {
+@interface SaltrTests : XCTestCase <SaltrRequestDelegate>
+{
     SLTSaltr* saltr;
     id _testData;
 }
@@ -39,9 +40,10 @@
     [super tearDown];
 }
 
--(void) testSaltrWithInstanceKey {
+-(void) testSaltrWithInstanceKey
+{
     SLTSaltr* saltr2 = [SLTSaltr saltrWithInstanceKey:@"08626247-f03d-0d83-b69f-4f03f80ef555_TEST" andCacheEnabled:YES];
-    XCTAssertTrue([saltr isEqual:saltr2], @"Creation of singleton PSSaltr object failed!");
+    XCTAssertTrue([saltr isEqual:saltr2], @"Creation of singleton SLTSaltr object failed!");
 }
 
 -(void) testStart
@@ -64,11 +66,13 @@
     XCTAssertTrue(true, @"Setup of partner id succeeded!");
 }
 
--(void) testSetupDeviceWithId {
+-(void) testSetupDeviceWithId
+{
     XCTAssertTrue(true, @"Setup of device id succeeded!");
 }
 
--(void) testImportLevels {
+-(void) testImportLevels
+{
     _testData = [SLTRepository objectFromApplication:LEVEL_PACK_URL_PACKAGE];
     XCTAssertNotNil(_testData);
     [saltr importLevels:LEVEL_PACK_URL_PACKAGE];
@@ -76,15 +80,17 @@
     XCTAssertFalse(TRUE, @"Levels are successfully imported!");
 }
 
--(void) testDefineFeatureWithToken  {
+-(void) testDefineFeatureWithToken
+{
     XCTAssertTrue(true, @"Definition of features with token succeeded!");
 }
 
--(void) testloadLevelContentData {
+-(void) testloadLevelContentData
+{
     [saltr importLevels:nil];
     SLTLevelPack* pack = [saltr.levelPacks objectAtIndex:0];
     SLTLevel* level = [pack.levels objectAtIndex:0];
-    [saltr loadLevelContentData:pack levelStructure:level andCacheEnabled:YES];
+    [saltr loadLevelContentData:pack levelStructure:level andCacheEnabled:NO];
     XCTAssertTrue(true, @"Level data is successfully loaded!");
 }
 
@@ -114,7 +120,7 @@
         XCTAssertNotNil(testLevel, @"server data has been changed comparing to our test appdata.json");
         XCTAssertEqualObjects([testLevel objectForKey:@"id"], level.levelId,  @"");
         XCTAssertEqualObjects([testLevel objectForKey:@"url"], level.contentDataUrl,  @"");
-        XCTAssertEqualObjects([testLevel objectForKey:@"version"], level.version,  @"");
+        XCTAssertEqualObjects([[testLevel objectForKey:@"version"] stringValue], level.version,  @"");
         XCTAssertEqualObjects([testLevel objectForKey:@"properties"], level.properties,  @"");
     }
 }
@@ -184,8 +190,8 @@
 }
 
 #pragma mark @b SaltrRequestDelegate protocol methods
-
--(void) didFinishGettingAppDataRequest {
+-(void) didFinishGettingAppDataRequest
+{
     XCTAssertNotNil([[SLTSaltr sharedInstance] levelPacks], @"If getting of level pack data succeeded, level pack info should be loaded!");
     NSDictionary* testAppData = [SLTRepository objectFromApplication:@"appdata.json"];
     XCTAssertNotNil(testAppData);
@@ -196,17 +202,20 @@
     [self validateExperiments];
 }
 
--(void) didFailGettingAppDataRequest {
+-(void) didFailGettingAppDataRequest
+{
     XCTAssertTrue(false, @"Getting of app data failed!");
     XCTAssert((0 == [SLTSaltr sharedInstance].levelPacks.count), @"If getting of level pack data failed, there should not be loaded any level pack info!");
     [self testImportLevels];
 }
 
--(void) didFinishGettingLevelDataBodyWithLevelPackRequest {
+-(void) didFinishGettingLevelDataBodyWithLevelPackRequest
+{
     XCTAssertTrue(true, @"Getting of level data body succeeded!");
 }
 
--(void) didFailGettingLevelDataBodyWithLevelPackRequest {
+-(void) didFailGettingLevelDataBodyWithLevelPackRequest
+{
     XCTAssertTrue(false, @"Getting of level data body failed!");
 }
 

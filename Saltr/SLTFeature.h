@@ -12,22 +12,22 @@
 
 @interface SLTFeature : NSObject
 
-/// The token of current @b PSFeature
+/// The token of current @b SLTFeature
 @property (nonatomic, strong, readonly) NSString* token;
 
-/// The properties of current @b PSFeature
+/// The properties of current @b SLTFeature
 @property (nonatomic, strong, readonly, getter = properties) NSDictionary* properties;
 
-/// The default properties of current @b PSFeature
+/// The default properties of current @b SLTFeature
 @property (nonatomic, strong) NSDictionary* defaultProperties;
 
 /**
- * @brief Inits instance of PSFeature class with given token, properties and default properties
+ * @brief Inits instance of SLTFeature class with given token, properties and default properties
  *
  * @param theToken - feature token
  * @param theDefaultProperties - feature default properties
  * @param theProperties - feature properties
- * @return - The instance of PSFeature class
+ * @return - The instance of SLTFeature class
  */
 -(id) initWithToken:(NSString*)theToken defaultProperties:(NSDictionary*)theDefaultProperties andProperties:(NSDictionary*)theProperties;
 

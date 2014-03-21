@@ -11,8 +11,6 @@
 #import <Foundation/Foundation.h>
 #import "SLTAsset.h"
 
-@class PSCell;
-
 /**
  * @brief This is public interface of @b SLTAssetInstance class.
  * 

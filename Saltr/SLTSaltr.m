@@ -151,47 +151,47 @@
         } else {
             [self loadLevelContentDataFromSaltr:levelPackStructure levelData:levelStructure forceNoCache:NO];
         }
-
     }
 }
 
+/// @todo The function below is commented out, as the corresponding one in ac3 is commented as well.
 -(void) addUserPropertyWithNames:(NSArray *)propertyNames
                           values:(NSArray *)propertyValues
                    andOperations:(NSArray *)operations {
     
-    NSMutableDictionary* args = [[NSMutableDictionary alloc] initWithObjectsAndKeys:_saltrUserId, @"saltId", nil];
-    NSMutableArray* properties = [NSMutableArray new];
-    for (NSInteger i = 0; i < [propertyNames count]; ++i) {
-        NSString* propertyName = [propertyNames objectAtIndex:i];
-        NSString* propertyValue = [propertyValues objectAtIndex:i];
-        NSString* operation = [operations objectAtIndex:i];
-        [properties addObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSDictionary dictionaryWithObjectsAndKeys:propertyValue, operation, nil], propertyName, nil]];
-    }
-    [args setObject:properties forKey:@"properties"];
-    [args setObject:_instanceKey forKey:@"instanceKey"];
-    
-    
-    NSError* error = nil;
-    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
-                                                       options:NSJSONWritingPrettyPrinted
-                                                         error:&error];
-    if (!error) {
-        NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        
-        jsonArguments = [jsonArguments stringByRemovingPercentEncoding];
-        NSString* urlVars = [NSString stringWithFormat:@"?command=%@&arguments=%@", COMMAND_ADD_PROPERTY, jsonArguments];
-        
-        
-        SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];
-        void (^addUserPropertySuccessHandler)(SLTResource *) = ^(SLTResource *resource) {
-            [resource dispose];
-        };
-        void (^addUserPropertyFailHandler)(SLTResource *) = ^(SLTResource *resource) {
-            [resource dispose];
-        };
-        SLTResource* resource = [[SLTResource alloc] initWithId:@"property" andTicket:ticket successHandler:addUserPropertySuccessHandler errorHandler:addUserPropertyFailHandler progressHandler:nil];
-        [resource load];
-    }
+//    NSMutableDictionary* args = [[NSMutableDictionary alloc] initWithObjectsAndKeys:_saltrUserId, @"saltId", nil];
+//    NSMutableArray* properties = [NSMutableArray new];
+//    for (NSInteger i = 0; i < [propertyNames count]; ++i) {
+//        NSString* propertyName = [propertyNames objectAtIndex:i];
+//        NSString* propertyValue = [propertyValues objectAtIndex:i];
+//        NSString* operation = [operations objectAtIndex:i];
+//        [properties addObject:[NSDictionary dictionaryWithObjectsAndKeys:[NSDictionary dictionaryWithObjectsAndKeys:propertyValue, operation, nil], propertyName, nil]];
+//    }
+//    [args setObject:properties forKey:@"properties"];
+//    [args setObject:_instanceKey forKey:@"instanceKey"];
+//    
+//    
+//    NSError* error = nil;
+//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
+//                                                       options:NSJSONWritingPrettyPrinted
+//                                                         error:&error];
+//    if (!error) {
+//        NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+//        
+//        jsonArguments = [jsonArguments stringByRemovingPercentEncoding];
+//        NSString* urlVars = [NSString stringWithFormat:@"?command=%@&arguments=%@", COMMAND_ADD_PROPERTY, jsonArguments];
+//        
+//        
+//        SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];
+//        void (^addUserPropertySuccessHandler)(SLTResource *) = ^(SLTResource *resource) {
+//            [resource dispose];
+//        };
+//        void (^addUserPropertyFailHandler)(SLTResource *) = ^(SLTResource *resource) {
+//            [resource dispose];
+//        };
+//        SLTResource* resource = [[SLTResource alloc] initWithId:@"property" andTicket:ticket successHandler:addUserPropertySuccessHandler errorHandler:addUserPropertyFailHandler progressHandler:nil];
+//        [resource load];
+//    }
 }
 
 #pragma mark private functions
@@ -385,6 +385,8 @@
     }
     return contentData;
 }
+
+/// TODO it would be nice to make this function public to handle case when user just wants to import level packs and levels from package
 
 -(NSDictionary *)loadLevelContentDataFromPackage:(SLTLevelPack *)levelPack andLevel:(SLTLevel *)level {
     NSString* url = LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE(levelPack.index, level.index);

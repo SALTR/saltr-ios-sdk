@@ -16,9 +16,12 @@
 @interface SLTResourceURLTicket : NSObject {
     
 }
-
+/// This flag shows whether it is needed to authenticate
 @property (nonatomic, assign) BOOL authenticate;
+
+/// This flag shows whether it is needed to cache response
 @property (nonatomic, assign) BOOL cacheResponse;
+
 @property (nonatomic, strong) NSString* contentType;
 
 /// The body of HTTP request
@@ -55,7 +58,7 @@
  * @brief Initializes the current request with the given parameters
  * @param urlString - the url string of the current request
  * @param variables - the new request body
- * @return - initialized object of the @b PSResourceURLTicket class;
+ * @return - initialized object of the @b SLTResourceURLTicket class;
  */
 -(id) initWithURL:(NSString *)urlString andVariables:(NSString *)variables;
 

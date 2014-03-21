@@ -1,5 +1,5 @@
 //
-//  PSAppDelegate.h
+//  SLTAppDelegate.h
 //  SaltrTestApp
 //
 //  Created by employee on 2/28/14.

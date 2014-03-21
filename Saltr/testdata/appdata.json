@@ -7,20 +7,20 @@
                           "order": 0,
                           "levelList": [
                                         {
-                                        "id": 6125,
-                                        "order": 0,
-                                        "url": "http://saltr.com/static_data/08626247-f03d-0d83-b69f-4f03f80ef555/levels/7397.json",
-                                        "version": 46,
-                                        "properties": {
-                                        "level_prop_1": "level_prop_val_1",
-                                        "level_prop_2": "level_prop_val_2"
-                                        }
-                                        },
-                                        {
                                         "id": 6127,
                                         "order": 1,
                                         "url": "http://saltr.com/static_data/08626247-f03d-0d83-b69f-4f03f80ef555/levels/7401.json",
                                         "version": 15
+                                        },
+                                        {
+                                        "id": 6125,
+                                        "order": 0,
+                                        "url": "http://saltr.com/static_data/08626247-f03d-0d83-b69f-4f03f80ef555/levels/7397.json",
+                                        "version": 52,
+                                        "properties": {
+                                        "level_prop_1": "level_prop_val_1",
+                                        "level_prop_2": "level_prop_val_2"
+                                        }
                                         }
                                         ]
                           },
@@ -29,16 +29,16 @@
                           "order": 1,
                           "levelList": [
                                         {
+                                        "id": 6125,
+                                        "order": 0,
+                                        "url": "http://saltr.com/static_data/08626247-f03d-0d83-b69f-4f03f80ef555/levels/7400.json",
+                                        "version": 52
+                                        },
+                                        {
                                         "id": 6127,
                                         "order": 1,
                                         "url": "http://saltr.com/static_data/08626247-f03d-0d83-b69f-4f03f80ef555/levels/7401.json",
                                         "version": 15
-                                        },
-                                        {
-                                        "id": 6125,
-                                        "order": 0,
-                                        "url": "http://saltr.com/static_data/08626247-f03d-0d83-b69f-4f03f80ef555/levels/7400.json",
-                                        "version": 46
                                         }
                                         ]
                           }
