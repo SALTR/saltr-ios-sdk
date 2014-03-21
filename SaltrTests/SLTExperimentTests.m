@@ -25,6 +25,9 @@
     // Put setup code here. This method is called before the invocation of each test method in the class.
     if (!_experiment) {
         _experiment = [[SLTExperiment alloc] init];
+        _experiment.token = @"EXPERIMENT1";
+        _experiment.partition = @"A";
+        _experiment.type = @"feature";
     }
 }
 
@@ -36,22 +39,17 @@
 
 - (void)testPartition
 {
-    XCTAssertEqualObjects(_experiment.partition, @"partition", @"Wrong partition is specified");
+    XCTAssertEqualObjects(_experiment.partition, @"A", @"Wrong partition is specified");
 }
 
 - (void)testToken
 {
-    XCTAssertEqualObjects(_experiment.token, @"token", @"Wrong token is specified");
+    XCTAssertEqualObjects(_experiment.token, @"EXPERIMENT1", @"Wrong token is specified");
 }
 
 - (void)testType
 {
-    XCTAssertEqualObjects(_experiment.type, @"type", @"Wrong type is specified");
-}
-
-- (void)testEvents
-{
-    XCTAssertEqualObjects(_experiment.customEvents, [NSArray new], @"Wrong type is specified");
+    XCTAssertEqualObjects(_experiment.type, @"feature", @"Wrong type is specified");
 }
 
 @end
