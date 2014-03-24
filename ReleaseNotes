@@ -1,0 +1,35 @@
+This is Release Notes for the Saltr iOS SDK.
+
+CONTENTS
+========
+
+1. WHAT'S NEW
+2. SYSTEM REQUIREMENTS
+3. KNOWN ISSUES
+
+1. WHAT'S NEW
+=============
+
+v1.0 - iOS Saltr SDK 	
+	* Request/response handling mechanism
+	* Error handling
+	* Received data caching
+	* Internal data bundle usage
+	* Supporting two types of parsers
+		- App data parsing
+		- Level data parsing
+	* Unit tests for library testing
+	* Thread safety of parsing
+	* Specification generation by doxygen comments
+
+2. PLATFORM REQUIREMENTS
+======================
+
+- The sdk supports iOS v5.0
+
+3. KNOWN ISSUES
+===============
+
+- There are no known issues
+
+// vim:et:tabstop=4:shiftwidth=4:smartindent:textwidth=80:
