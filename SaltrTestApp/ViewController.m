@@ -17,14 +17,6 @@
 
 @implementation ViewController
 
--(void) testFlow {
-    [saltr importLevels:nil];
-    SLTLevelPack* pack = [saltr.levelPacks objectAtIndex:0];
-    SLTLevel* level = [pack.levels objectAtIndex:0];
-    [saltr loadLevelContentData:pack levelStructure:level andCacheEnabled:YES];
-    [saltr start];
-}
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -33,7 +25,6 @@
 //    saltr.saltrRequestDelegate = self;
 //    [[SLTSaltr sharedInstance] setupPartnerWithId:@"100000024783448" andPartnerType:@"facebook"];
 //    [[SLTSaltr sharedInstance] setupDeviceWithId:@"asdas123kasd" andDeviceType:@"phone"];
-//    [self testFlow];
 }
 
 - (void)didReceiveMemoryWarning
