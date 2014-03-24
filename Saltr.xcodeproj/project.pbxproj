@@ -219,7 +219,7 @@
 		CAA0C61418BCB89A007B2B69 /* SLTLevelPackTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTLevelPackTests.m; sourceTree = "<group>"; };
 		CAA0C61618BCB8B9007B2B69 /* SLTLevelTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTLevelTests.m; sourceTree = "<group>"; };
 		CAA0C61818BCB8DE007B2B69 /* SLTPartnerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTPartnerTests.m; sourceTree = "<group>"; };
-		CAB489F218D8A9E900CC9054 /* saltr */ = {isa = PBXFileReference; lastKnownFileType = folder; name = saltr; path = testdata/saltr; sourceTree = "<group>"; };
+		CAB489F218D8A9E900CC9054 /* saltr */ = {isa = PBXFileReference; lastKnownFileType = folder; name = saltr; path = ../testdata/saltr; sourceTree = "<group>"; };
 		CD095F7B18BF7E4B00E38369 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		CD095F8C18BF7E9600E38369 /* appdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = appdata.json; sourceTree = "<group>"; };
 		CD095F8D18BF7E9600E38369 /* level.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = level.json; sourceTree = "<group>"; };
@@ -320,7 +320,6 @@
 		CA1FC1EE18B3B8D600E92A06 = {
 			isa = PBXGroup;
 			children = (
-				CAB489F218D8A9E900CC9054 /* saltr */,
 				CA1FC1FC18B3B8D600E92A06 /* Saltr */,
 				CA1FC21018B3B8D600E92A06 /* SaltrTests */,
 				CDD7409018BFC0FA00F2306D /* SaltrResource */,
@@ -525,6 +524,7 @@
 		CD55D6E018C0879800222E8C /* SaltrTestApp */ = {
 			isa = PBXGroup;
 			children = (
+				CAB489F218D8A9E900CC9054 /* saltr */,
 				CD55D6E918C0879800222E8C /* SLTAppDelegate.h */,
 				CD55D6EA18C0879800222E8C /* SLTAppDelegate.m */,
 				CD55D6EC18C0879800222E8C /* Main_iPhone.storyboard */,
