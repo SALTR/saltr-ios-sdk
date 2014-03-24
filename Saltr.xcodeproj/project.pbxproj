@@ -1020,6 +1020,7 @@
 				DSTROOT = /tmp/saltr_ios_sdk.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Saltr;
 				RUN_CLANG_STATIC_ANALYZER = YES;
@@ -1035,6 +1036,7 @@
 				DSTROOT = /tmp/saltr_ios_sdk.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_NAME = Saltr;
 				RUN_CLANG_STATIC_ANALYZER = YES;

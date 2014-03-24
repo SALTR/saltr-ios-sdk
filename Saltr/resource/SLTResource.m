@@ -142,8 +142,9 @@
     NSLog(@"Connection failed! Error - %@ %@",
           [error localizedDescription],
           [[error userInfo] objectForKey:NSURLErrorFailingURLStringErrorKey]);
-        _onFail(self);
-        _isLoaded = NO;
+    _onFail(self);
+   _isLoaded = NO;
+    _finished = YES;
 }
 
 @end

@@ -22,17 +22,22 @@
 }
 @end
 
+///http://saltadmin.includiv.com/static_data/d2066eaf-6206-8975-3bb1-0541f196fa3c/levels/314.json
+
+
 @implementation SaltrTests
 
 /**
- * a) To test error handling, when appdata response sending fails, you need to configure saltr shared instance accordingly:
+ * a) To test error handling, when appdata response sending fails, you need to configure saltr shared instance accordingly before running testStart unit test:
  *      1. Response data with FAILED status - Please put for example wrong value of instance key or partner.
  *      2. Server unreachable - disconnect from all types of network
  */
 - (void)setUp
 {
     [super setUp];
-    // Put setup code here. This method is called before the invocation of each test method in the class.
+   /**  Preparing the request to get the app data from server with the following URL:
+    * http://api.saltr.com/httpjson.action?command=APPDATA&arguments=%7B%22instanceKey%22:%2208626247-f03d-0d83-b69f-4f03f80ef555%22,%22partner%22:%7B%22partnerId%22:%22100000024783448%22,%22partnerType%22:%22facebook%22,%22gender%22:%22male%22,%22age%22:36,%22firstName%22:%22Artem%22,%22lastName%22:%22Sukiasyan%22%7D,%22device%22:%7B%22deviceId%22:%22asdas123kasd%22,%22deviceType%22:%22iphone%22%7D%7D
+    */
     saltr = [SLTSaltr saltrWithInstanceKey:@"08626247-f03d-0d83-b69f-4f03f80ef555" andCacheEnabled:YES];
     saltr.saltrRequestDelegate = self;
     [[SLTSaltr sharedInstance] setupPartnerWithId:@"100000024783448" andPartnerType:@"facebook"];
@@ -90,13 +95,21 @@
     XCTAssertTrue(true, @"Definition of features with token succeeded!");
 }
 
--(void) testloadLevelContentData
+/** @todo It would be nice to make [[SLTSaltr sharedInstance] loadLevelContentDataFromPackage] function public 
+ * to handle the case when user just wants to import level packs and *levels from package. 
+ * Now by calling loadLevelContentData:levelStructure:andCacheEnabled function, it sends request to the portal with
+ * internal path, then looks the caches, and finally loads from internal package.
+ */
+-(void) testloadLevelContentDataFromAppStorage
 {
     [saltr importLevels:nil];
     SLTLevelPack* pack = [saltr.levelPacks objectAtIndex:0];
     SLTLevel* level = [pack.levels objectAtIndex:0];
     [saltr loadLevelContentData:pack levelStructure:level andCacheEnabled:NO];
-    XCTAssertTrue(true, @"Level data is successfully loaded!");
+    XCTAssertTrue(level.contentReady);
+    XCTAssertEqualObjects(level.levelId, @"6125");
+    XCTAssertNotNil(level.levelSettings);
+    XCTAssertNotNil([level boardWithId:@"board1"]);
 }
 
 -(void) testAddUserPropertyWithNames {
@@ -217,7 +230,7 @@
 
 -(void) didFinishGettingLevelDataBodyWithLevelPackRequest
 {
-    XCTAssertTrue(true, @"Getting of level data body succeeded!");
+    XCTAssertTrue(TRUE, @"Getting of level data body failed!");
 }
 
 -(void) didFailGettingLevelDataBodyWithLevelPackRequest

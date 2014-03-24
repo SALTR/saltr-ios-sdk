@@ -390,7 +390,7 @@
     return contentData;
 }
 
-/// TODO it would be nice to make this function public to handle case when user just wants to import level packs and levels from package
+/// @todo it would be nice to make this function public to handle case when user just wants to import level packs and levels from package
 
 -(NSDictionary *)loadLevelContentDataFromPackage:(SLTLevelPack *)levelPack andLevel:(SLTLevel *)level {
     NSString* url = LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE(levelPack.index, level.index);
