@@ -136,7 +136,7 @@
             }
         }
         XCTAssertNotNil(testLevel, @"server data has been changed comparing to our test appdata.json");
-        XCTAssertEqualObjects([testLevel objectForKey:@"id"], level.levelId,  @"");
+        XCTAssertEqualObjects([[testLevel objectForKey:@"id"] stringValue], level.levelId,  @"");
         XCTAssertEqualObjects([testLevel objectForKey:@"url"], level.contentDataUrl,  @"");
         XCTAssertEqualObjects([[testLevel objectForKey:@"version"] stringValue], level.version,  @"");
         XCTAssertEqualObjects([testLevel objectForKey:@"properties"], level.properties,  @"");
