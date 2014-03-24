@@ -18,6 +18,7 @@
 @interface SaltrTests : XCTestCase <SaltrRequestDelegate>
 {
     SLTSaltr* saltr;
+    SLTLevel* _level;
     id _testData;
 }
 @end
@@ -104,12 +105,45 @@
 {
     [saltr importLevels:nil];
     SLTLevelPack* pack = [saltr.levelPacks objectAtIndex:0];
-    SLTLevel* level = [pack.levels objectAtIndex:0];
-    [saltr loadLevelContentData:pack levelStructure:level andCacheEnabled:NO];
-    XCTAssertTrue(level.contentReady);
-    XCTAssertEqualObjects(level.levelId, @"6125");
-    XCTAssertNotNil(level.levelSettings);
-    XCTAssertNotNil([level boardWithId:@"board1"]);
+    _level = [pack.levels objectAtIndex:0];
+    [saltr loadLevelContentData:pack levelStructure:_level andCacheEnabled:NO];
+}
+
+/**
+ * In order to test the loading from server or from cache the following tests can be manually done.
+ *
+ *      1. Test case
+ *         - Remove  pack_0_level_0.json and pack_0_level_0.json_VERSION files from simulator caches (for example:
+ *              /Users/employee/Library/Application Support/iPhone Simulator/7.0-64/Applications/05309186-54CD-4500-AAA8-F3FD58FFA99E/Library/Caches/pack_0_level_0.json)
+ *         - Make andCacheEnabled=NO  and run testloadLevelContentDataFromServer
+ *         Result: -(void)loadLevelContentDataFromSaltr:levelData:forceNoCache: function is being called, data is being loaded from level.contentDataUrl?_time=4165165 URL
+ *                  and cache files are being created
+ *
+ *      2. Test case
+ *         - Remove  pack_0_level_0.json and pack_0_level_0.json_VERSION files from simulator caches (for example:
+ *              /Users/employee/Library/Application Support/iPhone Simulator/7.0-64/Applications/05309186-54CD-4500-AAA8-F3FD58FFA99E/Library/Caches/pack_0_level_0.json)
+ *         - Make andCacheEnabled=YES in testloadLevelContentDataFromServer test function and run testloadLevelContentDataFromServer test
+ *         Result: -(void)loadLevelContentDataFromSaltr:levelData:forceNoCache: function is being called with the level.contentDataUrl (w/o ?_time=4165165 parameter)
+ *                  and cache files are being created
+ *      3. Test case
+ *         - Make sure that the  pack_0_level_0.json and pack_0_level_0.json_VERSION files exist in simulator caches (for example:
+ *              /Users/employee/Library/Application Support/iPhone Simulator/7.0-64/Applications/05309186-54CD-4500-AAA8-F3FD58FFA99E/Library/Caches/pack_0_level_0.json)
+ *         - Make andCacheEnabled=YES in testloadLevelContentDataFromServer test function and run testloadLevelContentDataFromServer test
+ *         Result: loadLevelContentDataFromCache: andLevel: function is being called to load the data from cached files
+ *      4. Test case
+ *         - Make sure that the  pack_0_level_0.json and pack_0_level_0.json_VERSION files exist in simulator caches (for example:
+ *              /Users/employee/Library/Application Support/iPhone Simulator/7.0-64/Applications/05309186-54CD-4500-AAA8-F3FD58FFA99E/Library/Caches/pack_0_level_0.json)
+ *         - Make andCacheEnabled=NO in testloadLevelContentDataFromServer test function and run testloadLevelContentDataFromServer test
+ *         Result: -(void)loadLevelContentDataFromSaltr:levelData:forceNoCache: function is being called, data is being loaded from level.contentDataUrl?_time=4165165 URL
+ *                  and cache files are being created
+ *
+ */
+-(void) testloadLevelContentDataFromServer
+{
+    [saltr importLevels:@"appdata.json"];
+    SLTLevelPack* pack = [saltr.levelPacks objectAtIndex:0];
+    _level = [pack.levels objectAtIndex:0];
+    [saltr loadLevelContentData:pack levelStructure:_level andCacheEnabled:NO];
 }
 
 -(void) testAddUserPropertyWithNames {
@@ -230,7 +264,11 @@
 
 -(void) didFinishGettingLevelDataBodyWithLevelPackRequest
 {
-    XCTAssertTrue(TRUE, @"Getting of level data body failed!");
+    XCTAssertNotNil(_level);
+    XCTAssertTrue(_level.contentReady);
+    XCTAssertEqualObjects(_level.levelId, @"6125");
+    XCTAssertNotNil(_level.levelSettings);
+    XCTAssertNotNil([_level boardWithId:@"board1"]);
 }
 
 -(void) didFailGettingLevelDataBodyWithLevelPackRequest

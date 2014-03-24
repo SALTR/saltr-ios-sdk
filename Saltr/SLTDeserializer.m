@@ -36,6 +36,9 @@
 
 - (NSArray*)decodeLevelsFromData:(NSDictionary *)data
 {
+    if ([data objectForKey:@"responseData"]) {
+        data = [data objectForKey:@"responseData"];
+    }
     NSMutableArray* levelPacks = [data objectForKey:@"levelPackList"];
     NSMutableArray* levelPackStructures = [NSMutableArray new];
     for (NSDictionary* levelPack in levelPacks) {
