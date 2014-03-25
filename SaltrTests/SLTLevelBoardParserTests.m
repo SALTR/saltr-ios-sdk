@@ -313,8 +313,9 @@
     }
 }
 
-///@TODO This function only collects generated chunk assets in array and print out it.
-/// It would be nice to have also validation function, which will check whether the count of generated chunks is correct.
+/** @todo This function only collects generated chunk assets in array and print out it.
+ * It would be nice to have also validation function, which will check whether the count of generated chunks is correct.
+ */
 - (void)validateBoardMatrix:(SLTCellMatrix*)cells withBoardNode:(NSDictionary*)boardNode
 {
     SLTCellMatrixIterator* iterator = [cells iterator];

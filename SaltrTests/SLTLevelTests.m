@@ -170,7 +170,7 @@
     XCTAssertNotNil(board2, @"Board has not been updated properly!");
 }
 
-// TODO It is not possible to pass new data for regenerating all boards with generateAllBoards function. User need to call updateContent function to pass the data at first, which calls the mentioned function as well, so there is no meaning to call it twice.
+///@todo It is not possible to pass new data for regenerating all boards with generateAllBoards function. User need to call updateContent function to pass the data at first, which calls the mentioned function as well, so there is no meaning to call it twice.
 - (void)testGenerateAllBoards
 {
 //    XCTAssertNil([_level boardWithId:@"board1"], @"Board has not been updated properly!");
@@ -180,7 +180,7 @@
 //    XCTAssertNotNil( [_level boardWithId:@"board2"], @"Board has not been updated properly!");
 }
 
-// TODO It is not possible to pass new data for regenerating the board with generateBoardWithId function. User need to call updateContent function to pass the data at first, which calls the mentioned function as well, so there is no meaning to call it twice.
+///@todo It is not possible to pass new data for regenerating the board with generateBoardWithId function. User need to call updateContent function to pass the data at first, which calls the mentioned function as well, so there is no meaning to call it twice.
 - (void)testGenerateBoardWithId
 {
 //    XCTAssertNil([_level boardWithId:@"board1"], @"Board has not been updated properly!");

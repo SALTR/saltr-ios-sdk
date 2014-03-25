@@ -25,7 +25,7 @@
 @property (nonatomic, strong) NSString* type;
 
 /// Custom events of experiment.
-/// TODO At this moment this property is unused.
+///@todo At this moment this property is unused.
 @property (nonatomic, strong) NSArray* customEvents;
 
 /**

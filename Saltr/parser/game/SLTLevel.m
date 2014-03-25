@@ -29,7 +29,7 @@
 @synthesize levelSettings = _levelSettings;
 @synthesize contentReady = _contentReady;
 
-//TODO It should be nice to have validation for the values of parameters.
+///@todo It should be nice to have validation for the values of parameters.
 
 - (id)initWithLevelId:(NSString*)theId index:(NSString*)theIndex contentDataUrl:(NSString*)theContentDataUrl properties:(id)theProperties andVersion:(NSString*)theVersion
 {

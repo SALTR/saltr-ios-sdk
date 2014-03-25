@@ -11,8 +11,9 @@
 #import <Foundation/Foundation.h>
 
 /// The class is for creating the URL request. The class is created to correspond
-// the URLRequest class in action script. @todo uncommented properties do not
-// have matches in NSURLRequest class of ios.
+// the URLRequest class in action script.
+///@todo uncommented properties do not have matches in NSURLRequest class of ios.
+
 @interface SLTResourceURLTicket : NSObject {
     
 }

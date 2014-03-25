@@ -11,7 +11,7 @@
 #import "SLTResource.h"
 
 @implementation SLTResource {
-    /// @todo Not clear yet why timer is needed?
+///@todo In iOS implementation timer is not needed
     BOOL _isLoaded;
     NSInteger _dropTimeout;
     NSTimer* _timeoutTimer;
