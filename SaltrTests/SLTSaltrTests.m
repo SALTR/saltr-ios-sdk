@@ -43,7 +43,6 @@
     saltr.saltrRequestDelegate = self;
     [[SLTSaltr sharedInstance] setupPartnerWithId:@"100000024783448" andPartnerType:@"facebook"];
     [[SLTSaltr sharedInstance] setupDeviceWithId:@"asdas123kasd" andDeviceType:@"phone"];
-    [[SLTSaltr sharedInstance] defineFeatureWithToken:@"token" andProperties:[NSDictionary new]];
 }
 
 - (void)tearDown
@@ -93,7 +92,12 @@
 
 -(void) testDefineFeatureWithToken
 {
-    XCTAssertTrue(true, @"Definition of features with token succeeded!");
+    NSDictionary* defaultProperties =  @{
+                               @"p1": @"v1",
+                               @"p2": @"v2"
+                               };
+    [[SLTSaltr sharedInstance] defineFeatureWithToken:@"FEATURE3" andProperties:defaultProperties];
+    [[SLTSaltr sharedInstance] start];
 }
 
 /** @todo It would be nice to make [[SLTSaltr sharedInstance] loadLevelContentDataFromPackage] function public 
@@ -152,8 +156,9 @@
 
 /// @note before getting feature with token, start method should be called to initialize features list.
 -(void)testFeatureForToken {
-    [[SLTSaltr sharedInstance] featureForToken:@""];
-    XCTAssertTrue(true, @"Feature is successfully obtained!");
+    [[SLTSaltr sharedInstance] start];
+    SLTFeature* feature = [[SLTSaltr sharedInstance] featureForToken:@"FEATURE1"];
+    XCTAssertNotNil(feature, @"Feature is successfully obtained!");
 }
 
 - (void)validateLevels:(NSArray*)levels withTestLevels:(NSArray*)testLevels
@@ -209,7 +214,7 @@
     XCTAssertNotNil(testFeatureList);
     NSMutableDictionary* features = saltrInstance.features;
     XCTAssertNotNil(features);
-    XCTAssertEqualObjects([NSNumber numberWithUnsignedInteger:testFeatureList.count], [NSNumber numberWithUnsignedInteger:features.count], @"The count of features received from server should be equal to test data from sample!");
+    XCTAssert([NSNumber numberWithUnsignedInteger:testFeatureList.count] <= [NSNumber numberWithUnsignedInteger:features.count], @"The count of features received from server should be equal to test data from sample!");
     for (NSUInteger i = 0 ; i < testFeatureList.count; ++i) {
         NSMutableDictionary* testFeature = [testFeatureList objectAtIndex:i];
         XCTAssertNotNil(testFeatureList);

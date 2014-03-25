@@ -243,7 +243,6 @@
 
 -(void) loadAppDataSuccessHandler:(NSDictionary *)jsonData {
      _saltrUserId = [jsonData objectForKey:@"saltId"];
-    _features = [NSMutableDictionary new];
     _experiments = [_deserializer decodeExperimentsFromData:jsonData];
     _levelPacks = [_deserializer decodeLevelsFromData:jsonData];
     NSDictionary* saltrFeatures = [_deserializer decodeFeaturesFromData:jsonData];
@@ -261,9 +260,9 @@
     }
     /// @todo the meaning of the boolean below is not clear.
     // The condition will be always true as the mentioned boolean never changes its value.
-//    if (_isInDevMode) {
+    if (_isInDevMode) {
         [self syncFeatures];
-//    }
+    }
 }
 
 -(void) loadAppDataFailHandlerWithErrorCode:(NSInteger)code andMessage:(NSString*)message {
@@ -279,7 +278,7 @@
     NSString* urlVars = [NSString stringWithFormat:@"?command=%@&instanceKey=%@", COMMAND_SAVE_OR_UPDATE_FEATURE, _instanceKey];
     
     if (appVersion) {
-        [urlVars stringByAppendingFormat:@",appVersion=%@", appVersion];
+        urlVars = [urlVars stringByAppendingFormat:@"&appVersion=%@", appVersion];
     }
     NSMutableArray* featureList = [NSMutableArray new];
     for (NSString* key in [_features allKeys]) {
@@ -291,10 +290,9 @@
                                                                options:NSJSONWritingPrettyPrinted
                                                                  error:&error];
             if (!error) {
-                NSString *jsonDefaultProperties = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-                
-                
-                [featureList addObject:[NSDictionary dictionaryWithObjectsAndKeys:jsonDefaultProperties, feature.token, nil]];
+                NSString *jsonFeatureProperties = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+                NSDictionary* featureJSON = @{ @"token" : feature.token, @"value" : jsonFeatureProperties};
+                [featureList addObject:featureJSON];
             }
         }
     }
@@ -304,9 +302,9 @@
                                                            options:NSJSONWritingPrettyPrinted
                                                              error:&error];
         if (!error) {
-            NSString *properties = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-            [urlVars stringByAppendingFormat:@",data=%@", properties];
-        }        
+            NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+            urlVars = [urlVars stringByAppendingFormat:@"&data=%@", jsonArguments];
+        }
         SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_URL andVariables:urlVars];
         void (^syncSuccessCallback)(SLTResource*) = ^(SLTResource *resource) {
         };
