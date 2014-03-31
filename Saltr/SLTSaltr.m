@@ -184,8 +184,8 @@
 //                                                         error:&error];
 //    if (!error) {
 //        NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-//        
-//        jsonArguments = [jsonArguments stringByRemovingPercentEncoding];
+//        jsonArguments = [jsonArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
 //        NSString* urlVars = [NSString stringWithFormat:@"?command=%@&arguments=%@", COMMAND_ADD_PROPERTY, jsonArguments];
 //        
 //        
@@ -231,7 +231,7 @@
                                                          error:&error];
     if (!error) {
         NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        jsonArguments = [jsonArguments stringByRemovingPercentEncoding];
+        jsonArguments = [jsonArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         NSString* urlVars = [NSString stringWithFormat:@"?command=%@&arguments=%@", COMMAND_APP_DATA, jsonArguments];
         
         SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];

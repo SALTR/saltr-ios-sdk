@@ -214,7 +214,7 @@
     XCTAssertNotNil(testFeatureList);
     NSMutableDictionary* features = saltrInstance.features;
     XCTAssertNotNil(features);
-    XCTAssert([NSNumber numberWithUnsignedInteger:testFeatureList.count] <= [NSNumber numberWithUnsignedInteger:features.count], @"The count of features received from server should be equal to test data from sample!");
+    XCTAssert([NSNumber numberWithUnsignedInteger:testFeatureList.count] <= [NSNumber numberWithUnsignedInteger:features.count], @"The count of features received from server should be less or equal to test data from sample!");
     for (NSUInteger i = 0 ; i < testFeatureList.count; ++i) {
         NSMutableDictionary* testFeature = [testFeatureList objectAtIndex:i];
         XCTAssertNotNil(testFeatureList);
