@@ -10,6 +10,7 @@
 
 #import "SLTLevel.h"
 #import "SLTLevelParser.h"
+#import "SLTBoard.h"
 
 @interface SLTLevel() {
     NSString* _id;
@@ -89,30 +90,23 @@
     _contentReady = true;
 }
 
-/*
-public function regenerateAllBoards():void {
-    for each (var board:SLTBoard in _boards) {
-        board.regenerate();
-    }
-}
-*/
 - (void)regenerateAllBoards
 {
-    //anakonda
-}
-
-/*
-public function regenerateBoard(boardId:String):void {
-    if (_boards != null && _boards[boardId] != null) {
-        var board:SLTBoard = _boards[boardId];
-        board.regenerate();
+    for (NSString* key in _boards) {
+        SLTBoard* board = [_boards objectForKey:key];
+        assert(nil != board);
+        [board regenerate];
     }
 }
-*/
 
 - (void)regenerateBoardWithId:(NSString*)boardId
 {
-    //anakonda
+    if (nil != _boards) {
+        SLTBoard* board = [_boards objectForKey:boardId];
+        if (nil != board) {
+            [board regenerate];
+        }
+    }
 }
 
 @end
