@@ -16,6 +16,8 @@
 		98D715C01972772E00502350 /* SLTBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715BF1972772E00502350 /* SLTBoard.m */; };
 		98D715C319727CD600502350 /* SLTBoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715C219727CD600502350 /* SLTBoardLayer.m */; };
 		98D715C61972849500502350 /* SLTLevelPack.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715C51972849500502350 /* SLTLevelPack.m */; };
+		98D715C9197291D100502350 /* SLTCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715C8197291D100502350 /* SLTCells.m */; };
+		98D715CC1972A1A600502350 /* SLTCellsIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715CB1972A1A600502350 /* SLTCellsIterator.m */; };
 		CA1FC1FB18B3B8D600E92A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
 		CA1FC20018B3B8D600E92A06 /* SLTSaltr.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC1FF18B3B8D600E92A06 /* SLTSaltr.h */; };
 		CA1FC20218B3B8D600E92A06 /* SLTSaltr.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC20118B3B8D600E92A06 /* SLTSaltr.m */; };
@@ -161,6 +163,10 @@
 		98D715C219727CD600502350 /* SLTBoardLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTBoardLayer.m; sourceTree = "<group>"; };
 		98D715C41972849500502350 /* SLTLevelPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTLevelPack.h; sourceTree = "<group>"; };
 		98D715C51972849500502350 /* SLTLevelPack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTLevelPack.m; sourceTree = "<group>"; };
+		98D715C7197291D100502350 /* SLTCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTCells.h; sourceTree = "<group>"; };
+		98D715C8197291D100502350 /* SLTCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCells.m; sourceTree = "<group>"; };
+		98D715CA1972A1A600502350 /* SLTCellsIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTCellsIterator.h; sourceTree = "<group>"; };
+		98D715CB1972A1A600502350 /* SLTCellsIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCellsIterator.m; sourceTree = "<group>"; };
 		CA1FC1F718B3B8D600E92A06 /* libSaltr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA1FC1FE18B3B8D600E92A06 /* Saltr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saltr-Prefix.pch"; sourceTree = "<group>"; };
@@ -345,6 +351,10 @@
 			children = (
 				982C55EE19714CC200DC99B1 /* SLTCell.h */,
 				982C55EF19714CC200DC99B1 /* SLTCell.m */,
+				98D715C7197291D100502350 /* SLTCells.h */,
+				98D715C8197291D100502350 /* SLTCells.m */,
+				98D715CA1972A1A600502350 /* SLTCellsIterator.h */,
+				98D715CB1972A1A600502350 /* SLTCellsIterator.m */,
 			);
 			path = matching;
 			sourceTree = "<group>";
@@ -811,6 +821,7 @@
 				982C55F019714CC200DC99B1 /* SLTCell.m in Sources */,
 				CA1FC23518B3C36100E92A06 /* SLTFeature.m in Sources */,
 				CDACAC6618E0A3C300021EFA /* SLTLevelPack.m in Sources */,
+				98D715C9197291D100502350 /* SLTCells.m in Sources */,
 				CDACAC5D18E0A2D000021EFA /* SLTLevelSettings.m in Sources */,
 				CA1FC23E18B3C39400E92A06 /* SLTPartner.m in Sources */,
 				CDACAC5A18E0A2D000021EFA /* SLTCompositeInfo.m in Sources */,
@@ -828,6 +839,7 @@
 				CDACAC5B18E0A2D000021EFA /* SLTCompositeInstance.m in Sources */,
 				CDACAC5618E0A2D000021EFA /* SLTCellMatrixIterator.m in Sources */,
 				CDACAC5918E0A2D000021EFA /* SLTCompositeAsset.m in Sources */,
+				98D715CC1972A1A600502350 /* SLTCellsIterator.m in Sources */,
 				CDACAC1418E0A10700021EFA /* SLTResource.m in Sources */,
 				982C55F919719F1E00DC99B1 /* SLTLevel.m in Sources */,
 			);
