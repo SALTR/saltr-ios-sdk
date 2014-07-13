@@ -58,8 +58,6 @@
  */
 - (id) initWithToken:(NSString*)theToken stateMap:(NSDictionary*)theStateMap andProperties:(NSDictionary*)theProperties;
 
-- (SLTAssetInstance *) getInstance:(NSArray *)stateIds;
-
 - (NSMutableArray *) getInstanceStates:(NSArray*)stateIds;
 
 @end

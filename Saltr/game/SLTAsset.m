@@ -33,11 +33,6 @@
     return self;
 }
 
-- (SLTAssetInstance *) getInstance:(NSArray *)stateIds
-{
-    return [[SLTAssetInstance alloc] initWithToken:_token states:[self getInstanceStates:stateIds] andProperties:_properties];
-}
-
 - (NSMutableArray *) getInstanceStates:(NSArray*)stateIds
 {
     NSMutableArray* states = [[NSMutableArray alloc] init];
