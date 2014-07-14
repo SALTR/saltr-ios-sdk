@@ -12,7 +12,7 @@
 
 #define LEVEL_TYPE_NONE @"noLevels"
 #define LEVEL_TYPE_MATCHING @"matching"
-#define LEVEL_TYPE_2DCANVAS @"2DCanvas"
+#define LEVEL_TYPE_2DCANVAS @"Canvas2D"
 
 @class SLTLevelParser;
 
