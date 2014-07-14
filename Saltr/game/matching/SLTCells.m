@@ -16,6 +16,7 @@
 @synthesize width = _width;
 @synthesize height = _height;
 @synthesize iterator = _iterator;
+@synthesize rawData = _rawData;
 
 -(id) initWithWidth:(NSInteger)theWidth andHeight:(NSInteger)theHeight
 {
@@ -23,7 +24,10 @@
     if (self) {
         _width = theWidth;
         _height = theHeight;
-        // anakonda weak reference
+        _rawData = [[NSMutableArray alloc] init];
+        for (NSInteger i = 0; i < _width * _height; ++i) {
+            [_rawData addObject:[NSNull null]];
+        }
         _iterator = [[SLTCellsIterator alloc] initWithCells:self];
     }
     return self;
@@ -31,12 +35,12 @@
 
 -(void) insertCell:(SLTCell*)theCell atCol:(NSInteger)theCol andRow:(NSInteger)theRow
 {
-    // anakonda
+    [_rawData replaceObjectAtIndex:(theRow * _width) + theCol withObject:theCell];
 }
 
 -(SLTCell*) retrieveCellAtCol:(NSInteger)theCol andRow:(NSInteger)theRow
 {
-    // anakonda
+    return [_rawData objectAtIndex:(theRow * _width) + theCol];
 }
 
 @end

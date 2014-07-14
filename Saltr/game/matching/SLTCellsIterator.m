@@ -12,7 +12,7 @@
 #import "SLTCells.h"
 
 @interface SLTCellsIterator() {
-    SLTCells* _cells;
+    __weak SLTCells* _cells;
     NSUInteger _vectorLenght;
     NSInteger _currentPosition;
 }
