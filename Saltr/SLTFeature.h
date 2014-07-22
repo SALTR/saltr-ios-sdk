@@ -19,19 +19,20 @@
 @property (nonatomic, strong, readonly) NSString* token;
 
 /// The properties of current @b SLTFeature
-@property (nonatomic, strong, readonly, getter = properties) NSDictionary* properties;
+@property (nonatomic, strong, readonly) NSDictionary* properties;
 
 /// The default properties of current @b SLTFeature
-@property (nonatomic, strong) NSDictionary* defaultProperties;
+@property (nonatomic, assign, readonly) BOOL required;
 
 /**
  * @brief Inits instance of SLTFeature class with given token, properties and default properties
  *
  * @param theToken - feature token
- * @param theDefaultProperties - feature default properties
  * @param theProperties - feature properties
+  * @param theRequiredFlag - feature required flag
  * @return - The instance of SLTFeature class
  */
--(id) initWithToken:(NSString*)theToken defaultProperties:(NSDictionary*)theDefaultProperties andProperties:(NSDictionary*)theProperties;
+- (id) initWithToken:(NSString*)theToken properties:(NSDictionary*)theProperties andRequired:(BOOL)theRequiredFlag;
+
 
 @end

@@ -14,28 +14,21 @@
 
 @synthesize token = _token;
 @synthesize properties = _properties;
-@synthesize defaultProperties;
+@synthesize required = _required;
 
--(id) initWithToken:(NSString* )theToken
-  defaultProperties:(NSDictionary* )theDefaultProperties
-      andProperties:(NSDictionary* )theProperties
+- (id) initWithToken:(NSString*)theToken properties:(NSDictionary*)theProperties andRequired:(BOOL)theRequiredFlag
 {
     self = [super init];
     if (self) {
         _token = theToken;
-        self.defaultProperties = theDefaultProperties;
         _properties = theProperties;
+        _required = theRequiredFlag;
     }
     return self;
 }
 
-- (NSDictionary* )properties
-{
-    return (_properties == NULL) ? self.defaultProperties : _properties;
-}
-
-- (NSString *)description {
-    return [NSString stringWithFormat: @"Feature {[token : %@], [value : %@]}", self.token, self.properties];
+- (NSString *)description {    
+    return [NSString stringWithFormat: @"[SALTR] Feature {[token : %@], [value : %@]}", self.token, self.properties];
 }
 
 @end

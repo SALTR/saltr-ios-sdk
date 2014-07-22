@@ -59,17 +59,17 @@
 - (NSDictionary*)decodeFeaturesFromData:(NSDictionary * )data
 {
     NSMutableDictionary* features = [NSMutableDictionary new];
-    NSArray* featuresList = [data objectForKey:@"featureList"];
-    if (featuresList) {
-        for (NSDictionary* feature in featuresList) {
-            if (feature) {
-                NSString* token = [feature objectForKey:@"token"];
-                if (token) {
-                    SLTFeature* sltFeature = [[SLTFeature alloc] initWithToken:token defaultProperties:nil andProperties:[feature objectForKey:@"data"]];
-                    assert(sltFeature);
-                    [features setObject:sltFeature forKey:token];
-                }
+    NSArray* featuresNodes = [data objectForKey:@"features"];
+    if (featuresNodes) {
+        for (NSDictionary* featureNode in featuresNodes) {
+            NSString* token = [featureNode objectForKey:@"token"];
+            //TODO @TIGR: remove "data" check later when API versioning is done.
+            NSDictionary* properties = [featureNode objectForKey:@"data"];
+            if (properties == nil) {
+                properties = [featureNode objectForKey:@"properties"];
             }
+            SLTFeature* sltFeature = [[SLTFeature alloc] initWithToken:token properties:properties andRequired:[featureNode objectForKey:@"required"]];
+            [features setObject:sltFeature forKey:token];
         }
     }
     return features;
