@@ -7,6 +7,21 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		982C55EA19714C5100DC99B1 /* SLTAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C55E519714C5100DC99B1 /* SLTAsset.m */; };
+		982C55EB19714C5100DC99B1 /* SLTAssetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C55E719714C5100DC99B1 /* SLTAssetInstance.m */; };
+		982C55EC19714C5100DC99B1 /* SLTAssetState.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C55E919714C5100DC99B1 /* SLTAssetState.m */; };
+		982C55F019714CC200DC99B1 /* SLTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C55EF19714CC200DC99B1 /* SLTCell.m */; };
+		982C55F3197166F100DC99B1 /* SLTLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C55F2197166F100DC99B1 /* SLTLevelParser.m */; };
+		982C55F919719F1E00DC99B1 /* SLTLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C55F819719F1E00DC99B1 /* SLTLevel.m */; };
+		989CC4D1197458FC008DC08F /* SLTChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = 989CC4D0197458FC008DC08F /* SLTChunk.m */; };
+		989CC4D419745F82008DC08F /* SLTMatchingBoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 989CC4D319745F82008DC08F /* SLTMatchingBoardLayer.m */; };
+		989CC4D719746A04008DC08F /* SLTChunkAssetRule.m in Sources */ = {isa = PBXBuildFile; fileRef = 989CC4D619746A04008DC08F /* SLTChunkAssetRule.m */; };
+		989CC4DA19746CCB008DC08F /* SLTMatchingBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 989CC4D919746CCB008DC08F /* SLTMatchingBoard.m */; };
+		98D715C01972772E00502350 /* SLTBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715BF1972772E00502350 /* SLTBoard.m */; };
+		98D715C319727CD600502350 /* SLTBoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715C219727CD600502350 /* SLTBoardLayer.m */; };
+		98D715C61972849500502350 /* SLTLevelPack.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715C51972849500502350 /* SLTLevelPack.m */; };
+		98D715C9197291D100502350 /* SLTCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715C8197291D100502350 /* SLTCells.m */; };
+		98D715CC1972A1A600502350 /* SLTCellsIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715CB1972A1A600502350 /* SLTCellsIterator.m */; };
 		CA1FC1FB18B3B8D600E92A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
 		CA1FC20018B3B8D600E92A06 /* SLTSaltr.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC1FF18B3B8D600E92A06 /* SLTSaltr.h */; };
 		CA1FC20218B3B8D600E92A06 /* SLTSaltr.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC20118B3B8D600E92A06 /* SLTSaltr.m */; };
@@ -54,9 +69,6 @@
 		CDACAC1418E0A10700021EFA /* SLTResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC1118E0A10700021EFA /* SLTResource.m */; };
 		CDACAC1518E0A10700021EFA /* SLTResourceURLTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC1318E0A10700021EFA /* SLTResourceURLTicket.m */; };
 		CDACAC1818E0A12900021EFA /* SLTRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC1718E0A12900021EFA /* SLTRepository.m */; };
-		CDACAC5218E0A2D000021EFA /* SLTAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC3B18E0A2D000021EFA /* SLTAsset.m */; };
-		CDACAC5318E0A2D000021EFA /* SLTAssetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC3D18E0A2D000021EFA /* SLTAssetInstance.m */; };
-		CDACAC5418E0A2D000021EFA /* SLTCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC3F18E0A2D000021EFA /* SLTCell.m */; };
 		CDACAC5518E0A2D000021EFA /* SLTCellMatrix.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC4118E0A2D000021EFA /* SLTCellMatrix.m */; };
 		CDACAC5618E0A2D000021EFA /* SLTCellMatrixIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC4318E0A2D000021EFA /* SLTCellMatrixIterator.m */; };
 		CDACAC5718E0A2D000021EFA /* SLTChunk.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC4518E0A2D000021EFA /* SLTChunk.m */; };
@@ -66,7 +78,6 @@
 		CDACAC5B18E0A2D000021EFA /* SLTCompositeInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC4D18E0A2D000021EFA /* SLTCompositeInstance.m */; };
 		CDACAC5C18E0A2D000021EFA /* SLTLevelBoardParser.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC4F18E0A2D000021EFA /* SLTLevelBoardParser.m */; };
 		CDACAC5D18E0A2D000021EFA /* SLTLevelSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC5118E0A2D000021EFA /* SLTLevelSettings.m */; };
-		CDACAC6418E0A3C300021EFA /* SLTLevel.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC5F18E0A3C300021EFA /* SLTLevel.m */; };
 		CDACAC6518E0A3C300021EFA /* SLTLevelBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC6118E0A3C300021EFA /* SLTLevelBoard.m */; };
 		CDACAC6618E0A3C300021EFA /* SLTLevelPack.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC6318E0A3C300021EFA /* SLTLevelPack.m */; };
 		CDB4A03018DC6D3800AF22BC /* SLTError.m in Sources */ = {isa = PBXBuildFile; fileRef = CDB4A02F18DC6D3800AF22BC /* SLTError.m */; };
@@ -138,6 +149,36 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		982C55E419714C5100DC99B1 /* SLTAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTAsset.h; sourceTree = "<group>"; };
+		982C55E519714C5100DC99B1 /* SLTAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTAsset.m; sourceTree = "<group>"; };
+		982C55E619714C5100DC99B1 /* SLTAssetInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTAssetInstance.h; sourceTree = "<group>"; };
+		982C55E719714C5100DC99B1 /* SLTAssetInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTAssetInstance.m; sourceTree = "<group>"; };
+		982C55E819714C5100DC99B1 /* SLTAssetState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTAssetState.h; sourceTree = "<group>"; };
+		982C55E919714C5100DC99B1 /* SLTAssetState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTAssetState.m; sourceTree = "<group>"; };
+		982C55EE19714CC200DC99B1 /* SLTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTCell.h; sourceTree = "<group>"; };
+		982C55EF19714CC200DC99B1 /* SLTCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCell.m; sourceTree = "<group>"; };
+		982C55F1197166F100DC99B1 /* SLTLevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTLevelParser.h; sourceTree = "<group>"; };
+		982C55F2197166F100DC99B1 /* SLTLevelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTLevelParser.m; sourceTree = "<group>"; };
+		982C55F719719F1E00DC99B1 /* SLTLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTLevel.h; sourceTree = "<group>"; };
+		982C55F819719F1E00DC99B1 /* SLTLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTLevel.m; sourceTree = "<group>"; };
+		989CC4CF197458FC008DC08F /* SLTChunk.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTChunk.h; sourceTree = "<group>"; };
+		989CC4D0197458FC008DC08F /* SLTChunk.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTChunk.m; sourceTree = "<group>"; };
+		989CC4D219745F82008DC08F /* SLTMatchingBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTMatchingBoardLayer.h; sourceTree = "<group>"; };
+		989CC4D319745F82008DC08F /* SLTMatchingBoardLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTMatchingBoardLayer.m; sourceTree = "<group>"; };
+		989CC4D519746A04008DC08F /* SLTChunkAssetRule.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTChunkAssetRule.h; sourceTree = "<group>"; };
+		989CC4D619746A04008DC08F /* SLTChunkAssetRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTChunkAssetRule.m; sourceTree = "<group>"; };
+		989CC4D819746CCB008DC08F /* SLTMatchingBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTMatchingBoard.h; sourceTree = "<group>"; };
+		989CC4D919746CCB008DC08F /* SLTMatchingBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTMatchingBoard.m; sourceTree = "<group>"; };
+		98D715BE1972772E00502350 /* SLTBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTBoard.h; sourceTree = "<group>"; };
+		98D715BF1972772E00502350 /* SLTBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTBoard.m; sourceTree = "<group>"; };
+		98D715C119727CD600502350 /* SLTBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTBoardLayer.h; sourceTree = "<group>"; };
+		98D715C219727CD600502350 /* SLTBoardLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTBoardLayer.m; sourceTree = "<group>"; };
+		98D715C41972849500502350 /* SLTLevelPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTLevelPack.h; sourceTree = "<group>"; };
+		98D715C51972849500502350 /* SLTLevelPack.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTLevelPack.m; sourceTree = "<group>"; };
+		98D715C7197291D100502350 /* SLTCells.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTCells.h; sourceTree = "<group>"; };
+		98D715C8197291D100502350 /* SLTCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCells.m; sourceTree = "<group>"; };
+		98D715CA1972A1A600502350 /* SLTCellsIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTCellsIterator.h; sourceTree = "<group>"; };
+		98D715CB1972A1A600502350 /* SLTCellsIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCellsIterator.m; sourceTree = "<group>"; };
 		CA1FC1F718B3B8D600E92A06 /* libSaltr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA1FC1FE18B3B8D600E92A06 /* Saltr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saltr-Prefix.pch"; sourceTree = "<group>"; };
@@ -199,12 +240,6 @@
 		CDACAC1318E0A10700021EFA /* SLTResourceURLTicket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTResourceURLTicket.m; sourceTree = "<group>"; };
 		CDACAC1618E0A12900021EFA /* SLTRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTRepository.h; sourceTree = "<group>"; };
 		CDACAC1718E0A12900021EFA /* SLTRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTRepository.m; sourceTree = "<group>"; };
-		CDACAC3A18E0A2D000021EFA /* SLTAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTAsset.h; path = Saltr/parser/game/SLTAsset.h; sourceTree = SOURCE_ROOT; };
-		CDACAC3B18E0A2D000021EFA /* SLTAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTAsset.m; path = Saltr/parser/game/SLTAsset.m; sourceTree = SOURCE_ROOT; };
-		CDACAC3C18E0A2D000021EFA /* SLTAssetInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTAssetInstance.h; path = Saltr/parser/game/SLTAssetInstance.h; sourceTree = SOURCE_ROOT; };
-		CDACAC3D18E0A2D000021EFA /* SLTAssetInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTAssetInstance.m; path = Saltr/parser/game/SLTAssetInstance.m; sourceTree = SOURCE_ROOT; };
-		CDACAC3E18E0A2D000021EFA /* SLTCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTCell.h; path = Saltr/parser/game/SLTCell.h; sourceTree = SOURCE_ROOT; };
-		CDACAC3F18E0A2D000021EFA /* SLTCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTCell.m; path = Saltr/parser/game/SLTCell.m; sourceTree = SOURCE_ROOT; };
 		CDACAC4018E0A2D000021EFA /* SLTCellMatrix.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTCellMatrix.h; path = Saltr/parser/game/SLTCellMatrix.h; sourceTree = SOURCE_ROOT; };
 		CDACAC4118E0A2D000021EFA /* SLTCellMatrix.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTCellMatrix.m; path = Saltr/parser/game/SLTCellMatrix.m; sourceTree = SOURCE_ROOT; };
 		CDACAC4218E0A2D000021EFA /* SLTCellMatrixIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTCellMatrixIterator.h; path = Saltr/parser/game/SLTCellMatrixIterator.h; sourceTree = SOURCE_ROOT; };
@@ -223,8 +258,6 @@
 		CDACAC4F18E0A2D000021EFA /* SLTLevelBoardParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTLevelBoardParser.m; path = Saltr/parser/game/SLTLevelBoardParser.m; sourceTree = SOURCE_ROOT; };
 		CDACAC5018E0A2D000021EFA /* SLTLevelSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTLevelSettings.h; path = Saltr/parser/game/SLTLevelSettings.h; sourceTree = SOURCE_ROOT; };
 		CDACAC5118E0A2D000021EFA /* SLTLevelSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTLevelSettings.m; path = Saltr/parser/game/SLTLevelSettings.m; sourceTree = SOURCE_ROOT; };
-		CDACAC5E18E0A3C300021EFA /* SLTLevel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTLevel.h; path = Saltr/parser/game/SLTLevel.h; sourceTree = SOURCE_ROOT; };
-		CDACAC5F18E0A3C300021EFA /* SLTLevel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTLevel.m; path = Saltr/parser/game/SLTLevel.m; sourceTree = SOURCE_ROOT; };
 		CDACAC6018E0A3C300021EFA /* SLTLevelBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTLevelBoard.h; path = Saltr/parser/game/SLTLevelBoard.h; sourceTree = SOURCE_ROOT; };
 		CDACAC6118E0A3C300021EFA /* SLTLevelBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SLTLevelBoard.m; path = Saltr/parser/game/SLTLevelBoard.m; sourceTree = SOURCE_ROOT; };
 		CDACAC6218E0A3C300021EFA /* SLTLevelPack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SLTLevelPack.h; path = Saltr/parser/game/SLTLevelPack.h; sourceTree = SOURCE_ROOT; };
@@ -301,6 +334,51 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		982C55E319714C5100DC99B1 /* game */ = {
+			isa = PBXGroup;
+			children = (
+				982C55ED19714CC200DC99B1 /* matching */,
+				982C55E419714C5100DC99B1 /* SLTAsset.h */,
+				982C55E519714C5100DC99B1 /* SLTAsset.m */,
+				982C55E619714C5100DC99B1 /* SLTAssetInstance.h */,
+				982C55E719714C5100DC99B1 /* SLTAssetInstance.m */,
+				982C55E819714C5100DC99B1 /* SLTAssetState.h */,
+				982C55E919714C5100DC99B1 /* SLTAssetState.m */,
+				98D715BE1972772E00502350 /* SLTBoard.h */,
+				98D715BF1972772E00502350 /* SLTBoard.m */,
+				98D715C119727CD600502350 /* SLTBoardLayer.h */,
+				98D715C219727CD600502350 /* SLTBoardLayer.m */,
+				982C55F719719F1E00DC99B1 /* SLTLevel.h */,
+				982C55F819719F1E00DC99B1 /* SLTLevel.m */,
+				98D715C41972849500502350 /* SLTLevelPack.h */,
+				98D715C51972849500502350 /* SLTLevelPack.m */,
+				982C55F1197166F100DC99B1 /* SLTLevelParser.h */,
+				982C55F2197166F100DC99B1 /* SLTLevelParser.m */,
+			);
+			path = game;
+			sourceTree = "<group>";
+		};
+		982C55ED19714CC200DC99B1 /* matching */ = {
+			isa = PBXGroup;
+			children = (
+				982C55EE19714CC200DC99B1 /* SLTCell.h */,
+				982C55EF19714CC200DC99B1 /* SLTCell.m */,
+				98D715C7197291D100502350 /* SLTCells.h */,
+				98D715C8197291D100502350 /* SLTCells.m */,
+				98D715CA1972A1A600502350 /* SLTCellsIterator.h */,
+				98D715CB1972A1A600502350 /* SLTCellsIterator.m */,
+				989CC4CF197458FC008DC08F /* SLTChunk.h */,
+				989CC4D0197458FC008DC08F /* SLTChunk.m */,
+				989CC4D519746A04008DC08F /* SLTChunkAssetRule.h */,
+				989CC4D619746A04008DC08F /* SLTChunkAssetRule.m */,
+				989CC4D819746CCB008DC08F /* SLTMatchingBoard.h */,
+				989CC4D919746CCB008DC08F /* SLTMatchingBoard.m */,
+				989CC4D219745F82008DC08F /* SLTMatchingBoardLayer.h */,
+				989CC4D319745F82008DC08F /* SLTMatchingBoardLayer.m */,
+			);
+			path = matching;
+			sourceTree = "<group>";
+		};
 		CA1FC1EE18B3B8D600E92A06 = {
 			isa = PBXGroup;
 			children = (
@@ -341,6 +419,7 @@
 		CA1FC1FC18B3B8D600E92A06 /* Saltr */ = {
 			isa = PBXGroup;
 			children = (
+				982C55E319714C5100DC99B1 /* game */,
 				CD095F8718BF7E6100E38369 /* testdata */,
 				CA1FC24118B3C3C300E92A06 /* resource */,
 				CA1FC24018B3C3A300E92A06 /* repository */,
@@ -446,12 +525,6 @@
 		CA1FC24A18B3C47700E92A06 /* game */ = {
 			isa = PBXGroup;
 			children = (
-				CDACAC3A18E0A2D000021EFA /* SLTAsset.h */,
-				CDACAC3B18E0A2D000021EFA /* SLTAsset.m */,
-				CDACAC3C18E0A2D000021EFA /* SLTAssetInstance.h */,
-				CDACAC3D18E0A2D000021EFA /* SLTAssetInstance.m */,
-				CDACAC3E18E0A2D000021EFA /* SLTCell.h */,
-				CDACAC3F18E0A2D000021EFA /* SLTCell.m */,
 				CDACAC4018E0A2D000021EFA /* SLTCellMatrix.h */,
 				CDACAC4118E0A2D000021EFA /* SLTCellMatrix.m */,
 				CDACAC4218E0A2D000021EFA /* SLTCellMatrixIterator.h */,
@@ -466,8 +539,6 @@
 				CDACAC4B18E0A2D000021EFA /* SLTCompositeInfo.m */,
 				CDACAC4C18E0A2D000021EFA /* SLTCompositeInstance.h */,
 				CDACAC4D18E0A2D000021EFA /* SLTCompositeInstance.m */,
-				CDACAC5E18E0A3C300021EFA /* SLTLevel.h */,
-				CDACAC5F18E0A3C300021EFA /* SLTLevel.m */,
 				CDACAC6018E0A3C300021EFA /* SLTLevelBoard.h */,
 				CDACAC6118E0A3C300021EFA /* SLTLevelBoard.m */,
 				CDACAC4E18E0A2D000021EFA /* SLTLevelBoardParser.h */,
@@ -759,31 +830,42 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				982C55F3197166F100DC99B1 /* SLTLevelParser.m in Sources */,
 				CA1FC23218B3C35000E92A06 /* SLTExperiment.m in Sources */,
+				982C55EB19714C5100DC99B1 /* SLTAssetInstance.m in Sources */,
+				989CC4D719746A04008DC08F /* SLTChunkAssetRule.m in Sources */,
 				CDACAC5718E0A2D000021EFA /* SLTChunk.m in Sources */,
-				CDACAC5318E0A2D000021EFA /* SLTAssetInstance.m in Sources */,
-				CDACAC6418E0A3C300021EFA /* SLTLevel.m in Sources */,
 				CDB4A03018DC6D3800AF22BC /* SLTError.m in Sources */,
 				CDACAC6518E0A3C300021EFA /* SLTLevelBoard.m in Sources */,
 				CDACAC5C18E0A2D000021EFA /* SLTLevelBoardParser.m in Sources */,
 				CA1FC22C18B3C33200E92A06 /* SLTDeserializer.m in Sources */,
+				982C55F019714CC200DC99B1 /* SLTCell.m in Sources */,
 				CA1FC23518B3C36100E92A06 /* SLTFeature.m in Sources */,
 				CDACAC6618E0A3C300021EFA /* SLTLevelPack.m in Sources */,
+				98D715C9197291D100502350 /* SLTCells.m in Sources */,
 				CDACAC5D18E0A2D000021EFA /* SLTLevelSettings.m in Sources */,
+				989CC4D419745F82008DC08F /* SLTMatchingBoardLayer.m in Sources */,
 				CA1FC23E18B3C39400E92A06 /* SLTPartner.m in Sources */,
 				CDACAC5A18E0A2D000021EFA /* SLTCompositeInfo.m in Sources */,
+				982C55EA19714C5100DC99B1 /* SLTAsset.m in Sources */,
 				CDACAC5818E0A2D000021EFA /* SLTChunkAssetInfo.m in Sources */,
+				98D715C01972772E00502350 /* SLTBoard.m in Sources */,
 				CA1FC20218B3B8D600E92A06 /* SLTSaltr.m in Sources */,
 				CDACAC1818E0A12900021EFA /* SLTRepository.m in Sources */,
+				98D715C61972849500502350 /* SLTLevelPack.m in Sources */,
+				98D715C319727CD600502350 /* SLTBoardLayer.m in Sources */,
 				CDACAC5518E0A2D000021EFA /* SLTCellMatrix.m in Sources */,
-				CDACAC5418E0A2D000021EFA /* SLTCell.m in Sources */,
-				CDACAC5218E0A2D000021EFA /* SLTAsset.m in Sources */,
+				982C55EC19714C5100DC99B1 /* SLTAssetState.m in Sources */,
 				CA1FC22F18B3C34100E92A06 /* SLTDevice.m in Sources */,
+				989CC4DA19746CCB008DC08F /* SLTMatchingBoard.m in Sources */,
 				CDACAC1518E0A10700021EFA /* SLTResourceURLTicket.m in Sources */,
 				CDACAC5B18E0A2D000021EFA /* SLTCompositeInstance.m in Sources */,
+				989CC4D1197458FC008DC08F /* SLTChunk.m in Sources */,
 				CDACAC5618E0A2D000021EFA /* SLTCellMatrixIterator.m in Sources */,
 				CDACAC5918E0A2D000021EFA /* SLTCompositeAsset.m in Sources */,
+				98D715CC1972A1A600502350 /* SLTCellsIterator.m in Sources */,
 				CDACAC1418E0A10700021EFA /* SLTResource.m in Sources */,
+				982C55F919719F1E00DC99B1 /* SLTLevel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
