@@ -45,10 +45,12 @@
         NSArray* levels  = [levelPack objectForKey:@"levelList"];
         NSMutableArray* levelStructures = [NSMutableArray new];
         for (NSDictionary* level in levels) {
-            [levelStructures addObject:[[SLTLevel alloc] initWithLevelId:[[level objectForKey: @"id"] stringValue] index:[[level objectForKey: @"order"] stringValue] contentDataUrl:[level objectForKey: @"url"] properties:[level objectForKey: @"properties"] andVersion:[[level objectForKey: @"version"] stringValue]]];
+            //TODO: @TIGR correct
+            //[levelStructures addObject:[[SLTLevel alloc] initWithLevelId:[[level objectForKey: @"id"] stringValue] index:[[level objectForKey: @"order"] stringValue] contentDataUrl:[level objectForKey: @"url"] properties:[level objectForKey: @"properties"] andVersion:[[level objectForKey: @"version"] stringValue]]];
         }
-        NSArray *sortedLevelStructures = [levelStructures sortedArrayUsingComparator:sortBlockForLevelStructure];
-        [levelPackStructures addObject:[[SLTLevelPack alloc] initWithToken:[levelPack objectForKey:@"token"] levels:sortedLevelStructures andIndex:[[levelPack objectForKey:@"order"] stringValue]]];
+        //TODO: @TIGR correct
+        //NSArray *sortedLevelStructures = [levelStructures sortedArrayUsingComparator:sortBlockForLevelStructure];
+        //[levelPackStructures addObject:[[SLTLevelPack alloc] initWithToken:[levelPack objectForKey:@"token"] levels:sortedLevelStructures andIndex:[[levelPack objectForKey:@"order"] stringValue]]];
     }
     NSArray *sortedLevelPackStructures = [levelPackStructures sortedArrayUsingComparator:sortBlockForLevelPackStructure];
     return sortedLevelPackStructures;
@@ -76,23 +78,24 @@
 #pragma mark private functions
 
 NSComparisonResult (^sortBlockForLevelPackStructure)(id, id) = ^(SLTLevelPack* obj1, SLTLevelPack* obj2) {
-    if ([[obj1 index] integerValue] > [[obj2 index] integerValue]) {
+    if ([obj1 index]  > [obj2 index] ) {
         return (NSComparisonResult)NSOrderedDescending;
     }
-    if ([[obj1 index] integerValue] < [[obj2 index] integerValue]) {
+    if ([obj1 index]  < [obj2 index]) {
         return (NSComparisonResult)NSOrderedAscending;
     }
     return (NSComparisonResult)NSOrderedSame;
 };
 
 NSComparisonResult (^sortBlockForLevelStructure)(id, id) = ^(SLTLevel* obj1, SLTLevel* obj2) {
-    if ([[obj1 index] integerValue] > [[obj2 index] integerValue]) {
+    if ([obj1 index] > [obj2 index]) {
         return (NSComparisonResult)NSOrderedDescending;
     }
-    if ([[obj1 index] integerValue] < [[obj2 index] integerValue]) {
+    if ([obj1 index]  < [obj2 index]) {
         return (NSComparisonResult)NSOrderedAscending;
     }
     return (NSComparisonResult)NSOrderedSame;
 };
+
 
 @end
