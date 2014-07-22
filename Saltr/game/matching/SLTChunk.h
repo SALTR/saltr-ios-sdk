@@ -10,11 +10,9 @@
 
 #import <Foundation/Foundation.h>
 
-@class SLTMatchingBoardLayer;
-
 @interface SLTChunk : NSObject
 
-- (id)initWithLayer:(SLTMatchingBoardLayer*)theLayer chunkCells:(NSMutableArray*)chunkCells chunkAssetRules:(NSMutableArray*)theChunkAssetRules andAssetMap:(NSDictionary*)theAssetMap;
+- (id)initWithLayerToken:(NSString*)theLayerToken layerIndex:(NSInteger)theLayerIndex chunkCells:(NSMutableArray*)theChunkCells chunkAssetRules:(NSMutableArray*)theChunkAssetRules andAssetMap:(NSDictionary*)theAssetMap;
 
 - (void)generateContent;
 
