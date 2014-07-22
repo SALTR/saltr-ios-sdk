@@ -39,10 +39,13 @@
    /**  Preparing the request to get the app data from server with the following URL:
     * http://api.saltr.com/httpjson.action?command=APPDATA&arguments=%7B%22instanceKey%22:%2208626247-f03d-0d83-b69f-4f03f80ef555%22,%22partner%22:%7B%22partnerId%22:%22100000024783448%22,%22partnerType%22:%22facebook%22,%22gender%22:%22male%22,%22age%22:36,%22firstName%22:%22Artem%22,%22lastName%22:%22Sukiasyan%22%7D,%22device%22:%7B%22deviceId%22:%22asdas123kasd%22,%22deviceType%22:%22iphone%22%7D%7D
     */
-    saltr = [SLTSaltr saltrWithInstanceKey:@"08626247-f03d-0d83-b69f-4f03f80ef555" andCacheEnabled:YES];
-    saltr.saltrRequestDelegate = self;
-    [[SLTSaltr sharedInstance] setupPartnerWithId:@"100000024783448" andPartnerType:@"facebook"];
-    [[SLTSaltr sharedInstance] setupDeviceWithId:@"asdas123kasd" andDeviceType:@"phone"];
+//    saltr = [SLTSaltr saltrWithInstanceKey:@"08626247-f03d-0d83-b69f-4f03f80ef555" andCacheEnabled:YES];
+//    saltr.saltrRequestDelegate = self;
+//    [[SLTSaltr sharedInstance] setupPartnerWithId:@"100000024783448" andPartnerType:@"facebook"];
+//    [[SLTSaltr sharedInstance] setupDeviceWithId:@"asdas123kasd" andDeviceType:@"phone"];
+    
+    SLTSaltr* saltr = [[SLTSaltr alloc] initSaltrWithClientKey:cliendKey deviceId:currentDeviceId andCacheEnabled:cacheEnabled];
+    [saltr devMode:true];
 }
 
 - (void)tearDown

@@ -44,7 +44,21 @@
 @synthesize saltrRequestDelegate;
 @synthesize connected=_connected;
 
--(id) initUniqueInstance
+
+
+-(void) setInstanceKey:(NSString *)instanceKey
+{
+    _instanceKey = instanceKey;
+}
+
+//+(id) saltrWithInstanceKey:(NSString *)instanceKey andCacheEnabled:(BOOL)enableCache
+//{
+//    [SLTSaltr sharedInstance].instanceKey = instanceKey;
+//    [SLTSaltr sharedInstance].enableCache = enableCache;
+//    return [SLTSaltr sharedInstance];
+//}
+
+- (id) initSaltrWithClientKey:(NSString*)theClientKey deviceId:(NSString*)theDeviceId andCacheEnabled:(BOOL)theCacheEnabled
 {
     self = [super init];
     if (self) {
@@ -57,34 +71,22 @@
     return self;
 }
 
--(void) setInstanceKey:(NSString *)instanceKey
-{
-    _instanceKey = instanceKey;
-}
-
-+(id) saltrWithInstanceKey:(NSString *)instanceKey andCacheEnabled:(BOOL)enableCache
-{
-    [SLTSaltr sharedInstance].instanceKey = instanceKey;
-    [SLTSaltr sharedInstance].enableCache = enableCache;
-    return [SLTSaltr sharedInstance];
-}
-
-+(instancetype) sharedInstance
-{
-    // structure used to test whether the block has completed or not
-    static dispatch_once_t p = 0;
-    
-    // initialize sharedObject as nil (first call only)
-    __strong static id _sharedObject = nil;
-    
-    // executes a block object once and only once for the lifetime of an application
-    dispatch_once(&p, ^{
-        _sharedObject = [[super alloc] initUniqueInstance];
-    });
-    
-    // returns the same object each time
-    return _sharedObject;
-}
+//+(instancetype) sharedInstance
+//{
+//    // structure used to test whether the block has completed or not
+//    static dispatch_once_t p = 0;
+//    
+//    // initialize sharedObject as nil (first call only)
+//    __strong static id _sharedObject = nil;
+//    
+//    // executes a block object once and only once for the lifetime of an application
+//    dispatch_once(&p, ^{
+//        _sharedObject = [[super alloc] initUniqueInstance];
+//    });
+//    
+//    // returns the same object each time
+//    return _sharedObject;
+//}
 
 -(SLTFeature *) featureForToken :(NSString *)token {
     return [_features objectForKey:token];

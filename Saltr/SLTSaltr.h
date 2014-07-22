@@ -55,6 +55,9 @@
 /// YES if caching should be enabled, otherwise NO
 @property (nonatomic, assign) BOOL enableCache;
 
+/// YES if dev mode, otherwise NO
+@property (nonatomic, assign) BOOL devMode;
+
 /// The application version
 @property (nonatomic, strong) NSString* appVersion;
 
@@ -73,26 +76,15 @@
 /// The delegate of @b SaltrRequestDelegate protocol
 @property (nonatomic, assign) id <SaltrRequestDelegate> saltrRequestDelegate;
 
-/// Returns the only instance of Saltr class
-+ (instancetype)sharedInstance;
-
-/// Compile time error messages to avoid multiple allocation of @b SLTSaltr instance
-+(instancetype) alloc __attribute__((unavailable("alloc not available, call sharedInstance instead")));
-
-/// Compile time error messages to avoid multiple initialization of @b SLTSaltr instance
--(instancetype) init __attribute__((unavailable("init not available, call sharedInstance instead")));
-
-/// Compile time error messages to avoid multiple allocation of @b SLTSaltr instance
-+(instancetype) new __attribute__((unavailable("new not available, call sharedInstance instead")));
-
 /**
  * @brief Initializes Saltr class with the given instanceKey and enableCache flag
  *
- * @param instanceKey - the initialization key to initialize the current @b Saltr object
- * @param enableCache - YES, if caching should be enabled, otherwise NO
- * @return - The only instance of Saltr class
+ * @param theClientKey - the client key to initialize the current @b Saltr object
+ * @param theDeviceId - the device id to initialize the current @b Saltr object
+ * @param theCacheEnabled - YES, if caching should be enabled, otherwise NO
+ * @return - The instance of Saltr class
  */
-+(id) saltrWithInstanceKey:(NSString *)instanceKey andCacheEnabled:(BOOL)enableCache;
+- (id) initSaltrWithClientKey:(NSString*)theClientKey deviceId:(NSString*)theDeviceId andCacheEnabled:(BOOL)theCacheEnabled;
 
 /**
  * @brief Setup partner with the given ID and type
