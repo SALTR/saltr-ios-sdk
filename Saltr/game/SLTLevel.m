@@ -14,6 +14,7 @@
 
 @interface SLTLevel() {
     NSString* _id;
+    NSString* _levelType;
     NSMutableDictionary* _boards;
     NSDictionary* _assetMap;
 }
@@ -30,11 +31,12 @@
 @synthesize packIndex = _packIndex;
 
 ///@todo It should be nice to have validation for the values of parameters.
--(id) initWithLevelId:(NSString*)theId index:(int)theIndex localIndex:(int)theLocalIndex packIndex:(int)thePackIndex contentUrl:(NSString*)theContentUrl properties:(id)theProperties andVersion:(NSString*)theVersion
+-(id) initWithLevelId:(NSString*)theId levelType:(NSString*)theLevelType index:(NSInteger)theIndex localIndex:(NSInteger)theLocalIndex packIndex:(NSInteger)thePackIndex contentUrl:(NSString*)theContentUrl properties:(id)theProperties andVersion:(NSString*)theVersion
 {
     self = [super init];
     if (self) {
         _id = theId;
+        _levelType = theLevelType;
         _index = theIndex;
         _localIndex = theLocalIndex;
         _packIndex = thePackIndex;

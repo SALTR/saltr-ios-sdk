@@ -36,24 +36,42 @@
 
 - (NSArray*)decodeLevelsFromData:(NSDictionary *)data
 {
-    if ([data objectForKey:@"responseData"]) {
-        data = [data objectForKey:@"responseData"];
+    NSMutableArray* levelPackNodes = [data objectForKey:@"levelPacks"];
+    NSString* levelType = LEVEL_TYPE_MATCHING;
+    
+    if ([data objectForKey:@"levelType"]) {
+        levelType = [data objectForKey:@"levelType"];
     }
-    NSMutableArray* levelPacks = [data objectForKey:@"levelPackList"];
-    NSMutableArray* levelPackStructures = [NSMutableArray new];
-    for (NSDictionary* levelPack in levelPacks) {
-        NSArray* levels  = [levelPack objectForKey:@"levelList"];
-        NSMutableArray* levelStructures = [NSMutableArray new];
-        for (NSDictionary* level in levels) {
-            //TODO: @TIGR correct
-            //[levelStructures addObject:[[SLTLevel alloc] initWithLevelId:[[level objectForKey: @"id"] stringValue] index:[[level objectForKey: @"order"] stringValue] contentDataUrl:[level objectForKey: @"url"] properties:[level objectForKey: @"properties"] andVersion:[[level objectForKey: @"version"] stringValue]]];
+    
+    NSMutableArray* levelPacks = [NSMutableArray new];
+    
+    NSInteger index = -1;
+    if (levelPackNodes != nil) {
+        //TODO @TIGR: remove this sort when SALTR confirms correct ordering
+        NSArray * sortedLevelPackNodes = [levelPackNodes sortedArrayUsingComparator:sortBlockForLevelPackStructure];
+
+        for (NSDictionary* levelPackNode in sortedLevelPackNodes) {
+            NSArray* levelNodes  = [levelPackNode objectForKey:@"levels"];
+            //TODO @TIGR: remove this sort when SALTR confirms correct ordering
+            NSArray* sortedLevelNodes = [levelNodes sortedArrayUsingComparator:sortBlockForLevelStructure];
+            
+            NSMutableArray* levels = [NSMutableArray new];
+            NSInteger packIndex = [[levelPackNode objectForKey:@"index"] integerValue];
+            for(NSDictionary* levelNode in sortedLevelNodes) {
+                ++index;
+                
+                //TODO @TIGR: later, leave localIndex only!
+                NSInteger localIndex = [[levelNode objectForKey:@"index"] integerValue];
+                if ([levelNode objectForKey:@"localIndex"]) {
+                    localIndex = [[levelNode objectForKey:@"localIndex"] integerValue];
+                }
+                [levels addObject:[[SLTLevel alloc] initWithLevelId:[levelNode objectForKey:@"id"] levelType:levelType index:index localIndex:localIndex packIndex:packIndex contentUrl:[levelNode objectForKey:@"url"] properties:[levelNode objectForKey:@"properties"] andVersion:[levelNode objectForKey:@"version"]]];
+            }
+            [levelPacks addObject:[[SLTLevelPack alloc] initWithToken:[levelPackNode objectForKey:@"token"] index:packIndex andLevels:levels]];
+            
         }
-        //TODO: @TIGR correct
-        //NSArray *sortedLevelStructures = [levelStructures sortedArrayUsingComparator:sortBlockForLevelStructure];
-        //[levelPackStructures addObject:[[SLTLevelPack alloc] initWithToken:[levelPack objectForKey:@"token"] levels:sortedLevelStructures andIndex:[[levelPack objectForKey:@"order"] stringValue]]];
     }
-    NSArray *sortedLevelPackStructures = [levelPackStructures sortedArrayUsingComparator:sortBlockForLevelPackStructure];
-    return sortedLevelPackStructures;
+    return levelPacks;
 }
 
 - (NSDictionary*)decodeFeaturesFromData:(NSDictionary * )data

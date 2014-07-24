@@ -31,7 +31,7 @@
 @interface SLTLevel : NSObject <SLTLevelDelegate>
 
 /// The global index of level
-@property (nonatomic, assign, readonly) int index;
+@property (nonatomic, assign, readonly) NSInteger index;
 
 /// The properties of level
 @property (nonatomic, strong, readonly) NSDictionary* properties;
@@ -46,10 +46,10 @@
 @property (nonatomic, strong, readonly) NSString* version;
 
 /// The local index of level
-@property (nonatomic, assign, readonly) int localIndex;
+@property (nonatomic, assign, readonly) NSInteger localIndex;
 
 /// The index of level pack
-@property (nonatomic, assign, readonly) int packIndex;
+@property (nonatomic, assign, readonly) NSInteger packIndex;
 
 /**
  * @brief Inits instance of @b SLTLevel class with the given id, index, localIndex, packIndex, dataUrl, properties and version
@@ -63,7 +63,7 @@
  * @param theVersion - the version of level
  * @return - The instance of @b SLTLevel class
  */
--(id) initWithLevelId:(NSString*)theId index:(int)theIndex localIndex:(int)theLocalIndex packIndex:(int)thePackIndex contentUrl:(NSString*)theContentUrl properties:(id)theProperties andVersion:(NSString*)theVersion;
+-(id) initWithLevelId:(NSString*)theId levelType:(NSString*)theLevelType index:(NSInteger)theIndex localIndex:(NSInteger)theLocalIndex packIndex:(NSInteger)thePackIndex contentUrl:(NSString*)theContentUrl properties:(id)theProperties andVersion:(NSString*)theVersion;
 
 /**
  * @brief Returns the @b SLTLevelBoard object from the available boards
