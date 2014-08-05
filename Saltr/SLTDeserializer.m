@@ -16,16 +16,15 @@
 
 @implementation SLTDeserializer
 
-
 - (NSArray*)decodeExperimentsFromData:(NSDictionary *)data
 {
     NSMutableArray* experiments = [NSMutableArray new];
-    NSArray* experimentInfo = [data objectForKey:@"splitTestInfo"];
-    if (experimentInfo) {
-        for (NSDictionary* item in experimentInfo) {
+    NSArray* experimentNodes = [data objectForKey:@"experiments"];
+    if (experimentNodes) {
+        for (NSDictionary* item in experimentNodes) {
             SLTExperiment* experiment = [SLTExperiment new];
             experiment.token = [item objectForKey:@"token"];
-            experiment.partition = [item objectForKey:@"partitionName"];
+            experiment.partition = [item objectForKey:@"partition"];
             experiment.type = [item objectForKey:@"type"];
             experiment.customEvents = [item objectForKey:@"customEventList"];
             [experiments addObject:experiment];
@@ -65,7 +64,7 @@
                 if ([levelNode objectForKey:@"localIndex"]) {
                     localIndex = [[levelNode objectForKey:@"localIndex"] integerValue];
                 }
-                [levels addObject:[[SLTLevel alloc] initWithLevelId:[levelNode objectForKey:@"id"] levelType:levelType index:index localIndex:localIndex packIndex:packIndex contentUrl:[levelNode objectForKey:@"url"] properties:[levelNode objectForKey:@"properties"] andVersion:[levelNode objectForKey:@"version"]]];
+                [levels addObject:[[SLTLevel alloc] initWithLevelId:[[levelNode objectForKey:@"id"] stringValue] levelType:levelType index:index localIndex:localIndex packIndex:packIndex contentUrl:[levelNode objectForKey:@"url"] properties:[levelNode objectForKey:@"properties"] andVersion:[levelNode objectForKey:@"version"]]];
             }
             [levelPacks addObject:[[SLTLevelPack alloc] initWithToken:[levelPackNode objectForKey:@"token"] index:packIndex andLevels:levels]];
             
