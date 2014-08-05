@@ -17,13 +17,14 @@
 @synthesize type = _type;
 @synthesize customEvents = _customEvents;
 
-- (id)initWithToken:(NSString*)theToken partition:(NSString*)thePartition andType:(NSString*)theType
+- (id)initWithToken:(NSString*)theToken partition:(NSString*)thePartition type:(NSString*)theType andCustomEvents:(NSArray*)theCustomEvents
 {
     self = [super init];
     if (self) {
-        _token = theToken;
         _partition = thePartition;
+        _token = theToken;
         _type = theType;
+        _customEvents = theCustomEvents;
     }
     return self;
 }

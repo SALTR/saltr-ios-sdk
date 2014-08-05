@@ -10,16 +10,19 @@
 
 #import <Foundation/Foundation.h>
 
+#define SPLIT_TEST_TYPE_FEATURE @"FEATURE"
+#define SPLIT_TEST_TYPE_LEVEL_PACK @"LEVEL_PACK"
+
 /**
  * The public interface of game @b SLTExperiment class.
  */
 @interface SLTExperiment : NSObject
 
-/// Token of experiment
-@property (nonatomic, strong) NSString* token;
-
 /// Partition of experiment
 @property (nonatomic, strong) NSString* partition;
+
+/// Token of experiment
+@property (nonatomic, strong) NSString* token;
 
 /// Type of experiment
 @property (nonatomic, strong) NSString* type;
@@ -34,8 +37,9 @@
  * @param theToken - token of experiment
  * @param thePartition - partition of experiment
  * @param theType - type of experiment
+ * @param theCustomEvents - custom events
  * @return - The instance of @b SLTExperiment class
  */
-- (id)initWithToken:(NSString*)theToken partition:(NSString*)thePartition andType:(NSString*)theType;
+- (id)initWithToken:(NSString*)theToken partition:(NSString*)thePartition type:(NSString*)theType andCustomEvents:(NSArray*)theCustomEvents;
 
 @end
