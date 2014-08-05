@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8016D48C19916B50006943F5 /* SLTBasicProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8016D48B19916B50006943F5 /* SLTBasicProperties.m */; };
 		982C55EA19714C5100DC99B1 /* SLTAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C55E519714C5100DC99B1 /* SLTAsset.m */; };
 		982C55EB19714C5100DC99B1 /* SLTAssetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C55E719714C5100DC99B1 /* SLTAssetInstance.m */; };
 		982C55EC19714C5100DC99B1 /* SLTAssetState.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C55E919714C5100DC99B1 /* SLTAssetState.m */; };
@@ -138,6 +139,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8016D48A19916B50006943F5 /* SLTBasicProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTBasicProperties.h; sourceTree = "<group>"; };
+		8016D48B19916B50006943F5 /* SLTBasicProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTBasicProperties.m; sourceTree = "<group>"; };
 		982C55E419714C5100DC99B1 /* SLTAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTAsset.h; sourceTree = "<group>"; };
 		982C55E519714C5100DC99B1 /* SLTAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTAsset.m; sourceTree = "<group>"; };
 		982C55E619714C5100DC99B1 /* SLTAssetInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTAssetInstance.h; sourceTree = "<group>"; };
@@ -407,6 +410,8 @@
 				CA1FC20118B3B8D600E92A06 /* SLTSaltr.m */,
 				CDB4A02E18DC6D3800AF22BC /* SLTError.h */,
 				CDB4A02F18DC6D3800AF22BC /* SLTError.m */,
+				8016D48A19916B50006943F5 /* SLTBasicProperties.h */,
+				8016D48B19916B50006943F5 /* SLTBasicProperties.m */,
 			);
 			path = Saltr;
 			sourceTree = "<group>";
@@ -779,6 +784,7 @@
 				CA1FC22F18B3C34100E92A06 /* SLTDevice.m in Sources */,
 				989CC4DA19746CCB008DC08F /* SLTMatchingBoard.m in Sources */,
 				CDACAC1518E0A10700021EFA /* SLTResourceURLTicket.m in Sources */,
+				8016D48C19916B50006943F5 /* SLTBasicProperties.m in Sources */,
 				989CC4D1197458FC008DC08F /* SLTChunk.m in Sources */,
 				98D715CC1972A1A600502350 /* SLTCellsIterator.m in Sources */,
 				CDACAC1418E0A10700021EFA /* SLTResource.m in Sources */,
