@@ -8,16 +8,16 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "SLTAssetState.h"
+#import "SLTBoard.h"
 
-@interface SLT2DAssetState : SLTAssetState
+@interface SLT2DBoard : SLTBoard
 
-/// The pivot x.
-@property (nonatomic, strong, readonly) NSNumber* pivotX;
+/// The width.
+@property (nonatomic, strong, readonly) NSNumber* width;
 
-/// The pivot y.
-@property (nonatomic, strong, readonly) NSNumber* pivotY;
+/// The height.
+@property (nonatomic, strong, readonly) NSNumber* height;
 
-- (id)initWithToken:(NSString*)theToken properties:(NSDictionary*)theProperties pivotX:(NSNumber *)thePivotX andPivotY:(NSNumber *)thePivotY;
+- (id) initWithWidth:(NSNumber * )theWidth theHeight:(NSNumber *)theHeight layers:(NSMutableArray*)theLayers andProperties:(NSDictionary*)theProperties;
 
 @end
