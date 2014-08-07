@@ -18,6 +18,15 @@
 /// The height.
 @property (nonatomic, strong, readonly) NSNumber* height;
 
+/**
+ * @brief Inits an instance of @b SLT2DBoard class with the given width, height, layers and properties
+ *
+ * @param theWidth - the width
+ * @param theHeight - the height
+ * @param theLayers - the layers
+ * @param theProperties - the properties
+ * @return - The instance of @b SLT2DBoard class
+ */
 - (id) initWithWidth:(NSNumber * )theWidth theHeight:(NSNumber *)theHeight layers:(NSMutableArray*)theLayers andProperties:(NSDictionary*)theProperties;
 
 @end
