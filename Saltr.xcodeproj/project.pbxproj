@@ -11,6 +11,7 @@
 		80F370561993F7EF000522F7 /* SLT2DAssetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F370551993F7EF000522F7 /* SLT2DAssetInstance.m */; };
 		80F370591994035C000522F7 /* SLT2DAssetState.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F370581994035C000522F7 /* SLT2DAssetState.m */; };
 		80F3705C19940657000522F7 /* SLT2DBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F3705B19940657000522F7 /* SLT2DBoard.m */; };
+		80F3705F1994099B000522F7 /* SLT2DBoardLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F3705E1994099B000522F7 /* SLT2DBoardLayer.m */; };
 		982C55EA19714C5100DC99B1 /* SLTAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C55E519714C5100DC99B1 /* SLTAsset.m */; };
 		982C55EB19714C5100DC99B1 /* SLTAssetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C55E719714C5100DC99B1 /* SLTAssetInstance.m */; };
 		982C55EC19714C5100DC99B1 /* SLTAssetState.m in Sources */ = {isa = PBXBuildFile; fileRef = 982C55E919714C5100DC99B1 /* SLTAssetState.m */; };
@@ -150,6 +151,8 @@
 		80F370581994035C000522F7 /* SLT2DAssetState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLT2DAssetState.m; sourceTree = "<group>"; };
 		80F3705A19940657000522F7 /* SLT2DBoard.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLT2DBoard.h; sourceTree = "<group>"; };
 		80F3705B19940657000522F7 /* SLT2DBoard.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLT2DBoard.m; sourceTree = "<group>"; };
+		80F3705D1994099B000522F7 /* SLT2DBoardLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLT2DBoardLayer.h; sourceTree = "<group>"; };
+		80F3705E1994099B000522F7 /* SLT2DBoardLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLT2DBoardLayer.m; sourceTree = "<group>"; };
 		982C55E419714C5100DC99B1 /* SLTAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTAsset.h; sourceTree = "<group>"; };
 		982C55E519714C5100DC99B1 /* SLTAsset.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTAsset.m; sourceTree = "<group>"; };
 		982C55E619714C5100DC99B1 /* SLTAssetInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTAssetInstance.h; sourceTree = "<group>"; };
@@ -322,6 +325,8 @@
 				80F370581994035C000522F7 /* SLT2DAssetState.m */,
 				80F3705A19940657000522F7 /* SLT2DBoard.h */,
 				80F3705B19940657000522F7 /* SLT2DBoard.m */,
+				80F3705D1994099B000522F7 /* SLT2DBoardLayer.h */,
+				80F3705E1994099B000522F7 /* SLT2DBoardLayer.m */,
 			);
 			path = canvas2d;
 			sourceTree = "<group>";
@@ -798,6 +803,7 @@
 				CA1FC23518B3C36100E92A06 /* SLTFeature.m in Sources */,
 				98D715C9197291D100502350 /* SLTCells.m in Sources */,
 				989CC4D419745F82008DC08F /* SLTMatchingBoardLayer.m in Sources */,
+				80F3705F1994099B000522F7 /* SLT2DBoardLayer.m in Sources */,
 				CA1FC23E18B3C39400E92A06 /* SLTPartner.m in Sources */,
 				982C55EA19714C5100DC99B1 /* SLTAsset.m in Sources */,
 				98D715C01972772E00502350 /* SLTBoard.m in Sources */,
