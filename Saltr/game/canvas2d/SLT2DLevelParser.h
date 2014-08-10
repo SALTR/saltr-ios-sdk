@@ -12,4 +12,16 @@
 
 @interface SLT2DLevelParser : SLTLevelParser
 
+/// Returns the only instance of SLT2DLevelParser class
++ (instancetype)sharedInstance;
+
+/// Compile time error messages to avoid multiple allocation of @b SLT2DLevelParser instance
++(instancetype) alloc __attribute__((unavailable("alloc not available, call sharedInstance instead")));
+
+/// Compile time error messages to avoid multiple initialization of @b SLT2DLevelParser instance
+-(instancetype) init __attribute__((unavailable("init not available, call sharedInstance instead")));
+
+/// Compile time error messages to avoid multiple allocation of @b SLT2DLevelParser instance
++(instancetype) new __attribute__((unavailable("new not available, call sharedInstance instead")));
+
 @end
