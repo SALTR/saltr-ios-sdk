@@ -1,5 +1,5 @@
 /*
- * @file SLT2DBoard.m
+ * @file SLT2DLevelParser.h
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -8,21 +8,8 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "SLT2DBoard.h"
+#import "SLTLevelParser.h"
 
-@implementation SLT2DBoard
-
-@synthesize width = _width;
-@synthesize height = _height;
-
-- (id) initWithWidth:(NSNumber * )theWidth theHeight:(NSNumber *)theHeight layers:(NSMutableArray*)theLayers andProperties:(NSDictionary*)theProperties
-{
-    self = [super initWithLayers:theLayers andProperties:theProperties];
-    if (self) {
-        _width = theWidth;
-        _height = theHeight;
-    }
-    return self;
-}
+@interface SLT2DLevelParser : SLTLevelParser
 
 @end

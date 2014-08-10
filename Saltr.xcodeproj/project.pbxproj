@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8016D48C19916B50006943F5 /* SLTBasicProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8016D48B19916B50006943F5 /* SLTBasicProperties.m */; };
+		80B281E81997C85D00504D63 /* SLT2DLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B281E71997C85D00504D63 /* SLT2DLevelParser.m */; };
 		80F370561993F7EF000522F7 /* SLT2DAssetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F370551993F7EF000522F7 /* SLT2DAssetInstance.m */; };
 		80F370591994035C000522F7 /* SLT2DAssetState.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F370581994035C000522F7 /* SLT2DAssetState.m */; };
 		80F3705C19940657000522F7 /* SLT2DBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F3705B19940657000522F7 /* SLT2DBoard.m */; };
@@ -145,6 +146,8 @@
 /* Begin PBXFileReference section */
 		8016D48A19916B50006943F5 /* SLTBasicProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTBasicProperties.h; sourceTree = "<group>"; };
 		8016D48B19916B50006943F5 /* SLTBasicProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTBasicProperties.m; sourceTree = "<group>"; };
+		80B281E61997C85D00504D63 /* SLT2DLevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLT2DLevelParser.h; sourceTree = "<group>"; };
+		80B281E71997C85D00504D63 /* SLT2DLevelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLT2DLevelParser.m; sourceTree = "<group>"; };
 		80F370541993F7EF000522F7 /* SLT2DAssetInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLT2DAssetInstance.h; sourceTree = "<group>"; };
 		80F370551993F7EF000522F7 /* SLT2DAssetInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLT2DAssetInstance.m; sourceTree = "<group>"; };
 		80F370571994035C000522F7 /* SLT2DAssetState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLT2DAssetState.h; sourceTree = "<group>"; };
@@ -327,6 +330,8 @@
 				80F3705B19940657000522F7 /* SLT2DBoard.m */,
 				80F3705D1994099B000522F7 /* SLT2DBoardLayer.h */,
 				80F3705E1994099B000522F7 /* SLT2DBoardLayer.m */,
+				80B281E61997C85D00504D63 /* SLT2DLevelParser.h */,
+				80B281E71997C85D00504D63 /* SLT2DLevelParser.m */,
 			);
 			path = canvas2d;
 			sourceTree = "<group>";
@@ -821,6 +826,7 @@
 				80F370561993F7EF000522F7 /* SLT2DAssetInstance.m in Sources */,
 				CDACAC1418E0A10700021EFA /* SLTResource.m in Sources */,
 				982C55F919719F1E00DC99B1 /* SLTLevel.m in Sources */,
+				80B281E81997C85D00504D63 /* SLT2DLevelParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
