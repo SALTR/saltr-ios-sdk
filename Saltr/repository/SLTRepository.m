@@ -52,11 +52,11 @@
 +(NSString *) objectVersion:(NSString *)fileName {
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
-    filePath = [filePath stringByAppendingString:@"_VERSION"];
+    filePath = [filePath stringByAppendingString:@"_VERSION_"];
 
     NSDictionary* version =[self getInternal:filePath];
     if (version) {
-        return [version objectForKey:@"_VERSION"];
+        return [version objectForKey:@"_VERSION_"];
     }
     return nil;
 }
@@ -65,8 +65,8 @@
     NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
     NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
     [self saveInternal:filePath objectToSave:object];
-    filePath = [filePath stringByAppendingString:@"_VERSION"];
-    [self saveInternal:filePath objectToSave:[NSDictionary dictionaryWithObjectsAndKeys:version, @"_VERSION", nil]];
+    filePath = [filePath stringByAppendingString:@"_VERSION_"];
+    [self saveInternal:filePath objectToSave:[NSDictionary dictionaryWithObjectsAndKeys:version, @"_VERSION_", nil]];
 }
 
 +(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object {
