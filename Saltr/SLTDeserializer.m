@@ -85,7 +85,7 @@
             if (properties == nil) {
                 properties = [featureNode objectForKey:@"properties"];
             }
-            SLTFeature* sltFeature = [[SLTFeature alloc] initWithToken:token properties:properties andRequired:[featureNode objectForKey:@"required"]];
+            SLTFeature* sltFeature = [[SLTFeature alloc] initWithToken:token properties:properties andRequired:[[featureNode objectForKey:@"required"] boolValue]];
             [features setObject:sltFeature forKey:token];
         }
     }
