@@ -10,6 +10,10 @@
 
 
 #import "SLT2DLevelParser.h"
+#import "SLT2DBoard.h"
+#import "SLT2DBoardLayer.h"
+#import "SLTAsset.h"
+#import "SLT2DAssetInstance.h"
 
 @implementation SLT2DLevelParser
 
@@ -34,6 +38,61 @@
     
     // returns the same object each time
     return _sharedObject;
+}
+
+-(NSMutableDictionary*) parseLevelContentFromBoardNodes:(NSDictionary*)boardNodes andAssetMap:(NSDictionary*)assetMap
+{
+    NSMutableDictionary* boards = [NSMutableDictionary new];
+    for (NSString* boardId in boardNodes) {
+        NSDictionary* boardNode = [boardNodes objectForKey:boardId];
+        [boards setObject:[self parseLevelBoardFromBoardNode:boardNode andAssetMap:assetMap] forKey:boardId];
+    }
+    return boards;
+}
+
+-(SLT2DBoard*) parseLevelBoardFromBoardNode:(NSDictionary*)theBoardNode andAssetMap:(NSDictionary*)theAssetMap
+{
+    NSDictionary* boardProperties;
+    NSDictionary* boardNodeProperties = [theBoardNode objectForKey:@"properties"];
+    if(nil != boardNodeProperties) {
+        boardProperties = [boardNodeProperties objectForKey:@"board"];
+    }
+    
+    NSMutableArray* layers = [[NSMutableArray alloc] init];
+    NSArray* layerNodes = [theBoardNode objectForKey:@"layers"];
+    NSUInteger index = 0;
+    for(NSDictionary* layerNode in layerNodes) {
+        ++index;
+        
+        SLT2DBoardLayer* layer = [self parseLayerFromLayerNode:layerNode layerIndex:index andAssetMap:theAssetMap];
+        [layers addObject:layer];
+    }
+    
+    NSNumber* width = [theBoardNode objectForKey:@"width"];
+    NSNumber* height = [theBoardNode objectForKey:@"height"];
+    
+    return [[SLT2DBoard alloc] initWithWidth:width theHeight:height layers:layers andProperties:boardProperties];
+}
+
+-(SLT2DBoardLayer*) parseLayerFromLayerNode:(NSDictionary*)theLayerNode layerIndex:(NSInteger)theLayerIndex andAssetMap:(NSDictionary*)theAssetMap
+{
+    NSString* layerId = [theLayerNode objectForKey:@"layerId"];
+    SLT2DBoardLayer* layer = [[SLT2DBoardLayer alloc] initWithLayerId:layerId andLayerIndex:theLayerIndex];
+    [self parseAssetInstancesFromLayer:layer assetNodes:[theLayerNode objectForKey:@"assets"] andAssetMap:theAssetMap];
+    return layer;
+}
+
+-(void) parseAssetInstancesFromLayer:(SLT2DBoardLayer*)theLayer assetNodes:(NSArray*)theAssetNodes andAssetMap:(NSDictionary*)theAssetMap
+{
+    for (NSDictionary* assetInstanceNode in theAssetNodes) {
+        NSNumber* x = [assetInstanceNode objectForKey:@"x"];
+        NSNumber* y = [assetInstanceNode objectForKey:@"y"];
+        NSNumber* rotation = [assetInstanceNode objectForKey:@"rotation"];
+        NSString* assetId = [assetInstanceNode objectForKey:@"assetId"];
+        SLTAsset* asset = [theAssetMap objectForKey:assetId];
+        NSArray* stateIds = [assetInstanceNode objectForKey:@"states"];
+        [theLayer addAssetInstance:[[SLT2DAssetInstance alloc] initWithToken:[asset token] states:[asset getInstanceStates:stateIds] properties:[asset properties] x:x y:y andRotation:rotation]];
+    }
 }
 
 @end
