@@ -10,62 +10,56 @@
 
 #import <Foundation/Foundation.h>
 
-@class SLTSaltr;
+/// Protocol
+@protocol SLTRepositoryProtocolDelegate <NSObject>
 
-/**
- * @brief This class is used for getting/setting object from/into storage.
- * Storage can be either file or cache or application.
- */
-@interface SLTRepository : NSObject
+@required
 
-/**
- * @brief Returns the path of resource bundle that library uses
- * @return - the bundle path, where the json data files are stored
- */
-+ (NSBundle *)libraryBundle;
-
-/// @todo unused
 /**
  * @brief Gets the object from the file system
  * @param fileName - the name of file to be obtained
  * @return - the obtained file
  */
-+(NSDictionary *) objectFromStorage:(NSString *)fileName;
+-(NSDictionary *) objectFromStorage:(NSString *)fileName;
 
 /**
  * @brief Gets the object from the cache
  * @param fileName - the name of file to be obtained
  * @return - the obtained file
  */
-+(NSDictionary *) objectFromCache:(NSString *)fileName;
-
-/**
- * @brief Gets the object from the application
- * @param fileName - the name of file to be obtained
- * @return - the obtained file
- */
-+(NSDictionary *) objectFromApplication:(NSString *)fileName;
+-(NSDictionary *) objectFromCache:(NSString *)fileName;
 
 /**
  * @brief Gets the version of object
  * @param fileName - the filename of obtaining object
  * @return - object version
  */
-+(NSString *) objectVersion:(NSString *)fileName;
-
-/**
- * @brief Caches the given object 
- * @param fileName - the name of caching object
- * @param version - the version of caching object
- * @param object - the object to be cached
- */
-+(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(NSDictionary *)object;
+-(NSString *) objectVersion:(NSString *)fileName;
 
 /**
  * @brief Saves the given object into the file system
  * @param fileName - the name of caching object
  * @param object - the object to be cached
  */
-+(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object;
+-(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object;
+
+/**
+ * @brief Caches the given object
+ * @param fileName - the name of caching object
+ * @param version - the version of caching object
+ * @param object - the object to be cached
+ */
+-(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(NSDictionary *)object;
+
+/**
+ * @brief Gets the object from the application
+ * @param fileName - the name of file to be obtained
+ * @return - the obtained file
+ */
+-(NSDictionary *) objectFromApplication:(NSString *)fileName;
+
+@end
+
+@interface SLTMobileRepository : NSObject  <SLTRepositoryProtocolDelegate>
 
 @end

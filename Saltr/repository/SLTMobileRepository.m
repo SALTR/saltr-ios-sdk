@@ -8,19 +8,55 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "SLTRepository.h"
+#import "SLTMobileRepository.h"
 
-@implementation SLTRepository
+@implementation SLTMobileRepository
 
--(id) init {
-    self = [super init];
-    if (self) {
-        
-    }
-    return self;
+-(NSDictionary *) objectFromStorage:(NSString *)fileName {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, NO);
+    NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
+    return [self getInternal:filePath];
 }
 
-+ (NSBundle *)libraryBundle {
+-(NSDictionary *) objectFromCache:(NSString *)fileName {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
+    return [self getInternal:filePath];
+}
+
+-(NSString *) objectVersion:(NSString *)fileName {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
+    filePath = [filePath stringByAppendingString:@"_VERSION_"];
+    
+    NSDictionary* version =[self getInternal:filePath];
+    if (version) {
+        return [version objectForKey:@"_VERSION_"];
+    }
+    return nil;
+}
+
+-(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object {
+    NSString* filePath = [[[self libraryBundle] bundlePath] stringByAppendingPathComponent:fileName];
+    [self saveInternal:filePath objectToSave:object];
+}
+
+-(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(NSDictionary *)object {
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+    NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
+    [self saveInternal:filePath objectToSave:object];
+    filePath = [filePath stringByAppendingString:@"_VERSION_"];
+    [self saveInternal:filePath objectToSave:[NSDictionary dictionaryWithObjectsAndKeys:version, @"_VERSION_", nil]];
+}
+
+-(NSDictionary *) objectFromApplication:(NSString *)fileName {    
+    NSString* filePath = [[[self libraryBundle] bundlePath] stringByAppendingPathComponent:fileName];
+    return [self getInternal:filePath];
+}
+
+#pragma mark private functions
+
+- (NSBundle *)libraryBundle {
     static NSBundle* libraryBundle = nil;
     static dispatch_once_t predicate;
     dispatch_once(&predicate, ^{
@@ -31,52 +67,7 @@
     return libraryBundle;
 }
 
-+(NSDictionary *) objectFromStorage:(NSString *)fileName {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, NO);
-    NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
-    return [self getInternal:filePath];
-}
-
-+(NSDictionary *) objectFromCache:(NSString *)fileName {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
-    return [self getInternal:filePath];
-}
-
-+(NSDictionary *) objectFromApplication:(NSString *)fileName {
-
-    NSString* filePath = [[[SLTRepository libraryBundle] bundlePath] stringByAppendingPathComponent:fileName];
-    return [self getInternal:filePath];
-}
-
-+(NSString *) objectVersion:(NSString *)fileName {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
-    filePath = [filePath stringByAppendingString:@"_VERSION_"];
-
-    NSDictionary* version =[self getInternal:filePath];
-    if (version) {
-        return [version objectForKey:@"_VERSION_"];
-    }
-    return nil;
-}
-
-+(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(NSDictionary *)object {
-    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
-    NSString* filePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:fileName];
-    [self saveInternal:filePath objectToSave:object];
-    filePath = [filePath stringByAppendingString:@"_VERSION_"];
-    [self saveInternal:filePath objectToSave:[NSDictionary dictionaryWithObjectsAndKeys:version, @"_VERSION_", nil]];
-}
-
-+(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object {
-    NSString* filePath = [[[SLTRepository libraryBundle] bundlePath] stringByAppendingPathComponent:fileName];
-    [self saveInternal:filePath objectToSave:object];
-}
-
-#pragma mark private functions
-
-+(NSDictionary *) getInternal:(NSString *)filePath {
+-(NSDictionary *) getInternal:(NSString *)filePath {
     if (![[NSFileManager defaultManager] fileExistsAtPath:filePath]) {
         return nil;
     }
@@ -100,7 +91,7 @@
     return nil;
 }
 
-+(void) saveInternal:(NSString *) filePath objectToSave:(NSDictionary *)object {
+-(void) saveInternal:(NSString *) filePath objectToSave:(NSDictionary *)object {
     @try {
         NSError* error = nil;
         NSData *jsonData = [NSJSONSerialization dataWithJSONObject:object
