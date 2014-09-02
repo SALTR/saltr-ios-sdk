@@ -61,11 +61,10 @@
     NSMutableArray* layers = [[NSMutableArray alloc] init];
     NSArray* layerNodes = [theBoardNode objectForKey:@"layers"];
     NSUInteger index = 0;
-    for(NSDictionary* layerNode in layerNodes) {
-        ++index;
-        
+    for(NSDictionary* layerNode in layerNodes) {        
         SLT2DBoardLayer* layer = [self parseLayerFromLayerNode:layerNode layerIndex:index andAssetMap:theAssetMap];
         [layers addObject:layer];
+        ++index;
     }
     
     NSNumber* width = [theBoardNode objectForKey:@"width"];
