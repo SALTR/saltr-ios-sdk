@@ -12,49 +12,20 @@
 #ifndef Saltr_Config_h
 #define Saltr_Config_h
 
-#define SALTR_API_URL @"http://api.saltr.com/httpjson.action"
-#define SALTR_URL @"http://saltr.com/httpjson.action"
-#define COMMAND_APP_DATA @"APPDATA"
-#define COMMAND_ADD_PROPERTY @"ADDPROP"
-#define COMMAND_SAVE_OR_UPDATE_FEATURE @"SOUFTR"
+#define ACTION_GET_APP_DATA @"getAppData"
+#define ACTION_ADD_PROPERTIES @"addProperties"
+#define ACTION_DEV_SYNC_FEATURES @"syncFeatures"
 
-#define PROPERTY_OPERATIONS_INCREMENT @"inc"
-#define PROPERTY_OPERATIONS_SET @"set"
+#define SALTR_API_URL @"https://api.saltr.com/call"
+#define SALTR_DEVAPI_URL @"https://devapi.saltr.com/call"
 
-
-/**
- * @def APP_DATA_URL_CACHE
- * The filename of json file in application data cache
- */
+//used to
 #define APP_DATA_URL_CACHE @"app_data_cache.json"
-
-/**
- * @def APP_DATA_URL_INTERNAL
- * The filename of json file in application internal directory
- */
-#define APP_DATA_URL_INTERNAL @"saltr/app_data.json"
-
-/**
- * @def LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE
- * The filename of level data json file in application cache directory
- */
-#define LEVEL_CONTENT_DATA_URL_CACHE_TEMPLATE(value1, value2) ([NSString stringWithFormat:@"pack_%@_level_%@.json", value1, value2])
-
-
-/**
- * @def LEVEL_PACK_URL_PACKAGE
- * The url of level pack package
- */
-#define LEVEL_PACK_URL_PACKAGE @"saltr/level_packs.json"
-
-
-/**
- * @def LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE
- * The filename of level data json file in application local directory
- */
-#define LEVEL_CONTENT_DATA_URL_PACKAGE_TEMPLATE(value1, value2) ([NSString stringWithFormat:@"saltr/pack_%@/level_%@.json", value1, value2])
+#define LOCAL_LEVELPACK_PACKAGE_URL @"saltr/level_packs.json"
+#define LOCAL_LEVEL_CONTENT_PACKAGE_URL_TEMPLATE(value1, value2) ([NSString stringWithFormat:@"saltr/pack_%@/level_%@.json", value1, value2])
+#define LOCAL_LEVEL_CONTENT_CACHE_URL_TEMPLATE(value1, value2) ([NSString stringWithFormat:@"pack_%@_level_%@.json", value1, value2])
 
 #define RESULT_SUCCEED @"SUCCEED"
-#define RESULT_ERROR @"ERROR"
+#define RESULT_ERROR @"FAILED"
 
 #endif
