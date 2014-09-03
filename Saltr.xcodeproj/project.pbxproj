@@ -11,6 +11,7 @@
 		80509E8A19B5ABC600ABF65E /* SLTMobileRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 80509E8919B5ABC600ABF65E /* SLTMobileRepository.m */; };
 		80509E8D19B5ABDE00ABF65E /* SLTDummyRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 80509E8C19B5ABDE00ABF65E /* SLTDummyRepository.m */; };
 		8081219119B6FEF50013266B /* HTTPStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8081219019B6FEF50013266B /* HTTPStatus.m */; };
+		8081219419B727EA0013266B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8081219319B727EA0013266B /* Utils.m */; };
 		808D40FB19B36A5B00BC8FCD /* SLTSaltrMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 808D40FA19B36A5B00BC8FCD /* SLTSaltrMobile.m */; };
 		80B281E81997C85D00504D63 /* SLT2DLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B281E71997C85D00504D63 /* SLT2DLevelParser.m */; };
 		80F370561993F7EF000522F7 /* SLT2DAssetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F370551993F7EF000522F7 /* SLT2DAssetInstance.m */; };
@@ -155,6 +156,8 @@
 		80509E8C19B5ABDE00ABF65E /* SLTDummyRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTDummyRepository.m; sourceTree = "<group>"; };
 		8081218F19B6FEF50013266B /* HTTPStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPStatus.h; sourceTree = "<group>"; };
 		8081219019B6FEF50013266B /* HTTPStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPStatus.m; sourceTree = "<group>"; };
+		8081219219B727EA0013266B /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
+		8081219319B727EA0013266B /* Utils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utils.m; sourceTree = "<group>"; };
 		808D40F919B36A5B00BC8FCD /* SLTSaltrMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTSaltrMobile.h; sourceTree = "<group>"; };
 		808D40FA19B36A5B00BC8FCD /* SLTSaltrMobile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTSaltrMobile.m; sourceTree = "<group>"; };
 		80B281E61997C85D00504D63 /* SLT2DLevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLT2DLevelParser.h; sourceTree = "<group>"; };
@@ -333,6 +336,8 @@
 			children = (
 				8081218F19B6FEF50013266B /* HTTPStatus.h */,
 				8081219019B6FEF50013266B /* HTTPStatus.m */,
+				8081219219B727EA0013266B /* Utils.h */,
+				8081219319B727EA0013266B /* Utils.m */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -852,6 +857,7 @@
 				808D40FB19B36A5B00BC8FCD /* SLTSaltrMobile.m in Sources */,
 				CDACAC1418E0A10700021EFA /* SLTResource.m in Sources */,
 				982C55F919719F1E00DC99B1 /* SLTLevel.m in Sources */,
+				8081219419B727EA0013266B /* Utils.m in Sources */,
 				80B281E81997C85D00504D63 /* SLT2DLevelParser.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
