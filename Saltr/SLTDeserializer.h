@@ -41,7 +41,7 @@
  * @param data - data object corresponding to JSON
  * @return - array of Feature objects
  */
-- (NSDictionary*)decodeFeaturesFromData:(NSDictionary *)data;
+- (NSMutableDictionary*)decodeFeaturesFromData:(NSDictionary *)data;
 
 
 @end

@@ -54,4 +54,6 @@
  */
 - (void) defineFeatureWithToken:(NSString*)theToken properties:(NSDictionary*)theProperties andRequired:(BOOL)theRequired;
 
+- (void) start;
+
 @end

@@ -188,4 +188,46 @@
     }
 }
 
+- (void) start
+{
+    NSException* exception;
+    
+    if (nil == _deviceId) {
+        exception = [NSException
+                     exceptionWithName:@"Exception"
+                     reason:@"deviceId field is required and can't be null."
+                     userInfo:nil];
+        @throw exception;
+    }
+    
+    if (0 == [_developerFeatures count] && NO == _useNoFeatures) {
+        exception = [NSException
+                     exceptionWithName:@"Exception"
+                     reason:@"Features should be defined."
+                     userInfo:nil];
+        @throw exception;
+    }
+    
+    if (0 == [_levelPacks count] && NO == _useNoLevels) {
+        exception = [NSException
+                     exceptionWithName:@"Exception"
+                     reason:@"Levels should be imported."
+                     userInfo:nil];
+        @throw exception;
+    }
+    
+    NSDictionary* cachedData = [_repository objectFromCache:APP_DATA_URL_CACHE];
+    if (nil == cachedData) {
+        for(NSString* i in _developerFeatures) {
+            [_activeFeatures setObject:[_developerFeatures objectForKey:i] forKey:i];
+        }
+    } else {
+        _activeFeatures = [_deserializer decodeFeaturesFromData:cachedData];
+        _experiments = [_deserializer decodeExperimentsFromData:cachedData];
+        _saltrUserId = [cachedData objectForKey:@"saltrUserId"];
+    }
+    
+    _started = YES;
+}
+
 @end

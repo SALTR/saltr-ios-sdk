@@ -73,7 +73,7 @@
     return levelPacks;
 }
 
-- (NSDictionary*)decodeFeaturesFromData:(NSDictionary * )data
+- (NSMutableDictionary*)decodeFeaturesFromData:(NSDictionary * )data
 {
     NSMutableDictionary* features = [NSMutableDictionary new];
     NSArray* featuresNodes = [data objectForKey:@"features"];
