@@ -41,6 +41,7 @@
 
 @implementation SLTSaltrMobile
 
+@synthesize saltrRequestDelegate;
 @synthesize repository  = _repository;
 @synthesize useNoLevels  = _useNoLevels;
 @synthesize useNoFeatures  = _useNoFeatures;
@@ -229,5 +230,7 @@
     
     _started = YES;
 }
+
+#pragma mark private functions
 
 @end

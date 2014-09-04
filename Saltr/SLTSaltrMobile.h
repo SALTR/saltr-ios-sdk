@@ -15,7 +15,28 @@
 @class SLTLevel;
 @class SLTLevelPack;
 
-@interface SLTSaltrMobile : NSObject
+@protocol SaltrMobileRequestDelegate <NSObject>
+
+@required
+
+/// Informs that getting App data request has succeeded
+//-(void) didFinishGettingAppDataRequest;
+
+/// Informs that getting app data request has failed
+//-(void) didFailGettingAppDataRequest:(SLTError*)error;
+
+/// Informs that getting level data body with level pack request has succeeded
+//-(void) didFinishGettingLevelDataBodyWithLevelPackRequest;
+
+/// Informs that getting level data body with level pack request has failed
+//-(void) didFailGettingLevelDataBodyWithLevelPackRequest;
+
+@end
+
+@interface SLTSaltrMobile : NSObject {
+    /// The delegate of @b SaltrRequestDelegate protocol
+    __unsafe_unretained id <SaltrMobileRequestDelegate> saltrRequestDelegate;
+}
 
 @property (nonatomic, strong, readwrite) NSObject<SLTRepositoryProtocolDelegate>* repository;
 
@@ -36,6 +57,9 @@
 @property (nonatomic, strong, readonly) NSArray* experiments;
 
 @property (nonatomic, strong, readwrite) NSString* socialId;
+
+/// The delegate of @b SaltrRequestDelegate protocol
+@property (nonatomic, assign) id <SaltrMobileRequestDelegate> saltrRequestDelegate;
 
 - (id) initSaltrWithClientKey:(NSString*)theClientKey deviceId:(NSString*)theDeviceId andCacheEnabled:(BOOL)theCacheEnabled;
 
