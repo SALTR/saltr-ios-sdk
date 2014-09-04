@@ -16,7 +16,12 @@
 #import "SLTFeature.h"
 #import "SLTConfig.h"
 #import "SLTDeserializer.h"
+#import "SLTResource.h"
+#import "SLTResourceURLTicket.h"
+#import "SLTStatusAppDataLoadFail.h"
 
+NSString* CLIENT=@"IOS-Mobile";
+NSString* API_VERSION=@"1.0.1";
 
 @interface SLTSaltrMobile() {    
     NSString* _clientKey;
@@ -231,6 +236,119 @@
     _started = YES;
 }
 
+- (void) connect
+{
+    [self connectWithBasicProperties:nil andCustomProperties:nil];
+}
+
+- (void) connectWithBasicProperties:(NSDictionary*)theBasicProperties
+{
+    [self connectWithBasicProperties:theBasicProperties andCustomProperties:nil];
+}
+
+- (void) connectWithBasicProperties:(NSDictionary *)theBasicProperties andCustomProperties:(NSDictionary*)theCustomProperties
+{
+    if (_isLoading || !_started) {
+        return;
+    }
+    
+    _isLoading = YES;
+    
+    void (^appDataLoadFailCallback)(SLTResource*) = ^(SLTResource* asset) {
+        [asset dispose];
+        [self loadAppDataFailHandler];
+    };
+    void (^appDataLoadSuccessCallback)(SLTResource*) = ^(SLTResource* asset) {
+        //TODO: @Tigr implement
+        NSDictionary* data = asset.jsonData;
+        NSDictionary* jsonData = [data objectForKey:@"responseData"];
+        NSString* status = [data objectForKey:@"status"];
+        assert(status);
+        _isLoading = NO;
+        if ([status isEqualToString:RESULT_SUCCEED]) {
+            [_repository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
+            _connected = YES;
+            [self loadAppDataSuccessHandler:jsonData];
+        } else {
+//            [self loadAppDataFailHandlerWithErrorCode:[[jsonData objectForKey:@"errorCode"] integerValue]  andMessage:[jsonData objectForKey:@"errorMessage"]];
+        }
+        [asset dispose];
+    };
+    
+    SLTResource* resource = [self createAppDataResource:appDataLoadSuccessCallback errorHandler:appDataLoadFailCallback basicProperties:theBasicProperties customProperties:theCustomProperties];
+    [resource load];
+}
+
 #pragma mark private functions
+
+-(SLTResource *)createAppDataResource:(void (^)(SLTResource *))appDataAssetLoadCompleteHandler errorHandler:(void (^)(SLTResource *))appDataAssetLoadErrorHandler basicProperties:(NSDictionary*)theBasicProperties customProperties:(NSDictionary*)theCustomProperties
+{
+//    NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
+//    [args setObject:_instanceKey forKey:@"instanceKey"];
+//    if (_device) {
+//        [args setObject:[_device toDictionary] forKey:@"device"];
+//    }
+//    if (_partner) {
+//        [args setObject:[_partner toDictionary] forKey:@"partner"];
+//    }
+//    NSError* error = nil;
+//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
+//                                                       options:NSJSONWritingPrettyPrinted
+//                                                         error:&error];
+//    if (!error) {
+//        NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+//        jsonArguments = [jsonArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+//        NSString* urlVars = [NSString stringWithFormat:@"?command=%@&arguments=%@", COMMAND_APP_DATA, jsonArguments];
+//        
+//        SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];
+//        SLTResource* resource = [[SLTResource alloc] initWithId:@"saltAppConfig" andTicket:ticket successHandler:appDataAssetLoadCompleteHandler errorHandler:appDataAssetLoadErrorHandler progressHandler:nil];
+//        return resource;
+//    }
+//    return nil;
+    
+    NSString* urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@", ACTION_GET_APP_DATA, ACTION_GET_APP_DATA];
+    
+    NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
+    [args setObject:API_VERSION forKey:@"apiVersion"];
+    [args setObject:_clientKey forKey:@"clientKey"];
+    [args setObject:CLIENT forKey:@"client"];
+    
+    return nil;
+}
+
+-(void) loadAppDataSuccessHandler:(NSDictionary *)jsonData {
+    //TODO: @TIGR implement
+//    _saltrUserId = [jsonData objectForKey:@"saltId"];
+//    _experiments = [_deserializer decodeExperimentsFromData:jsonData];
+//    _levelPacks = [_deserializer decodeLevelsFromData:jsonData];
+//    NSDictionary* saltrFeatures = [_deserializer decodeFeaturesFromData:jsonData];
+//    //merging with defaults...
+//    
+//    for (NSString* key in [saltrFeatures allKeys]) {
+//        SLTFeature* saltrFeature = [saltrFeatures objectForKey:key];
+//        SLTFeature* defaultFeature = [_features objectForKey:key];
+//        saltrFeature.defaultProperties = defaultFeature.defaultProperties;
+//        [_features setValue:saltrFeature forKey:key];
+//    }
+//    
+//    if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingAppDataRequest)]) {
+//        [saltrRequestDelegate didFinishGettingAppDataRequest];
+//    }
+//    /// @todo the meaning of the boolean below is not clear.
+//    // The condition will be always true as the mentioned boolean never changes its value.
+//    if (_isInDevMode) {
+//        [self syncFeatures];
+//    }
+}
+
+-(void) loadAppDataFailHandler
+{
+    _isLoading = NO;
+    _connected = NO;
+    if ([saltrRequestDelegate respondsToSelector:@selector(didFailGettingAppDataRequest:)]) {
+        SLTStatusAppDataLoadFail* status = [[SLTStatusAppDataLoadFail alloc] init];
+        [saltrRequestDelegate didFailGettingAppDataRequest:status];
+    }
+}
 
 @end

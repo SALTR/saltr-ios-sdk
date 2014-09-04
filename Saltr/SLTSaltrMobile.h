@@ -14,16 +14,20 @@
 
 @class SLTLevel;
 @class SLTLevelPack;
+@class SLTStatus;
+
+extern const NSString* CLIENT;
+extern const NSString* API_VERSION;
 
 @protocol SaltrMobileRequestDelegate <NSObject>
 
 @required
 
 /// Informs that getting App data request has succeeded
-//-(void) didFinishGettingAppDataRequest;
+-(void) didFinishGettingAppDataRequest;
 
 /// Informs that getting app data request has failed
-//-(void) didFailGettingAppDataRequest:(SLTError*)error;
+-(void) didFailGettingAppDataRequest:(SLTStatus*)status;
 
 /// Informs that getting level data body with level pack request has succeeded
 //-(void) didFinishGettingLevelDataBodyWithLevelPackRequest;
@@ -79,5 +83,11 @@
 - (void) defineFeatureWithToken:(NSString*)theToken properties:(NSDictionary*)theProperties andRequired:(BOOL)theRequired;
 
 - (void) start;
+
+- (void) connect;
+
+- (void) connectWithBasicProperties:(NSDictionary*)theBasicProperties;
+
+- (void) connectWithBasicProperties:(NSDictionary *)theBasicProperties andCustomProperties:(NSDictionary*)theCustomProperties;
 
 @end
