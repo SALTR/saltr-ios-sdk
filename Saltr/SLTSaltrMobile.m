@@ -317,8 +317,6 @@ NSString* API_VERSION=@"1.0.1";
         [args setObject:theCustomProperties forKey:@"customProperties"];
     }
     
-    ////////////////////////////////////////////////////////////////////////////////
-    
     NSError* error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
                                                        options:NSJSONWritingPrettyPrinted
@@ -335,12 +333,6 @@ NSString* API_VERSION=@"1.0.1";
         return resource;
     }
     return nil;
-    
-    ////////////////////////////////////////////////////////////////////////////////
-    
-    //SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];
-    
-    //return nil;
 }
 
 -(void) loadAppDataSuccessHandler:(NSDictionary *)jsonData {
