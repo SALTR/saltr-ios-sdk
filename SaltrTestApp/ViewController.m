@@ -10,7 +10,7 @@
 //#import "SLTRepository.h"
 
 @interface ViewController () {
-    SLTSaltrMobile* saltr;
+    SLTSaltr* saltr;
 }
 
 @end
@@ -26,7 +26,7 @@
 //    [[SLTSaltr sharedInstance] setupPartnerWithId:@"100000024783448" andPartnerType:@"facebook"];
 //    [[SLTSaltr sharedInstance] setupDeviceWithId:@"asdas123kasd" andDeviceType:@"phone"];
     
-    saltr = [[SLTSaltrMobile alloc] initSaltrWithClientKey:@"473263" deviceId:@"device_id_ios" andCacheEnabled:NO];
+    saltr = [[SLTSaltr alloc] initSaltrWithClientKey:@"473263" deviceId:@"device_id_ios" andCacheEnabled:NO];
     
     saltr.useNoFeatures=YES;
     saltr.useNoLevels=YES;

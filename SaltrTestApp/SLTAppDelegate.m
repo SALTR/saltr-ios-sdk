@@ -7,7 +7,7 @@
 //
 
 #import "SLTAppDelegate.h"
-#import "SLTSaltrMobile.h"
+#import "SLTSaltr.h"
 
 @implementation SLTAppDelegate
 

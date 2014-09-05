@@ -25,36 +25,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SaltrMobileRequestDelegate</Name>
+      <Name>SaltrRequestDelegate</Name>
       <APILanguage>c</APILanguage>
       <Type>intf</Type>
-      <Scope>SaltrMobileRequestDelegate</Scope>
+      <Scope>SaltrRequestDelegate</Scope>
     </TokenIdentifier>
-    <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
+    <Path>protocol_saltr_request_delegate-p.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>didFinishGettingAppDataRequest</Name>
       <APILanguage>occ</APILanguage>
       <Type>intfm</Type>
-      <Scope>SaltrMobileRequestDelegate-p</Scope>
+      <Scope>SaltrRequestDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
-    <Anchor>af7fcf6616290a8bbe8b91e2d47b2659f</Anchor>
+    <Path>protocol_saltr_request_delegate-p.html</Path>
+    <Anchor>ae2b8646d7e84d60c1e0e204d8b9e1790</Anchor>
     <Abstract>Informs that getting App data request has succeeded. </Abstract>
-    <DeclaredIn>SLTSaltrMobile.h</DeclaredIn>
+    <DeclaredIn>SLTSaltr.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>didFailGettingAppDataRequest:</Name>
       <APILanguage>occ</APILanguage>
       <Type>intfm</Type>
-      <Scope>SaltrMobileRequestDelegate-p</Scope>
+      <Scope>SaltrRequestDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
-    <Anchor>a4579e97e1dd4cea3b722be9588cf78d3</Anchor>
+    <Path>protocol_saltr_request_delegate-p.html</Path>
+    <Anchor>afd00dcac77d85c8dd19b3ecba52c0959</Anchor>
     <Abstract>Informs that getting app data request has failed. </Abstract>
-    <DeclaredIn>SLTSaltrMobile.h</DeclaredIn>
+    <DeclaredIn>SLTSaltr.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1768,33 +1768,33 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SLTSaltrMobile</Name>
+      <Name>SLTSaltr</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>SLTSaltrMobile</Scope>
+      <Scope>SLTSaltr</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_saltr_mobile.html</Path>
+    <Path>interface_s_l_t_saltr.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>defineFeatureWithToken:properties:andRequired:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>SLTSaltrMobile</Scope>
+      <Scope>SLTSaltr</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_saltr_mobile.html</Path>
-    <Anchor>ab189aaa964dbf68e9763cf1631884ab7</Anchor>
-    <DeclaredIn>SLTSaltrMobile.h</DeclaredIn>
+    <Path>interface_s_l_t_saltr.html</Path>
+    <Anchor>a3d0f149b0be602f9990ebfc574fb1274</Anchor>
+    <DeclaredIn>SLTSaltr.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>saltrRequestDelegate</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>SLTSaltrMobile</Scope>
+      <Scope>SLTSaltr</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_saltr_mobile.html</Path>
-    <Anchor>aaf627bb257198ce34c59cbd456a85881</Anchor>
+    <Path>interface_s_l_t_saltr.html</Path>
+    <Anchor>a9e82cedf53333046c1bba16b301eb7a9</Anchor>
     <Abstract>The delegate of SaltrRequestDelegate protocol. </Abstract>
   </Token>
   <Token>
@@ -1802,10 +1802,10 @@
       <Name>saltrRequestDelegate</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
-      <Scope>SLTSaltrMobile</Scope>
+      <Scope>SLTSaltr</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_saltr_mobile.html</Path>
-    <Anchor>ad318ffdc6ee96fe80d8901e12d5a052d</Anchor>
+    <Path>interface_s_l_t_saltr.html</Path>
+    <Anchor>a16acc773e32cc164a9f86a173942eb50</Anchor>
     <Abstract>The delegate of SaltrRequestDelegate protocol. </Abstract>
   </Token>
   <Token>
@@ -1896,23 +1896,23 @@
       <Name>didFinishGettingAppDataRequest</Name>
       <APILanguage>occ</APILanguage>
       <Type>intfm</Type>
-      <Scope>SaltrMobileRequestDelegate-p</Scope>
+      <Scope>SaltrRequestDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
-    <Anchor>af7fcf6616290a8bbe8b91e2d47b2659f</Anchor>
+    <Path>protocol_saltr_request_delegate-p.html</Path>
+    <Anchor>ae2b8646d7e84d60c1e0e204d8b9e1790</Anchor>
     <Abstract>Informs that getting App data request has succeeded. </Abstract>
-    <DeclaredIn>SLTSaltrMobile.h</DeclaredIn>
+    <DeclaredIn>SLTSaltr.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>didFailGettingAppDataRequest:</Name>
       <APILanguage>occ</APILanguage>
       <Type>intfm</Type>
-      <Scope>SaltrMobileRequestDelegate-p</Scope>
+      <Scope>SaltrRequestDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
-    <Anchor>a4579e97e1dd4cea3b722be9588cf78d3</Anchor>
+    <Path>protocol_saltr_request_delegate-p.html</Path>
+    <Anchor>afd00dcac77d85c8dd19b3ecba52c0959</Anchor>
     <Abstract>Informs that getting app data request has failed. </Abstract>
-    <DeclaredIn>SLTSaltrMobile.h</DeclaredIn>
+    <DeclaredIn>SLTSaltr.h</DeclaredIn>
   </Token>
 </Tokens>

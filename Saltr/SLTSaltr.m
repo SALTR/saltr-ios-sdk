@@ -8,7 +8,7 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "SLTSaltrMobile.h"
+#import "SLTSaltr.h"
 
 #import "SLTDummyRepository.h"
 #import "SLTLevelPack.h"
@@ -23,7 +23,7 @@
 NSString* CLIENT=@"IOS-Mobile";
 NSString* API_VERSION=@"1.0.1";
 
-@interface SLTSaltrMobile() {    
+@interface SLTSaltr() {    
     NSString* _clientKey;
     NSString* _deviceId;
     BOOL _isLoading;
@@ -44,7 +44,7 @@ NSString* API_VERSION=@"1.0.1";
 }
 @end
 
-@implementation SLTSaltrMobile
+@implementation SLTSaltr
 
 @synthesize saltrRequestDelegate;
 @synthesize repository  = _repository;

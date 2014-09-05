@@ -1,8 +1,8 @@
 var searchData=
 [
   ['saltr_20ios_20sdk',['SALTR iOS SDK',['../md__r_e_a_d_m_e.html',1,'']]],
-  ['saltrmobilerequestdelegate_2dp',['SaltrMobileRequestDelegate-p',['../protocol_saltr_mobile_request_delegate-p.html',1,'']]],
-  ['saltrrequestdelegate',['saltrRequestDelegate',['../interface_s_l_t_saltr_mobile.html#aaf627bb257198ce34c59cbd456a85881',1,'SLTSaltrMobile::saltrRequestDelegate()'],['../interface_s_l_t_saltr_mobile.html#ad318ffdc6ee96fe80d8901e12d5a052d',1,'SLTSaltrMobile::saltrRequestDelegate()']]],
+  ['saltrrequestdelegate',['saltrRequestDelegate',['../interface_s_l_t_saltr.html#a9e82cedf53333046c1bba16b301eb7a9',1,'SLTSaltr::saltrRequestDelegate()'],['../interface_s_l_t_saltr.html#a16acc773e32cc164a9f86a173942eb50',1,'SLTSaltr::saltrRequestDelegate()']]],
+  ['saltrrequestdelegate_2dp',['SaltrRequestDelegate-p',['../protocol_saltr_request_delegate-p.html',1,'']]],
   ['saveobject_3aobjecttosave_3a',['saveObject:objectToSave:',['../protocol_s_l_t_repository_protocol_delegate-p.html#a64a14b367ad2cce27d23056dae5c4e24',1,'SLTRepositoryProtocolDelegate-p']]],
   ['sharedinstance',['sharedInstance',['../interface_s_l_t2_d_level_parser.html#a2c5baa69a403f37972fa8e20157d4ca3',1,'SLT2DLevelParser']]],
   ['slt2dassetinstance',['SLT2DAssetInstance',['../interface_s_l_t2_d_asset_instance.html',1,'']]],
@@ -36,7 +36,7 @@ var searchData=
   ['sltrepositoryprotocoldelegate_2dp',['SLTRepositoryProtocolDelegate-p',['../protocol_s_l_t_repository_protocol_delegate-p.html',1,'']]],
   ['sltresource',['SLTResource',['../interface_s_l_t_resource.html',1,'']]],
   ['sltresourceurlticket',['SLTResourceURLTicket',['../interface_s_l_t_resource_u_r_l_ticket.html',1,'']]],
-  ['sltsaltrmobile',['SLTSaltrMobile',['../interface_s_l_t_saltr_mobile.html',1,'']]],
+  ['sltsaltr',['SLTSaltr',['../interface_s_l_t_saltr.html',1,'']]],
   ['sltstatusappdataloadfail',['SLTStatusAppDataLoadFail',['../interface_s_l_t_status_app_data_load_fail.html',1,'']]],
   ['sltstatusexperimentsparseerror',['SLTStatusExperimentsParseError',['../interface_s_l_t_status_experiments_parse_error.html',1,'']]],
   ['sltstatusfeaturesparseerror',['SLTStatusFeaturesParseError',['../interface_s_l_t_status_features_parse_error.html',1,'']]],

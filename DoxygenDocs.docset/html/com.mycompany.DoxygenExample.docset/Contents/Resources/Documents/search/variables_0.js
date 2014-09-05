@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['saltrrequestdelegate',['saltrRequestDelegate',['../interface_s_l_t_saltr_mobile.html#aaf627bb257198ce34c59cbd456a85881',1,'SLTSaltrMobile']]]
+  ['saltrrequestdelegate',['saltrRequestDelegate',['../interface_s_l_t_saltr.html#a9e82cedf53333046c1bba16b301eb7a9',1,'SLTSaltr']]]
 ];

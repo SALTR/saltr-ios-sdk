@@ -7,8 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "SLTSaltrMobile.h"
+#import "SLTSaltr.h"
 
-@interface ViewController : UIViewController<SaltrMobileRequestDelegate>
+@interface ViewController : UIViewController<SaltrRequestDelegate>
 
 @end

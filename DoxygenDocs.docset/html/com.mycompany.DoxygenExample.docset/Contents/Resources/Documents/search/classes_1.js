@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['saltrmobilerequestdelegate_2dp',['SaltrMobileRequestDelegate-p',['../protocol_saltr_mobile_request_delegate-p.html',1,'']]],
+  ['saltrrequestdelegate_2dp',['SaltrRequestDelegate-p',['../protocol_saltr_request_delegate-p.html',1,'']]],
   ['slt2dassetinstance',['SLT2DAssetInstance',['../interface_s_l_t2_d_asset_instance.html',1,'']]],
   ['slt2dassetstate',['SLT2DAssetState',['../interface_s_l_t2_d_asset_state.html',1,'']]],
   ['slt2dboard',['SLT2DBoard',['../interface_s_l_t2_d_board.html',1,'']]],
@@ -32,7 +32,7 @@ var searchData=
   ['sltrepositoryprotocoldelegate_2dp',['SLTRepositoryProtocolDelegate-p',['../protocol_s_l_t_repository_protocol_delegate-p.html',1,'']]],
   ['sltresource',['SLTResource',['../interface_s_l_t_resource.html',1,'']]],
   ['sltresourceurlticket',['SLTResourceURLTicket',['../interface_s_l_t_resource_u_r_l_ticket.html',1,'']]],
-  ['sltsaltrmobile',['SLTSaltrMobile',['../interface_s_l_t_saltr_mobile.html',1,'']]],
+  ['sltsaltr',['SLTSaltr',['../interface_s_l_t_saltr.html',1,'']]],
   ['sltstatusappdataloadfail',['SLTStatusAppDataLoadFail',['../interface_s_l_t_status_app_data_load_fail.html',1,'']]],
   ['sltstatusexperimentsparseerror',['SLTStatusExperimentsParseError',['../interface_s_l_t_status_experiments_parse_error.html',1,'']]],
   ['sltstatusfeaturesparseerror',['SLTStatusFeaturesParseError',['../interface_s_l_t_status_features_parse_error.html',1,'']]],

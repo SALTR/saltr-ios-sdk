@@ -19,7 +19,7 @@
 		8087E48719B89881002F3568 /* SLTStatusLevelContentLoadFail.m in Sources */ = {isa = PBXBuildFile; fileRef = 8087E48619B89881002F3568 /* SLTStatusLevelContentLoadFail.m */; };
 		8087E48A19B898C8002F3568 /* SLTStatusLevelsParseError.m in Sources */ = {isa = PBXBuildFile; fileRef = 8087E48919B898C8002F3568 /* SLTStatusLevelsParseError.m */; };
 		8087E48D19B8990B002F3568 /* SLTStatusLevelsParserMissing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8087E48C19B8990B002F3568 /* SLTStatusLevelsParserMissing.m */; };
-		808D40FB19B36A5B00BC8FCD /* SLTSaltrMobile.m in Sources */ = {isa = PBXBuildFile; fileRef = 808D40FA19B36A5B00BC8FCD /* SLTSaltrMobile.m */; };
+		808D40FB19B36A5B00BC8FCD /* SLTSaltr.m in Sources */ = {isa = PBXBuildFile; fileRef = 808D40FA19B36A5B00BC8FCD /* SLTSaltr.m */; };
 		80B281E81997C85D00504D63 /* SLT2DLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B281E71997C85D00504D63 /* SLT2DLevelParser.m */; };
 		80F370561993F7EF000522F7 /* SLT2DAssetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F370551993F7EF000522F7 /* SLT2DAssetInstance.m */; };
 		80F370591994035C000522F7 /* SLT2DAssetState.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F370581994035C000522F7 /* SLT2DAssetState.m */; };
@@ -173,8 +173,8 @@
 		8087E48919B898C8002F3568 /* SLTStatusLevelsParseError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTStatusLevelsParseError.m; sourceTree = "<group>"; };
 		8087E48B19B8990B002F3568 /* SLTStatusLevelsParserMissing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTStatusLevelsParserMissing.h; sourceTree = "<group>"; };
 		8087E48C19B8990B002F3568 /* SLTStatusLevelsParserMissing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTStatusLevelsParserMissing.m; sourceTree = "<group>"; };
-		808D40F919B36A5B00BC8FCD /* SLTSaltrMobile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTSaltrMobile.h; sourceTree = "<group>"; };
-		808D40FA19B36A5B00BC8FCD /* SLTSaltrMobile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTSaltrMobile.m; sourceTree = "<group>"; };
+		808D40F919B36A5B00BC8FCD /* SLTSaltr.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTSaltr.h; sourceTree = "<group>"; };
+		808D40FA19B36A5B00BC8FCD /* SLTSaltr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTSaltr.m; sourceTree = "<group>"; };
 		80B281E61997C85D00504D63 /* SLT2DLevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLT2DLevelParser.h; sourceTree = "<group>"; };
 		80B281E71997C85D00504D63 /* SLT2DLevelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLT2DLevelParser.m; sourceTree = "<group>"; };
 		80F370541993F7EF000522F7 /* SLT2DAssetInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLT2DAssetInstance.h; sourceTree = "<group>"; };
@@ -498,8 +498,8 @@
 				CA1FC23D18B3C39400E92A06 /* SLTPartner.m */,
 				8016D48A19916B50006943F5 /* SLTBasicProperties.h */,
 				8016D48B19916B50006943F5 /* SLTBasicProperties.m */,
-				808D40F919B36A5B00BC8FCD /* SLTSaltrMobile.h */,
-				808D40FA19B36A5B00BC8FCD /* SLTSaltrMobile.m */,
+				808D40F919B36A5B00BC8FCD /* SLTSaltr.h */,
+				808D40FA19B36A5B00BC8FCD /* SLTSaltr.m */,
 			);
 			path = Saltr;
 			sourceTree = "<group>";
@@ -885,7 +885,7 @@
 				989CC4D1197458FC008DC08F /* SLTChunk.m in Sources */,
 				98D715CC1972A1A600502350 /* SLTCellsIterator.m in Sources */,
 				80F370561993F7EF000522F7 /* SLT2DAssetInstance.m in Sources */,
-				808D40FB19B36A5B00BC8FCD /* SLTSaltrMobile.m in Sources */,
+				808D40FB19B36A5B00BC8FCD /* SLTSaltr.m in Sources */,
 				CDACAC1418E0A10700021EFA /* SLTResource.m in Sources */,
 				982C55F919719F1E00DC99B1 /* SLTLevel.m in Sources */,
 				8087E48119B897E4002F3568 /* SLTStatusExperimentsParseError.m in Sources */,

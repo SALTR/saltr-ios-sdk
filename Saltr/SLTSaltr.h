@@ -19,7 +19,7 @@
 extern const NSString* CLIENT;
 extern const NSString* API_VERSION;
 
-@protocol SaltrMobileRequestDelegate <NSObject>
+@protocol SaltrRequestDelegate <NSObject>
 
 @required
 
@@ -37,9 +37,9 @@ extern const NSString* API_VERSION;
 
 @end
 
-@interface SLTSaltrMobile : NSObject {
+@interface SLTSaltr : NSObject {
     /// The delegate of @b SaltrRequestDelegate protocol
-    __unsafe_unretained id <SaltrMobileRequestDelegate> saltrRequestDelegate;
+    __unsafe_unretained id <SaltrRequestDelegate> saltrRequestDelegate;
 }
 
 @property (nonatomic, strong, readwrite) NSObject<SLTRepositoryProtocolDelegate>* repository;
@@ -63,7 +63,7 @@ extern const NSString* API_VERSION;
 @property (nonatomic, strong, readwrite) NSString* socialId;
 
 /// The delegate of @b SaltrRequestDelegate protocol
-@property (nonatomic, assign) id <SaltrMobileRequestDelegate> saltrRequestDelegate;
+@property (nonatomic, assign) id <SaltrRequestDelegate> saltrRequestDelegate;
 
 - (id) initSaltrWithClientKey:(NSString*)theClientKey deviceId:(NSString*)theDeviceId andCacheEnabled:(BOOL)theCacheEnabled;
 

@@ -28,18 +28,18 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>&lt;SaltrMobileRequestDelegate&gt;</Name>
-            <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
+            <Name>&lt;SaltrRequestDelegate&gt;</Name>
+            <Path>protocol_saltr_request_delegate-p.html</Path>
             <Subnodes>
              <Node>
               <Name>didFailGettingAppDataRequest:</Name>
-              <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
-              <Anchor>a4579e97e1dd4cea3b722be9588cf78d3</Anchor>
+              <Path>protocol_saltr_request_delegate-p.html</Path>
+              <Anchor>afd00dcac77d85c8dd19b3ecba52c0959</Anchor>
              </Node>
              <Node>
               <Name>didFinishGettingAppDataRequest</Name>
-              <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
-              <Anchor>af7fcf6616290a8bbe8b91e2d47b2659f</Anchor>
+              <Path>protocol_saltr_request_delegate-p.html</Path>
+              <Anchor>ae2b8646d7e84d60c1e0e204d8b9e1790</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -961,123 +961,123 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>SLTSaltrMobile</Name>
-            <Path>interface_s_l_t_saltr_mobile.html</Path>
+            <Name>SLTSaltr</Name>
+            <Path>interface_s_l_t_saltr.html</Path>
             <Subnodes>
              <Node>
               <Name>connect</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a2790e5e9f3a1a6f2164a221549c92a97</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a38d8df5968bd62590acbfca625a4a1dc</Anchor>
              </Node>
              <Node>
               <Name>connectWithBasicProperties:</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>acbfcbfa0b50132c108995dc79fdf9448</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a4a5285990a851b8cb9adfc860fb4e4a6</Anchor>
              </Node>
              <Node>
               <Name>connectWithBasicProperties:andCustomProperties:</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a7cc8eaf20b5d35d561b78a24cd2b6af4</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a75b5d3c0692cc0762de992e6d52bc6e1</Anchor>
              </Node>
              <Node>
               <Name>defineFeatureWithToken:properties:andRequired:</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>ab189aaa964dbf68e9763cf1631884ab7</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a3d0f149b0be602f9990ebfc574fb1274</Anchor>
              </Node>
              <Node>
               <Name>getActiveFeatureTokens</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a41a121f2a4b259c1d3d4ace454f96414</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>ae3856574f9a155e40fa35436fbb3ab6b</Anchor>
              </Node>
              <Node>
               <Name>getFeaturePropertiesByToken:</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a6ce66edf542f57628c82590f2e9387d1</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a1c0a127db2321f041de09d9bf580029c</Anchor>
              </Node>
              <Node>
               <Name>getLevelByGlobalIndex:</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>ae4ace2c3376c70ad05bf6848e8df372c</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a35d3fcfd2b26753cd59d08d1e77ba764</Anchor>
              </Node>
              <Node>
               <Name>getPackByLevelGlobalIndex:</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a135ee03d9c026894c1c20787ea0ff87a</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a3ed81a19d83f9023746648ac70a99a74</Anchor>
              </Node>
              <Node>
               <Name>importLevelsFromPath:</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a117606b15ac72cac17aa4365c6fd908e</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>abaab5f9f2e2c7d9bb29a82f357c6aa79</Anchor>
              </Node>
              <Node>
               <Name>initSaltrWithClientKey:deviceId:andCacheEnabled:</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a50c66b0a0bccfb8d3f970e2e590e8298</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a686a661845ac15ec02b7ecabac58ad1e</Anchor>
              </Node>
              <Node>
               <Name>start</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>af8557ab41cf02561575e8fdc03db8a03</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>ac85017ea539dcd20ec04075285322c09</Anchor>
              </Node>
              <Node>
               <Name>saltrRequestDelegate</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>aaf627bb257198ce34c59cbd456a85881</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a9e82cedf53333046c1bba16b301eb7a9</Anchor>
              </Node>
              <Node>
               <Name>allLevels</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a97b57b463a9ba42cd1d607a125360a47</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a5b37057d72c1bd81a33d8904fd3348b5</Anchor>
              </Node>
              <Node>
               <Name>allLevelsCount</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a55c2406f4de971c76594093dcf824ae1</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a8eec87d7e3b06415340cfa0eb14e2afe</Anchor>
              </Node>
              <Node>
               <Name>devMode</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>ac8eab5a2d37bdee7537c8c17f3c83831</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a7a32fc9277d68bebd907c6d06f37b4ed</Anchor>
              </Node>
              <Node>
               <Name>experiments</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>aae9568a7b26907a0b9d68e1ca951c4d6</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>abf450f6c08472245d1cc284aeafcacab</Anchor>
              </Node>
              <Node>
               <Name>levelPacks</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a0514a15cef5ea2e4da7a9fe3a7a516b7</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a1a6b3cd07af646d5adef43b8d42831bd</Anchor>
              </Node>
              <Node>
               <Name>repository</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a081867f255826f5702e9c376916ca676</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>ab8d6dfb25fac0079201c044144d76e28</Anchor>
              </Node>
              <Node>
               <Name>requestIdleTimeout</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a269d2054a2c5003eeecfbbd3b63d19e5</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a6a5e3baf5c2d314c56b2b97535fbcde9</Anchor>
              </Node>
              <Node>
               <Name>saltrRequestDelegate</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>ad318ffdc6ee96fe80d8901e12d5a052d</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>a16acc773e32cc164a9f86a173942eb50</Anchor>
              </Node>
              <Node>
               <Name>socialId</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a5a5901c5fd8b61cffcf50a0d2ca2a3f7</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>ac17d203c4dc78c9b0b2ca0bd4905b017</Anchor>
              </Node>
              <Node>
               <Name>useNoFeatures</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a8f2dd051572927fab0cec23d15bef128</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>ab862e319ca785dd2f89b114b47e4957c</Anchor>
              </Node>
              <Node>
               <Name>useNoLevels</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
-              <Anchor>a357504eca3691013bb091841e920547d</Anchor>
+              <Path>interface_s_l_t_saltr.html</Path>
+              <Anchor>afebfa89d3644db23e9f420cfd18ba82f</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -1250,8 +1250,8 @@
               <Path>interface_s_l_t_resource_u_r_l_ticket.html</Path>
              </Node>
              <Node>
-              <Name>SLTSaltrMobile</Name>
-              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Name>SLTSaltr</Name>
+              <Path>interface_s_l_t_saltr.html</Path>
              </Node>
              <Node>
               <Name>Utils</Name>
@@ -1264,8 +1264,8 @@
             <Path></Path>
             <Subnodes>
              <Node>
-              <Name>&lt;SaltrMobileRequestDelegate&gt;</Name>
-              <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
+              <Name>&lt;SaltrRequestDelegate&gt;</Name>
+              <Path>protocol_saltr_request_delegate-p.html</Path>
               <Subnodes>
                <Node>
                 <Name>ViewController</Name>
@@ -1620,8 +1620,8 @@
               <Path>_s_l_t_partner_8h_source.html</Path>
              </Node>
              <Node>
-              <Name>SLTSaltrMobile.h</Name>
-              <Path>_s_l_t_saltr_mobile_8h_source.html</Path>
+              <Name>SLTSaltr.h</Name>
+              <Path>_s_l_t_saltr_8h_source.html</Path>
              </Node>
             </Subnodes>
            </Node>
