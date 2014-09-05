@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['parselevelboard_3awithlevelsettings_3a',['parseLevelBoard:withLevelSettings:',['../interface_s_l_t_level_board_parser.html#a037b7d12475d2bfe2e07b98305436df6',1,'SLTLevelBoardParser']]],
-  ['parselevelboards_3awithlevelsettings_3a',['parseLevelBoards:withLevelSettings:',['../interface_s_l_t_level_board_parser.html#a24a7a03cb887255c0093e6ba6b2478cc',1,'SLTLevelBoardParser']]],
-  ['parselevelsettings_3a',['parseLevelSettings:',['../interface_s_l_t_level_board_parser.html#ad811827069da8569b76764a3b17c913e',1,'SLTLevelBoardParser']]]
+  ['updatecontent_3a',['updateContent:',['../interface_s_l_t_level.html#a7131a39b09936f115f6ab64e752cef47',1,'SLTLevel']]],
+  ['urlrequest',['urlRequest',['../interface_s_l_t_resource_u_r_l_ticket.html#a6db82810a0c2964665e28c189772c19a',1,'SLTResourceURLTicket']]]
 ];

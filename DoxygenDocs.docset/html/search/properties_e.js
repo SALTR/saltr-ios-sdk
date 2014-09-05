@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['ticket',['ticket',['../interface_s_l_t_resource.html#a1a4b54d756852d4db71349a1243519d5',1,'SLTResource']]],
-  ['token',['token',['../interface_s_l_t_level_pack.html#aca318b9ea03eca38a69ffbd5b3972007',1,'SLTLevelPack::token()'],['../interface_s_l_t_experiment.html#a96d7381a51e9e42fa43626b0f87793ad',1,'SLTExperiment::token()'],['../interface_s_l_t_feature.html#a89f0e4a45a0c76d28a1fbdc0064e8456',1,'SLTFeature::token()']]],
-  ['type',['type',['../interface_s_l_t_asset.html#a7d9449c3e25d7d2190fe160c7d7b1ad4',1,'SLTAsset::type()'],['../interface_s_l_t_experiment.html#a926821ef2ba9e5a6e429429270b59f93',1,'SLTExperiment::type()']]]
+  ['url',['url',['../interface_s_l_t_resource_u_r_l_ticket.html#a0e277f5cfeed5034d3297c23d1b715db',1,'SLTResourceURLTicket']]],
+  ['usecache',['useCache',['../interface_s_l_t_resource_u_r_l_ticket.html#ae740eb595c0aa964fd17653867e03964',1,'SLTResourceURLTicket']]],
+  ['useragent',['userAgent',['../interface_s_l_t_resource_u_r_l_ticket.html#aa0c5dedf53606076b57d85e7483cd55b',1,'SLTResourceURLTicket']]],
+  ['usesamedomain',['useSameDomain',['../interface_s_l_t_resource_u_r_l_ticket.html#a80f6e8eed341ccf123815b15d5ba190b',1,'SLTResourceURLTicket']]]
 ];

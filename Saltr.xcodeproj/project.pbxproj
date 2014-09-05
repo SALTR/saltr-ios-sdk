@@ -41,8 +41,6 @@
 		98D715C9197291D100502350 /* SLTCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715C8197291D100502350 /* SLTCells.m */; };
 		98D715CC1972A1A600502350 /* SLTCellsIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715CB1972A1A600502350 /* SLTCellsIterator.m */; };
 		CA1FC1FB18B3B8D600E92A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
-		CA1FC20018B3B8D600E92A06 /* SLTSaltr.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC1FF18B3B8D600E92A06 /* SLTSaltr.h */; };
-		CA1FC20218B3B8D600E92A06 /* SLTSaltr.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC20118B3B8D600E92A06 /* SLTSaltr.m */; };
 		CA1FC20918B3B8D600E92A06 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20818B3B8D600E92A06 /* XCTest.framework */; };
 		CA1FC20A18B3B8D600E92A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
 		CA1FC20C18B3B8D600E92A06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20B18B3B8D600E92A06 /* UIKit.framework */; };
@@ -145,7 +143,6 @@
 			files = (
 				CD859DFA18D87B13003B8758 /* SLTExperiment.h in CopyFiles */,
 				CD859DF918D87B06003B8758 /* SLTFeature.h in CopyFiles */,
-				CA1FC20018B3B8D600E92A06 /* SLTSaltr.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -221,8 +218,6 @@
 		CA1FC1F718B3B8D600E92A06 /* libSaltr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA1FC1FE18B3B8D600E92A06 /* Saltr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saltr-Prefix.pch"; sourceTree = "<group>"; };
-		CA1FC1FF18B3B8D600E92A06 /* SLTSaltr.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTSaltr.h; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
-		CA1FC20118B3B8D600E92A06 /* SLTSaltr.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTSaltr.m; sourceTree = "<group>"; };
 		CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaltrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC20818B3B8D600E92A06 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CA1FC20B18B3B8D600E92A06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
@@ -501,8 +496,6 @@
 				CA1FC23418B3C36100E92A06 /* SLTFeature.m */,
 				CA1FC23C18B3C39400E92A06 /* SLTPartner.h */,
 				CA1FC23D18B3C39400E92A06 /* SLTPartner.m */,
-				CA1FC1FF18B3B8D600E92A06 /* SLTSaltr.h */,
-				CA1FC20118B3B8D600E92A06 /* SLTSaltr.m */,
 				8016D48A19916B50006943F5 /* SLTBasicProperties.h */,
 				8016D48B19916B50006943F5 /* SLTBasicProperties.m */,
 				808D40F919B36A5B00BC8FCD /* SLTSaltrMobile.h */,
@@ -878,7 +871,6 @@
 				982C55EA19714C5100DC99B1 /* SLTAsset.m in Sources */,
 				98D715C01972772E00502350 /* SLTBoard.m in Sources */,
 				8087E47E19B896BC002F3568 /* SLTStatusAppDataLoadFail.m in Sources */,
-				CA1FC20218B3B8D600E92A06 /* SLTSaltr.m in Sources */,
 				80509E8D19B5ABDE00ABF65E /* SLTDummyRepository.m in Sources */,
 				80509E8A19B5ABC600ABF65E /* SLTMobileRepository.m in Sources */,
 				98D715C61972849500502350 /* SLTLevelPack.m in Sources */,

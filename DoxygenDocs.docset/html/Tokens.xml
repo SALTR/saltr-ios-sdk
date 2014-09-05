@@ -16,62 +16,331 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SaltrRequestDelegate</Name>
+      <Name>HTTPStatus</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>HTTPStatus</Scope>
+    </TokenIdentifier>
+    <Path>interface_h_t_t_p_status.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SaltrMobileRequestDelegate</Name>
       <APILanguage>c</APILanguage>
       <Type>intf</Type>
-      <Scope>SaltrRequestDelegate</Scope>
+      <Scope>SaltrMobileRequestDelegate</Scope>
     </TokenIdentifier>
-    <Path>protocol_saltr_request_delegate-p.html</Path>
-    <Abstract>Protocol which defines required methods for managing success and fail responses for the requests...</Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
+    <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>didFinishGettingAppDataRequest</Name>
       <APILanguage>occ</APILanguage>
       <Type>intfm</Type>
-      <Scope>SaltrRequestDelegate-p</Scope>
+      <Scope>SaltrMobileRequestDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>protocol_saltr_request_delegate-p.html</Path>
-    <Anchor>ae2b8646d7e84d60c1e0e204d8b9e1790</Anchor>
+    <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
+    <Anchor>af7fcf6616290a8bbe8b91e2d47b2659f</Anchor>
     <Abstract>Informs that getting App data request has succeeded. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
+    <DeclaredIn>SLTSaltrMobile.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>didFailGettingAppDataRequest:</Name>
       <APILanguage>occ</APILanguage>
       <Type>intfm</Type>
-      <Scope>SaltrRequestDelegate-p</Scope>
+      <Scope>SaltrMobileRequestDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>protocol_saltr_request_delegate-p.html</Path>
-    <Anchor>afb3dad35f697b07124ce422c7d2227bb</Anchor>
+    <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
+    <Anchor>a4579e97e1dd4cea3b722be9588cf78d3</Anchor>
     <Abstract>Informs that getting app data request has failed. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
+    <DeclaredIn>SLTSaltrMobile.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>didFinishGettingLevelDataBodyWithLevelPackRequest</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>intfm</Type>
-      <Scope>SaltrRequestDelegate-p</Scope>
+      <Name>SLT2DAssetInstance</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLT2DAssetInstance</Scope>
     </TokenIdentifier>
-    <Path>protocol_saltr_request_delegate-p.html</Path>
-    <Anchor>a175ae4dc4f22e84f5663c8e4d3c3ae55</Anchor>
-    <Abstract>Informs that getting level data body with level pack request has succeeded. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
+    <Path>interface_s_l_t2_d_asset_instance.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>didFailGettingLevelDataBodyWithLevelPackRequest</Name>
+      <Name>initWithToken:states:properties:x:y:andRotation:</Name>
       <APILanguage>occ</APILanguage>
-      <Type>intfm</Type>
-      <Scope>SaltrRequestDelegate-p</Scope>
+      <Type>instm</Type>
+      <Scope>SLT2DAssetInstance</Scope>
     </TokenIdentifier>
-    <Path>protocol_saltr_request_delegate-p.html</Path>
-    <Anchor>a089c068b1e229384358fa591b466edb5</Anchor>
-    <Abstract>Informs that getting level data body with level pack request has failed. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
+    <Path>interface_s_l_t2_d_asset_instance.html</Path>
+    <Anchor>a91bd90a250a8f32d4d03581d406a16a4</Anchor>
+    <Abstract>Inits an instance of SLT2DAssetInstance class with the given token, states, properties and rotation...</Abstract>
+    <DeclaredIn>SLT2DAssetInstance.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithToken:states:andProperties:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>SLTAssetInstance</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_asset_instance.html</Path>
+    <Anchor>a7dae9fef0175c1cea322e2ce88123283</Anchor>
+    <Abstract>Inits an instance of SLTAssetInstance class with the given token, states and properties. </Abstract>
+    <DeclaredIn>SLTAssetInstance.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>x</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLT2DAssetInstance</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_asset_instance.html</Path>
+    <Anchor>a764c012592ab954e68310c2827246126</Anchor>
+    <Abstract>the x </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>y</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLT2DAssetInstance</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_asset_instance.html</Path>
+    <Anchor>a94d25fd7baee48b80232482f17513099</Anchor>
+    <Abstract>the y </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>rotation</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLT2DAssetInstance</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_asset_instance.html</Path>
+    <Anchor>afad4e3c8b2860b8c6a437eadec1dd584</Anchor>
+    <Abstract>the rotation </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>token</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTAssetInstance</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_asset_instance.html</Path>
+    <Anchor>a89474632b7d4e54f4908b648a38e00a2</Anchor>
+    <Abstract>the token </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>states</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTAssetInstance</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_asset_instance.html</Path>
+    <Anchor>af36b6c10b7b059a5345e00fe7981a552</Anchor>
+    <Abstract>the states </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>properties</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTAssetInstance</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_asset_instance.html</Path>
+    <Anchor>a4c42eb435c86a6a9860a1096a12de192</Anchor>
+    <Abstract>the properties </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLT2DAssetState</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLT2DAssetState</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_asset_state.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithToken:properties:pivotX:andPivotY:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>SLT2DAssetState</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_asset_state.html</Path>
+    <Anchor>a6498b068ea25d3bd7092d3b16707414e</Anchor>
+    <Abstract>Inits an instance of SLT2DAssetState class with the given token, properties, pivotX and pivotY...</Abstract>
+    <DeclaredIn>SLT2DAssetState.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>pivotX</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLT2DAssetState</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_asset_state.html</Path>
+    <Anchor>ac12d22b1f073ee494eee3d0fcb397b79</Anchor>
+    <Abstract>The pivot x. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>pivotY</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLT2DAssetState</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_asset_state.html</Path>
+    <Anchor>a1ff620f4fc3432a298d920b88b556382</Anchor>
+    <Abstract>The pivot y. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLT2DBoard</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLT2DBoard</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_board.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithWidth:theHeight:layers:andProperties:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>SLT2DBoard</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_board.html</Path>
+    <Anchor>ac3de8920cffc3f64380d5b6243c52c18</Anchor>
+    <Abstract>Inits an instance of SLT2DBoard class with the given width, height, layers and properties. </Abstract>
+    <DeclaredIn>SLT2DBoard.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>width</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLT2DBoard</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_board.html</Path>
+    <Anchor>a17adda99ffd0dcddd7b7587c8f63b5a5</Anchor>
+    <Abstract>The width. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>height</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLT2DBoard</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_board.html</Path>
+    <Anchor>a3cef7657f4669a478da735e5743d9b01</Anchor>
+    <Abstract>The height. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLT2DBoardLayer</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLT2DBoardLayer</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_board_layer.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>initWithLayerId:andLayerIndex:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>SLT2DBoardLayer</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_board_layer.html</Path>
+    <Anchor>abb0a6318153c768f80f08ed604c17022</Anchor>
+    <Abstract>Inits an instance of SLT2DBoardLayer class with the given layer id and layer index. </Abstract>
+    <DeclaredIn>SLT2DBoardLayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>addAssetInstance:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>SLT2DBoardLayer</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_board_layer.html</Path>
+    <Anchor>a90ead2f51c2e7854a95ba8d850e80c75</Anchor>
+    <Abstract>Add SLT2DAssetInstance class instance. </Abstract>
+    <DeclaredIn>SLT2DBoardLayer.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>assetInstances</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLT2DBoardLayer</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_board_layer.html</Path>
+    <Anchor>a94a301818cf7c7916c2726ea0b729832</Anchor>
+    <Abstract>the asset instances </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLT2DLevelParser</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLT2DLevelParser</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_level_parser.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>SLT2DLevelParser</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_level_parser.html</Path>
+    <Anchor>aab08cfd1f3238e0cc67385d53e04cf34</Anchor>
+    <Abstract>Compile time error messages to avoid multiple initialization of SLT2DLevelParser instance. </Abstract>
+    <DeclaredIn>SLT2DLevelParser.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sharedInstance</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>SLT2DLevelParser</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_level_parser.html</Path>
+    <Anchor>a2c5baa69a403f37972fa8e20157d4ca3</Anchor>
+    <Abstract>Returns the only instance of SLT2DLevelParser class. </Abstract>
+    <DeclaredIn>SLT2DLevelParser.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>SLT2DLevelParser</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_level_parser.html</Path>
+    <Anchor>a809f82d17aa1debbefae4443b66945e2</Anchor>
+    <Abstract>Compile time error messages to avoid multiple allocation of SLT2DLevelParser instance. </Abstract>
+    <DeclaredIn>SLT2DLevelParser.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>SLT2DLevelParser</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t2_d_level_parser.html</Path>
+    <Anchor>a859e5dc524a0355f9d593f3645d89153</Anchor>
+    <Abstract>Compile time error messages to avoid multiple allocation of SLT2DLevelParser instance. </Abstract>
+    <DeclaredIn>SLT2DLevelParser.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -86,35 +355,35 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initWithType:andKeys:</Name>
+      <Name>initWithToken:stateMap:andProperties:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>SLTAsset</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_asset.html</Path>
-    <Anchor>a399f7cac1414e78a0137f6ccfbe5a331</Anchor>
+    <Anchor>abd862318d96f56e5952bba752421049c</Anchor>
     <Abstract>Initializes SLTAsset class instance with the given type and keys. </Abstract>
     <DeclaredIn>SLTAsset.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>type</Name>
+      <Name>token</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
       <Scope>SLTAsset</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_asset.html</Path>
-    <Anchor>a7d9449c3e25d7d2190fe160c7d7b1ad4</Anchor>
+    <Anchor>ae045fd2a2c6395aad20bed60c0bafc51</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>keys</Name>
+      <Name>properties</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
       <Scope>SLTAsset</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_asset.html</Path>
-    <Anchor>a8c9bc54f4eacc9e265c79164e1c1ff06</Anchor>
+    <Anchor>a4276fc06982d8060e26fc3621d5b6e02</Anchor>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -129,242 +398,254 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initWithState:type:andKeys:</Name>
+      <Name>initWithToken:states:andProperties:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>SLTAssetInstance</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_asset_instance.html</Path>
-    <Anchor>a7cb326af018db87a8bc9991e75941bce</Anchor>
-    <Abstract>Inits an instance of SLTAssetInstance class with the given state, type and keys. </Abstract>
+    <Anchor>a7dae9fef0175c1cea322e2ce88123283</Anchor>
+    <Abstract>Inits an instance of SLTAssetInstance class with the given token, states and properties. </Abstract>
     <DeclaredIn>SLTAssetInstance.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initWithType:andKeys:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTAsset</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_asset.html</Path>
-    <Anchor>a399f7cac1414e78a0137f6ccfbe5a331</Anchor>
-    <Abstract>Initializes SLTAsset class instance with the given type and keys. </Abstract>
-    <DeclaredIn>SLTAsset.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>state</Name>
+      <Name>token</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
       <Scope>SLTAssetInstance</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_asset_instance.html</Path>
-    <Anchor>a36f6c326709d598420a4cc9475d95735</Anchor>
-    <Abstract>the state of SLTAssetInstance </Abstract>
+    <Anchor>a89474632b7d4e54f4908b648a38e00a2</Anchor>
+    <Abstract>the token </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>type</Name>
+      <Name>states</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
-      <Scope>SLTAsset</Scope>
+      <Scope>SLTAssetInstance</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_asset.html</Path>
-    <Anchor>a7d9449c3e25d7d2190fe160c7d7b1ad4</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>keys</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTAsset</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_asset.html</Path>
-    <Anchor>a8c9bc54f4eacc9e265c79164e1c1ff06</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SLTCell()</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cat</Type>
-      <Scope>SLTCell()</Scope>
-    </TokenIdentifier>
-    <Path>category_s_l_t_cell_07_08.html</Path>
-    <Abstract>The private interface for SLTCell class, only for internal usage. </Abstract>
-    <DeclaredIn>SLTCell_Private.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>isBlocked</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTCell()</Scope>
-    </TokenIdentifier>
-    <Path>category_s_l_t_cell_07_08.html</Path>
-    <Anchor>aa335fc3ff2046f414e1ea27b15b29f4a</Anchor>
-    <Abstract>Writable property of SLTCell instance, which shows whether the cell is blocked. </Abstract>
+    <Path>interface_s_l_t_asset_instance.html</Path>
+    <Anchor>af36b6c10b7b059a5345e00fe7981a552</Anchor>
+    <Abstract>the states </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>properties</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
-      <Scope>SLTCell()</Scope>
+      <Scope>SLTAssetInstance</Scope>
     </TokenIdentifier>
-    <Path>category_s_l_t_cell_07_08.html</Path>
-    <Anchor>a77961adf7afd3f93541f16fbbeeaa500</Anchor>
-    <Abstract>The properties of the cell, which value is writable. </Abstract>
+    <Path>interface_s_l_t_asset_instance.html</Path>
+    <Anchor>a4c42eb435c86a6a9860a1096a12de192</Anchor>
+    <Abstract>the properties </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>assetInstance</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTCell()</Scope>
-    </TokenIdentifier>
-    <Path>category_s_l_t_cell_07_08.html</Path>
-    <Anchor>a7f14a9c2c4b948d6540c8084d09775b5</Anchor>
-    <Abstract>Points to the SLTAssetInstance, that corresponds to the cell. The property is writable. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SLTCellMatrix</Name>
+      <Name>SLTBasicProperties</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>SLTCellMatrix</Scope>
+      <Scope>SLTBasicProperties</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_cell_matrix.html</Path>
-    <Abstract>This is a public interface of SLTCellMatrix class. </Abstract>
-    <DeclaredIn>SLTCellMatrix.h</DeclaredIn>
+    <Path>interface_s_l_t_basic_properties.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initWithWidth:andHeight:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTCellMatrix</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_cell_matrix.html</Path>
-    <Anchor>ab16b34de3f48411c21e5d9b85792b4fc</Anchor>
-    <Abstract>Inits an instance of SLTCellMatrix class with given width and height, filling NSNull objects instead ...</Abstract>
-    <DeclaredIn>SLTCellMatrix.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>insertCell:atRow:andColumn:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTCellMatrix</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_cell_matrix.html</Path>
-    <Anchor>a2028138c1032ccea63258f79ed4acb17</Anchor>
-    <Abstract>Inserts SLTCell object into the matrix with the (row, column) position. If there is already an elemen...</Abstract>
-    <DeclaredIn>SLTCellMatrix.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>retrieveCellAtRow:andColumn:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTCellMatrix</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_cell_matrix.html</Path>
-    <Anchor>a60a68eb6f9ee0dd37713d663f567d884</Anchor>
-    <Abstract>Retrieves SLTCell object from the matrix with the (row, column) position. </Abstract>
-    <DeclaredIn>SLTCellMatrix.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>iterator</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTCellMatrix</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_cell_matrix.html</Path>
-    <Anchor>aba4177082dbda09b22b69904490d6ec7</Anchor>
-    <Abstract>Initilizes once and returns the SLTCellMatrixIterator instance to iterate the matrix object...</Abstract>
-    <DeclaredIn>SLTCellMatrix.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>width</Name>
+      <Name>age</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
-      <Scope>SLTCellMatrix</Scope>
+      <Scope>SLTBasicProperties</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_cell_matrix.html</Path>
-    <Anchor>a5ff42e2a3cd891c4617e512c15815d66</Anchor>
-    <Abstract>The width of the matrix (columns count) </Abstract>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>a71476e01b049008de3e14169404b1b51</Anchor>
+    <Abstract>The age. </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>height</Name>
+      <Name>gender</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
-      <Scope>SLTCellMatrix</Scope>
+      <Scope>SLTBasicProperties</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_cell_matrix.html</Path>
-    <Anchor>a42f4d0cc85cd23df9f7eb7b1ebaff743</Anchor>
-    <Abstract>The height of the matrix (rows count) </Abstract>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>a5367ecdb4c0aceca477f4514d4a31046</Anchor>
+    <Abstract>The gender &quot;F&quot;, &quot;M&quot;, &quot;female&quot;, &quot;male&quot;. </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SLTCellMatrixIterator</Name>
+      <Name>appVersion</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>aa62ec45ba167e7e296f7f818957ffa24</Anchor>
+    <Abstract>Version of the client app, e.g. 4.1.1. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>systemName</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>a1009a813e0e2328fc69fc908aac947c2</Anchor>
+    <Abstract>The name of the OS the current device is running. E.g. iPhone OS. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>systemVersion</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>ad772155c8ab0f79e311791db228aaae4</Anchor>
+    <Abstract>The version number of the OS the current device is running. E.g. 6.0. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>browserName</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>a635eb85f164bd8414be7d2ad2e223e91</Anchor>
+    <Abstract>The name of the browser the current device is running. E.g. Chrome. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>browserVersion</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>a6b50c07dd55c5590e0ca946d7e221601</Anchor>
+    <Abstract>The version number of the browser the current device is running. E.g. 17.0. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deviceName</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>a488b5aca3a65e4de8edc183907b31b70</Anchor>
+    <Abstract>A human-readable name representing the device. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>deviceType</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>aee2035dba2630acfe1ae35d92ae3460d</Anchor>
+    <Abstract>The Type name of the device. E.g. iPad. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>locale</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>a2e97785d70d0d8dadade9f921fe2e501</Anchor>
+    <Abstract>The current locale the user is in. E.g. en_US. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>country</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>affb90b5d5d520af8390f5454d697e041</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>region</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>aa47418b271f11e54c245a196c7758f25</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>city</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>a5b7fd0557408d58e42ca7a9b5aa00e24</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>location</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>a5b3a0b17e619cb3e18fa768281e07d54</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLTBoard</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>SLTCellMatrixIterator</Scope>
+      <Scope>SLTBoard</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_cell_matrix_iterator.html</Path>
-    <Abstract>This is a public interface of SLTCellMatrixIterator class. </Abstract>
-    <DeclaredIn>SLTCellMatrixIterator.h</DeclaredIn>
+    <Path>interface_s_l_t_board.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initWithCellMatrix:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTCellMatrixIterator</Scope>
+      <Name>SLTBoardLayer</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTBoardLayer</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_cell_matrix_iterator.html</Path>
-    <Anchor>a5f7b261de5063f8314fe20d2ef15de1e</Anchor>
-    <Abstract>Inits the instance of SLTCellMatrixIterator class. </Abstract>
-    <DeclaredIn>SLTCellMatrixIterator.h</DeclaredIn>
+    <Path>interface_s_l_t_board_layer.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>hasNext</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTCellMatrixIterator</Scope>
+      <Name>SLTBoardLayerDelegate</Name>
+      <APILanguage>c</APILanguage>
+      <Type>intf</Type>
+      <Scope>SLTBoardLayerDelegate</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_cell_matrix_iterator.html</Path>
-    <Anchor>ae6ed5b5577da240ce83d8667e7c4325f</Anchor>
-    <Abstract>Returns true in case the iterator does not stand on the last element of matrix, otherwise returns fal...</Abstract>
-    <DeclaredIn>SLTCellMatrixIterator.h</DeclaredIn>
+    <Path>protocol_s_l_t_board_layer_delegate-p.html</Path>
+    <Abstract>Protocol. </Abstract>
+    <DeclaredIn>SLTBoardLayer.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>next</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTCellMatrixIterator</Scope>
+      <Name>SLTCells</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTCells</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_cell_matrix_iterator.html</Path>
-    <Anchor>a9c1e591a0d61b3e372551fefcc78ce7c</Anchor>
-    <Abstract>Returns the next SLTCell element of the matrix. </Abstract>
-    <DeclaredIn>SLTCellMatrixIterator.h</DeclaredIn>
+    <Path>interface_s_l_t_cells.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>reset</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTCellMatrixIterator</Scope>
+      <Name>SLTCellsIterator</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTCellsIterator</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_cell_matrix_iterator.html</Path>
-    <Anchor>a9b281ab250d3775d964a8f1fe89facd3</Anchor>
-    <Abstract>Resets the iterator to stand on the start [0,0] position. </Abstract>
-    <DeclaredIn>SLTCellMatrixIterator.h</DeclaredIn>
+    <Path>interface_s_l_t_cells_iterator.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -374,289 +655,15 @@
       <Scope>SLTChunk</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_chunk.html</Path>
-    <Abstract>This is the interface for SLTChunk class. </Abstract>
-    <DeclaredIn>SLTChunk.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initWithChunkCells:andChunkAssetInfos:andLevelSettings:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTChunk</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_chunk.html</Path>
-    <Anchor>aede9b31388a56988ac87153616a50d31</Anchor>
-    <Abstract>Inits an instance of SLTChunk class with given chunkCells, chunkAssetInfos and levelSettings. </Abstract>
-    <DeclaredIn>SLTChunk.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>generate</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTChunk</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_chunk.html</Path>
-    <Anchor>a0d44fa534824eca46acdfac63ee26cea</Anchor>
-    <Abstract>Generates chunk cells of SLTCellMatrix board. Each cell holds a pointer to SLTAssetInstance object...</Abstract>
-    <DeclaredIn>SLTChunk.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SLTChunkAssetInfo</Name>
+      <Name>SLTChunkAssetRule</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>SLTChunkAssetInfo</Scope>
+      <Scope>SLTChunkAssetRule</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_chunk_asset_info.html</Path>
-    <Abstract>This is the interface of SLTChunkAssetInfo class. </Abstract>
-    <DeclaredIn>SLTChunkAssetInfo.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initWithAssetId:count:andStateId:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTChunkAssetInfo</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_chunk_asset_info.html</Path>
-    <Anchor>abe0b54b8f167e494cb7ab24d11551a98</Anchor>
-    <Abstract>Inits an instance of SLTChunkAssetInfo class with given chunkCells, chunkAssetInfos and levelSettings...</Abstract>
-    <DeclaredIn>SLTChunkAssetInfo.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>assetId</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTChunkAssetInfo</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_chunk_asset_info.html</Path>
-    <Anchor>a0d67b402e41751337dc3465622d18ada</Anchor>
-    <Abstract>The id of SLTChunkAssetInfo object. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>count</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTChunkAssetInfo</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_chunk_asset_info.html</Path>
-    <Anchor>a4fcf6e6a2ec24558b9b1e2854601f0b8</Anchor>
-    <Abstract>The count of repeatitions of asset in the chunk cells of board matrix. If the count == 0...</Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>stateId</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTChunkAssetInfo</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_chunk_asset_info.html</Path>
-    <Anchor>a5ec300666ef39ad02aca92d7166d43d1</Anchor>
-    <Abstract>The state of SLTChunkAssetInfo. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SLTCompositeAsset</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>SLTCompositeAsset</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_composite_asset.html</Path>
-    <Abstract>This is the interface of SLTCompositeAsset class. </Abstract>
-    <DeclaredIn>SLTCompositeAsset.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initWithCellInfos:type:andKeys:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTCompositeAsset</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_composite_asset.html</Path>
-    <Anchor>a0e5b79753df213a5d5073aae90ee36f8</Anchor>
-    <Abstract>Inits an instance of SLTCompositeAsset class with given cellInfos, type and keys. ...</Abstract>
-    <DeclaredIn>SLTCompositeAsset.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initWithType:andKeys:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTAsset</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_asset.html</Path>
-    <Anchor>a399f7cac1414e78a0137f6ccfbe5a331</Anchor>
-    <Abstract>Initializes SLTAsset class instance with the given type and keys. </Abstract>
-    <DeclaredIn>SLTAsset.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cellInfos</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTCompositeAsset</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_composite_asset.html</Path>
-    <Anchor>ac26021b8b3439332ac940bbb5dca9dad</Anchor>
-    <Abstract>The list of cells of board matrix, where the composite asset instances will be stored. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>type</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTAsset</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_asset.html</Path>
-    <Anchor>a7d9449c3e25d7d2190fe160c7d7b1ad4</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>keys</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTAsset</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_asset.html</Path>
-    <Anchor>a8c9bc54f4eacc9e265c79164e1c1ff06</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SLTCompositeInfo</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>SLTCompositeInfo</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_composite_info.html</Path>
-    <Abstract>This is the interface of SLTCompositeInfo class. </Abstract>
-    <DeclaredIn>SLTCompositeInfo.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initWithAssetId:stateId:cell:andLevelSettings:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTCompositeInfo</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_composite_info.html</Path>
-    <Anchor>a09459d0e21916e0e5dc7fcf978edbd1b</Anchor>
-    <Abstract>Inits an instance of SLTChunkAssetInfo class with given chunkCells, chunkAssetInfos and levelSettings...</Abstract>
-    <DeclaredIn>SLTCompositeInfo.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>generate</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTCompositeInfo</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_composite_info.html</Path>
-    <Anchor>a6a32382f70c214b163db655c7919359b</Anchor>
-    <Abstract>Generates an instance of SLTCompositeAssetInstance type for the specified cell of matrix board...</Abstract>
-    <DeclaredIn>SLTCompositeInfo.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>assetId</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTCompositeInfo</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_composite_info.html</Path>
-    <Anchor>a3b04e3520a648c3afdff4ef00a45fda3</Anchor>
-    <Abstract>Id of composite asset. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SLTCompositeInstance</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>SLTCompositeInstance</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_composite_instance.html</Path>
-    <Abstract>This is public interface of SLTCompositeInstance class. </Abstract>
-    <DeclaredIn>SLTCompositeInstance.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initWithCells:state:type:andKeys:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTCompositeInstance</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_composite_instance.html</Path>
-    <Anchor>a8543d93c2719b18efd2c35df2d4add92</Anchor>
-    <Abstract>Inits an instance of SLTCompositeInstance class with given cellInfos, type and keys. </Abstract>
-    <DeclaredIn>SLTCompositeInstance.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initWithState:type:andKeys:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTAssetInstance</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_asset_instance.html</Path>
-    <Anchor>a7cb326af018db87a8bc9991e75941bce</Anchor>
-    <Abstract>Inits an instance of SLTAssetInstance class with the given state, type and keys. </Abstract>
-    <DeclaredIn>SLTAssetInstance.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initWithType:andKeys:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTAsset</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_asset.html</Path>
-    <Anchor>a399f7cac1414e78a0137f6ccfbe5a331</Anchor>
-    <Abstract>Initializes SLTAsset class instance with the given type and keys. </Abstract>
-    <DeclaredIn>SLTAsset.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cells</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTCompositeInstance</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_composite_instance.html</Path>
-    <Anchor>ad37707d8834b5c208c9eec8d174580ac</Anchor>
-    <Abstract>The list of cells of board matrix, where the composite asset instances are stored. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>state</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTAssetInstance</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_asset_instance.html</Path>
-    <Anchor>a36f6c326709d598420a4cc9475d95735</Anchor>
-    <Abstract>the state of SLTAssetInstance </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>type</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTAsset</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_asset.html</Path>
-    <Anchor>a7d9449c3e25d7d2190fe160c7d7b1ad4</Anchor>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>keys</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTAsset</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_asset.html</Path>
-    <Anchor>a8c9bc54f4eacc9e265c79164e1c1ff06</Anchor>
+    <Path>interface_s_l_t_chunk_asset_rule.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -701,7 +708,7 @@
       <Scope>SLTDeserializer</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_deserializer.html</Path>
-    <Anchor>afc349abbf9197b02e614c5ad9611cab9</Anchor>
+    <Anchor>a576031c142b1233e4f360aad80cd51ec</Anchor>
     <Abstract>Decodes and creates an dictionary of Feature objects corresponding to data. </Abstract>
     <DeclaredIn>SLTDeserializer.h</DeclaredIn>
   </Token>
@@ -763,6 +770,87 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>SLTDummyRepository</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTDummyRepository</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_dummy_repository.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>objectFromStorage:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a165e4c195787d4e2ebffd90343724bfd</Anchor>
+    <Abstract>Gets the object from the file system. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>objectFromCache:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a63f4361b5a67a4e1655045da5f5be0d9</Anchor>
+    <Abstract>Gets the object from the cache. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>objectVersion:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>ac66bd3d8fe472d01d32908dce7c27dc1</Anchor>
+    <Abstract>Gets the version of object. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveObject:objectToSave:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a64a14b367ad2cce27d23056dae5c4e24</Anchor>
+    <Abstract>Saves the given object into the file system. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>cacheObject:version:object:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a6c44678d1e32382f5c81ec0bb7f2b3fd</Anchor>
+    <Abstract>Caches the given object. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>objectFromApplication:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a73514824610e76bce5210689087d959c</Anchor>
+    <Abstract>Gets the object from the application. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>SLTExperiment</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -773,26 +861,15 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initWithToken:partition:andType:</Name>
+      <Name>initWithToken:partition:type:andCustomEvents:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>SLTExperiment</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_experiment.html</Path>
-    <Anchor>afd5e0e7cf39fabc93548af8973fd40c4</Anchor>
+    <Anchor>a913a61f9107c5dd33933e729feadd6c3</Anchor>
     <Abstract>Inits the instance of SLTExperiment class with the token, partition and type. </Abstract>
     <DeclaredIn>SLTExperiment.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>token</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTExperiment</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_experiment.html</Path>
-    <Anchor>a96d7381a51e9e42fa43626b0f87793ad</Anchor>
-    <Abstract>Token of experiment. </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -804,6 +881,17 @@
     <Path>interface_s_l_t_experiment.html</Path>
     <Anchor>a7a39bfac830ae8a9026b98ffb6c6e314</Anchor>
     <Abstract>Partition of experiment. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>token</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTExperiment</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_experiment.html</Path>
+    <Anchor>a96d7381a51e9e42fa43626b0f87793ad</Anchor>
+    <Abstract>Token of experiment. </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -838,13 +926,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initWithToken:defaultProperties:andProperties:</Name>
+      <Name>initWithToken:properties:andRequired:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>SLTFeature</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_feature.html</Path>
-    <Anchor>ada73126b0afabb37b661793a56d8c92c</Anchor>
+    <Anchor>ad146a5f724447d368717c279051827e7</Anchor>
     <Abstract>Inits instance of SLTFeature class with given token, properties and default properties. </Abstract>
     <DeclaredIn>SLTFeature.h</DeclaredIn>
   </Token>
@@ -872,13 +960,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>defaultProperties</Name>
+      <Name>required</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
       <Scope>SLTFeature</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_feature.html</Path>
-    <Anchor>a3d14eda8093f1aa63fb48de6ea3b787d</Anchor>
+    <Anchor>a81b769326a06f484e77b9e187071de01</Anchor>
     <Abstract>The default properties of current SLTFeature. </Abstract>
   </Token>
   <Token>
@@ -893,26 +981,14 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initWithLevelId:index:contentDataUrl:properties:andVersion:</Name>
+      <Name>initWithLevelId:levelType:index:localIndex:packIndex:contentUrl:properties:andVersion:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>SLTLevel</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_level.html</Path>
-    <Anchor>acd6e6a30eef51af2d7cf6a4af3b747ca</Anchor>
-    <Abstract>Inits instance of SLTLevel class with the given id, index, dataUrl, properties and version...</Abstract>
-    <DeclaredIn>SLTLevel.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>boardWithId:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTLevel</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level.html</Path>
-    <Anchor>a1cae4f832a0a094257c2f29ab07da51d</Anchor>
-    <Abstract>Returns the SLTLevelBoard object from the available boards. </Abstract>
+    <Anchor>aab9a9fad255ac3476582c5955dc7d685</Anchor>
+    <Abstract>Inits instance of SLTLevel class with the given id, index, localIndex, packIndex, dataUrl...</Abstract>
     <DeclaredIn>SLTLevel.h</DeclaredIn>
   </Token>
   <Token>
@@ -924,54 +1000,32 @@
     </TokenIdentifier>
     <Path>interface_s_l_t_level.html</Path>
     <Anchor>a7131a39b09936f115f6ab64e752cef47</Anchor>
-    <Abstract>Parses the given data and generates the corresponding object hierarchy filling the parsed information...</Abstract>
+    <Abstract>Returns the SLTLevelBoard object from the available boards. </Abstract>
     <DeclaredIn>SLTLevel.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>generateAllBoards</Name>
+      <Name>regenerateAllBoards</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>SLTLevel</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_level.html</Path>
-    <Anchor>a40172d0c4e3893788f81b18b22a6f000</Anchor>
+    <Anchor>af1d64c6d042cbf3a8ca1c6875bd8cc87</Anchor>
     <Abstract>Generates all boards for the SLTLevel. </Abstract>
     <DeclaredIn>SLTLevel.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>generateBoardWithId:</Name>
+      <Name>regenerateBoardWithId:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>SLTLevel</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_level.html</Path>
-    <Anchor>a96c0dc0742f62d94109bdceed1b6718b</Anchor>
+    <Anchor>a589c233181b32f1e527f185d79208d74</Anchor>
     <Abstract>Generates the boards of SLTLevel with the given boardId. </Abstract>
     <DeclaredIn>SLTLevel.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>levelId</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTLevel</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level.html</Path>
-    <Anchor>a64b9b2c94cd0ba70c852a0d7f009442d</Anchor>
-    <Abstract>The Id of level. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>contentDataUrl</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTLevel</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level.html</Path>
-    <Anchor>a7df7b525cd31f1d30640f07a29462431</Anchor>
-    <Abstract>The url of level json content on the server. </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -981,8 +1035,8 @@
       <Scope>SLTLevel</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_level.html</Path>
-    <Anchor>a30926957b85ceb162b345d56f2f28b9a</Anchor>
-    <Abstract>The index of level. </Abstract>
+    <Anchor>a77ed27885aba8a108baec60790342879</Anchor>
+    <Abstract>The global index of level. </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -994,6 +1048,17 @@
     <Path>interface_s_l_t_level.html</Path>
     <Anchor>a6a6d63af36e8f918237a5be8abdc4566</Anchor>
     <Abstract>The properties of level. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>contentUrl</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTLevel</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_level.html</Path>
+    <Anchor>abbe44b49c939496281fdc8bcb9957625</Anchor>
+    <Abstract>The url of level json content on the server. </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1019,175 +1084,36 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>levelSettings</Name>
+      <Name>localIndex</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
       <Scope>SLTLevel</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_level.html</Path>
-    <Anchor>a987cc76d4fae2a2cebb2e30c55c3f660</Anchor>
-    <Abstract>The level settings of SLTLevelSettings type. </Abstract>
+    <Anchor>a57f3a0e53eaf92b1a89d2f3f12814b08</Anchor>
+    <Abstract>The local index of level. </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SLTLevelBoard</Name>
+      <Name>packIndex</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTLevel</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_level.html</Path>
+    <Anchor>acb29443bb155218ae1009b1bb06343fa</Anchor>
+    <Abstract>The index of level pack. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLTLevelDelegate</Name>
       <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>SLTLevelBoard</Scope>
+      <Type>intf</Type>
+      <Scope>SLTLevelDelegate</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_level_board.html</Path>
-    <DeclaredIn>SLTLevelBoard.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initWithCellMatrix:andProperties:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTLevelBoard</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board.html</Path>
-    <Anchor>a32ab19893fd97d3e0046f91935ae7fae</Anchor>
-    <Abstract>Initializes the instance of SLTLevelBoard class. </Abstract>
-    <DeclaredIn>SLTLevelBoard.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>rows</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTLevelBoard</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board.html</Path>
-    <Anchor>a2eefe89e5977aa9c647890ad9efb9055</Anchor>
-    <Abstract>The rows of level board. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cols</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTLevelBoard</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board.html</Path>
-    <Anchor>a68b0a1aafa5926c9a9780a90c92b4e0c</Anchor>
-    <Abstract>The columns of level board matrix. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cells</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTLevelBoard</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board.html</Path>
-    <Anchor>a7b82a1ecd4d860205f2a2b3125355bce</Anchor>
-    <Abstract>The board matrix of SLTCellMatrix type. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>properties</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTLevelBoard</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board.html</Path>
-    <Anchor>aa6d7f101684f61073b79d4ca74832641</Anchor>
-    <Abstract>The map of board properties. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SLTLevelBoardParser</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>SLTLevelBoardParser</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board_parser.html</Path>
-    <Abstract>This is the interface of SLTLevelBoardParser class. </Abstract>
-    <DeclaredIn>SLTLevelBoardParser.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>__attribute__</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTLevelBoardParser</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board_parser.html</Path>
-    <Anchor>a271d76e3b833e65ba3165f03ff5c447c</Anchor>
-    <Abstract>Compile time error messages to avoid multiple initialization of SLTSaltr instance. </Abstract>
-    <DeclaredIn>SLTLevelBoardParser.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>parseLevelSettings:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTLevelBoardParser</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board_parser.html</Path>
-    <Anchor>ad811827069da8569b76764a3b17c913e</Anchor>
-    <Abstract>Parses level settings node of JSON data by extracting needed information to create and initialize ins...</Abstract>
-    <DeclaredIn>SLTLevelBoardParser.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>parseLevelBoard:withLevelSettings:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTLevelBoardParser</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board_parser.html</Path>
-    <Anchor>a037b7d12475d2bfe2e07b98305436df6</Anchor>
-    <Abstract>Parses single board node of JSON by extracting the needed information to create and initialize instan...</Abstract>
-    <DeclaredIn>SLTLevelBoardParser.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>parseLevelBoards:withLevelSettings:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTLevelBoardParser</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board_parser.html</Path>
-    <Anchor>a24a7a03cb887255c0093e6ba6b2478cc</Anchor>
-    <Abstract>Parses all board nodes of JSON by extracting the needed information to create and initialize the inst...</Abstract>
-    <DeclaredIn>SLTLevelBoardParser.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>sharedInstance</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTLevelBoardParser</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board_parser.html</Path>
-    <Anchor>aebdbeb14a171ade109cb20daf09445f8</Anchor>
-    <Abstract>Returns the only instance of SLTLevelBoardParser class. </Abstract>
-    <DeclaredIn>SLTLevelBoardParser.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>__attribute__</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTLevelBoardParser</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board_parser.html</Path>
-    <Anchor>add271840bc47ada78a49100ee485b344</Anchor>
-    <Abstract>Compile time error messages to avoid multiple allocation of SLTSaltr instance. </Abstract>
-    <DeclaredIn>SLTLevelBoardParser.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>__attribute__</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTLevelBoardParser</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_board_parser.html</Path>
-    <Anchor>a24a420cc2ff224359abc180c2ce44462</Anchor>
-    <Abstract>Compile time error messages to avoid multiple allocation of SLTSaltr instance. </Abstract>
-    <DeclaredIn>SLTLevelBoardParser.h</DeclaredIn>
+    <Path>protocol_s_l_t_level_delegate-p.html</Path>
+    <Abstract>Protocol. </Abstract>
+    <DeclaredIn>SLTLevel.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1197,108 +1123,114 @@
       <Scope>SLTLevelPack</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_level_pack.html</Path>
-    <DeclaredIn>SLTLevelPack.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initWithToken:levels:andIndex:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTLevelPack</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_pack.html</Path>
-    <Anchor>af2a640c024cf4be75e5ad83cc6e05b8f</Anchor>
-    <Abstract>Inits instance of SLTLevelPack class with the given token, level list and index. </Abstract>
-    <DeclaredIn>SLTLevelPack.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>token</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTLevelPack</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_pack.html</Path>
-    <Anchor>aca318b9ea03eca38a69ffbd5b3972007</Anchor>
-    <Abstract>The token of SLTLevelPack instance. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>levels</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTLevelPack</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_pack.html</Path>
-    <Anchor>ab79f9973b7130062b758f93686ca3d69</Anchor>
-    <Abstract>The collection of SLTLevel instances. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>index</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTLevelPack</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_level_pack.html</Path>
-    <Anchor>af06739c0e777e79317612ea05a4cd1d1</Anchor>
-    <Abstract>The index of SLTLevelPack instance. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SLTLevelSettings</Name>
+      <Name>SLTLevelParser</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>SLTLevelSettings</Scope>
+      <Scope>SLTLevelParser</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_level_settings.html</Path>
-    <Abstract>This is the private interface for SLTLevelSettings class. </Abstract>
-    <DeclaredIn>SLTLevelSettings.h</DeclaredIn>
+    <Path>interface_s_l_t_level_parser.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initWithAssetMap:keySetMap:andStateMap:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTLevelSettings</Scope>
+      <Name>SLTMatchingBoard</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTMatchingBoard</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_level_settings.html</Path>
-    <Anchor>a542baeb484b2c15d5696298450a242f5</Anchor>
-    <Abstract>Initializes SLTLevelSettings class instance with the given maps of assets, keySets and states...</Abstract>
-    <DeclaredIn>SLTLevelSettings.h</DeclaredIn>
+    <Path>interface_s_l_t_matching_board.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>assetMap</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTLevelSettings</Scope>
+      <Name>SLTMatchingBoardLayer</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTMatchingBoardLayer</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_level_settings.html</Path>
-    <Anchor>a1443444aec6eea759a3be75a626284b3</Anchor>
-    <Abstract>Asset mapping of level, where key is the asset id and value is the data of asset. ...</Abstract>
+    <Path>interface_s_l_t_matching_board_layer.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>keySetMap</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTLevelSettings</Scope>
+      <Name>SLTMobileRepository</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTMobileRepository</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_level_settings.html</Path>
-    <Anchor>afba6f453b022b5cf6f3310ff62ec0c6d</Anchor>
-    <Abstract>Key mapping of level, where key is the user defined &quot;key&quot; and the value is the set of possible values...</Abstract>
+    <Path>interface_s_l_t_mobile_repository.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>stateMap</Name>
+      <Name>objectFromStorage:</Name>
       <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTLevelSettings</Scope>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_level_settings.html</Path>
-    <Anchor>a2c402ff3c740e3da2a220ee5bd4e27b2</Anchor>
-    <Abstract>State mapping of level, where key is the state id and value is the string info of state...</Abstract>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a165e4c195787d4e2ebffd90343724bfd</Anchor>
+    <Abstract>Gets the object from the file system. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>objectFromCache:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a63f4361b5a67a4e1655045da5f5be0d9</Anchor>
+    <Abstract>Gets the object from the cache. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>objectVersion:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>ac66bd3d8fe472d01d32908dce7c27dc1</Anchor>
+    <Abstract>Gets the version of object. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>saveObject:objectToSave:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a64a14b367ad2cce27d23056dae5c4e24</Anchor>
+    <Abstract>Saves the given object into the file system. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>cacheObject:version:object:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a6c44678d1e32382f5c81ec0bb7f2b3fd</Anchor>
+    <Abstract>Caches the given object. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>objectFromApplication:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a73514824610e76bce5210689087d959c</Anchor>
+    <Abstract>Gets the object from the application. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1358,98 +1290,86 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SLTRepository</Name>
+      <Name>SLTRepositoryProtocolDelegate</Name>
       <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>SLTRepository</Scope>
+      <Type>intf</Type>
+      <Scope>SLTRepositoryProtocolDelegate</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_repository.html</Path>
-    <Abstract>This class is used for getting/setting object from/into storage. Storage can be either file or cache ...</Abstract>
-    <DeclaredIn>SLTRepository.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>libraryBundle</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTRepository</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_repository.html</Path>
-    <Anchor>a811d0a1352b8cd5ff5aa5136beacf958</Anchor>
-    <Abstract>Returns the path of resource bundle that library uses. </Abstract>
-    <DeclaredIn>SLTRepository.h</DeclaredIn>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Abstract>Protocol. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>objectFromStorage:</Name>
       <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTRepository</Scope>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_repository.html</Path>
-    <Anchor>a33d2291a0e1a8a1ac7839da5c82d630d</Anchor>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a165e4c195787d4e2ebffd90343724bfd</Anchor>
     <Abstract>Gets the object from the file system. </Abstract>
-    <DeclaredIn>SLTRepository.h</DeclaredIn>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>objectFromCache:</Name>
       <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTRepository</Scope>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_repository.html</Path>
-    <Anchor>a81bcde91cf6a452297b7e75fc4d15256</Anchor>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a63f4361b5a67a4e1655045da5f5be0d9</Anchor>
     <Abstract>Gets the object from the cache. </Abstract>
-    <DeclaredIn>SLTRepository.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>objectFromApplication:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTRepository</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_repository.html</Path>
-    <Anchor>a32a29a886580d7f327ea19976bc23c48</Anchor>
-    <Abstract>Gets the object from the application. </Abstract>
-    <DeclaredIn>SLTRepository.h</DeclaredIn>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>objectVersion:</Name>
       <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTRepository</Scope>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_repository.html</Path>
-    <Anchor>ac06b49281311e5aa8c5b251ca321a109</Anchor>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>ac66bd3d8fe472d01d32908dce7c27dc1</Anchor>
     <Abstract>Gets the version of object. </Abstract>
-    <DeclaredIn>SLTRepository.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>cacheObject:version:object:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTRepository</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_repository.html</Path>
-    <Anchor>a62be44269d8886932f1be9dad7ce0763</Anchor>
-    <Abstract>Caches the given object. </Abstract>
-    <DeclaredIn>SLTRepository.h</DeclaredIn>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>saveObject:objectToSave:</Name>
       <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTRepository</Scope>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_repository.html</Path>
-    <Anchor>a8e4b016526416e5b8bf151e13a9f026a</Anchor>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a64a14b367ad2cce27d23056dae5c4e24</Anchor>
     <Abstract>Saves the given object into the file system. </Abstract>
-    <DeclaredIn>SLTRepository.h</DeclaredIn>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>cacheObject:version:object:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a6c44678d1e32382f5c81ec0bb7f2b3fd</Anchor>
+    <Abstract>Caches the given object. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>objectFromApplication:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>intfm</Type>
+      <Scope>SLTRepositoryProtocolDelegate-p</Scope>
+    </TokenIdentifier>
+    <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+    <Anchor>a73514824610e76bce5210689087d959c</Anchor>
+    <Abstract>Gets the object from the application. </Abstract>
+    <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1848,280 +1768,119 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SLTSaltr</Name>
+      <Name>SLTSaltrMobile</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
-      <Scope>SLTSaltr</Scope>
+      <Scope>SLTSaltrMobile</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Abstract>This is public interface for SLTSaltr ios SDK. To us the sdk user needs to include this header file...</Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
+    <Path>interface_s_l_t_saltr_mobile.html</Path>
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>__attribute__</Name>
+      <Name>defineFeatureWithToken:properties:andRequired:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
-      <Scope>SLTSaltr</Scope>
+      <Scope>SLTSaltrMobile</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a67a9a22cf437e89faa6acab02c9e03ea</Anchor>
-    <Abstract>Compile time error messages to avoid multiple initialization of SLTSaltr instance. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>setupPartnerWithId:andPartnerType:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>af6ccbeeb59fdd03b33b334222c4fb1e1</Anchor>
-    <Abstract>Setup partner with the given ID and type. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>setupDeviceWithId:andDeviceType:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a6a05e0d91ed209a67a1c1838c9b518c2</Anchor>
-    <Abstract>Setup device with the given ID and type. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>importLevels:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a6ab0bd37523397be74535079864c047d</Anchor>
-    <Abstract>Imports level pack structures from the application data. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>defineFeatureWithToken:andProperties:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>ab0f705978feb8a1b7a69bdc6a666874f</Anchor>
-    <Abstract>Defines feature for the token and sets the properties. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>start</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>ac85017ea539dcd20ec04075285322c09</Anchor>
-    <Abstract>Gets the application data. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>loadLevelContentData:levelStructure:andCacheEnabled:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a3066dcb126c513d791a027cfce2134bf</Anchor>
-    <Abstract>Gets the body of level data. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>addUserPropertyWithNames:values:andOperations:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>aa7821d9c81656d4a6bb1f976675097d2</Anchor>
-    <Abstract>Adds user properties to the current Saltr object. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>featureForToken:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a7f67b1edf8e503af8e6b87bda81d1ab7</Anchor>
-    <Abstract>Gets the feature corresponding to the given token. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>sharedInstance</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a58d45e78b480ead14c0a6c9fcbe32240</Anchor>
-    <Abstract>Returns the only instance of Saltr class. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>__attribute__</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>addf6e6a16cc2acaaf769f99539d9b9bc</Anchor>
-    <Abstract>Compile time error messages to avoid multiple allocation of SLTSaltr instance. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>__attribute__</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>ad4775afbd70b30a5ad9c3f57b3869ee2</Anchor>
-    <Abstract>Compile time error messages to avoid multiple allocation of SLTSaltr instance. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>saltrWithInstanceKey:andCacheEnabled:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>clm</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>aff1a25d7d6a30effd7feddd02617923e</Anchor>
-    <Abstract>Initializes Saltr class with the given instanceKey and enableCache flag. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
+    <Path>interface_s_l_t_saltr_mobile.html</Path>
+    <Anchor>ab189aaa964dbf68e9763cf1631884ab7</Anchor>
+    <DeclaredIn>SLTSaltrMobile.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>saltrRequestDelegate</Name>
       <APILanguage>cpp</APILanguage>
       <Type>data</Type>
-      <Scope>SLTSaltr</Scope>
+      <Scope>SLTSaltrMobile</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a9e82cedf53333046c1bba16b301eb7a9</Anchor>
+    <Path>interface_s_l_t_saltr_mobile.html</Path>
+    <Anchor>aaf627bb257198ce34c59cbd456a85881</Anchor>
     <Abstract>The delegate of SaltrRequestDelegate protocol. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>instanceKey</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a44e969343e7833cbed3394a0af37a267</Anchor>
-    <Abstract>The instance key - unique to each Saltr object. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>connected</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>ab7e3c63c28715096cb00dc86b60ce50d</Anchor>
-    <Abstract>YES if application data is loaded, otherwise NO. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>enableCache</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a2ce608ddf20a87f6252933bb688a7215</Anchor>
-    <Abstract>YES if caching should be enabled, otherwise NO. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>appVersion</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a1d94557875a1019585a551d4ae12e219</Anchor>
-    <Abstract>The application version. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>ready</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>af7047540840fdd23a219954c7a60b30a</Anchor>
-    <Abstract>YES if loading is done, otherwise NO. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>features</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a146f2e4b6833829200611a1dc902ccfe</Anchor>
-    <Abstract>the features of current Saltr object </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>levelPacks</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a1a6b3cd07af646d5adef43b8d42831bd</Anchor>
-    <Abstract>the level package structures of current Saltr object </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>experiments</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTSaltr</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>abf450f6c08472245d1cc284aeafcacab</Anchor>
-    <Abstract>the experiments of current Saltr object </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>saltrRequestDelegate</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
-      <Scope>SLTSaltr</Scope>
+      <Scope>SLTSaltrMobile</Scope>
     </TokenIdentifier>
-    <Path>interface_s_l_t_saltr.html</Path>
-    <Anchor>a16acc773e32cc164a9f86a173942eb50</Anchor>
+    <Path>interface_s_l_t_saltr_mobile.html</Path>
+    <Anchor>ad318ffdc6ee96fe80d8901e12d5a052d</Anchor>
     <Abstract>The delegate of SaltrRequestDelegate protocol. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLTStatusAppDataLoadFail</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTStatusAppDataLoadFail</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_status_app_data_load_fail.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLTStatusExperimentsParseError</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTStatusExperimentsParseError</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_status_experiments_parse_error.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLTStatusFeaturesParseError</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTStatusFeaturesParseError</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_status_features_parse_error.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLTStatusLevelContentLoadFail</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTStatusLevelContentLoadFail</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_status_level_content_load_fail.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLTStatusLevelsParseError</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTStatusLevelsParseError</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_status_levels_parse_error.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLTStatusLevelsParserMissing</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTStatusLevelsParserMissing</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_status_levels_parser_missing.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>Utils</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>Utils</Scope>
+    </TokenIdentifier>
+    <Path>interface_utils.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>formatString:args:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>Utils</Scope>
+    </TokenIdentifier>
+    <Path>interface_utils.html</Path>
+    <Anchor>a8eedbbc27fcde87905839cd936578226</Anchor>
+    <DeclaredIn>Utils.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -2137,47 +1896,23 @@
       <Name>didFinishGettingAppDataRequest</Name>
       <APILanguage>occ</APILanguage>
       <Type>intfm</Type>
-      <Scope>SaltrRequestDelegate-p</Scope>
+      <Scope>SaltrMobileRequestDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>protocol_saltr_request_delegate-p.html</Path>
-    <Anchor>ae2b8646d7e84d60c1e0e204d8b9e1790</Anchor>
+    <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
+    <Anchor>af7fcf6616290a8bbe8b91e2d47b2659f</Anchor>
     <Abstract>Informs that getting App data request has succeeded. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
+    <DeclaredIn>SLTSaltrMobile.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
       <Name>didFailGettingAppDataRequest:</Name>
       <APILanguage>occ</APILanguage>
       <Type>intfm</Type>
-      <Scope>SaltrRequestDelegate-p</Scope>
+      <Scope>SaltrMobileRequestDelegate-p</Scope>
     </TokenIdentifier>
-    <Path>protocol_saltr_request_delegate-p.html</Path>
-    <Anchor>afb3dad35f697b07124ce422c7d2227bb</Anchor>
+    <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
+    <Anchor>a4579e97e1dd4cea3b722be9588cf78d3</Anchor>
     <Abstract>Informs that getting app data request has failed. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>didFinishGettingLevelDataBodyWithLevelPackRequest</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>intfm</Type>
-      <Scope>SaltrRequestDelegate-p</Scope>
-    </TokenIdentifier>
-    <Path>protocol_saltr_request_delegate-p.html</Path>
-    <Anchor>a175ae4dc4f22e84f5663c8e4d3c3ae55</Anchor>
-    <Abstract>Informs that getting level data body with level pack request has succeeded. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>didFailGettingLevelDataBodyWithLevelPackRequest</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>intfm</Type>
-      <Scope>SaltrRequestDelegate-p</Scope>
-    </TokenIdentifier>
-    <Path>protocol_saltr_request_delegate-p.html</Path>
-    <Anchor>a089c068b1e229384358fa591b466edb5</Anchor>
-    <Abstract>Informs that getting level data body with level pack request has failed. </Abstract>
-    <DeclaredIn>SLTSaltr.h</DeclaredIn>
+    <DeclaredIn>SLTSaltrMobile.h</DeclaredIn>
   </Token>
 </Tokens>

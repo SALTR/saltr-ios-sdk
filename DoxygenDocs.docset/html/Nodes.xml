@@ -6,7 +6,7 @@
       <Path>index.html</Path>
       <Subnodes>
        <Node>
-        <Name>README</Name>
+        <Name>SALTR iOS SDK</Name>
         <Path>md__r_e_a_d_m_e.html</Path>
        </Node>
        <Node>
@@ -22,28 +22,124 @@
           <Path>annotated.html</Path>
           <Subnodes>
            <Node>
-            <Name>&lt;SaltrRequestDelegate&gt;</Name>
-            <Path>protocol_saltr_request_delegate-p.html</Path>
+            <Name>HTTPStatus</Name>
+            <Path>interface_h_t_t_p_status.html</Path>
+            <Subnodes>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>&lt;SaltrMobileRequestDelegate&gt;</Name>
+            <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
             <Subnodes>
              <Node>
               <Name>didFailGettingAppDataRequest:</Name>
-              <Path>protocol_saltr_request_delegate-p.html</Path>
-              <Anchor>afb3dad35f697b07124ce422c7d2227bb</Anchor>
-             </Node>
-             <Node>
-              <Name>didFailGettingLevelDataBodyWithLevelPackRequest</Name>
-              <Path>protocol_saltr_request_delegate-p.html</Path>
-              <Anchor>a089c068b1e229384358fa591b466edb5</Anchor>
+              <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
+              <Anchor>a4579e97e1dd4cea3b722be9588cf78d3</Anchor>
              </Node>
              <Node>
               <Name>didFinishGettingAppDataRequest</Name>
-              <Path>protocol_saltr_request_delegate-p.html</Path>
-              <Anchor>ae2b8646d7e84d60c1e0e204d8b9e1790</Anchor>
+              <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
+              <Anchor>af7fcf6616290a8bbe8b91e2d47b2659f</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLT2DAssetInstance</Name>
+            <Path>interface_s_l_t2_d_asset_instance.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>initWithToken:states:properties:x:y:andRotation:</Name>
+              <Path>interface_s_l_t2_d_asset_instance.html</Path>
+              <Anchor>a91bd90a250a8f32d4d03581d406a16a4</Anchor>
              </Node>
              <Node>
-              <Name>didFinishGettingLevelDataBodyWithLevelPackRequest</Name>
-              <Path>protocol_saltr_request_delegate-p.html</Path>
-              <Anchor>a175ae4dc4f22e84f5663c8e4d3c3ae55</Anchor>
+              <Name>rotation</Name>
+              <Path>interface_s_l_t2_d_asset_instance.html</Path>
+              <Anchor>afad4e3c8b2860b8c6a437eadec1dd584</Anchor>
+             </Node>
+             <Node>
+              <Name>x</Name>
+              <Path>interface_s_l_t2_d_asset_instance.html</Path>
+              <Anchor>a764c012592ab954e68310c2827246126</Anchor>
+             </Node>
+             <Node>
+              <Name>y</Name>
+              <Path>interface_s_l_t2_d_asset_instance.html</Path>
+              <Anchor>a94d25fd7baee48b80232482f17513099</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLT2DAssetState</Name>
+            <Path>interface_s_l_t2_d_asset_state.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>initWithToken:properties:pivotX:andPivotY:</Name>
+              <Path>interface_s_l_t2_d_asset_state.html</Path>
+              <Anchor>a6498b068ea25d3bd7092d3b16707414e</Anchor>
+             </Node>
+             <Node>
+              <Name>pivotX</Name>
+              <Path>interface_s_l_t2_d_asset_state.html</Path>
+              <Anchor>ac12d22b1f073ee494eee3d0fcb397b79</Anchor>
+             </Node>
+             <Node>
+              <Name>pivotY</Name>
+              <Path>interface_s_l_t2_d_asset_state.html</Path>
+              <Anchor>a1ff620f4fc3432a298d920b88b556382</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLT2DBoard</Name>
+            <Path>interface_s_l_t2_d_board.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>initWithWidth:theHeight:layers:andProperties:</Name>
+              <Path>interface_s_l_t2_d_board.html</Path>
+              <Anchor>ac3de8920cffc3f64380d5b6243c52c18</Anchor>
+             </Node>
+             <Node>
+              <Name>height</Name>
+              <Path>interface_s_l_t2_d_board.html</Path>
+              <Anchor>a3cef7657f4669a478da735e5743d9b01</Anchor>
+             </Node>
+             <Node>
+              <Name>width</Name>
+              <Path>interface_s_l_t2_d_board.html</Path>
+              <Anchor>a17adda99ffd0dcddd7b7587c8f63b5a5</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLT2DBoardLayer</Name>
+            <Path>interface_s_l_t2_d_board_layer.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>addAssetInstance:</Name>
+              <Path>interface_s_l_t2_d_board_layer.html</Path>
+              <Anchor>a90ead2f51c2e7854a95ba8d850e80c75</Anchor>
+             </Node>
+             <Node>
+              <Name>initWithLayerId:andLayerIndex:</Name>
+              <Path>interface_s_l_t2_d_board_layer.html</Path>
+              <Anchor>abb0a6318153c768f80f08ed604c17022</Anchor>
+             </Node>
+             <Node>
+              <Name>assetInstances</Name>
+              <Path>interface_s_l_t2_d_board_layer.html</Path>
+              <Anchor>a94a301818cf7c7916c2726ea0b729832</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLT2DLevelParser</Name>
+            <Path>interface_s_l_t2_d_level_parser.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>__attribute__</Name>
+              <Path>interface_s_l_t2_d_level_parser.html</Path>
+              <Anchor>aab08cfd1f3238e0cc67385d53e04cf34</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -52,19 +148,24 @@
             <Path>interface_s_l_t_asset.html</Path>
             <Subnodes>
              <Node>
-              <Name>initWithType:andKeys:</Name>
+              <Name>getInstanceStates:</Name>
               <Path>interface_s_l_t_asset.html</Path>
-              <Anchor>a399f7cac1414e78a0137f6ccfbe5a331</Anchor>
+              <Anchor>a91055f054e76c6948f7742a4b1ce5917</Anchor>
              </Node>
              <Node>
-              <Name>keys</Name>
+              <Name>initWithToken:stateMap:andProperties:</Name>
               <Path>interface_s_l_t_asset.html</Path>
-              <Anchor>a8c9bc54f4eacc9e265c79164e1c1ff06</Anchor>
+              <Anchor>abd862318d96f56e5952bba752421049c</Anchor>
              </Node>
              <Node>
-              <Name>type</Name>
+              <Name>properties</Name>
               <Path>interface_s_l_t_asset.html</Path>
-              <Anchor>a7d9449c3e25d7d2190fe160c7d7b1ad4</Anchor>
+              <Anchor>a4276fc06982d8060e26fc3621d5b6e02</Anchor>
+             </Node>
+             <Node>
+              <Name>token</Name>
+              <Path>interface_s_l_t_asset.html</Path>
+              <Anchor>ae045fd2a2c6395aad20bed60c0bafc51</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -73,97 +174,230 @@
             <Path>interface_s_l_t_asset_instance.html</Path>
             <Subnodes>
              <Node>
-              <Name>initWithState:type:andKeys:</Name>
+              <Name>initWithToken:states:andProperties:</Name>
               <Path>interface_s_l_t_asset_instance.html</Path>
-              <Anchor>a7cb326af018db87a8bc9991e75941bce</Anchor>
-             </Node>
-             <Node>
-              <Name>state</Name>
-              <Path>interface_s_l_t_asset_instance.html</Path>
-              <Anchor>a36f6c326709d598420a4cc9475d95735</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>SLTCell()</Name>
-            <Path>category_s_l_t_cell_07_08.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>assetInstance</Name>
-              <Path>category_s_l_t_cell_07_08.html</Path>
-              <Anchor>a7f14a9c2c4b948d6540c8084d09775b5</Anchor>
-             </Node>
-             <Node>
-              <Name>isBlocked</Name>
-              <Path>category_s_l_t_cell_07_08.html</Path>
-              <Anchor>aa335fc3ff2046f414e1ea27b15b29f4a</Anchor>
+              <Anchor>a7dae9fef0175c1cea322e2ce88123283</Anchor>
              </Node>
              <Node>
               <Name>properties</Name>
-              <Path>category_s_l_t_cell_07_08.html</Path>
-              <Anchor>a77961adf7afd3f93541f16fbbeeaa500</Anchor>
+              <Path>interface_s_l_t_asset_instance.html</Path>
+              <Anchor>a4c42eb435c86a6a9860a1096a12de192</Anchor>
+             </Node>
+             <Node>
+              <Name>states</Name>
+              <Path>interface_s_l_t_asset_instance.html</Path>
+              <Anchor>af36b6c10b7b059a5345e00fe7981a552</Anchor>
+             </Node>
+             <Node>
+              <Name>token</Name>
+              <Path>interface_s_l_t_asset_instance.html</Path>
+              <Anchor>a89474632b7d4e54f4908b648a38e00a2</Anchor>
              </Node>
             </Subnodes>
            </Node>
            <Node>
-            <Name>SLTCellMatrix</Name>
-            <Path>interface_s_l_t_cell_matrix.html</Path>
+            <Name>SLTBasicProperties</Name>
+            <Path>interface_s_l_t_basic_properties.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>init</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>a0961f1f08c9e40df5b2a05d868720105</Anchor>
+             </Node>
+             <Node>
+              <Name>age</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>a71476e01b049008de3e14169404b1b51</Anchor>
+             </Node>
+             <Node>
+              <Name>appVersion</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>aa62ec45ba167e7e296f7f818957ffa24</Anchor>
+             </Node>
+             <Node>
+              <Name>browserName</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>a635eb85f164bd8414be7d2ad2e223e91</Anchor>
+             </Node>
+             <Node>
+              <Name>browserVersion</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>a6b50c07dd55c5590e0ca946d7e221601</Anchor>
+             </Node>
+             <Node>
+              <Name>city</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>a5b7fd0557408d58e42ca7a9b5aa00e24</Anchor>
+             </Node>
+             <Node>
+              <Name>country</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>affb90b5d5d520af8390f5454d697e041</Anchor>
+             </Node>
+             <Node>
+              <Name>deviceName</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>a488b5aca3a65e4de8edc183907b31b70</Anchor>
+             </Node>
+             <Node>
+              <Name>deviceType</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>aee2035dba2630acfe1ae35d92ae3460d</Anchor>
+             </Node>
+             <Node>
+              <Name>gender</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>a5367ecdb4c0aceca477f4514d4a31046</Anchor>
+             </Node>
+             <Node>
+              <Name>locale</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>a2e97785d70d0d8dadade9f921fe2e501</Anchor>
+             </Node>
+             <Node>
+              <Name>location</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>a5b3a0b17e619cb3e18fa768281e07d54</Anchor>
+             </Node>
+             <Node>
+              <Name>region</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>aa47418b271f11e54c245a196c7758f25</Anchor>
+             </Node>
+             <Node>
+              <Name>systemName</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>a1009a813e0e2328fc69fc908aac947c2</Anchor>
+             </Node>
+             <Node>
+              <Name>systemVersion</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
+              <Anchor>ad772155c8ab0f79e311791db228aaae4</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLTBoard</Name>
+            <Path>interface_s_l_t_board.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>initWithLayers:andProperties:</Name>
+              <Path>interface_s_l_t_board.html</Path>
+              <Anchor>a5df6bd5f9649ffec776f176d81db0efd</Anchor>
+             </Node>
+             <Node>
+              <Name>regenerate</Name>
+              <Path>interface_s_l_t_board.html</Path>
+              <Anchor>a1f1b00da19b5904301d3d47b2d2eecfc</Anchor>
+             </Node>
+             <Node>
+              <Name>layers</Name>
+              <Path>interface_s_l_t_board.html</Path>
+              <Anchor>a135df506bae22815d6ae6c7818f99d11</Anchor>
+             </Node>
+             <Node>
+              <Name>properties</Name>
+              <Path>interface_s_l_t_board.html</Path>
+              <Anchor>ac5aaaa64df35ac54b4933820d6ab21ba</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLTBoardLayer</Name>
+            <Path>interface_s_l_t_board_layer.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>initWithLayerId:andLayerIndex:</Name>
+              <Path>interface_s_l_t_board_layer.html</Path>
+              <Anchor>a6c623de2784bf5b2397213e498063d5c</Anchor>
+             </Node>
+             <Node>
+              <Name>layerId</Name>
+              <Path>interface_s_l_t_board_layer.html</Path>
+              <Anchor>aefffcb1b8a8873cc198b8abb67e3db4c</Anchor>
+             </Node>
+             <Node>
+              <Name>layerIndex</Name>
+              <Path>interface_s_l_t_board_layer.html</Path>
+              <Anchor>a43262095b273a5025a2428c65e6f90f5</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>&lt;SLTBoardLayerDelegate&gt;</Name>
+            <Path>protocol_s_l_t_board_layer_delegate-p.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>regenerate</Name>
+              <Path>protocol_s_l_t_board_layer_delegate-p.html</Path>
+              <Anchor>a7a6b0ea28afa03aed51da011735277c0</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLTCells</Name>
+            <Path>interface_s_l_t_cells.html</Path>
             <Subnodes>
              <Node>
               <Name>initWithWidth:andHeight:</Name>
-              <Path>interface_s_l_t_cell_matrix.html</Path>
-              <Anchor>ab16b34de3f48411c21e5d9b85792b4fc</Anchor>
+              <Path>interface_s_l_t_cells.html</Path>
+              <Anchor>a22c81fd51df917fe2c700ae4c047b36f</Anchor>
              </Node>
              <Node>
-              <Name>insertCell:atRow:andColumn:</Name>
-              <Path>interface_s_l_t_cell_matrix.html</Path>
-              <Anchor>a2028138c1032ccea63258f79ed4acb17</Anchor>
+              <Name>insertCell:atCol:andRow:</Name>
+              <Path>interface_s_l_t_cells.html</Path>
+              <Anchor>a52be40056641ef7e5013d9a198bd8e47</Anchor>
              </Node>
              <Node>
-              <Name>iterator</Name>
-              <Path>interface_s_l_t_cell_matrix.html</Path>
-              <Anchor>aba4177082dbda09b22b69904490d6ec7</Anchor>
-             </Node>
-             <Node>
-              <Name>retrieveCellAtRow:andColumn:</Name>
-              <Path>interface_s_l_t_cell_matrix.html</Path>
-              <Anchor>a60a68eb6f9ee0dd37713d663f567d884</Anchor>
+              <Name>retrieveCellAtCol:andRow:</Name>
+              <Path>interface_s_l_t_cells.html</Path>
+              <Anchor>ad9337be879a7cd5620cb760fdd12b290</Anchor>
              </Node>
              <Node>
               <Name>height</Name>
-              <Path>interface_s_l_t_cell_matrix.html</Path>
-              <Anchor>a42f4d0cc85cd23df9f7eb7b1ebaff743</Anchor>
+              <Path>interface_s_l_t_cells.html</Path>
+              <Anchor>ad976f76a1a049d89aa297faf2f636c85</Anchor>
+             </Node>
+             <Node>
+              <Name>iterator</Name>
+              <Path>interface_s_l_t_cells.html</Path>
+              <Anchor>a25ff93df828130fb0ffb2b75512bab0c</Anchor>
+             </Node>
+             <Node>
+              <Name>rawData</Name>
+              <Path>interface_s_l_t_cells.html</Path>
+              <Anchor>a457b3cbeab66ccb411e99c157b048838</Anchor>
              </Node>
              <Node>
               <Name>width</Name>
-              <Path>interface_s_l_t_cell_matrix.html</Path>
-              <Anchor>a5ff42e2a3cd891c4617e512c15815d66</Anchor>
+              <Path>interface_s_l_t_cells.html</Path>
+              <Anchor>af82dae19576328dfa3a95a381a4e332f</Anchor>
              </Node>
             </Subnodes>
            </Node>
            <Node>
-            <Name>SLTCellMatrixIterator</Name>
-            <Path>interface_s_l_t_cell_matrix_iterator.html</Path>
+            <Name>SLTCellsIterator</Name>
+            <Path>interface_s_l_t_cells_iterator.html</Path>
             <Subnodes>
              <Node>
               <Name>hasNext</Name>
-              <Path>interface_s_l_t_cell_matrix_iterator.html</Path>
-              <Anchor>ae6ed5b5577da240ce83d8667e7c4325f</Anchor>
+              <Path>interface_s_l_t_cells_iterator.html</Path>
+              <Anchor>ae3df2d34a0499910410cc8d6818201aa</Anchor>
              </Node>
              <Node>
-              <Name>initWithCellMatrix:</Name>
-              <Path>interface_s_l_t_cell_matrix_iterator.html</Path>
-              <Anchor>a5f7b261de5063f8314fe20d2ef15de1e</Anchor>
+              <Name>initWithCells:</Name>
+              <Path>interface_s_l_t_cells_iterator.html</Path>
+              <Anchor>a197b0bf2c0fe799bd93d647bff31ca3f</Anchor>
              </Node>
              <Node>
               <Name>next</Name>
-              <Path>interface_s_l_t_cell_matrix_iterator.html</Path>
-              <Anchor>a9c1e591a0d61b3e372551fefcc78ce7c</Anchor>
+              <Path>interface_s_l_t_cells_iterator.html</Path>
+              <Anchor>afdb25457fbcc0e5817ac3b96aed80538</Anchor>
              </Node>
              <Node>
               <Name>reset</Name>
-              <Path>interface_s_l_t_cell_matrix_iterator.html</Path>
-              <Anchor>a9b281ab250d3775d964a8f1fe89facd3</Anchor>
+              <Path>interface_s_l_t_cells_iterator.html</Path>
+              <Anchor>abf2f2d5b8f3d28fae1d6a5c49b0aa27b</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -172,93 +406,45 @@
             <Path>interface_s_l_t_chunk.html</Path>
             <Subnodes>
              <Node>
-              <Name>generate</Name>
+              <Name>generateContent</Name>
               <Path>interface_s_l_t_chunk.html</Path>
-              <Anchor>a0d44fa534824eca46acdfac63ee26cea</Anchor>
+              <Anchor>ab41705b5ea42fac0f8c456a8f25b43af</Anchor>
              </Node>
              <Node>
-              <Name>initWithChunkCells:andChunkAssetInfos:andLevelSettings:</Name>
+              <Name>initWithLayerToken:layerIndex:chunkCells:chunkAssetRules:andAssetMap:</Name>
               <Path>interface_s_l_t_chunk.html</Path>
-              <Anchor>aede9b31388a56988ac87153616a50d31</Anchor>
+              <Anchor>a0f7042b9e90a503aacb85f9628e12a32</Anchor>
              </Node>
             </Subnodes>
            </Node>
            <Node>
-            <Name>SLTChunkAssetInfo</Name>
-            <Path>interface_s_l_t_chunk_asset_info.html</Path>
+            <Name>SLTChunkAssetRule</Name>
+            <Path>interface_s_l_t_chunk_asset_rule.html</Path>
             <Subnodes>
              <Node>
-              <Name>initWithAssetId:count:andStateId:</Name>
-              <Path>interface_s_l_t_chunk_asset_info.html</Path>
-              <Anchor>abe0b54b8f167e494cb7ab24d11551a98</Anchor>
+              <Name>initWithAssetId:distributionType:distributionValue:andStateIds:</Name>
+              <Path>interface_s_l_t_chunk_asset_rule.html</Path>
+              <Anchor>a6f116b27ca73e38d79ec323da1c15d0e</Anchor>
              </Node>
              <Node>
               <Name>assetId</Name>
-              <Path>interface_s_l_t_chunk_asset_info.html</Path>
-              <Anchor>a0d67b402e41751337dc3465622d18ada</Anchor>
+              <Path>interface_s_l_t_chunk_asset_rule.html</Path>
+              <Anchor>a792e8ce2ff598010226f7e8304d583b9</Anchor>
              </Node>
              <Node>
-              <Name>count</Name>
-              <Path>interface_s_l_t_chunk_asset_info.html</Path>
-              <Anchor>a4fcf6e6a2ec24558b9b1e2854601f0b8</Anchor>
+              <Name>distributionType</Name>
+              <Path>interface_s_l_t_chunk_asset_rule.html</Path>
+              <Anchor>a7bc0283f8ba3778d99687d238c7c58e9</Anchor>
              </Node>
              <Node>
-              <Name>stateId</Name>
-              <Path>interface_s_l_t_chunk_asset_info.html</Path>
-              <Anchor>a5ec300666ef39ad02aca92d7166d43d1</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>SLTCompositeAsset</Name>
-            <Path>interface_s_l_t_composite_asset.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>initWithCellInfos:type:andKeys:</Name>
-              <Path>interface_s_l_t_composite_asset.html</Path>
-              <Anchor>a0e5b79753df213a5d5073aae90ee36f8</Anchor>
+              <Name>distributionValue</Name>
+              <Path>interface_s_l_t_chunk_asset_rule.html</Path>
+              <Anchor>aadad59d4c71e4c8ce24dad8e691fd99d</Anchor>
              </Node>
              <Node>
-              <Name>cellInfos</Name>
-              <Path>interface_s_l_t_composite_asset.html</Path>
-              <Anchor>ac26021b8b3439332ac940bbb5dca9dad</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>SLTCompositeInfo</Name>
-            <Path>interface_s_l_t_composite_info.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>generate</Name>
-              <Path>interface_s_l_t_composite_info.html</Path>
-              <Anchor>a6a32382f70c214b163db655c7919359b</Anchor>
-             </Node>
-             <Node>
-              <Name>initWithAssetId:stateId:cell:andLevelSettings:</Name>
-              <Path>interface_s_l_t_composite_info.html</Path>
-              <Anchor>a09459d0e21916e0e5dc7fcf978edbd1b</Anchor>
-             </Node>
-             <Node>
-              <Name>assetId</Name>
-              <Path>interface_s_l_t_composite_info.html</Path>
-              <Anchor>a3b04e3520a648c3afdff4ef00a45fda3</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>SLTCompositeInstance</Name>
-            <Path>interface_s_l_t_composite_instance.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>initWithCells:state:type:andKeys:</Name>
-              <Path>interface_s_l_t_composite_instance.html</Path>
-              <Anchor>a8543d93c2719b18efd2c35df2d4add92</Anchor>
-             </Node>
-             <Node>
-              <Name>cells</Name>
-              <Path>interface_s_l_t_composite_instance.html</Path>
-              <Anchor>ad37707d8834b5c208c9eec8d174580ac</Anchor>
+              <Name>stateIds</Name>
+              <Path>interface_s_l_t_chunk_asset_rule.html</Path>
+              <Anchor>a8a01d7c8fe0ef9a9a7a8c1102ddbf32b</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -274,7 +460,7 @@
              <Node>
               <Name>decodeFeaturesFromData:</Name>
               <Path>interface_s_l_t_deserializer.html</Path>
-              <Anchor>afc349abbf9197b02e614c5ad9611cab9</Anchor>
+              <Anchor>a576031c142b1233e4f360aad80cd51ec</Anchor>
              </Node>
              <Node>
               <Name>decodeLevelsFromData:</Name>
@@ -310,13 +496,17 @@
             </Subnodes>
            </Node>
            <Node>
+            <Name>SLTDummyRepository</Name>
+            <Path>interface_s_l_t_dummy_repository.html</Path>
+           </Node>
+           <Node>
             <Name>SLTExperiment</Name>
             <Path>interface_s_l_t_experiment.html</Path>
             <Subnodes>
              <Node>
-              <Name>initWithToken:partition:andType:</Name>
+              <Name>initWithToken:partition:type:andCustomEvents:</Name>
               <Path>interface_s_l_t_experiment.html</Path>
-              <Anchor>afd5e0e7cf39fabc93548af8973fd40c4</Anchor>
+              <Anchor>a913a61f9107c5dd33933e729feadd6c3</Anchor>
              </Node>
              <Node>
               <Name>customEvents</Name>
@@ -345,19 +535,19 @@
             <Path>interface_s_l_t_feature.html</Path>
             <Subnodes>
              <Node>
-              <Name>initWithToken:defaultProperties:andProperties:</Name>
+              <Name>initWithToken:properties:andRequired:</Name>
               <Path>interface_s_l_t_feature.html</Path>
-              <Anchor>ada73126b0afabb37b661793a56d8c92c</Anchor>
-             </Node>
-             <Node>
-              <Name>defaultProperties</Name>
-              <Path>interface_s_l_t_feature.html</Path>
-              <Anchor>a3d14eda8093f1aa63fb48de6ea3b787d</Anchor>
+              <Anchor>ad146a5f724447d368717c279051827e7</Anchor>
              </Node>
              <Node>
               <Name>properties</Name>
               <Path>interface_s_l_t_feature.html</Path>
               <Anchor>afc7b34f6955e6d5e44ec6994fcb4ea2c</Anchor>
+             </Node>
+             <Node>
+              <Name>required</Name>
+              <Path>interface_s_l_t_feature.html</Path>
+              <Anchor>a81b769326a06f484e77b9e187071de01</Anchor>
              </Node>
              <Node>
               <Name>token</Name>
@@ -371,24 +561,19 @@
             <Path>interface_s_l_t_level.html</Path>
             <Subnodes>
              <Node>
-              <Name>boardWithId:</Name>
+              <Name>initWithLevelId:levelType:index:localIndex:packIndex:contentUrl:properties:andVersion:</Name>
               <Path>interface_s_l_t_level.html</Path>
-              <Anchor>a1cae4f832a0a094257c2f29ab07da51d</Anchor>
+              <Anchor>aab9a9fad255ac3476582c5955dc7d685</Anchor>
              </Node>
              <Node>
-              <Name>generateAllBoards</Name>
+              <Name>regenerateAllBoards</Name>
               <Path>interface_s_l_t_level.html</Path>
-              <Anchor>a40172d0c4e3893788f81b18b22a6f000</Anchor>
+              <Anchor>af1d64c6d042cbf3a8ca1c6875bd8cc87</Anchor>
              </Node>
              <Node>
-              <Name>generateBoardWithId:</Name>
+              <Name>regenerateBoardWithId:</Name>
               <Path>interface_s_l_t_level.html</Path>
-              <Anchor>a96c0dc0742f62d94109bdceed1b6718b</Anchor>
-             </Node>
-             <Node>
-              <Name>initWithLevelId:index:contentDataUrl:properties:andVersion:</Name>
-              <Path>interface_s_l_t_level.html</Path>
-              <Anchor>acd6e6a30eef51af2d7cf6a4af3b747ca</Anchor>
+              <Anchor>a589c233181b32f1e527f185d79208d74</Anchor>
              </Node>
              <Node>
               <Name>updateContent:</Name>
@@ -396,29 +581,29 @@
               <Anchor>a7131a39b09936f115f6ab64e752cef47</Anchor>
              </Node>
              <Node>
-              <Name>contentDataUrl</Name>
-              <Path>interface_s_l_t_level.html</Path>
-              <Anchor>a7df7b525cd31f1d30640f07a29462431</Anchor>
-             </Node>
-             <Node>
               <Name>contentReady</Name>
               <Path>interface_s_l_t_level.html</Path>
               <Anchor>a2b4d1146de083f6778d32c04d03aa4c0</Anchor>
              </Node>
              <Node>
+              <Name>contentUrl</Name>
+              <Path>interface_s_l_t_level.html</Path>
+              <Anchor>abbe44b49c939496281fdc8bcb9957625</Anchor>
+             </Node>
+             <Node>
               <Name>index</Name>
               <Path>interface_s_l_t_level.html</Path>
-              <Anchor>a30926957b85ceb162b345d56f2f28b9a</Anchor>
+              <Anchor>a77ed27885aba8a108baec60790342879</Anchor>
              </Node>
              <Node>
-              <Name>levelId</Name>
+              <Name>localIndex</Name>
               <Path>interface_s_l_t_level.html</Path>
-              <Anchor>a64b9b2c94cd0ba70c852a0d7f009442d</Anchor>
+              <Anchor>a57f3a0e53eaf92b1a89d2f3f12814b08</Anchor>
              </Node>
              <Node>
-              <Name>levelSettings</Name>
+              <Name>packIndex</Name>
               <Path>interface_s_l_t_level.html</Path>
-              <Anchor>a987cc76d4fae2a2cebb2e30c55c3f660</Anchor>
+              <Anchor>acb29443bb155218ae1009b1bb06343fa</Anchor>
              </Node>
              <Node>
               <Name>properties</Name>
@@ -433,59 +618,13 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>SLTLevelBoard</Name>
-            <Path>interface_s_l_t_level_board.html</Path>
+            <Name>&lt;SLTLevelDelegate&gt;</Name>
+            <Path>protocol_s_l_t_level_delegate-p.html</Path>
             <Subnodes>
              <Node>
-              <Name>initWithCellMatrix:andProperties:</Name>
-              <Path>interface_s_l_t_level_board.html</Path>
-              <Anchor>a32ab19893fd97d3e0046f91935ae7fae</Anchor>
-             </Node>
-             <Node>
-              <Name>cells</Name>
-              <Path>interface_s_l_t_level_board.html</Path>
-              <Anchor>a7b82a1ecd4d860205f2a2b3125355bce</Anchor>
-             </Node>
-             <Node>
-              <Name>cols</Name>
-              <Path>interface_s_l_t_level_board.html</Path>
-              <Anchor>a68b0a1aafa5926c9a9780a90c92b4e0c</Anchor>
-             </Node>
-             <Node>
-              <Name>properties</Name>
-              <Path>interface_s_l_t_level_board.html</Path>
-              <Anchor>aa6d7f101684f61073b79d4ca74832641</Anchor>
-             </Node>
-             <Node>
-              <Name>rows</Name>
-              <Path>interface_s_l_t_level_board.html</Path>
-              <Anchor>a2eefe89e5977aa9c647890ad9efb9055</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>SLTLevelBoardParser</Name>
-            <Path>interface_s_l_t_level_board_parser.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>__attribute__</Name>
-              <Path>interface_s_l_t_level_board_parser.html</Path>
-              <Anchor>a271d76e3b833e65ba3165f03ff5c447c</Anchor>
-             </Node>
-             <Node>
-              <Name>parseLevelBoard:withLevelSettings:</Name>
-              <Path>interface_s_l_t_level_board_parser.html</Path>
-              <Anchor>a037b7d12475d2bfe2e07b98305436df6</Anchor>
-             </Node>
-             <Node>
-              <Name>parseLevelBoards:withLevelSettings:</Name>
-              <Path>interface_s_l_t_level_board_parser.html</Path>
-              <Anchor>a24a7a03cb887255c0093e6ba6b2478cc</Anchor>
-             </Node>
-             <Node>
-              <Name>parseLevelSettings:</Name>
-              <Path>interface_s_l_t_level_board_parser.html</Path>
-              <Anchor>ad811827069da8569b76764a3b17c913e</Anchor>
+              <Name>getParser</Name>
+              <Path>protocol_s_l_t_level_delegate-p.html</Path>
+              <Anchor>aa7ab878f4af110fcb07f62d2f1d94fa9</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -494,19 +633,19 @@
             <Path>interface_s_l_t_level_pack.html</Path>
             <Subnodes>
              <Node>
-              <Name>initWithToken:levels:andIndex:</Name>
+              <Name>initWithToken:index:andLevels:</Name>
               <Path>interface_s_l_t_level_pack.html</Path>
-              <Anchor>af2a640c024cf4be75e5ad83cc6e05b8f</Anchor>
+              <Anchor>a6f92bab88844e1111ab6a9cbbde5f6de</Anchor>
              </Node>
              <Node>
               <Name>index</Name>
               <Path>interface_s_l_t_level_pack.html</Path>
-              <Anchor>af06739c0e777e79317612ea05a4cd1d1</Anchor>
+              <Anchor>aff56687f1cc617e44083b8825578db93</Anchor>
              </Node>
              <Node>
               <Name>levels</Name>
               <Path>interface_s_l_t_level_pack.html</Path>
-              <Anchor>ab79f9973b7130062b758f93686ca3d69</Anchor>
+              <Anchor>a84cb0fd30e773f2252dae0f6e0da7122</Anchor>
              </Node>
              <Node>
               <Name>token</Name>
@@ -516,30 +655,71 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>SLTLevelSettings</Name>
-            <Path>interface_s_l_t_level_settings.html</Path>
+            <Name>SLTLevelParser</Name>
+            <Path>interface_s_l_t_level_parser.html</Path>
             <Subnodes>
              <Node>
-              <Name>initWithAssetMap:keySetMap:andStateMap:</Name>
-              <Path>interface_s_l_t_level_settings.html</Path>
-              <Anchor>a542baeb484b2c15d5696298450a242f5</Anchor>
+              <Name>parseLevelAssets:</Name>
+              <Path>interface_s_l_t_level_parser.html</Path>
+              <Anchor>a3177e92c99855b3b1a6e61abcc7cc7f6</Anchor>
              </Node>
              <Node>
-              <Name>assetMap</Name>
-              <Path>interface_s_l_t_level_settings.html</Path>
-              <Anchor>a1443444aec6eea759a3be75a626284b3</Anchor>
-             </Node>
-             <Node>
-              <Name>keySetMap</Name>
-              <Path>interface_s_l_t_level_settings.html</Path>
-              <Anchor>afba6f453b022b5cf6f3310ff62ec0c6d</Anchor>
-             </Node>
-             <Node>
-              <Name>stateMap</Name>
-              <Path>interface_s_l_t_level_settings.html</Path>
-              <Anchor>a2c402ff3c740e3da2a220ee5bd4e27b2</Anchor>
+              <Name>parseLevelContentFromBoardNodes:andAssetMap:</Name>
+              <Path>interface_s_l_t_level_parser.html</Path>
+              <Anchor>abbef329aad77b1fae89afa326cd6d1fd</Anchor>
              </Node>
             </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLTMatchingBoard</Name>
+            <Path>interface_s_l_t_matching_board.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>initWithCells:layers:andProperties:</Name>
+              <Path>interface_s_l_t_matching_board.html</Path>
+              <Anchor>ae7ad386e8adab8882dccbd8d89d126f0</Anchor>
+             </Node>
+             <Node>
+              <Name>cells</Name>
+              <Path>interface_s_l_t_matching_board.html</Path>
+              <Anchor>aabf04e549123271c9096038f28ecf302</Anchor>
+             </Node>
+             <Node>
+              <Name>cols</Name>
+              <Path>interface_s_l_t_matching_board.html</Path>
+              <Anchor>a29b3d813155ccf1e4da32d3db2b94168</Anchor>
+             </Node>
+             <Node>
+              <Name>rows</Name>
+              <Path>interface_s_l_t_matching_board.html</Path>
+              <Anchor>a343b11b7b35bc185d4ada9f81fd1de73</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLTMatchingBoardLayer</Name>
+            <Path>interface_s_l_t_matching_board_layer.html</Path>
+            <Subnodes>
+             <Node>
+              <Name>addChunk:</Name>
+              <Path>interface_s_l_t_matching_board_layer.html</Path>
+              <Anchor>ae239eaf318439c28e74d25ecc53955e8</Anchor>
+             </Node>
+             <Node>
+              <Name>initWithLayerId:andLayerIndex:</Name>
+              <Path>interface_s_l_t_matching_board_layer.html</Path>
+              <Anchor>a6befb14983111b00da559dd3e937fd82</Anchor>
+             </Node>
+             <Node>
+              <Name>regenerate</Name>
+              <Path>interface_s_l_t_matching_board_layer.html</Path>
+              <Anchor>a501de2590ca3d93f103ad6434521ed06</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLTMobileRepository</Name>
+            <Path>interface_s_l_t_mobile_repository.html</Path>
            </Node>
            <Node>
             <Name>SLTPartner</Name>
@@ -568,9 +748,39 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>SLTRepository</Name>
-            <Path>interface_s_l_t_repository.html</Path>
+            <Name>&lt;SLTRepositoryProtocolDelegate&gt;</Name>
+            <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
             <Subnodes>
+             <Node>
+              <Name>cacheObject:version:object:</Name>
+              <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+              <Anchor>a6c44678d1e32382f5c81ec0bb7f2b3fd</Anchor>
+             </Node>
+             <Node>
+              <Name>objectFromApplication:</Name>
+              <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+              <Anchor>a73514824610e76bce5210689087d959c</Anchor>
+             </Node>
+             <Node>
+              <Name>objectFromCache:</Name>
+              <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+              <Anchor>a63f4361b5a67a4e1655045da5f5be0d9</Anchor>
+             </Node>
+             <Node>
+              <Name>objectFromStorage:</Name>
+              <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+              <Anchor>a165e4c195787d4e2ebffd90343724bfd</Anchor>
+             </Node>
+             <Node>
+              <Name>objectVersion:</Name>
+              <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+              <Anchor>ac66bd3d8fe472d01d32908dce7c27dc1</Anchor>
+             </Node>
+             <Node>
+              <Name>saveObject:objectToSave:</Name>
+              <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+              <Anchor>a64a14b367ad2cce27d23056dae5c4e24</Anchor>
+             </Node>
             </Subnodes>
            </Node>
            <Node>
@@ -751,104 +961,154 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>SLTSaltr</Name>
-            <Path>interface_s_l_t_saltr.html</Path>
+            <Name>SLTSaltrMobile</Name>
+            <Path>interface_s_l_t_saltr_mobile.html</Path>
             <Subnodes>
              <Node>
-              <Name>__attribute__</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>a67a9a22cf437e89faa6acab02c9e03ea</Anchor>
+              <Name>connect</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a2790e5e9f3a1a6f2164a221549c92a97</Anchor>
              </Node>
              <Node>
-              <Name>addUserPropertyWithNames:values:andOperations:</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>aa7821d9c81656d4a6bb1f976675097d2</Anchor>
+              <Name>connectWithBasicProperties:</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>acbfcbfa0b50132c108995dc79fdf9448</Anchor>
              </Node>
              <Node>
-              <Name>defineFeatureWithToken:andProperties:</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>ab0f705978feb8a1b7a69bdc6a666874f</Anchor>
+              <Name>connectWithBasicProperties:andCustomProperties:</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a7cc8eaf20b5d35d561b78a24cd2b6af4</Anchor>
              </Node>
              <Node>
-              <Name>featureForToken:</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>a7f67b1edf8e503af8e6b87bda81d1ab7</Anchor>
+              <Name>defineFeatureWithToken:properties:andRequired:</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>ab189aaa964dbf68e9763cf1631884ab7</Anchor>
              </Node>
              <Node>
-              <Name>importLevels:</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>a6ab0bd37523397be74535079864c047d</Anchor>
+              <Name>getActiveFeatureTokens</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a41a121f2a4b259c1d3d4ace454f96414</Anchor>
              </Node>
              <Node>
-              <Name>loadLevelContentData:levelStructure:andCacheEnabled:</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>a3066dcb126c513d791a027cfce2134bf</Anchor>
+              <Name>getFeaturePropertiesByToken:</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a6ce66edf542f57628c82590f2e9387d1</Anchor>
              </Node>
              <Node>
-              <Name>setupDeviceWithId:andDeviceType:</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>a6a05e0d91ed209a67a1c1838c9b518c2</Anchor>
+              <Name>getLevelByGlobalIndex:</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>ae4ace2c3376c70ad05bf6848e8df372c</Anchor>
              </Node>
              <Node>
-              <Name>setupPartnerWithId:andPartnerType:</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>af6ccbeeb59fdd03b33b334222c4fb1e1</Anchor>
+              <Name>getPackByLevelGlobalIndex:</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a135ee03d9c026894c1c20787ea0ff87a</Anchor>
+             </Node>
+             <Node>
+              <Name>importLevelsFromPath:</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a117606b15ac72cac17aa4365c6fd908e</Anchor>
+             </Node>
+             <Node>
+              <Name>initSaltrWithClientKey:deviceId:andCacheEnabled:</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a50c66b0a0bccfb8d3f970e2e590e8298</Anchor>
              </Node>
              <Node>
               <Name>start</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>ac85017ea539dcd20ec04075285322c09</Anchor>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>af8557ab41cf02561575e8fdc03db8a03</Anchor>
              </Node>
              <Node>
               <Name>saltrRequestDelegate</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>a9e82cedf53333046c1bba16b301eb7a9</Anchor>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>aaf627bb257198ce34c59cbd456a85881</Anchor>
              </Node>
              <Node>
-              <Name>appVersion</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>a1d94557875a1019585a551d4ae12e219</Anchor>
+              <Name>allLevels</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a97b57b463a9ba42cd1d607a125360a47</Anchor>
              </Node>
              <Node>
-              <Name>connected</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>ab7e3c63c28715096cb00dc86b60ce50d</Anchor>
+              <Name>allLevelsCount</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a55c2406f4de971c76594093dcf824ae1</Anchor>
              </Node>
              <Node>
-              <Name>enableCache</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>a2ce608ddf20a87f6252933bb688a7215</Anchor>
+              <Name>devMode</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>ac8eab5a2d37bdee7537c8c17f3c83831</Anchor>
              </Node>
              <Node>
               <Name>experiments</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>abf450f6c08472245d1cc284aeafcacab</Anchor>
-             </Node>
-             <Node>
-              <Name>features</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>a146f2e4b6833829200611a1dc902ccfe</Anchor>
-             </Node>
-             <Node>
-              <Name>instanceKey</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>a44e969343e7833cbed3394a0af37a267</Anchor>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>aae9568a7b26907a0b9d68e1ca951c4d6</Anchor>
              </Node>
              <Node>
               <Name>levelPacks</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>a1a6b3cd07af646d5adef43b8d42831bd</Anchor>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a0514a15cef5ea2e4da7a9fe3a7a516b7</Anchor>
              </Node>
              <Node>
-              <Name>ready</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>af7047540840fdd23a219954c7a60b30a</Anchor>
+              <Name>repository</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a081867f255826f5702e9c376916ca676</Anchor>
+             </Node>
+             <Node>
+              <Name>requestIdleTimeout</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a269d2054a2c5003eeecfbbd3b63d19e5</Anchor>
              </Node>
              <Node>
               <Name>saltrRequestDelegate</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
-              <Anchor>a16acc773e32cc164a9f86a173942eb50</Anchor>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>ad318ffdc6ee96fe80d8901e12d5a052d</Anchor>
              </Node>
+             <Node>
+              <Name>socialId</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a5a5901c5fd8b61cffcf50a0d2ca2a3f7</Anchor>
+             </Node>
+             <Node>
+              <Name>useNoFeatures</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a8f2dd051572927fab0cec23d15bef128</Anchor>
+             </Node>
+             <Node>
+              <Name>useNoLevels</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+              <Anchor>a357504eca3691013bb091841e920547d</Anchor>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLTStatusAppDataLoadFail</Name>
+            <Path>interface_s_l_t_status_app_data_load_fail.html</Path>
+           </Node>
+           <Node>
+            <Name>SLTStatusExperimentsParseError</Name>
+            <Path>interface_s_l_t_status_experiments_parse_error.html</Path>
+           </Node>
+           <Node>
+            <Name>SLTStatusFeaturesParseError</Name>
+            <Path>interface_s_l_t_status_features_parse_error.html</Path>
+           </Node>
+           <Node>
+            <Name>SLTStatusLevelContentLoadFail</Name>
+            <Path>interface_s_l_t_status_level_content_load_fail.html</Path>
+           </Node>
+           <Node>
+            <Name>SLTStatusLevelsParseError</Name>
+            <Path>interface_s_l_t_status_levels_parse_error.html</Path>
+           </Node>
+           <Node>
+            <Name>SLTStatusLevelsParserMissing</Name>
+            <Path>interface_s_l_t_status_levels_parser_missing.html</Path>
+           </Node>
+           <Node>
+            <Name>Utils</Name>
+            <Path>interface_utils.html</Path>
+            <Subnodes>
             </Subnodes>
            </Node>
            <Node>
@@ -870,44 +1130,70 @@
             <Path></Path>
             <Subnodes>
              <Node>
+              <Name>HTTPStatus</Name>
+              <Path>interface_h_t_t_p_status.html</Path>
+             </Node>
+             <Node>
               <Name>SLTAsset</Name>
               <Path>interface_s_l_t_asset.html</Path>
+             </Node>
+             <Node>
+              <Name>SLTAssetInstance</Name>
+              <Path>interface_s_l_t_asset_instance.html</Path>
               <Subnodes>
                <Node>
-                <Name>SLTAssetInstance</Name>
-                <Path>interface_s_l_t_asset_instance.html</Path>
-                <Subnodes>
-                 <Node>
-                  <Name>SLTCompositeInstance</Name>
-                  <Path>interface_s_l_t_composite_instance.html</Path>
-                 </Node>
-                </Subnodes>
-               </Node>
-               <Node>
-                <Name>SLTCompositeAsset</Name>
-                <Path>interface_s_l_t_composite_asset.html</Path>
+                <Name>SLT2DAssetInstance</Name>
+                <Path>interface_s_l_t2_d_asset_instance.html</Path>
                </Node>
               </Subnodes>
              </Node>
              <Node>
-              <Name>SLTCellMatrix</Name>
-              <Path>interface_s_l_t_cell_matrix.html</Path>
+              <Name>SLTBasicProperties</Name>
+              <Path>interface_s_l_t_basic_properties.html</Path>
              </Node>
              <Node>
-              <Name>SLTCellMatrixIterator</Name>
-              <Path>interface_s_l_t_cell_matrix_iterator.html</Path>
+              <Name>SLTBoard</Name>
+              <Path>interface_s_l_t_board.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>SLT2DBoard</Name>
+                <Path>interface_s_l_t2_d_board.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTMatchingBoard</Name>
+                <Path>interface_s_l_t_matching_board.html</Path>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>SLTBoardLayer</Name>
+              <Path>interface_s_l_t_board_layer.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>SLT2DBoardLayer</Name>
+                <Path>interface_s_l_t2_d_board_layer.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTMatchingBoardLayer</Name>
+                <Path>interface_s_l_t_matching_board_layer.html</Path>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>SLTCells</Name>
+              <Path>interface_s_l_t_cells.html</Path>
+             </Node>
+             <Node>
+              <Name>SLTCellsIterator</Name>
+              <Path>interface_s_l_t_cells_iterator.html</Path>
              </Node>
              <Node>
               <Name>SLTChunk</Name>
               <Path>interface_s_l_t_chunk.html</Path>
              </Node>
              <Node>
-              <Name>SLTChunkAssetInfo</Name>
-              <Path>interface_s_l_t_chunk_asset_info.html</Path>
-             </Node>
-             <Node>
-              <Name>SLTCompositeInfo</Name>
-              <Path>interface_s_l_t_composite_info.html</Path>
+              <Name>SLTChunkAssetRule</Name>
+              <Path>interface_s_l_t_chunk_asset_rule.html</Path>
              </Node>
              <Node>
               <Name>SLTDeserializer</Name>
@@ -916,6 +1202,10 @@
              <Node>
               <Name>SLTDevice</Name>
               <Path>interface_s_l_t_device.html</Path>
+             </Node>
+             <Node>
+              <Name>SLTDummyRepository</Name>
+              <Path>interface_s_l_t_dummy_repository.html</Path>
              </Node>
              <Node>
               <Name>SLTExperiment</Name>
@@ -930,28 +1220,26 @@
               <Path>interface_s_l_t_level.html</Path>
              </Node>
              <Node>
-              <Name>SLTLevelBoard</Name>
-              <Path>interface_s_l_t_level_board.html</Path>
-             </Node>
-             <Node>
-              <Name>SLTLevelBoardParser</Name>
-              <Path>interface_s_l_t_level_board_parser.html</Path>
-             </Node>
-             <Node>
               <Name>SLTLevelPack</Name>
               <Path>interface_s_l_t_level_pack.html</Path>
              </Node>
              <Node>
-              <Name>SLTLevelSettings</Name>
-              <Path>interface_s_l_t_level_settings.html</Path>
+              <Name>SLTLevelParser</Name>
+              <Path>interface_s_l_t_level_parser.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>SLT2DLevelParser</Name>
+                <Path>interface_s_l_t2_d_level_parser.html</Path>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>SLTMobileRepository</Name>
+              <Path>interface_s_l_t_mobile_repository.html</Path>
              </Node>
              <Node>
               <Name>SLTPartner</Name>
               <Path>interface_s_l_t_partner.html</Path>
-             </Node>
-             <Node>
-              <Name>SLTRepository</Name>
-              <Path>interface_s_l_t_repository.html</Path>
              </Node>
              <Node>
               <Name>SLTResource</Name>
@@ -962,8 +1250,12 @@
               <Path>interface_s_l_t_resource_u_r_l_ticket.html</Path>
              </Node>
              <Node>
-              <Name>SLTSaltr</Name>
-              <Path>interface_s_l_t_saltr.html</Path>
+              <Name>SLTSaltrMobile</Name>
+              <Path>interface_s_l_t_saltr_mobile.html</Path>
+             </Node>
+             <Node>
+              <Name>Utils</Name>
+              <Path>interface_utils.html</Path>
              </Node>
             </Subnodes>
            </Node>
@@ -972,12 +1264,46 @@
             <Path></Path>
             <Subnodes>
              <Node>
-              <Name>&lt;SaltrRequestDelegate&gt;</Name>
-              <Path>protocol_saltr_request_delegate-p.html</Path>
+              <Name>&lt;SaltrMobileRequestDelegate&gt;</Name>
+              <Path>protocol_saltr_mobile_request_delegate-p.html</Path>
               <Subnodes>
                <Node>
                 <Name>ViewController</Name>
                 <Path>interface_view_controller.html</Path>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>&lt;SLTBoardLayerDelegate&gt;</Name>
+              <Path>protocol_s_l_t_board_layer_delegate-p.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>SLTBoardLayer</Name>
+                <Path>interface_s_l_t_board_layer.html</Path>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>&lt;SLTLevelDelegate&gt;</Name>
+              <Path>protocol_s_l_t_level_delegate-p.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>SLTLevel</Name>
+                <Path>interface_s_l_t_level.html</Path>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>&lt;SLTRepositoryProtocolDelegate&gt;</Name>
+              <Path>protocol_s_l_t_repository_protocol_delegate-p.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>SLTDummyRepository</Name>
+                <Path>interface_s_l_t_dummy_repository.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTMobileRepository</Name>
+                <Path>interface_s_l_t_mobile_repository.html</Path>
                </Node>
               </Subnodes>
              </Node>
@@ -994,8 +1320,44 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>SLTCell()</Name>
-            <Path>category_s_l_t_cell_07_08.html</Path>
+            <Name>SLTAssetState</Name>
+            <Path></Path>
+            <Subnodes>
+             <Node>
+              <Name>SLT2DAssetState</Name>
+              <Path>interface_s_l_t2_d_asset_state.html</Path>
+             </Node>
+            </Subnodes>
+           </Node>
+           <Node>
+            <Name>SLTStatus</Name>
+            <Path></Path>
+            <Subnodes>
+             <Node>
+              <Name>SLTStatusAppDataLoadFail</Name>
+              <Path>interface_s_l_t_status_app_data_load_fail.html</Path>
+             </Node>
+             <Node>
+              <Name>SLTStatusExperimentsParseError</Name>
+              <Path>interface_s_l_t_status_experiments_parse_error.html</Path>
+             </Node>
+             <Node>
+              <Name>SLTStatusFeaturesParseError</Name>
+              <Path>interface_s_l_t_status_features_parse_error.html</Path>
+             </Node>
+             <Node>
+              <Name>SLTStatusLevelContentLoadFail</Name>
+              <Path>interface_s_l_t_status_level_content_load_fail.html</Path>
+             </Node>
+             <Node>
+              <Name>SLTStatusLevelsParseError</Name>
+              <Path>interface_s_l_t_status_levels_parse_error.html</Path>
+             </Node>
+             <Node>
+              <Name>SLTStatusLevelsParserMissing</Name>
+              <Path>interface_s_l_t_status_levels_parser_missing.html</Path>
+             </Node>
+            </Subnodes>
            </Node>
            <Node>
             <Name>UIViewController</Name>
@@ -1046,74 +1408,100 @@
             <Path>dir_f7bc93de0cae1157f29de103b916d1d0.html</Path>
             <Subnodes>
              <Node>
-              <Name>parser</Name>
-              <Path>dir_feb926162fb2599b9e056ab4bf23f8e3.html</Path>
+              <Name>game</Name>
+              <Path>dir_179820bea59768945aeb59426501e843.html</Path>
               <Subnodes>
                <Node>
-                <Name>game</Name>
-                <Path>dir_bac8d456155f958446c9f4be6f2db2f5.html</Path>
+                <Name>canvas2d</Name>
+                <Path>dir_d111b4633406557c253bf39814399818.html</Path>
                 <Subnodes>
                  <Node>
-                  <Name>SLTAsset.h</Name>
-                  <Path>_s_l_t_asset_8h_source.html</Path>
+                  <Name>SLT2DAssetInstance.h</Name>
+                  <Path>_s_l_t2_d_asset_instance_8h_source.html</Path>
                  </Node>
                  <Node>
-                  <Name>SLTAssetInstance.h</Name>
-                  <Path>_s_l_t_asset_instance_8h_source.html</Path>
+                  <Name>SLT2DAssetState.h</Name>
+                  <Path>_s_l_t2_d_asset_state_8h_source.html</Path>
                  </Node>
+                 <Node>
+                  <Name>SLT2DBoard.h</Name>
+                  <Path>_s_l_t2_d_board_8h_source.html</Path>
+                 </Node>
+                 <Node>
+                  <Name>SLT2DBoardLayer.h</Name>
+                  <Path>_s_l_t2_d_board_layer_8h_source.html</Path>
+                 </Node>
+                 <Node>
+                  <Name>SLT2DLevelParser.h</Name>
+                  <Path>_s_l_t2_d_level_parser_8h_source.html</Path>
+                 </Node>
+                </Subnodes>
+               </Node>
+               <Node>
+                <Name>matching</Name>
+                <Path>dir_0d5747fc6b82c62961eb29cb4b6bd3cb.html</Path>
+                <Subnodes>
                  <Node>
                   <Name>SLTCell.h</Name>
                   <Path>_s_l_t_cell_8h_source.html</Path>
                  </Node>
                  <Node>
-                  <Name>SLTCellMatrix.h</Name>
-                  <Path>_s_l_t_cell_matrix_8h_source.html</Path>
+                  <Name>SLTCells.h</Name>
+                  <Path>_s_l_t_cells_8h_source.html</Path>
                  </Node>
                  <Node>
-                  <Name>SLTCellMatrixIterator.h</Name>
-                  <Path>_s_l_t_cell_matrix_iterator_8h_source.html</Path>
+                  <Name>SLTCellsIterator.h</Name>
+                  <Path>_s_l_t_cells_iterator_8h_source.html</Path>
                  </Node>
                  <Node>
                   <Name>SLTChunk.h</Name>
                   <Path>_s_l_t_chunk_8h_source.html</Path>
                  </Node>
                  <Node>
-                  <Name>SLTChunkAssetInfo.h</Name>
-                  <Path>_s_l_t_chunk_asset_info_8h_source.html</Path>
+                  <Name>SLTChunkAssetRule.h</Name>
+                  <Path>_s_l_t_chunk_asset_rule_8h_source.html</Path>
                  </Node>
                  <Node>
-                  <Name>SLTCompositeAsset.h</Name>
-                  <Path>_s_l_t_composite_asset_8h_source.html</Path>
+                  <Name>SLTMatchingBoard.h</Name>
+                  <Path>_s_l_t_matching_board_8h_source.html</Path>
                  </Node>
                  <Node>
-                  <Name>SLTCompositeInfo.h</Name>
-                  <Path>_s_l_t_composite_info_8h_source.html</Path>
-                 </Node>
-                 <Node>
-                  <Name>SLTCompositeInstance.h</Name>
-                  <Path>_s_l_t_composite_instance_8h_source.html</Path>
-                 </Node>
-                 <Node>
-                  <Name>SLTLevel.h</Name>
-                  <Path>_s_l_t_level_8h_source.html</Path>
-                 </Node>
-                 <Node>
-                  <Name>SLTLevelBoard.h</Name>
-                  <Path>_s_l_t_level_board_8h_source.html</Path>
-                 </Node>
-                 <Node>
-                  <Name>SLTLevelBoardParser.h</Name>
-                  <Path>_s_l_t_level_board_parser_8h_source.html</Path>
-                 </Node>
-                 <Node>
-                  <Name>SLTLevelPack.h</Name>
-                  <Path>_s_l_t_level_pack_8h_source.html</Path>
-                 </Node>
-                 <Node>
-                  <Name>SLTLevelSettings.h</Name>
-                  <Path>_s_l_t_level_settings_8h_source.html</Path>
+                  <Name>SLTMatchingBoardLayer.h</Name>
+                  <Path>_s_l_t_matching_board_layer_8h_source.html</Path>
                  </Node>
                 </Subnodes>
+               </Node>
+               <Node>
+                <Name>SLTAsset.h</Name>
+                <Path>_s_l_t_asset_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTAssetInstance.h</Name>
+                <Path>_s_l_t_asset_instance_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTAssetState.h</Name>
+                <Path>_s_l_t_asset_state_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTBoard.h</Name>
+                <Path>_s_l_t_board_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTBoardLayer.h</Name>
+                <Path>_s_l_t_board_layer_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTLevel.h</Name>
+                <Path>_s_l_t_level_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTLevelPack.h</Name>
+                <Path>_s_l_t_level_pack_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTLevelParser.h</Name>
+                <Path>_s_l_t_level_parser_8h_source.html</Path>
                </Node>
               </Subnodes>
              </Node>
@@ -1132,8 +1520,12 @@
               <Path>dir_1fd4d9c5ee9981a05cfa7b4359aefa47.html</Path>
               <Subnodes>
                <Node>
-                <Name>SLTRepository.h</Name>
-                <Path>_s_l_t_repository_8h_source.html</Path>
+                <Name>SLTDummyRepository.h</Name>
+                <Path>_s_l_t_dummy_repository_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTMobileRepository.h</Name>
+                <Path>_s_l_t_mobile_repository_8h_source.html</Path>
                </Node>
               </Subnodes>
              </Node>
@@ -1152,6 +1544,58 @@
               </Subnodes>
              </Node>
              <Node>
+              <Name>status</Name>
+              <Path>dir_07d7ae6c944711b724b6889a29f3c581.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>SLTStatus.h</Name>
+                <Path>_s_l_t_status_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTStatusAppDataLoadFail.h</Name>
+                <Path>_s_l_t_status_app_data_load_fail_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTStatusExperimentsParseError.h</Name>
+                <Path>_s_l_t_status_experiments_parse_error_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTStatusFeaturesParseError.h</Name>
+                <Path>_s_l_t_status_features_parse_error_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTStatusLevelContentLoadFail.h</Name>
+                <Path>_s_l_t_status_level_content_load_fail_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTStatusLevelsParseError.h</Name>
+                <Path>_s_l_t_status_levels_parse_error_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>SLTStatusLevelsParserMissing.h</Name>
+                <Path>_s_l_t_status_levels_parser_missing_8h_source.html</Path>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>utils</Name>
+              <Path>dir_124b2250508becc024ff8f0eacad74e0.html</Path>
+              <Subnodes>
+               <Node>
+                <Name>HTTPStatus.h</Name>
+                <Path>_h_t_t_p_status_8h_source.html</Path>
+               </Node>
+               <Node>
+                <Name>Utils.h</Name>
+                <Path>_utils_8h_source.html</Path>
+               </Node>
+              </Subnodes>
+             </Node>
+             <Node>
+              <Name>SLTBasicProperties.h</Name>
+              <Path>_s_l_t_basic_properties_8h_source.html</Path>
+             </Node>
+             <Node>
               <Name>SLTConfig.h</Name>
               <Path>_s_l_t_config_8h_source.html</Path>
              </Node>
@@ -1162,10 +1606,6 @@
              <Node>
               <Name>SLTDevice.h</Name>
               <Path>_s_l_t_device_8h_source.html</Path>
-             </Node>
-             <Node>
-              <Name>SLTError.h</Name>
-              <Path>_s_l_t_error_8h_source.html</Path>
              </Node>
              <Node>
               <Name>SLTExperiment.h</Name>
@@ -1180,8 +1620,8 @@
               <Path>_s_l_t_partner_8h_source.html</Path>
              </Node>
              <Node>
-              <Name>SLTSaltr.h</Name>
-              <Path>_s_l_t_saltr_8h_source.html</Path>
+              <Name>SLTSaltrMobile.h</Name>
+              <Path>_s_l_t_saltr_mobile_8h_source.html</Path>
              </Node>
             </Subnodes>
            </Node>

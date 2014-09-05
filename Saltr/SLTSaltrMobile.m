@@ -260,19 +260,19 @@ NSString* API_VERSION=@"1.0.1";
     };
     void (^appDataLoadSuccessCallback)(SLTResource*) = ^(SLTResource* asset) {
         //TODO: @Tigr implement
-        NSDictionary* data = asset.jsonData;
-        NSDictionary* jsonData = [data objectForKey:@"responseData"];
-        NSString* status = [data objectForKey:@"status"];
-        assert(status);
-        _isLoading = NO;
-        if ([status isEqualToString:RESULT_SUCCEED]) {
-            [_repository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
-            _connected = YES;
-            [self loadAppDataSuccessHandler:jsonData];
-        } else {
-//            [self loadAppDataFailHandlerWithErrorCode:[[jsonData objectForKey:@"errorCode"] integerValue]  andMessage:[jsonData objectForKey:@"errorMessage"]];
-        }
-        [asset dispose];
+//        NSDictionary* data = asset.jsonData;
+//        NSDictionary* jsonData = [data objectForKey:@"responseData"];
+//        NSString* status = [data objectForKey:@"status"];
+//        assert(status);
+//        _isLoading = NO;
+//        if ([status isEqualToString:RESULT_SUCCEED]) {
+//            [_repository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
+//            _connected = YES;
+//            [self loadAppDataSuccessHandler:jsonData];
+//        } else {
+////            [self loadAppDataFailHandlerWithErrorCode:[[jsonData objectForKey:@"errorCode"] integerValue]  andMessage:[jsonData objectForKey:@"errorMessage"]];
+//        }
+//        [asset dispose];
     };
     
     SLTResource* resource = [self createAppDataResource:appDataLoadSuccessCallback errorHandler:appDataLoadFailCallback basicProperties:theBasicProperties customProperties:theCustomProperties];
@@ -283,37 +283,64 @@ NSString* API_VERSION=@"1.0.1";
 
 -(SLTResource *)createAppDataResource:(void (^)(SLTResource *))appDataAssetLoadCompleteHandler errorHandler:(void (^)(SLTResource *))appDataAssetLoadErrorHandler basicProperties:(NSDictionary*)theBasicProperties customProperties:(NSDictionary*)theCustomProperties
 {
-//    NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
-//    [args setObject:_instanceKey forKey:@"instanceKey"];
-//    if (_device) {
-//        [args setObject:[_device toDictionary] forKey:@"device"];
-//    }
-//    if (_partner) {
-//        [args setObject:[_partner toDictionary] forKey:@"partner"];
-//    }
-//    NSError* error = nil;
-//    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
-//                                                       options:NSJSONWritingPrettyPrinted
-//                                                         error:&error];
-//    if (!error) {
-//        NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-//        jsonArguments = [jsonArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
-//        NSString* urlVars = [NSString stringWithFormat:@"?command=%@&arguments=%@", COMMAND_APP_DATA, jsonArguments];
-//        
-//        SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];
-//        SLTResource* resource = [[SLTResource alloc] initWithId:@"saltAppConfig" andTicket:ticket successHandler:appDataAssetLoadCompleteHandler errorHandler:appDataAssetLoadErrorHandler progressHandler:nil];
-//        return resource;
-//    }
-//    return nil;
-    
-    NSString* urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@", ACTION_GET_APP_DATA, ACTION_GET_APP_DATA];
-    
     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
     [args setObject:API_VERSION forKey:@"apiVersion"];
     [args setObject:_clientKey forKey:@"clientKey"];
     [args setObject:CLIENT forKey:@"client"];
     
+    //required for Mobile
+    if (nil != _deviceId) {
+        [args setObject:_deviceId forKey:@"deviceId"];
+    } else {
+        NSException* exception = [NSException
+                     exceptionWithName:@"Exception"
+                     reason:@"Field 'deviceId' is a required."
+                     userInfo:nil];
+        @throw exception;
+    }
+    
+    //optional for Mobile
+    if (nil != _socialId) {
+        [args setObject:_socialId forKey:@"socialId"];
+    }
+    
+    //optional
+    if (nil != _saltrUserId) {
+        [args setObject:_saltrUserId forKey:@"saltrUserId"];
+    }
+    
+    if (nil != theBasicProperties) {
+        [args setObject:theBasicProperties forKey:@"basicProperties"];
+    }
+    
+    if (nil != theCustomProperties) {
+        [args setObject:theCustomProperties forKey:@"customProperties"];
+    }
+    
+    ////////////////////////////////////////////////////////////////////////////////
+    
+    NSError* error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    if (!error) {
+        NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        jsonArguments = [jsonArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+
+        NSString* urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@", ACTION_GET_APP_DATA, ACTION_GET_APP_DATA, jsonArguments];
+
+        SLTResourceURLTicket* ticket = [self getTicketWithUrl:SALTR_API_URL urlVars:urlVars andTimeout:_requestIdleTimeout];
+        
+        SLTResource* resource = [[SLTResource alloc] initWithId:@"saltAppConfig" andTicket:ticket successHandler:appDataAssetLoadCompleteHandler errorHandler:appDataAssetLoadErrorHandler progressHandler:nil];
+        return resource;
+    }
     return nil;
+    
+    ////////////////////////////////////////////////////////////////////////////////
+    
+    //SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:SALTR_API_URL andVariables:urlVars];
+    
+    //return nil;
 }
 
 -(void) loadAppDataSuccessHandler:(NSDictionary *)jsonData {
@@ -349,6 +376,16 @@ NSString* API_VERSION=@"1.0.1";
         SLTStatusAppDataLoadFail* status = [[SLTStatusAppDataLoadFail alloc] init];
         [saltrRequestDelegate didFailGettingAppDataRequest:status];
     }
+}
+
+-(SLTResourceURLTicket*) getTicketWithUrl:(NSString*)theUrl urlVars:(NSString*)theURLVars andTimeout:(NSInteger)theTimeout
+{
+    SLTResourceURLTicket* ticket = [[SLTResourceURLTicket alloc] initWithURL:theUrl andVariables:theURLVars];
+    ticket.method = @"POST";
+    if (theTimeout > 0) {
+        ticket.idleTimeout=theTimeout;
+    }
+    return ticket;
 }
 
 @end

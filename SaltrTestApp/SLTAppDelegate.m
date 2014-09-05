@@ -7,9 +7,19 @@
 //
 
 #import "SLTAppDelegate.h"
-#import "SLTSaltr.h"
+#import "SLTSaltrMobile.h"
 
 @implementation SLTAppDelegate
+
+-(void) didFinishGettingAppDataRequest
+{
+    //
+}
+
+-(void) didFailGettingAppDataRequest:(SLTStatus*)status
+{
+    //
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {

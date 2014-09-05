@@ -7,10 +7,10 @@
 //
 
 #import "ViewController.h"
-#import "SLTRepository.h"
+//#import "SLTRepository.h"
 
 @interface ViewController () {
-    SLTSaltr* saltr;
+    SLTSaltrMobile* saltr;
 }
 
 @end
@@ -25,6 +25,13 @@
 //    saltr.saltrRequestDelegate = self;
 //    [[SLTSaltr sharedInstance] setupPartnerWithId:@"100000024783448" andPartnerType:@"facebook"];
 //    [[SLTSaltr sharedInstance] setupDeviceWithId:@"asdas123kasd" andDeviceType:@"phone"];
+    
+    saltr = [[SLTSaltrMobile alloc] initSaltrWithClientKey:@"473263" deviceId:@"device_id_ios" andCacheEnabled:NO];
+    
+    saltr.useNoFeatures=YES;
+    saltr.useNoLevels=YES;
+    [saltr start];
+    [saltr connect];
 }
 
 - (void)didReceiveMemoryWarning
@@ -40,7 +47,7 @@
     
 }
 
--(void) didFailGettingAppDataRequest:(SLTError*)error {
+-(void) didFailGettingAppDataRequest:(SLTStatus*)status {
     
 }
 

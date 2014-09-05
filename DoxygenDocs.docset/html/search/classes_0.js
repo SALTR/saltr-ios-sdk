@@ -1,28 +1,4 @@
 var searchData=
 [
-  ['saltrrequestdelegate_2dp',['SaltrRequestDelegate-p',['../protocol_saltr_request_delegate-p.html',1,'']]],
-  ['sltasset',['SLTAsset',['../interface_s_l_t_asset.html',1,'']]],
-  ['sltassetinstance',['SLTAssetInstance',['../interface_s_l_t_asset_instance.html',1,'']]],
-  ['sltcell_28_29',['SLTCell()',['../category_s_l_t_cell_07_08.html',1,'']]],
-  ['sltcellmatrix',['SLTCellMatrix',['../interface_s_l_t_cell_matrix.html',1,'']]],
-  ['sltcellmatrixiterator',['SLTCellMatrixIterator',['../interface_s_l_t_cell_matrix_iterator.html',1,'']]],
-  ['sltchunk',['SLTChunk',['../interface_s_l_t_chunk.html',1,'']]],
-  ['sltchunkassetinfo',['SLTChunkAssetInfo',['../interface_s_l_t_chunk_asset_info.html',1,'']]],
-  ['sltcompositeasset',['SLTCompositeAsset',['../interface_s_l_t_composite_asset.html',1,'']]],
-  ['sltcompositeinfo',['SLTCompositeInfo',['../interface_s_l_t_composite_info.html',1,'']]],
-  ['sltcompositeinstance',['SLTCompositeInstance',['../interface_s_l_t_composite_instance.html',1,'']]],
-  ['sltdeserializer',['SLTDeserializer',['../interface_s_l_t_deserializer.html',1,'']]],
-  ['sltdevice',['SLTDevice',['../interface_s_l_t_device.html',1,'']]],
-  ['sltexperiment',['SLTExperiment',['../interface_s_l_t_experiment.html',1,'']]],
-  ['sltfeature',['SLTFeature',['../interface_s_l_t_feature.html',1,'']]],
-  ['sltlevel',['SLTLevel',['../interface_s_l_t_level.html',1,'']]],
-  ['sltlevelboard',['SLTLevelBoard',['../interface_s_l_t_level_board.html',1,'']]],
-  ['sltlevelboardparser',['SLTLevelBoardParser',['../interface_s_l_t_level_board_parser.html',1,'']]],
-  ['sltlevelpack',['SLTLevelPack',['../interface_s_l_t_level_pack.html',1,'']]],
-  ['sltlevelsettings',['SLTLevelSettings',['../interface_s_l_t_level_settings.html',1,'']]],
-  ['sltpartner',['SLTPartner',['../interface_s_l_t_partner.html',1,'']]],
-  ['sltrepository',['SLTRepository',['../interface_s_l_t_repository.html',1,'']]],
-  ['sltresource',['SLTResource',['../interface_s_l_t_resource.html',1,'']]],
-  ['sltresourceurlticket',['SLTResourceURLTicket',['../interface_s_l_t_resource_u_r_l_ticket.html',1,'']]],
-  ['sltsaltr',['SLTSaltr',['../interface_s_l_t_saltr.html',1,'']]]
+  ['httpstatus',['HTTPStatus',['../interface_h_t_t_p_status.html',1,'']]]
 ];

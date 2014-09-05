@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['boardwithid_3a',['boardWithId:',['../interface_s_l_t_level.html#a1cae4f832a0a094257c2f29ab07da51d',1,'SLTLevel']]]
+  ['cacheobject_3aversion_3aobject_3a',['cacheObject:version:object:',['../protocol_s_l_t_repository_protocol_delegate-p.html#a6c44678d1e32382f5c81ec0bb7f2b3fd',1,'SLTRepositoryProtocolDelegate-p']]]
 ];

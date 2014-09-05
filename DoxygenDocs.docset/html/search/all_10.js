@@ -1,11 +1,8 @@
 var searchData=
 [
-  ['parselevelboard_3awithlevelsettings_3a',['parseLevelBoard:withLevelSettings:',['../interface_s_l_t_level_board_parser.html#a037b7d12475d2bfe2e07b98305436df6',1,'SLTLevelBoardParser']]],
-  ['parselevelboards_3awithlevelsettings_3a',['parseLevelBoards:withLevelSettings:',['../interface_s_l_t_level_board_parser.html#a24a7a03cb887255c0093e6ba6b2478cc',1,'SLTLevelBoardParser']]],
-  ['parselevelsettings_3a',['parseLevelSettings:',['../interface_s_l_t_level_board_parser.html#ad811827069da8569b76764a3b17c913e',1,'SLTLevelBoardParser']]],
-  ['partition',['partition',['../interface_s_l_t_experiment.html#a7a39bfac830ae8a9026b98ffb6c6e314',1,'SLTExperiment']]],
-  ['partnerid',['partnerId',['../interface_s_l_t_partner.html#a11d33e37e75cb58db23796a92cafd65b',1,'SLTPartner']]],
-  ['partnertype',['partnerType',['../interface_s_l_t_partner.html#a6d0c6601983f8dccb36411680cdf8311',1,'SLTPartner']]],
-  ['percentloaded',['percentLoaded',['../interface_s_l_t_resource.html#a76b4b530d8aeb704d69e534c297cf409',1,'SLTResource']]],
-  ['properties',['properties',['../interface_s_l_t_level.html#a6a6d63af36e8f918237a5be8abdc4566',1,'SLTLevel::properties()'],['../interface_s_l_t_level_board.html#aa6d7f101684f61073b79d4ca74832641',1,'SLTLevelBoard::properties()'],['../category_s_l_t_cell_07_08.html#a77961adf7afd3f93541f16fbbeeaa500',1,'SLTCell()::properties()'],['../interface_s_l_t_feature.html#afc7b34f6955e6d5e44ec6994fcb4ea2c',1,'SLTFeature::properties()']]]
+  ['ticket',['ticket',['../interface_s_l_t_resource.html#a1a4b54d756852d4db71349a1243519d5',1,'SLTResource']]],
+  ['todictionary',['toDictionary',['../interface_s_l_t_device.html#a6c1409cfd6f64da36cf52bf1e65ac893',1,'SLTDevice::toDictionary()'],['../interface_s_l_t_partner.html#af0fe618505abf9dcb6019eeae1f6d6ac',1,'SLTPartner::toDictionary()']]],
+  ['todo_20list',['Todo List',['../todo.html',1,'']]],
+  ['token',['token',['../interface_s_l_t_asset.html#ae045fd2a2c6395aad20bed60c0bafc51',1,'SLTAsset::token()'],['../interface_s_l_t_asset_instance.html#a89474632b7d4e54f4908b648a38e00a2',1,'SLTAssetInstance::token()'],['../interface_s_l_t_experiment.html#a96d7381a51e9e42fa43626b0f87793ad',1,'SLTExperiment::token()'],['../interface_s_l_t_feature.html#a89f0e4a45a0c76d28a1fbdc0064e8456',1,'SLTFeature::token()']]],
+  ['type',['type',['../interface_s_l_t_experiment.html#a926821ef2ba9e5a6e429429270b59f93',1,'SLTExperiment']]]
 ];
