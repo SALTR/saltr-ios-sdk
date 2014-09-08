@@ -40,8 +40,6 @@ NSString* API_VERSION=@"1.0.1";
     NSInteger _requestIdleTimeout;
     NSMutableDictionary* _activeFeatures;
     NSMutableDictionary* _developerFeatures;
-    //NSArray* _experiments;
-    //NSArray* _levelPacks;
     NSObject<SLTRepositoryProtocolDelegate>* _repository;
     SLTDeserializer* _deserializer;
 }
@@ -78,8 +76,6 @@ NSString* API_VERSION=@"1.0.1";
         
         _activeFeatures = [[NSMutableDictionary alloc] init];
         _developerFeatures = [[NSMutableDictionary alloc] init];
-        //_experiments = [[NSMutableArray alloc] init];
-        //_levelPacks = [[NSMutableArray alloc] init];
         _repository = theCacheEnabled ? [[SLTMobileRepository alloc] init] : [[SLTDummyRepository alloc] init];
         _deserializer = [[SLTDeserializer alloc] init];
     }
@@ -167,7 +163,7 @@ NSString* API_VERSION=@"1.0.1";
         return;
     }
     
-    if (_started == false) {
+    if (NO == _started) {
         thePath = thePath == nil ? LOCAL_LEVELPACK_PACKAGE_URL : thePath;
         NSDictionary* applicationData = [_repository objectFromApplication:thePath];
         _levelPacks = [_deserializer decodeLevelsFromData:applicationData];
