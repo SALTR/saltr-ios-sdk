@@ -19,6 +19,9 @@
 #import "SLTResource.h"
 #import "SLTResourceURLTicket.h"
 #import "SLTStatusAppDataLoadFail.h"
+#import "SLTStatusFeaturesParseError.h"
+#import "SLTStatusExperimentsParseError.h"
+#import "SLTStatusLevelsParseError.h"
 
 NSString* CLIENT=@"IOS-Mobile";
 NSString* API_VERSION=@"1.0.1";
@@ -256,23 +259,38 @@ NSString* API_VERSION=@"1.0.1";
     
     void (^appDataLoadFailCallback)(SLTResource*) = ^(SLTResource* asset) {
         [asset dispose];
-        [self loadAppDataFailHandler];
+        [self loadAppDataFailHandler:[[SLTStatusAppDataLoadFail alloc] init]];
     };
     void (^appDataLoadSuccessCallback)(SLTResource*) = ^(SLTResource* asset) {
-        //TODO: @Tigr implement
-//        NSDictionary* data = asset.jsonData;
-//        NSDictionary* jsonData = [data objectForKey:@"responseData"];
-//        NSString* status = [data objectForKey:@"status"];
-//        assert(status);
-//        _isLoading = NO;
-//        if ([status isEqualToString:RESULT_SUCCEED]) {
-//            [_repository cacheObject:APP_DATA_URL_CACHE version:@"0" object:jsonData];
-//            _connected = YES;
-//            [self loadAppDataSuccessHandler:jsonData];
-//        } else {
-////            [self loadAppDataFailHandlerWithErrorCode:[[jsonData objectForKey:@"errorCode"] integerValue]  andMessage:[jsonData objectForKey:@"errorMessage"]];
-//        }
-//        [asset dispose];
+        NSDictionary* data = asset.jsonData;
+        
+        if(nil == data) {
+            [asset dispose];
+            [self loadAppDataFailHandler:[[SLTStatusAppDataLoadFail alloc] init]];
+            return;
+        }
+        
+        BOOL sucess = NO;
+        NSDictionary* response = nil;
+        
+        NSArray* responseData = [data objectForKey:@"response"];
+        if(nil != responseData) {
+            response = responseData[0];
+            sucess = [[response objectForKey:@"success"] boolValue];
+        } else {
+            response = [data objectForKey:@"responseData"];
+            sucess = [[data objectForKey:@"status"] isEqualToString:RESULT_SUCCEED];
+        }
+        
+        _isLoading = NO;
+        
+        if(sucess) {
+            [self loadAppDataSuccessHandler:response];
+        } else {
+            [self loadAppDataFailHandler:[[SLTStatus alloc] initWithCode:[[response objectForKey:@"errorCode"] integerValue] andMessage:[response objectForKey:@"errorMessage"]]];
+        }
+        
+        [asset dispose];
     };
     
     SLTResource* resource = [self createAppDataResource:appDataLoadSuccessCallback errorHandler:appDataLoadFailCallback basicProperties:theBasicProperties customProperties:theCustomProperties];
@@ -335,38 +353,65 @@ NSString* API_VERSION=@"1.0.1";
     return nil;
 }
 
--(void) loadAppDataSuccessHandler:(NSDictionary *)jsonData {
-    //TODO: @TIGR implement
-//    _saltrUserId = [jsonData objectForKey:@"saltId"];
-//    _experiments = [_deserializer decodeExperimentsFromData:jsonData];
-//    _levelPacks = [_deserializer decodeLevelsFromData:jsonData];
-//    NSDictionary* saltrFeatures = [_deserializer decodeFeaturesFromData:jsonData];
-//    //merging with defaults...
-//    
-//    for (NSString* key in [saltrFeatures allKeys]) {
-//        SLTFeature* saltrFeature = [saltrFeatures objectForKey:key];
-//        SLTFeature* defaultFeature = [_features objectForKey:key];
-//        saltrFeature.defaultProperties = defaultFeature.defaultProperties;
-//        [_features setValue:saltrFeature forKey:key];
-//    }
-//    
-//    if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingAppDataRequest)]) {
-//        [saltrRequestDelegate didFinishGettingAppDataRequest];
-//    }
-//    /// @todo the meaning of the boolean below is not clear.
-//    // The condition will be always true as the mentioned boolean never changes its value.
-//    if (_isInDevMode) {
-//        [self syncFeatures];
-//    }
+-(void) loadAppDataSuccessHandler:(NSDictionary *)response {
+    
+    if(_devMode) {
+        [self syncDeveloperFeatures];
+    }
+    
+    _levelType = [response objectForKey:@"levelType"];
+    NSDictionary* saltrFeatures;
+    @try {
+        saltrFeatures = [_deserializer decodeFeaturesFromData:response];
+    } @catch (NSError* error) {
+        [self loadAppDataFailHandler:[[SLTStatusFeaturesParseError alloc] init]];
+        return;
+    }
+    
+    @try {
+        _experiments = [_deserializer decodeExperimentsFromData:response];
+    } @catch (NSError* error) {
+        [self loadAppDataFailHandler:[[SLTStatusExperimentsParseError alloc] init]];
+        return;
+    }
+    
+    // if developer didn't announce use without levels, and levelType in returned JSON is not "noLevels",
+    // then - parse levels
+    if (!_useNoLevels && ![_levelType isEqualToString:LEVEL_TYPE_NONE]) {
+        NSArray* newLevelPacks;
+        @try {
+            newLevelPacks = [_deserializer decodeLevelsFromData:response];
+        } @catch (NSError* error) {
+            [self loadAppDataFailHandler:[[SLTStatusLevelsParseError alloc] init]];
+            return;
+        }
+        
+        // if new levels are received and parsed, then only dispose old ones and assign new ones.
+        if(nil != newLevelPacks) {
+            [self disposeLevelPacks];
+            _levelPacks = newLevelPacks;
+        }
+    }
+    
+    _saltrUserId = [response objectForKey:@"saltrUserId"];
+    _connected = YES;
+    [_repository cacheObject:APP_DATA_URL_CACHE version:@"0" object:response];
+    
+    _activeFeatures = [[NSMutableDictionary alloc] initWithDictionary:saltrFeatures];
+    
+    if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingAppDataRequest)]) {
+        [saltrRequestDelegate didFinishGettingAppDataRequest];
+    }
+    
+    NSLog(@"[SALTR] AppData load success. LevelPacks loaded: %i", [_levelPacks count]);
 }
 
--(void) loadAppDataFailHandler
+-(void) loadAppDataFailHandler:(SLTStatus*)theStatus
 {
     _isLoading = NO;
     _connected = NO;
     if ([saltrRequestDelegate respondsToSelector:@selector(didFailGettingAppDataRequest:)]) {
-        SLTStatusAppDataLoadFail* status = [[SLTStatusAppDataLoadFail alloc] init];
-        [saltrRequestDelegate didFailGettingAppDataRequest:status];
+        [saltrRequestDelegate didFailGettingAppDataRequest:theStatus];
     }
 }
 
@@ -378,6 +423,16 @@ NSString* API_VERSION=@"1.0.1";
         ticket.idleTimeout=theTimeout;
     }
     return ticket;
+}
+
+-(void) syncDeveloperFeatures
+{
+    //TODO: @TIGR implement
+}
+
+-(void) disposeLevelPacks
+{
+    //TODO: @TIGR implement
 }
 
 @end
