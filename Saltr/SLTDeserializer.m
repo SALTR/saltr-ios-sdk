@@ -94,21 +94,21 @@
 
 #pragma mark private functions
 
-NSComparisonResult (^sortBlockForLevelPackStructure)(id, id) = ^(SLTLevelPack* obj1, SLTLevelPack* obj2) {
-    if ([obj1 index]  > [obj2 index] ) {
+NSComparisonResult (^sortBlockForLevelPackStructure)(id, id) = ^(NSDictionary* obj1, NSDictionary* obj2) {
+    if ([obj1 objectForKey:@"index"]  > [obj2 objectForKey:@"index"] ) {
         return (NSComparisonResult)NSOrderedDescending;
     }
-    if ([obj1 index]  < [obj2 index]) {
+    if ([obj1 objectForKey:@"index"]  < [obj2 objectForKey:@"index"]) {
         return (NSComparisonResult)NSOrderedAscending;
     }
     return (NSComparisonResult)NSOrderedSame;
 };
 
-NSComparisonResult (^sortBlockForLevelStructure)(id, id) = ^(SLTLevel* obj1, SLTLevel* obj2) {
-    if ([obj1 index] > [obj2 index]) {
+NSComparisonResult (^sortBlockForLevelStructure)(id, id) = ^(NSDictionary* obj1, NSDictionary* obj2) {
+    if ([obj1 objectForKey:@"index"] > [obj2 objectForKey:@"index"]) {
         return (NSComparisonResult)NSOrderedDescending;
     }
-    if ([obj1 index]  < [obj2 index]) {
+    if ([obj1 objectForKey:@"index"]  < [obj2 objectForKey:@"index"]) {
         return (NSComparisonResult)NSOrderedAscending;
     }
     return (NSComparisonResult)NSOrderedSame;
