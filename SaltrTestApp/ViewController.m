@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-//#import "SLTRepository.h"
 
 @interface ViewController () {
     SLTSaltr* saltr;
@@ -21,18 +20,23 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-//    saltr = [SLTSaltr saltrWithInstanceKey:@"08626247-f03d-0d83-b69f-4f03f80ef555" andCacheEnabled:YES];
-//    saltr.saltrRequestDelegate = self;
-//    [[SLTSaltr sharedInstance] setupPartnerWithId:@"100000024783448" andPartnerType:@"facebook"];
-//    [[SLTSaltr sharedInstance] setupDeviceWithId:@"asdas123kasd" andDeviceType:@"phone"];
     
     saltr = [[SLTSaltr alloc] initSaltrWithClientKey:@"618385" deviceId:@"device_id_ios" andCacheEnabled:YES];
     saltr.saltrRequestDelegate = self;
     
     [saltr importLevelsFromPath:nil];
     
-    saltr.useNoFeatures=YES;
-    //saltr.useNoLevels=YES;
+    NSMutableDictionary* scoresDictionary = [[NSMutableDictionary alloc] init];
+    [scoresDictionary setObject:[NSNumber numberWithInt:10] forKey:@"collecting"];
+    [scoresDictionary setObject:[NSNumber numberWithInt:20] forKey:@"moveBonus"];
+
+    [saltr defineFeatureWithToken:@"SCORES" properties:scoresDictionary andRequired:NO];
+    
+    NSMutableDictionary* backgroundPropertiesDictionary = [[NSMutableDictionary alloc] init];
+    [backgroundPropertiesDictionary setObject:@"#cccccc" forKey:@"bgColor"];
+    
+    [saltr defineFeatureWithToken:@"BACKGROUND_COLOR" properties:backgroundPropertiesDictionary andRequired:NO];
+    
     [saltr start];
     [saltr connect];
 }
