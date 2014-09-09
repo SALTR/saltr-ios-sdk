@@ -423,7 +423,77 @@ NSString* API_VERSION=@"1.0.1";
 
 -(void) syncDeveloperFeatures
 {
-    //TODO: @TIGR implement
+    NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
+    [args setObject:API_VERSION forKey:@"apiVersion"];
+    [args setObject:_clientKey forKey:@"clientKey"];
+    [args setObject:CLIENT forKey:@"client"];
+    
+    //required for Mobile
+    if (nil != _deviceId) {
+        [args setObject:_deviceId forKey:@"deviceId"];
+    } else {
+        NSException* exception = [NSException
+                                  exceptionWithName:@"Exception"
+                                  reason:@"Field 'deviceId' is a required."
+                                  userInfo:nil];
+        @throw exception;
+    }
+    
+    //optional for Mobile
+    if (nil != _socialId) {
+        [args setObject:_socialId forKey:@"socialId"];
+    }
+    
+    //optional
+    if (nil != _saltrUserId) {
+        [args setObject:_saltrUserId forKey:@"saltrUserId"];
+    }
+    
+    
+    NSMutableArray* featureList = [[NSMutableArray alloc] init];
+    for(SLTFeature* feature in _developerFeatures) {
+        NSError* featureError = nil;
+        NSData *featureData = [NSJSONSerialization dataWithJSONObject:[feature properties]
+                                                           options:NSJSONWritingPrettyPrinted
+                                                             error:&featureError];
+        if(!featureError) {
+            NSString *featureArguments = [[NSString alloc] initWithData:featureData encoding:NSUTF8StringEncoding];
+            featureArguments = [featureArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+            
+            NSDictionary* featureDictionary = [[NSDictionary alloc] init];
+            [featureDictionary setValue:featureDictionary forKey:[feature token]];
+            [featureList addObject:featureDictionary];
+        } else {
+            return;
+        }
+    }
+    [args setObject:featureList forKey:@"developerFeatures"];
+    
+    NSError* error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    
+    void (^syncSuccessHandler)(SLTResource*) = ^(SLTResource* asset) {
+        [asset dispose];
+        NSLog(@"[Saltr] Dev feature Sync is complete.");
+    };
+    void (^syncFailHandler)(SLTResource*) = ^(SLTResource* asset) {
+        [asset dispose];
+        NSLog(@"[Saltr] Dev feature Sync has failed.");
+    };
+    
+    if (!error) {
+        NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        jsonArguments = [jsonArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        NSString* urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@", ACTION_DEV_SYNC_FEATURES, ACTION_DEV_SYNC_FEATURES, jsonArguments];
+        
+        SLTResourceURLTicket* ticket = [self getTicketWithUrl:SALTR_DEVAPI_URL urlVars:urlVars andTimeout:_requestIdleTimeout];
+        
+        SLTResource* resource = [[SLTResource alloc] initWithId:@"syncFeatures" andTicket:ticket successHandler:syncSuccessHandler errorHandler:syncFailHandler progressHandler:nil];
+        [resource load];
+    }
 }
 
 -(void) disposeLevelPacks
