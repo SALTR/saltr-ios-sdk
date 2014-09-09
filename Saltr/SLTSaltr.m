@@ -461,7 +461,7 @@ NSString* API_VERSION=@"1.0.1";
             featureArguments = [featureArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
             
             NSDictionary* featureDictionary = [[NSDictionary alloc] init];
-            [featureDictionary setValue:featureDictionary forKey:[feature token]];
+            [featureDictionary setValue:featureArguments forKey:[feature token]];
             [featureList addObject:featureDictionary];
         } else {
             return;
