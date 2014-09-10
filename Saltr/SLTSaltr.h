@@ -30,10 +30,10 @@ extern const NSString* API_VERSION;
 -(void) didFailGettingAppDataRequest:(SLTStatus*)status;
 
 /// Informs that getting level data body with level pack request has succeeded
-//-(void) didFinishGettingLevelDataBodyWithLevelPackRequest;
+-(void) didFinishGettingLevelDataRequest;
 
 /// Informs that getting level data body with level pack request has failed
-//-(void) didFailGettingLevelDataBodyWithLevelPackRequest;
+-(void) didFailGettingLevelDataRequest:(SLTStatus*)status;
 
 @end
 
@@ -89,5 +89,7 @@ extern const NSString* API_VERSION;
 - (void) connectWithBasicProperties:(NSDictionary*)theBasicProperties;
 
 - (void) connectWithBasicProperties:(NSDictionary *)theBasicProperties andCustomProperties:(NSDictionary*)theCustomProperties;
+
+-(void) loadLevelContent:(SLTLevel*)level andCacheEnabled:(BOOL)enableCache;
 
 @end

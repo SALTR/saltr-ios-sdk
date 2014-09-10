@@ -22,6 +22,7 @@
 #import "SLTStatusFeaturesParseError.h"
 #import "SLTStatusExperimentsParseError.h"
 #import "SLTStatusLevelsParseError.h"
+#import "SLTStatusLevelContentLoadFail.h"
 
 NSString* CLIENT=@"IOS-Mobile";
 NSString* API_VERSION=@"1.0.1";
@@ -293,6 +294,27 @@ NSString* API_VERSION=@"1.0.1";
     [resource load];
 }
 
+-(void) loadLevelContent:(SLTLevel*)level andCacheEnabled:(BOOL)enableCache
+{
+    NSDictionary* content = nil;
+    if(NO == _connected) {
+        if (YES == enableCache) {
+            content = [self loadLevelContentInternally:level];
+        } else {
+            content = [self loadLevelContentFromDisk:level];
+        }
+        [self levelContentLoadSuccessHandler:level data:content];
+    } else {
+        NSString* cachedVersion = [self cachedLevelVersion:level];
+        if (NO == enableCache || [level.version isEqualToString:cachedVersion]) {
+            [self loadLevelContentFromSaltr:level];
+        } else {
+            content = [self loadLevelContentFromCache:level];
+            [self levelContentLoadSuccessHandler:level data:content];
+        }
+    }
+}
+
 #pragma mark private functions
 
 -(SLTResource *)createAppDataResource:(void (^)(SLTResource *))appDataAssetLoadCompleteHandler errorHandler:(void (^)(SLTResource *))appDataAssetLoadErrorHandler basicProperties:(NSDictionary*)theBasicProperties customProperties:(NSDictionary*)theCustomProperties
@@ -384,7 +406,6 @@ NSString* API_VERSION=@"1.0.1";
         
         // if new levels are received and parsed, then only dispose old ones and assign new ones.
         if(nil != newLevelPacks) {
-            [self disposeLevelPacks];
             _levelPacks = newLevelPacks;
         }
     }
@@ -496,9 +517,85 @@ NSString* API_VERSION=@"1.0.1";
     }
 }
 
--(void) disposeLevelPacks
+-(NSDictionary*) loadLevelContentInternally:(SLTLevel*)level
 {
-    //TODO: @TIGR implement
+    NSDictionary* content = [self loadLevelContentFromCache:level];
+    if (nil == content) {
+        content = [self loadLevelContentFromDisk:level];
+    }
+    return content;
+}
+
+-(NSDictionary*) loadLevelContentFromDisk:(SLTLevel*)level
+{
+    NSString* url = LOCAL_LEVEL_CONTENT_PACKAGE_URL_TEMPLATE((long)level.packIndex, (long)level.localIndex);
+    return [_repository objectFromApplication:url];
+}
+
+-(void) levelContentLoadSuccessHandler:(SLTLevel*)level data:(NSDictionary*)content
+{
+    [level updateContent:content];
+    if ([saltrRequestDelegate respondsToSelector:@selector(didFinishGettingLevelDataRequest)]) {
+        [saltrRequestDelegate didFinishGettingLevelDataRequest];
+    }
+}
+
+-(void) levelContentLoadFailHandler:(SLTStatus*)theStatus
+{
+    if ([saltrRequestDelegate respondsToSelector:@selector(didFailGettingLevelDataRequest:)]) {
+        [saltrRequestDelegate didFailGettingLevelDataRequest:theStatus];
+    }
+}
+
+-(NSString*) cachedLevelVersion:(SLTLevel*)level
+{
+    NSString* cachedFileName = LOCAL_LEVEL_CONTENT_CACHE_URL_TEMPLATE((long)level.packIndex, (long)level.localIndex);
+    return [_repository objectVersion:cachedFileName];
+}
+
+-(void) loadLevelContentFromSaltr:(SLTLevel*)level
+{
+    NSInteger timeInterval = [NSDate timeIntervalSinceReferenceDate] * 1000;
+    NSString* url = [level.contentUrl stringByAppendingFormat:@"?_time_=%d", timeInterval];
+    SLTResourceURLTicket* ticket = [self getTicketWithUrl:url urlVars:nil andTimeout:_requestIdleTimeout];
+    
+    void (^loadFromSaltrSuccessCallback)(SLTResource *) = ^(SLTResource * resource) {
+        NSDictionary* contentData = resource.jsonData;
+        if (contentData) {
+            [self cacheLevelContent:level andContent:contentData];
+        } else {
+            contentData = [self loadLevelContentInternally:level];
+        }
+        
+        if (contentData) {
+            [self levelContentLoadSuccessHandler:level data:contentData];
+        } else {
+            [self levelContentLoadFailHandler:[[SLTStatusLevelContentLoadFail alloc] init]];
+        }
+        [resource dispose];
+        
+    };
+    void (^loadFromSaltrFailCallback)(SLTResource *) = ^(SLTResource * resource) {
+        NSDictionary* contentData = [self loadLevelContentInternally:level];
+        [self levelContentLoadSuccessHandler:level data:contentData];
+        [resource dispose];
+        
+    };
+        
+    SLTResource* resource = [[SLTResource alloc] initWithId:@"saltr" andTicket:ticket successHandler:loadFromSaltrSuccessCallback errorHandler:loadFromSaltrFailCallback progressHandler:nil];
+    [resource load];
+}
+
+-(NSDictionary*) loadLevelContentFromCache:(SLTLevel*)level
+{
+    NSString* url = LOCAL_LEVEL_CONTENT_CACHE_URL_TEMPLATE((long)level.packIndex, (long)level.localIndex);
+    return [_repository objectFromCache:url];
+}
+
+-(void) cacheLevelContent:(SLTLevel *)level andContent:(NSDictionary *)contentData
+{
+    NSString* cachedFileName = LOCAL_LEVEL_CONTENT_CACHE_URL_TEMPLATE((long)level.packIndex, (long)level.localIndex);
+    [_repository cacheObject:cachedFileName version:level.version object:contentData];
 }
 
 @end

@@ -22,8 +22,8 @@
 //used to
 #define APP_DATA_URL_CACHE @"app_data_cache.json"
 #define LOCAL_LEVELPACK_PACKAGE_URL @"saltr/level_packs.json"
-#define LOCAL_LEVEL_CONTENT_PACKAGE_URL_TEMPLATE(value1, value2) ([NSString stringWithFormat:@"saltr/pack_%@/level_%@.json", value1, value2])
-#define LOCAL_LEVEL_CONTENT_CACHE_URL_TEMPLATE(value1, value2) ([NSString stringWithFormat:@"pack_%@_level_%@.json", value1, value2])
+#define LOCAL_LEVEL_CONTENT_PACKAGE_URL_TEMPLATE(value1, value2) ([NSString stringWithFormat:@"saltr/pack_%ld/level_%ld.json", value1, value2])
+#define LOCAL_LEVEL_CONTENT_CACHE_URL_TEMPLATE(value1, value2) ([NSString stringWithFormat:@"pack_%ld_level_%ld.json", value1, value2])
 
 #define RESULT_SUCCEED @"SUCCEED"
 #define RESULT_ERROR @"FAILED"

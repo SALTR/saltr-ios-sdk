@@ -50,19 +50,33 @@
 
 #pragma mark SaltrRequestDelegate methods
 
--(void) didFinishGettingAppDataRequest {
+-(void) didFinishGettingAppDataRequest
+{
     
 }
 
--(void) didFailGettingAppDataRequest:(SLTStatus*)status {
+-(void) didFailGettingAppDataRequest:(SLTStatus*)status
+{
     
 }
 
--(void) didFinishGettingLevelDataBodyWithLevelPackRequest {
+-(void) didFinishGettingLevelDataBodyWithLevelPackRequest
+{
     
 }
 
--(void) didFailGettingLevelDataBodyWithLevelPackRequest {
+-(void) didFailGettingLevelDataBodyWithLevelPackRequest
+{
+    
+}
+
+-(void) didFinishGettingLevelDataRequest
+{
+    
+}
+
+-(void) didFailGettingLevelDataRequest:(SLTStatus*)status
+{
     
 }
 
