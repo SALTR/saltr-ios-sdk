@@ -18,7 +18,7 @@
 {
     NSException* exception = [NSException
                               exceptionWithName:@"VirtualMethodException"
-                              reason:@"Virtual Method not implemented"
+                              reason:@"[SALTR: ERROR] parseLevelContentFromBoardNodes is virtual method."
                               userInfo:nil];
     @throw exception;
 }

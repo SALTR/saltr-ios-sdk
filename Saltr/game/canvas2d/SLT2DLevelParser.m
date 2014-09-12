@@ -52,11 +52,7 @@
 
 -(SLT2DBoard*) parseLevelBoardFromBoardNode:(NSDictionary*)theBoardNode andAssetMap:(NSDictionary*)theAssetMap
 {
-    NSDictionary* boardProperties;
-    NSDictionary* boardNodeProperties = [theBoardNode objectForKey:@"properties"];
-    if(nil != boardNodeProperties) {
-        boardProperties = [boardNodeProperties objectForKey:@"board"];
-    }
+    NSDictionary* boardProperties = [theBoardNode objectForKey:@"properties"];
     
     NSMutableArray* layers = [[NSMutableArray alloc] init];
     NSArray* layerNodes = [theBoardNode objectForKey:@"layers"];
@@ -74,9 +70,13 @@
 }
 
 -(SLT2DBoardLayer*) parseLayerFromLayerNode:(NSDictionary*)theLayerNode layerIndex:(NSInteger)theLayerIndex andAssetMap:(NSDictionary*)theAssetMap
-{
-    NSString* layerId = [theLayerNode objectForKey:@"layerId"];
-    SLT2DBoardLayer* layer = [[SLT2DBoardLayer alloc] initWithLayerId:layerId andLayerIndex:theLayerIndex];
+{    
+    //temporarily checking for 2 names until "layerId" is removed!
+    NSString* token = [theLayerNode objectForKey:@"token"];
+    if (nil == token) {
+        token = [theLayerNode objectForKey:@"layerId"];
+    }
+    SLT2DBoardLayer* layer = [[SLT2DBoardLayer alloc] initWithLayerId:token andLayerIndex:theLayerIndex];
     [self parseAssetInstancesFromLayer:layer assetNodes:[theLayerNode objectForKey:@"assets"] andAssetMap:theAssetMap];
     return layer;
 }

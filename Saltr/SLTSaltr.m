@@ -315,6 +315,76 @@ NSString* API_VERSION=@"1.0.1";
     }
 }
 
+-(void) addProperties:(NSDictionary*)basicProperties andCustomProperties:(NSDictionary*)theCustomProperties
+{
+    if ((nil == basicProperties && nil == theCustomProperties) || nil == _saltrUserId) {
+        return;
+    }
+    
+    NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
+    [args setObject:API_VERSION forKey:@"apiVersion"];
+    [args setObject:_clientKey forKey:@"clientKey"];
+    [args setObject:CLIENT forKey:@"client"];
+    
+    //required for Mobile
+    if (nil != _deviceId) {
+        [args setObject:_deviceId forKey:@"deviceId"];
+    } else {
+        NSException* exception = [NSException
+                                  exceptionWithName:@"Exception"
+                                  reason:@"Field 'deviceId' is a required."
+                                  userInfo:nil];
+        @throw exception;
+    }
+    
+    //required for Mobile
+    if (nil != _saltrUserId) {
+        [args setObject:_saltrUserId forKey:@"saltrUserId"];
+    } else {
+        NSException* exception = [NSException
+                                  exceptionWithName:@"Exception"
+                                  reason:@"Field saltrUserId is required."
+                                  userInfo:nil];
+        @throw exception;
+    }
+    
+    //optional
+    if (nil != basicProperties) {
+        [args setObject:basicProperties forKey:@"basicProperties"];
+    }
+    
+    //optional
+    if (nil != theCustomProperties) {
+        [args setObject:theCustomProperties forKey:@"customProperties"];
+    }
+    
+    NSError* error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    
+    void (^syncSuccessHandler)(SLTResource*) = ^(SLTResource* asset) {
+        [asset dispose];
+        NSLog(@"success.");
+    };
+    void (^syncFailHandler)(SLTResource*) = ^(SLTResource* asset) {
+        [asset dispose];
+        NSLog(@"error.");
+    };
+    
+    if (!error) {
+        NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        jsonArguments = [jsonArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        NSString* urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@", ACTION_ADD_PROPERTIES, ACTION_ADD_PROPERTIES, jsonArguments];
+        
+        SLTResourceURLTicket* ticket = [self getTicketWithUrl:SALTR_API_URL urlVars:urlVars andTimeout:_requestIdleTimeout];
+        
+        SLTResource* resource = [[SLTResource alloc] initWithId:@"property" andTicket:ticket successHandler:syncSuccessHandler errorHandler:syncFailHandler progressHandler:nil];
+        [resource load];
+    }
+}
+
 #pragma mark private functions
 
 -(SLTResource *)createAppDataResource:(void (^)(SLTResource *))appDataAssetLoadCompleteHandler errorHandler:(void (^)(SLTResource *))appDataAssetLoadErrorHandler basicProperties:(NSDictionary*)theBasicProperties customProperties:(NSDictionary*)theCustomProperties
