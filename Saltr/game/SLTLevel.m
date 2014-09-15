@@ -11,6 +11,8 @@
 #import "SLTLevel.h"
 #import "SLTLevelParser.h"
 #import "SLTBoard.h"
+#import "SLTMatchingLevelParser.h"
+#import "SLT2DLevelParser.h"
 
 @interface SLTLevel() {
     NSString* _id;
@@ -48,13 +50,14 @@
     return self;
 }
 
--(SLTLevelParser*) getParser
+-(SLTLevelParser*) getParser:(NSString*)levelType
 {
-    NSException* exception = [NSException
-                                exceptionWithName:@"VirtualMethodException"
-                                reason:@"Virtual Method not implemented"
-                                userInfo:nil];
-    @throw exception;
+    if ([levelType isEqualToString:LEVEL_TYPE_MATCHING]) {
+        return [SLTMatchingLevelParser sharedInstance];
+    } else if([levelType isEqualToString:LEVEL_TYPE_2DCANVAS]) {
+        return [SLT2DLevelParser sharedInstance];
+    }
+    return nil;
 }
 
 //- (SLTLevelBoard*)boardWithId:(NSString*)boardId
@@ -70,7 +73,7 @@
     NSDictionary* boardsNode = [theRootNode objectForKey:@"boards"];
     assert(boardsNode);
     
-    SLTLevelParser* parser = [self getParser];
+    SLTLevelParser* parser = [self getParser:_levelType];
     
     _properties = [theRootNode objectForKey:@"properties"];
     
