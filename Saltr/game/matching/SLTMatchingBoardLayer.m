@@ -19,9 +19,9 @@
 
 @implementation SLTMatchingBoardLayer
 
-- (id)initWithLayerId:(NSString *)theLayerId andLayerIndex:(NSInteger)theLayerIndex
+-(id)initWithToken:(NSString*)theToken andLayerIndex:(NSInteger)theLayerIndex;
 {
-    self = [super initWithLayerId:theLayerId andLayerIndex:theLayerIndex];
+    self = [super initWithToken:theToken andLayerIndex:theLayerIndex];
     if (self) {
         _chunks = [[NSMutableArray alloc] init];
     }

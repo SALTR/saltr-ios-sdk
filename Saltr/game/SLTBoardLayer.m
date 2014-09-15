@@ -12,15 +12,15 @@
 
 @implementation SLTBoardLayer
 
-@synthesize layerId = _layerId;
-@synthesize layerIndex = _layerIndex;
+@synthesize token = _token;
+@synthesize index = _index;
 
--(id) initWithLayerId:(NSString*)theLayerId andLayerIndex:(NSInteger)theLayerIndex
+-(id) initWithToken:(NSString*)theToken andLayerIndex:(NSInteger)theLayerIndex
 {
     self = [super init];
     if (self) {
-        _layerId = theLayerId;
-        _layerIndex = theLayerIndex;
+        _token = theToken;
+        _index = theLayerIndex;
     }
     return self;
 }

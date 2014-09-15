@@ -20,12 +20,11 @@
 /**
  * @brief Inits an instance of @b SLT2DBoardLayer class with the given layer id and layer index
  *
- * @param theLayerId - the layer id
+ * @param token - the token
  * @param theLayerIndex - the layer index
- * @param theProperties - the properties
  * @return - The instance of @b SLT2DBoardLayer class
  */
--(id) initWithLayerId:(NSString*)theLayerId andLayerIndex:(NSInteger)theLayerIndex;
+-(id) initWithToken:(NSString*)theToken andLayerIndex:(NSInteger)theLayerIndex;
 
 /**
  * @brief Add SLT2DAssetInstance class instance

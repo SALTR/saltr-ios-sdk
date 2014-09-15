@@ -76,7 +76,7 @@
     if (nil == token) {
         token = [theLayerNode objectForKey:@"layerId"];
     }
-    SLT2DBoardLayer* layer = [[SLT2DBoardLayer alloc] initWithLayerId:token andLayerIndex:theLayerIndex];
+    SLT2DBoardLayer* layer = [[SLT2DBoardLayer alloc] initWithToken:token andLayerIndex:theLayerIndex];
     [self parseAssetInstancesFromLayer:layer assetNodes:[theLayerNode objectForKey:@"assets"] andAssetMap:theAssetMap];
     return layer;
 }

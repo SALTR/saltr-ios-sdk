@@ -21,10 +21,10 @@
 
 @interface SLTBoardLayer : NSObject <SLTBoardLayerDelegate>
 
-@property (nonatomic, strong, readonly) NSString* layerId;
+@property (nonatomic, strong, readonly) NSString* token;
 
-@property (nonatomic, assign, readonly) NSInteger layerIndex;
+@property (nonatomic, assign, readonly) NSInteger index;
 
--(id) initWithLayerId:(NSString*)theLayerId andLayerIndex:(NSInteger)theLayerIndex;
+-(id) initWithToken:(NSString*)theToken andLayerIndex:(NSInteger)theLayerIndex;
 
 @end

@@ -276,13 +276,13 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>initWithLayerId:andLayerIndex:</Name>
+      <Name>initWithToken:andLayerIndex:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
       <Scope>SLT2DBoardLayer</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t2_d_board_layer.html</Path>
-    <Anchor>abb0a6318153c768f80f08ed604c17022</Anchor>
+    <Anchor>a1b2f67d46a6967050957a6db7a46e5fd</Anchor>
     <Abstract>Inits an instance of SLT2DBoardLayer class with the given layer id and layer index. </Abstract>
     <DeclaredIn>SLT2DBoardLayer.h</DeclaredIn>
   </Token>
@@ -1174,6 +1174,63 @@
       <Scope>SLTMatchingBoardLayer</Scope>
     </TokenIdentifier>
     <Path>interface_s_l_t_matching_board_layer.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>SLTMatchingLevelParser</Name>
+      <APILanguage>c</APILanguage>
+      <Type>cl</Type>
+      <Scope>SLTMatchingLevelParser</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_matching_level_parser.html</Path>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>SLTMatchingLevelParser</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_matching_level_parser.html</Path>
+    <Anchor>a969aec68bddee38b7ab4da4ccd83c8c3</Anchor>
+    <Abstract>Compile time error messages to avoid multiple initialization of SLT2DLevelParser instance. </Abstract>
+    <DeclaredIn>SLTMatchingLevelParser.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>sharedInstance</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>SLTMatchingLevelParser</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_matching_level_parser.html</Path>
+    <Anchor>a6c44179068db1434c4fe6a78a3974755</Anchor>
+    <Abstract>Returns the only instance of SLT2DLevelParser class. </Abstract>
+    <DeclaredIn>SLTMatchingLevelParser.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>SLTMatchingLevelParser</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_matching_level_parser.html</Path>
+    <Anchor>a503b4b7420e47c4b39df50ffd64b3d00</Anchor>
+    <Abstract>Compile time error messages to avoid multiple allocation of SLT2DLevelParser instance. </Abstract>
+    <DeclaredIn>SLTMatchingLevelParser.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>__attribute__</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>clm</Type>
+      <Scope>SLTMatchingLevelParser</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_matching_level_parser.html</Path>
+    <Anchor>a545ae2fbf4987b1fee012e54b0fb42fd</Anchor>
+    <Abstract>Compile time error messages to avoid multiple allocation of SLT2DLevelParser instance. </Abstract>
+    <DeclaredIn>SLTMatchingLevelParser.h</DeclaredIn>
   </Token>
   <Token>
     <TokenIdentifier>
