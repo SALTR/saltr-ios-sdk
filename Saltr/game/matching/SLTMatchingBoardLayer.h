@@ -14,7 +14,7 @@
 
 @interface SLTMatchingBoardLayer : SLTBoardLayer
 
-- (id)initWithLayerId:(NSString *)theLayerId andLayerIndex:(NSInteger)theLayerIndex;
+-(id)initWithToken:(NSString*)theToken andLayerIndex:(NSInteger)theLayerIndex;;
 
 - (void)regenerate;
 

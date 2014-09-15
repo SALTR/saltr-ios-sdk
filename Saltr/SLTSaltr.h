@@ -92,4 +92,6 @@ extern const NSString* API_VERSION;
 
 -(void) loadLevelContent:(SLTLevel*)level andCacheEnabled:(BOOL)enableCache;
 
+-(void) addProperties:(NSDictionary*)basicProperties andCustomProperties:(NSDictionary*)theCustomProperties;
+
 @end

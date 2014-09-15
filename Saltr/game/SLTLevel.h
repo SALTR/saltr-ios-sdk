@@ -21,7 +21,7 @@
 
 @required
 
--(SLTLevelParser*) getParser;
+-(SLTLevelParser*) getParser:(NSString*)levelType;
 
 @end
 
