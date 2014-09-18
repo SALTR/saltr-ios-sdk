@@ -1,6 +1,6 @@
 /*
  * @file
- * Saltr
+ * SLTLevel.m
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
  * Copying or usage of any piece of this source code without written notice from Teoken LLC is a major crime.
@@ -60,13 +60,13 @@
     return nil;
 }
 
-//- (SLTLevelBoard*)boardWithId:(NSString*)boardId
-//{
-//    if (nil != boardId) {
-//        return [_boards objectForKey:boardId];
-//    }
-//    return nil;
-//}
+- (SLTBoard*)boardWithId:(NSString*)boardId
+{
+    if (nil != boardId) {
+        return [_boards objectForKey:boardId];
+    }
+    return nil;
+}
 
 - (void)updateContent:(NSDictionary*)theRootNode
 {

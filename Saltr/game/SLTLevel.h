@@ -1,6 +1,6 @@
 /*
  * @file
- * Saltr
+ * SLTLevel.h
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
  * Copying or usage of any piece of this source code without written notice from Teoken LLC is a major crime.
@@ -15,6 +15,7 @@
 #define LEVEL_TYPE_2DCANVAS @"Canvas2D"
 
 @class SLTLevelParser;
+@class SLTBoard;
 
 /// Protocol
 @protocol SLTLevelDelegate <NSObject>
@@ -69,9 +70,9 @@
  * @brief Returns the @b SLTLevelBoard object from the available boards
  *
  * @param boardId - The ID of board, which object user needs to get
- * @return - The @b SLTLevelBoard object that corresponds to boardId
+ * @return - The @b SLTBoard object that corresponds to boardId
  */
-//- (SLTLevelBoard*)boardWithId:(NSString*)boardId;
+- (SLTBoard*)boardWithId:(NSString*)boardId;
 
 /**
  * @brief Parses the given data and generates the corresponding object hierarchy filling the parsed information there.

@@ -1,6 +1,6 @@
 /*
  * @file
- * Saltr
+ * SLTAssetInstance.m
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
  * Copying or usage of any piece of this source code without written notice from Teoken LLC is a major crime.
@@ -26,19 +26,5 @@
     }
     return self;
 }
-
-//- (NSString *)description
-//{
-//    NSString* superDescription = [super description];
-//    return [NSString stringWithFormat: @"AssetInstance : [state : %@], %@", self.state, superDescription];
-//}
-
-//- (BOOL)isEqual:(SLTAssetInstance*)object
-//{
-//    if (object == self) {
-//        return YES;
-//    }
-//    return [super isEqual:object] && [self.state isEqualToString:object.state];
-//}
 
 @end
