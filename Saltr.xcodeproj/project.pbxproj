@@ -263,7 +263,6 @@
 		CD55D70318C0879800222E8C /* SaltrTestAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrTestAppTests-Info.plist"; sourceTree = "<group>"; };
 		CD55D70518C0879800222E8C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		CD55D70718C0879800222E8C /* SaltrTestAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SaltrTestAppTests.m; sourceTree = "<group>"; };
-		CD774F1018C9B8DA0021B4B0 /* SLTCell_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTCell_Private.h; sourceTree = "<group>"; };
 		CD774F1118CE2A8D0021B4B0 /* SLTAssetTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTAssetTests.m; sourceTree = "<group>"; };
 		CDACAC1018E0A10700021EFA /* SLTResource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTResource.h; sourceTree = "<group>"; };
 		CDACAC1118E0A10700021EFA /* SLTResource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTResource.m; sourceTree = "<group>"; };
@@ -476,13 +475,12 @@
 		CA1FC1FC18B3B8D600E92A06 /* Saltr */ = {
 			isa = PBXGroup;
 			children = (
+				982C55E319714C5100DC99B1 /* game */,
+				CA1FC24018B3C3A300E92A06 /* repository */,
+				CA1FC24118B3C3C300E92A06 /* resource */,
 				8087E47819B893F7002F3568 /* status */,
 				8081218D19B6F35F0013266B /* utils */,
-				982C55E319714C5100DC99B1 /* game */,
 				CD095F8718BF7E6100E38369 /* testdata */,
-				CA1FC24118B3C3C300E92A06 /* resource */,
-				CA1FC24018B3C3A300E92A06 /* repository */,
-				CD05F8C318C4D7F700CB782C /* private */,
 				CA1FC1FD18B3B8D600E92A06 /* Supporting Files */,
 				8016D48A19916B50006943F5 /* SLTBasicProperties.h */,
 				8016D48B19916B50006943F5 /* SLTBasicProperties.m */,
@@ -568,14 +566,6 @@
 				CDACAC1318E0A10700021EFA /* SLTResourceURLTicket.m */,
 			);
 			path = resource;
-			sourceTree = "<group>";
-		};
-		CD05F8C318C4D7F700CB782C /* private */ = {
-			isa = PBXGroup;
-			children = (
-				CD774F1018C9B8DA0021B4B0 /* SLTCell_Private.h */,
-			);
-			path = private;
 			sourceTree = "<group>";
 		};
 		CD095F8718BF7E6100E38369 /* testdata */ = {

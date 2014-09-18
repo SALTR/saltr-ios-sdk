@@ -498,17 +498,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>appVersion</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTBasicProperties</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_basic_properties.html</Path>
-    <Anchor>aa62ec45ba167e7e296f7f818957ffa24</Anchor>
-    <Abstract>Version of the client app, e.g. 4.1.1. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>systemName</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
@@ -623,6 +612,17 @@
     </TokenIdentifier>
     <Path>interface_s_l_t_basic_properties.html</Path>
     <Anchor>a5b3a0b17e619cb3e18fa768281e07d54</Anchor>
+  </Token>
+  <Token>
+    <TokenIdentifier>
+      <Name>appVersion</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>aa62ec45ba167e7e296f7f818957ffa24</Anchor>
+    <Abstract>Version of the client app, e.g. 4.1.1. </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
