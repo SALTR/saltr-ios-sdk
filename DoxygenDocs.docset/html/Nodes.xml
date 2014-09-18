@@ -480,32 +480,6 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>SLTDevice</Name>
-            <Path>interface_s_l_t_device.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>initWithDeviceId:andDeviceType:</Name>
-              <Path>interface_s_l_t_device.html</Path>
-              <Anchor>ad426ea5174a057f1ed7e7698ca5f8a98</Anchor>
-             </Node>
-             <Node>
-              <Name>toDictionary</Name>
-              <Path>interface_s_l_t_device.html</Path>
-              <Anchor>a6c1409cfd6f64da36cf52bf1e65ac893</Anchor>
-             </Node>
-             <Node>
-              <Name>deviceId</Name>
-              <Path>interface_s_l_t_device.html</Path>
-              <Anchor>a2916494e8e21c92f35ff50cf7752e1a2</Anchor>
-             </Node>
-             <Node>
-              <Name>deviceType</Name>
-              <Path>interface_s_l_t_device.html</Path>
-              <Anchor>a40798242b415e8ee6fd2b93a0eff7b53</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
             <Name>SLTDummyRepository</Name>
             <Path>interface_s_l_t_dummy_repository.html</Path>
            </Node>
@@ -741,32 +715,6 @@
            <Node>
             <Name>SLTMobileRepository</Name>
             <Path>interface_s_l_t_mobile_repository.html</Path>
-           </Node>
-           <Node>
-            <Name>SLTPartner</Name>
-            <Path>interface_s_l_t_partner.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>initWithPartnerId:andPartnerType:</Name>
-              <Path>interface_s_l_t_partner.html</Path>
-              <Anchor>a3e3841d300e152e2a50b758994d4b770</Anchor>
-             </Node>
-             <Node>
-              <Name>toDictionary</Name>
-              <Path>interface_s_l_t_partner.html</Path>
-              <Anchor>af0fe618505abf9dcb6019eeae1f6d6ac</Anchor>
-             </Node>
-             <Node>
-              <Name>partnerId</Name>
-              <Path>interface_s_l_t_partner.html</Path>
-              <Anchor>a11d33e37e75cb58db23796a92cafd65b</Anchor>
-             </Node>
-             <Node>
-              <Name>partnerType</Name>
-              <Path>interface_s_l_t_partner.html</Path>
-              <Anchor>a6d0c6601983f8dccb36411680cdf8311</Anchor>
-             </Node>
-            </Subnodes>
            </Node>
            <Node>
             <Name>&lt;SLTRepositoryProtocolDelegate&gt;</Name>
@@ -1231,10 +1179,6 @@
               <Path>interface_s_l_t_deserializer.html</Path>
              </Node>
              <Node>
-              <Name>SLTDevice</Name>
-              <Path>interface_s_l_t_device.html</Path>
-             </Node>
-             <Node>
               <Name>SLTDummyRepository</Name>
               <Path>interface_s_l_t_dummy_repository.html</Path>
              </Node>
@@ -1271,10 +1215,6 @@
              <Node>
               <Name>SLTMobileRepository</Name>
               <Path>interface_s_l_t_mobile_repository.html</Path>
-             </Node>
-             <Node>
-              <Name>SLTPartner</Name>
-              <Path>interface_s_l_t_partner.html</Path>
              </Node>
              <Node>
               <Name>SLTResource</Name>
@@ -1643,20 +1583,12 @@
               <Path>_s_l_t_deserializer_8h_source.html</Path>
              </Node>
              <Node>
-              <Name>SLTDevice.h</Name>
-              <Path>_s_l_t_device_8h_source.html</Path>
-             </Node>
-             <Node>
               <Name>SLTExperiment.h</Name>
               <Path>_s_l_t_experiment_8h_source.html</Path>
              </Node>
              <Node>
               <Name>SLTFeature.h</Name>
               <Path>_s_l_t_feature_8h_source.html</Path>
-             </Node>
-             <Node>
-              <Name>SLTPartner.h</Name>
-              <Path>_s_l_t_partner_8h_source.html</Path>
              </Node>
              <Node>
               <Name>SLTSaltr.h</Name>

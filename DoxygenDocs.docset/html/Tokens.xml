@@ -738,62 +738,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SLTDevice</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>SLTDevice</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_device.html</Path>
-    <DeclaredIn>SLTDevice.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initWithDeviceId:andDeviceType:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTDevice</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_device.html</Path>
-    <Anchor>ad426ea5174a057f1ed7e7698ca5f8a98</Anchor>
-    <Abstract>Inits instance of SLTDevice class with given id and type. </Abstract>
-    <DeclaredIn>SLTDevice.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>toDictionary</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTDevice</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_device.html</Path>
-    <Anchor>a6c1409cfd6f64da36cf52bf1e65ac893</Anchor>
-    <Abstract>Returns the dictionary value of SLTDevice class. </Abstract>
-    <DeclaredIn>SLTDevice.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>deviceId</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTDevice</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_device.html</Path>
-    <Anchor>a2916494e8e21c92f35ff50cf7752e1a2</Anchor>
-    <Abstract>the device Id </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>deviceType</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTDevice</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_device.html</Path>
-    <Anchor>a40798242b415e8ee6fd2b93a0eff7b53</Anchor>
-    <Abstract>the device type </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>SLTDummyRepository</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -1312,62 +1256,6 @@
     <Anchor>a73514824610e76bce5210689087d959c</Anchor>
     <Abstract>Gets the object from the application. </Abstract>
     <DeclaredIn>SLTMobileRepository.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SLTPartner</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>SLTPartner</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_partner.html</Path>
-    <DeclaredIn>SLTPartner.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initWithPartnerId:andPartnerType:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTPartner</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_partner.html</Path>
-    <Anchor>a3e3841d300e152e2a50b758994d4b770</Anchor>
-    <Abstract>Inits instance of SLTPartner class with given id and type. </Abstract>
-    <DeclaredIn>SLTPartner.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>toDictionary</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTPartner</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_partner.html</Path>
-    <Anchor>af0fe618505abf9dcb6019eeae1f6d6ac</Anchor>
-    <Abstract>Returns the dictionary value of SLTPartner class. </Abstract>
-    <DeclaredIn>SLTPartner.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>partnerId</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTPartner</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_partner.html</Path>
-    <Anchor>a11d33e37e75cb58db23796a92cafd65b</Anchor>
-    <Abstract>the partner id </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>partnerType</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTPartner</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_partner.html</Path>
-    <Anchor>a6d0c6601983f8dccb36411680cdf8311</Anchor>
-    <Abstract>the partner type </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>

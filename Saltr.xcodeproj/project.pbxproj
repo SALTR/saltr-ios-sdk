@@ -49,10 +49,8 @@
 		CA1FC21518B3B8D600E92A06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA1FC21318B3B8D600E92A06 /* InfoPlist.strings */; };
 		CA1FC21718B3B8D600E92A06 /* SLTSaltrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC21618B3B8D600E92A06 /* SLTSaltrTests.m */; };
 		CA1FC22C18B3C33200E92A06 /* SLTDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC22B18B3C33200E92A06 /* SLTDeserializer.m */; };
-		CA1FC22F18B3C34100E92A06 /* SLTDevice.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC22E18B3C34100E92A06 /* SLTDevice.m */; };
 		CA1FC23218B3C35000E92A06 /* SLTExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23118B3C35000E92A06 /* SLTExperiment.m */; };
 		CA1FC23518B3C36100E92A06 /* SLTFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23418B3C36100E92A06 /* SLTFeature.m */; };
-		CA1FC23E18B3C39400E92A06 /* SLTPartner.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23D18B3C39400E92A06 /* SLTPartner.m */; };
 		CA9D917518C666A2002831DF /* SLTResourceURLTicketTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA9D917418C666A2002831DF /* SLTResourceURLTicketTests.m */; };
 		CAA0C60B18BCB7FE007B2B69 /* SLTDeserializerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C60A18BCB7FE007B2B69 /* SLTDeserializerTests.m */; };
 		CAA0C60D18BCB821007B2B69 /* SLTDeviceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CAA0C60C18BCB821007B2B69 /* SLTDeviceTests.m */; };
@@ -229,14 +227,10 @@
 		CA1FC21618B3B8D600E92A06 /* SLTSaltrTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SLTSaltrTests.m; sourceTree = "<group>"; };
 		CA1FC22A18B3C33200E92A06 /* SLTDeserializer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTDeserializer.h; sourceTree = "<group>"; };
 		CA1FC22B18B3C33200E92A06 /* SLTDeserializer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTDeserializer.m; sourceTree = "<group>"; };
-		CA1FC22D18B3C34100E92A06 /* SLTDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTDevice.h; sourceTree = "<group>"; };
-		CA1FC22E18B3C34100E92A06 /* SLTDevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTDevice.m; sourceTree = "<group>"; };
 		CA1FC23018B3C35000E92A06 /* SLTExperiment.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTExperiment.h; sourceTree = "<group>"; };
 		CA1FC23118B3C35000E92A06 /* SLTExperiment.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTExperiment.m; sourceTree = "<group>"; };
 		CA1FC23318B3C36100E92A06 /* SLTFeature.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTFeature.h; sourceTree = "<group>"; };
 		CA1FC23418B3C36100E92A06 /* SLTFeature.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTFeature.m; sourceTree = "<group>"; };
-		CA1FC23C18B3C39400E92A06 /* SLTPartner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTPartner.h; sourceTree = "<group>"; };
-		CA1FC23D18B3C39400E92A06 /* SLTPartner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTPartner.m; sourceTree = "<group>"; };
 		CA9D917418C666A2002831DF /* SLTResourceURLTicketTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTResourceURLTicketTests.m; sourceTree = "<group>"; };
 		CA9DAB3A18B6A330005CCCAA /* SLTConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTConfig.h; sourceTree = "<group>"; };
 		CAA0C60A18BCB7FE007B2B69 /* SLTDeserializerTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTDeserializerTests.m; sourceTree = "<group>"; };
@@ -490,19 +484,15 @@
 				CA1FC24018B3C3A300E92A06 /* repository */,
 				CD05F8C318C4D7F700CB782C /* private */,
 				CA1FC1FD18B3B8D600E92A06 /* Supporting Files */,
+				8016D48A19916B50006943F5 /* SLTBasicProperties.h */,
+				8016D48B19916B50006943F5 /* SLTBasicProperties.m */,
 				CA9DAB3A18B6A330005CCCAA /* SLTConfig.h */,
 				CA1FC22A18B3C33200E92A06 /* SLTDeserializer.h */,
 				CA1FC22B18B3C33200E92A06 /* SLTDeserializer.m */,
-				CA1FC22D18B3C34100E92A06 /* SLTDevice.h */,
-				CA1FC22E18B3C34100E92A06 /* SLTDevice.m */,
 				CA1FC23018B3C35000E92A06 /* SLTExperiment.h */,
 				CA1FC23118B3C35000E92A06 /* SLTExperiment.m */,
 				CA1FC23318B3C36100E92A06 /* SLTFeature.h */,
 				CA1FC23418B3C36100E92A06 /* SLTFeature.m */,
-				CA1FC23C18B3C39400E92A06 /* SLTPartner.h */,
-				CA1FC23D18B3C39400E92A06 /* SLTPartner.m */,
-				8016D48A19916B50006943F5 /* SLTBasicProperties.h */,
-				8016D48B19916B50006943F5 /* SLTBasicProperties.m */,
 				808D40F919B36A5B00BC8FCD /* SLTSaltr.h */,
 				808D40FA19B36A5B00BC8FCD /* SLTSaltr.m */,
 			);
@@ -872,7 +862,6 @@
 				98D715C9197291D100502350 /* SLTCells.m in Sources */,
 				989CC4D419745F82008DC08F /* SLTMatchingBoardLayer.m in Sources */,
 				80F3705F1994099B000522F7 /* SLT2DBoardLayer.m in Sources */,
-				CA1FC23E18B3C39400E92A06 /* SLTPartner.m in Sources */,
 				982C55EA19714C5100DC99B1 /* SLTAsset.m in Sources */,
 				98D715C01972772E00502350 /* SLTBoard.m in Sources */,
 				8087E47E19B896BC002F3568 /* SLTStatusAppDataLoadFail.m in Sources */,
@@ -882,7 +871,6 @@
 				98D715C319727CD600502350 /* SLTBoardLayer.m in Sources */,
 				80A6640219C33A2500783206 /* SLTMatchingLevelParser.m in Sources */,
 				982C55EC19714C5100DC99B1 /* SLTAssetState.m in Sources */,
-				CA1FC22F18B3C34100E92A06 /* SLTDevice.m in Sources */,
 				989CC4DA19746CCB008DC08F /* SLTMatchingBoard.m in Sources */,
 				CDACAC1518E0A10700021EFA /* SLTResourceURLTicket.m in Sources */,
 				8087E48D19B8990B002F3568 /* SLTStatusLevelsParserMissing.m in Sources */,
