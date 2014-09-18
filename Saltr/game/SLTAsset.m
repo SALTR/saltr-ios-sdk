@@ -1,6 +1,6 @@
 /*
- * @file
- * SLTAsset.m
+ * @file SLTAsset.m
+ * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
  * Copying or usage of any piece of this source code without written notice from Teoken LLC is a major crime.
@@ -49,13 +49,5 @@
 {
     return [NSString stringWithFormat: @"[Asset] token: %@, properties: %@", self.token, self.properties];
 }
-
-//- (BOOL)isEqual:(SLTAsset*)object
-//{
-//    if (object == self) {
-//        return YES;
-//    }
-//    return [self.type isEqualToString:object.type] && [self.keys isEqual:object.keys];
-//}
 
 @end

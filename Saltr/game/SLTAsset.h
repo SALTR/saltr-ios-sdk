@@ -1,6 +1,6 @@
 /*
- * @file
- * SLTAsset.h
+ * @file SLTAsset.h
+ * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
  * Copying or usage of any piece of this source code without written notice from Teoken LLC is a major crime.
