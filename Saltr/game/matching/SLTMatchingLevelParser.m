@@ -57,11 +57,7 @@
 
 -(SLTMatchingBoard*) parseLevelBoardFromBoardNode:(NSDictionary*)theBoardNode andAssetMap:(NSDictionary*)theAssetMap
 {
-    NSDictionary* boardProperties = nil;
-    NSDictionary* boardPropertiesWrapper = [theBoardNode objectForKey:@"properties"];
-    if(nil != boardPropertiesWrapper) {
-        boardProperties = [boardPropertiesWrapper objectForKey:@"board"];
-    }
+    NSDictionary* boardProperties = [theBoardNode objectForKey:@"properties"];
     
     SLTCells* cells = [[SLTCells alloc] initWithWidth:[[theBoardNode objectForKey:@"cols"] integerValue] andHeight:[[theBoardNode objectForKey:@"rows"] integerValue]];
     [self initializeCells:cells andBoardNode:theBoardNode];
@@ -80,11 +76,7 @@
 -(void) initializeCells:(SLTCells*)cells andBoardNode:(NSDictionary*)boardNode
 {
     NSArray* blockedCells = [boardNode objectForKey:@"blockedCells"];
-    NSDictionary* boardNodeProperties = [boardNode objectForKey:@"properties"];
-    NSArray* cellProperties;
-    if (nil != boardNodeProperties) {
-        cellProperties = [boardNodeProperties objectForKey:@"cell"];
-    }
+    NSArray* cellProperties = [boardNode objectForKey:@"cellProperties"];
     NSInteger cols = cells.width;
     NSInteger rows = cells.height;
     
