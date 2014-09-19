@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cacheobject_3aversion_3aobject_3a',['cacheObject:version:object:',['../protocol_s_l_t_repository_protocol_delegate-p.html#a6c44678d1e32382f5c81ec0bb7f2b3fd',1,'SLTRepositoryProtocolDelegate-p']]]
+  ['boardwithid_3a',['boardWithId:',['../interface_s_l_t_level.html#a0a045662a4e30cd7583a2eefc5f4715f',1,'SLTLevel']]]
 ];

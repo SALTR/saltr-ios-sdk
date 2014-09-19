@@ -1,5 +1,5 @@
 /*
- * @file
+ * @file SLTCell.m
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -61,10 +61,5 @@
     [_instancesByLayerId removeObjectForKey:theLayerId];
     [_instancesByLayerIndex removeObjectForKey:[@(theLayerIndex) stringValue]];
 }
-
-//-(NSString *)description
-//{
-//    return [NSString stringWithFormat:@"[coords: (%d , %d)], [isblocked: %i], [properties: %@], [assetInstance: %@]", self.x, self.y, self.isBlocked,self.properties, self.assetInstance];
-//}
 
 @end

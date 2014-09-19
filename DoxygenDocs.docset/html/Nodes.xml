@@ -545,6 +545,11 @@
             <Path>interface_s_l_t_level.html</Path>
             <Subnodes>
              <Node>
+              <Name>boardWithId:</Name>
+              <Path>interface_s_l_t_level.html</Path>
+              <Anchor>a0a045662a4e30cd7583a2eefc5f4715f</Anchor>
+             </Node>
+             <Node>
               <Name>initWithLevelId:levelType:index:localIndex:packIndex:contentUrl:properties:andVersion:</Name>
               <Path>interface_s_l_t_level.html</Path>
               <Anchor>aab9a9fad255ac3476582c5955dc7d685</Anchor>
@@ -1481,16 +1486,6 @@
                <Node>
                 <Name>SLTLevelParser.h</Name>
                 <Path>_s_l_t_level_parser_8h_source.html</Path>
-               </Node>
-              </Subnodes>
-             </Node>
-             <Node>
-              <Name>private</Name>
-              <Path>dir_1e71d324395cd1c0b2708ad4d2a8abb8.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>SLTCell_Private.h</Name>
-                <Path>_s_l_t_cell___private_8h_source.html</Path>
                </Node>
               </Subnodes>
              </Node>

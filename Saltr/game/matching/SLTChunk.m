@@ -1,5 +1,5 @@
 /*
- * @file
+ * @file SLTChunk.m
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -36,11 +36,6 @@
         _assetMap = theAssetMap;
     }
     return self;
-}
-
--(NSString *)description
-{
-        return [NSString stringWithFormat: @"[Chunk] cells: %lu, chunkAssets: %lu", (unsigned long)[_availableCells count], (unsigned long)[_chunkAssetRules count]];
 }
 
 - (void)generateContent
@@ -103,5 +98,9 @@
     //TODO: @TIGR implement
 }
 
+-(NSString *)description
+{
+    return [NSString stringWithFormat: @"[Chunk] cells: %lu, chunkAssets: %lu", (unsigned long)[_availableCells count], (unsigned long)[_chunkAssetRules count]];
+}
 
 @end

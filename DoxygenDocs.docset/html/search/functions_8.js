@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['load',['load',['../interface_s_l_t_resource.html#aef5926ce3c5b9f1fc0f72c508be3c0dc',1,'SLTResource']]]
+  ['jsondata',['jsonData',['../interface_s_l_t_resource.html#a1e1780fcd9308fb1ba478db3e36d56c0',1,'SLTResource']]]
 ];

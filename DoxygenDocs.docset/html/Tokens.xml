@@ -961,6 +961,18 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>boardWithId:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>SLTLevel</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_level.html</Path>
+    <Anchor>a0a045662a4e30cd7583a2eefc5f4715f</Anchor>
+    <Abstract>Returns the SLTLevelBoard object from the available boards. </Abstract>
+    <DeclaredIn>SLTLevel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>updateContent:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -968,7 +980,7 @@
     </TokenIdentifier>
     <Path>interface_s_l_t_level.html</Path>
     <Anchor>a7131a39b09936f115f6ab64e752cef47</Anchor>
-    <Abstract>Returns the SLTLevelBoard object from the available boards. </Abstract>
+    <Abstract>Parses the given data and generates the corresponding object hierarchy filling the parsed information...</Abstract>
     <DeclaredIn>SLTLevel.h</DeclaredIn>
   </Token>
   <Token>
