@@ -1,5 +1,5 @@
 /*
- * @file
+ * @file SLTMatchingBoardLayer.h
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -14,7 +14,7 @@
 
 @interface SLTMatchingBoardLayer : SLTBoardLayer
 
--(id)initWithToken:(NSString*)theToken andLayerIndex:(NSInteger)theLayerIndex;;
+-(id)initWithToken:(NSString*)theLayerId andLayerIndex:(NSInteger)theLayerIndex;;
 
 - (void)regenerate;
 
