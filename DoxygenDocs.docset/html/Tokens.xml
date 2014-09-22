@@ -1459,17 +1459,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>ticket</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTResource</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_resource.html</Path>
-    <Anchor>a1a4b54d756852d4db71349a1243519d5</Anchor>
-    <Abstract>the ticket for loading the resource </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>bytesLoaded</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>

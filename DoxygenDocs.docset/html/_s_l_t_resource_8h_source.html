@@ -89,7 +89,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * @file</span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * @file SLTResource.h</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Saltr</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="comment"> * Copyright Teoken LLC. (c) 2014. All rights reserved.</span></div>
@@ -109,35 +109,33 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="interface_s_l_t_resource.html#ad7a5289559a6a9cff1f968898f0c4f70">   27</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign, readonly) BOOL isLoaded;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="interface_s_l_t_resource.html#a1a4b54d756852d4db71349a1243519d5">   30</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong, readonly) <a class="code" href="interface_s_l_t_resource_u_r_l_ticket.html">SLTResourceURLTicket</a>* ticket;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="interface_s_l_t_resource.html#a974f414c8cad563d7d0d2f9fc18535b4">   30</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign, readonly) <span class="keywordtype">long</span> <span class="keywordtype">long</span> bytesLoaded;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;</div>
-<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="interface_s_l_t_resource.html#a974f414c8cad563d7d0d2f9fc18535b4">   33</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign, readonly) <span class="keywordtype">long</span> <span class="keywordtype">long</span> bytesLoaded;</div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="interface_s_l_t_resource.html#a3a0f9a2bc5d815d063ac253964b699b3">   33</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign, readonly) <span class="keywordtype">long</span> <span class="keywordtype">long</span> bytesTotal;</div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="interface_s_l_t_resource.html#a3a0f9a2bc5d815d063ac253964b699b3">   36</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign, readonly) <span class="keywordtype">long</span> <span class="keywordtype">long</span> bytesTotal;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="interface_s_l_t_resource.html#a76b4b530d8aeb704d69e534c297cf409">   36</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign, readonly) NSInteger percentLoaded;</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;</div>
-<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="interface_s_l_t_resource.html#a76b4b530d8aeb704d69e534c297cf409">   39</a></span>&#160;<span class="keyword">@property</span> (nonatomic, assign, readonly) NSInteger percentLoaded;</div>
+<div class="line"><a name="l00039"></a><span class="lineno"><a class="line" href="interface_s_l_t_resource.html#aac285626c107f9a2f0f786c443172718">   39</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong, readonly) NSDictionary* responseHeaders;</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;</div>
-<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="interface_s_l_t_resource.html#aac285626c107f9a2f0f786c443172718">   42</a></span>&#160;<span class="keyword">@property</span> (nonatomic, strong, readonly) NSDictionary* responseHeaders;</div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;</div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;-(id) initWithId:(NSString *)id andTicket:(<a class="code" href="interface_s_l_t_resource_u_r_l_ticket.html">SLTResourceURLTicket</a> *)ticket successHandler:(<span class="keywordtype">void</span> (^)(<a class="code" href="interface_s_l_t_resource.html">SLTResource</a> *))onSuccess errorHandler:(<span class="keywordtype">void</span> (^)(<a class="code" href="interface_s_l_t_resource.html">SLTResource</a> *))onFail progressHandler:(<span class="keywordtype">void</span> (^)(<span class="keywordtype">long</span> <span class="keywordtype">long</span>, <span class="keywordtype">long</span> <span class="keywordtype">long</span>, <span class="keywordtype">long</span> <span class="keywordtype">long</span>))onProgress;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;-(id) initWithId:(NSString *)id andTicket:(<a class="code" href="interface_s_l_t_resource_u_r_l_ticket.html">SLTResourceURLTicket</a> *)ticket successHandler:(<span class="keywordtype">void</span> (^)(<a class="code" href="interface_s_l_t_resource.html">SLTResource</a> *))onSuccess errorHandler:(<span class="keywordtype">void</span> (^)(<a class="code" href="interface_s_l_t_resource.html">SLTResource</a> *))onFail progressHandler:(<span class="keywordtype">void</span> (^)(<span class="keywordtype">long</span> <span class="keywordtype">long</span>, <span class="keywordtype">long</span> <span class="keywordtype">long</span>, <span class="keywordtype">long</span> <span class="keywordtype">long</span>))onProgress;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;-(NSData *) data;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;-(NSData *) data;</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;-(NSDictionary *)jsonData;</div>
 <div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;-(NSDictionary *)jsonData;</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;-(void) load;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;-(void) load;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;-(void) stop;</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;-(void) stop;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;-(void) dispose;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;-(void) dispose;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;<span class="keyword">@end</span></div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="keyword">@end</span></div>
 <div class="ttc" id="interface_s_l_t_resource_u_r_l_ticket_html"><div class="ttname"><a href="interface_s_l_t_resource_u_r_l_ticket.html">SLTResourceURLTicket</a></div><div class="ttdoc">The class is for creating the URL request. The class is created to correspond. </div><div class="ttdef"><b>Definition:</b> SLTResourceURLTicket.h:17</div></div>
 <div class="ttc" id="interface_s_l_t_resource_html"><div class="ttname"><a href="interface_s_l_t_resource.html">SLTResource</a></div><div class="ttdoc">The resource class which keeps the information about ticket, as well as gives opportunity to load/sto...</div><div class="ttdef"><b>Definition:</b> SLTResource.h:19</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Mon Sep 22 2014 11:29:27 for Saltr iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Mon Sep 22 2014 11:52:57 for Saltr iOS SDK by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.8
 </small></address>
