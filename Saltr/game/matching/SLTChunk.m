@@ -110,7 +110,7 @@
             assetRule = [ratioChunkAssetRules objectAtIndex:j];
             proportion = [NSNumber numberWithInt:[assetRule distributionValue] / ratioSum * availableCellsNum];
             count = [proportion integerValue];  //assigning number to int to floor the value;
-            NSDictionary* fractionAsset = [[NSDictionary alloc] init];
+            NSMutableDictionary* fractionAsset = [[NSMutableDictionary alloc] init];
             [fractionAsset setValue:[NSNumber numberWithDouble:[proportion doubleValue]- count] forKey:@"fraction"];
             [fractionAsset setValue:assetRule forKey:@"assetRule"];
             [fractionAssetsUnsorted addObject:fractionAsset];
