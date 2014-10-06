@@ -37,7 +37,7 @@
 {
     NSMutableArray* states = [[NSMutableArray alloc] init];
     for (NSUInteger i=0; i<stateIds.count; ++i) {
-        SLTAssetState* state = [_stateMap objectForKey:stateIds[i]];
+        SLTAssetState* state = [_stateMap objectForKey:[stateIds[i] stringValue]];
         if(state != nil) {
             [states addObject:state];
         }

@@ -122,7 +122,9 @@
 {
     //creating fixed asset instances and assigning them to cells where they belong
     for(NSDictionary* assetInstanceNode in assetNodes) {
-        SLTAsset* asset = [assetMap objectForKey:[assetInstanceNode objectForKey:@"assetId"]];
+        
+        SLTAsset* asset = [assetMap objectForKey:[[assetInstanceNode objectForKey:@"assetId"] stringValue]];
+        
         NSArray* stateIds = [assetInstanceNode objectForKey:@"states"];
         NSArray* cellPositions = [assetInstanceNode objectForKey:@"cells"];
         
