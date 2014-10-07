@@ -32,6 +32,7 @@
     if (self) {
         _layerToken = theLayerToken;
         _layerIndex = theLayerIndex;
+        _availableCells = [[NSMutableArray alloc] init];
         _chunkCells = theChunkCells;
         _chunkAssetRules = theChunkAssetRules;
         _assetMap = theAssetMap;
@@ -102,18 +103,20 @@
     }
     
     NSUInteger availableCellsNum = [_availableCells count];
-    NSNumber* proportion;
-    NSUInteger count;
+    float proportion;
+    int count;
     NSMutableArray* fractionAssetsUnsorted = [[NSMutableArray alloc] init];
     if(ratioSum != 0) {
         for(NSInteger j=0; j<len; ++j) {
             assetRule = [ratioChunkAssetRules objectAtIndex:j];
-            proportion = [NSNumber numberWithInt:[assetRule distributionValue] / ratioSum * availableCellsNum];
-            count = [proportion integerValue];  //assigning number to int to floor the value;
+            proportion = (float)[assetRule distributionValue] / (float)ratioSum * (float)availableCellsNum;
+            count = (int)proportion; //assigning number to int to floor the value;
             NSMutableDictionary* fractionAsset = [[NSMutableDictionary alloc] init];
-            [fractionAsset setValue:[NSNumber numberWithDouble:[proportion doubleValue]- count] forKey:@"fraction"];
+            [fractionAsset setValue:[NSNumber numberWithDouble:proportion- count] forKey:@"fraction"];
             [fractionAsset setValue:assetRule forKey:@"assetRule"];
             [fractionAssetsUnsorted addObject:fractionAsset];
+            
+            [self generateAssetInstancesWithCount:count assetId:[assetRule assetId] stateIds:[assetRule stateIds]];
         }
         
         NSSortDescriptor *sortDescriptor;

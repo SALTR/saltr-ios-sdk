@@ -150,7 +150,7 @@
         NSArray* AssetNodes = [chunkNode objectForKey:@"assets"];
         NSMutableArray* chunkAssetRules = [[NSMutableArray alloc] init];
         for(NSDictionary* assetNode in AssetNodes) {
-            SLTChunkAssetRule* chunkAssetRule = [[SLTChunkAssetRule alloc] initWithAssetId:[assetNode objectForKey:@"assetId"] distributionType:[assetNode objectForKey:@"distributionType"] distributionValue:[[assetNode objectForKey:@"distributionValue"] integerValue] andStateIds:[assetNode objectForKey:@"states"]];
+            SLTChunkAssetRule* chunkAssetRule = [[SLTChunkAssetRule alloc] initWithAssetId:[[assetNode objectForKey:@"assetId"] stringValue] distributionType:[assetNode objectForKey:@"distributionType"] distributionValue:[[assetNode objectForKey:@"distributionValue"] integerValue] andStateIds:[assetNode objectForKey:@"states"]];
             [chunkAssetRules addObject:chunkAssetRule];
         }
         
