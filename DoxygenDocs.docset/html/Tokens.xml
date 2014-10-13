@@ -498,17 +498,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>appVersion</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTBasicProperties</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_basic_properties.html</Path>
-    <Anchor>aa62ec45ba167e7e296f7f818957ffa24</Anchor>
-    <Abstract>Version of the client app, e.g. 4.1.1. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>systemName</Name>
       <APILanguage>occ</APILanguage>
       <Type>instp</Type>
@@ -626,6 +615,17 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>appVersion</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instp</Type>
+      <Scope>SLTBasicProperties</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_basic_properties.html</Path>
+    <Anchor>aa62ec45ba167e7e296f7f818957ffa24</Anchor>
+    <Abstract>Version of the client app, e.g. 4.1.1. </Abstract>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>SLTBoard</Name>
       <APILanguage>c</APILanguage>
       <Type>cl</Type>
@@ -735,62 +735,6 @@
     <Anchor>a576031c142b1233e4f360aad80cd51ec</Anchor>
     <Abstract>Decodes and creates an dictionary of Feature objects corresponding to data. </Abstract>
     <DeclaredIn>SLTDeserializer.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>SLTDevice</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>SLTDevice</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_device.html</Path>
-    <DeclaredIn>SLTDevice.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initWithDeviceId:andDeviceType:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTDevice</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_device.html</Path>
-    <Anchor>ad426ea5174a057f1ed7e7698ca5f8a98</Anchor>
-    <Abstract>Inits instance of SLTDevice class with given id and type. </Abstract>
-    <DeclaredIn>SLTDevice.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>toDictionary</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTDevice</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_device.html</Path>
-    <Anchor>a6c1409cfd6f64da36cf52bf1e65ac893</Anchor>
-    <Abstract>Returns the dictionary value of SLTDevice class. </Abstract>
-    <DeclaredIn>SLTDevice.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>deviceId</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTDevice</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_device.html</Path>
-    <Anchor>a2916494e8e21c92f35ff50cf7752e1a2</Anchor>
-    <Abstract>the device Id </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>deviceType</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTDevice</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_device.html</Path>
-    <Anchor>a40798242b415e8ee6fd2b93a0eff7b53</Anchor>
-    <Abstract>the device type </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>
@@ -1017,6 +961,18 @@
   </Token>
   <Token>
     <TokenIdentifier>
+      <Name>boardWithId:</Name>
+      <APILanguage>occ</APILanguage>
+      <Type>instm</Type>
+      <Scope>SLTLevel</Scope>
+    </TokenIdentifier>
+    <Path>interface_s_l_t_level.html</Path>
+    <Anchor>a0a045662a4e30cd7583a2eefc5f4715f</Anchor>
+    <Abstract>Returns the SLTLevelBoard object from the available boards. </Abstract>
+    <DeclaredIn>SLTLevel.h</DeclaredIn>
+  </Token>
+  <Token>
+    <TokenIdentifier>
       <Name>updateContent:</Name>
       <APILanguage>occ</APILanguage>
       <Type>instm</Type>
@@ -1024,7 +980,7 @@
     </TokenIdentifier>
     <Path>interface_s_l_t_level.html</Path>
     <Anchor>a7131a39b09936f115f6ab64e752cef47</Anchor>
-    <Abstract>Returns the SLTLevelBoard object from the available boards. </Abstract>
+    <Abstract>Parses the given data and generates the corresponding object hierarchy filling the parsed information...</Abstract>
     <DeclaredIn>SLTLevel.h</DeclaredIn>
   </Token>
   <Token>
@@ -1315,62 +1271,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>SLTPartner</Name>
-      <APILanguage>c</APILanguage>
-      <Type>cl</Type>
-      <Scope>SLTPartner</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_partner.html</Path>
-    <DeclaredIn>SLTPartner.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>initWithPartnerId:andPartnerType:</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTPartner</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_partner.html</Path>
-    <Anchor>a3e3841d300e152e2a50b758994d4b770</Anchor>
-    <Abstract>Inits instance of SLTPartner class with given id and type. </Abstract>
-    <DeclaredIn>SLTPartner.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>toDictionary</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instm</Type>
-      <Scope>SLTPartner</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_partner.html</Path>
-    <Anchor>af0fe618505abf9dcb6019eeae1f6d6ac</Anchor>
-    <Abstract>Returns the dictionary value of SLTPartner class. </Abstract>
-    <DeclaredIn>SLTPartner.h</DeclaredIn>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>partnerId</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTPartner</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_partner.html</Path>
-    <Anchor>a11d33e37e75cb58db23796a92cafd65b</Anchor>
-    <Abstract>the partner id </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>partnerType</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTPartner</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_partner.html</Path>
-    <Anchor>a6d0c6601983f8dccb36411680cdf8311</Anchor>
-    <Abstract>the partner type </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>SLTRepositoryProtocolDelegate</Name>
       <APILanguage>c</APILanguage>
       <Type>intf</Type>
@@ -1556,17 +1456,6 @@
     <Path>interface_s_l_t_resource.html</Path>
     <Anchor>ad7a5289559a6a9cff1f968898f0c4f70</Anchor>
     <Abstract>Returns YES, if resource is loaded, otherwise NO. </Abstract>
-  </Token>
-  <Token>
-    <TokenIdentifier>
-      <Name>ticket</Name>
-      <APILanguage>occ</APILanguage>
-      <Type>instp</Type>
-      <Scope>SLTResource</Scope>
-    </TokenIdentifier>
-    <Path>interface_s_l_t_resource.html</Path>
-    <Anchor>a1a4b54d756852d4db71349a1243519d5</Anchor>
-    <Abstract>the ticket for loading the resource </Abstract>
   </Token>
   <Token>
     <TokenIdentifier>

@@ -1,5 +1,5 @@
 /*
- * @file
+ * @file SLTSaltr.m
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -32,7 +32,6 @@ NSString* API_VERSION=@"1.0.1";
     NSString* _deviceId;
     BOOL _isLoading;
     BOOL _connected;
-    NSString* _saltrUserId;
     BOOL _useNoLevels;
     BOOL _useNoFeatures;
     NSString* _levelType;
@@ -66,7 +65,6 @@ NSString* API_VERSION=@"1.0.1";
         _deviceId = theDeviceId;
         _isLoading = NO;
         _connected = NO;
-        _saltrUserId = nil;
         _useNoLevels = NO;
         _useNoFeatures = NO;
         _levelType = nil;
@@ -230,7 +228,6 @@ NSString* API_VERSION=@"1.0.1";
     } else {
         _activeFeatures = [_deserializer decodeFeaturesFromData:cachedData];
         _experiments = [_deserializer decodeExperimentsFromData:cachedData];
-        _saltrUserId = [cachedData objectForKey:@"saltrUserId"];
     }
     
     _started = YES;
@@ -317,7 +314,7 @@ NSString* API_VERSION=@"1.0.1";
 
 -(void) addProperties:(NSDictionary*)basicProperties andCustomProperties:(NSDictionary*)theCustomProperties
 {
-    if ((nil == basicProperties && nil == theCustomProperties) || nil == _saltrUserId) {
+    if ((nil == basicProperties && nil == theCustomProperties)) {
         return;
     }
     
@@ -333,17 +330,6 @@ NSString* API_VERSION=@"1.0.1";
         NSException* exception = [NSException
                                   exceptionWithName:@"Exception"
                                   reason:@"Field 'deviceId' is a required."
-                                  userInfo:nil];
-        @throw exception;
-    }
-    
-    //required for Mobile
-    if (nil != _saltrUserId) {
-        [args setObject:_saltrUserId forKey:@"saltrUserId"];
-    } else {
-        NSException* exception = [NSException
-                                  exceptionWithName:@"Exception"
-                                  reason:@"Field saltrUserId is required."
                                   userInfo:nil];
         @throw exception;
     }
@@ -408,11 +394,6 @@ NSString* API_VERSION=@"1.0.1";
     //optional for Mobile
     if (nil != _socialId) {
         [args setObject:_socialId forKey:@"socialId"];
-    }
-    
-    //optional
-    if (nil != _saltrUserId) {
-        [args setObject:_saltrUserId forKey:@"saltrUserId"];
     }
     
     if (nil != theBasicProperties) {
@@ -480,7 +461,6 @@ NSString* API_VERSION=@"1.0.1";
         }
     }
     
-    _saltrUserId = [response objectForKey:@"saltrUserId"];
     _connected = YES;
     [_repository cacheObject:APP_DATA_URL_CACHE version:@"0" object:response];
     
@@ -534,13 +514,7 @@ NSString* API_VERSION=@"1.0.1";
     if (nil != _socialId) {
         [args setObject:_socialId forKey:@"socialId"];
     }
-    
-    //optional
-    if (nil != _saltrUserId) {
-        [args setObject:_saltrUserId forKey:@"saltrUserId"];
-    }
-    
-    
+        
     NSMutableArray* featureList = [[NSMutableArray alloc] init];
     for(SLTFeature* feature in _developerFeatures) {
         NSError* featureError = nil;

@@ -1,5 +1,5 @@
 /*
- * @file
+ * @file SLTDeserializer.m
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -95,20 +95,20 @@
 #pragma mark private functions
 
 NSComparisonResult (^sortBlockForLevelPackStructure)(id, id) = ^(NSDictionary* obj1, NSDictionary* obj2) {
-    if ([obj1 objectForKey:@"index"]  > [obj2 objectForKey:@"index"] ) {
+    if ([[obj1 objectForKey:@"index"] integerValue]  > [[obj2 objectForKey:@"index"] integerValue] ) {
         return (NSComparisonResult)NSOrderedDescending;
     }
-    if ([obj1 objectForKey:@"index"]  < [obj2 objectForKey:@"index"]) {
+    if ([[obj1 objectForKey:@"index"] integerValue]  < [[obj2 objectForKey:@"index"] integerValue]) {
         return (NSComparisonResult)NSOrderedAscending;
     }
     return (NSComparisonResult)NSOrderedSame;
 };
 
 NSComparisonResult (^sortBlockForLevelStructure)(id, id) = ^(NSDictionary* obj1, NSDictionary* obj2) {
-    if ([obj1 objectForKey:@"index"] > [obj2 objectForKey:@"index"]) {
+    if ([[obj1 objectForKey:@"index"] integerValue] > [[obj2 objectForKey:@"index"] integerValue]) {
         return (NSComparisonResult)NSOrderedDescending;
     }
-    if ([obj1 objectForKey:@"index"]  < [obj2 objectForKey:@"index"]) {
+    if ([[obj1 objectForKey:@"index"] integerValue]  < [[obj2 objectForKey:@"index"] integerValue]) {
         return (NSComparisonResult)NSOrderedAscending;
     }
     return (NSComparisonResult)NSOrderedSame;

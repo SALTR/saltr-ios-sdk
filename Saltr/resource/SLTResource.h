@@ -1,5 +1,5 @@
 /*
- * @file
+ * @file SLTResource.h
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -25,9 +25,6 @@
 
 /// Returns YES, if resource is loaded, otherwise NO.
 @property (nonatomic, assign, readonly) BOOL isLoaded;
-
-/// the ticket for loading the resource
-@property (nonatomic, strong, readonly) SLTResourceURLTicket* ticket;
 
 /// The count of loaded bytes
 @property (nonatomic, assign, readonly) long long bytesLoaded;

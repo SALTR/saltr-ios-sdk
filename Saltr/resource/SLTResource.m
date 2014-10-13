@@ -1,5 +1,5 @@
 /*
- * @file
+ * @file SLTResource.m
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -15,6 +15,7 @@
     BOOL _isLoaded;
     NSInteger _dropTimeout;
     NSTimer* _timeoutTimer;
+    SLTResourceURLTicket* _ticket;
 
     NSInteger _maxAttempts;
     NSInteger _httpStatus;
@@ -27,7 +28,6 @@
 }
 
 @synthesize id = _id;
-@synthesize ticket = _ticket;
 @synthesize bytesLoaded = _bytesLoaded;
 @synthesize bytesTotal = _bytesTotal;
 @synthesize percentLoaded = _percentLoaded;

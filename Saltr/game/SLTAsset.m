@@ -1,5 +1,5 @@
 /*
- * @file
+ * @file SLTAsset.m
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -37,7 +37,7 @@
 {
     NSMutableArray* states = [[NSMutableArray alloc] init];
     for (NSUInteger i=0; i<stateIds.count; ++i) {
-        SLTAssetState* state = [_stateMap objectForKey:stateIds[i]];
+        SLTAssetState* state = [_stateMap objectForKey:[stateIds[i] stringValue]];
         if(state != nil) {
             [states addObject:state];
         }
@@ -49,13 +49,5 @@
 {
     return [NSString stringWithFormat: @"[Asset] token: %@, properties: %@", self.token, self.properties];
 }
-
-//- (BOOL)isEqual:(SLTAsset*)object
-//{
-//    if (object == self) {
-//        return YES;
-//    }
-//    return [self.type isEqualToString:object.type] && [self.keys isEqual:object.keys];
-//}
 
 @end

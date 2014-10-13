@@ -87,7 +87,7 @@
         NSNumber* x = [assetInstanceNode objectForKey:@"x"];
         NSNumber* y = [assetInstanceNode objectForKey:@"y"];
         NSNumber* rotation = [assetInstanceNode objectForKey:@"rotation"];
-        NSString* assetId = [assetInstanceNode objectForKey:@"assetId"];
+        NSString* assetId = [[assetInstanceNode objectForKey:@"assetId"] stringValue];
         SLTAsset* asset = [theAssetMap objectForKey:assetId];
         NSArray* stateIds = [assetInstanceNode objectForKey:@"states"];
         [theLayer addAssetInstance:[[SLT2DAssetInstance alloc] initWithToken:[asset token] states:[asset getInstanceStates:stateIds] properties:[asset properties] x:x y:y andRotation:rotation]];

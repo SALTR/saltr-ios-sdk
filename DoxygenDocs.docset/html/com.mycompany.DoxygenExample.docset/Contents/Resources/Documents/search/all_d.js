@@ -2,8 +2,6 @@ var searchData=
 [
   ['packindex',['packIndex',['../interface_s_l_t_level.html#acb29443bb155218ae1009b1bb06343fa',1,'SLTLevel']]],
   ['partition',['partition',['../interface_s_l_t_experiment.html#a7a39bfac830ae8a9026b98ffb6c6e314',1,'SLTExperiment']]],
-  ['partnerid',['partnerId',['../interface_s_l_t_partner.html#a11d33e37e75cb58db23796a92cafd65b',1,'SLTPartner']]],
-  ['partnertype',['partnerType',['../interface_s_l_t_partner.html#a6d0c6601983f8dccb36411680cdf8311',1,'SLTPartner']]],
   ['percentloaded',['percentLoaded',['../interface_s_l_t_resource.html#a76b4b530d8aeb704d69e534c297cf409',1,'SLTResource']]],
   ['pivotx',['pivotX',['../interface_s_l_t2_d_asset_state.html#ac12d22b1f073ee494eee3d0fcb397b79',1,'SLT2DAssetState']]],
   ['pivoty',['pivotY',['../interface_s_l_t2_d_asset_state.html#a1ff620f4fc3432a298d920b88b556382',1,'SLT2DAssetState']]],

@@ -1,6 +1,6 @@
 /*
- * @file
- * SLTBasicProperties
+ * @file SLTBasicProperties.h
+ * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
  * Copying or usage of any piece of this source code without written notice from Teoken LLC is a major crime.
@@ -17,9 +17,6 @@
 
 /// The gender "F", "M", "female", "male"
 @property (nonatomic, strong, readwrite) NSString* gender;
-
-/// Version of the client app, e.g. 4.1.1
-@property (nonatomic, strong, readwrite) NSString* appVersion;
 
 /// The name of the OS the current device is running. E.g. iPhone OS.
 @property (nonatomic, strong, readwrite) NSString* systemName;
@@ -65,6 +62,9 @@
  * Set to (locate) to detect the location based on the IP address of the caller.
  */
 @property (nonatomic, strong, readwrite) NSString* location;
+
+/// Version of the client app, e.g. 4.1.1
+@property (nonatomic, strong, readwrite) NSString* appVersion;
 
 - (id)init;
 

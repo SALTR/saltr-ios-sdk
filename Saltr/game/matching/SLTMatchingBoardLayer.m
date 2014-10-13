@@ -1,5 +1,5 @@
 /*
- * @file
+ * @file SLTMatchingBoardLayer.m
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -19,9 +19,9 @@
 
 @implementation SLTMatchingBoardLayer
 
--(id)initWithToken:(NSString*)theToken andLayerIndex:(NSInteger)theLayerIndex;
+-(id)initWithToken:(NSString*)theLayerId andLayerIndex:(NSInteger)theLayerIndex;
 {
-    self = [super initWithToken:theToken andLayerIndex:theLayerIndex];
+    self = [super initWithToken:theLayerId andLayerIndex:theLayerIndex];
     if (self) {
         _chunks = [[NSMutableArray alloc] init];
     }

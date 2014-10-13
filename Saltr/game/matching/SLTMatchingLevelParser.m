@@ -1,5 +1,5 @@
 /*
- * @file
+ * @file SLTMatchingLevelParser.m
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -57,11 +57,7 @@
 
 -(SLTMatchingBoard*) parseLevelBoardFromBoardNode:(NSDictionary*)theBoardNode andAssetMap:(NSDictionary*)theAssetMap
 {
-    NSDictionary* boardProperties = nil;
-    NSDictionary* boardPropertiesWrapper = [theBoardNode objectForKey:@"properties"];
-    if(nil != boardPropertiesWrapper) {
-        boardProperties = [boardPropertiesWrapper objectForKey:@"board"];
-    }
+    NSDictionary* boardProperties = [theBoardNode objectForKey:@"properties"];
     
     SLTCells* cells = [[SLTCells alloc] initWithWidth:[[theBoardNode objectForKey:@"cols"] integerValue] andHeight:[[theBoardNode objectForKey:@"rows"] integerValue]];
     [self initializeCells:cells andBoardNode:theBoardNode];
@@ -80,11 +76,7 @@
 -(void) initializeCells:(SLTCells*)cells andBoardNode:(NSDictionary*)boardNode
 {
     NSArray* blockedCells = [boardNode objectForKey:@"blockedCells"];
-    NSDictionary* boardNodeProperties = [boardNode objectForKey:@"properties"];
-    NSArray* cellProperties;
-    if (nil != boardNodeProperties) {
-        cellProperties = [boardNodeProperties objectForKey:@"cell"];
-    }
+    NSArray* cellProperties = [boardNode objectForKey:@"cellProperties"];
     NSInteger cols = cells.width;
     NSInteger rows = cells.height;
     
@@ -130,7 +122,9 @@
 {
     //creating fixed asset instances and assigning them to cells where they belong
     for(NSDictionary* assetInstanceNode in assetNodes) {
-        SLTAsset* asset = [assetMap objectForKey:[assetInstanceNode objectForKey:@"assetId"]];
+        
+        SLTAsset* asset = [assetMap objectForKey:[[assetInstanceNode objectForKey:@"assetId"] stringValue]];
+        
         NSArray* stateIds = [assetInstanceNode objectForKey:@"states"];
         NSArray* cellPositions = [assetInstanceNode objectForKey:@"cells"];
         
@@ -156,7 +150,7 @@
         NSArray* AssetNodes = [chunkNode objectForKey:@"assets"];
         NSMutableArray* chunkAssetRules = [[NSMutableArray alloc] init];
         for(NSDictionary* assetNode in AssetNodes) {
-            SLTChunkAssetRule* chunkAssetRule = [[SLTChunkAssetRule alloc] initWithAssetId:[assetNode objectForKey:@"assetId"] distributionType:[assetNode objectForKey:@"distributionType"] distributionValue:[[assetNode objectForKey:@"distributionValue"] integerValue] andStateIds:[assetNode objectForKey:@"states"]];
+            SLTChunkAssetRule* chunkAssetRule = [[SLTChunkAssetRule alloc] initWithAssetId:[[assetNode objectForKey:@"assetId"] stringValue] distributionType:[assetNode objectForKey:@"distributionType"] distributionValue:[[assetNode objectForKey:@"distributionValue"] integerValue] andStateIds:[assetNode objectForKey:@"states"]];
             [chunkAssetRules addObject:chunkAssetRule];
         }
         
