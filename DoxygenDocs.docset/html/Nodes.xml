@@ -1090,10 +1090,6 @@
             <Subnodes>
             </Subnodes>
            </Node>
-           <Node>
-            <Name>ViewController</Name>
-            <Path>interface_view_controller.html</Path>
-           </Node>
           </Subnodes>
          </Node>
          <Node>
@@ -1241,12 +1237,6 @@
              <Node>
               <Name>&lt;SaltrRequestDelegate&gt;</Name>
               <Path>protocol_saltr_request_delegate-p.html</Path>
-              <Subnodes>
-               <Node>
-                <Name>ViewController</Name>
-                <Path>interface_view_controller.html</Path>
-               </Node>
-              </Subnodes>
              </Node>
              <Node>
               <Name>&lt;SLTBoardLayerDelegate&gt;</Name>
@@ -1331,16 +1321,6 @@
              <Node>
               <Name>SLTStatusLevelsParserMissing</Name>
               <Path>interface_s_l_t_status_levels_parser_missing.html</Path>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>UIViewController</Name>
-            <Path></Path>
-            <Subnodes>
-             <Node>
-              <Name>ViewController</Name>
-              <Path>interface_view_controller.html</Path>
              </Node>
             </Subnodes>
            </Node>
@@ -1583,16 +1563,6 @@
              <Node>
               <Name>SLTSaltr.h</Name>
               <Path>_s_l_t_saltr_8h_source.html</Path>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>SaltrTestApp</Name>
-            <Path>dir_5eee8c32ea75fac18cf17e561a788beb.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>ViewController.h</Name>
-              <Path>_view_controller_8h_source.html</Path>
              </Node>
             </Subnodes>
            </Node>
