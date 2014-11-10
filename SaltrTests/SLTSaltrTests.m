@@ -9,6 +9,7 @@
  */
 
 #import <XCTest/XCTest.h>
+#import "SLTSaltr.h"
 
 @interface SaltrTests : XCTestCase <SaltrRequestDelegate>
 {
@@ -40,6 +41,32 @@
     [self measureBlock:^{
         // Put the code you want to measure the time of here.
     }];
+}
+
+// SaltrRequestDelegate protocol methonds
+
+/// Informs that getting App data request has succeeded
+-(void) didFinishGettingAppDataRequest
+{
+    // TODO: Implement
+}
+
+/// Informs that getting app data request has failed
+-(void) didFailGettingAppDataRequest:(SLTStatus*)status
+{
+    // TODO: Implement
+}
+
+/// Informs that getting level data body with level pack request has succeeded
+-(void) didFinishGettingLevelDataRequest
+{
+    // TODO: Implement
+}
+
+/// Informs that getting level data body with level pack request has failed
+-(void) didFailGettingLevelDataRequest:(SLTStatus*)status
+{
+    // TODO: Implement
 }
 
 @end
