@@ -19,13 +19,14 @@
 #import "SLTResource.h"
 #import "SLTResourceURLTicket.h"
 #import "SLTStatusAppDataLoadFail.h"
+#import "SLTStatusAppDataConcurrentLoadRefused.h"
 #import "SLTStatusFeaturesParseError.h"
 #import "SLTStatusExperimentsParseError.h"
 #import "SLTStatusLevelsParseError.h"
 #import "SLTStatusLevelContentLoadFail.h"
 
 NSString* CLIENT=@"IOS-Mobile";
-NSString* API_VERSION=@"1.0.1";
+NSString* API_VERSION=@"1.0.0";
 
 @interface SLTSaltr() {    
     NSString* _clientKey;
@@ -245,7 +246,15 @@ NSString* API_VERSION=@"1.0.1";
 
 - (void) connectWithBasicProperties:(NSDictionary *)theBasicProperties andCustomProperties:(NSDictionary*)theCustomProperties
 {
-    if (_isLoading || !_started) {
+    if(!_started) {
+        NSException* exception = [NSException
+                                  exceptionWithName:@"Exception"
+                                  reason:@"Method 'connect()' should be called after 'start()' only."
+                                  userInfo:nil];
+        @throw exception;
+    }
+    if (_isLoading) {
+        [self loadAppDataFailHandler:[[SLTStatusAppDataConcurrentLoadRefused alloc] init]];
         return;
     }
     
@@ -391,6 +400,8 @@ NSString* API_VERSION=@"1.0.1";
         @throw exception;
     }
     
+    [args setObject:[NSNumber numberWithBool:_devMode] forKey:@"devMode"];
+    
     //optional for Mobile
     if (nil != _socialId) {
         [args setObject:_socialId forKey:@"socialId"];
@@ -425,7 +436,7 @@ NSString* API_VERSION=@"1.0.1";
 -(void) loadAppDataSuccessHandler:(NSDictionary *)response {
     
     if(_devMode) {
-        [self syncDeveloperFeatures];
+        [self syncData];
     }
     
     _levelType = [response objectForKey:@"levelType"];
@@ -492,12 +503,13 @@ NSString* API_VERSION=@"1.0.1";
     return ticket;
 }
 
--(void) syncDeveloperFeatures
+-(void) syncData
 {
     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
     [args setObject:API_VERSION forKey:@"apiVersion"];
     [args setObject:_clientKey forKey:@"clientKey"];
     [args setObject:CLIENT forKey:@"client"];
+    [args setObject:[NSNumber numberWithBool:_devMode] forKey:@"devMode"];
     
     //required for Mobile
     if (nil != _deviceId) {
@@ -552,7 +564,10 @@ NSString* API_VERSION=@"1.0.1";
         NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         jsonArguments = [jsonArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
-        NSString* urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@", ACTION_DEV_SYNC_FEATURES, ACTION_DEV_SYNC_FEATURES, jsonArguments];
+        NSString* urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@&devMode=%@", ACTION_DEV_SYNC_DATA, ACTION_DEV_SYNC_DATA, jsonArguments, [NSNumber numberWithBool:_devMode]];
+        if (nil != _deviceId) {
+            urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@&devMode=%@&deviceId=%@", ACTION_DEV_SYNC_DATA, ACTION_DEV_SYNC_DATA, jsonArguments, [NSNumber numberWithBool:_devMode], _deviceId];
+        }
         
         SLTResourceURLTicket* ticket = [self getTicketWithUrl:SALTR_DEVAPI_URL urlVars:urlVars andTimeout:_requestIdleTimeout];
         
@@ -600,8 +615,16 @@ NSString* API_VERSION=@"1.0.1";
 -(void) loadLevelContentFromSaltr:(SLTLevel*)level
 {
     NSInteger timeInterval = [NSDate timeIntervalSinceReferenceDate] * 1000;
-    NSString* url = [level.contentUrl stringByAppendingFormat:@"?_time_=%d", timeInterval];
+    NSString* url = [level.contentUrl stringByAppendingFormat:@"?_time_=%li", timeInterval];
     SLTResourceURLTicket* ticket = [self getTicketWithUrl:url urlVars:nil andTimeout:_requestIdleTimeout];
+    
+    void (^loadInternally)(NSDictionary*) = ^(NSDictionary* contentData) {
+        if (contentData) {
+            [self levelContentLoadSuccessHandler:level data:contentData];
+        } else {
+            [self levelContentLoadFailHandler:[[SLTStatusLevelContentLoadFail alloc] init]];
+        }
+    };
     
     void (^loadFromSaltrSuccessCallback)(SLTResource *) = ^(SLTResource * resource) {
         NSDictionary* contentData = resource.jsonData;
@@ -611,17 +634,14 @@ NSString* API_VERSION=@"1.0.1";
             contentData = [self loadLevelContentInternally:level];
         }
         
-        if (contentData) {
-            [self levelContentLoadSuccessHandler:level data:contentData];
-        } else {
-            [self levelContentLoadFailHandler:[[SLTStatusLevelContentLoadFail alloc] init]];
-        }
+        loadInternally(contentData);
         [resource dispose];
         
     };
+    
     void (^loadFromSaltrFailCallback)(SLTResource *) = ^(SLTResource * resource) {
         NSDictionary* contentData = [self loadLevelContentInternally:level];
-        [self levelContentLoadSuccessHandler:level data:contentData];
+        loadInternally(contentData);
         [resource dispose];
         
     };

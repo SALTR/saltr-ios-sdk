@@ -13,7 +13,8 @@
 
 #define ACTION_GET_APP_DATA @"getAppData"
 #define ACTION_ADD_PROPERTIES @"addProperties"
-#define ACTION_DEV_SYNC_FEATURES @"syncFeatures"
+#define ACTION_DEV_SYNC_DATA @"sync"
+#define ACTION_DEV_REGISTER_IDENTITY @"registerIdentity"
 
 #define SALTR_API_URL @"https://api.saltr.com/call"
 #define SALTR_DEVAPI_URL @"https://devapi.saltr.com/call"
@@ -26,5 +27,10 @@
 
 #define RESULT_SUCCEED @"SUCCEED"
 #define RESULT_ERROR @"FAILED"
+
+#define DEVICE_TYPE_IPAD @"ipad"
+#define DEVICE_TYPE_IPHONE @"iphone"
+#define DEVICE_TYPE_IPOD @"ipod"
+#define DEVICE_PLATFORM_IOS @"ios"
 
 #endif
