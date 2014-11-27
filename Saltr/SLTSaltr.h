@@ -12,6 +12,8 @@
 
 #import "SLTMobileRepository.h"
 
+@class UIViewController;
+
 @class SLTLevel;
 @class SLTLevelPack;
 @class SLTStatus;
@@ -48,7 +50,7 @@ extern const NSString* API_VERSION;
 
 @property (nonatomic, assign, readwrite) BOOL useNoFeatures;
 
-@property (nonatomic, assign, readwrite) BOOL devMode;
+@property (nonatomic, assign, readwrite) bool devMode;
 
 @property (nonatomic, assign, readwrite) NSInteger requestIdleTimeout;
 
@@ -65,7 +67,7 @@ extern const NSString* API_VERSION;
 /// The delegate of @b SaltrRequestDelegate protocol
 @property (nonatomic, assign) id <SaltrRequestDelegate> saltrRequestDelegate;
 
-- (id) initSaltrWithClientKey:(NSString*)theClientKey deviceId:(NSString*)theDeviceId andCacheEnabled:(BOOL)theCacheEnabled;
+- (id) initSaltrWithUiViewController:(UIViewController*)uiViewController clientKey:(NSString*)theClientKey deviceId:(NSString*)theDeviceId andCacheEnabled:(BOOL)theCacheEnabled;
 
 - (SLTLevel*) getLevelByGlobalIndex:(NSUInteger)theIndex;
 

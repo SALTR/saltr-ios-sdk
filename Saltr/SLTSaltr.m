@@ -25,10 +25,15 @@
 #import "SLTStatusLevelsParseError.h"
 #import "SLTStatusLevelContentLoadFail.h"
 
+#import "DialogController.h"
+
+#import <UIKit/UIViewController.h>
+
 NSString* CLIENT=@"IOS-Mobile";
 NSString* API_VERSION=@"1.0.0";
 
-@interface SLTSaltr() {    
+@interface SLTSaltr() {
+    UIViewController* _uiViewController;
     NSString* _clientKey;
     NSString* _deviceId;
     BOOL _isLoading;
@@ -36,13 +41,14 @@ NSString* API_VERSION=@"1.0.0";
     BOOL _useNoLevels;
     BOOL _useNoFeatures;
     NSString* _levelType;
-    BOOL _devMode;
+    bool _devMode;
     BOOL _started;
     NSInteger _requestIdleTimeout;
     NSMutableDictionary* _activeFeatures;
     NSMutableDictionary* _developerFeatures;
     NSObject<SLTRepositoryProtocolDelegate>* _repository;
     SLTDeserializer* _deserializer;
+    DialogController* _dialogController;
 }
 @end
 
@@ -58,10 +64,11 @@ NSString* API_VERSION=@"1.0.0";
 @synthesize experiments  = _experiments;
 @synthesize socialId  = _socialId;
 
-- (id) initSaltrWithClientKey:(NSString*)theClientKey deviceId:(NSString*)theDeviceId andCacheEnabled:(BOOL)theCacheEnabled
+- (id) initSaltrWithUiViewController:(UIViewController*)uiViewController clientKey:(NSString*)theClientKey deviceId:(NSString*)theDeviceId andCacheEnabled:(BOOL)theCacheEnabled
 {
     self = [super init];
     if (self) {
+        _uiViewController = uiViewController;
         _clientKey = theClientKey;
         _deviceId = theDeviceId;
         _isLoading = NO;
@@ -70,7 +77,7 @@ NSString* API_VERSION=@"1.0.0";
         _useNoFeatures = NO;
         _levelType = nil;
         
-        _devMode = NO;
+        _devMode = false;
         _started = NO;
         _requestIdleTimeout = 0;
         
@@ -400,7 +407,7 @@ NSString* API_VERSION=@"1.0.0";
         @throw exception;
     }
     
-    [args setObject:[NSNumber numberWithBool:_devMode] forKey:@"devMode"];
+    [args setObject:[self devModeStringValue] forKey:@"devMode"];
     
     //optional for Mobile
     if (nil != _socialId) {
@@ -509,7 +516,7 @@ NSString* API_VERSION=@"1.0.0";
     [args setObject:API_VERSION forKey:@"apiVersion"];
     [args setObject:_clientKey forKey:@"clientKey"];
     [args setObject:CLIENT forKey:@"client"];
-    [args setObject:[NSNumber numberWithBool:_devMode] forKey:@"devMode"];
+    [args setObject:[self devModeStringValue] forKey:@"devMode"];
     
     //required for Mobile
     if (nil != _deviceId) {
@@ -564,9 +571,9 @@ NSString* API_VERSION=@"1.0.0";
         NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         jsonArguments = [jsonArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
-        NSString* urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@&devMode=%@", ACTION_DEV_SYNC_DATA, ACTION_DEV_SYNC_DATA, jsonArguments, [NSNumber numberWithBool:_devMode]];
+        NSString* urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@&devMode=%@", ACTION_DEV_SYNC_DATA, ACTION_DEV_SYNC_DATA, jsonArguments, [self devModeStringValue]];
         if (nil != _deviceId) {
-            urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@&devMode=%@&deviceId=%@", ACTION_DEV_SYNC_DATA, ACTION_DEV_SYNC_DATA, jsonArguments, [NSNumber numberWithBool:_devMode], _deviceId];
+            urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@&devMode=%@&deviceId=%@", ACTION_DEV_SYNC_DATA, ACTION_DEV_SYNC_DATA, jsonArguments, [self devModeStringValue], _deviceId];
         }
         
         SLTResourceURLTicket* ticket = [self getTicketWithUrl:SALTR_DEVAPI_URL urlVars:urlVars andTimeout:_requestIdleTimeout];
@@ -660,6 +667,11 @@ NSString* API_VERSION=@"1.0.0";
 {
     NSString* cachedFileName = LOCAL_LEVEL_CONTENT_CACHE_URL_TEMPLATE((long)level.packIndex, (long)level.localIndex);
     [_repository cacheObject:cachedFileName version:level.version object:contentData];
+}
+
+-(NSString*) devModeStringValue
+{
+    return _devMode ? @"true" : @"false";
 }
 
 @end
