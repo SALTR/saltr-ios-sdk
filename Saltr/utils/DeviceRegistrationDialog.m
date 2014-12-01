@@ -15,6 +15,7 @@
 
 @interface DeviceRegistrationDialog () {
     UIViewController* _uiViewController;
+    void (^_submitHandler)(NSString*);
 }
 
 @end
@@ -34,31 +35,35 @@
 -(void) show
 {
     UIAlertController * alert=   [UIAlertController
-                                  alertControllerWithTitle:DLG_TITLE
+                                  alertControllerWithTitle:DLG_DEVICE_REGISTRATION_TITLE
                                   message:DLG_DEVICE_REGISTRATION_DESCRIPTION
                                   preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* ok = [UIAlertAction actionWithTitle:@"Submit" style:UIAlertActionStyleDefault
+    UIAlertAction* submit = [UIAlertAction actionWithTitle:DLG_BUTTON_SUBMIT style:UIAlertActionStyleDefault
                                                handler:^(UIAlertAction * action) {
-                                                   //Do Some action here
+                                                        [alert dismissViewControllerAnimated:YES completion:nil];
+                                                            UITextField* email = alert.textFields[0];
+                                                            _submitHandler(email.text);
                                                    
                                                }];
-    UIAlertAction* cancel = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleDefault
+    UIAlertAction* cancel = [UIAlertAction actionWithTitle:DLG_BUTTON_CANCEL style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction * action) {
                                                        [alert dismissViewControllerAnimated:YES completion:nil];
                                                    }];
     
-    [alert addAction:ok];
     [alert addAction:cancel];
+    [alert addAction:submit];
     
     [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"Username";
-    }];
-    [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
-        textField.placeholder = @"Password";
+        textField.placeholder = DLG_PROMPT_EMAIL;
     }];
     
     [_uiViewController presentViewController:alert animated:YES completion:nil];
+}
+
+-(void) setSubmitHandler:(void(^)(NSString*))theSubmitHandler
+{
+    _submitHandler = theSubmitHandler;
 }
 
 @end

@@ -11,18 +11,20 @@
 #import <Foundation/Foundation.h>
 
 #define DLG_BUTTON_SUBMIT @"Submit"
-#define DLG_BUTTON_CLOSE @"Close"
-#define DLG_TITLE @"Device Registration"
-#define DLG_DEVICE_REGISTRATION_DESCRIPTION @"Please insert your E-mail and device name"
-#define DLG_EMAIL_NOT_VALID @"Please insert valid Email."
-#define DLG_SUBMIT_SUCCESSFUL @"Your data has been successfully submitted."
-#define DLG_SUBMIT_FAILED @"Your data has not been submitted."
-#define DLG_SUBMIT_IN_PROCESS @"Your data submitting in progress."
-#define DLG_NAME_NOT_VALID @"Please insert device name."
-#define DLG_BOTH_NOT_VALID @"Please insert device name and valid Email."
+#define DLG_BUTTON_CANCEL @"Cancel"
 
-#define DLG_PROMPT_EMAIL @"Valid E-mail"
-#define DLG_PROMPT_DEVICE_NAME @"Device name"
+#define DLG_DEVICE_REGISTRATION_TITLE @"Register Device with SALTR"
+#define DLG_DEVICE_REGISTRATION_DESCRIPTION @""
+
+#define DLG_STATUS_DEFAULT @"status text here"
+//#define DLG_EMAIL_NOT_VALID @"Please insert valid Email."
+//#define DLG_SUBMIT_SUCCESSFUL @"Your data has been successfully submitted."
+//#define DLG_SUBMIT_FAILED @"Your data has not been submitted."
+//#define DLG_SUBMIT_IN_PROCESS @"Your data submitting in progress."
+//#define DLG_NAME_NOT_VALID @"Please insert device name."
+//#define DLG_BOTH_NOT_VALID @"Please insert device name and valid Email."
+
+#define DLG_PROMPT_EMAIL @"example@mail.com"
 
 /// Protocol
 @protocol DeviceRegistrationDialogProtocolDelegate <NSObject>
@@ -30,6 +32,8 @@
 @required
 
 -(void) show;
+
+-(void) setSubmitHandler:(void(^)(NSString*))theSubmitHandler;
 
 @end
 

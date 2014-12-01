@@ -558,7 +558,22 @@ NSString* API_VERSION=@"1.0.0";
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
     
+    void (^addDeviceHandler)(NSString*) = ^(NSString* theEmail) {
+        [self addDeviceToSaltrWithEmail:theEmail];
+    };
+    
     void (^syncSuccessHandler)(SLTResource*) = ^(SLTResource* asset) {
+        NSDictionary* data = [asset jsonData];
+        if(nil == data) {
+            NSLog(@"[Slatr Dev feature Sync's response.jsonData is nil.]");
+            [asset dispose];
+            return;
+        }
+        NSArray* response = [data objectForKey:@"response"];
+        if (nil != response && [response count] > 0 && [[[response objectAtIndex:0] objectForKey:@"registrationRequired"] boolValue]) {
+                _dialogController = [[DialogController alloc] initWithUiViewController:_uiViewController andAddDeviceHandler:addDeviceHandler];
+            [_dialogController showDeviceRegistrationDialog];
+        }
         [asset dispose];
         NSLog(@"[Saltr] Dev feature Sync is complete.");
     };
@@ -581,6 +596,12 @@ NSString* API_VERSION=@"1.0.0";
         SLTResource* resource = [[SLTResource alloc] initWithId:@"syncFeatures" andTicket:ticket successHandler:syncSuccessHandler errorHandler:syncFailHandler progressHandler:nil];
         [resource load];
     }
+}
+
+-(void) addDeviceToSaltrWithEmail:(NSString*)theEmail
+{
+    //anakonda
+    int a = 90;
 }
 
 -(NSDictionary*) loadLevelContentInternally:(SLTLevel*)level

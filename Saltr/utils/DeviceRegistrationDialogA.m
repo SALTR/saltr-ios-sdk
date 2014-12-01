@@ -10,26 +10,34 @@
 
 #import "DeviceRegistrationDialogA.h"
 
+@interface DeviceRegistrationDialogA () {
+    void (^_submitHandler)(NSString*);
+}
+
+@end
+
 @implementation DeviceRegistrationDialogA
 
 -(void) show
 {
-    UIAlertView * alert =[[UIAlertView alloc ] initWithTitle:DLG_TITLE message:DLG_DEVICE_REGISTRATION_DESCRIPTION delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles: nil];
-    alert.alertViewStyle = UIAlertViewStyleLoginAndPasswordInput;
-    [alert addButtonWithTitle:@"Login"];
+    UIAlertView* alert =[[UIAlertView alloc ] initWithTitle:DLG_DEVICE_REGISTRATION_TITLE message:DLG_DEVICE_REGISTRATION_DESCRIPTION delegate:self cancelButtonTitle:DLG_BUTTON_CANCEL otherButtonTitles: nil];
+    alert.alertViewStyle = UIAlertViewStylePlainTextInput;
+    UITextField* email = [alert textFieldAtIndex:0];
+    email.placeholder = DLG_PROMPT_EMAIL;
+    [alert addButtonWithTitle:DLG_BUTTON_SUBMIT];
     [alert show];
+}
+
+-(void) setSubmitHandler:(void(^)(NSString*))theSubmitHandler
+{
+    _submitHandler = theSubmitHandler;
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
 {
-    if (buttonIndex == 1)
-    {
-        UITextField *username = [alertView textFieldAtIndex:0];
-        NSLog(@"username: %@", username.text);
-        
-        UITextField *password = [alertView textFieldAtIndex:1];
-        NSLog(@"password: %@", password.text);
-        
+    if (1 == buttonIndex) {
+        UITextField* email = [alertView textFieldAtIndex:0];
+        _submitHandler(email.text);
     }
 }
 
