@@ -51,7 +51,8 @@
 
 - (void) deviceRegistrationSubmitHandler:(NSString*)theEmail
 {
-    int a = 90;
+    //anakonda
+    _addDeviceHandler(theEmail);
 }
 
 @end
