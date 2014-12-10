@@ -38,7 +38,7 @@
                                   message:theMessage
                                   preferredStyle:UIAlertControllerStyleAlert];
     
-    UIAlertAction* ok = [UIAlertAction actionWithTitle:DLG_BUTTON_OK style:UIAlertActionStyleDefault
+    UIAlertAction* ok = [UIAlertAction actionWithTitle:DLG_ALERT_BUTTON_OK style:UIAlertActionStyleDefault
                                                    handler:^(UIAlertAction * action) {
                                                        [alert dismissViewControllerAnimated:YES completion:nil];
                                                        if(nil != _okHandler) {

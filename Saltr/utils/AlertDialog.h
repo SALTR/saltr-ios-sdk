@@ -10,7 +10,8 @@
 
 #import <Foundation/Foundation.h>
 
-#define DLG_BUTTON_OK @"Ok"
+#define DLG_ALERT_DEVICE_REGISTRATION_TITLE @"Device Registration"
+#define DLG_ALERT_BUTTON_OK @"Ok"
 
 /// Protocol
 @protocol AlertDialogProtocolDelegate <NSObject>
