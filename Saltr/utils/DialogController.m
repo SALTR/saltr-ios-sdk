@@ -11,11 +11,14 @@
 #import "DialogController.h"
 #import "DeviceRegistrationDialog.h"
 #import "DeviceRegistrationDialogA.h"
+#import "AlertDialog.h"
+#import "AlertDialogA.h"
 #import <UIKit/UIViewController.h>
 
 @interface DialogController () {
     void (^_addDeviceHandler)(NSString*);
     id <DeviceRegistrationDialogProtocolDelegate> _deviceRegistrationDialog;
+    id <AlertDialogProtocolDelegate> _alertDialog;
 }
 
 @end
@@ -34,10 +37,13 @@
         //float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         //anakonda
         _deviceRegistrationDialog = [[DeviceRegistrationDialog alloc] initWithUiViewController:uiViewController];
+        _alertDialog = [[AlertDialog alloc] initWithUiViewController:uiViewController];
         /*if (systemVersion >= 8.0) {
             _deviceRegistrationDialog = [[DeviceRegistrationDialog alloc] initWithUiViewController:uiViewController];
+            _alertDialog = [[AlertDialog alloc] initWithUiViewController:uiViewController];
         } else {
             _deviceRegistrationDialog = [[DeviceRegistrationDialogA alloc] init];
+            _alertDialog = [[AlertDialogA alloc] init];
         }*/
         [_deviceRegistrationDialog setSubmitHandler:devRegisterSubmitHandler];
     }

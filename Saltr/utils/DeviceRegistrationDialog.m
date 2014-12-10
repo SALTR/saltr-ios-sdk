@@ -31,10 +31,9 @@
     return self;
 }
 
-
 -(void) show
 {
-    UIAlertController * alert=   [UIAlertController
+    UIAlertController * alert =   [UIAlertController
                                   alertControllerWithTitle:DLG_DEVICE_REGISTRATION_TITLE
                                   message:DLG_DEVICE_REGISTRATION_DESCRIPTION
                                   preferredStyle:UIAlertControllerStyleAlert];

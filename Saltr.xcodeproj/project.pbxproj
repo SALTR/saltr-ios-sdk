@@ -23,6 +23,8 @@
 		8087E48D19B8990B002F3568 /* SLTStatusLevelsParserMissing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8087E48C19B8990B002F3568 /* SLTStatusLevelsParserMissing.m */; };
 		808D40FB19B36A5B00BC8FCD /* SLTSaltr.m in Sources */ = {isa = PBXBuildFile; fileRef = 808D40FA19B36A5B00BC8FCD /* SLTSaltr.m */; };
 		80A6640219C33A2500783206 /* SLTMatchingLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A6640119C33A2500783206 /* SLTMatchingLevelParser.m */; };
+		80B14DCA1A38560A008F726A /* AlertDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B14DC91A38560A008F726A /* AlertDialog.m */; };
+		80B14DCD1A385864008F726A /* AlertDialogA.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B14DCC1A385864008F726A /* AlertDialogA.m */; };
 		80B281E81997C85D00504D63 /* SLT2DLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B281E71997C85D00504D63 /* SLT2DLevelParser.m */; };
 		80C5C3BE1A1F6A8500639860 /* SLTStatusAppDataConcurrentLoadRefused.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C5C3BD1A1F6A8500639860 /* SLTStatusAppDataConcurrentLoadRefused.m */; };
 		80E4C1FF1A24B26C00BC7D30 /* DeviceRegistrationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E4C1FE1A24B26C00BC7D30 /* DeviceRegistrationDialog.m */; };
@@ -120,6 +122,10 @@
 		808D40FA19B36A5B00BC8FCD /* SLTSaltr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTSaltr.m; sourceTree = "<group>"; };
 		80A6640019C33A2500783206 /* SLTMatchingLevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTMatchingLevelParser.h; sourceTree = "<group>"; };
 		80A6640119C33A2500783206 /* SLTMatchingLevelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTMatchingLevelParser.m; sourceTree = "<group>"; };
+		80B14DC81A38560A008F726A /* AlertDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertDialog.h; sourceTree = "<group>"; };
+		80B14DC91A38560A008F726A /* AlertDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertDialog.m; sourceTree = "<group>"; };
+		80B14DCB1A385864008F726A /* AlertDialogA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertDialogA.h; sourceTree = "<group>"; };
+		80B14DCC1A385864008F726A /* AlertDialogA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertDialogA.m; sourceTree = "<group>"; };
 		80B281E61997C85D00504D63 /* SLT2DLevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLT2DLevelParser.h; sourceTree = "<group>"; };
 		80B281E71997C85D00504D63 /* SLT2DLevelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLT2DLevelParser.m; sourceTree = "<group>"; };
 		80C5C3BC1A1F6A8500639860 /* SLTStatusAppDataConcurrentLoadRefused.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTStatusAppDataConcurrentLoadRefused.h; sourceTree = "<group>"; };
@@ -236,6 +242,10 @@
 				805A4AC31A2609F700676C44 /* DialogController.m */,
 				805A4AC51A2613C800676C44 /* DeviceRegistrationDialogA.h */,
 				805A4AC61A2613C800676C44 /* DeviceRegistrationDialogA.m */,
+				80B14DC81A38560A008F726A /* AlertDialog.h */,
+				80B14DC91A38560A008F726A /* AlertDialog.m */,
+				80B14DCB1A385864008F726A /* AlertDialogA.h */,
+				80B14DCC1A385864008F726A /* AlertDialogA.m */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -587,6 +597,7 @@
 				8087E48719B89881002F3568 /* SLTStatusLevelContentLoadFail.m in Sources */,
 				982C55F3197166F100DC99B1 /* SLTLevelParser.m in Sources */,
 				8087E48419B8982D002F3568 /* SLTStatusFeaturesParseError.m in Sources */,
+				80B14DCD1A385864008F726A /* AlertDialogA.m in Sources */,
 				CA1FC23218B3C35000E92A06 /* SLTExperiment.m in Sources */,
 				982C55EB19714C5100DC99B1 /* SLTAssetInstance.m in Sources */,
 				989CC4D719746A04008DC08F /* SLTChunkAssetRule.m in Sources */,
@@ -624,6 +635,7 @@
 				8087E48119B897E4002F3568 /* SLTStatusExperimentsParseError.m in Sources */,
 				805A4AC71A2613C800676C44 /* DeviceRegistrationDialogA.m in Sources */,
 				8081219419B727EA0013266B /* Utils.m in Sources */,
+				80B14DCA1A38560A008F726A /* AlertDialog.m in Sources */,
 				8087E48A19B898C8002F3568 /* SLTStatusLevelsParseError.m in Sources */,
 				8087E47B19B89474002F3568 /* SLTStatus.m in Sources */,
 				80B281E81997C85D00504D63 /* SLT2DLevelParser.m in Sources */,
