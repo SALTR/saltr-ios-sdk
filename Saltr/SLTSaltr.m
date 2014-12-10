@@ -42,6 +42,8 @@ NSString* API_VERSION=@"1.0.0";
     BOOL _useNoFeatures;
     NSString* _levelType;
     bool _devMode;
+    BOOL _autoSyncEnabled;
+    BOOL _isDataSynced;
     BOOL _started;
     NSInteger _requestIdleTimeout;
     NSMutableDictionary* _activeFeatures;
@@ -59,6 +61,7 @@ NSString* API_VERSION=@"1.0.0";
 @synthesize useNoLevels  = _useNoLevels;
 @synthesize useNoFeatures  = _useNoFeatures;
 @synthesize devMode  = _devMode;
+@synthesize autoSyncEnabled  = _autoSyncEnabled;
 @synthesize requestIdleTimeout  = _requestIdleTimeout;
 @synthesize levelPacks  = _levelPacks;
 @synthesize experiments  = _experiments;
@@ -78,6 +81,8 @@ NSString* API_VERSION=@"1.0.0";
         _levelType = nil;
         
         _devMode = false;
+        _autoSyncEnabled = YES;
+        _isDataSynced = NO;
         _started = NO;
         _requestIdleTimeout = 0;
         
@@ -442,8 +447,9 @@ NSString* API_VERSION=@"1.0.0";
 
 -(void) loadAppDataSuccessHandler:(NSDictionary *)response {
     
-    if(_devMode) {
+    if(_autoSyncEnabled && !_isDataSynced) {
         [self syncData];
+        _isDataSynced = YES;
     }
     
     _levelType = [response objectForKey:@"levelType"];
@@ -512,6 +518,9 @@ NSString* API_VERSION=@"1.0.0";
 
 -(void) syncData
 {
+    if(!_devMode) {
+        return;
+    }
     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
     [args setObject:API_VERSION forKey:@"apiVersion"];
     [args setObject:_clientKey forKey:@"clientKey"];

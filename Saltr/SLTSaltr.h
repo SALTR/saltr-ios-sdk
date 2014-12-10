@@ -52,6 +52,8 @@ extern const NSString* API_VERSION;
 
 @property (nonatomic, assign, readwrite) bool devMode;
 
+@property (nonatomic, assign, readwrite) BOOL autoSyncEnabled;
+
 @property (nonatomic, assign, readwrite) NSInteger requestIdleTimeout;
 
 @property (nonatomic, strong, readonly) NSArray* levelPacks;
