@@ -18,4 +18,8 @@
 
 - (void) showDeviceRegistrationDialog;
 
+- (void) showAlertDialogWithTitile:(NSString*)theTitle andMessage:(NSString*)theMessage;
+
+- (void) showAlertDialogWithTitile:(NSString*)theTitle message:(NSString*)theMessage andCallback:(void(^)(void))theCallback;
+
 @end

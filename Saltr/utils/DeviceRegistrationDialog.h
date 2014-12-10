@@ -16,13 +16,10 @@
 #define DLG_DEVICE_REGISTRATION_TITLE @"Register Device with SALTR"
 #define DLG_DEVICE_REGISTRATION_DESCRIPTION @""
 
-#define DLG_STATUS_DEFAULT @"status text here"
-//#define DLG_EMAIL_NOT_VALID @"Please insert valid Email."
+#define DLG_EMAIL_NOT_VALID @"Please insert valid Email."
 //#define DLG_SUBMIT_SUCCESSFUL @"Your data has been successfully submitted."
 //#define DLG_SUBMIT_FAILED @"Your data has not been submitted."
 //#define DLG_SUBMIT_IN_PROCESS @"Your data submitting in progress."
-//#define DLG_NAME_NOT_VALID @"Please insert device name."
-//#define DLG_BOTH_NOT_VALID @"Please insert device name and valid Email."
 
 #define DLG_PROMPT_EMAIL @"example@mail.com"
 

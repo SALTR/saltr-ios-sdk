@@ -20,14 +20,15 @@
 
 -(void) show:(NSString*)theTitle andMessage:(NSString*)theMessage
 {
-    UIAlertView* alert =[[UIAlertView alloc ] initWithTitle:theTitle message:theMessage delegate:self cancelButtonTitle:DLG_BUTTON_OK otherButtonTitles: nil];
+    UIAlertView* alert =[[UIAlertView alloc ] initWithTitle:theTitle message:theMessage delegate:self cancelButtonTitle:DLG_ALERT_BUTTON_OK otherButtonTitles: nil];
     alert.alertViewStyle = UIAlertViewStyleDefault;
     [alert show];
 }
 
--(void) setOkHandler:(void(^)(void))theOkHandler
+- (void) show:(NSString*)theTitle message:(NSString*)theMessage andCallback:(void(^)(void))theCallback
 {
-    _okHandler = theOkHandler;
+    _okHandler = theCallback;
+    [self show:theTitle andMessage:theMessage];
 }
 
 - (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
@@ -35,6 +36,7 @@
     if(nil != _okHandler) {
         _okHandler();
     }
+    _okHandler = nil;
 }
 
 @end

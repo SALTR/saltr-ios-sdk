@@ -13,6 +13,7 @@
 #import "DeviceRegistrationDialogA.h"
 #import "AlertDialog.h"
 #import "AlertDialogA.h"
+#import "Utils.h"
 #import <UIKit/UIViewController.h>
 
 @interface DialogController () {
@@ -55,10 +56,26 @@
     [_deviceRegistrationDialog show];
 }
 
+- (void) showAlertDialogWithTitile:(NSString*)theTitle andMessage:(NSString*)theMessage
+{
+    [_alertDialog show:theTitle andMessage:theMessage];
+}
+
+- (void) showAlertDialogWithTitile:(NSString*)theTitle message:(NSString*)theMessage andCallback:(void(^)(void))theCallback
+{
+    [_alertDialog show:theTitle message:theMessage andCallback:theCallback];
+}
+
 - (void) deviceRegistrationSubmitHandler:(NSString*)theEmail
 {
-    //anakonda
-    _addDeviceHandler(theEmail);
+    if ([Utils checkEmailValidation:theEmail]) {
+        _addDeviceHandler(theEmail);
+    } else {
+        void (^incorrectEmailHandler)(void) = ^(void) {
+            [self showDeviceRegistrationDialog];
+        };
+        [self showAlertDialogWithTitile:DLG_ALERT_DEVICE_REGISTRATION_TITLE message:DLG_EMAIL_NOT_VALID andCallback:incorrectEmailHandler];
+    }
 }
 
 @end

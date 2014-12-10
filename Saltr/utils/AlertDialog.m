@@ -44,6 +44,7 @@
                                                        if(nil != _okHandler) {
                                                            _okHandler();
                                                        }
+                                                       _okHandler = nil;
                                                        
                                                    }];
     [alert addAction:ok];
@@ -51,9 +52,10 @@
     [_uiViewController presentViewController:alert animated:YES completion:nil];
 }
 
--(void) setOkHandler:(void(^)(void))theOkHandler
+- (void) show:(NSString*)theTitle message:(NSString*)theMessage andCallback:(void(^)(void))theCallback
 {
-    _okHandler = theOkHandler;
+    _okHandler = theCallback;
+    [self show:theTitle andMessage:theMessage];
 }
 
 @end

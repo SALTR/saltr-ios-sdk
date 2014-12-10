@@ -18,9 +18,9 @@
 
 @required
 
--(void) show:(NSString*)theTitle andMessage:(NSString*)theMessage;
+- (void) show:(NSString*)theTitle andMessage:(NSString*)theMessage;
 
--(void) setOkHandler:(void(^)(void))theOkHandler;
+- (void) show:(NSString*)theTitle message:(NSString*)theMessage andCallback:(void(^)(void))theCallback;
 
 @end
 
