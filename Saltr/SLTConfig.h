@@ -14,7 +14,7 @@
 #define ACTION_GET_APP_DATA @"getAppData"
 #define ACTION_ADD_PROPERTIES @"addProperties"
 #define ACTION_DEV_SYNC_DATA @"sync"
-#define ACTION_DEV_REGISTER_IDENTITY @"registerIdentity"
+#define ACTION_DEV_REGISTER_DEVICE @"registerDevice"
 
 #define SALTR_API_URL @"https://api.saltr.com/call"
 #define SALTR_DEVAPI_URL @"https://devapi.saltr.com/call"
