@@ -35,17 +35,14 @@
         };
         
         _addDeviceHandler = addDeviceHandler;
-        //float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
-        //anakonda
-        _deviceRegistrationDialog = [[DeviceRegistrationDialog alloc] initWithUiViewController:uiViewController];
-        _alertDialog = [[AlertDialog alloc] initWithUiViewController:uiViewController];
-        /*if (systemVersion >= 8.0) {
+        float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
+        if (systemVersion >= 8.0) {
             _deviceRegistrationDialog = [[DeviceRegistrationDialog alloc] initWithUiViewController:uiViewController];
             _alertDialog = [[AlertDialog alloc] initWithUiViewController:uiViewController];
         } else {
             _deviceRegistrationDialog = [[DeviceRegistrationDialogA alloc] init];
             _alertDialog = [[AlertDialogA alloc] init];
-        }*/
+        }
         [_deviceRegistrationDialog setSubmitHandler:devRegisterSubmitHandler];
     }
     return self;

@@ -610,7 +610,6 @@ NSString* API_VERSION=@"1.0.0";
 
 -(void) addDeviceToSaltrWithEmail:(NSString*)theEmail
 {
-    //anakonda
     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
     [args setObject:API_VERSION forKey:@"apiVersion"];
     [args setObject:_clientKey forKey:@"clientKey"];
@@ -637,6 +636,8 @@ NSString* API_VERSION=@"1.0.0";
         @throw exception;
     }
     
+    [args setObject:[[UIDevice currentDevice] model] forKey:@"source"];
+    [args setObject:[NSString stringWithFormat:@"%@%@", @"iOS ", [[UIDevice currentDevice] systemVersion]] forKey:@"os"];
     
     NSError* error = nil;
     NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
