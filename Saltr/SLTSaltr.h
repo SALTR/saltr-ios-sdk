@@ -90,6 +90,8 @@ extern const NSString* API_VERSION;
 
 - (void) connect;
 
+- (void) syncData;
+
 - (void) connectWithBasicProperties:(NSDictionary*)theBasicProperties;
 
 - (void) connectWithBasicProperties:(NSDictionary *)theBasicProperties andCustomProperties:(NSDictionary*)theCustomProperties;
