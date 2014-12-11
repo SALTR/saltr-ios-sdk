@@ -22,4 +22,6 @@
 
 - (void) showAlertDialogWithTitile:(NSString*)theTitle message:(NSString*)theMessage andCallback:(void(^)(void))theCallback;
 
+- (void) showDeviceRegistrationFailStatus:(NSString*)theStatus;
+
 @end

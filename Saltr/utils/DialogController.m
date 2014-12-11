@@ -66,6 +66,14 @@
     [_alertDialog show:theTitle message:theMessage andCallback:theCallback];
 }
 
+- (void) showDeviceRegistrationFailStatus:(NSString*)theStatus
+{
+    void (^deviceRegistrationFailHandler)(void) = ^(void) {
+        [self showDeviceRegistrationDialog];
+    };
+    [_alertDialog show:DLG_ALERT_DEVICE_REGISTRATION_TITLE message:theStatus andCallback:deviceRegistrationFailHandler];
+}
+
 - (void) deviceRegistrationSubmitHandler:(NSString*)theEmail
 {
     if ([Utils checkEmailValidation:theEmail]) {

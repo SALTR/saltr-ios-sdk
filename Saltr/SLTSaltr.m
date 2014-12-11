@@ -26,6 +26,7 @@
 #import "SLTStatusLevelContentLoadFail.h"
 
 #import "DialogController.h"
+#import "DeviceRegistrationDialog.h"
 
 #import <UIKit/UIViewController.h>
 
@@ -610,7 +611,76 @@ NSString* API_VERSION=@"1.0.0";
 -(void) addDeviceToSaltrWithEmail:(NSString*)theEmail
 {
     //anakonda
-    int a = 90;
+    NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
+    [args setObject:API_VERSION forKey:@"apiVersion"];
+    [args setObject:_clientKey forKey:@"clientKey"];
+    [args setObject:[self devModeStringValue] forKey:@"devMode"];
+    
+    //required for Mobile
+    if (nil != _deviceId) {
+        [args setObject:_deviceId forKey:@"id"];
+    } else {
+        NSException* exception = [NSException
+                                  exceptionWithName:@"Exception"
+                                  reason:@"Field 'deviceId' is a required."
+                                  userInfo:nil];
+        @throw exception;
+    }
+    
+    if (nil != theEmail) {
+        [args setObject:theEmail forKey:@"email"];
+    } else {
+        NSException* exception = [NSException
+                                  exceptionWithName:@"Exception"
+                                  reason:@"Field 'email' is a required."
+                                  userInfo:nil];
+        @throw exception;
+    }
+    
+    
+    NSError* error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    
+    void (^addDeviceSucessedHandler)(SLTResource*) = ^(SLTResource* asset) {
+        NSDictionary* data = [asset jsonData];
+        if(nil == data) {
+            NSLog(@"[Slatr adding new device response jsonData is nil.]");
+            [asset dispose];
+            return;
+        }
+        NSArray* response = [data objectForKey:@"response"];
+        if (nil != response && [response count] > 0) {
+            NSDictionary* responseObject = [response objectAtIndex:0];
+            if (![[responseObject objectForKey:@"success"] boolValue]) {
+                NSString* errorMessage = [[responseObject objectForKey:@"error"] objectForKey:@"message"];
+                [_dialogController showDeviceRegistrationFailStatus:errorMessage];
+            }
+        } else {
+            [_dialogController showDeviceRegistrationFailStatus:DLG_SUBMIT_FAILED];
+        }
+        [asset dispose];
+        NSLog(@"[Saltr] Dev adding new device is complete.");
+    };
+    
+    void (^addDeviceFailedHandler)(SLTResource*) = ^(SLTResource* asset) {
+        [asset dispose];
+        NSLog(@"[Saltr] Dev adding new device has failed.");
+        [_dialogController showDeviceRegistrationFailStatus:DLG_SUBMIT_FAILED];
+    };
+    
+    if (!error) {
+        NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        jsonArguments = [jsonArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        NSString* urlVars = [NSString stringWithFormat:@"?action=%@&args=%@&devMode=%@&id=%@", ACTION_DEV_REGISTER_DEVICE, jsonArguments, [self devModeStringValue], _deviceId];
+        
+        SLTResourceURLTicket* ticket = [self getTicketWithUrl:SALTR_DEVAPI_URL urlVars:urlVars andTimeout:_requestIdleTimeout];
+        
+        SLTResource* resource = [[SLTResource alloc] initWithId:@"addDevice" andTicket:ticket successHandler:addDeviceSucessedHandler errorHandler:addDeviceFailedHandler progressHandler:nil];
+        [resource load];
+    }
 }
 
 -(NSDictionary*) loadLevelContentInternally:(SLTLevel*)level

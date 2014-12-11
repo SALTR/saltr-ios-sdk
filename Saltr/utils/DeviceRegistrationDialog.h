@@ -18,7 +18,7 @@
 
 #define DLG_EMAIL_NOT_VALID @"Please insert valid Email."
 //#define DLG_SUBMIT_SUCCESSFUL @"Your data has been successfully submitted."
-//#define DLG_SUBMIT_FAILED @"Your data has not been submitted."
+#define DLG_SUBMIT_FAILED @"Your data has not been submitted."
 //#define DLG_SUBMIT_IN_PROCESS @"Your data submitting in progress."
 
 #define DLG_PROMPT_EMAIL @"example@mail.com"
