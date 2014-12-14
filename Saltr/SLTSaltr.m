@@ -43,8 +43,7 @@ NSString* API_VERSION=@"1.0.0";
     BOOL _useNoFeatures;
     NSString* _levelType;
     bool _devMode;
-    BOOL _autoSyncEnabled;
-    BOOL _isDataSynced;
+    BOOL _isDeviceRegistrationEnabled;
     BOOL _started;
     NSInteger _requestIdleTimeout;
     NSMutableDictionary* _activeFeatures;
@@ -62,7 +61,7 @@ NSString* API_VERSION=@"1.0.0";
 @synthesize useNoLevels  = _useNoLevels;
 @synthesize useNoFeatures  = _useNoFeatures;
 @synthesize devMode  = _devMode;
-@synthesize autoSyncEnabled  = _autoSyncEnabled;
+@synthesize deviceRegistrationEnabled  = _isDeviceRegistrationEnabled;
 @synthesize requestIdleTimeout  = _requestIdleTimeout;
 @synthesize levelPacks  = _levelPacks;
 @synthesize experiments  = _experiments;
@@ -82,8 +81,7 @@ NSString* API_VERSION=@"1.0.0";
         _levelType = nil;
         
         _devMode = false;
-        _autoSyncEnabled = YES;
-        _isDataSynced = NO;
+        _isDeviceRegistrationEnabled = YES;
         _started = NO;
         _requestIdleTimeout = 0;
         
@@ -91,6 +89,12 @@ NSString* API_VERSION=@"1.0.0";
         _developerFeatures = [[NSMutableDictionary alloc] init];
         _repository = theCacheEnabled ? [[SLTMobileRepository alloc] init] : [[SLTDummyRepository alloc] init];
         _deserializer = [[SLTDeserializer alloc] init];
+        
+        void (^addDeviceHandler)(NSString*) = ^(NSString* theEmail) {
+            [self addDeviceToSaltrWithEmail:theEmail];
+        };
+        
+        _dialogController = [[DialogController alloc] initWithUiViewController:_uiViewController andAddDeviceHandler:addDeviceHandler];
     }
     return self;
 }
@@ -448,9 +452,8 @@ NSString* API_VERSION=@"1.0.0";
 
 -(void) loadAppDataSuccessHandler:(NSDictionary *)response {
     
-    if(_autoSyncEnabled && !_isDataSynced) {
+    if(_devMode) {
         [self syncData];
-        _isDataSynced = YES;
     }
     
     _levelType = [response objectForKey:@"levelType"];
@@ -519,9 +522,6 @@ NSString* API_VERSION=@"1.0.0";
 
 -(void) syncData
 {
-    if(!_devMode) {
-        return;
-    }
     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
     [args setObject:API_VERSION forKey:@"apiVersion"];
     [args setObject:_clientKey forKey:@"clientKey"];
@@ -568,10 +568,6 @@ NSString* API_VERSION=@"1.0.0";
                                                        options:NSJSONWritingPrettyPrinted
                                                          error:&error];
     
-    void (^addDeviceHandler)(NSString*) = ^(NSString* theEmail) {
-        [self addDeviceToSaltrWithEmail:theEmail];
-    };
-    
     void (^syncSuccessHandler)(SLTResource*) = ^(SLTResource* asset) {
         NSDictionary* data = [asset jsonData];
         if(nil == data) {
@@ -580,9 +576,8 @@ NSString* API_VERSION=@"1.0.0";
             return;
         }
         NSArray* response = [data objectForKey:@"response"];
-        if (nil != response && [response count] > 0 && [[[response objectAtIndex:0] objectForKey:@"registrationRequired"] boolValue]) {
-                _dialogController = [[DialogController alloc] initWithUiViewController:_uiViewController andAddDeviceHandler:addDeviceHandler];
-            [_dialogController showDeviceRegistrationDialog];
+        if (_isDeviceRegistrationEnabled && nil != response && [response count] > 0 && [[[response objectAtIndex:0] objectForKey:@"registrationRequired"] boolValue]) {
+            [self showDeviceRegistrationDialog];
         }
         [asset dispose];
         NSLog(@"[Saltr] Dev feature Sync is complete.");
@@ -606,6 +601,11 @@ NSString* API_VERSION=@"1.0.0";
         SLTResource* resource = [[SLTResource alloc] initWithId:@"syncFeatures" andTicket:ticket successHandler:syncSuccessHandler errorHandler:syncFailHandler progressHandler:nil];
         [resource load];
     }
+}
+
+-(void) showDeviceRegistrationDialog
+{
+    [_dialogController showDeviceRegistrationDialog];
 }
 
 -(void) addDeviceToSaltrWithEmail:(NSString*)theEmail
