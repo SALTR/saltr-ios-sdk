@@ -1,5 +1,5 @@
 /*
- * @file Utils.h
+ * @file SLTStatusAppDataConcurrentLoadRefused.m
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -8,14 +8,14 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import <Foundation/Foundation.h>
+#import "SLTStatusAppDataConcurrentLoadRefused.h"
 
-@interface Utils : NSObject
+@implementation SLTStatusAppDataConcurrentLoadRefused
 
-/** Formats a String in .Net-style, with curly braces ("{0}"). Does not support any
- *  number formatting options yet. */
-+ (NSString*) formatString:(NSString*)theFormat args:(NSArray*)theArgs;
-
-+(BOOL) checkEmailValidation:(NSString*)theEmail;
+-(id) init
+{
+    self = [super initWithCode:CLIENT_APP_DATA_CONCURRENT_LOAD_REFUSED andMessage:@"[SALTR] appData load refused. Previous load is not complete"];
+    return self;
+}
 
 @end
