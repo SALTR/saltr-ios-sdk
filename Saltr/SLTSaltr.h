@@ -52,7 +52,7 @@ extern const NSString* API_VERSION;
 
 @property (nonatomic, assign, readwrite) bool devMode;
 
-@property (nonatomic, assign, readwrite) BOOL deviceRegistrationEnabled;
+@property (nonatomic, assign, readwrite) BOOL autoRegisterDevice;
 
 @property (nonatomic, assign, readwrite) NSInteger requestIdleTimeout;
 
@@ -90,9 +90,7 @@ extern const NSString* API_VERSION;
 
 - (void) connect;
 
-- (void) syncData;
-
-- (void) showDeviceRegistrationDialog;
+- (void) registerDevice;
 
 - (void) connectWithBasicProperties:(NSDictionary*)theBasicProperties;
 

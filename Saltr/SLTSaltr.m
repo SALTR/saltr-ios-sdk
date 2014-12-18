@@ -43,8 +43,9 @@ NSString* API_VERSION=@"1.0.0";
     BOOL _useNoFeatures;
     NSString* _levelType;
     bool _devMode;
-    BOOL _isDeviceRegistrationEnabled;
+    BOOL _autoRegisterDevice;
     BOOL _started;
+    BOOL _isSynced;
     NSInteger _requestIdleTimeout;
     NSMutableDictionary* _activeFeatures;
     NSMutableDictionary* _developerFeatures;
@@ -61,7 +62,7 @@ NSString* API_VERSION=@"1.0.0";
 @synthesize useNoLevels  = _useNoLevels;
 @synthesize useNoFeatures  = _useNoFeatures;
 @synthesize devMode  = _devMode;
-@synthesize deviceRegistrationEnabled  = _isDeviceRegistrationEnabled;
+@synthesize autoRegisterDevice  = _autoRegisterDevice;
 @synthesize requestIdleTimeout  = _requestIdleTimeout;
 @synthesize levelPacks  = _levelPacks;
 @synthesize experiments  = _experiments;
@@ -81,8 +82,9 @@ NSString* API_VERSION=@"1.0.0";
         _levelType = nil;
         
         _devMode = false;
-        _isDeviceRegistrationEnabled = YES;
+        _autoRegisterDevice = YES;
         _started = NO;
+        _isSynced = NO;
         _requestIdleTimeout = 0;
         
         _activeFeatures = [[NSMutableDictionary alloc] init];
@@ -199,7 +201,7 @@ NSString* API_VERSION=@"1.0.0";
         return;
     }
     
-    if (_started == false) {
+    if (NO == _started) {
         [_developerFeatures setObject:[[SLTFeature alloc] initWithToken:theToken properties:theProperties andRequired:theRequired] forKey:theToken];
     } else {
         NSException* exception = [NSException
@@ -452,8 +454,8 @@ NSString* API_VERSION=@"1.0.0";
 
 -(void) loadAppDataSuccessHandler:(NSDictionary *)response {
     
-    if(_devMode) {
-        [self syncData];
+    if(_devMode && !_isSynced) {
+        [self sync];
     }
     
     _levelType = [response objectForKey:@"levelType"];
@@ -520,7 +522,7 @@ NSString* API_VERSION=@"1.0.0";
     return ticket;
 }
 
--(void) syncData
+-(void) sync
 {
     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
     [args setObject:API_VERSION forKey:@"apiVersion"];
@@ -576,11 +578,25 @@ NSString* API_VERSION=@"1.0.0";
             return;
         }
         NSArray* response = [data objectForKey:@"response"];
-        if (_isDeviceRegistrationEnabled && nil != response && [response count] > 0 && [[[response objectAtIndex:0] objectForKey:@"registrationRequired"] boolValue]) {
-            [self showDeviceRegistrationDialog];
+        if(nil == response) {
+            NSLog(@"[Saltr] Dev feature Sync's response is null.");
+            return;
+        }
+        if([response count] <= 0) {
+            NSLog(@"[Saltr] Dev feature Sync response's length is <= 0.");
+            return;
+        }
+        
+        if ( NO == [[[response objectAtIndex:0] objectForKey:@"success"] boolValue]) {
+            NSDictionary* error = [[response objectAtIndex:0] objectForKey:@"error"];
+            if([[error objectForKey:@"code"] integerValue] == REGISTRATION_REQUIRED_ERROR_CODE) {
+                [self registerDevice];
+            }
+        } else {
+            _isSynced = YES;
+            NSLog(@"[Saltr] Dev feature Sync is complete.");
         }
         [asset dispose];
-        NSLog(@"[Saltr] Dev feature Sync is complete.");
     };
     void (^syncFailHandler)(SLTResource*) = ^(SLTResource* asset) {
         [asset dispose];
@@ -603,8 +619,15 @@ NSString* API_VERSION=@"1.0.0";
     }
 }
 
--(void) showDeviceRegistrationDialog
+-(void) registerDevice
 {
+    if(!_started) {
+        NSException* exception = [NSException
+                                  exceptionWithName:@"Exception"
+                                  reason:@"Method 'registerDevice()' should be called after 'start()' only."
+                                  userInfo:nil];
+        @throw exception;
+    }
     [_dialogController showDeviceRegistrationDialog];
 }
 
@@ -654,7 +677,9 @@ NSString* API_VERSION=@"1.0.0";
         NSArray* response = [data objectForKey:@"response"];
         if (nil != response && [response count] > 0) {
             NSDictionary* responseObject = [response objectAtIndex:0];
-            if (![[responseObject objectForKey:@"success"] boolValue]) {
+            if ([[responseObject objectForKey:@"success"] boolValue]) {
+                [self sync];
+            } else {
                 NSString* errorMessage = [[responseObject objectForKey:@"error"] objectForKey:@"message"];
                 [_dialogController showDeviceRegistrationFailStatus:errorMessage];
             }
