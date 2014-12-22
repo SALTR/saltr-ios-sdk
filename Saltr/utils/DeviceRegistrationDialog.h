@@ -39,6 +39,6 @@
 
 @interface DeviceRegistrationDialog : NSObject <DeviceRegistrationDialogProtocolDelegate>
 
-- (id) initWithUiViewController:(UIViewController*)uiViewController;
+//- (id) initWithUiViewController:(UIViewController*)uiViewController;
 
 @end

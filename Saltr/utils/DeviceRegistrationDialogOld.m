@@ -1,5 +1,5 @@
 /*
- * @file DeviceRegistrationDialogA.m
+ * @file DeviceRegistrationDialogOld.m
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -8,15 +8,15 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "DeviceRegistrationDialogA.h"
+#import "DeviceRegistrationDialogOld.h"
 
-@interface DeviceRegistrationDialogA () {
+@interface DeviceRegistrationDialogOld () {
     void (^_submitHandler)(NSString*);
 }
 
 @end
 
-@implementation DeviceRegistrationDialogA
+@implementation DeviceRegistrationDialogOld
 
 -(void) show
 {

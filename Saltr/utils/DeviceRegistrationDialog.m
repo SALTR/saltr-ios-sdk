@@ -12,6 +12,7 @@
 
 #import <UIKit/UIViewController.h>
 #import <UIKit/UIAlertController.h>
+#import <UIKit/UIWindow.h>
 
 @interface DeviceRegistrationDialog () {
     UIViewController* _uiViewController;
@@ -22,11 +23,11 @@
 
 @implementation DeviceRegistrationDialog
 
-- (id) initWithUiViewController:(UIViewController*)uiViewController
+- (id) init
 {
     self = [super init];
     if (self) {
-        _uiViewController = uiViewController;
+        _uiViewController = [[UIViewController alloc] init];
     }
     return self;
 }
@@ -56,8 +57,10 @@
     [alert addTextFieldWithConfigurationHandler:^(UITextField *textField) {
         textField.placeholder = DLG_PROMPT_EMAIL;
     }];
-    
-    [_uiViewController presentViewController:alert animated:YES completion:nil];
+
+    UIWindow* window =  [[[UIApplication sharedApplication] windows] lastObject];
+    [window.rootViewController addChildViewController:_uiViewController];
+    [_uiViewController presentViewController:alert animated:YES completion:^(void){[_uiViewController removeFromParentViewController];}];
 }
 
 -(void) setSubmitHandler:(void(^)(NSString*))theSubmitHandler

@@ -14,7 +14,7 @@
 
 @interface DialogController : NSObject
 
-- (id) initWithUiViewController:(UIViewController*)uiViewController andAddDeviceHandler:(void(^)(NSString*))addDeviceHandler;
+- (id) initWithAddDeviceHandler:(void(^)(NSString*))addDeviceHandler;
 
 - (void) showDeviceRegistrationDialog;
 

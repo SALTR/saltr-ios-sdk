@@ -1,5 +1,5 @@
 /*
- * @file AlertDialogA.m
+ * @file AlertDialogOld.m
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -8,15 +8,15 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "AlertDialogA.h"
+#import "AlertDialogOld.h"
 
-@interface AlertDialogA () {
+@interface AlertDialogOld () {
     void (^_okHandler)(void);
 }
 
 @end
 
-@implementation AlertDialogA
+@implementation AlertDialogOld
 
 -(void) show:(NSString*)theTitle andMessage:(NSString*)theMessage
 {

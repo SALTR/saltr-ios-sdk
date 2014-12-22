@@ -1,5 +1,5 @@
 /*
- * @file AlertDialogA.h
+ * @file AlertDialogOld.h
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -11,6 +11,6 @@
 #import "AlertDialog.h"
 #import <UIKit/UIAlertView.h>
 
-@interface AlertDialogA : NSObject <AlertDialogProtocolDelegate, UIAlertViewDelegate>
+@interface AlertDialogOld : NSObject <AlertDialogProtocolDelegate, UIAlertViewDelegate>
 
 @end

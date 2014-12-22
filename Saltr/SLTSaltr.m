@@ -34,7 +34,6 @@ NSString* CLIENT=@"IOS-Mobile";
 NSString* API_VERSION=@"1.0.0";
 
 @interface SLTSaltr() {
-    UIViewController* _uiViewController;
     NSString* _clientKey;
     NSString* _deviceId;
     BOOL _isLoading;
@@ -68,11 +67,10 @@ NSString* API_VERSION=@"1.0.0";
 @synthesize experiments  = _experiments;
 @synthesize socialId  = _socialId;
 
-- (id) initSaltrWithUiViewController:(UIViewController*)uiViewController clientKey:(NSString*)theClientKey deviceId:(NSString*)theDeviceId andCacheEnabled:(BOOL)theCacheEnabled
+- (id) initSaltrWithClientKey:(NSString*)theClientKey deviceId:(NSString*)theDeviceId andCacheEnabled:(BOOL)theCacheEnabled
 {
     self = [super init];
     if (self) {
-        _uiViewController = uiViewController;
         _clientKey = theClientKey;
         _deviceId = theDeviceId;
         _isLoading = NO;
@@ -96,7 +94,7 @@ NSString* API_VERSION=@"1.0.0";
             [self addDeviceToSaltrWithEmail:theEmail];
         };
         
-        _dialogController = [[DialogController alloc] initWithUiViewController:_uiViewController andAddDeviceHandler:addDeviceHandler];
+        _dialogController = [[DialogController alloc] initWithAddDeviceHandler:addDeviceHandler];
     }
     return self;
 }

@@ -10,9 +10,9 @@
 
 #import "DialogController.h"
 #import "DeviceRegistrationDialog.h"
-#import "DeviceRegistrationDialogA.h"
+#import "DeviceRegistrationDialogOld.h"
 #import "AlertDialog.h"
-#import "AlertDialogA.h"
+#import "AlertDialogOld.h"
 #import "Utils.h"
 #import <UIKit/UIViewController.h>
 
@@ -26,7 +26,7 @@
 
 @implementation DialogController
 
-- (id) initWithUiViewController:(UIViewController*)uiViewController andAddDeviceHandler:(void(^)(NSString*))addDeviceHandler
+- (id) initWithAddDeviceHandler:(void(^)(NSString*))addDeviceHandler
 {
     self = [super init];
     if (self) {
@@ -37,11 +37,11 @@
         _addDeviceHandler = addDeviceHandler;
         float systemVersion = [[[UIDevice currentDevice] systemVersion] floatValue];
         if (systemVersion >= 8.0) {
-            _deviceRegistrationDialog = [[DeviceRegistrationDialog alloc] initWithUiViewController:uiViewController];
-            _alertDialog = [[AlertDialog alloc] initWithUiViewController:uiViewController];
+            _deviceRegistrationDialog = [[DeviceRegistrationDialog alloc] init];
+            _alertDialog = [[AlertDialog alloc] init];
         } else {
-            _deviceRegistrationDialog = [[DeviceRegistrationDialogA alloc] init];
-            _alertDialog = [[AlertDialogA alloc] init];
+            _deviceRegistrationDialog = [[DeviceRegistrationDialogOld alloc] init];
+            _alertDialog = [[AlertDialogOld alloc] init];
         }
         [_deviceRegistrationDialog setSubmitHandler:devRegisterSubmitHandler];
     }

@@ -28,6 +28,4 @@
 
 @interface AlertDialog : NSObject <AlertDialogProtocolDelegate>
 
-- (id) initWithUiViewController:(UIViewController*)uiViewController;
-
 @end

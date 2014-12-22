@@ -69,7 +69,7 @@ extern const NSString* API_VERSION;
 /// The delegate of @b SaltrRequestDelegate protocol
 @property (nonatomic, assign) id <SaltrRequestDelegate> saltrRequestDelegate;
 
-- (id) initSaltrWithUiViewController:(UIViewController*)uiViewController clientKey:(NSString*)theClientKey deviceId:(NSString*)theDeviceId andCacheEnabled:(BOOL)theCacheEnabled;
+- (id) initSaltrWithClientKey:(NSString*)theClientKey deviceId:(NSString*)theDeviceId andCacheEnabled:(BOOL)theCacheEnabled;
 
 - (SLTLevel*) getLevelByGlobalIndex:(NSUInteger)theIndex;
 

@@ -1,5 +1,5 @@
 /*
- * @file DeviceRegistrationDialogA.h
+ * @file DeviceRegistrationDialogOld.h
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -11,6 +11,6 @@
 #import "DeviceRegistrationDialog.h"
 #import <UIKit/UIAlertView.h>
 
-@interface DeviceRegistrationDialogA : NSObject <DeviceRegistrationDialogProtocolDelegate, UIAlertViewDelegate>
+@interface DeviceRegistrationDialogOld : NSObject <DeviceRegistrationDialogProtocolDelegate, UIAlertViewDelegate>
 
 @end

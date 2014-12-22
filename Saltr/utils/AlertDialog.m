@@ -12,6 +12,7 @@
 
 #import <UIKit/UIViewController.h>
 #import <UIKit/UIAlertController.h>
+#import <UIKit/UIWindow.h>
 
 @interface AlertDialog () {
     UIViewController* _uiViewController;
@@ -22,11 +23,11 @@
 
 @implementation AlertDialog
 
-- (id) initWithUiViewController:(UIViewController*)uiViewController
+- (id) init
 {
     self = [super init];
     if (self) {
-        _uiViewController = uiViewController;
+        _uiViewController = [[UIViewController alloc] init];
     }
     return self;
 }
@@ -49,7 +50,9 @@
                                                    }];
     [alert addAction:ok];
     
-    [_uiViewController presentViewController:alert animated:YES completion:nil];
+    UIWindow* window =  [[[UIApplication sharedApplication] windows] lastObject];
+    [window.rootViewController addChildViewController:_uiViewController];
+    [_uiViewController presentViewController:alert animated:YES completion:^(void){[_uiViewController removeFromParentViewController];}];
 }
 
 - (void) show:(NSString*)theTitle message:(NSString*)theMessage andCallback:(void(^)(void))theCallback
