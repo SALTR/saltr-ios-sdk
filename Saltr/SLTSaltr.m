@@ -19,15 +19,21 @@
 #import "SLTResource.h"
 #import "SLTResourceURLTicket.h"
 #import "SLTStatusAppDataLoadFail.h"
+#import "SLTStatusAppDataConcurrentLoadRefused.h"
 #import "SLTStatusFeaturesParseError.h"
 #import "SLTStatusExperimentsParseError.h"
 #import "SLTStatusLevelsParseError.h"
 #import "SLTStatusLevelContentLoadFail.h"
 
-NSString* CLIENT=@"IOS-Mobile";
-NSString* API_VERSION=@"1.0.1";
+#import "DialogController.h"
+#import "DeviceRegistrationDialog.h"
 
-@interface SLTSaltr() {    
+#import <UIKit/UIViewController.h>
+
+NSString* CLIENT=@"IOS-Mobile";
+NSString* API_VERSION=@"1.0.0";
+
+@interface SLTSaltr() {
     NSString* _clientKey;
     NSString* _deviceId;
     BOOL _isLoading;
@@ -35,13 +41,16 @@ NSString* API_VERSION=@"1.0.1";
     BOOL _useNoLevels;
     BOOL _useNoFeatures;
     NSString* _levelType;
-    BOOL _devMode;
+    bool _devMode;
+    BOOL _autoRegisterDevice;
     BOOL _started;
+    BOOL _isSynced;
     NSInteger _requestIdleTimeout;
     NSMutableDictionary* _activeFeatures;
     NSMutableDictionary* _developerFeatures;
     NSObject<SLTRepositoryProtocolDelegate>* _repository;
     SLTDeserializer* _deserializer;
+    DialogController* _dialogController;
 }
 @end
 
@@ -52,6 +61,7 @@ NSString* API_VERSION=@"1.0.1";
 @synthesize useNoLevels  = _useNoLevels;
 @synthesize useNoFeatures  = _useNoFeatures;
 @synthesize devMode  = _devMode;
+@synthesize autoRegisterDevice  = _autoRegisterDevice;
 @synthesize requestIdleTimeout  = _requestIdleTimeout;
 @synthesize levelPacks  = _levelPacks;
 @synthesize experiments  = _experiments;
@@ -69,14 +79,22 @@ NSString* API_VERSION=@"1.0.1";
         _useNoFeatures = NO;
         _levelType = nil;
         
-        _devMode = NO;
+        _devMode = false;
+        _autoRegisterDevice = YES;
         _started = NO;
+        _isSynced = NO;
         _requestIdleTimeout = 0;
         
         _activeFeatures = [[NSMutableDictionary alloc] init];
         _developerFeatures = [[NSMutableDictionary alloc] init];
         _repository = theCacheEnabled ? [[SLTMobileRepository alloc] init] : [[SLTDummyRepository alloc] init];
         _deserializer = [[SLTDeserializer alloc] init];
+        
+        void (^addDeviceHandler)(NSString*) = ^(NSString* theEmail) {
+            [self addDeviceToSaltrWithEmail:theEmail];
+        };
+        
+        _dialogController = [[DialogController alloc] initWithAddDeviceHandler:addDeviceHandler];
     }
     return self;
 }
@@ -181,7 +199,7 @@ NSString* API_VERSION=@"1.0.1";
         return;
     }
     
-    if (_started == false) {
+    if (NO == _started) {
         [_developerFeatures setObject:[[SLTFeature alloc] initWithToken:theToken properties:theProperties andRequired:theRequired] forKey:theToken];
     } else {
         NSException* exception = [NSException
@@ -245,7 +263,15 @@ NSString* API_VERSION=@"1.0.1";
 
 - (void) connectWithBasicProperties:(NSDictionary *)theBasicProperties andCustomProperties:(NSDictionary*)theCustomProperties
 {
-    if (_isLoading || !_started) {
+    if(!_started) {
+        NSException* exception = [NSException
+                                  exceptionWithName:@"Exception"
+                                  reason:@"Method 'connect()' should be called after 'start()' only."
+                                  userInfo:nil];
+        @throw exception;
+    }
+    if (_isLoading) {
+        [self loadAppDataFailHandler:[[SLTStatusAppDataConcurrentLoadRefused alloc] init]];
         return;
     }
     
@@ -391,6 +417,8 @@ NSString* API_VERSION=@"1.0.1";
         @throw exception;
     }
     
+    [args setObject:[self devModeStringValue] forKey:@"devMode"];
+    
     //optional for Mobile
     if (nil != _socialId) {
         [args setObject:_socialId forKey:@"socialId"];
@@ -424,8 +452,8 @@ NSString* API_VERSION=@"1.0.1";
 
 -(void) loadAppDataSuccessHandler:(NSDictionary *)response {
     
-    if(_devMode) {
-        [self syncDeveloperFeatures];
+    if(_devMode && !_isSynced) {
+        [self sync];
     }
     
     _levelType = [response objectForKey:@"levelType"];
@@ -492,12 +520,13 @@ NSString* API_VERSION=@"1.0.1";
     return ticket;
 }
 
--(void) syncDeveloperFeatures
+-(void) sync
 {
     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
     [args setObject:API_VERSION forKey:@"apiVersion"];
     [args setObject:_clientKey forKey:@"clientKey"];
     [args setObject:CLIENT forKey:@"client"];
+    [args setObject:[self devModeStringValue] forKey:@"devMode"];
     
     //required for Mobile
     if (nil != _deviceId) {
@@ -540,8 +569,32 @@ NSString* API_VERSION=@"1.0.1";
                                                          error:&error];
     
     void (^syncSuccessHandler)(SLTResource*) = ^(SLTResource* asset) {
+        NSDictionary* data = [asset jsonData];
+        if(nil == data) {
+            NSLog(@"[Slatr Dev feature Sync's response.jsonData is nil.]");
+            [asset dispose];
+            return;
+        }
+        NSArray* response = [data objectForKey:@"response"];
+        if(nil == response) {
+            NSLog(@"[Saltr] Dev feature Sync's response is null.");
+            return;
+        }
+        if([response count] <= 0) {
+            NSLog(@"[Saltr] Dev feature Sync response's length is <= 0.");
+            return;
+        }
+        
+        if ( NO == [[[response objectAtIndex:0] objectForKey:@"success"] boolValue]) {
+            NSDictionary* error = [[response objectAtIndex:0] objectForKey:@"error"];
+            if([[error objectForKey:@"code"] integerValue] == REGISTRATION_REQUIRED_ERROR_CODE) {
+                [self registerDevice];
+            }
+        } else {
+            _isSynced = YES;
+            NSLog(@"[Saltr] Dev feature Sync is complete.");
+        }
         [asset dispose];
-        NSLog(@"[Saltr] Dev feature Sync is complete.");
     };
     void (^syncFailHandler)(SLTResource*) = ^(SLTResource* asset) {
         [asset dispose];
@@ -552,11 +605,104 @@ NSString* API_VERSION=@"1.0.1";
         NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
         jsonArguments = [jsonArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
         
-        NSString* urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@", ACTION_DEV_SYNC_FEATURES, ACTION_DEV_SYNC_FEATURES, jsonArguments];
+        NSString* urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@&devMode=%@", ACTION_DEV_SYNC_DATA, ACTION_DEV_SYNC_DATA, jsonArguments, [self devModeStringValue]];
+        if (nil != _deviceId) {
+            urlVars = [NSString stringWithFormat:@"?cmd=%@&action=%@&args=%@&devMode=%@&deviceId=%@", ACTION_DEV_SYNC_DATA, ACTION_DEV_SYNC_DATA, jsonArguments, [self devModeStringValue], _deviceId];
+        }
         
         SLTResourceURLTicket* ticket = [self getTicketWithUrl:SALTR_DEVAPI_URL urlVars:urlVars andTimeout:_requestIdleTimeout];
         
         SLTResource* resource = [[SLTResource alloc] initWithId:@"syncFeatures" andTicket:ticket successHandler:syncSuccessHandler errorHandler:syncFailHandler progressHandler:nil];
+        [resource load];
+    }
+}
+
+-(void) registerDevice
+{
+    if(!_started) {
+        NSException* exception = [NSException
+                                  exceptionWithName:@"Exception"
+                                  reason:@"Method 'registerDevice()' should be called after 'start()' only."
+                                  userInfo:nil];
+        @throw exception;
+    }
+    [_dialogController showDeviceRegistrationDialog];
+}
+
+-(void) addDeviceToSaltrWithEmail:(NSString*)theEmail
+{
+    NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
+    [args setObject:API_VERSION forKey:@"apiVersion"];
+    [args setObject:_clientKey forKey:@"clientKey"];
+    [args setObject:[self devModeStringValue] forKey:@"devMode"];
+    
+    //required for Mobile
+    if (nil != _deviceId) {
+        [args setObject:_deviceId forKey:@"id"];
+    } else {
+        NSException* exception = [NSException
+                                  exceptionWithName:@"Exception"
+                                  reason:@"Field 'deviceId' is a required."
+                                  userInfo:nil];
+        @throw exception;
+    }
+    
+    if (nil != theEmail) {
+        [args setObject:theEmail forKey:@"email"];
+    } else {
+        NSException* exception = [NSException
+                                  exceptionWithName:@"Exception"
+                                  reason:@"Field 'email' is a required."
+                                  userInfo:nil];
+        @throw exception;
+    }
+    
+    [args setObject:[[UIDevice currentDevice] model] forKey:@"source"];
+    [args setObject:[NSString stringWithFormat:@"%@%@", @"iOS ", [[UIDevice currentDevice] systemVersion]] forKey:@"os"];
+    
+    NSError* error = nil;
+    NSData *jsonData = [NSJSONSerialization dataWithJSONObject:args
+                                                       options:NSJSONWritingPrettyPrinted
+                                                         error:&error];
+    
+    void (^addDeviceSucessedHandler)(SLTResource*) = ^(SLTResource* asset) {
+        NSDictionary* data = [asset jsonData];
+        if(nil == data) {
+            NSLog(@"[Slatr adding new device response jsonData is nil.]");
+            [asset dispose];
+            return;
+        }
+        NSArray* response = [data objectForKey:@"response"];
+        if (nil != response && [response count] > 0) {
+            NSDictionary* responseObject = [response objectAtIndex:0];
+            if ([[responseObject objectForKey:@"success"] boolValue]) {
+                [self sync];
+            } else {
+                NSString* errorMessage = [[responseObject objectForKey:@"error"] objectForKey:@"message"];
+                [_dialogController showDeviceRegistrationFailStatus:errorMessage];
+            }
+        } else {
+            [_dialogController showDeviceRegistrationFailStatus:DLG_SUBMIT_FAILED];
+        }
+        [asset dispose];
+        NSLog(@"[Saltr] Dev adding new device is complete.");
+    };
+    
+    void (^addDeviceFailedHandler)(SLTResource*) = ^(SLTResource* asset) {
+        [asset dispose];
+        NSLog(@"[Saltr] Dev adding new device has failed.");
+        [_dialogController showDeviceRegistrationFailStatus:DLG_SUBMIT_FAILED];
+    };
+    
+    if (!error) {
+        NSString *jsonArguments = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        jsonArguments = [jsonArguments stringByReplacingPercentEscapesUsingEncoding:NSUTF8StringEncoding];
+        
+        NSString* urlVars = [NSString stringWithFormat:@"?action=%@&args=%@&devMode=%@&id=%@", ACTION_DEV_REGISTER_DEVICE, jsonArguments, [self devModeStringValue], _deviceId];
+        
+        SLTResourceURLTicket* ticket = [self getTicketWithUrl:SALTR_DEVAPI_URL urlVars:urlVars andTimeout:_requestIdleTimeout];
+        
+        SLTResource* resource = [[SLTResource alloc] initWithId:@"addDevice" andTicket:ticket successHandler:addDeviceSucessedHandler errorHandler:addDeviceFailedHandler progressHandler:nil];
         [resource load];
     }
 }
@@ -600,8 +746,16 @@ NSString* API_VERSION=@"1.0.1";
 -(void) loadLevelContentFromSaltr:(SLTLevel*)level
 {
     NSInteger timeInterval = [NSDate timeIntervalSinceReferenceDate] * 1000;
-    NSString* url = [level.contentUrl stringByAppendingFormat:@"?_time_=%d", timeInterval];
+    NSString* url = [level.contentUrl stringByAppendingFormat:@"?_time_=%li", timeInterval];
     SLTResourceURLTicket* ticket = [self getTicketWithUrl:url urlVars:nil andTimeout:_requestIdleTimeout];
+    
+    void (^loadInternally)(NSDictionary*) = ^(NSDictionary* contentData) {
+        if (contentData) {
+            [self levelContentLoadSuccessHandler:level data:contentData];
+        } else {
+            [self levelContentLoadFailHandler:[[SLTStatusLevelContentLoadFail alloc] init]];
+        }
+    };
     
     void (^loadFromSaltrSuccessCallback)(SLTResource *) = ^(SLTResource * resource) {
         NSDictionary* contentData = resource.jsonData;
@@ -611,17 +765,14 @@ NSString* API_VERSION=@"1.0.1";
             contentData = [self loadLevelContentInternally:level];
         }
         
-        if (contentData) {
-            [self levelContentLoadSuccessHandler:level data:contentData];
-        } else {
-            [self levelContentLoadFailHandler:[[SLTStatusLevelContentLoadFail alloc] init]];
-        }
+        loadInternally(contentData);
         [resource dispose];
         
     };
+    
     void (^loadFromSaltrFailCallback)(SLTResource *) = ^(SLTResource * resource) {
         NSDictionary* contentData = [self loadLevelContentInternally:level];
-        [self levelContentLoadSuccessHandler:level data:contentData];
+        loadInternally(contentData);
         [resource dispose];
         
     };
@@ -640,6 +791,11 @@ NSString* API_VERSION=@"1.0.1";
 {
     NSString* cachedFileName = LOCAL_LEVEL_CONTENT_CACHE_URL_TEMPLATE((long)level.packIndex, (long)level.localIndex);
     [_repository cacheObject:cachedFileName version:level.version object:contentData];
+}
+
+-(NSString*) devModeStringValue
+{
+    return _devMode ? @"true" : @"false";
 }
 
 @end

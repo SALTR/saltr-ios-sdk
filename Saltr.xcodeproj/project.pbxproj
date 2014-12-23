@@ -10,6 +10,8 @@
 		8016D48C19916B50006943F5 /* SLTBasicProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8016D48B19916B50006943F5 /* SLTBasicProperties.m */; };
 		80509E8A19B5ABC600ABF65E /* SLTMobileRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 80509E8919B5ABC600ABF65E /* SLTMobileRepository.m */; };
 		80509E8D19B5ABDE00ABF65E /* SLTDummyRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 80509E8C19B5ABDE00ABF65E /* SLTDummyRepository.m */; };
+		805A4AC41A2609F700676C44 /* DialogController.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A4AC31A2609F700676C44 /* DialogController.m */; };
+		805A4AC71A2613C800676C44 /* DeviceRegistrationDialogOld.m in Sources */ = {isa = PBXBuildFile; fileRef = 805A4AC61A2613C800676C44 /* DeviceRegistrationDialogOld.m */; };
 		8081219119B6FEF50013266B /* HTTPStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8081219019B6FEF50013266B /* HTTPStatus.m */; };
 		8081219419B727EA0013266B /* Utils.m in Sources */ = {isa = PBXBuildFile; fileRef = 8081219319B727EA0013266B /* Utils.m */; };
 		8087E47B19B89474002F3568 /* SLTStatus.m in Sources */ = {isa = PBXBuildFile; fileRef = 8087E47A19B89474002F3568 /* SLTStatus.m */; };
@@ -21,7 +23,11 @@
 		8087E48D19B8990B002F3568 /* SLTStatusLevelsParserMissing.m in Sources */ = {isa = PBXBuildFile; fileRef = 8087E48C19B8990B002F3568 /* SLTStatusLevelsParserMissing.m */; };
 		808D40FB19B36A5B00BC8FCD /* SLTSaltr.m in Sources */ = {isa = PBXBuildFile; fileRef = 808D40FA19B36A5B00BC8FCD /* SLTSaltr.m */; };
 		80A6640219C33A2500783206 /* SLTMatchingLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80A6640119C33A2500783206 /* SLTMatchingLevelParser.m */; };
+		80B14DCA1A38560A008F726A /* AlertDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B14DC91A38560A008F726A /* AlertDialog.m */; };
+		80B14DCD1A385864008F726A /* AlertDialogOld.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B14DCC1A385864008F726A /* AlertDialogOld.m */; };
 		80B281E81997C85D00504D63 /* SLT2DLevelParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 80B281E71997C85D00504D63 /* SLT2DLevelParser.m */; };
+		80C5C3BE1A1F6A8500639860 /* SLTStatusAppDataConcurrentLoadRefused.m in Sources */ = {isa = PBXBuildFile; fileRef = 80C5C3BD1A1F6A8500639860 /* SLTStatusAppDataConcurrentLoadRefused.m */; };
+		80E4C1FF1A24B26C00BC7D30 /* DeviceRegistrationDialog.m in Sources */ = {isa = PBXBuildFile; fileRef = 80E4C1FE1A24B26C00BC7D30 /* DeviceRegistrationDialog.m */; };
 		80F370561993F7EF000522F7 /* SLT2DAssetInstance.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F370551993F7EF000522F7 /* SLT2DAssetInstance.m */; };
 		80F370591994035C000522F7 /* SLT2DAssetState.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F370581994035C000522F7 /* SLT2DAssetState.m */; };
 		80F3705C19940657000522F7 /* SLT2DBoard.m in Sources */ = {isa = PBXBuildFile; fileRef = 80F3705B19940657000522F7 /* SLT2DBoard.m */; };
@@ -45,7 +51,7 @@
 		CA1FC20918B3B8D600E92A06 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20818B3B8D600E92A06 /* XCTest.framework */; };
 		CA1FC20A18B3B8D600E92A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
 		CA1FC20C18B3B8D600E92A06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20B18B3B8D600E92A06 /* UIKit.framework */; };
-		CA1FC20F18B3B8D600E92A06 /* libSaltr.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1F718B3B8D600E92A06 /* libSaltr.a */; };
+		CA1FC20F18B3B8D600E92A06 /* libSaltr.v.1.3.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.1.a */; };
 		CA1FC21518B3B8D600E92A06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA1FC21318B3B8D600E92A06 /* InfoPlist.strings */; };
 		CA1FC21718B3B8D600E92A06 /* SLTSaltrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC21618B3B8D600E92A06 /* SLTSaltrTests.m */; };
 		CA1FC22C18B3C33200E92A06 /* SLTDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC22B18B3C33200E92A06 /* SLTDeserializer.m */; };
@@ -90,6 +96,10 @@
 		80509E8919B5ABC600ABF65E /* SLTMobileRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTMobileRepository.m; sourceTree = "<group>"; };
 		80509E8B19B5ABDE00ABF65E /* SLTDummyRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTDummyRepository.h; sourceTree = "<group>"; };
 		80509E8C19B5ABDE00ABF65E /* SLTDummyRepository.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTDummyRepository.m; sourceTree = "<group>"; };
+		805A4AC21A2609F700676C44 /* DialogController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DialogController.h; sourceTree = "<group>"; };
+		805A4AC31A2609F700676C44 /* DialogController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DialogController.m; sourceTree = "<group>"; };
+		805A4AC51A2613C800676C44 /* DeviceRegistrationDialogOld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceRegistrationDialogOld.h; sourceTree = "<group>"; };
+		805A4AC61A2613C800676C44 /* DeviceRegistrationDialogOld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceRegistrationDialogOld.m; sourceTree = "<group>"; };
 		8081218F19B6FEF50013266B /* HTTPStatus.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPStatus.h; sourceTree = "<group>"; };
 		8081219019B6FEF50013266B /* HTTPStatus.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPStatus.m; sourceTree = "<group>"; };
 		8081219219B727EA0013266B /* Utils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utils.h; sourceTree = "<group>"; };
@@ -112,8 +122,16 @@
 		808D40FA19B36A5B00BC8FCD /* SLTSaltr.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTSaltr.m; sourceTree = "<group>"; };
 		80A6640019C33A2500783206 /* SLTMatchingLevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTMatchingLevelParser.h; sourceTree = "<group>"; };
 		80A6640119C33A2500783206 /* SLTMatchingLevelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTMatchingLevelParser.m; sourceTree = "<group>"; };
+		80B14DC81A38560A008F726A /* AlertDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertDialog.h; sourceTree = "<group>"; };
+		80B14DC91A38560A008F726A /* AlertDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertDialog.m; sourceTree = "<group>"; };
+		80B14DCB1A385864008F726A /* AlertDialogOld.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlertDialogOld.h; sourceTree = "<group>"; };
+		80B14DCC1A385864008F726A /* AlertDialogOld.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlertDialogOld.m; sourceTree = "<group>"; };
 		80B281E61997C85D00504D63 /* SLT2DLevelParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLT2DLevelParser.h; sourceTree = "<group>"; };
 		80B281E71997C85D00504D63 /* SLT2DLevelParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLT2DLevelParser.m; sourceTree = "<group>"; };
+		80C5C3BC1A1F6A8500639860 /* SLTStatusAppDataConcurrentLoadRefused.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTStatusAppDataConcurrentLoadRefused.h; sourceTree = "<group>"; };
+		80C5C3BD1A1F6A8500639860 /* SLTStatusAppDataConcurrentLoadRefused.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTStatusAppDataConcurrentLoadRefused.m; sourceTree = "<group>"; };
+		80E4C1FD1A24B26C00BC7D30 /* DeviceRegistrationDialog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DeviceRegistrationDialog.h; sourceTree = "<group>"; };
+		80E4C1FE1A24B26C00BC7D30 /* DeviceRegistrationDialog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DeviceRegistrationDialog.m; sourceTree = "<group>"; };
 		80F370541993F7EF000522F7 /* SLT2DAssetInstance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLT2DAssetInstance.h; sourceTree = "<group>"; };
 		80F370551993F7EF000522F7 /* SLT2DAssetInstance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLT2DAssetInstance.m; sourceTree = "<group>"; };
 		80F370571994035C000522F7 /* SLT2DAssetState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLT2DAssetState.h; sourceTree = "<group>"; };
@@ -152,7 +170,7 @@
 		98D715C8197291D100502350 /* SLTCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCells.m; sourceTree = "<group>"; };
 		98D715CA1972A1A600502350 /* SLTCellsIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTCellsIterator.h; sourceTree = "<group>"; };
 		98D715CB1972A1A600502350 /* SLTCellsIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCellsIterator.m; sourceTree = "<group>"; };
-		CA1FC1F718B3B8D600E92A06 /* libSaltr.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.v.1.3.1.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA1FC1FE18B3B8D600E92A06 /* Saltr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saltr-Prefix.pch"; sourceTree = "<group>"; };
 		CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaltrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,7 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA1FC20918B3B8D600E92A06 /* XCTest.framework in Frameworks */,
-				CA1FC20F18B3B8D600E92A06 /* libSaltr.a in Frameworks */,
+				CA1FC20F18B3B8D600E92A06 /* libSaltr.v.1.3.1.a in Frameworks */,
 				CA1FC20C18B3B8D600E92A06 /* UIKit.framework in Frameworks */,
 				CA1FC20A18B3B8D600E92A06 /* Foundation.framework in Frameworks */,
 			);
@@ -218,6 +236,16 @@
 				8081219019B6FEF50013266B /* HTTPStatus.m */,
 				8081219219B727EA0013266B /* Utils.h */,
 				8081219319B727EA0013266B /* Utils.m */,
+				80E4C1FD1A24B26C00BC7D30 /* DeviceRegistrationDialog.h */,
+				80E4C1FE1A24B26C00BC7D30 /* DeviceRegistrationDialog.m */,
+				805A4AC21A2609F700676C44 /* DialogController.h */,
+				805A4AC31A2609F700676C44 /* DialogController.m */,
+				805A4AC51A2613C800676C44 /* DeviceRegistrationDialogOld.h */,
+				805A4AC61A2613C800676C44 /* DeviceRegistrationDialogOld.m */,
+				80B14DC81A38560A008F726A /* AlertDialog.h */,
+				80B14DC91A38560A008F726A /* AlertDialog.m */,
+				80B14DCB1A385864008F726A /* AlertDialogOld.h */,
+				80B14DCC1A385864008F726A /* AlertDialogOld.m */,
 			);
 			path = utils;
 			sourceTree = "<group>";
@@ -239,6 +267,8 @@
 				8087E48919B898C8002F3568 /* SLTStatusLevelsParseError.m */,
 				8087E48B19B8990B002F3568 /* SLTStatusLevelsParserMissing.h */,
 				8087E48C19B8990B002F3568 /* SLTStatusLevelsParserMissing.m */,
+				80C5C3BC1A1F6A8500639860 /* SLTStatusAppDataConcurrentLoadRefused.h */,
+				80C5C3BD1A1F6A8500639860 /* SLTStatusAppDataConcurrentLoadRefused.m */,
 			);
 			path = status;
 			sourceTree = "<group>";
@@ -322,7 +352,7 @@
 		CA1FC1F818B3B8D600E92A06 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CA1FC1F718B3B8D600E92A06 /* libSaltr.a */,
+				CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.1.a */,
 				CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */,
 				CDD7408E18BFC0FA00F2306D /* Saltr.bundle */,
 			);
@@ -449,7 +479,7 @@
 			);
 			name = Saltr;
 			productName = Saltr;
-			productReference = CA1FC1F718B3B8D600E92A06 /* libSaltr.a */;
+			productReference = CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.1.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		CA1FC20618B3B8D600E92A06 /* SaltrTests */ = {
@@ -567,6 +597,7 @@
 				8087E48719B89881002F3568 /* SLTStatusLevelContentLoadFail.m in Sources */,
 				982C55F3197166F100DC99B1 /* SLTLevelParser.m in Sources */,
 				8087E48419B8982D002F3568 /* SLTStatusFeaturesParseError.m in Sources */,
+				80B14DCD1A385864008F726A /* AlertDialogOld.m in Sources */,
 				CA1FC23218B3C35000E92A06 /* SLTExperiment.m in Sources */,
 				982C55EB19714C5100DC99B1 /* SLTAssetInstance.m in Sources */,
 				989CC4D719746A04008DC08F /* SLTChunkAssetRule.m in Sources */,
@@ -576,6 +607,7 @@
 				982C55F019714CC200DC99B1 /* SLTCell.m in Sources */,
 				CA1FC23518B3C36100E92A06 /* SLTFeature.m in Sources */,
 				98D715C9197291D100502350 /* SLTCells.m in Sources */,
+				80E4C1FF1A24B26C00BC7D30 /* DeviceRegistrationDialog.m in Sources */,
 				989CC4D419745F82008DC08F /* SLTMatchingBoardLayer.m in Sources */,
 				80F3705F1994099B000522F7 /* SLT2DBoardLayer.m in Sources */,
 				982C55EA19714C5100DC99B1 /* SLTAsset.m in Sources */,
@@ -585,6 +617,7 @@
 				80509E8A19B5ABC600ABF65E /* SLTMobileRepository.m in Sources */,
 				98D715C61972849500502350 /* SLTLevelPack.m in Sources */,
 				98D715C319727CD600502350 /* SLTBoardLayer.m in Sources */,
+				80C5C3BE1A1F6A8500639860 /* SLTStatusAppDataConcurrentLoadRefused.m in Sources */,
 				80A6640219C33A2500783206 /* SLTMatchingLevelParser.m in Sources */,
 				982C55EC19714C5100DC99B1 /* SLTAssetState.m in Sources */,
 				989CC4DA19746CCB008DC08F /* SLTMatchingBoard.m in Sources */,
@@ -597,9 +630,12 @@
 				80F370561993F7EF000522F7 /* SLT2DAssetInstance.m in Sources */,
 				808D40FB19B36A5B00BC8FCD /* SLTSaltr.m in Sources */,
 				CDACAC1418E0A10700021EFA /* SLTResource.m in Sources */,
+				805A4AC41A2609F700676C44 /* DialogController.m in Sources */,
 				982C55F919719F1E00DC99B1 /* SLTLevel.m in Sources */,
 				8087E48119B897E4002F3568 /* SLTStatusExperimentsParseError.m in Sources */,
+				805A4AC71A2613C800676C44 /* DeviceRegistrationDialogOld.m in Sources */,
 				8081219419B727EA0013266B /* Utils.m in Sources */,
+				80B14DCA1A38560A008F726A /* AlertDialog.m in Sources */,
 				8087E48A19B898C8002F3568 /* SLTStatusLevelsParseError.m in Sources */,
 				8087E47B19B89474002F3568 /* SLTStatus.m in Sources */,
 				80B281E81997C85D00504D63 /* SLT2DLevelParser.m in Sources */,
@@ -730,7 +766,7 @@
 				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = Saltr;
+				PRODUCT_NAME = Saltr.v.1.3.1;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -746,7 +782,7 @@
 				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = Saltr;
+				PRODUCT_NAME = Saltr.v.1.3.1;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";

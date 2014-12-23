@@ -12,6 +12,8 @@
 
 #import "SLTMobileRepository.h"
 
+@class UIViewController;
+
 @class SLTLevel;
 @class SLTLevelPack;
 @class SLTStatus;
@@ -48,7 +50,9 @@ extern const NSString* API_VERSION;
 
 @property (nonatomic, assign, readwrite) BOOL useNoFeatures;
 
-@property (nonatomic, assign, readwrite) BOOL devMode;
+@property (nonatomic, assign, readwrite) bool devMode;
+
+@property (nonatomic, assign, readwrite) BOOL autoRegisterDevice;
 
 @property (nonatomic, assign, readwrite) NSInteger requestIdleTimeout;
 
@@ -85,6 +89,8 @@ extern const NSString* API_VERSION;
 - (void) start;
 
 - (void) connect;
+
+- (void) registerDevice;
 
 - (void) connectWithBasicProperties:(NSDictionary*)theBasicProperties;
 

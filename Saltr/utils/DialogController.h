@@ -1,5 +1,5 @@
 /*
- * @file Utils.h
+ * @file DialogController.h
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -10,12 +10,18 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Utils : NSObject
+@class UIViewController;
 
-/** Formats a String in .Net-style, with curly braces ("{0}"). Does not support any
- *  number formatting options yet. */
-+ (NSString*) formatString:(NSString*)theFormat args:(NSArray*)theArgs;
+@interface DialogController : NSObject
 
-+(BOOL) checkEmailValidation:(NSString*)theEmail;
+- (id) initWithAddDeviceHandler:(void(^)(NSString*))addDeviceHandler;
+
+- (void) showDeviceRegistrationDialog;
+
+- (void) showAlertDialogWithTitile:(NSString*)theTitle andMessage:(NSString*)theMessage;
+
+- (void) showAlertDialogWithTitile:(NSString*)theTitle message:(NSString*)theMessage andCallback:(void(^)(void))theCallback;
+
+- (void) showDeviceRegistrationFailStatus:(NSString*)theStatus;
 
 @end

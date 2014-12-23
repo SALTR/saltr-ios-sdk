@@ -1,5 +1,5 @@
 /*
- * @file Utils.h
+ * @file AlertDialogOld.h
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -8,14 +8,9 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import <Foundation/Foundation.h>
+#import "AlertDialog.h"
+#import <UIKit/UIAlertView.h>
 
-@interface Utils : NSObject
-
-/** Formats a String in .Net-style, with curly braces ("{0}"). Does not support any
- *  number formatting options yet. */
-+ (NSString*) formatString:(NSString*)theFormat args:(NSArray*)theArgs;
-
-+(BOOL) checkEmailValidation:(NSString*)theEmail;
+@interface AlertDialogOld : NSObject <AlertDialogProtocolDelegate, UIAlertViewDelegate>
 
 @end

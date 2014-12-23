@@ -39,7 +39,7 @@
         _followRedirects = YES;
         _manageCookies = YES;
         _useCache = YES;
-        _idleTimeout = 0;
+        _idleTimeout = 3000;
         _method = @"GET";
         _checkPolicy = NO;
         _maxAttemps = 3;

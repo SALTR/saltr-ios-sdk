@@ -1,5 +1,5 @@
 /*
- * @file Utils.h
+ * @file AlertDialog.h
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -10,12 +10,22 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Utils : NSObject
+#define DLG_ALERT_DEVICE_REGISTRATION_TITLE @"Device Registration"
+#define DLG_ALERT_BUTTON_OK @"Ok"
 
-/** Formats a String in .Net-style, with curly braces ("{0}"). Does not support any
- *  number formatting options yet. */
-+ (NSString*) formatString:(NSString*)theFormat args:(NSArray*)theArgs;
+/// Protocol
+@protocol AlertDialogProtocolDelegate <NSObject>
 
-+(BOOL) checkEmailValidation:(NSString*)theEmail;
+@required
+
+- (void) show:(NSString*)theTitle andMessage:(NSString*)theMessage;
+
+- (void) show:(NSString*)theTitle message:(NSString*)theMessage andCallback:(void(^)(void))theCallback;
+
+@end
+
+@class UIViewController;
+
+@interface AlertDialog : NSObject <AlertDialogProtocolDelegate>
 
 @end
