@@ -94,7 +94,7 @@
 
 - (void)generateAssetInstancesByRatio:(NSMutableArray*)ratioChunkAssetRules
 {
-    NSUInteger ratioSum = 0;
+    float ratioSum = 0;
     NSInteger len = [ratioChunkAssetRules count];
     SLTChunkAssetRule* assetRule;
     for(NSInteger i = 0; i<len; ++i) {
