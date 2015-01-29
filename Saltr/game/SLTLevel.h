@@ -47,6 +47,9 @@
 /// </summary>
 @interface SLTLevel : NSObject <SLTLevelDelegate>
 
+/// The variation identifier of the level.
+@property (nonatomic, strong, readonly) NSString* variationId;
+
 /// The global index of the level.
 @property (nonatomic, assign, readonly) NSInteger index;
 
@@ -68,11 +71,11 @@
 /// The index of the pack the level is in.
 @property (nonatomic, assign, readonly) NSInteger packIndex;
 
-//TODO: tigr missing variationID filed and getter method
 /**
  * @brief Inits instance of @b SLTLevel class with the given id, index, localIndex, packIndex, dataUrl, properties and version
  *
  * @param theId The identifier of the level.
+ * @param theVariationId The variation identifier of the level.
  * @param theLevelType The type of the level.
  * @param theIndex The global index of the level.
  * @param theLocalIndex The local index of the level in the pack.
@@ -82,7 +85,7 @@
  * @param theVersion The current version of the level.
  * @return The instance of @b SLTLevel class.
  */
--(id) initWithLevelId:(NSString*)theId levelType:(NSString*)theLevelType index:(NSInteger)theIndex localIndex:(NSInteger)theLocalIndex packIndex:(NSInteger)thePackIndex contentUrl:(NSString*)theContentUrl properties:(id)theProperties andVersion:(NSString*)theVersion;
+-(id) initWithLevelId:(NSString*)theId variationId:(NSString*)theVariationId levelType:(NSString*)theLevelType index:(NSInteger)theIndex localIndex:(NSInteger)theLocalIndex packIndex:(NSInteger)thePackIndex contentUrl:(NSString*)theContentUrl properties:(id)theProperties andVersion:(NSString*)theVersion;
 
 /**
  * Gets the board by identifier.

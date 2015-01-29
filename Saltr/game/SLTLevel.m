@@ -24,6 +24,7 @@
 
 @implementation SLTLevel
 
+@synthesize variationId = _variationId;
 @synthesize index = _index;
 @synthesize properties = _properties;
 @synthesize contentUrl = _contentUrl;
@@ -33,11 +34,12 @@
 @synthesize packIndex = _packIndex;
 
 ///@todo It should be nice to have validation for the values of parameters.
--(id) initWithLevelId:(NSString*)theId levelType:(NSString*)theLevelType index:(NSInteger)theIndex localIndex:(NSInteger)theLocalIndex packIndex:(NSInteger)thePackIndex contentUrl:(NSString*)theContentUrl properties:(id)theProperties andVersion:(NSString*)theVersion
+-(id) initWithLevelId:(NSString*)theId variationId:(NSString*)theVariationId levelType:(NSString*)theLevelType index:(NSInteger)theIndex localIndex:(NSInteger)theLocalIndex packIndex:(NSInteger)thePackIndex contentUrl:(NSString*)theContentUrl properties:(id)theProperties andVersion:(NSString*)theVersion
 {
     self = [super init];
     if (self) {
         _id = theId;
+        _variationId = theVariationId;
         _levelType = theLevelType;
         _index = theIndex;
         _localIndex = theLocalIndex;
