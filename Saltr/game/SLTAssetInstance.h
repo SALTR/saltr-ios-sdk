@@ -10,60 +10,28 @@
 
 #import <Foundation/Foundation.h>
 
-/**
- * @brief This is public interface of @b SLTAssetInstance class.
- * 
- * An instance of this class holds basic asset data (type, keys) and also value of state.
- *
- * As an example, asset data with state info from the JSON looks like :
- * {
- *  "assetStates": {
- *          "534": "state1",
- *          "535": "state2"
- *  },
- *  ...
- *  "boards": {
- *      "main": {
- *          ...
- *       }
- *   }
- *  "assets": {
- *      "2835": {
- *          "keys": {
- *                  "COLOR": 1,
- *                  "CARD_SUIT": 1,
- *                  "CARD_VALUE": 1
- *                  },
- *          "states": [
- *                       534,
- *                       535
- *
- *                     ],
- *          "type_key": "normal"
- *
- *       },
- *  }
- * }
- */
-
+/// <summary>
+/// The SLTAssetInstance class represents the game asset instance placed on board.
+/// It holds the unique identifier of the asset and current instance related states and properties.
+/// </summary>
 @interface SLTAssetInstance : NSObject
 
-/// the token
+/// The unique identifier of the asset.
 @property (nonatomic, strong, readonly) NSString* token;
 
-/// the states
+/// The current instance states.
 @property (nonatomic, strong, readonly) NSMutableArray* states;
 
-/// the properties
+/// The current instance properties.
 @property (nonatomic, strong, readonly) NSDictionary* properties;
 
 /**
- * @brief Inits an instance of @b SLTAssetInstance class with the given token, states and properties
+ * @brief Inits an instance of @b SLTAssetInstance class with the given token, states and properties.
  *
- * @param theToken - the token
- * @param theStates - the states
- * @param theProperties - the properties
- * @return - The instance of @b SLTAssetInstance class
+ * @param theToken The unique identifier of the asset.
+ * @param theStates The current instance states.
+ * @param theProperties The current instance properties.
+ * @return The instance of @b SLTAssetInstance class.
  */
 - (id)initWithToken:(NSString *)theToken states:(NSMutableArray *)theStates andProperties:(NSDictionary *)theProperties;
 

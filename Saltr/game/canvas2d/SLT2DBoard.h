@@ -10,22 +10,25 @@
 
 #import "SLTBoard.h"
 
+/// <summary>
+/// The SLT2DBoard class represents the 2D game board.
+/// </summary>
 @interface SLT2DBoard : SLTBoard
 
-/// The width.
+/// The width of the board in pixels as is in Saltr level editor.
 @property (nonatomic, strong, readonly) NSNumber* width;
 
-/// The height.
+/// The height of the board in pixels as is in Saltr level editor.
 @property (nonatomic, strong, readonly) NSNumber* height;
 
 /**
- * @brief Inits an instance of @b SLT2DBoard class with the given width, height, layers and properties
+ * @brief Inits an instance of @b SLT2DBoard class with the given width, height, layers and properties.
  *
- * @param theWidth - the width
- * @param theHeight - the height
- * @param theLayers - the layers
- * @param theProperties - the properties
- * @return - The instance of @b SLT2DBoard class
+ * @param theWidth The width of the board in pixels as is in Saltr level editor.
+ * @param theHeight The height of the board in pixels as is in Saltr level editor.
+ * @param theLayers The layers of the board.
+ * @param theProperties The board associated properties.
+ * @return The instance of @b SLT2DBoard class.
  */
 - (id) initWithWidth:(NSNumber * )theWidth theHeight:(NSNumber *)theHeight layers:(NSMutableArray*)theLayers andProperties:(NSDictionary*)theProperties;
 

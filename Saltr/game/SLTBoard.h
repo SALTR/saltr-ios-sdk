@@ -10,14 +10,27 @@
 
 #import <Foundation/Foundation.h>
 
+/// <summary>
+/// The SLTBoard class represents the game board.
+/// </summary>
 @interface SLTBoard : NSObject
 
+/// The layers of the board.
 @property (nonatomic, strong, readonly) NSMutableArray* layers;
 
+/// The board associated properties.
 @property (nonatomic, strong, readonly) NSDictionary* properties;
 
+/**
+ * @brief Inits an instance of @b SLTBoard class with the given layers and properties.
+ *
+ * @param theLayers The layers of the board.
+ * @param theProperties The board associated properties.
+ * @return The instance of @b SLTBoard class.
+ */
 - (id) initWithLayers:(NSMutableArray*)theLayers andProperties:(NSDictionary*)theProperties;
 
+/// Regenerates the content of all layers.
 - (void) regenerate;
 
 @end

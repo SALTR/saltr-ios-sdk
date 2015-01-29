@@ -12,14 +12,28 @@
 
 @class SLTCells;
 
+/// <summary>
+/// The SLTMatchingBoard class represents the matching game board.
+/// </summary>
 @interface SLTMatchingBoard : SLTBoard
 
+/// The cells of the board.
 @property(nonatomic, strong, readonly) SLTCells* cells;
 
+/// The number of rows.
 @property(nonatomic, assign, readonly) NSInteger rows;
 
+/// The number of columns.
 @property(nonatomic, assign, readonly) NSInteger cols;
 
+/**
+ * @brief Inits an instance of @b SLTMatchingBoard class with the given cells, layers and properties.
+ *
+ * @param theCells The cells of the board.
+ * @param theLayers The layers of the board.
+ * @param theProperties The board associated properties.
+ * @return @return The instance of @b SLTMatchingBoard class.
+ */
 -(id) initWithCells:(SLTCells*)theCells layers:(NSMutableArray *)theLayers andProperties:(NSDictionary *)theProperties;
 
 @end

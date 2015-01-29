@@ -19,12 +19,23 @@
 
 @end
 
+/// <summary>
+/// The SLTBoardLayer class represents the game board's layer.
+/// </summary>
 @interface SLTBoardLayer : NSObject <SLTBoardLayerDelegate>
 
+/// The unique identifier of the layer.
 @property (nonatomic, strong, readonly) NSString* token;
 
+/// The layer's ordering index.
 @property (nonatomic, assign, readonly) NSInteger index;
 
+/**
+ * Inits an instance of @b SLTBoardLayer class with the given token and layer index.
+ * @param theToken The unique identifier of the layer.
+ * @param theLayerIndex The layer's ordering index.
+ * @return The instance of @b SLTBoardLayer class.
+ */
 -(id) initWithToken:(NSString*)theToken andLayerIndex:(NSInteger)theLayerIndex;
 
 @end

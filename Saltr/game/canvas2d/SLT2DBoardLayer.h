@@ -12,19 +12,26 @@
 
 @class SLT2DAssetInstance;
 
+/// <summary>
+/// The SLT2DBoardLayer class represents the game 2D board's layer.
+/// </summary>
 @interface SLT2DBoardLayer : SLTBoardLayer
 
-/// the asset instances
+/// The asset instances of the layer.
 @property (nonatomic, strong, readonly) NSMutableArray* assetInstances;
 
+//TODO:TIGR check theToken param (should be layerId)
+
 /**
- * @brief Inits an instance of @b SLT2DBoardLayer class with the given layer id and layer index
+ * @brief Inits an instance of @b SLT2DBoardLayer class with the given layer id and layer index.
  *
- * @param token - the token
- * @param theLayerIndex - the layer index
- * @return - The instance of @b SLT2DBoardLayer class
+ * @param theToken The token
+ * @param theLayerIndex The layer's ordering index.
+ * @return The instance of @b SLT2DBoardLayer class.
  */
 -(id) initWithToken:(NSString*)theToken andLayerIndex:(NSInteger)theLayerIndex;
+
+//TODO:TIGR assAssetInstance should be not visible
 
 /**
  * @brief Add SLT2DAssetInstance class instance

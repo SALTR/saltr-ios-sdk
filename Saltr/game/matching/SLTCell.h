@@ -12,77 +12,61 @@
 
 @class SLTAssetInstance;
 
-/**
- * @brief This is the public interface for @b SLTCell class.
- *
- * The instance of this class is the single cell of baord matrix.
- * In general it holds an instance of @b SLTAssetInstance class or an instance of its derived @b SLTCompositeInstance class.
- *
- * The cell data is being collected from composite and asset data of JSON:
- *
- * {
- *  "assetStates": {
- *          "534": "state1",
- *          "535": "state2"
- *  },
- *  ...
- *  "boards": {
- *      "main": {
- *             "composites": [ {
- *                      "assetId": 2839,
- *                      "position": [0, 10]
- *                  } ],
- *              "chunks": [ {
- *                       "chunkId": 1,
- *                       "assets": [{
- *                          "assetId": "2836",
- *                          "count": 0,
- *                          "stateId": 534
- *                      },...],
- *                      "cells": [[ 9, 5 ], [ 10, 5 ],..]
- *               }],
- *              "blockedCells": [[ 3, 1], [4,1]],
- *              "properties": {
- *                  "cell" : [{...}]
- *               }
- *       }
- *   }
- *  "assets": {
- *      "2835": {...
- *       },
- *  }
- * }
- */
-
+/// <summary>
+/// The SLTCell class represents the matching board cell.
+/// </summary>
 @interface SLTCell : NSObject
 
-/// The column of the cell in board matrix
+/// The column of the cell.
 @property (nonatomic, assign, readwrite) NSUInteger col;
 
-/// The row of the cell in board matrix
+/// The row of the cell.
 @property (nonatomic, assign, readwrite) NSUInteger row;
 
-/// Shows whether the cell is blocked
+/// The blocked state of the cell.
 @property (nonatomic, assign, readwrite) BOOL isBlocked;
 
-/// The properties of the cell
+/// The properties of the cell.
 @property (nonatomic, strong, readwrite) NSDictionary* properties;
 
 /**
- * @brief Inits an instance of @b SLTCell class with the given X and Y coordinates
+ * @brief Inits an instance of @b SLTCell class with the given column and row.
  *
- * @param col - the column of cell
- * @param row - the row of cell
- * @return - The instance of @b SLTCell class
+ * @param col The column of the cell.
+ * @param row The row of the cell.
+ * @return The instance of @b SLTCell class.
  */
 -(id) initWithCol:(NSInteger)col andRow:(NSInteger)row;
 
+/**
+ * Returns the asset instance by layer identifier.
+ * @param layerId The layer identifier.
+ * @return SLTAssetInstance The asset instance that is positioned in the cell in the layer specified by layerId.
+ */
 -(SLTAssetInstance*) getAssetInstanceByLayerId:(NSString*)layerId;
 
+/**
+ * Returns the asset instance by layer index.
+ * @param layerIndex The layer index.
+ * @return SLTAssetInstance The asset instance that is positioned in the cell in the layer specified by layerIndex.
+ */
 -(SLTAssetInstance*) getAssetInstanceByLayerIndex:(NSInteger)layerIndex;
 
+//TODO: TIGR the function below need to be private
+/**
+ * Sets the asset instance with provided layer identifier and layer index.
+ * @param theLayerId The layer identifier.
+ * @param theLayerIndex The layer index.
+ * @param theAssetInstance The asset instance.
+ */
 -(void) setAssetInstanceByLayerId:(NSString*)theLayerId layerIndex:(NSInteger)theLayerIndex andAssetInstance:(SLTAssetInstance*)theAssetInstance;
 
+//TODO: TIGR the function below need to be private
+/**
+ * Removes the asset instance with provided layer identifier and layer index.
+ * @param theLayerId The layer identifier.
+ * @param theLayerIndex The layer index.
+ */
 -(void) removeAssetInstanceByLayerId:(NSString*)theLayerId andLayerIndex:(NSInteger)theLayerIndex;
 
 @end

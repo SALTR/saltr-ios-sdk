@@ -16,50 +16,53 @@
 @required
 
 /**
- * @brief Gets the object from the file system
- * @param fileName - the name of file to be obtained
- * @return - the obtained file
+ * @brief Provides an object from storage.
+ * @param fileName The name of the object.
+ * @return The requested object.
  */
 -(NSDictionary *) objectFromStorage:(NSString *)fileName;
 
 /**
- * @brief Gets the object from the cache
- * @param fileName - the name of file to be obtained
- * @return - the obtained file
+ * @brief Provides an object from cache.
+ * @param fileName The name of the object.
+ * @return The requested object.
  */
 -(NSDictionary *) objectFromCache:(NSString *)fileName;
 
 /**
- * @brief Gets the version of object
- * @param fileName - the filename of obtaining object
- * @return - object version
+ * @brief Provides the object's version.
+ * @param fileName The name of the object.
+ * @return The version of the requested object.
  */
 -(NSString *) objectVersion:(NSString *)fileName;
 
 /**
- * @brief Saves the given object into the file system
- * @param fileName - the name of caching object
- * @param object - the object to be cached
+ * @brief Stores an object.
+ * @param fileName The name of the object.
+ * @param object The object to store.
  */
 -(void) saveObject:(NSString *)fileName objectToSave:(NSDictionary *)object;
 
 /**
- * @brief Caches the given object
- * @param fileName - the name of caching object
- * @param version - the version of caching object
- * @param object - the object to be cached
+ * @brief Caches an object.
+ * @param fileName The name of the object.
+ * @param version The version of the object.
+ * @param object The object to store.
  */
 -(void) cacheObject:(NSString *)fileName version:(NSString *)version object:(NSDictionary *)object;
 
 /**
- * @brief Gets the object from the application
- * @param fileName - the name of file to be obtained
- * @return - the obtained file
+ * @brief Provides an object from application.
+ * @param fileName The name of the object.
+ * @return The requested object.
  */
 -(NSDictionary *) objectFromApplication:(NSString *)fileName;
 
 @end
 
+/// <summary>
+/// The SLTMobileRepository class represents the mobile repository.
+/// </summary>
 @interface SLTMobileRepository : NSObject  <SLTRepositoryProtocolDelegate>
 
 @end

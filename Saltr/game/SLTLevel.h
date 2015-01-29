@@ -10,8 +10,19 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Specifies that there is no level specified for the game.
+ */
 #define LEVEL_TYPE_NONE @"noLevels"
+
+/**
+ * Specifies the level type for matching game.
+ */
 #define LEVEL_TYPE_MATCHING @"matching"
+
+/**
+ * Specifies the level type for Canvas2D game.
+ */
 #define LEVEL_TYPE_2DCANVAS @"canvas2D"
 
 @class SLTLevelParser;
@@ -22,74 +33,78 @@
 
 @required
 
+/**
+ * Provides the level parser for the given level type.
+ * @param levelType The type of the level.
+ * @return SLTLevelParser The level type corresponding level parser.
+ */
 -(SLTLevelParser*) getParser:(NSString*)levelType;
 
 @end
 
-/**
- * The public interface of game @b SLTLevel class.
- */
+/// <summary>
+/// The SLTLevel class represents the game's level.
+/// </summary>
 @interface SLTLevel : NSObject <SLTLevelDelegate>
 
-/// The global index of level
+/// The global index of the level.
 @property (nonatomic, assign, readonly) NSInteger index;
 
-/// The properties of level
+/// The properties of the level.
 @property (nonatomic, strong, readonly) NSDictionary* properties;
 
-/// The url of level json content on the server
+/// The content URL of the level.
 @property (nonatomic, strong, readonly) NSString* contentUrl;
 
-/// This property shows where the data is parsed and corresponding objects hierarchy is created/initialized with the JSON content
+/// The content ready state.
 @property (nonatomic, assign, readonly) BOOL contentReady;
 
-/// The version of level
+/// The current version of the level.
 @property (nonatomic, strong, readonly) NSString* version;
 
-/// The local index of level
+/// The local index of the level in the pack.
 @property (nonatomic, assign, readonly) NSInteger localIndex;
 
-/// The index of level pack
+/// The index of the pack the level is in.
 @property (nonatomic, assign, readonly) NSInteger packIndex;
 
+//TODO: tigr missing variationID filed and getter method
 /**
  * @brief Inits instance of @b SLTLevel class with the given id, index, localIndex, packIndex, dataUrl, properties and version
  *
- * @param theId - id of level
- * @param theIndex - global index of level
- * @param theLocalIndex - local index of level
- * @param thePackIndex - index of level pack
- * @param theContentDataUrl - url of level json data on the server
- * @param theProperties - properties of level get from JSON
- * @param theVersion - the version of level
- * @return - The instance of @b SLTLevel class
+ * @param theId The identifier of the level.
+ * @param theLevelType The type of the level.
+ * @param theIndex The global index of the level.
+ * @param theLocalIndex The local index of the level in the pack.
+ * @param thePackIndex The index of the pack the level is in.
+ * @param theContentUrl The content URL of the level.
+ * @param theProperties The properties of the level.
+ * @param theVersion The current version of the level.
+ * @return The instance of @b SLTLevel class.
  */
 -(id) initWithLevelId:(NSString*)theId levelType:(NSString*)theLevelType index:(NSInteger)theIndex localIndex:(NSInteger)theLocalIndex packIndex:(NSInteger)thePackIndex contentUrl:(NSString*)theContentUrl properties:(id)theProperties andVersion:(NSString*)theVersion;
 
 /**
- * @brief Returns the @b SLTLevelBoard object from the available boards
- *
- * @param boardId - The ID of board, which object user needs to get
- * @return - The @b SLTBoard object that corresponds to boardId
+ * Gets the board by identifier.
+ * @param boardId The board identifier.
+ * @return SLTBoard The board with provided identifier.
  */
 - (SLTBoard*)boardWithId:(NSString*)boardId;
 
 /**
- * @brief Parses the given data and generates the corresponding object hierarchy filling the parsed information there.
- *
- * @param theRootNode - The root dictionary correspoding to level JSON data
+ * Updates the content of the level.
+ * @param theRootNode The root dictionary correspoding to level JSON data.
  */
 - (void)updateContent:(NSDictionary*)theRootNode;
 
 /**
- * @brief Generates all boards for the @b SLTLevel
+ * Regenerates contents of all boards.
  */
 - (void)regenerateAllBoards;
 
 /**
- * @brief Generates the boards of @b SLTLevel with the given boardId.
- *
- * @param boardId - The ID of board
+ * Regenerates content of the board by identifier.
+ * @param boardId The board identifier.
  */
 - (void)regenerateBoardWithId:(NSString*)boardId;
 
