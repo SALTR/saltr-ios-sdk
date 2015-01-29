@@ -20,12 +20,10 @@
 /// The asset instances of the layer.
 @property (nonatomic, strong, readonly) NSMutableArray* assetInstances;
 
-//TODO:TIGR check theToken param (should be layerId)
-
 /**
  * @brief Inits an instance of @b SLT2DBoardLayer class with the given layer id and layer index.
  *
- * @param theToken The token
+ * @param theToken The unique identifier of the layer.
  * @param theLayerIndex The layer's ordering index.
  * @return The instance of @b SLT2DBoardLayer class.
  */
