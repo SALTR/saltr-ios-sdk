@@ -10,35 +10,41 @@
 
 #import <Foundation/Foundation.h>
 
+/**
+ * Specifies the Feature type for the experiment.
+ */
 #define SPLIT_TEST_TYPE_FEATURE @"FEATURE"
-#define SPLIT_TEST_TYPE_LEVEL_PACK @"LEVEL_PACK"
 
 /**
- * The public interface of game @b SLTExperiment class.
+ * Specifies the LevelPack type for the experiment.
  */
+#define SPLIT_TEST_TYPE_LEVEL_PACK @"LEVEL_PACK"
+
+/// <summary>
+/// The SLTExperiment class provides the currently running experiment data.
+/// It is possible to A/B test any feature included in the game AND/OR different levels, level packs.
+/// </summary>
 @interface SLTExperiment : NSObject
 
-/// Partition of experiment
+/// The letter of the partition in which the user included in (A, B, C, etc.).
 @property (nonatomic, strong) NSString* partition;
 
-/// Token of experiment
+/// The unique identifier of the experiment.
 @property (nonatomic, strong) NSString* token;
 
-/// Type of experiment
+/// The type of the experiment (Feature or LevelPack).
 @property (nonatomic, strong) NSString* type;
 
-/// Custom events of experiment.
-///@todo At this moment this property is unused.
+/// The array of comma separated event names for which A/B test data should be send.
 @property (nonatomic, strong) NSArray* customEvents;
 
 /**
- * @brief Inits the instance of @b SLTExperiment class with the token, partition and type
+ * @brief Inits the instance of @b SLTExperiment class with the token, partition, type and custom events.
  *
- * @param theToken - token of experiment
- * @param thePartition - partition of experiment
- * @param theType - type of experiment
- * @param theCustomEvents - custom events
- * @return - The instance of @b SLTExperiment class
+ * @param theToken The unique identifier of the experiment.
+ * @param thePartition The letter of the partition in which the user included in (A, B, C, etc.).
+ * @param theType The type of the experiment (Feature or LevelPack).
+ * @param theCustomEvents The array of comma separated event names for which A/B test data should be send.
  */
 - (id)initWithToken:(NSString*)theToken partition:(NSString*)thePartition type:(NSString*)theType andCustomEvents:(NSArray*)theCustomEvents;
 

@@ -10,6 +10,9 @@
 
 #import "SLTStatus.h"
 
+/// <summary>
+/// The SLTStatusFeaturesParseError class represents the client features parse error status.
+/// </summary>
 @interface SLTStatusFeaturesParseError : SLTStatus
 
 @end

@@ -10,6 +10,9 @@
 
 #import "SLTStatus.h"
 
+/// <summary>
+/// SLTStatusExperimentsParseError class represents the client experiments parse error status.
+/// </summary>
 @interface SLTStatusExperimentsParseError : SLTStatus
 
 @end

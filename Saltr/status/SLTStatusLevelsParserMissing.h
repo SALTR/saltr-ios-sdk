@@ -10,6 +10,9 @@
 
 #import "SLTStatus.h"
 
+/// <summary>
+/// The SLTStatusLevelsParserMissing class represents the client levels parse error.
+/// </summary>
 @interface SLTStatusLevelsParserMissing : SLTStatus
 
 @end

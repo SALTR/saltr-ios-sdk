@@ -10,18 +10,27 @@
 
 #import <Foundation/Foundation.h>
 
+/// <summary>
+/// The SLTAssetState class represents the asset state and provides the state related properties.
+/// </summary>
 @interface SLTAssetState : NSObject
 
 /**
- * The token.
+ * The unique identifier of the state.
  */
 @property (nonatomic, strong, readonly) NSString* token;
 
 /**
- * The properties.
+ * The properties of the state.
  */
 @property (nonatomic, strong, readonly) NSDictionary* properties;
 
+/**
+ * @brief Inits an instance of @b SLTAssetState class with the given token and properties.
+ *
+ * @param theToken The unique identifier of the state.
+ * @param theProperties The current state related properties.
+ */
 - (id)initWithToken:(NSString*)theToken andProperties:(NSDictionary*)theProperties;
 
 @end

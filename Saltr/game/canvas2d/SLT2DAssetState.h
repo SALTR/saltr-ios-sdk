@@ -10,12 +10,15 @@
 
 #import "SLTAssetState.h"
 
+/// <summary>
+/// The SLT2DAssetState class represents the 2D asset state and provides the state related properties.
+/// </summary>
 @interface SLT2DAssetState : SLTAssetState
 
-/// The pivot x.
+/// The X coordinate of the pivot relative to the top left corner, in pixels.
 @property (nonatomic, strong, readonly) NSNumber* pivotX;
 
-/// The pivot y.
+/// The Y coordinate of the pivot relative to the top left corner, in pixels.
 @property (nonatomic, strong, readonly) NSNumber* pivotY;
 
 /**
@@ -26,6 +29,15 @@
  * @param thePivotX - the pivotX
  * @param thePivotY - the pivotY
  * @return - The instance of @b SLT2DAssetState class
+ */
+
+/**
+ * @brief Inits an instance of @b SLT2DAssetState class with the given token, properties, pivotX and pivotY
+ *
+ * @param theToken The unique identifier of the state.
+ * @param theProperties The current state related properties.
+ * @param thePivotX The X coordinate of the pivot relative to the top left corner, in pixels.
+ * @param thePivotY The Y coordinate of the pivot relative to the top left corner, in pixels.
  */
 - (id)initWithToken:(NSString*)theToken properties:(NSDictionary*)theProperties pivotX:(NSNumber *)thePivotX andPivotY:(NSNumber *)thePivotY;
 

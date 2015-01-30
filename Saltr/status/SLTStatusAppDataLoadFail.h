@@ -10,6 +10,9 @@
 
 #import "SLTStatus.h"
 
+/// <summary>
+/// The SLTStatusAppDataLoadFail class represents the client app data load fail status.
+/// </summary>
 @interface SLTStatusAppDataLoadFail : SLTStatus
 
 @end

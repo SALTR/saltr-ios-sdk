@@ -12,6 +12,9 @@
 
 #import "SLTMobileRepository.h"
 
+/// <summary>
+/// The SLTDummyRepository class represents the dummy repository.
+/// </summary>
 @interface SLTDummyRepository : NSObject <SLTRepositoryProtocolDelegate>
 
 @end

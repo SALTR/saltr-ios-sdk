@@ -10,6 +10,9 @@
 
 #import "SLTStatus.h"
 
+/// <summary>
+/// The SLTStatusLevelContentLoadFail class represents the client level content load fail status.
+/// </summary>
 @interface SLTStatusLevelContentLoadFail : SLTStatus
 
 @end

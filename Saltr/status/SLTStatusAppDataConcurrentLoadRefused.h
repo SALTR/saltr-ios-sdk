@@ -10,6 +10,9 @@
 
 #import "SLTStatus.h"
 
+/// <summary>
+/// The SLTStatusAppDataConcurrentLoadRefused class represents the client app data concurrent load refused status.
+/// </summary>
 @interface SLTStatusAppDataConcurrentLoadRefused : SLTStatus
 
 @end

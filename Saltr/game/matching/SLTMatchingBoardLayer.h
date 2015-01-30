@@ -12,9 +12,18 @@
 
 @class SLTChunk;
 
+/// <summary>
+/// The SLTMatchingBoardLayer class represents the matching board.
+/// </summary>
 @interface SLTMatchingBoardLayer : SLTBoardLayer
 
--(id)initWithToken:(NSString*)theLayerId andLayerIndex:(NSInteger)theLayerIndex;;
+/**
+ * @brief Inits an instance of @b SLTMatchingBoardLayer class with the given identifier and index.
+ *
+ * @param theLayerId The layer's identifier.
+ * @param theLayerIndex The layer's index.
+ */
+-(id)initWithToken:(NSString*)theLayerId andLayerIndex:(NSInteger)theLayerIndex;
 
 - (void)regenerate;
 

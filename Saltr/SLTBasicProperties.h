@@ -10,12 +10,19 @@
 
 #import <Foundation/Foundation.h>
 
+/// <summary>
+/// The SLTBasicProperties class represents the basic user properties.
+/// This information is useful for analytics and statistics.
+/// </summary>
 @interface SLTBasicProperties : NSObject
 
-/// The age
+/// The age of the user.
 @property (nonatomic, assign, readwrite) NSUInteger age;
 
-/// The gender "F", "M", "female", "male"
+/**
+ * The gender information of the user.
+ * Possible values are "f" (female) and "m" (male)
+ */
 @property (nonatomic, strong, readwrite) NSString* gender;
 
 /// The name of the OS the current device is running. E.g. iPhone OS.
