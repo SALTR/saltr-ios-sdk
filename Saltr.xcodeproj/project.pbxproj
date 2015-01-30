@@ -20,6 +20,21 @@
 		1D084F331A766D3A0050F348 /* SLTAssetInstance.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 982C55E619714C5100DC99B1 /* SLTAssetInstance.h */; };
 		1D084F341A766D650050F348 /* SLTBoard.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98D715BE1972772E00502350 /* SLTBoard.h */; };
 		1D084F351A766D700050F348 /* SLTBoardLayer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98D715C119727CD600502350 /* SLTBoardLayer.h */; };
+		1D2228641A7B66C9009E41AE /* SLTBasicProperties.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8016D48A19916B50006943F5 /* SLTBasicProperties.h */; };
+		1D2228651A7B6725009E41AE /* SLTExperiment.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC23018B3C35000E92A06 /* SLTExperiment.h */; };
+		1D2228661A7B6A8C009E41AE /* SLTAssetState.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 982C55E819714C5100DC99B1 /* SLTAssetState.h */; };
+		1D2228671A7B6AF8009E41AE /* SLT2DAssetState.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80F370571994035C000522F7 /* SLT2DAssetState.h */; };
+		1D2228681A7B6B52009E41AE /* SLTCellsIterator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98D715CA1972A1A600502350 /* SLTCellsIterator.h */; };
+		1D2228691A7B6BAE009E41AE /* SLTMatchingBoardLayer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 989CC4D219745F82008DC08F /* SLTMatchingBoardLayer.h */; };
+		1D22286A1A7B6C17009E41AE /* SLTDummyRepository.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80509E8B19B5ABDE00ABF65E /* SLTDummyRepository.h */; };
+		1D22286B1A7B6CB9009E41AE /* SLTStatus.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E47919B89474002F3568 /* SLTStatus.h */; };
+		1D22286C1A7B6CB9009E41AE /* SLTStatusAppDataLoadFail.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E47C19B896BC002F3568 /* SLTStatusAppDataLoadFail.h */; };
+		1D22286D1A7B6CB9009E41AE /* SLTStatusExperimentsParseError.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E47F19B897E4002F3568 /* SLTStatusExperimentsParseError.h */; };
+		1D22286E1A7B6CB9009E41AE /* SLTStatusFeaturesParseError.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E48219B8982D002F3568 /* SLTStatusFeaturesParseError.h */; };
+		1D22286F1A7B6CB9009E41AE /* SLTStatusLevelContentLoadFail.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E48519B89881002F3568 /* SLTStatusLevelContentLoadFail.h */; };
+		1D2228701A7B6CB9009E41AE /* SLTStatusLevelsParseError.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E48819B898C8002F3568 /* SLTStatusLevelsParseError.h */; };
+		1D2228711A7B6CB9009E41AE /* SLTStatusLevelsParserMissing.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E48B19B8990B002F3568 /* SLTStatusLevelsParserMissing.h */; };
+		1D2228721A7B6CB9009E41AE /* SLTStatusAppDataConcurrentLoadRefused.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80C5C3BC1A1F6A8500639860 /* SLTStatusAppDataConcurrentLoadRefused.h */; };
 		8016D48C19916B50006943F5 /* SLTBasicProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8016D48B19916B50006943F5 /* SLTBasicProperties.m */; };
 		80509E8A19B5ABC600ABF65E /* SLTMobileRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 80509E8919B5ABC600ABF65E /* SLTMobileRepository.m */; };
 		80509E8D19B5ABDE00ABF65E /* SLTDummyRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 80509E8C19B5ABDE00ABF65E /* SLTDummyRepository.m */; };
@@ -77,6 +92,21 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
+				1D22286B1A7B6CB9009E41AE /* SLTStatus.h in CopyFiles */,
+				1D22286C1A7B6CB9009E41AE /* SLTStatusAppDataLoadFail.h in CopyFiles */,
+				1D22286D1A7B6CB9009E41AE /* SLTStatusExperimentsParseError.h in CopyFiles */,
+				1D22286E1A7B6CB9009E41AE /* SLTStatusFeaturesParseError.h in CopyFiles */,
+				1D22286F1A7B6CB9009E41AE /* SLTStatusLevelContentLoadFail.h in CopyFiles */,
+				1D2228701A7B6CB9009E41AE /* SLTStatusLevelsParseError.h in CopyFiles */,
+				1D2228711A7B6CB9009E41AE /* SLTStatusLevelsParserMissing.h in CopyFiles */,
+				1D2228721A7B6CB9009E41AE /* SLTStatusAppDataConcurrentLoadRefused.h in CopyFiles */,
+				1D22286A1A7B6C17009E41AE /* SLTDummyRepository.h in CopyFiles */,
+				1D2228691A7B6BAE009E41AE /* SLTMatchingBoardLayer.h in CopyFiles */,
+				1D2228681A7B6B52009E41AE /* SLTCellsIterator.h in CopyFiles */,
+				1D2228671A7B6AF8009E41AE /* SLT2DAssetState.h in CopyFiles */,
+				1D2228661A7B6A8C009E41AE /* SLTAssetState.h in CopyFiles */,
+				1D2228651A7B6725009E41AE /* SLTExperiment.h in CopyFiles */,
+				1D2228641A7B66C9009E41AE /* SLTBasicProperties.h in CopyFiles */,
 				1D084F351A766D700050F348 /* SLTBoardLayer.h in CopyFiles */,
 				1D084F341A766D650050F348 /* SLTBoard.h in CopyFiles */,
 				1D084F331A766D3A0050F348 /* SLTAssetInstance.h in CopyFiles */,
