@@ -11,7 +11,7 @@
 #import "SLTMatchingLevelParser.h"
 #import "SLTMatchingBoard.h"
 #import "SLTCells.h"
-#import "SLTMatchingBoardLayer.h"
+#import "SLTMatchingBoardLayer_private.h"
 #import "SLTCell.h"
 #import "SLTAsset.h"
 #import "SLTAssetInstance.h"

@@ -1,5 +1,5 @@
 /*
- * @file SLTMatchingBoardLayer.h
+ * @file
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -10,19 +10,8 @@
 
 #import "SLTBoardLayer.h"
 
-@class SLTChunk;
+@interface SLTBoardLayer()
 
-/// <summary>
-/// The SLTMatchingBoardLayer class represents the matching board.
-/// </summary>
-@interface SLTMatchingBoardLayer : SLTBoardLayer
-
-/**
- * @brief Inits an instance of @b SLTMatchingBoardLayer class with the given identifier and index.
- *
- * @param theLayerId The layer's identifier.
- * @param theLayerIndex The layer's index.
- */
--(id)initWithToken:(NSString*)theLayerId andLayerIndex:(NSInteger)theLayerIndex;
+-(void) regenerate;
 
 @end

@@ -10,19 +10,10 @@
 
 #import <Foundation/Foundation.h>
 
-/// Protocol
-@protocol SLTBoardLayerDelegate <NSObject>
-
-@required
-
--(void) regenerate;
-
-@end
-
 /// <summary>
 /// The SLTBoardLayer class represents the game board's layer.
 /// </summary>
-@interface SLTBoardLayer : NSObject <SLTBoardLayerDelegate>
+@interface SLTBoardLayer : NSObject
 
 /// The unique identifier of the layer.
 @property (nonatomic, strong, readonly) NSString* token;

@@ -126,6 +126,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D2228741A7F9862009E41AE /* SLTBoardLayer_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTBoardLayer_Private.h; sourceTree = "<group>"; };
+		1D2228771A7FA660009E41AE /* SLT2DBoardLayer_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLT2DBoardLayer_Private.h; sourceTree = "<group>"; };
+		1D2228781A7FA67B009E41AE /* SLTMatchingBoardLayer_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTMatchingBoardLayer_Private.h; sourceTree = "<group>"; };
 		8016D48A19916B50006943F5 /* SLTBasicProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTBasicProperties.h; sourceTree = "<group>"; };
 		8016D48B19916B50006943F5 /* SLTBasicProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTBasicProperties.m; sourceTree = "<group>"; };
 		80509E8819B5ABC600ABF65E /* SLTMobileRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTMobileRepository.h; sourceTree = "<group>"; };
@@ -253,6 +256,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D2228731A7F62CE009E41AE /* private */ = {
+			isa = PBXGroup;
+			children = (
+				1D2228741A7F9862009E41AE /* SLTBoardLayer_Private.h */,
+				1D2228771A7FA660009E41AE /* SLT2DBoardLayer_Private.h */,
+				1D2228781A7FA67B009E41AE /* SLTMatchingBoardLayer_Private.h */,
+			);
+			path = private;
+			sourceTree = "<group>";
+		};
 		8081218D19B6F35F0013266B /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -397,6 +410,7 @@
 		CA1FC1FC18B3B8D600E92A06 /* Saltr */ = {
 			isa = PBXGroup;
 			children = (
+				1D2228731A7F62CE009E41AE /* private */,
 				982C55E319714C5100DC99B1 /* game */,
 				CA1FC24018B3C3A300E92A06 /* repository */,
 				CA1FC24118B3C3C300E92A06 /* resource */,

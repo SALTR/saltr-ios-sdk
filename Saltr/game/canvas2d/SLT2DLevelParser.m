@@ -11,7 +11,7 @@
 
 #import "SLT2DLevelParser.h"
 #import "SLT2DBoard.h"
-#import "SLT2DBoardLayer.h"
+#import "SLT2DBoardLayer_Private.h"
 #import "SLTAsset.h"
 #import "SLT2DAssetInstance.h"
 

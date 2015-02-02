@@ -1,5 +1,5 @@
 /*
- * @file SLTBoardLayer.m
+ * @file
  * Saltr
  *
  * Copyright Teoken LLC. (c) 2014. All rights reserved.
@@ -8,26 +8,10 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "SLTBoardLayer_Private.h"
+#import "SLTMatchingBoardLayer.h"
 
-@implementation SLTBoardLayer
+@interface SLTMatchingBoardLayer()
 
-@synthesize token = _token;
-@synthesize index = _index;
-
--(id) initWithToken:(NSString*)theToken andLayerIndex:(NSInteger)theLayerIndex
-{
-    self = [super init];
-    if (self) {
-        _token = theToken;
-        _index = theLayerIndex;
-    }
-    return self;
-}
-
--(void) regenerate
-{
-    //override
-}
+- (void)addChunk:(SLTChunk*)chunk;
 
 @end

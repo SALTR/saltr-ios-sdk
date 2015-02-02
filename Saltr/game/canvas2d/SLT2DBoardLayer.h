@@ -29,13 +29,4 @@
  */
 -(id) initWithToken:(NSString*)theToken andLayerIndex:(NSInteger)theLayerIndex;
 
-//TODO:TIGR assAssetInstance should be not visible
-
-/**
- * @brief Add SLT2DAssetInstance class instance
- *
- * @param theAssetInstance - the SLT2DAssetInstance instance
- */
--(void) addAssetInstance:(SLT2DAssetInstance *)theAssetInstance;
-
 @end
