@@ -52,21 +52,4 @@
  */
 -(SLTAssetInstance*) getAssetInstanceByLayerIndex:(NSInteger)layerIndex;
 
-//TODO: TIGR the function below need to be private
-/**
- * Sets the asset instance with provided layer identifier and layer index.
- * @param theLayerId The layer identifier.
- * @param theLayerIndex The layer index.
- * @param theAssetInstance The asset instance.
- */
--(void) setAssetInstanceByLayerId:(NSString*)theLayerId layerIndex:(NSInteger)theLayerIndex andAssetInstance:(SLTAssetInstance*)theAssetInstance;
-
-//TODO: TIGR the function below need to be private
-/**
- * Removes the asset instance with provided layer identifier and layer index.
- * @param theLayerId The layer identifier.
- * @param theLayerIndex The layer index.
- */
--(void) removeAssetInstanceByLayerId:(NSString*)theLayerId andLayerIndex:(NSInteger)theLayerIndex;
-
 @end

@@ -9,7 +9,7 @@
  */
 
 #import "SLTChunk.h"
-#import "SLTCell.h"
+#import "SLTCell_Private.h"
 #import "SLTChunkAssetRule.h"
 #import "SLTAsset.h"
 #import "SLTAssetInstance.h"

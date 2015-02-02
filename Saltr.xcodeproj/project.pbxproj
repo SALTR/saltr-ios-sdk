@@ -129,6 +129,8 @@
 		1D2228741A7F9862009E41AE /* SLTBoardLayer_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTBoardLayer_Private.h; sourceTree = "<group>"; };
 		1D2228771A7FA660009E41AE /* SLT2DBoardLayer_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLT2DBoardLayer_Private.h; sourceTree = "<group>"; };
 		1D2228781A7FA67B009E41AE /* SLTMatchingBoardLayer_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTMatchingBoardLayer_Private.h; sourceTree = "<group>"; };
+		1D2228791A7FB17B009E41AE /* SLTCell_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTCell_Private.h; sourceTree = "<group>"; };
+		1D22287A1A7FB190009E41AE /* SLTCells_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTCells_Private.h; sourceTree = "<group>"; };
 		8016D48A19916B50006943F5 /* SLTBasicProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTBasicProperties.h; sourceTree = "<group>"; };
 		8016D48B19916B50006943F5 /* SLTBasicProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTBasicProperties.m; sourceTree = "<group>"; };
 		80509E8819B5ABC600ABF65E /* SLTMobileRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTMobileRepository.h; sourceTree = "<group>"; };
@@ -262,6 +264,8 @@
 				1D2228741A7F9862009E41AE /* SLTBoardLayer_Private.h */,
 				1D2228771A7FA660009E41AE /* SLT2DBoardLayer_Private.h */,
 				1D2228781A7FA67B009E41AE /* SLTMatchingBoardLayer_Private.h */,
+				1D2228791A7FB17B009E41AE /* SLTCell_Private.h */,
+				1D22287A1A7FB190009E41AE /* SLTCells_Private.h */,
 			);
 			path = private;
 			sourceTree = "<group>";

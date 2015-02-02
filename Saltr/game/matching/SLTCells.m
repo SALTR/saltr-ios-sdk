@@ -8,7 +8,7 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "SLTCells.h"
+#import "SLTCells_Private.h"
 #import "SLTCellsIterator.h"
 
 @implementation SLTCells

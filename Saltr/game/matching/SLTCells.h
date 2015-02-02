@@ -27,9 +27,6 @@
 /// The cells iterator.
 @property(nonatomic, strong, readonly) SLTCellsIterator* iterator;
 
-//TODO: tigr the funciton below shuld be internal
-@property(nonatomic, strong, readonly) NSMutableArray* rawData;
-
 /**
  * @brief Inits an instance of @b SLTCells class with the given width and height.
  

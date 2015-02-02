@@ -12,7 +12,7 @@
 #import "SLTMatchingBoard.h"
 #import "SLTCells.h"
 #import "SLTMatchingBoardLayer_private.h"
-#import "SLTCell.h"
+#import "SLTCell_Private.h"
 #import "SLTAsset.h"
 #import "SLTAssetInstance.h"
 #import "SLTChunkAssetRule.h"
