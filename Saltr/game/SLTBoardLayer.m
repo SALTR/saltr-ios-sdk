@@ -8,7 +8,7 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
-#import "SLTBoardLayer.h"
+#import "SLTBoardLayer_Private.h"
 
 @implementation SLTBoardLayer
 

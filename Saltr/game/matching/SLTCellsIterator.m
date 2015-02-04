@@ -9,7 +9,7 @@
  */
 
 #import "SLTCellsIterator.h"
-#import "SLTCells.h"
+#import "SLTCells_Private.h"
 
 @interface SLTCellsIterator() {
     __weak SLTCells* _cells;

@@ -9,7 +9,7 @@
  */
 
 #import "SLTBoard.h"
-#import "SLTBoardLayer.h"
+#import "SLTBoardLayer_Private.h"
 
 @implementation SLTBoard
 

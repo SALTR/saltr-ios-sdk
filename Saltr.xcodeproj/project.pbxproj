@@ -7,6 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1D084F291A766C8A0050F348 /* SLT2DAssetInstance.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80F370541993F7EF000522F7 /* SLT2DAssetInstance.h */; };
+		1D084F2A1A766C930050F348 /* SLT2DBoard.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80F3705A19940657000522F7 /* SLT2DBoard.h */; };
+		1D084F2B1A766C9B0050F348 /* SLT2DBoardLayer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80F3705D1994099B000522F7 /* SLT2DBoardLayer.h */; };
+		1D084F2C1A766CA90050F348 /* SLTCell.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 982C55EE19714CC200DC99B1 /* SLTCell.h */; };
+		1D084F2D1A766CAE0050F348 /* SLTCells.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98D715C7197291D100502350 /* SLTCells.h */; };
+		1D084F2E1A766CC10050F348 /* SLTLevel.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 982C55F719719F1E00DC99B1 /* SLTLevel.h */; };
+		1D084F2F1A766CC90050F348 /* SLTLevelPack.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98D715C41972849500502350 /* SLTLevelPack.h */; };
+		1D084F301A766CDD0050F348 /* SLTMatchingBoard.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 989CC4D819746CCB008DC08F /* SLTMatchingBoard.h */; };
+		1D084F311A766CEA0050F348 /* SLTMobileRepository.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80509E8819B5ABC600ABF65E /* SLTMobileRepository.h */; };
+		1D084F321A766CF60050F348 /* SLTSaltr.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 808D40F919B36A5B00BC8FCD /* SLTSaltr.h */; };
+		1D084F331A766D3A0050F348 /* SLTAssetInstance.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 982C55E619714C5100DC99B1 /* SLTAssetInstance.h */; };
+		1D084F341A766D650050F348 /* SLTBoard.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98D715BE1972772E00502350 /* SLTBoard.h */; };
+		1D084F351A766D700050F348 /* SLTBoardLayer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98D715C119727CD600502350 /* SLTBoardLayer.h */; };
+		1D2228641A7B66C9009E41AE /* SLTBasicProperties.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8016D48A19916B50006943F5 /* SLTBasicProperties.h */; };
+		1D2228651A7B6725009E41AE /* SLTExperiment.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC23018B3C35000E92A06 /* SLTExperiment.h */; };
+		1D2228661A7B6A8C009E41AE /* SLTAssetState.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 982C55E819714C5100DC99B1 /* SLTAssetState.h */; };
+		1D2228671A7B6AF8009E41AE /* SLT2DAssetState.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80F370571994035C000522F7 /* SLT2DAssetState.h */; };
+		1D2228681A7B6B52009E41AE /* SLTCellsIterator.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 98D715CA1972A1A600502350 /* SLTCellsIterator.h */; };
+		1D2228691A7B6BAE009E41AE /* SLTMatchingBoardLayer.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 989CC4D219745F82008DC08F /* SLTMatchingBoardLayer.h */; };
+		1D22286A1A7B6C17009E41AE /* SLTDummyRepository.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80509E8B19B5ABDE00ABF65E /* SLTDummyRepository.h */; };
+		1D22286B1A7B6CB9009E41AE /* SLTStatus.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E47919B89474002F3568 /* SLTStatus.h */; };
+		1D22286C1A7B6CB9009E41AE /* SLTStatusAppDataLoadFail.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E47C19B896BC002F3568 /* SLTStatusAppDataLoadFail.h */; };
+		1D22286D1A7B6CB9009E41AE /* SLTStatusExperimentsParseError.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E47F19B897E4002F3568 /* SLTStatusExperimentsParseError.h */; };
+		1D22286E1A7B6CB9009E41AE /* SLTStatusFeaturesParseError.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E48219B8982D002F3568 /* SLTStatusFeaturesParseError.h */; };
+		1D22286F1A7B6CB9009E41AE /* SLTStatusLevelContentLoadFail.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E48519B89881002F3568 /* SLTStatusLevelContentLoadFail.h */; };
+		1D2228701A7B6CB9009E41AE /* SLTStatusLevelsParseError.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E48819B898C8002F3568 /* SLTStatusLevelsParseError.h */; };
+		1D2228711A7B6CB9009E41AE /* SLTStatusLevelsParserMissing.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 8087E48B19B8990B002F3568 /* SLTStatusLevelsParserMissing.h */; };
+		1D2228721A7B6CB9009E41AE /* SLTStatusAppDataConcurrentLoadRefused.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 80C5C3BC1A1F6A8500639860 /* SLTStatusAppDataConcurrentLoadRefused.h */; };
 		8016D48C19916B50006943F5 /* SLTBasicProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 8016D48B19916B50006943F5 /* SLTBasicProperties.m */; };
 		80509E8A19B5ABC600ABF65E /* SLTMobileRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 80509E8919B5ABC600ABF65E /* SLTMobileRepository.m */; };
 		80509E8D19B5ABDE00ABF65E /* SLTDummyRepository.m in Sources */ = {isa = PBXBuildFile; fileRef = 80509E8C19B5ABDE00ABF65E /* SLTDummyRepository.m */; };
@@ -48,32 +76,14 @@
 		98D715C9197291D100502350 /* SLTCells.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715C8197291D100502350 /* SLTCells.m */; };
 		98D715CC1972A1A600502350 /* SLTCellsIterator.m in Sources */ = {isa = PBXBuildFile; fileRef = 98D715CB1972A1A600502350 /* SLTCellsIterator.m */; };
 		CA1FC1FB18B3B8D600E92A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
-		CA1FC20918B3B8D600E92A06 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20818B3B8D600E92A06 /* XCTest.framework */; };
-		CA1FC20A18B3B8D600E92A06 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */; };
-		CA1FC20C18B3B8D600E92A06 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC20B18B3B8D600E92A06 /* UIKit.framework */; };
-		CA1FC20F18B3B8D600E92A06 /* libSaltr.v.1.3.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.1.a */; };
-		CA1FC21518B3B8D600E92A06 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CA1FC21318B3B8D600E92A06 /* InfoPlist.strings */; };
-		CA1FC21718B3B8D600E92A06 /* SLTSaltrTests.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC21618B3B8D600E92A06 /* SLTSaltrTests.m */; };
 		CA1FC22C18B3C33200E92A06 /* SLTDeserializer.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC22B18B3C33200E92A06 /* SLTDeserializer.m */; };
 		CA1FC23218B3C35000E92A06 /* SLTExperiment.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23118B3C35000E92A06 /* SLTExperiment.m */; };
 		CA1FC23518B3C36100E92A06 /* SLTFeature.m in Sources */ = {isa = PBXBuildFile; fileRef = CA1FC23418B3C36100E92A06 /* SLTFeature.m */; };
-		CD859DF918D87B06003B8758 /* SLTFeature.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC23318B3C36100E92A06 /* SLTFeature.h */; };
-		CD859DFA18D87B13003B8758 /* SLTExperiment.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = CA1FC23018B3C35000E92A06 /* SLTExperiment.h */; };
 		CDACAC1418E0A10700021EFA /* SLTResource.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC1118E0A10700021EFA /* SLTResource.m */; };
 		CDACAC1518E0A10700021EFA /* SLTResourceURLTicket.m in Sources */ = {isa = PBXBuildFile; fileRef = CDACAC1318E0A10700021EFA /* SLTResourceURLTicket.m */; };
 		CDD7408F18BFC0FA00F2306D /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CD095F7B18BF7E4B00E38369 /* CoreFoundation.framework */; };
 		CDD7409518BFC0FA00F2306D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = CDD7409318BFC0FA00F2306D /* InfoPlist.strings */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		CA1FC20D18B3B8D600E92A06 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = CA1FC1EF18B3B8D600E92A06 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = CA1FC1F618B3B8D600E92A06;
-			remoteInfo = Saltr;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		CA1FC1F518B3B8D600E92A06 /* CopyFiles */ = {
@@ -82,14 +92,45 @@
 			dstPath = "include/$(PRODUCT_NAME)";
 			dstSubfolderSpec = 16;
 			files = (
-				CD859DFA18D87B13003B8758 /* SLTExperiment.h in CopyFiles */,
-				CD859DF918D87B06003B8758 /* SLTFeature.h in CopyFiles */,
+				1D22286B1A7B6CB9009E41AE /* SLTStatus.h in CopyFiles */,
+				1D22286C1A7B6CB9009E41AE /* SLTStatusAppDataLoadFail.h in CopyFiles */,
+				1D22286D1A7B6CB9009E41AE /* SLTStatusExperimentsParseError.h in CopyFiles */,
+				1D22286E1A7B6CB9009E41AE /* SLTStatusFeaturesParseError.h in CopyFiles */,
+				1D22286F1A7B6CB9009E41AE /* SLTStatusLevelContentLoadFail.h in CopyFiles */,
+				1D2228701A7B6CB9009E41AE /* SLTStatusLevelsParseError.h in CopyFiles */,
+				1D2228711A7B6CB9009E41AE /* SLTStatusLevelsParserMissing.h in CopyFiles */,
+				1D2228721A7B6CB9009E41AE /* SLTStatusAppDataConcurrentLoadRefused.h in CopyFiles */,
+				1D22286A1A7B6C17009E41AE /* SLTDummyRepository.h in CopyFiles */,
+				1D2228691A7B6BAE009E41AE /* SLTMatchingBoardLayer.h in CopyFiles */,
+				1D2228681A7B6B52009E41AE /* SLTCellsIterator.h in CopyFiles */,
+				1D2228671A7B6AF8009E41AE /* SLT2DAssetState.h in CopyFiles */,
+				1D2228661A7B6A8C009E41AE /* SLTAssetState.h in CopyFiles */,
+				1D2228651A7B6725009E41AE /* SLTExperiment.h in CopyFiles */,
+				1D2228641A7B66C9009E41AE /* SLTBasicProperties.h in CopyFiles */,
+				1D084F351A766D700050F348 /* SLTBoardLayer.h in CopyFiles */,
+				1D084F341A766D650050F348 /* SLTBoard.h in CopyFiles */,
+				1D084F331A766D3A0050F348 /* SLTAssetInstance.h in CopyFiles */,
+				1D084F321A766CF60050F348 /* SLTSaltr.h in CopyFiles */,
+				1D084F311A766CEA0050F348 /* SLTMobileRepository.h in CopyFiles */,
+				1D084F301A766CDD0050F348 /* SLTMatchingBoard.h in CopyFiles */,
+				1D084F2F1A766CC90050F348 /* SLTLevelPack.h in CopyFiles */,
+				1D084F2E1A766CC10050F348 /* SLTLevel.h in CopyFiles */,
+				1D084F2D1A766CAE0050F348 /* SLTCells.h in CopyFiles */,
+				1D084F2C1A766CA90050F348 /* SLTCell.h in CopyFiles */,
+				1D084F2B1A766C9B0050F348 /* SLT2DBoardLayer.h in CopyFiles */,
+				1D084F2A1A766C930050F348 /* SLT2DBoard.h in CopyFiles */,
+				1D084F291A766C8A0050F348 /* SLT2DAssetInstance.h in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1D2228741A7F9862009E41AE /* SLTBoardLayer_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTBoardLayer_Private.h; sourceTree = "<group>"; };
+		1D2228771A7FA660009E41AE /* SLT2DBoardLayer_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLT2DBoardLayer_Private.h; sourceTree = "<group>"; };
+		1D2228781A7FA67B009E41AE /* SLTMatchingBoardLayer_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTMatchingBoardLayer_Private.h; sourceTree = "<group>"; };
+		1D2228791A7FB17B009E41AE /* SLTCell_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTCell_Private.h; sourceTree = "<group>"; };
+		1D22287A1A7FB190009E41AE /* SLTCells_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SLTCells_Private.h; sourceTree = "<group>"; };
 		8016D48A19916B50006943F5 /* SLTBasicProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTBasicProperties.h; sourceTree = "<group>"; };
 		8016D48B19916B50006943F5 /* SLTBasicProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTBasicProperties.m; sourceTree = "<group>"; };
 		80509E8819B5ABC600ABF65E /* SLTMobileRepository.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTMobileRepository.h; sourceTree = "<group>"; };
@@ -170,10 +211,9 @@
 		98D715C8197291D100502350 /* SLTCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCells.m; sourceTree = "<group>"; };
 		98D715CA1972A1A600502350 /* SLTCellsIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTCellsIterator.h; sourceTree = "<group>"; };
 		98D715CB1972A1A600502350 /* SLTCellsIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCellsIterator.m; sourceTree = "<group>"; };
-		CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.1.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.v.1.3.1.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.v.1.3.2.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA1FC1FE18B3B8D600E92A06 /* Saltr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saltr-Prefix.pch"; sourceTree = "<group>"; };
-		CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SaltrTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC20818B3B8D600E92A06 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		CA1FC20B18B3B8D600E92A06 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		CA1FC21218B3B8D600E92A06 /* SaltrTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SaltrTests-Info.plist"; sourceTree = "<group>"; };
@@ -207,17 +247,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA1FC20418B3B8D600E92A06 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA1FC20918B3B8D600E92A06 /* XCTest.framework in Frameworks */,
-				CA1FC20F18B3B8D600E92A06 /* libSaltr.v.1.3.1.a in Frameworks */,
-				CA1FC20C18B3B8D600E92A06 /* UIKit.framework in Frameworks */,
-				CA1FC20A18B3B8D600E92A06 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CDD7408B18BFC0FA00F2306D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -229,6 +258,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1D2228731A7F62CE009E41AE /* private */ = {
+			isa = PBXGroup;
+			children = (
+				1D2228741A7F9862009E41AE /* SLTBoardLayer_Private.h */,
+				1D2228771A7FA660009E41AE /* SLT2DBoardLayer_Private.h */,
+				1D2228781A7FA67B009E41AE /* SLTMatchingBoardLayer_Private.h */,
+				1D2228791A7FB17B009E41AE /* SLTCell_Private.h */,
+				1D22287A1A7FB190009E41AE /* SLTCells_Private.h */,
+			);
+			path = private;
+			sourceTree = "<group>";
+		};
 		8081218D19B6F35F0013266B /* utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -352,8 +393,7 @@
 		CA1FC1F818B3B8D600E92A06 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.1.a */,
-				CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */,
+				CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.2.a */,
 				CDD7408E18BFC0FA00F2306D /* Saltr.bundle */,
 			);
 			name = Products;
@@ -374,6 +414,7 @@
 		CA1FC1FC18B3B8D600E92A06 /* Saltr */ = {
 			isa = PBXGroup;
 			children = (
+				1D2228731A7F62CE009E41AE /* private */,
 				982C55E319714C5100DC99B1 /* game */,
 				CA1FC24018B3C3A300E92A06 /* repository */,
 				CA1FC24118B3C3C300E92A06 /* resource */,
@@ -479,26 +520,8 @@
 			);
 			name = Saltr;
 			productName = Saltr;
-			productReference = CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.1.a */;
+			productReference = CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.2.a */;
 			productType = "com.apple.product-type.library.static";
-		};
-		CA1FC20618B3B8D600E92A06 /* SaltrTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = CA1FC21D18B3B8D600E92A06 /* Build configuration list for PBXNativeTarget "SaltrTests" */;
-			buildPhases = (
-				CA1FC20318B3B8D600E92A06 /* Sources */,
-				CA1FC20418B3B8D600E92A06 /* Frameworks */,
-				CA1FC20518B3B8D600E92A06 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				CA1FC20E18B3B8D600E92A06 /* PBXTargetDependency */,
-			);
-			name = SaltrTests;
-			productName = SaltrTests;
-			productReference = CA1FC20718B3B8D600E92A06 /* SaltrTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		CDD7408D18BFC0FA00F2306D /* SaltrResource */ = {
 			isa = PBXNativeTarget;
@@ -526,11 +549,6 @@
 				CLASSPREFIX = SLT;
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = Plexonic;
-				TargetAttributes = {
-					CA1FC20618B3B8D600E92A06 = {
-						TestTargetID = CD55D6DB18C0879800222E8C;
-					};
-				};
 			};
 			buildConfigurationList = CA1FC1F218B3B8D600E92A06 /* Build configuration list for PBXProject "Saltr" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -546,21 +564,12 @@
 			projectRoot = "";
 			targets = (
 				CA1FC1F618B3B8D600E92A06 /* Saltr */,
-				CA1FC20618B3B8D600E92A06 /* SaltrTests */,
 				CDD7408D18BFC0FA00F2306D /* SaltrResource */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		CA1FC20518B3B8D600E92A06 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA1FC21518B3B8D600E92A06 /* InfoPlist.strings in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CDD7408C18BFC0FA00F2306D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -584,7 +593,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Uncomment the lines below later in order to build Doxygen documentation\n# Uncomment the final fi line also\nif false\nthen\n\n#  Build the doxygen documentation for the project and load the docset into Xcode.\n\n#  Use the following to adjust the value of the $DOXYGEN_PATH User-Defined Setting:\n#    Binary install location: /Applications/Doxygen.app/Contents/Resources/doxygen\n#    Source build install location: /usr/local/bin/doxygen\n\n#  If the config file doesn't exist, run 'doxygen -g $SOURCE_ROOT/doxygen.config' to\n#   a get default file.\n\nif ! [ -f $SOURCE_ROOT/doxygen.config ]\nthen\necho doxygen config file does not exist\n$DOXYGEN_PATH -g $SOURCE_ROOT/doxygen.config\nfi\n\n#  Append the proper input/output directories and docset info to the config file.\n#  This works even though values are assigned higher up in the file. Easier than sed.\n\ncp $SOURCE_ROOT/doxygen.config $TEMP_DIR/doxygen.config\n\necho \"INPUT = $SOURCE_ROOT\" >> $TEMP_DIR/doxygen.config\necho \"OUTPUT_DIRECTORY = $SOURCE_ROOT/DoxygenDocs.docset\" >> $TEMP_DIR/doxygen.config\necho \"GENERATE_DOCSET        = YES\" >> $TEMP_DIR/doxygen.config\necho \"DOCSET_BUNDLE_ID       = com.mycompany.DoxygenExample\" >> $TEMP_DIR/doxygen.config\n\n#  Run doxygen on the updated config file.\n#  Note: doxygen creates a Makefile that does most of the heavy lifting.\n\n$DOXYGEN_PATH \"$TEMP_DIR/doxygen.config\"\n\n# Update \"XCODE_INSTALL\" variable\ncat DoxygenDocs.docset/html/Makefile | sed  's/XCODE_INSTALL=$(shell xcode-select -print-path)/XCODE_INSTALL=\"$(shell xcode-select -print-path)\"/g' > DoxygenDocs.docset/html/Make\nmv DoxygenDocs.docset/html/Make DoxygenDocs.docset/html/Makefile\n\n#  make will invoke docsetutil. Take a look at the Makefile to see how this is done.\n\nmake -C $SOURCE_ROOT/DoxygenDocs.docset/html install\n\n\necho $SOURCE_ROOT/DoxygenDocs.docset/html/Makefile\n\n#  Construct a temporary applescript file to tell Xcode to load a docset.\n\nrm -f \"$TEMP_DIR/loadDocSet.scpt\"\n\n#echo \"tell application \\\"Xcode 2\\\"\" >> \"$TEMP_DIR/loadDocSet.scpt\"\n#echo \"load documentation set with path \\\"/Users/$USER/Library/Developer/Shared/Documentation/DocSets/\\\"\" >> \"$TEMP_DIR/loadDocSet.scpt\"\n#echo \"end tell\" >> \"$TEMP_DIR/loadDocSet.scpt\"\n\n\n#  Run the load-docset applescript command.\n\n#osascript \"$TEMP_DIR/loadDocSet.scpt\"\n\n#osascript -e \"tell application \\\"Xcode\\\"\" -e \"load documentation set with path \\\"/Users/employee/Library/Developer/Shared/Documentation/DocSets/com.mycompany.DoxygenExample.docset/\\\"\" -e \"end tell\"\n\nfi\n\nexit 0\n";
+			shellScript = "# Comment the lines below later in order to build Doxygen documentation\n# Comment the final fi line also\n#if false\n#then\n\n#  Build the doxygen documentation for the project and load the docset into Xcode.\n\n#  Use the following to adjust the value of the $DOXYGEN_PATH User-Defined Setting:\n#    Binary install location: /Applications/Doxygen.app/Contents/Resources/doxygen\n#    Source build install location: /usr/local/bin/doxygen\n\n#  If the config file doesn't exist, run 'doxygen -g $SOURCE_ROOT/doxygen.config' to\n#   a get default file.\n\nif ! [ -f $SOURCE_ROOT/doxygen.config ]\nthen\necho doxygen config file does not exist\n$DOXYGEN_PATH -g $SOURCE_ROOT/doxygen.config\nfi\n\n#  Append the proper input/output directories and docset info to the config file.\n#  This works even though values are assigned higher up in the file. Easier than sed.\n\ncp $SOURCE_ROOT/doxygen.config $TEMP_DIR/doxygen.config\n\n#echo \"INPUT = $SOURCE_ROOT\" >> $TEMP_DIR/doxygen.config\necho \"OUTPUT_DIRECTORY = $SOURCE_ROOT/DoxygenDocs.docset\" >> $TEMP_DIR/doxygen.config\necho \"GENERATE_DOCSET        = YES\" >> $TEMP_DIR/doxygen.config\necho \"DOCSET_BUNDLE_ID       = com.mycompany.DoxygenExample\" >> $TEMP_DIR/doxygen.config\n\n#  Run doxygen on the updated config file.\n#  Note: doxygen creates a Makefile that does most of the heavy lifting.\n\n$DOXYGEN_PATH \"$TEMP_DIR/doxygen.config\"\n\n# Update \"XCODE_INSTALL\" variable\ncat DoxygenDocs.docset/html/Makefile | sed  's/XCODE_INSTALL=$(shell xcode-select -print-path)/XCODE_INSTALL=\"$(shell xcode-select -print-path)\"/g' > DoxygenDocs.docset/html/Make\nmv DoxygenDocs.docset/html/Make DoxygenDocs.docset/html/Makefile\n\n#  make will invoke docsetutil. Take a look at the Makefile to see how this is done.\n\nmake -C $SOURCE_ROOT/DoxygenDocs.docset/html install\n\n\necho $SOURCE_ROOT/DoxygenDocs.docset/html/Makefile\n\n#  Construct a temporary applescript file to tell Xcode to load a docset.\n\nrm -f \"$TEMP_DIR/loadDocSet.scpt\"\n\n#echo \"tell application \\\"Xcode 2\\\"\" >> \"$TEMP_DIR/loadDocSet.scpt\"\n#echo \"load documentation set with path \\\"/Users/$USER/Library/Developer/Shared/Documentation/DocSets/\\\"\" >> \"$TEMP_DIR/loadDocSet.scpt\"\n#echo \"end tell\" >> \"$TEMP_DIR/loadDocSet.scpt\"\n\n\n#  Run the load-docset applescript command.\n\n#osascript \"$TEMP_DIR/loadDocSet.scpt\"\n\n#osascript -e \"tell application \\\"Xcode\\\"\" -e \"load documentation set with path \\\"/Users/employee/Library/Developer/Shared/Documentation/DocSets/com.mycompany.DoxygenExample.docset/\\\"\" -e \"end tell\"\n\n#fi\n\nexit 0\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -642,14 +651,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		CA1FC20318B3B8D600E92A06 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				CA1FC21718B3B8D600E92A06 /* SLTSaltrTests.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		CDD7408A18BFC0FA00F2306D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -658,14 +659,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		CA1FC20E18B3B8D600E92A06 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = CA1FC1F618B3B8D600E92A06 /* Saltr */;
-			targetProxy = CA1FC20D18B3B8D600E92A06 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		CA1FC21318B3B8D600E92A06 /* InfoPlist.strings */ = {
@@ -719,7 +712,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
@@ -751,7 +744,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -766,7 +759,7 @@
 				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = Saltr.v.1.3.1;
+				PRODUCT_NAME = Saltr.v.1.3.2;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -782,50 +775,10 @@
 				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = Saltr.v.1.3.1;
+				PRODUCT_NAME = Saltr.v.1.3.2;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
-		CA1FC21E18B3B8D600E92A06 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SaltrTestApp.app/SaltrTestApp";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "SaltrTests/SaltrTests-Info.plist";
-				PRODUCT_NAME = SaltrTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		CA1FC21F18B3B8D600E92A06 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SaltrTestApp.app/SaltrTestApp";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
-				INFOPLIST_FILE = "SaltrTests/SaltrTests-Info.plist";
-				PRODUCT_NAME = SaltrTests;
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -885,15 +838,6 @@
 			buildConfigurations = (
 				CA1FC21B18B3B8D600E92A06 /* Debug */,
 				CA1FC21C18B3B8D600E92A06 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		CA1FC21D18B3B8D600E92A06 /* Build configuration list for PBXNativeTarget "SaltrTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CA1FC21E18B3B8D600E92A06 /* Debug */,
-				CA1FC21F18B3B8D600E92A06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
