@@ -9,21 +9,21 @@
  */
 
 /*! \mainpage notitle
- \section intro_sec 1. INTRODUCTION
+ \section intro_sec INTRODUCTION
  
  SALTR iOS SDK is a library of classes which help to develop mobile games that are to be integrated with SALTR platform.
  SDK performs all necessary and possible action with SALTR REST API to connect, update, set and download data related to game's features or levels.
  All data received from SALTR REST API is parsed and represented through set of instances of classes, each carrying specific objects and their properties.
  Basically SDK, as the REST API, has few simple actions. The most important one is connecting (getAppData), which loads the app data objects containing features, experiments and level headers.
  This and other actions will be described in the sections below.
- \section intro_usage 2. USAGE
+ \section intro_usage USAGE
  
  To use the SDK you need to download/clone SDK repository, and then import files to your project.
  To clone Git repository via command line:
  $ git clone https://github.com/plexonic/saltr-ios-sdk.git
  The entry point in SDK is SLTSaltr class.
  Note: All classes in the package start with "SLT" prefix.
- \section intro_directory 3. DIRECTORY STRUCTURE
+ \section intro_directory DIRECTORY STRUCTURE
  
  The SDK has the following directory structure:<br />
  /src - root folder of the library;<br />
