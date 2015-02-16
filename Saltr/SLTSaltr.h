@@ -8,6 +8,35 @@
  * Առանց գրավոր թույլտվության այս կոդի պատճենահանումը կամ օգտագործումը քրեական հանցագործություն է:
  */
 
+/*! \mainpage notitle
+ \section intro_sec 1. INTRODUCTION
+ 
+ SALTR iOS SDK is a library of classes which help to develop mobile games that are to be integrated with SALTR platform.
+ SDK performs all necessary and possible action with SALTR REST API to connect, update, set and download data related to game's features or levels.
+ All data received from SALTR REST API is parsed and represented through set of instances of classes, each carrying specific objects and their properties.
+ Basically SDK, as the REST API, has few simple actions. The most important one is connecting (getAppData), which loads the app data objects containing features, experiments and level headers.
+ This and other actions will be described in the sections below.
+ \section intro_usage 2. USAGE
+ 
+ To use the SDK you need to download/clone SDK repository, and then import files to your project.
+ To clone Git repository via command line:
+ $ git clone https://github.com/plexonic/saltr-ios-sdk.git
+ The entry point in SDK is SLTSaltr class.
+ Note: All classes in the package start with "SLT" prefix.
+ \section intro_directory 3. DIRECTORY STRUCTURE
+ 
+ The SDK has the following directory structure:<br />
+ /src - root folder of the library;<br />
+ saltr - main package of library;<br />
+ saltr.game - package contains game related classes;<br />
+ saltr.game.canvas2d - classes related to 2D games;<br />
+ saltr.game.matching - classes related to matching or board based games;<br />
+ saltr.game.repository - local data repository classes (implementation widely varies through platforms);<br />
+ saltr.game.status - status classes representing warnings and error statuses used within library code;<br />
+ saltr.game.utils - helper or utility classes;<br />
+ New packages supporting new gameplays and genres will be be added to saltr.game package.
+  */
+
 #import <Foundation/Foundation.h>
 
 #import "SLTMobileRepository.h"
