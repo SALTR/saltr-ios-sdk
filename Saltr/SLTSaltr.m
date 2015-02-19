@@ -635,6 +635,7 @@ NSString* API_VERSION=@"1.0.0";
     NSMutableDictionary* args = [[NSMutableDictionary alloc] init];
     [args setObject:API_VERSION forKey:@"apiVersion"];
     [args setObject:_clientKey forKey:@"clientKey"];
+    [args setObject:CLIENT forKey:@"client"];
     [args setObject:[self devModeStringValue] forKey:@"devMode"];
     
     //required for Mobile
