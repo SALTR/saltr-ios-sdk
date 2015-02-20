@@ -181,8 +181,15 @@ NSString* API_VERSION=@"1.0.0";
     }
     
     if (NO == _started) {
-        thePath = thePath == nil ? LOCAL_LEVELPACK_PACKAGE_URL : thePath;
-        NSDictionary* applicationData = [_repository objectFromApplication:thePath];
+        
+        NSDictionary* applicationData = nil;
+        if(nil == thePath) {
+            thePath = LOCAL_LEVELPACK_PACKAGE_URL;
+            applicationData = [_repository objectFromCache:APP_DATA_URL_CACHE];
+        }
+        if(nil == applicationData) {
+            applicationData = [_repository objectFromApplication:thePath];
+        }
         _levelPacks = [_deserializer decodeLevelsFromData:applicationData];
     } else {
         NSException* exception = [NSException
@@ -329,7 +336,7 @@ NSString* API_VERSION=@"1.0.0";
         [self levelContentLoadSuccessHandler:level data:content];
     } else {
         NSString* cachedVersion = [self cachedLevelVersion:level];
-        if (NO == enableCache || [level.version isEqualToString:cachedVersion]) {
+        if (NO == enableCache || nil == cachedVersion || [level.version isEqualToString:cachedVersion]) {
             [self loadLevelContentFromSaltr:level];
         } else {
             content = [self loadLevelContentFromCache:level];

@@ -64,7 +64,7 @@
                 if ([levelNode objectForKey:@"localIndex"]) {
                     localIndex = [[levelNode objectForKey:@"localIndex"] integerValue];
                 }
-                [levels addObject:[[SLTLevel alloc] initWithLevelId:[[levelNode objectForKey:@"id"] stringValue] variationId:[[levelNode objectForKey:@"variationId"] stringValue] levelType:levelType index:index localIndex:localIndex packIndex:packIndex contentUrl:[levelNode objectForKey:@"url"] properties:[levelNode objectForKey:@"properties"] andVersion:[levelNode objectForKey:@"version"]]];
+                [levels addObject:[[SLTLevel alloc] initWithLevelId:[[levelNode objectForKey:@"id"] stringValue] variationId:[[levelNode objectForKey:@"variationId"] stringValue] levelType:levelType index:index localIndex:localIndex packIndex:packIndex contentUrl:[levelNode objectForKey:@"url"] properties:[levelNode objectForKey:@"properties"] andVersion:[[levelNode objectForKey:@"version"] stringValue]]];
             }
             [levelPacks addObject:[[SLTLevelPack alloc] initWithToken:[levelPackNode objectForKey:@"token"] index:packIndex andLevels:levels]];
             
