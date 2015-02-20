@@ -211,7 +211,7 @@
 		98D715C8197291D100502350 /* SLTCells.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCells.m; sourceTree = "<group>"; };
 		98D715CA1972A1A600502350 /* SLTCellsIterator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLTCellsIterator.h; sourceTree = "<group>"; };
 		98D715CB1972A1A600502350 /* SLTCellsIterator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLTCellsIterator.m; sourceTree = "<group>"; };
-		CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.2.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.v.1.3.2.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.3.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libSaltr.v.1.3.3.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA1FC1FA18B3B8D600E92A06 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		CA1FC1FE18B3B8D600E92A06 /* Saltr-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Saltr-Prefix.pch"; sourceTree = "<group>"; };
 		CA1FC20818B3B8D600E92A06 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -393,7 +393,7 @@
 		CA1FC1F818B3B8D600E92A06 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.2.a */,
+				CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.3.a */,
 				CDD7408E18BFC0FA00F2306D /* Saltr.bundle */,
 			);
 			name = Products;
@@ -520,7 +520,7 @@
 			);
 			name = Saltr;
 			productName = Saltr;
-			productReference = CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.2.a */;
+			productReference = CA1FC1F718B3B8D600E92A06 /* libSaltr.v.1.3.3.a */;
 			productType = "com.apple.product-type.library.static";
 		};
 		CDD7408D18BFC0FA00F2306D /* SaltrResource */ = {
@@ -759,7 +759,7 @@
 				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = Saltr.v.1.3.2;
+				PRODUCT_NAME = Saltr.v.1.3.3;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -775,7 +775,7 @@
 				GCC_PREFIX_HEADER = "Saltr/Saltr-Prefix.pch";
 				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_NAME = Saltr.v.1.3.2;
+				PRODUCT_NAME = Saltr.v.1.3.3;
 				RUN_CLANG_STATIC_ANALYZER = YES;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
