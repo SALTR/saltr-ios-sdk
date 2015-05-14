@@ -67,9 +67,3 @@ The SDK has the following directory structure:
 - saltr.game.utils - helper or utility classes;
 
 New packages supporting new gameplays and genres will be be added to <code>saltr.game</code> package.
-
-
-4. DOCUMENTATION
-================
-
-Detailed documentation for all public classes and methods is coming soon.
