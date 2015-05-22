@@ -1,4 +1,4 @@
-2014-Mar-24  <info@plexonic.com> 
+2014-Mar-24  <support@saltr.com> 
 
     v1.0 - iOS Saltr SDK 	
 	* Request/response handling mechanism
