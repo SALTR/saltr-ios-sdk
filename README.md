@@ -41,6 +41,9 @@ The entry point in SDK is `SLTSaltr` class.
 Note: All classes in the package start with `SLT` prefix.
 
 
+##API Reference
+Here is the [API Reference for the SDK](http://plexonic.github.io/api-reference-ios/).
+
 ##Introduction
 
 Easily integrate SALTR Unity SDK into your games or apps to get real-time control over settings, user experience tweaking, customization and level design. 
